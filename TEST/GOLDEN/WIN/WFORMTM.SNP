@@ -1,0 +1,264 @@
+=SNAP GONEOPEN
+#32770 "Item 3 - Edit" ACTIVE
+ Static 65535 "Item ID"
+ Edit 100 "3"
+ Static 65535 "&Maker"
+ Edit 105 "Hercules"
+ Static 65535 "Mo&del"
+ Edit 106 "Graphics Card"
+ WTAB 95 "&Overview|&Technical|&Acquisition|&Notes" CUR 0
+ Static 65535 "&Category"
+ ComboBox 101 "CARD  Expansion cards" FOCUS
+  ROW "SYS   Systems"
+  ROW "MOBO  Motherboards"
+  ROW "CPU   Processors"
+  ROW "CARD  Expansion cards" SELECTED
+  ROW "DRV   Drives"
+  ROW "PERI  Peripherals"
+  ROW "SW    Software"
+  ROW "MAN   Manuals"
+  ROW "CBL   Cables"
+  ROW "PART  Parts"
+ Static 65535 "&Status"
+ ComboBox 102 "A  Active"
+  ROW "A  Active" SELECTED
+  ROW "D  Disposed of"
+ Static 65535 "T&ype"
+ Edit 103 ""
+ Static 65535 "Cond&ition"
+ ComboBox 104 ""
+  ROW "" SELECTED
+  ROW "NEW  New"
+  ROW "EXC  Excellent"
+  ROW "GD   Good"
+  ROW "FR   Fair"
+  ROW "PR   Poor"
+ Static 65535 "&Works"
+ ComboBox 109 "?  Not tested"
+  ROW "?  Not tested" SELECTED
+  ROW "Y  Yes"
+  ROW "I  Intermittently"
+  ROW "N  No"
+ Static 65535 "&Quantity"
+ Edit 110 "1"
+ Static 65535 ""
+ Edit 111 ""
+ Static 65535 "&Location"
+ Edit 112 "A1"
+ Button 136 "..."
+ Static 65535 "Part of"
+ Edit 113 "0"
+ Static 65535 ""
+ Edit 114 "Office > Shelf A1"
+ Static 65535 "Ta&gs"
+ Edit 119 ""
+ Button 143 "..."
+ Static 65535 "S&erial" HIDDEN
+ Edit 107 "HGC-0042" HIDDEN
+ Static 65535 "Desc&ription" HIDDEN
+ Edit 108 "" HIDDEN
+ Static 65535 "Date acq&uired" HIDDEN
+ Edit 115 "" HIDDEN
+ Static 65535 "Acquired &from" HIDDEN
+ Edit 116 "" HIDDEN
+ Static 65535 "&Price paid" HIDDEN
+ Edit 117 "" HIDDEN
+ Static 65535 "Current &value" HIDDEN
+ Edit 118 "" HIDDEN
+ Static 65535 "Created" HIDDEN
+ Edit 120 "" HIDDEN
+ Static 65535 "Updated" HIDDEN
+ Edit 121 "" HIDDEN
+ Edit 122 "" HIDDEN
+ Button 148 "Parts"
+ Button 149 "Service"
+ Button 150 "Loans"
+ Button 151 "Used with"
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+WFORMT "WFORMT" DISABLED
+=SNAP GONEBOX
+#32770 "Item 3 - Edit" ACTIVE
+ Button 2 "OK" FOCUS DEFAULT
+ Static 65535 ""
+ Static 65535 "The record no longer exists"
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+#32770 "Item 3 - Edit" DISABLED
+ Static 65535 "Item ID"
+ Edit 100 "3"
+ Static 65535 "&Maker"
+ Edit 105 "Hercules"
+ Static 65535 "Mo&del"
+ Edit 106 "Graphics Card"
+ WTAB 95 "&Overview|&Technical|&Acquisition|&Notes" CUR 0
+ Static 65535 "&Category"
+ ComboBox 101 "CBL   Cables"
+  ROW "SYS   Systems"
+  ROW "MOBO  Motherboards"
+  ROW "CPU   Processors"
+  ROW "CARD  Expansion cards"
+  ROW "DRV   Drives"
+  ROW "PERI  Peripherals"
+  ROW "SW    Software"
+  ROW "MAN   Manuals"
+  ROW "CBL   Cables" SELECTED
+  ROW "PART  Parts"
+ Static 65535 "&Status"
+ ComboBox 102 "A  Active"
+  ROW "A  Active" SELECTED
+  ROW "D  Disposed of"
+ Static 65535 "T&ype"
+ Edit 103 ""
+ Static 65535 "Cond&ition"
+ ComboBox 104 ""
+  ROW "" SELECTED
+  ROW "NEW  New"
+  ROW "EXC  Excellent"
+  ROW "GD   Good"
+  ROW "FR   Fair"
+  ROW "PR   Poor"
+ Static 65535 "&Works"
+ ComboBox 109 "?  Not tested"
+  ROW "?  Not tested" SELECTED
+  ROW "Y  Yes"
+  ROW "I  Intermittently"
+  ROW "N  No"
+ Static 65535 "&Quantity"
+ Edit 110 "1"
+ Static 65535 ""
+ Edit 111 ""
+ Static 65535 "&Location"
+ Edit 112 "A1"
+ Button 136 "..."
+ Static 65535 "Part of"
+ Edit 113 "0"
+ Static 65535 ""
+ Edit 114 "Office > Shelf A1"
+ Static 65535 "Ta&gs"
+ Edit 119 ""
+ Button 143 "..."
+ Static 65535 "S&erial" HIDDEN
+ Edit 107 "HGC-0042" HIDDEN
+ Static 65535 "Desc&ription" HIDDEN
+ Edit 108 "" HIDDEN
+ Static 65535 "Date acq&uired" HIDDEN
+ Edit 115 "" HIDDEN
+ Static 65535 "Acquired &from" HIDDEN
+ Edit 116 "" HIDDEN
+ Static 65535 "&Price paid" HIDDEN
+ Edit 117 "" HIDDEN
+ Static 65535 "Current &value" HIDDEN
+ Edit 118 "" HIDDEN
+ Static 65535 "Created" HIDDEN
+ Edit 120 "" HIDDEN
+ Static 65535 "Updated" HIDDEN
+ Edit 121 "" HIDDEN
+ Edit 122 "" HIDDEN
+ Button 148 "Parts"
+ Button 149 "Service"
+ Button 150 "Loans"
+ Button 151 "Used with"
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WFORMT "WFORMT" DISABLED
+=SNAP GONE
+WFORMT "GONE 2 3 #4" ACTIVE FOCUS
+=SNAP ENDBOX
+#32770 "Item 1 - Edit" ACTIVE
+ Button 2 "OK" FOCUS DEFAULT
+ Static 65535 ""
+ Static 65535 "The session has ended"
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+#32770 "Item 1 - Edit" DISABLED
+ Static 65535 "Item ID"
+ Edit 100 "1"
+ Static 65535 "&Maker"
+ Edit 105 "IBM"
+ Static 65535 "Mo&del"
+ Edit 106 "5150"
+ WTAB 95 "&Overview|&Technical|&Acquisition|&Notes" CUR 0
+ Static 65535 "&Category"
+ ComboBox 101 "CPU   Processors"
+  ROW "SYS   Systems"
+  ROW "MOBO  Motherboards"
+  ROW "CPU   Processors" SELECTED
+  ROW "CARD  Expansion cards"
+  ROW "DRV   Drives"
+  ROW "PERI  Peripherals"
+  ROW "SW    Software"
+  ROW "MAN   Manuals"
+  ROW "CBL   Cables"
+  ROW "PART  Parts"
+ Static 65535 "&Status"
+ ComboBox 102 "A  Active"
+  ROW "A  Active" SELECTED
+  ROW "D  Disposed of"
+ Static 65535 "T&ype"
+ Edit 103 ""
+ Static 65535 "Cond&ition"
+ ComboBox 104 "GD   Good"
+  ROW ""
+  ROW "NEW  New"
+  ROW "EXC  Excellent"
+  ROW "GD   Good" SELECTED
+  ROW "FR   Fair"
+  ROW "PR   Poor"
+ Static 65535 "&Works"
+ ComboBox 109 "Y  Yes"
+  ROW "?  Not tested"
+  ROW "Y  Yes" SELECTED
+  ROW "I  Intermittently"
+  ROW "N  No"
+ Static 65535 "&Quantity"
+ Edit 110 "1"
+ Static 65535 ""
+ Edit 111 ""
+ Static 65535 "&Location"
+ Edit 112 "1"
+ Static 65535 "Part of"
+ Edit 113 "0"
+ Static 65535 ""
+ Edit 114 ""
+ Static 65535 "Ta&gs"
+ Edit 119 ""
+ Button 143 "..."
+ Static 65535 "S&erial" HIDDEN
+ Edit 107 "0012345" HIDDEN
+ Static 65535 "Desc&ription" HIDDEN
+ Edit 108 "IBM Personal Computer" HIDDEN
+ Static 65535 "Date acq&uired" HIDDEN
+ Edit 115 "" HIDDEN
+ Static 65535 "Acquired &from" HIDDEN
+ Edit 116 "" HIDDEN
+ Static 65535 "&Price paid" HIDDEN
+ Edit 117 "" HIDDEN
+ Static 65535 "Current &value" HIDDEN
+ Edit 118 "" HIDDEN
+ Static 65535 "Created" HIDDEN
+ Edit 120 "" HIDDEN
+ Static 65535 "Updated" HIDDEN
+ Edit 121 "" HIDDEN
+ Edit 122 "" HIDDEN
+ Button 148 "Parts"
+ Button 149 "Service"
+ Button 150 "Loans"
+ Button 151 "Used with"
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WFORMT "GONE 2 3 #4" DISABLED
+=SNAP ENDED
+WFORMT "ENDED 4 1 #7" ACTIVE FOCUS
+=END

@@ -1,0 +1,624 @@
+=SNAP TAB5 PALETTE=COLOR CURSOR=0,0,HIDE VRAM=OK
+| Record                                                                         |
+|зддддддддддддддддддддддддддддддддддд Item 5 ддддддддддддддддддддддддддддддддддд©|
+|Ё ID        5             Category  PERI          Status    A                  Ё|
+|Ё Type                                            Condition                    Ё|
+|Ё Maker     Commodore                                                          Ё|
+|Ё Model     M35-A                                                              Ё|
+|Ё Serial    SN-0185                                                            Ё|
+|здддддддддддддддддддддддддд  Parts [Service] Loans  ддддддддддддддддддддддддддд©|
+|Ё     Rec Date       Ty     Cost Summary                                       Ё|
+|Ё       3 2025-01-01 TS          Tested                                        Ё|
+|Ё       1 2026-10-01 RP    12.50 Recapped the power supply                     Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+| Enter=Open Ins=New Ctrl-E=Edit Del=Delete Esc=Form F1=Help                     |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=70 B=74 C=1B D=1E E=17 F=1F G=07 H=30
+|AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CEFFEEEEEEEEGGGGGGGGEEEEEEFFFFFFFFEEGGGGEEEEEEEEEEFFFFFFEEEEGEEEEEEEEEEEEEEEEEEC|
+|CEFFFFEEEEEEGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEFFFFFFFFFEGGGEEEEEEEEEEEEEEEEC|
+|CEFFFFFEEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEFFFFFEEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEFFFFFFEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EDDDDDEEEEEEDDDEEEEEDDDDDDEEEEEEDDDEEEEEEEEDDDEEEEEEDDEEEEEEEEEEEEEEEEEEEEEEEEEE|
+|AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|
+=SNAP NEW PALETTE=COLOR CURSOR=8,17,LINE VRAM=OK
+| Record                                                                         |
+|зддддддддддддддддддддддддддддддддддд Item 5 ддддддддддддддддддддддддддддддддддд©|
+|Ё ID        5             Category  PERI          Status    A                  Ё|
+|Ё Type                                            Condition                    Ё|
+|Ё Maker     Commodore                                                          Ё|
+|Ё Model     M35-A                                                              Ё|
+|Ё Serздддддддддддддддддддддддд New service record ддддддддддддддддддддддддд©   Ё|
+|зддддЁ Record                  Item      5                                 Ёддд©|
+|Ё    Ё Date          -  -      Type                                        Ё   Ё|
+|Ё    Ё Summary                                                             Ё   Ё|
+|Ё    Ё Cost                    Done by                                     Ё   Ё|
+|Ё    Ё Notes     (after saving)                                            Ё   Ё|
+|Ё    юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды   Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+| Enter=Save F4=List Esc=Cancel F1=Help                                          |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=70 B=74 C=1B D=1E E=17 F=1F G=07
+|AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CEFFEEEEEEEEGGGGGGGGEEEEEEFFFFFFFFEEGGGGEEEEEEEEEEFFFFFFEEEEGEEEEEEEEEEEEEEEEEEC|
+|CEFFFFEEEEEEGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEFFFFFFFFFEGGGEEEEEEEEEEEEEEEEC|
+|CEFFFFFEEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEFFFFFEEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEFFFCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCEEEC|
+|CCCCCCEFFFFFFEEEEGGGGGGGGEEEEEEFFFFEEEEEEGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEECCCCC|
+|CDDDDCEFFFFEEEEEEAAAAAAAAAAEEEEFFFFEEEEEEGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECDDDC|
+|CFFFFCEFFFFFFFEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEECFFFC|
+|CEEEECEFFFFEEEEEEGGGGGGGGEEEEEEFFFFFFFEEEGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEECEEEC|
+|CEEEECEFFFFFEEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEECEEEC|
+|CEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EDDDDDEEEEEEDDEEEEEEDDDEEEEEEEEDDEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+|AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|
+=SNAP REQTYPE PALETTE=COLOR CURSOR=0,0,HIDE VRAM=OK
+| Record                                                                         |
+|зддддддддддддддддддддддддддддддддддд Item 5 ддддддддддддддддддддддддддддддддддд©|
+|Ё ID        5             Category  PERI          Status    A                  Ё|
+|Ё Type                                            Condition                    Ё|
+|Ё Maker     Commodore                                                          Ё|
+|Ё Model     M35-A                                                              Ё|
+|Ё Serздддддддддддддддддддддддд New service record ддддддддддддддддддддддддд©   Ё|
+|зддддЁ Record                  Item      5                                 Ёддд©|
+|Ё    Ё Date                    Type                                        Ё   Ё|
+|Ё    Ё Summary                                                             Ё   Ё|
+|Ё    Ё Cost                    Done by                                     Ё   Ё|
+|Ё    Ё Notes     (after saving)                                            Ё   Ё|
+|Ё    юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды   Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+| This field must be filled in                                                   |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=70 B=74 C=1B D=1E E=17 F=1F G=07 H=4F
+|AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CEFFEEEEEEEEGGGGGGGGEEEEEEFFFFFFFFEEGGGGEEEEEEEEEEFFFFFFEEEEGEEEEEEEEEEEEEEEEEEC|
+|CEFFFFEEEEEEGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEFFFFFFFFFEGGGEEEEEEEEEEEEEEEEC|
+|CEFFFFFEEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEFFFFFEEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEFFFCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCEEEC|
+|CCCCCCEFFFFFFEEEEGGGGGGGGEEEEEEFFFFEEEEEEGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEECCCCC|
+|CDDDDCEFFFFEEEEEEGGGGGGGGGGEEEEFFFFEEEEEEAAEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECDDDC|
+|CFFFFCEFFFFFFFEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEECFFFC|
+|CEEEECEFFFFEEEEEEGGGGGGGGEEEEEEFFFFFFFEEEGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEECEEEC|
+|CEEEECEFFFFFEEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEECEEEC|
+|CEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+|AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|
+=SNAP REQSUM PALETTE=COLOR CURSOR=9,17,LINE VRAM=OK
+| Record                                                                         |
+|зддддддддддддддддддддддддддддддддддд Item 5 ддддддддддддддддддддддддддддддддддд©|
+|Ё ID        5             Category  PERI          Status    A                  Ё|
+|Ё Type                                            Condition                    Ё|
+|Ё Maker     Commodore                                                          Ё|
+|Ё Model     M35-A                                                              Ё|
+|Ё Serздддддддддддддддддддддддд New service record ддддддддддддддддддддддддд©   Ё|
+|зддддЁ Record                  Item      5                                 Ёддд©|
+|Ё    Ё Date                    Type      RP                                Ё   Ё|
+|Ё    Ё Summary                                                             Ё   Ё|
+|Ё    Ё Cost                    Done by                                     Ё   Ё|
+|Ё    Ё Notes     (after saving)                                            Ё   Ё|
+|Ё    юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды   Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+| This field must be filled in                                                   |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=70 B=74 C=1B D=1E E=17 F=1F G=07 H=4F
+|AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CEFFEEEEEEEEGGGGGGGGEEEEEEFFFFFFFFEEGGGGEEEEEEEEEEFFFFFFEEEEGEEEEEEEEEEEEEEEEEEC|
+|CEFFFFEEEEEEGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEFFFFFFFFFEGGGEEEEEEEEEEEEEEEEC|
+|CEFFFFFEEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEFFFFFEEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEFFFCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCEEEC|
+|CCCCCCEFFFFFFEEEEGGGGGGGGEEEEEEFFFFEEEEEEGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEECCCCC|
+|CDDDDCEFFFFEEEEEEGGGGGGGGGGEEEEFFFFEEEEEEGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECDDDC|
+|CFFFFCEFFFFFFFEEEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEECFFFC|
+|CEEEECEFFFFEEEEEEGGGGGGGGEEEEEEFFFFFFFEEEGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEECEEEC|
+|CEEEECEFFFFFEEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEECEEEC|
+|CEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+|AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|
+=SNAP ADDED PALETTE=COLOR CURSOR=0,0,HIDE VRAM=OK
+| Record                                                                         |
+|зддддддддддддддддддддддддддддддддддд Item 5 ддддддддддддддддддддддддддддддддддд©|
+|Ё ID        5             Category  PERI          Status    A                  Ё|
+|Ё Type                                            Condition                    Ё|
+|Ё Maker     Commodore                                                          Ё|
+|Ё Model     M35-A                                                              Ё|
+|Ё Serial    SN-0185                                                            Ё|
+|здддддддддддддддддддддддддд  Parts [Service] Loans  ддддддддддддддддддддддддддд©|
+|Ё     Rec Date       Ty     Cost Summary                                       Ё|
+|Ё       3 2025-01-01 TS          Tested                                        Ё|
+|Ё       1 2026-10-01 RP    12.50 Recapped the power supply                     Ё|
+|Ё      25 2026-10-08 RP     8.50 New drive belts                               Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+| Service record 25 added                                                        |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=70 B=74 C=1B D=1E E=17 F=1F G=07 H=30
+|AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CEFFEEEEEEEEGGGGGGGGEEEEEEFFFFFFFFEEGGGGEEEEEEEEEEFFFFFFEEEEGEEEEEEEEEEEEEEEEEEC|
+|CEFFFFEEEEEEGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEFFFFFFFFFEGGGEEEEEEEEEEEEEEEEC|
+|CEFFFFFEEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEFFFFFEEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEFFFFFFEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+|AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|
+=SNAP MEMONEW PALETTE=COLOR CURSOR=7,10,LINE VRAM=OK
+| Record                                                                         |
+|зддддддддддддддддддддддддддддддддддд Item 5 ддддддддддддддддддддддддддддддддддд©|
+|Ё ID        5             Category  PERI          Status    A                  Ё|
+|Ё Type                                            Condition                    Ё|
+|Ё Maker     Commodore                                                          Ё|
+|Ё Model     M35-A                                                              Ё|
+|Ё Serздддимммммммммммммммм Notes of service record 25 мммммммммммммммм╩дддд©   Ё|
+|зддддЁ Re╨                                                            ╨    Ёддд©|
+|Ё    Ё Da╨                                                            ╨    Ё   Ё|
+|Ё    Ё Su╨                                                            ╨    Ё   Ё|
+|Ё    Ё Co╨                                                            ╨    Ё   Ё|
+|Ё    Ё No╨                                                            ╨    Ё   Ё|
+|Ё    юддд╨                                                            ╨дддды   Ё|
+|Ё        ╨                                                            ╨        Ё|
+|Ё        ╨                                                            ╨        Ё|
+|Ё        ╨                                                            ╨        Ё|
+|Ё        ╨                                                            ╨        Ё|
+|Ё        хмммммммммммммммммммммммммммммммммммммммммммммммммммммммммммм╪        Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+| Ctrl-S=Save Ins=Insert Ctrl-Y=Delete-line Esc=Back F1=Help                     |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=70 B=74 C=1B D=1E E=17 F=1F G=07
+|AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CEFFEEEEEEEEGGGGGGGGEEEEEEFFFFFFFFEEGGGGEEEEEEEEEEFFFFFFEEEEGEEEEEEEEEEEEEEEEEEC|
+|CEFFFFEEEEEEGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEFFFFFFFFFEGGGEEEEEEEEEEEEEEEEC|
+|CEFFFFFEEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEFFFFFEEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEFFFCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCEEEC|
+|CCCCCCEFFCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECEEEECCCCC|
+|CDDDDCEFFCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECEEEECDDDC|
+|CEEEECEFFCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECGGEECEEEC|
+|CEEEECEFFCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECEEEECEEEC|
+|CFFFFCEFFCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECEEEECFFFC|
+|CEEEECCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCEEEC|
+|CEEEEEEEECEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECEEEEEEEEC|
+|CEEEEEEEECEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECEEEEEEEEC|
+|CEEEEEEEECEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECEEEEEEEEC|
+|CEEEEEEEECEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECEEEEEEEEC|
+|CEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EDDDDDDEEEEEEDDDEEEEEEEEDDDDDDEEEEEEEEEEEEEDDDEEEEEEDDEEEEEEEEEEEEEEEEEEEEEEEEEE|
+|AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|
+=SNAP MEMOSAVE PALETTE=COLOR CURSOR=0,0,HIDE VRAM=OK
+| Record                                                                         |
+|зддддддддддддддддддддддддддддддддддд Item 5 ддддддддддддддддддддддддддддддддддд©|
+|Ё ID        5             Category  PERI          Status    A                  Ё|
+|Ё Type                                            Condition                    Ё|
+|Ё Maker     Commodore                                                          Ё|
+|Ё Model     M35-A                                                              Ё|
+|Ё Serзддддддддддддддддддддддддд Service record 25 ддддддддддддддддддддддддд©   Ё|
+|зддддЁ Record    25            Item      5                                 Ёддд©|
+|Ё    Ё Date      2026-10-08    Type      RP                                Ё   Ё|
+|Ё    Ё Summary   New drive belts                                           Ё   Ё|
+|Ё    Ё Cost      8.50          Done by   Otto                              Ё   Ё|
+|Ё    Ё Notes     Lines: 2 (F4 to open)                                     Ё   Ё|
+|Ё    юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды   Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+| Enter=Save F4=List Esc=Cancel F1=Help                                          |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=70 B=74 C=1B D=1E E=17 F=1F G=07
+|AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CEFFEEEEEEEEGGGGGGGGEEEEEEFFFFFFFFEEGGGGEEEEEEEEEEFFFFFFEEEEGEEEEEEEEEEEEEEEEEEC|
+|CEFFFFEEEEEEGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEFFFFFFFFFEGGGEEEEEEEEEEEEEEEEC|
+|CEFFFFFEEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEFFFFFEEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEFFFCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCEEEC|
+|CCCCCCEFFFFFFEEEEGGGGGGGGEEEEEEFFFFEEEEEEGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEECCCCC|
+|CDDDDCEFFFFEEEEEEGGGGGGGGGGEEEEFFFFEEEEEEGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECDDDC|
+|CEEEECEFFFFFFFEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEECEEEC|
+|CEEEECEFFFFEEEEEEGGGGGGGGEEEEEEFFFFFFFEEEGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEECEEEC|
+|CFFFFCEFFFFFEEEEEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEEEEEEEEEEEEEEEEEEEEEEEEEEEECFFFC|
+|CEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EDDDDDEEEEEEDDEEEEEEDDDEEEEEEEEDDEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+|AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|
+=SNAP SAVED2 PALETTE=COLOR CURSOR=0,0,HIDE VRAM=OK
+| Record                                                                         |
+|зддддддддддддддддддддддддддддддддддд Item 5 ддддддддддддддддддддддддддддддддддд©|
+|Ё ID        5             Category  PERI          Status    A                  Ё|
+|Ё Type                                            Condition                    Ё|
+|Ё Maker     Commodore                                                          Ё|
+|Ё Model     M35-A                                                              Ё|
+|Ё Serial    SN-0185                                                            Ё|
+|здддддддддддддддддддддддддд  Parts [Service] Loans  ддддддддддддддддддддддддддд©|
+|Ё     Rec Date       Ty     Cost Summary                                       Ё|
+|Ё       3 2025-01-01 TS          Tested                                        Ё|
+|Ё       1 2026-10-01 RP    12.50 Recapped the power supply                     Ё|
+|Ё      25 2026-10-08 RP     8.50 New drive belts                               Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+| Service record 25 saved                                                        |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=70 B=74 C=1B D=1E E=17 F=1F G=07 H=30
+|AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CEFFEEEEEEEEGGGGGGGGEEEEEEFFFFFFFFEEGGGGEEEEEEEEEEFFFFFFEEEEGEEEEEEEEEEEEEEEEEEC|
+|CEFFFFEEEEEEGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEFFFFFFFFFEGGGEEEEEEEEEEEEEEEEC|
+|CEFFFFFEEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEFFFFFEEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEFFFFFFEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+|AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|
+=SNAP MEMOSHOW PALETTE=COLOR CURSOR=0,0,HIDE VRAM=OK
+| Record                                                                         |
+|зддддддддддддддддддддддддддддддддддд Item 5 ддддддддддддддддддддддддддддддддддд©|
+|Ё ID        5             Category  PERI          Status    A                  Ё|
+|Ё Type                                            Condition                    Ё|
+|Ё Maker     Commodore                                                          Ё|
+|Ё Model     M35-A                                                              Ё|
+|Ё Serздддимммммммммммммммм Notes of service record 25 мммммммммммммммм╩дддд©   Ё|
+|зддддЁ Re╨Belts from the spares box.                                  ╨    Ёддд©|
+|Ё    Ё Da╨Both fitted.                                                ╨    Ё   Ё|
+|Ё    Ё Su╨                                                            ╨    Ё   Ё|
+|Ё    Ё Co╨                                                            ╨    Ё   Ё|
+|Ё    Ё No╨                                                            ╨    Ё   Ё|
+|Ё    юддд╨                                                            ╨дддды   Ё|
+|Ё        ╨                                                            ╨        Ё|
+|Ё        ╨                                                            ╨        Ё|
+|Ё        ╨                                                            ╨        Ё|
+|Ё        ╨                                                            ╨        Ё|
+|Ё        хмммммммммммммммммммммммммммммммммммммммммммммммммммммммммммм╪        Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+| Shown read-only                                                                |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=70 B=74 C=1B D=1E E=17 F=1F G=07
+|AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CEFFEEEEEEEEGGGGGGGGEEEEEEFFFFFFFFEEGGGGEEEEEEEEEEFFFFFFEEEEGEEEEEEEEEEEEEEEEEEC|
+|CEFFFFEEEEEEGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEFFFFFFFFFEGGGEEEEEEEEEEEEEEEEC|
+|CEFFFFFEEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEFFFFFEEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEFFFCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCEEEC|
+|CCCCCCEFFCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECEEEECCCCC|
+|CDDDDCEFFCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECEEEECDDDC|
+|CEEEECEFFCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECGGEECEEEC|
+|CEEEECEFFCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECEEEECEEEC|
+|CFFFFCEFFCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECEEEECFFFC|
+|CEEEECCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCEEEC|
+|CEEEEEEEECEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECEEEEEEEEC|
+|CEEEEEEEECEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECEEEEEEEEC|
+|CEEEEEEEECEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECEEEEEEEEC|
+|CEEEEEEEECEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECEEEEEEEEC|
+|CEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+|AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|
+=SNAP DELQ PALETTE=COLOR CURSOR=0,0,HIDE VRAM=OK
+| Record                                                                         |
+|зддддддддддддддддддддддддддддддддддд Item 5 ддддддддддддддддддддддддддддддддддд©|
+|Ё ID        5             Category  PERI          Status    A                  Ё|
+|Ё Type                                            Condition                    Ё|
+|Ё Maker     Commodore                                                          Ё|
+|Ё Model     M35-A                                                              Ё|
+|Ё Serial    SN-0185                                                            Ё|
+|здддддддддддддддддддддддддд  Parts [Service] Loans  ддддддддддддддддддддддддддд©|
+|Ё     Rec Date       Ty     Cost Summary                                       Ё|
+|Ё       3 2025-01-01 TS   имммммммммммммммммммммммммм╩                         Ё|
+|Ё       1 2026-10-01 RP   ╨                          ╨pply                     Ё|
+|Ё      25 2026-10-08 RP   ╨ Delete service record 3? ╨                         Ё|
+|Ё                         ╨                          ╨                         Ё|
+|Ё                         хмммммммммммммммммммммммммм╪                         Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+| Y=Yes N=No                                                                     |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=70 B=74 C=1B D=1E E=17 F=1F G=07
+|AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CEFFEEEEEEEEGGGGGGGGEEEEEEFFFFFFFFEEGGGGEEEEEEEEEEFFFFFFEEEEGEEEEEEEEEEEEEEEEEEC|
+|CEFFFFEEEEEEGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEFFFFFFFFFEGGGEEEEEEEEEEEEEEEEC|
+|CEFFFFFEEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEFFFFFEEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEFFFFFFEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CFFFFFFFFFFFFFFFFFFFFFFFFFCCCCCCCCCCCCCCCCCCCCCCCCCCCCFFFFFFFFFFFFFFFFFFFFFFFFFC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEECEEEEEEEEEEEEEEEEEEEEEEEEEECEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEECEEEEEEEEEEEEEEEEEEEEEEEEEECEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEECEEEEEEEEEEEEEEEEEEEEEEEEEECEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EDEEEEEDEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+|AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|
+=SNAP DELETED PALETTE=COLOR CURSOR=0,0,HIDE VRAM=OK
+| Record                                                                         |
+|зддддддддддддддддддддддддддддддддддд Item 5 ддддддддддддддддддддддддддддддддддд©|
+|Ё ID        5             Category  PERI          Status    A                  Ё|
+|Ё Type                                            Condition                    Ё|
+|Ё Maker     Commodore                                                          Ё|
+|Ё Model     M35-A                                                              Ё|
+|Ё Serial    SN-0185                                                            Ё|
+|здддддддддддддддддддддддддд  Parts [Service] Loans  ддддддддддддддддддддддддддд©|
+|Ё     Rec Date       Ty     Cost Summary                                       Ё|
+|Ё       1 2026-10-01 RP    12.50 Recapped the power supply                     Ё|
+|Ё      25 2026-10-08 RP     8.50 New drive belts                               Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+| Service record 3 deleted                                                       |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=70 B=74 C=1B D=1E E=17 F=1F G=07 H=30
+|AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CEFFEEEEEEEEGGGGGGGGEEEEEEFFFFFFFFEEGGGGEEEEEEEEEEFFFFFFEEEEGEEEEEEEEEEEEEEEEEEC|
+|CEFFFFEEEEEEGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEFFFFFFFFFEGGGEEEEEEEEEEEEEEEEC|
+|CEFFFFFEEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEFFFFFEEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEFFFFFFEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+|AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|
+=SNAP FORM PALETTE=COLOR CURSOR=0,0,HIDE VRAM=OK
+| Record                                                                         |
+|зддддддддддддддддддддддддддддддддддд Item 5 ддддддддддддддддддддддддддддддддддд©|
+|Ё ID        5             Category  PERI          Status    A                  Ё|
+|Ё Type                                            Condition                    Ё|
+|Ё Maker     Commodore                                                          Ё|
+|Ё Model     M35-A                                                              Ё|
+|Ё Serial    SN-0185                                                            Ё|
+|Ё Descr     Commodore 64 breadbin                                              Ё|
+|Ё Works     N             Quantity  3      Available 3                         Ё|
+|Ё Location  GAR           Parent                                               Ё|
+|Ё           Garage                                                             Ё|
+|Ё Acquired  1987-06-06    Source                                               Ё|
+|Ё Price     15.50         Value                                                Ё|
+|Ё Tags      c64,8bit                                                           Ё|
+|Ё Created   2026-10-08    Updated   2026-10-08                                 Ё|
+|Ё Notes     Lines: 2 (F4 to open)                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+|здддддддддддддддддддддддддд  Parts  Service  Loans  ддддддддддддддддддддддддддд©|
+|Ё The Record menu (Alt-C) shows the parts installed in this item, its          Ё|
+|Ё service records, its loans and holds, and the items used with it.            Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+| Ctrl-E=Edit Esc=Back F1=Help                                                   |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=70 B=74 C=1B D=1E E=17 F=1F G=07
+|AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CEFFEEEEEEEEAAAAAAAAEEEEEEFFFFFFFFEEGGGGEEEEEEEEEEFFFFFFEEEEGEEEEEEEEEEEEEEEEEEC|
+|CEFFFFEEEEEEGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEFFFFFFFFFEGGGEEEEEEEEEEEEEEEEC|
+|CEFFFFFEEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEFFFFFEEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEFFFFFFEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEFFFFFEEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEC|
+|CEFFFFFEEEEEGEEEEEEEEEEEEEFFFFFFFFEEGGGGGEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGC|
+|CEFFFFFFFFEEGGGGGGGGGGEEEEFFFFFFEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGC|
+|CEEEEEEEEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEC|
+|CEFFFFFFFFEEGGGGGGGGGGEEEEFFFFFFEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEC|
+|CEFFFFFEEEEEGGGGGGGGGEEEEEFFFFFEEEEEGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEFFFFEEEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEC|
+|CEFFFFFFFEEEGGGGGGGGGGEEEEFFFFFFFEEEGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEFFFFFEEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EDDDDDDEEEEEEDDDEEEEEEDDEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+|AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|

@@ -1,0 +1,15 @@
+# MEMO.C and MEMOIO.H: the memo editor's messages (MM_).
+# W=79 key hints: VID_COLS - 1, level digits not counted
+300 MM_HINT Ctrl-S=Save Ins=Insert Ctrl-Y=Delete-line Esc=Back F1=Help
+301 MM_HINTRO Esc=Close F1=Help
+
+302 MM_CHANGED Tabs, control bytes or long lines were changed; Ctrl-S writes them back
+303 MM_TRUNC The notes were cut short by the server; shown read-only
+304 MM_TOOMANY The notes have more than ^1 lines; shown read-only
+305 MM_FULL The notes are full
+306 MM_LINEFULL The line is full; Enter starts a new one
+307 MM_PARTIAL Saving stopped after ^1 of ^2 lines; the stored notes are unchanged
+308 MM_READONLY Shown read-only
+309 MM_TOOLONG The notes would pass the stored limit once converted; shown read-only
+310 MM_MAYBE The connection was lost as the notes were sent: they may have been saved
+311 MM_OLDSRV The server is too old to save notes this long; the stored notes are unchanged

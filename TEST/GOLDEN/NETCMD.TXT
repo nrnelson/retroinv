@@ -1,0 +1,37 @@
++OK
+-ERR 401 bad user name or password
++OK LEVEL=3 NAME="System Administrator"
++OK
+-ERR 103 line too long
++DATA
+K ITEM_ID=25
+K CATEGORY=DRV
+K ITEMTYPE=""
+K MFR=Tandon
+K MODEL=TM100-2
+K SERIALNO=""
+K DESCR="Twenty-five copies of this item make one page of over two KB"
+K COND=""
+K WORKS=?
+K QTY=2
+K ON_LOAN=0
+K RESERVED=0
+K IN_USE=0
+K ATTACHED=0
+K LOC_ID=0
+K PARENT_ID=0
+K ACQ_DATE=""
+K ACQ_SRC=""
+K ACQ_PRICE=""
+K CUR_VALUE=""
+K TAGS=network,server,netbios,netbeui,session,listen,call,hangup
+K STATUS=A
+K CREATED=20261008
+K UPDATED=20261008
+.
++DATA
+F ITEM_ID CATEGORY MFR MODEL WORKS QTY AVAIL LOC_ID LOC_NAME STATUS
+R 25 DRV Tandon TM100-2 ? 2 Y 0 "" A
+.
++OK
++OK

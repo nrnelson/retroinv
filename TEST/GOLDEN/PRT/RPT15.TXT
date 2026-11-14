@@ -1,0 +1,23 @@
+RETROINV  Valuation                                          2026-10-08  Page 1
+
+
+      ID Cat  Maker            Model               Qty        Paid       Value
+-------------------------------------------------------------------------------
+       1 SYS  IBM              5150                  1       10.00        1.00
+       2 CARD IBM              5150                  1       20.00        2.00
+       3 SYS  IBM              5150                  1       30.00        3.00
+       4 CARD IBM              5150                  1       40.00        4.00
+       5 SYS  IBM              5150                  1       50.00        5.00
+       6 CARD IBM              5150                  1       60.00        6.00
+       7 SYS  IBM              5150                  1       70.00        7.00
+
+Total                          Items: 7              7      280.00       28.00
+RETROINV  Valuation                                          2026-10-08  Page 2
+
+
+Cat  Name                                 Items    Qty        Paid       Value
+-------------------------------------------------------------------------------
+Totals by category
+SYS  Systems                                  4      4      160.00       16.00
+CARD Expansion cards                          3      3      120.00       12.00
+

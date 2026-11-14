@@ -1,0 +1,4562 @@
+=SNAP LIST
+INVWIN "RETROINV - Items by ID" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID" CHECKED
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 1546 "Next o&rder"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|3 items|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status"
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0A@0+55 1F@55+80 2B@135+100 3F@235+100 4F@335+40 5F@375+40 6B@415+100 7F@515+55
+  ListBox 1 "" FOCUS
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Office" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+28"Office"
+   ROW "       2 DRV Drives                Tandon                         TM100-2                        no         2 Box B2"
+   ROW "       3 CARD Expansion cards      Hercules                       Graphics Card                  ?          1 Shelf A1" CUT
+=SNAP VIEW
+#32770 "Item 1" ACTIVE
+ Static 65535 "Item ID"
+ Static 100 "1"
+ Static 65535 "Maker"
+ Edit 105 "IBM"
+ Static 65535 "Model"
+ Edit 106 "5150"
+ WTAB 95 "&Overview|&Technical|&Acquisition|&Notes" CUR 0 FOCUS
+ Static 65535 "Category"
+ Static 101 "SYS   Systems"
+ Static 65535 "Status"
+ Static 102 "A  Active"
+ Static 65535 "Type"
+ Static 103 ""
+ Static 65535 "Condition"
+ Static 104 "GD   Good"
+ Static 65535 "Works"
+ Static 109 "Y  Yes"
+ Static 65535 "Quantity"
+ Static 110 "1"
+ Static 65535 ""
+ Edit 111 "Available 1"
+ Static 65535 "Location"
+ Static 112 "OFF"
+ Static 65535 "Part of"
+ Edit 113 ""
+ Static 65535 ""
+ Static 114 "Office"
+ Static 65535 "Tags"
+ Edit 119 ""
+ Static 65535 "Serial" HIDDEN
+ Static 107 "0012345" HIDDEN
+ Static 65535 "Description" HIDDEN
+ Edit 108 "IBM Personal Computer" HIDDEN
+ Static 65535 "Date acquired" HIDDEN
+ Static 115 "" HIDDEN
+ Static 65535 "Acquired from" HIDDEN
+ Static 116 "" HIDDEN
+ Static 65535 "Price paid" HIDDEN
+ Static 117 "" HIDDEN
+ Static 65535 "Current value" HIDDEN
+ Static 118 "" HIDDEN
+ Static 65535 "Created" HIDDEN
+ Static 120 "2026-10-08" HIDDEN
+ Static 65535 "Updated" HIDDEN
+ Static 121 "2026-10-08" HIDDEN
+ Edit 122 "Bought at a swap meet in 1991.??Two full-height drives, keyboard." HIDDEN
+ Button 148 "Parts"
+ Button 149 "Service"
+ Button 150 "Loans"
+ Button 151 "Used with"
+ Static 99 ""
+ Button 2 "Close" DEFAULT
+ Button 98 "Edit"
+ Button 94 "&Help"
+INVWIN "RETROINV - Items by ID" DISABLED
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID" CHECKED
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 1546 "Next o&rder"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|3 items|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status"
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0A@0+55 1F@55+80 2B@135+100 3F@235+100 4F@335+40 5F@375+40 6B@415+100 7F@515+55
+  ListBox 1 ""
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Office" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+28"Office"
+   ROW "       2 DRV Drives                Tandon                         TM100-2                        no         2 Box B2"
+   ROW "       3 CARD Expansion cards      Hercules                       Graphics Card                  ?          1 Shelf A1" CUT
+=SNAP EDIT
+#32770 "Item 1 - Edit" ACTIVE
+ Static 65535 "Item ID"
+ Edit 100 "1"
+ Static 65535 "&Maker"
+ Edit 105 "IBM"
+ Static 65535 "Mo&del"
+ Edit 106 "5150"
+ WTAB 95 "&Overview|&Technical|&Acquisition|&Notes" CUR 0
+ Static 65535 "&Category"
+ ComboBox 101 "SYS   Systems" FOCUS
+  ROW "SYS   Systems" SELECTED
+  ROW "MOBO  Motherboards"
+  ROW "CPU   Processors"
+  ROW "CARD  Expansion cards"
+  ROW "DRV   Drives"
+  ROW "PERI  Peripherals"
+  ROW "SW    Software"
+  ROW "MAN   Manuals"
+  ROW "CBL   Cables"
+  ROW "PART  Parts"
+ Static 65535 "&Status"
+ ComboBox 102 "A  Active"
+  ROW "A  Active" SELECTED
+  ROW "D  Disposed of"
+ Static 65535 "T&ype"
+ Edit 103 ""
+ Static 65535 "Cond&ition"
+ ComboBox 104 "GD   Good"
+  ROW ""
+  ROW "NEW  New"
+  ROW "EXC  Excellent"
+  ROW "GD   Good" SELECTED
+  ROW "FR   Fair"
+  ROW "PR   Poor"
+ Static 65535 "&Works"
+ ComboBox 109 "Y  Yes"
+  ROW "?  Not tested"
+  ROW "Y  Yes" SELECTED
+  ROW "I  Intermittently"
+  ROW "N  No"
+ Static 65535 "&Quantity"
+ Edit 110 "1"
+ Static 65535 ""
+ Edit 111 "Available 1"
+ Static 65535 "&Location"
+ Edit 112 "OFF"
+ Button 136 "..."
+ Static 65535 "Part of"
+ Edit 113 ""
+ Static 65535 ""
+ Edit 114 "Office"
+ Static 65535 "Ta&gs"
+ Edit 119 ""
+ Button 143 "..."
+ Static 65535 "S&erial" HIDDEN
+ Edit 107 "0012345" HIDDEN
+ Static 65535 "Desc&ription" HIDDEN
+ Edit 108 "IBM Personal Computer" HIDDEN
+ Static 65535 "Date acq&uired" HIDDEN
+ Edit 115 "" HIDDEN
+ Static 65535 "Acquired &from" HIDDEN
+ Edit 116 "" HIDDEN
+ Static 65535 "&Price paid" HIDDEN
+ Edit 117 "" HIDDEN
+ Static 65535 "Current &value" HIDDEN
+ Edit 118 "" HIDDEN
+ Static 65535 "Created" HIDDEN
+ Edit 120 "2026-10-08" HIDDEN
+ Static 65535 "Updated" HIDDEN
+ Edit 121 "2026-10-08" HIDDEN
+ Edit 122 "Bought at a swap meet in 1991.??Two full-height drives, keyboard." HIDDEN
+ Button 148 "Parts"
+ Button 149 "Service"
+ Button 150 "Loans"
+ Button 151 "Used with"
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ Button 94 "&Help"
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+INVWIN "RETROINV - Items by ID" DISABLED
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID" CHECKED
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 1546 "Next o&rder"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|3 items|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status"
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0A@0+55 1F@55+80 2B@135+100 3F@235+100 4F@335+40 5F@375+40 6B@415+100 7F@515+55
+  ListBox 1 ""
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Office" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+28"Office"
+   ROW "       2 DRV Drives                Tandon                         TM100-2                        no         2 Box B2"
+   ROW "       3 CARD Expansion cards      Hercules                       Graphics Card                  ?          1 Shelf A1" CUT
+=SNAP CAT
+#32770 "Item 1 - Edit" ACTIVE
+ Static 65535 "Item ID"
+ Edit 100 "1"
+ Static 65535 "&Maker"
+ Edit 105 "IBM"
+ Static 65535 "Mo&del"
+ Edit 106 "5150"
+ WTAB 95 "&Overview|&Technical|&Acquisition|&Notes" CUR 0
+ Static 65535 "&Category"
+ ComboBox 101 "SYS   Systems" FOCUS
+  ROW "SYS   Systems" SELECTED
+  ROW "MOBO  Motherboards"
+  ROW "CPU   Processors"
+  ROW "CARD  Expansion cards"
+  ROW "DRV   Drives"
+  ROW "PERI  Peripherals"
+  ROW "SW    Software"
+  ROW "MAN   Manuals"
+  ROW "CBL   Cables"
+  ROW "PART  Parts"
+ Static 65535 "&Status"
+ ComboBox 102 "A  Active"
+  ROW "A  Active" SELECTED
+  ROW "D  Disposed of"
+ Static 65535 "T&ype"
+ Edit 103 ""
+ Static 65535 "Cond&ition"
+ ComboBox 104 "GD   Good"
+  ROW ""
+  ROW "NEW  New"
+  ROW "EXC  Excellent"
+  ROW "GD   Good" SELECTED
+  ROW "FR   Fair"
+  ROW "PR   Poor"
+ Static 65535 "&Works"
+ ComboBox 109 "Y  Yes"
+  ROW "?  Not tested"
+  ROW "Y  Yes" SELECTED
+  ROW "I  Intermittently"
+  ROW "N  No"
+ Static 65535 "&Quantity"
+ Edit 110 "1"
+ Static 65535 ""
+ Edit 111 "Available 1"
+ Static 65535 "&Location"
+ Edit 112 "OFF"
+ Button 136 "..."
+ Static 65535 "Part of"
+ Edit 113 ""
+ Static 65535 ""
+ Edit 114 "Office"
+ Static 65535 "Ta&gs"
+ Edit 119 ""
+ Button 143 "..."
+ Static 65535 "S&erial" HIDDEN
+ Edit 107 "0012345" HIDDEN
+ Static 65535 "Desc&ription" HIDDEN
+ Edit 108 "IBM Personal Computer" HIDDEN
+ Static 65535 "Date acq&uired" HIDDEN
+ Edit 115 "" HIDDEN
+ Static 65535 "Acquired &from" HIDDEN
+ Edit 116 "" HIDDEN
+ Static 65535 "&Price paid" HIDDEN
+ Edit 117 "" HIDDEN
+ Static 65535 "Current &value" HIDDEN
+ Edit 118 "" HIDDEN
+ Static 65535 "Created" HIDDEN
+ Edit 120 "2026-10-08" HIDDEN
+ Static 65535 "Updated" HIDDEN
+ Edit 121 "2026-10-08" HIDDEN
+ Edit 122 "Bought at a swap meet in 1991.??Two full-height drives, keyboard." HIDDEN
+ Button 148 "Parts"
+ Button 149 "Service"
+ Button 150 "Loans"
+ Button 151 "Used with"
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ Button 94 "&Help"
+ComboLBox 1000 ""
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+INVWIN "RETROINV - Items by ID" DISABLED
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID" CHECKED
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 1546 "Next o&rder"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|3 items|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status"
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0A@0+55 1F@55+80 2B@135+100 3F@235+100 4F@335+40 5F@375+40 6B@415+100 7F@515+55
+  ListBox 1 ""
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Office" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+28"Office"
+   ROW "       2 DRV Drives                Tandon                         TM100-2                        no         2 Box B2"
+   ROW "       3 CARD Expansion cards      Hercules                       Graphics Card                  ?          1 Shelf A1" CUT
+=SNAP CATD
+#32770 "Item 1 - Edit" ACTIVE
+ Static 65535 "Item ID"
+ Edit 100 "1"
+ Static 65535 "&Maker"
+ Edit 105 "IBM"
+ Static 65535 "Mo&del"
+ Edit 106 "5150"
+ WTAB 95 "&Overview|&Technical|&Acquisition|&Notes" CUR 0
+ Static 65535 "&Category"
+ ComboBox 101 "DRV   Drives" FOCUS
+  ROW "SYS   Systems"
+  ROW "MOBO  Motherboards"
+  ROW "CPU   Processors"
+  ROW "CARD  Expansion cards"
+  ROW "DRV   Drives" SELECTED
+  ROW "PERI  Peripherals"
+  ROW "SW    Software"
+  ROW "MAN   Manuals"
+  ROW "CBL   Cables"
+  ROW "PART  Parts"
+ Static 65535 "&Status"
+ ComboBox 102 "A  Active"
+  ROW "A  Active" SELECTED
+  ROW "D  Disposed of"
+ Static 65535 "T&ype"
+ Edit 103 ""
+ Static 65535 "Cond&ition"
+ ComboBox 104 "GD   Good"
+  ROW ""
+  ROW "NEW  New"
+  ROW "EXC  Excellent"
+  ROW "GD   Good" SELECTED
+  ROW "FR   Fair"
+  ROW "PR   Poor"
+ Static 65535 "&Works"
+ ComboBox 109 "Y  Yes"
+  ROW "?  Not tested"
+  ROW "Y  Yes" SELECTED
+  ROW "I  Intermittently"
+  ROW "N  No"
+ Static 65535 "&Quantity"
+ Edit 110 "1"
+ Static 65535 ""
+ Edit 111 "Available 1"
+ Static 65535 "&Location"
+ Edit 112 "OFF"
+ Button 136 "..."
+ Static 65535 "Part of"
+ Edit 113 ""
+ Static 65535 ""
+ Edit 114 "Office"
+ Static 65535 "Ta&gs"
+ Edit 119 ""
+ Button 143 "..."
+ Static 65535 "S&erial" HIDDEN
+ Edit 107 "0012345" HIDDEN
+ Static 65535 "Desc&ription" HIDDEN
+ Edit 108 "IBM Personal Computer" HIDDEN
+ Static 65535 "Date acq&uired" HIDDEN
+ Edit 115 "" HIDDEN
+ Static 65535 "Acquired &from" HIDDEN
+ Edit 116 "" HIDDEN
+ Static 65535 "&Price paid" HIDDEN
+ Edit 117 "" HIDDEN
+ Static 65535 "Current &value" HIDDEN
+ Edit 118 "" HIDDEN
+ Static 65535 "Created" HIDDEN
+ Edit 120 "2026-10-08" HIDDEN
+ Static 65535 "Updated" HIDDEN
+ Edit 121 "2026-10-08" HIDDEN
+ Edit 122 "Bought at a swap meet in 1991.??Two full-height drives, keyboard." HIDDEN
+ Button 148 "Parts"
+ Button 149 "Service"
+ Button 150 "Loans"
+ Button 151 "Used with"
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ Button 94 "&Help"
+ComboLBox 1000 ""
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+INVWIN "RETROINV - Items by ID" DISABLED
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID" CHECKED
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 1546 "Next o&rder"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|3 items|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status"
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0A@0+55 1F@55+80 2B@135+100 3F@235+100 4F@335+40 5F@375+40 6B@415+100 7F@515+55
+  ListBox 1 ""
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Office" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+28"Office"
+   ROW "       2 DRV Drives                Tandon                         TM100-2                        no         2 Box B2"
+   ROW "       3 CARD Expansion cards      Hercules                       Graphics Card                  ?          1 Shelf A1" CUT
+=SNAP CATOK
+#32770 "Item 1 - Edit" ACTIVE
+ Static 65535 "Item ID"
+ Edit 100 "1"
+ Static 65535 "&Maker"
+ Edit 105 "IBM"
+ Static 65535 "Mo&del"
+ Edit 106 "5150"
+ WTAB 95 "&Overview|&Technical|&Acquisition|&Notes" CUR 0
+ Static 65535 "&Category"
+ ComboBox 101 "DRV   Drives" FOCUS
+  ROW "SYS   Systems"
+  ROW "MOBO  Motherboards"
+  ROW "CPU   Processors"
+  ROW "CARD  Expansion cards"
+  ROW "DRV   Drives" SELECTED
+  ROW "PERI  Peripherals"
+  ROW "SW    Software"
+  ROW "MAN   Manuals"
+  ROW "CBL   Cables"
+  ROW "PART  Parts"
+ Static 65535 "&Status"
+ ComboBox 102 "A  Active"
+  ROW "A  Active" SELECTED
+  ROW "D  Disposed of"
+ Static 65535 "T&ype"
+ Edit 103 ""
+ Static 65535 "Cond&ition"
+ ComboBox 104 "GD   Good"
+  ROW ""
+  ROW "NEW  New"
+  ROW "EXC  Excellent"
+  ROW "GD   Good" SELECTED
+  ROW "FR   Fair"
+  ROW "PR   Poor"
+ Static 65535 "&Works"
+ ComboBox 109 "Y  Yes"
+  ROW "?  Not tested"
+  ROW "Y  Yes" SELECTED
+  ROW "I  Intermittently"
+  ROW "N  No"
+ Static 65535 "&Quantity"
+ Edit 110 "1"
+ Static 65535 ""
+ Edit 111 "Available 1"
+ Static 65535 "&Location"
+ Edit 112 "OFF"
+ Button 136 "..."
+ Static 65535 "Part of"
+ Edit 113 ""
+ Static 65535 ""
+ Edit 114 "Office"
+ Static 65535 "Ta&gs"
+ Edit 119 ""
+ Button 143 "..."
+ Static 65535 "S&erial" HIDDEN
+ Edit 107 "0012345" HIDDEN
+ Static 65535 "Desc&ription" HIDDEN
+ Edit 108 "IBM Personal Computer" HIDDEN
+ Static 65535 "Date acq&uired" HIDDEN
+ Edit 115 "" HIDDEN
+ Static 65535 "Acquired &from" HIDDEN
+ Edit 116 "" HIDDEN
+ Static 65535 "&Price paid" HIDDEN
+ Edit 117 "" HIDDEN
+ Static 65535 "Current &value" HIDDEN
+ Edit 118 "" HIDDEN
+ Static 65535 "Created" HIDDEN
+ Edit 120 "2026-10-08" HIDDEN
+ Static 65535 "Updated" HIDDEN
+ Edit 121 "2026-10-08" HIDDEN
+ Edit 122 "Bought at a swap meet in 1991.??Two full-height drives, keyboard." HIDDEN
+ Button 148 "Parts"
+ Button 149 "Service"
+ Button 150 "Loans"
+ Button 151 "Used with"
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ Button 94 "&Help"
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+INVWIN "RETROINV - Items by ID" DISABLED
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID" CHECKED
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 1546 "Next o&rder"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|3 items|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status"
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0A@0+55 1F@55+80 2B@135+100 3F@235+100 4F@335+40 5F@375+40 6B@415+100 7F@515+55
+  ListBox 1 ""
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Office" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+28"Office"
+   ROW "       2 DRV Drives                Tandon                         TM100-2                        no         2 Box B2"
+   ROW "       3 CARD Expansion cards      Hercules                       Graphics Card                  ?          1 Shelf A1" CUT
+=SNAP CATP
+#32770 "Item 1 - Edit" ACTIVE
+ Static 65535 "Item ID"
+ Edit 100 "1"
+ Static 65535 "&Maker"
+ Edit 105 "IBM"
+ Static 65535 "Mo&del"
+ Edit 106 "5150"
+ WTAB 95 "&Overview|&Technical|&Acquisition|&Notes" CUR 0
+ Static 65535 "&Category"
+ ComboBox 101 "PERI  Peripherals" FOCUS
+  ROW "SYS   Systems"
+  ROW "MOBO  Motherboards"
+  ROW "CPU   Processors"
+  ROW "CARD  Expansion cards"
+  ROW "DRV   Drives"
+  ROW "PERI  Peripherals" SELECTED
+  ROW "SW    Software"
+  ROW "MAN   Manuals"
+  ROW "CBL   Cables"
+  ROW "PART  Parts"
+ Static 65535 "&Status"
+ ComboBox 102 "A  Active"
+  ROW "A  Active" SELECTED
+  ROW "D  Disposed of"
+ Static 65535 "T&ype"
+ Edit 103 ""
+ Static 65535 "Cond&ition"
+ ComboBox 104 "GD   Good"
+  ROW ""
+  ROW "NEW  New"
+  ROW "EXC  Excellent"
+  ROW "GD   Good" SELECTED
+  ROW "FR   Fair"
+  ROW "PR   Poor"
+ Static 65535 "&Works"
+ ComboBox 109 "Y  Yes"
+  ROW "?  Not tested"
+  ROW "Y  Yes" SELECTED
+  ROW "I  Intermittently"
+  ROW "N  No"
+ Static 65535 "&Quantity"
+ Edit 110 "1"
+ Static 65535 ""
+ Edit 111 "Available 1"
+ Static 65535 "&Location"
+ Edit 112 "OFF"
+ Button 136 "..."
+ Static 65535 "Part of"
+ Edit 113 ""
+ Static 65535 ""
+ Edit 114 "Office"
+ Static 65535 "Ta&gs"
+ Edit 119 ""
+ Button 143 "..."
+ Static 65535 "S&erial" HIDDEN
+ Edit 107 "0012345" HIDDEN
+ Static 65535 "Desc&ription" HIDDEN
+ Edit 108 "IBM Personal Computer" HIDDEN
+ Static 65535 "Date acq&uired" HIDDEN
+ Edit 115 "" HIDDEN
+ Static 65535 "Acquired &from" HIDDEN
+ Edit 116 "" HIDDEN
+ Static 65535 "&Price paid" HIDDEN
+ Edit 117 "" HIDDEN
+ Static 65535 "Current &value" HIDDEN
+ Edit 118 "" HIDDEN
+ Static 65535 "Created" HIDDEN
+ Edit 120 "2026-10-08" HIDDEN
+ Static 65535 "Updated" HIDDEN
+ Edit 121 "2026-10-08" HIDDEN
+ Edit 122 "Bought at a swap meet in 1991.??Two full-height drives, keyboard." HIDDEN
+ Button 148 "Parts"
+ Button 149 "Service"
+ Button 150 "Loans"
+ Button 151 "Used with"
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ Button 94 "&Help"
+ComboLBox 1000 ""
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+INVWIN "RETROINV - Items by ID" DISABLED
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID" CHECKED
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 1546 "Next o&rder"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|3 items|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status"
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0A@0+55 1F@55+80 2B@135+100 3F@235+100 4F@335+40 5F@375+40 6B@415+100 7F@515+55
+  ListBox 1 ""
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Office" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+28"Office"
+   ROW "       2 DRV Drives                Tandon                         TM100-2                        no         2 Box B2"
+   ROW "       3 CARD Expansion cards      Hercules                       Graphics Card                  ?          1 Shelf A1" CUT
+=SNAP CATPP
+#32770 "Item 1 - Edit" ACTIVE
+ Static 65535 "Item ID"
+ Edit 100 "1"
+ Static 65535 "&Maker"
+ Edit 105 "IBM"
+ Static 65535 "Mo&del"
+ Edit 106 "5150"
+ WTAB 95 "&Overview|&Technical|&Acquisition|&Notes" CUR 0
+ Static 65535 "&Category"
+ ComboBox 101 "PART  Parts" FOCUS
+  ROW "SYS   Systems"
+  ROW "MOBO  Motherboards"
+  ROW "CPU   Processors"
+  ROW "CARD  Expansion cards"
+  ROW "DRV   Drives"
+  ROW "PERI  Peripherals"
+  ROW "SW    Software"
+  ROW "MAN   Manuals"
+  ROW "CBL   Cables"
+  ROW "PART  Parts" SELECTED
+ Static 65535 "&Status"
+ ComboBox 102 "A  Active"
+  ROW "A  Active" SELECTED
+  ROW "D  Disposed of"
+ Static 65535 "T&ype"
+ Edit 103 ""
+ Static 65535 "Cond&ition"
+ ComboBox 104 "GD   Good"
+  ROW ""
+  ROW "NEW  New"
+  ROW "EXC  Excellent"
+  ROW "GD   Good" SELECTED
+  ROW "FR   Fair"
+  ROW "PR   Poor"
+ Static 65535 "&Works"
+ ComboBox 109 "Y  Yes"
+  ROW "?  Not tested"
+  ROW "Y  Yes" SELECTED
+  ROW "I  Intermittently"
+  ROW "N  No"
+ Static 65535 "&Quantity"
+ Edit 110 "1"
+ Static 65535 ""
+ Edit 111 "Available 1"
+ Static 65535 "&Location"
+ Edit 112 "OFF"
+ Button 136 "..."
+ Static 65535 "Part of"
+ Edit 113 ""
+ Static 65535 ""
+ Edit 114 "Office"
+ Static 65535 "Ta&gs"
+ Edit 119 ""
+ Button 143 "..."
+ Static 65535 "S&erial" HIDDEN
+ Edit 107 "0012345" HIDDEN
+ Static 65535 "Desc&ription" HIDDEN
+ Edit 108 "IBM Personal Computer" HIDDEN
+ Static 65535 "Date acq&uired" HIDDEN
+ Edit 115 "" HIDDEN
+ Static 65535 "Acquired &from" HIDDEN
+ Edit 116 "" HIDDEN
+ Static 65535 "&Price paid" HIDDEN
+ Edit 117 "" HIDDEN
+ Static 65535 "Current &value" HIDDEN
+ Edit 118 "" HIDDEN
+ Static 65535 "Created" HIDDEN
+ Edit 120 "2026-10-08" HIDDEN
+ Static 65535 "Updated" HIDDEN
+ Edit 121 "2026-10-08" HIDDEN
+ Edit 122 "Bought at a swap meet in 1991.??Two full-height drives, keyboard." HIDDEN
+ Button 148 "Parts"
+ Button 149 "Service"
+ Button 150 "Loans"
+ Button 151 "Used with"
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ Button 94 "&Help"
+ComboLBox 1000 ""
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+INVWIN "RETROINV - Items by ID" DISABLED
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID" CHECKED
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 1546 "Next o&rder"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|3 items|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status"
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0A@0+55 1F@55+80 2B@135+100 3F@235+100 4F@335+40 5F@375+40 6B@415+100 7F@515+55
+  ListBox 1 ""
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Office" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+28"Office"
+   ROW "       2 DRV Drives                Tandon                         TM100-2                        no         2 Box B2"
+   ROW "       3 CARD Expansion cards      Hercules                       Graphics Card                  ?          1 Shelf A1" CUT
+=SNAP CATESC
+#32770 "Item 1 - Edit" ACTIVE
+ Static 65535 "Item ID"
+ Edit 100 "1"
+ Static 65535 "&Maker"
+ Edit 105 "IBM"
+ Static 65535 "Mo&del"
+ Edit 106 "5150"
+ WTAB 95 "&Overview|&Technical|&Acquisition|&Notes" CUR 0
+ Static 65535 "&Category"
+ ComboBox 101 "DRV   Drives" FOCUS
+  ROW "SYS   Systems"
+  ROW "MOBO  Motherboards"
+  ROW "CPU   Processors"
+  ROW "CARD  Expansion cards"
+  ROW "DRV   Drives" SELECTED
+  ROW "PERI  Peripherals"
+  ROW "SW    Software"
+  ROW "MAN   Manuals"
+  ROW "CBL   Cables"
+  ROW "PART  Parts"
+ Static 65535 "&Status"
+ ComboBox 102 "A  Active"
+  ROW "A  Active" SELECTED
+  ROW "D  Disposed of"
+ Static 65535 "T&ype"
+ Edit 103 ""
+ Static 65535 "Cond&ition"
+ ComboBox 104 "GD   Good"
+  ROW ""
+  ROW "NEW  New"
+  ROW "EXC  Excellent"
+  ROW "GD   Good" SELECTED
+  ROW "FR   Fair"
+  ROW "PR   Poor"
+ Static 65535 "&Works"
+ ComboBox 109 "Y  Yes"
+  ROW "?  Not tested"
+  ROW "Y  Yes" SELECTED
+  ROW "I  Intermittently"
+  ROW "N  No"
+ Static 65535 "&Quantity"
+ Edit 110 "1"
+ Static 65535 ""
+ Edit 111 "Available 1"
+ Static 65535 "&Location"
+ Edit 112 "OFF"
+ Button 136 "..."
+ Static 65535 "Part of"
+ Edit 113 ""
+ Static 65535 ""
+ Edit 114 "Office"
+ Static 65535 "Ta&gs"
+ Edit 119 ""
+ Button 143 "..."
+ Static 65535 "S&erial" HIDDEN
+ Edit 107 "0012345" HIDDEN
+ Static 65535 "Desc&ription" HIDDEN
+ Edit 108 "IBM Personal Computer" HIDDEN
+ Static 65535 "Date acq&uired" HIDDEN
+ Edit 115 "" HIDDEN
+ Static 65535 "Acquired &from" HIDDEN
+ Edit 116 "" HIDDEN
+ Static 65535 "&Price paid" HIDDEN
+ Edit 117 "" HIDDEN
+ Static 65535 "Current &value" HIDDEN
+ Edit 118 "" HIDDEN
+ Static 65535 "Created" HIDDEN
+ Edit 120 "2026-10-08" HIDDEN
+ Static 65535 "Updated" HIDDEN
+ Edit 121 "2026-10-08" HIDDEN
+ Edit 122 "Bought at a swap meet in 1991.??Two full-height drives, keyboard." HIDDEN
+ Button 148 "Parts"
+ Button 149 "Service"
+ Button 150 "Loans"
+ Button 151 "Used with"
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ Button 94 "&Help"
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+INVWIN "RETROINV - Items by ID" DISABLED
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID" CHECKED
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 1546 "Next o&rder"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|3 items|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status"
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0A@0+55 1F@55+80 2B@135+100 3F@235+100 4F@335+40 5F@375+40 6B@415+100 7F@515+55
+  ListBox 1 ""
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Office" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+28"Office"
+   ROW "       2 DRV Drives                Tandon                         TM100-2                        no         2 Box B2"
+   ROW "       3 CARD Expansion cards      Hercules                       Graphics Card                  ?          1 Shelf A1" CUT
+=SNAP CATHELP
+#32770 "RETROINV Help" ACTIVE
+ Edit 212 "Item: Category????The item's category, a code of up to 4 letters and digits, chosen??from the list of the categories, which shows each code with its name.??Requ" FOCUS
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+#32770 "Item 1 - Edit" DISABLED
+ Static 65535 "Item ID"
+ Edit 100 "1"
+ Static 65535 "&Maker"
+ Edit 105 "IBM"
+ Static 65535 "Mo&del"
+ Edit 106 "5150"
+ WTAB 95 "&Overview|&Technical|&Acquisition|&Notes" CUR 0
+ Static 65535 "&Category"
+ ComboBox 101 "DRV   Drives"
+  ROW "SYS   Systems"
+  ROW "MOBO  Motherboards"
+  ROW "CPU   Processors"
+  ROW "CARD  Expansion cards"
+  ROW "DRV   Drives" SELECTED
+  ROW "PERI  Peripherals"
+  ROW "SW    Software"
+  ROW "MAN   Manuals"
+  ROW "CBL   Cables"
+  ROW "PART  Parts"
+ Static 65535 "&Status"
+ ComboBox 102 "A  Active"
+  ROW "A  Active" SELECTED
+  ROW "D  Disposed of"
+ Static 65535 "T&ype"
+ Edit 103 ""
+ Static 65535 "Cond&ition"
+ ComboBox 104 "GD   Good"
+  ROW ""
+  ROW "NEW  New"
+  ROW "EXC  Excellent"
+  ROW "GD   Good" SELECTED
+  ROW "FR   Fair"
+  ROW "PR   Poor"
+ Static 65535 "&Works"
+ ComboBox 109 "Y  Yes"
+  ROW "?  Not tested"
+  ROW "Y  Yes" SELECTED
+  ROW "I  Intermittently"
+  ROW "N  No"
+ Static 65535 "&Quantity"
+ Edit 110 "1"
+ Static 65535 ""
+ Edit 111 "Available 1"
+ Static 65535 "&Location"
+ Edit 112 "OFF"
+ Button 136 "..."
+ Static 65535 "Part of"
+ Edit 113 ""
+ Static 65535 ""
+ Edit 114 "Office"
+ Static 65535 "Ta&gs"
+ Edit 119 ""
+ Button 143 "..."
+ Static 65535 "S&erial" HIDDEN
+ Edit 107 "0012345" HIDDEN
+ Static 65535 "Desc&ription" HIDDEN
+ Edit 108 "IBM Personal Computer" HIDDEN
+ Static 65535 "Date acq&uired" HIDDEN
+ Edit 115 "" HIDDEN
+ Static 65535 "Acquired &from" HIDDEN
+ Edit 116 "" HIDDEN
+ Static 65535 "&Price paid" HIDDEN
+ Edit 117 "" HIDDEN
+ Static 65535 "Current &value" HIDDEN
+ Edit 118 "" HIDDEN
+ Static 65535 "Created" HIDDEN
+ Edit 120 "2026-10-08" HIDDEN
+ Static 65535 "Updated" HIDDEN
+ Edit 121 "2026-10-08" HIDDEN
+ Edit 122 "Bought at a swap meet in 1991.??Two full-height drives, keyboard." HIDDEN
+ Button 148 "Parts"
+ Button 149 "Service"
+ Button 150 "Loans"
+ Button 151 "Used with"
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ Button 94 "&Help"
+INVWIN "RETROINV - Items by ID" DISABLED
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID" CHECKED
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 1546 "Next o&rder"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|3 items|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status"
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0A@0+55 1F@55+80 2B@135+100 3F@235+100 4F@335+40 5F@375+40 6B@415+100 7F@515+55
+  ListBox 1 ""
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Office" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+28"Office"
+   ROW "       2 DRV Drives                Tandon                         TM100-2                        no         2 Box B2"
+   ROW "       3 CARD Expansion cards      Hercules                       Graphics Card                  ?          1 Shelf A1" CUT
+=SNAP LOC
+#32770 "Choose a location" ACTIVE
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ WLIST 1025 "Name                                         Type"
+  HEAD 000000/C0C0C0 0I@0+28"Name" 1L@150+24"Type"
+  COLS 0F@0+150 1F@150+80
+  ListBox 1 "" FOCUS
+   ROW "(no location)"
+    DRAW 000000/FFFFFF 0I@0+58"(no location)"
+   ROW "Office                                       Room                 OFF" SELECTED
+    DRAW FFFFFF/000000 0I@0+28"Office" 1L@150+28"Room"
+   ROW "  Shelf A1                                   Shelf                A1"
+   ROW "    Box B2                                   Box                  B2"
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+#32770 "Item 1 - Edit" DISABLED
+ Static 65535 "Item ID"
+ Edit 100 "1"
+ Static 65535 "&Maker"
+ Edit 105 "IBM"
+ Static 65535 "Mo&del"
+ Edit 106 "5150"
+ WTAB 95 "&Overview|&Technical|&Acquisition|&Notes" CUR 0
+ Static 65535 "&Category"
+ ComboBox 101 "DRV   Drives"
+  ROW "SYS   Systems"
+  ROW "MOBO  Motherboards"
+  ROW "CPU   Processors"
+  ROW "CARD  Expansion cards"
+  ROW "DRV   Drives" SELECTED
+  ROW "PERI  Peripherals"
+  ROW "SW    Software"
+  ROW "MAN   Manuals"
+  ROW "CBL   Cables"
+  ROW "PART  Parts"
+ Static 65535 "&Status"
+ ComboBox 102 "A  Active"
+  ROW "A  Active" SELECTED
+  ROW "D  Disposed of"
+ Static 65535 "T&ype"
+ Edit 103 ""
+ Static 65535 "Cond&ition"
+ ComboBox 104 "GD   Good"
+  ROW ""
+  ROW "NEW  New"
+  ROW "EXC  Excellent"
+  ROW "GD   Good" SELECTED
+  ROW "FR   Fair"
+  ROW "PR   Poor"
+ Static 65535 "&Works"
+ ComboBox 109 "Y  Yes"
+  ROW "?  Not tested"
+  ROW "Y  Yes" SELECTED
+  ROW "I  Intermittently"
+  ROW "N  No"
+ Static 65535 "&Quantity"
+ Edit 110 "1"
+ Static 65535 ""
+ Edit 111 "Available 1"
+ Static 65535 "&Location"
+ Edit 112 "OFF"
+ Button 136 "..."
+ Static 65535 "Part of"
+ Edit 113 ""
+ Static 65535 ""
+ Edit 114 "Office"
+ Static 65535 "Ta&gs"
+ Edit 119 ""
+ Button 143 "..."
+ Static 65535 "S&erial" HIDDEN
+ Edit 107 "0012345" HIDDEN
+ Static 65535 "Desc&ription" HIDDEN
+ Edit 108 "IBM Personal Computer" HIDDEN
+ Static 65535 "Date acq&uired" HIDDEN
+ Edit 115 "" HIDDEN
+ Static 65535 "Acquired &from" HIDDEN
+ Edit 116 "" HIDDEN
+ Static 65535 "&Price paid" HIDDEN
+ Edit 117 "" HIDDEN
+ Static 65535 "Current &value" HIDDEN
+ Edit 118 "" HIDDEN
+ Static 65535 "Created" HIDDEN
+ Edit 120 "2026-10-08" HIDDEN
+ Static 65535 "Updated" HIDDEN
+ Edit 121 "2026-10-08" HIDDEN
+ Edit 122 "Bought at a swap meet in 1991.??Two full-height drives, keyboard." HIDDEN
+ Button 148 "Parts"
+ Button 149 "Service"
+ Button 150 "Loans"
+ Button 151 "Used with"
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ Button 94 "&Help"
+INVWIN "RETROINV - Items by ID" DISABLED
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID" CHECKED
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 1546 "Next o&rder"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|3 items|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status"
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0A@0+55 1F@55+80 2B@135+100 3F@235+100 4F@335+40 5F@375+40 6B@415+100 7F@515+55
+  ListBox 1 ""
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Office" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+28"Office"
+   ROW "       2 DRV Drives                Tandon                         TM100-2                        no         2 Box B2"
+   ROW "       3 CARD Expansion cards      Hercules                       Graphics Card                  ?          1 Shelf A1" CUT
+=SNAP LOCESC
+#32770 "Item 1 - Edit" ACTIVE
+ Static 65535 "Item ID"
+ Edit 100 "1"
+ Static 65535 "&Maker"
+ Edit 105 "IBM"
+ Static 65535 "Mo&del"
+ Edit 106 "5150"
+ WTAB 95 "&Overview|&Technical|&Acquisition|&Notes" CUR 0
+ Static 65535 "&Category"
+ ComboBox 101 "DRV   Drives"
+  ROW "SYS   Systems"
+  ROW "MOBO  Motherboards"
+  ROW "CPU   Processors"
+  ROW "CARD  Expansion cards"
+  ROW "DRV   Drives" SELECTED
+  ROW "PERI  Peripherals"
+  ROW "SW    Software"
+  ROW "MAN   Manuals"
+  ROW "CBL   Cables"
+  ROW "PART  Parts"
+ Static 65535 "&Status"
+ ComboBox 102 "A  Active"
+  ROW "A  Active" SELECTED
+  ROW "D  Disposed of"
+ Static 65535 "T&ype"
+ Edit 103 ""
+ Static 65535 "Cond&ition"
+ ComboBox 104 "GD   Good"
+  ROW ""
+  ROW "NEW  New"
+  ROW "EXC  Excellent"
+  ROW "GD   Good" SELECTED
+  ROW "FR   Fair"
+  ROW "PR   Poor"
+ Static 65535 "&Works"
+ ComboBox 109 "Y  Yes"
+  ROW "?  Not tested"
+  ROW "Y  Yes" SELECTED
+  ROW "I  Intermittently"
+  ROW "N  No"
+ Static 65535 "&Quantity"
+ Edit 110 "1"
+ Static 65535 ""
+ Edit 111 "Available 1"
+ Static 65535 "&Location"
+ Edit 112 "OFF" FOCUS
+ Button 136 "..."
+ Static 65535 "Part of"
+ Edit 113 ""
+ Static 65535 ""
+ Edit 114 "Office"
+ Static 65535 "Ta&gs"
+ Edit 119 ""
+ Button 143 "..."
+ Static 65535 "S&erial" HIDDEN
+ Edit 107 "0012345" HIDDEN
+ Static 65535 "Desc&ription" HIDDEN
+ Edit 108 "IBM Personal Computer" HIDDEN
+ Static 65535 "Date acq&uired" HIDDEN
+ Edit 115 "" HIDDEN
+ Static 65535 "Acquired &from" HIDDEN
+ Edit 116 "" HIDDEN
+ Static 65535 "&Price paid" HIDDEN
+ Edit 117 "" HIDDEN
+ Static 65535 "Current &value" HIDDEN
+ Edit 118 "" HIDDEN
+ Static 65535 "Created" HIDDEN
+ Edit 120 "2026-10-08" HIDDEN
+ Static 65535 "Updated" HIDDEN
+ Edit 121 "2026-10-08" HIDDEN
+ Edit 122 "Bought at a swap meet in 1991.??Two full-height drives, keyboard." HIDDEN
+ Button 148 "Parts"
+ Button 149 "Service"
+ Button 150 "Loans"
+ Button 151 "Used with"
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ Button 94 "&Help"
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+INVWIN "RETROINV - Items by ID" DISABLED
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID" CHECKED
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 1546 "Next o&rder"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|3 items|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status"
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0A@0+55 1F@55+80 2B@135+100 3F@235+100 4F@335+40 5F@375+40 6B@415+100 7F@515+55
+  ListBox 1 ""
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Office" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+28"Office"
+   ROW "       2 DRV Drives                Tandon                         TM100-2                        no         2 Box B2"
+   ROW "       3 CARD Expansion cards      Hercules                       Graphics Card                  ?          1 Shelf A1" CUT
+=SNAP LOCDOWN
+#32770 "Choose a location" ACTIVE
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ WLIST 1025 "Name                                         Type"
+  HEAD 000000/C0C0C0 0I@0+28"Name" 1L@150+24"Type"
+  COLS 0F@0+150 1F@150+80
+  ListBox 1 "" FOCUS
+   ROW "(no location)"
+    DRAW 000000/FFFFFF 0I@0+58"(no location)"
+   ROW "Office                                       Room                 OFF"
+   ROW "  Shelf A1                                   Shelf                A1" SELECTED
+    DRAW FFFFFF/000000 0I@14+40"Shelf A1" 1L@150+24"Shelf"
+   ROW "    Box B2                                   Box                  B2"
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+#32770 "Item 1 - Edit" DISABLED
+ Static 65535 "Item ID"
+ Edit 100 "1"
+ Static 65535 "&Maker"
+ Edit 105 "IBM"
+ Static 65535 "Mo&del"
+ Edit 106 "5150"
+ WTAB 95 "&Overview|&Technical|&Acquisition|&Notes" CUR 0
+ Static 65535 "&Category"
+ ComboBox 101 "DRV   Drives"
+  ROW "SYS   Systems"
+  ROW "MOBO  Motherboards"
+  ROW "CPU   Processors"
+  ROW "CARD  Expansion cards"
+  ROW "DRV   Drives" SELECTED
+  ROW "PERI  Peripherals"
+  ROW "SW    Software"
+  ROW "MAN   Manuals"
+  ROW "CBL   Cables"
+  ROW "PART  Parts"
+ Static 65535 "&Status"
+ ComboBox 102 "A  Active"
+  ROW "A  Active" SELECTED
+  ROW "D  Disposed of"
+ Static 65535 "T&ype"
+ Edit 103 ""
+ Static 65535 "Cond&ition"
+ ComboBox 104 "GD   Good"
+  ROW ""
+  ROW "NEW  New"
+  ROW "EXC  Excellent"
+  ROW "GD   Good" SELECTED
+  ROW "FR   Fair"
+  ROW "PR   Poor"
+ Static 65535 "&Works"
+ ComboBox 109 "Y  Yes"
+  ROW "?  Not tested"
+  ROW "Y  Yes" SELECTED
+  ROW "I  Intermittently"
+  ROW "N  No"
+ Static 65535 "&Quantity"
+ Edit 110 "1"
+ Static 65535 ""
+ Edit 111 "Available 1"
+ Static 65535 "&Location"
+ Edit 112 "OFF"
+ Button 136 "..."
+ Static 65535 "Part of"
+ Edit 113 ""
+ Static 65535 ""
+ Edit 114 "Office"
+ Static 65535 "Ta&gs"
+ Edit 119 ""
+ Button 143 "..."
+ Static 65535 "S&erial" HIDDEN
+ Edit 107 "0012345" HIDDEN
+ Static 65535 "Desc&ription" HIDDEN
+ Edit 108 "IBM Personal Computer" HIDDEN
+ Static 65535 "Date acq&uired" HIDDEN
+ Edit 115 "" HIDDEN
+ Static 65535 "Acquired &from" HIDDEN
+ Edit 116 "" HIDDEN
+ Static 65535 "&Price paid" HIDDEN
+ Edit 117 "" HIDDEN
+ Static 65535 "Current &value" HIDDEN
+ Edit 118 "" HIDDEN
+ Static 65535 "Created" HIDDEN
+ Edit 120 "2026-10-08" HIDDEN
+ Static 65535 "Updated" HIDDEN
+ Edit 121 "2026-10-08" HIDDEN
+ Edit 122 "Bought at a swap meet in 1991.??Two full-height drives, keyboard." HIDDEN
+ Button 148 "Parts"
+ Button 149 "Service"
+ Button 150 "Loans"
+ Button 151 "Used with"
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ Button 94 "&Help"
+INVWIN "RETROINV - Items by ID" DISABLED
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID" CHECKED
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 1546 "Next o&rder"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|3 items|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status"
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0A@0+55 1F@55+80 2B@135+100 3F@235+100 4F@335+40 5F@375+40 6B@415+100 7F@515+55
+  ListBox 1 ""
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Office" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+28"Office"
+   ROW "       2 DRV Drives                Tandon                         TM100-2                        no         2 Box B2"
+   ROW "       3 CARD Expansion cards      Hercules                       Graphics Card                  ?          1 Shelf A1" CUT
+=SNAP LOCEND
+#32770 "Choose a location" ACTIVE
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ WLIST 1025 "Name                                         Type"
+  HEAD 000000/C0C0C0 0I@0+28"Name" 1L@150+24"Type"
+  COLS 0F@0+150 1F@150+80
+  ListBox 1 "" FOCUS
+   ROW "(no location)"
+    DRAW 000000/FFFFFF 0I@0+58"(no location)"
+   ROW "Office                                       Room                 OFF"
+   ROW "  Shelf A1                                   Shelf                A1"
+   ROW "    Box B2                                   Box                  B2" SELECTED
+    DRAW FFFFFF/000000 0I@28+34"Box B2" 1L@150+18"Box"
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+#32770 "Item 1 - Edit" DISABLED
+ Static 65535 "Item ID"
+ Edit 100 "1"
+ Static 65535 "&Maker"
+ Edit 105 "IBM"
+ Static 65535 "Mo&del"
+ Edit 106 "5150"
+ WTAB 95 "&Overview|&Technical|&Acquisition|&Notes" CUR 0
+ Static 65535 "&Category"
+ ComboBox 101 "DRV   Drives"
+  ROW "SYS   Systems"
+  ROW "MOBO  Motherboards"
+  ROW "CPU   Processors"
+  ROW "CARD  Expansion cards"
+  ROW "DRV   Drives" SELECTED
+  ROW "PERI  Peripherals"
+  ROW "SW    Software"
+  ROW "MAN   Manuals"
+  ROW "CBL   Cables"
+  ROW "PART  Parts"
+ Static 65535 "&Status"
+ ComboBox 102 "A  Active"
+  ROW "A  Active" SELECTED
+  ROW "D  Disposed of"
+ Static 65535 "T&ype"
+ Edit 103 ""
+ Static 65535 "Cond&ition"
+ ComboBox 104 "GD   Good"
+  ROW ""
+  ROW "NEW  New"
+  ROW "EXC  Excellent"
+  ROW "GD   Good" SELECTED
+  ROW "FR   Fair"
+  ROW "PR   Poor"
+ Static 65535 "&Works"
+ ComboBox 109 "Y  Yes"
+  ROW "?  Not tested"
+  ROW "Y  Yes" SELECTED
+  ROW "I  Intermittently"
+  ROW "N  No"
+ Static 65535 "&Quantity"
+ Edit 110 "1"
+ Static 65535 ""
+ Edit 111 "Available 1"
+ Static 65535 "&Location"
+ Edit 112 "OFF"
+ Button 136 "..."
+ Static 65535 "Part of"
+ Edit 113 ""
+ Static 65535 ""
+ Edit 114 "Office"
+ Static 65535 "Ta&gs"
+ Edit 119 ""
+ Button 143 "..."
+ Static 65535 "S&erial" HIDDEN
+ Edit 107 "0012345" HIDDEN
+ Static 65535 "Desc&ription" HIDDEN
+ Edit 108 "IBM Personal Computer" HIDDEN
+ Static 65535 "Date acq&uired" HIDDEN
+ Edit 115 "" HIDDEN
+ Static 65535 "Acquired &from" HIDDEN
+ Edit 116 "" HIDDEN
+ Static 65535 "&Price paid" HIDDEN
+ Edit 117 "" HIDDEN
+ Static 65535 "Current &value" HIDDEN
+ Edit 118 "" HIDDEN
+ Static 65535 "Created" HIDDEN
+ Edit 120 "2026-10-08" HIDDEN
+ Static 65535 "Updated" HIDDEN
+ Edit 121 "2026-10-08" HIDDEN
+ Edit 122 "Bought at a swap meet in 1991.??Two full-height drives, keyboard." HIDDEN
+ Button 148 "Parts"
+ Button 149 "Service"
+ Button 150 "Loans"
+ Button 151 "Used with"
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ Button 94 "&Help"
+INVWIN "RETROINV - Items by ID" DISABLED
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID" CHECKED
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 1546 "Next o&rder"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|3 items|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status"
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0A@0+55 1F@55+80 2B@135+100 3F@235+100 4F@335+40 5F@375+40 6B@415+100 7F@515+55
+  ListBox 1 ""
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Office" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+28"Office"
+   ROW "       2 DRV Drives                Tandon                         TM100-2                        no         2 Box B2"
+   ROW "       3 CARD Expansion cards      Hercules                       Graphics Card                  ?          1 Shelf A1" CUT
+=SNAP LOCHOME
+#32770 "Choose a location" ACTIVE
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ WLIST 1025 "Name                                         Type"
+  HEAD 000000/C0C0C0 0I@0+28"Name" 1L@150+24"Type"
+  COLS 0F@0+150 1F@150+80
+  ListBox 1 "" FOCUS
+   ROW "(no location)" SELECTED
+    DRAW FFFFFF/000000 0I@0+58"(no location)"
+   ROW "Office                                       Room                 OFF"
+   ROW "  Shelf A1                                   Shelf                A1"
+   ROW "    Box B2                                   Box                  B2"
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+#32770 "Item 1 - Edit" DISABLED
+ Static 65535 "Item ID"
+ Edit 100 "1"
+ Static 65535 "&Maker"
+ Edit 105 "IBM"
+ Static 65535 "Mo&del"
+ Edit 106 "5150"
+ WTAB 95 "&Overview|&Technical|&Acquisition|&Notes" CUR 0
+ Static 65535 "&Category"
+ ComboBox 101 "DRV   Drives"
+  ROW "SYS   Systems"
+  ROW "MOBO  Motherboards"
+  ROW "CPU   Processors"
+  ROW "CARD  Expansion cards"
+  ROW "DRV   Drives" SELECTED
+  ROW "PERI  Peripherals"
+  ROW "SW    Software"
+  ROW "MAN   Manuals"
+  ROW "CBL   Cables"
+  ROW "PART  Parts"
+ Static 65535 "&Status"
+ ComboBox 102 "A  Active"
+  ROW "A  Active" SELECTED
+  ROW "D  Disposed of"
+ Static 65535 "T&ype"
+ Edit 103 ""
+ Static 65535 "Cond&ition"
+ ComboBox 104 "GD   Good"
+  ROW ""
+  ROW "NEW  New"
+  ROW "EXC  Excellent"
+  ROW "GD   Good" SELECTED
+  ROW "FR   Fair"
+  ROW "PR   Poor"
+ Static 65535 "&Works"
+ ComboBox 109 "Y  Yes"
+  ROW "?  Not tested"
+  ROW "Y  Yes" SELECTED
+  ROW "I  Intermittently"
+  ROW "N  No"
+ Static 65535 "&Quantity"
+ Edit 110 "1"
+ Static 65535 ""
+ Edit 111 "Available 1"
+ Static 65535 "&Location"
+ Edit 112 "OFF"
+ Button 136 "..."
+ Static 65535 "Part of"
+ Edit 113 ""
+ Static 65535 ""
+ Edit 114 "Office"
+ Static 65535 "Ta&gs"
+ Edit 119 ""
+ Button 143 "..."
+ Static 65535 "S&erial" HIDDEN
+ Edit 107 "0012345" HIDDEN
+ Static 65535 "Desc&ription" HIDDEN
+ Edit 108 "IBM Personal Computer" HIDDEN
+ Static 65535 "Date acq&uired" HIDDEN
+ Edit 115 "" HIDDEN
+ Static 65535 "Acquired &from" HIDDEN
+ Edit 116 "" HIDDEN
+ Static 65535 "&Price paid" HIDDEN
+ Edit 117 "" HIDDEN
+ Static 65535 "Current &value" HIDDEN
+ Edit 118 "" HIDDEN
+ Static 65535 "Created" HIDDEN
+ Edit 120 "2026-10-08" HIDDEN
+ Static 65535 "Updated" HIDDEN
+ Edit 121 "2026-10-08" HIDDEN
+ Edit 122 "Bought at a swap meet in 1991.??Two full-height drives, keyboard." HIDDEN
+ Button 148 "Parts"
+ Button 149 "Service"
+ Button 150 "Loans"
+ Button 151 "Used with"
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ Button 94 "&Help"
+INVWIN "RETROINV - Items by ID" DISABLED
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID" CHECKED
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 1546 "Next o&rder"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|3 items|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status"
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0A@0+55 1F@55+80 2B@135+100 3F@235+100 4F@335+40 5F@375+40 6B@415+100 7F@515+55
+  ListBox 1 ""
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Office" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+28"Office"
+   ROW "       2 DRV Drives                Tandon                         TM100-2                        no         2 Box B2"
+   ROW "       3 CARD Expansion cards      Hercules                       Graphics Card                  ?          1 Shelf A1" CUT
+=SNAP LOCTAB1
+#32770 "Choose a location" ACTIVE
+ Button 1 "OK" FOCUS DEFAULT
+ Button 2 "Cancel"
+ WLIST 1025 "Name                                         Type"
+  HEAD 000000/C0C0C0 0I@0+28"Name" 1L@150+24"Type"
+  COLS 0F@0+150 1F@150+80
+  ListBox 1 ""
+   ROW "(no location)" SELECTED
+    DRAW FFFFFF/000000 0I@0+58"(no location)"
+   ROW "Office                                       Room                 OFF"
+   ROW "  Shelf A1                                   Shelf                A1"
+   ROW "    Box B2                                   Box                  B2"
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+#32770 "Item 1 - Edit" DISABLED
+ Static 65535 "Item ID"
+ Edit 100 "1"
+ Static 65535 "&Maker"
+ Edit 105 "IBM"
+ Static 65535 "Mo&del"
+ Edit 106 "5150"
+ WTAB 95 "&Overview|&Technical|&Acquisition|&Notes" CUR 0
+ Static 65535 "&Category"
+ ComboBox 101 "DRV   Drives"
+  ROW "SYS   Systems"
+  ROW "MOBO  Motherboards"
+  ROW "CPU   Processors"
+  ROW "CARD  Expansion cards"
+  ROW "DRV   Drives" SELECTED
+  ROW "PERI  Peripherals"
+  ROW "SW    Software"
+  ROW "MAN   Manuals"
+  ROW "CBL   Cables"
+  ROW "PART  Parts"
+ Static 65535 "&Status"
+ ComboBox 102 "A  Active"
+  ROW "A  Active" SELECTED
+  ROW "D  Disposed of"
+ Static 65535 "T&ype"
+ Edit 103 ""
+ Static 65535 "Cond&ition"
+ ComboBox 104 "GD   Good"
+  ROW ""
+  ROW "NEW  New"
+  ROW "EXC  Excellent"
+  ROW "GD   Good" SELECTED
+  ROW "FR   Fair"
+  ROW "PR   Poor"
+ Static 65535 "&Works"
+ ComboBox 109 "Y  Yes"
+  ROW "?  Not tested"
+  ROW "Y  Yes" SELECTED
+  ROW "I  Intermittently"
+  ROW "N  No"
+ Static 65535 "&Quantity"
+ Edit 110 "1"
+ Static 65535 ""
+ Edit 111 "Available 1"
+ Static 65535 "&Location"
+ Edit 112 "OFF"
+ Button 136 "..."
+ Static 65535 "Part of"
+ Edit 113 ""
+ Static 65535 ""
+ Edit 114 "Office"
+ Static 65535 "Ta&gs"
+ Edit 119 ""
+ Button 143 "..."
+ Static 65535 "S&erial" HIDDEN
+ Edit 107 "0012345" HIDDEN
+ Static 65535 "Desc&ription" HIDDEN
+ Edit 108 "IBM Personal Computer" HIDDEN
+ Static 65535 "Date acq&uired" HIDDEN
+ Edit 115 "" HIDDEN
+ Static 65535 "Acquired &from" HIDDEN
+ Edit 116 "" HIDDEN
+ Static 65535 "&Price paid" HIDDEN
+ Edit 117 "" HIDDEN
+ Static 65535 "Current &value" HIDDEN
+ Edit 118 "" HIDDEN
+ Static 65535 "Created" HIDDEN
+ Edit 120 "2026-10-08" HIDDEN
+ Static 65535 "Updated" HIDDEN
+ Edit 121 "2026-10-08" HIDDEN
+ Edit 122 "Bought at a swap meet in 1991.??Two full-height drives, keyboard." HIDDEN
+ Button 148 "Parts"
+ Button 149 "Service"
+ Button 150 "Loans"
+ Button 151 "Used with"
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ Button 94 "&Help"
+INVWIN "RETROINV - Items by ID" DISABLED
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID" CHECKED
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 1546 "Next o&rder"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|3 items|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status"
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0A@0+55 1F@55+80 2B@135+100 3F@235+100 4F@335+40 5F@375+40 6B@415+100 7F@515+55
+  ListBox 1 ""
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Office" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+28"Office"
+   ROW "       2 DRV Drives                Tandon                         TM100-2                        no         2 Box B2"
+   ROW "       3 CARD Expansion cards      Hercules                       Graphics Card                  ?          1 Shelf A1" CUT
+=SNAP LOCTAB2
+#32770 "Choose a location" ACTIVE
+ Button 1 "OK"
+ Button 2 "Cancel" FOCUS DEFAULT
+ WLIST 1025 "Name                                         Type"
+  HEAD 000000/C0C0C0 0I@0+28"Name" 1L@150+24"Type"
+  COLS 0F@0+150 1F@150+80
+  ListBox 1 ""
+   ROW "(no location)" SELECTED
+    DRAW FFFFFF/000000 0I@0+58"(no location)"
+   ROW "Office                                       Room                 OFF"
+   ROW "  Shelf A1                                   Shelf                A1"
+   ROW "    Box B2                                   Box                  B2"
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+#32770 "Item 1 - Edit" DISABLED
+ Static 65535 "Item ID"
+ Edit 100 "1"
+ Static 65535 "&Maker"
+ Edit 105 "IBM"
+ Static 65535 "Mo&del"
+ Edit 106 "5150"
+ WTAB 95 "&Overview|&Technical|&Acquisition|&Notes" CUR 0
+ Static 65535 "&Category"
+ ComboBox 101 "DRV   Drives"
+  ROW "SYS   Systems"
+  ROW "MOBO  Motherboards"
+  ROW "CPU   Processors"
+  ROW "CARD  Expansion cards"
+  ROW "DRV   Drives" SELECTED
+  ROW "PERI  Peripherals"
+  ROW "SW    Software"
+  ROW "MAN   Manuals"
+  ROW "CBL   Cables"
+  ROW "PART  Parts"
+ Static 65535 "&Status"
+ ComboBox 102 "A  Active"
+  ROW "A  Active" SELECTED
+  ROW "D  Disposed of"
+ Static 65535 "T&ype"
+ Edit 103 ""
+ Static 65535 "Cond&ition"
+ ComboBox 104 "GD   Good"
+  ROW ""
+  ROW "NEW  New"
+  ROW "EXC  Excellent"
+  ROW "GD   Good" SELECTED
+  ROW "FR   Fair"
+  ROW "PR   Poor"
+ Static 65535 "&Works"
+ ComboBox 109 "Y  Yes"
+  ROW "?  Not tested"
+  ROW "Y  Yes" SELECTED
+  ROW "I  Intermittently"
+  ROW "N  No"
+ Static 65535 "&Quantity"
+ Edit 110 "1"
+ Static 65535 ""
+ Edit 111 "Available 1"
+ Static 65535 "&Location"
+ Edit 112 "OFF"
+ Button 136 "..."
+ Static 65535 "Part of"
+ Edit 113 ""
+ Static 65535 ""
+ Edit 114 "Office"
+ Static 65535 "Ta&gs"
+ Edit 119 ""
+ Button 143 "..."
+ Static 65535 "S&erial" HIDDEN
+ Edit 107 "0012345" HIDDEN
+ Static 65535 "Desc&ription" HIDDEN
+ Edit 108 "IBM Personal Computer" HIDDEN
+ Static 65535 "Date acq&uired" HIDDEN
+ Edit 115 "" HIDDEN
+ Static 65535 "Acquired &from" HIDDEN
+ Edit 116 "" HIDDEN
+ Static 65535 "&Price paid" HIDDEN
+ Edit 117 "" HIDDEN
+ Static 65535 "Current &value" HIDDEN
+ Edit 118 "" HIDDEN
+ Static 65535 "Created" HIDDEN
+ Edit 120 "2026-10-08" HIDDEN
+ Static 65535 "Updated" HIDDEN
+ Edit 121 "2026-10-08" HIDDEN
+ Edit 122 "Bought at a swap meet in 1991.??Two full-height drives, keyboard." HIDDEN
+ Button 148 "Parts"
+ Button 149 "Service"
+ Button 150 "Loans"
+ Button 151 "Used with"
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ Button 94 "&Help"
+INVWIN "RETROINV - Items by ID" DISABLED
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID" CHECKED
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 1546 "Next o&rder"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|3 items|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status"
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0A@0+55 1F@55+80 2B@135+100 3F@235+100 4F@335+40 5F@375+40 6B@415+100 7F@515+55
+  ListBox 1 ""
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Office" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+28"Office"
+   ROW "       2 DRV Drives                Tandon                         TM100-2                        no         2 Box B2"
+   ROW "       3 CARD Expansion cards      Hercules                       Graphics Card                  ?          1 Shelf A1" CUT
+=SNAP LOCTAB3
+#32770 "Choose a location" ACTIVE
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ WLIST 1025 "Name                                         Type"
+  HEAD 000000/C0C0C0 0I@0+28"Name" 1L@150+24"Type"
+  COLS 0F@0+150 1F@150+80
+  ListBox 1 "" FOCUS
+   ROW "(no location)" SELECTED
+    DRAW FFFFFF/000000 0I@0+58"(no location)"
+   ROW "Office                                       Room                 OFF"
+   ROW "  Shelf A1                                   Shelf                A1"
+   ROW "    Box B2                                   Box                  B2"
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+#32770 "Item 1 - Edit" DISABLED
+ Static 65535 "Item ID"
+ Edit 100 "1"
+ Static 65535 "&Maker"
+ Edit 105 "IBM"
+ Static 65535 "Mo&del"
+ Edit 106 "5150"
+ WTAB 95 "&Overview|&Technical|&Acquisition|&Notes" CUR 0
+ Static 65535 "&Category"
+ ComboBox 101 "DRV   Drives"
+  ROW "SYS   Systems"
+  ROW "MOBO  Motherboards"
+  ROW "CPU   Processors"
+  ROW "CARD  Expansion cards"
+  ROW "DRV   Drives" SELECTED
+  ROW "PERI  Peripherals"
+  ROW "SW    Software"
+  ROW "MAN   Manuals"
+  ROW "CBL   Cables"
+  ROW "PART  Parts"
+ Static 65535 "&Status"
+ ComboBox 102 "A  Active"
+  ROW "A  Active" SELECTED
+  ROW "D  Disposed of"
+ Static 65535 "T&ype"
+ Edit 103 ""
+ Static 65535 "Cond&ition"
+ ComboBox 104 "GD   Good"
+  ROW ""
+  ROW "NEW  New"
+  ROW "EXC  Excellent"
+  ROW "GD   Good" SELECTED
+  ROW "FR   Fair"
+  ROW "PR   Poor"
+ Static 65535 "&Works"
+ ComboBox 109 "Y  Yes"
+  ROW "?  Not tested"
+  ROW "Y  Yes" SELECTED
+  ROW "I  Intermittently"
+  ROW "N  No"
+ Static 65535 "&Quantity"
+ Edit 110 "1"
+ Static 65535 ""
+ Edit 111 "Available 1"
+ Static 65535 "&Location"
+ Edit 112 "OFF"
+ Button 136 "..."
+ Static 65535 "Part of"
+ Edit 113 ""
+ Static 65535 ""
+ Edit 114 "Office"
+ Static 65535 "Ta&gs"
+ Edit 119 ""
+ Button 143 "..."
+ Static 65535 "S&erial" HIDDEN
+ Edit 107 "0012345" HIDDEN
+ Static 65535 "Desc&ription" HIDDEN
+ Edit 108 "IBM Personal Computer" HIDDEN
+ Static 65535 "Date acq&uired" HIDDEN
+ Edit 115 "" HIDDEN
+ Static 65535 "Acquired &from" HIDDEN
+ Edit 116 "" HIDDEN
+ Static 65535 "&Price paid" HIDDEN
+ Edit 117 "" HIDDEN
+ Static 65535 "Current &value" HIDDEN
+ Edit 118 "" HIDDEN
+ Static 65535 "Created" HIDDEN
+ Edit 120 "2026-10-08" HIDDEN
+ Static 65535 "Updated" HIDDEN
+ Edit 121 "2026-10-08" HIDDEN
+ Edit 122 "Bought at a swap meet in 1991.??Two full-height drives, keyboard." HIDDEN
+ Button 148 "Parts"
+ Button 149 "Service"
+ Button 150 "Loans"
+ Button 151 "Used with"
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ Button 94 "&Help"
+INVWIN "RETROINV - Items by ID" DISABLED
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID" CHECKED
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 1546 "Next o&rder"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|3 items|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status"
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0A@0+55 1F@55+80 2B@135+100 3F@235+100 4F@335+40 5F@375+40 6B@415+100 7F@515+55
+  ListBox 1 ""
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Office" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+28"Office"
+   ROW "       2 DRV Drives                Tandon                         TM100-2                        no         2 Box B2"
+   ROW "       3 CARD Expansion cards      Hercules                       Graphics Card                  ?          1 Shelf A1" CUT
+=SNAP LOCCNCL
+#32770 "Item 1 - Edit" ACTIVE
+ Static 65535 "Item ID"
+ Edit 100 "1"
+ Static 65535 "&Maker"
+ Edit 105 "IBM"
+ Static 65535 "Mo&del"
+ Edit 106 "5150"
+ WTAB 95 "&Overview|&Technical|&Acquisition|&Notes" CUR 0
+ Static 65535 "&Category"
+ ComboBox 101 "DRV   Drives"
+  ROW "SYS   Systems"
+  ROW "MOBO  Motherboards"
+  ROW "CPU   Processors"
+  ROW "CARD  Expansion cards"
+  ROW "DRV   Drives" SELECTED
+  ROW "PERI  Peripherals"
+  ROW "SW    Software"
+  ROW "MAN   Manuals"
+  ROW "CBL   Cables"
+  ROW "PART  Parts"
+ Static 65535 "&Status"
+ ComboBox 102 "A  Active"
+  ROW "A  Active" SELECTED
+  ROW "D  Disposed of"
+ Static 65535 "T&ype"
+ Edit 103 ""
+ Static 65535 "Cond&ition"
+ ComboBox 104 "GD   Good"
+  ROW ""
+  ROW "NEW  New"
+  ROW "EXC  Excellent"
+  ROW "GD   Good" SELECTED
+  ROW "FR   Fair"
+  ROW "PR   Poor"
+ Static 65535 "&Works"
+ ComboBox 109 "Y  Yes"
+  ROW "?  Not tested"
+  ROW "Y  Yes" SELECTED
+  ROW "I  Intermittently"
+  ROW "N  No"
+ Static 65535 "&Quantity"
+ Edit 110 "1"
+ Static 65535 ""
+ Edit 111 "Available 1"
+ Static 65535 "&Location"
+ Edit 112 "" FOCUS
+ Button 136 "..."
+ Static 65535 "Part of"
+ Edit 113 ""
+ Static 65535 ""
+ Edit 114 "(no location)"
+ Static 65535 "Ta&gs"
+ Edit 119 ""
+ Button 143 "..."
+ Static 65535 "S&erial" HIDDEN
+ Edit 107 "0012345" HIDDEN
+ Static 65535 "Desc&ription" HIDDEN
+ Edit 108 "IBM Personal Computer" HIDDEN
+ Static 65535 "Date acq&uired" HIDDEN
+ Edit 115 "" HIDDEN
+ Static 65535 "Acquired &from" HIDDEN
+ Edit 116 "" HIDDEN
+ Static 65535 "&Price paid" HIDDEN
+ Edit 117 "" HIDDEN
+ Static 65535 "Current &value" HIDDEN
+ Edit 118 "" HIDDEN
+ Static 65535 "Created" HIDDEN
+ Edit 120 "2026-10-08" HIDDEN
+ Static 65535 "Updated" HIDDEN
+ Edit 121 "2026-10-08" HIDDEN
+ Edit 122 "Bought at a swap meet in 1991.??Two full-height drives, keyboard." HIDDEN
+ Button 148 "Parts"
+ Button 149 "Service"
+ Button 150 "Loans"
+ Button 151 "Used with"
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ Button 94 "&Help"
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+INVWIN "RETROINV - Items by ID" DISABLED
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID" CHECKED
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 1546 "Next o&rder"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|3 items|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status"
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0A@0+55 1F@55+80 2B@135+100 3F@235+100 4F@335+40 5F@375+40 6B@415+100 7F@515+55
+  ListBox 1 ""
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Office" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+28"Office"
+   ROW "       2 DRV Drives                Tandon                         TM100-2                        no         2 Box B2"
+   ROW "       3 CARD Expansion cards      Hercules                       Graphics Card                  ?          1 Shelf A1" CUT
+=SNAP LOCHELP
+#32770 "RETROINV Help" ACTIVE
+ Edit 212 "The item form????  Tab, Shift+Tab     next, previous field??  Ctrl+PgDn          next page: Overview, Technical, Acquisition,??                     Notes; Ctrl+" FOCUS
+#32770 "Choose a location" DISABLED
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ WLIST 1025 "Name                                         Type"
+  HEAD 000000/C0C0C0 0I@0+28"Name" 1L@150+24"Type"
+  COLS 0F@0+150 1F@150+80
+  ListBox 1 ""
+   ROW "(no location)" SELECTED
+    DRAW FFFFFF/000000 0I@0+58"(no location)"
+   ROW "Office                                       Room                 OFF"
+   ROW "  Shelf A1                                   Shelf                A1"
+   ROW "    Box B2                                   Box                  B2"
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+#32770 "Item 1 - Edit" DISABLED
+ Static 65535 "Item ID"
+ Edit 100 "1"
+ Static 65535 "&Maker"
+ Edit 105 "IBM"
+ Static 65535 "Mo&del"
+ Edit 106 "5150"
+ WTAB 95 "&Overview|&Technical|&Acquisition|&Notes" CUR 0
+ Static 65535 "&Category"
+ ComboBox 101 "DRV   Drives"
+  ROW "SYS   Systems"
+  ROW "MOBO  Motherboards"
+  ROW "CPU   Processors"
+  ROW "CARD  Expansion cards"
+  ROW "DRV   Drives" SELECTED
+  ROW "PERI  Peripherals"
+  ROW "SW    Software"
+  ROW "MAN   Manuals"
+  ROW "CBL   Cables"
+  ROW "PART  Parts"
+ Static 65535 "&Status"
+ ComboBox 102 "A  Active"
+  ROW "A  Active" SELECTED
+  ROW "D  Disposed of"
+ Static 65535 "T&ype"
+ Edit 103 ""
+ Static 65535 "Cond&ition"
+ ComboBox 104 "GD   Good"
+  ROW ""
+  ROW "NEW  New"
+  ROW "EXC  Excellent"
+  ROW "GD   Good" SELECTED
+  ROW "FR   Fair"
+  ROW "PR   Poor"
+ Static 65535 "&Works"
+ ComboBox 109 "Y  Yes"
+  ROW "?  Not tested"
+  ROW "Y  Yes" SELECTED
+  ROW "I  Intermittently"
+  ROW "N  No"
+ Static 65535 "&Quantity"
+ Edit 110 "1"
+ Static 65535 ""
+ Edit 111 "Available 1"
+ Static 65535 "&Location"
+ Edit 112 ""
+ Button 136 "..."
+ Static 65535 "Part of"
+ Edit 113 ""
+ Static 65535 ""
+ Edit 114 "(no location)"
+ Static 65535 "Ta&gs"
+ Edit 119 ""
+ Button 143 "..."
+ Static 65535 "S&erial" HIDDEN
+ Edit 107 "0012345" HIDDEN
+ Static 65535 "Desc&ription" HIDDEN
+ Edit 108 "IBM Personal Computer" HIDDEN
+ Static 65535 "Date acq&uired" HIDDEN
+ Edit 115 "" HIDDEN
+ Static 65535 "Acquired &from" HIDDEN
+ Edit 116 "" HIDDEN
+ Static 65535 "&Price paid" HIDDEN
+ Edit 117 "" HIDDEN
+ Static 65535 "Current &value" HIDDEN
+ Edit 118 "" HIDDEN
+ Static 65535 "Created" HIDDEN
+ Edit 120 "2026-10-08" HIDDEN
+ Static 65535 "Updated" HIDDEN
+ Edit 121 "2026-10-08" HIDDEN
+ Edit 122 "Bought at a swap meet in 1991.??Two full-height drives, keyboard." HIDDEN
+ Button 148 "Parts"
+ Button 149 "Service"
+ Button 150 "Loans"
+ Button 151 "Used with"
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ Button 94 "&Help"
+INVWIN "RETROINV - Items by ID" DISABLED
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID" CHECKED
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 1546 "Next o&rder"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|3 items|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status"
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0A@0+55 1F@55+80 2B@135+100 3F@235+100 4F@335+40 5F@375+40 6B@415+100 7F@515+55
+  ListBox 1 ""
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Office" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+28"Office"
+   ROW "       2 DRV Drives                Tandon                         TM100-2                        no         2 Box B2"
+   ROW "       3 CARD Expansion cards      Hercules                       Graphics Card                  ?          1 Shelf A1" CUT
+=SNAP LOCPICK
+#32770 "Item 1 - Edit" ACTIVE
+ Static 65535 "Item ID"
+ Edit 100 "1"
+ Static 65535 "&Maker"
+ Edit 105 "IBM"
+ Static 65535 "Mo&del"
+ Edit 106 "5150"
+ WTAB 95 "&Overview|&Technical|&Acquisition|&Notes" CUR 0
+ Static 65535 "&Category"
+ ComboBox 101 "DRV   Drives"
+  ROW "SYS   Systems"
+  ROW "MOBO  Motherboards"
+  ROW "CPU   Processors"
+  ROW "CARD  Expansion cards"
+  ROW "DRV   Drives" SELECTED
+  ROW "PERI  Peripherals"
+  ROW "SW    Software"
+  ROW "MAN   Manuals"
+  ROW "CBL   Cables"
+  ROW "PART  Parts"
+ Static 65535 "&Status"
+ ComboBox 102 "A  Active"
+  ROW "A  Active" SELECTED
+  ROW "D  Disposed of"
+ Static 65535 "T&ype"
+ Edit 103 ""
+ Static 65535 "Cond&ition"
+ ComboBox 104 "GD   Good"
+  ROW ""
+  ROW "NEW  New"
+  ROW "EXC  Excellent"
+  ROW "GD   Good" SELECTED
+  ROW "FR   Fair"
+  ROW "PR   Poor"
+ Static 65535 "&Works"
+ ComboBox 109 "Y  Yes"
+  ROW "?  Not tested"
+  ROW "Y  Yes" SELECTED
+  ROW "I  Intermittently"
+  ROW "N  No"
+ Static 65535 "&Quantity"
+ Edit 110 "1"
+ Static 65535 ""
+ Edit 111 "Available 1"
+ Static 65535 "&Location"
+ Edit 112 "OFF" FOCUS
+ Button 136 "..."
+ Static 65535 "Part of"
+ Edit 113 ""
+ Static 65535 ""
+ Edit 114 "Office"
+ Static 65535 "Ta&gs"
+ Edit 119 ""
+ Button 143 "..."
+ Static 65535 "S&erial" HIDDEN
+ Edit 107 "0012345" HIDDEN
+ Static 65535 "Desc&ription" HIDDEN
+ Edit 108 "IBM Personal Computer" HIDDEN
+ Static 65535 "Date acq&uired" HIDDEN
+ Edit 115 "" HIDDEN
+ Static 65535 "Acquired &from" HIDDEN
+ Edit 116 "" HIDDEN
+ Static 65535 "&Price paid" HIDDEN
+ Edit 117 "" HIDDEN
+ Static 65535 "Current &value" HIDDEN
+ Edit 118 "" HIDDEN
+ Static 65535 "Created" HIDDEN
+ Edit 120 "2026-10-08" HIDDEN
+ Static 65535 "Updated" HIDDEN
+ Edit 121 "2026-10-08" HIDDEN
+ Edit 122 "Bought at a swap meet in 1991.??Two full-height drives, keyboard." HIDDEN
+ Button 148 "Parts"
+ Button 149 "Service"
+ Button 150 "Loans"
+ Button 151 "Used with"
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ Button 94 "&Help"
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+INVWIN "RETROINV - Items by ID" DISABLED
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID" CHECKED
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 1546 "Next o&rder"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|3 items|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status"
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0A@0+55 1F@55+80 2B@135+100 3F@235+100 4F@335+40 5F@375+40 6B@415+100 7F@515+55
+  ListBox 1 ""
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Office" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+28"Office"
+   ROW "       2 DRV Drives                Tandon                         TM100-2                        no         2 Box B2"
+   ROW "       3 CARD Expansion cards      Hercules                       Graphics Card                  ?          1 Shelf A1" CUT
+=SNAP LOCKEPT
+#32770 "Item 1 - Edit" ACTIVE
+ Static 65535 "Item ID"
+ Edit 100 "1"
+ Static 65535 "&Maker"
+ Edit 105 "IBM"
+ Static 65535 "Mo&del"
+ Edit 106 "5150"
+ WTAB 95 "&Overview|&Technical|&Acquisition|&Notes" CUR 0
+ Static 65535 "&Category"
+ ComboBox 101 "DRV   Drives"
+  ROW "SYS   Systems"
+  ROW "MOBO  Motherboards"
+  ROW "CPU   Processors"
+  ROW "CARD  Expansion cards"
+  ROW "DRV   Drives" SELECTED
+  ROW "PERI  Peripherals"
+  ROW "SW    Software"
+  ROW "MAN   Manuals"
+  ROW "CBL   Cables"
+  ROW "PART  Parts"
+ Static 65535 "&Status"
+ ComboBox 102 "A  Active"
+  ROW "A  Active" SELECTED
+  ROW "D  Disposed of"
+ Static 65535 "T&ype"
+ Edit 103 ""
+ Static 65535 "Cond&ition"
+ ComboBox 104 "GD   Good"
+  ROW ""
+  ROW "NEW  New"
+  ROW "EXC  Excellent"
+  ROW "GD   Good" SELECTED
+  ROW "FR   Fair"
+  ROW "PR   Poor"
+ Static 65535 "&Works"
+ ComboBox 109 "Y  Yes"
+  ROW "?  Not tested"
+  ROW "Y  Yes" SELECTED
+  ROW "I  Intermittently"
+  ROW "N  No"
+ Static 65535 "&Quantity"
+ Edit 110 "1"
+ Static 65535 ""
+ Edit 111 "Available 1"
+ Static 65535 "&Location"
+ Edit 112 "OFF" FOCUS
+ Button 136 "..."
+ Static 65535 "Part of"
+ Edit 113 ""
+ Static 65535 ""
+ Edit 114 "Office"
+ Static 65535 "Ta&gs"
+ Edit 119 ""
+ Button 143 "..."
+ Static 65535 "S&erial" HIDDEN
+ Edit 107 "0012345" HIDDEN
+ Static 65535 "Desc&ription" HIDDEN
+ Edit 108 "IBM Personal Computer" HIDDEN
+ Static 65535 "Date acq&uired" HIDDEN
+ Edit 115 "" HIDDEN
+ Static 65535 "Acquired &from" HIDDEN
+ Edit 116 "" HIDDEN
+ Static 65535 "&Price paid" HIDDEN
+ Edit 117 "" HIDDEN
+ Static 65535 "Current &value" HIDDEN
+ Edit 118 "" HIDDEN
+ Static 65535 "Created" HIDDEN
+ Edit 120 "2026-10-08" HIDDEN
+ Static 65535 "Updated" HIDDEN
+ Edit 121 "2026-10-08" HIDDEN
+ Edit 122 "Bought at a swap meet in 1991.??Two full-height drives, keyboard." HIDDEN
+ Button 148 "Parts"
+ Button 149 "Service"
+ Button 150 "Loans"
+ Button 151 "Used with"
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ Button 94 "&Help"
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+INVWIN "RETROINV - Items by ID" DISABLED
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID" CHECKED
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 1546 "Next o&rder"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|3 items|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status"
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0A@0+55 1F@55+80 2B@135+100 3F@235+100 4F@335+40 5F@375+40 6B@415+100 7F@515+55
+  ListBox 1 ""
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Office" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+28"Office"
+   ROW "       2 DRV Drives                Tandon                         TM100-2                        no         2 Box B2"
+   ROW "       3 CARD Expansion cards      Hercules                       Graphics Card                  ?          1 Shelf A1" CUT
+=SNAP SAVED
+INVWIN "RETROINV - Items by ID" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID" CHECKED
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 1546 "Next o&rder"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|3 items|Item 1 saved"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status"
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0A@0+55 1F@55+80 2B@135+100 3F@235+100 4F@335+40 5F@375+40 6B@415+100 7F@515+55
+  ListBox 1 "" FOCUS
+   ROW "       1 DRV Drives                IBM                            5150                           yes        1 Office" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+56"DRV Drives" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+28"Office"
+   ROW "       2 DRV Drives                Tandon                         TM100-2                        no         2 Box B2"
+   ROW "       3 CARD Expansion cards      Hercules                       Graphics Card                  ?          1 Shelf A1" CUT
+=SNAP VIEWED
+#32770 "Item 1" ACTIVE
+ Static 65535 "Item ID"
+ Static 100 "1"
+ Static 65535 "Maker"
+ Edit 105 "IBM"
+ Static 65535 "Model"
+ Edit 106 "5150"
+ WTAB 95 "&Overview|&Technical|&Acquisition|&Notes" CUR 0 FOCUS
+ Static 65535 "Category"
+ Static 101 "DRV   Drives"
+ Static 65535 "Status"
+ Static 102 "A  Active"
+ Static 65535 "Type"
+ Static 103 ""
+ Static 65535 "Condition"
+ Static 104 "GD   Good"
+ Static 65535 "Works"
+ Static 109 "Y  Yes"
+ Static 65535 "Quantity"
+ Static 110 "1"
+ Static 65535 ""
+ Edit 111 "Available 1"
+ Static 65535 "Location"
+ Static 112 "OFF"
+ Static 65535 "Part of"
+ Edit 113 ""
+ Static 65535 ""
+ Static 114 "Office"
+ Static 65535 "Tags"
+ Edit 119 ""
+ Static 65535 "Serial" HIDDEN
+ Static 107 "0012345" HIDDEN
+ Static 65535 "Description" HIDDEN
+ Edit 108 "IBM Personal Computer" HIDDEN
+ Static 65535 "Date acquired" HIDDEN
+ Static 115 "" HIDDEN
+ Static 65535 "Acquired from" HIDDEN
+ Static 116 "" HIDDEN
+ Static 65535 "Price paid" HIDDEN
+ Static 117 "" HIDDEN
+ Static 65535 "Current value" HIDDEN
+ Static 118 "" HIDDEN
+ Static 65535 "Created" HIDDEN
+ Static 120 "2026-10-08" HIDDEN
+ Static 65535 "Updated" HIDDEN
+ Static 121 "2026-10-08" HIDDEN
+ Edit 122 "Bought at a swap meet in 1991.??Two full-height drives, keyboard." HIDDEN
+ Button 148 "Parts"
+ Button 149 "Service"
+ Button 150 "Loans"
+ Button 151 "Used with"
+ Static 99 ""
+ Button 2 "Close" DEFAULT
+ Button 98 "Edit"
+ Button 94 "&Help"
+INVWIN "RETROINV - Items by ID" DISABLED
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID" CHECKED
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 1546 "Next o&rder"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|3 items|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status"
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0A@0+55 1F@55+80 2B@135+100 3F@235+100 4F@335+40 5F@375+40 6B@415+100 7F@515+55
+  ListBox 1 ""
+   ROW "       1 DRV Drives                IBM                            5150                           yes        1 Office" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+56"DRV Drives" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+28"Office"
+   ROW "       2 DRV Drives                Tandon                         TM100-2                        no         2 Box B2"
+   ROW "       3 CARD Expansion cards      Hercules                       Graphics Card                  ?          1 Shelf A1" CUT
+=SNAP NEW
+#32770 "New item" ACTIVE
+ Static 65535 "Item ID"
+ Edit 100 ""
+ Static 65535 "&Maker"
+ Edit 105 ""
+ Static 65535 "Mo&del"
+ Edit 106 ""
+ WTAB 95 "&Overview|&Technical|&Acquisition|&Notes" CUR 0
+ Static 65535 "&Category"
+ ComboBox 101 "" FOCUS
+  ROW "SYS   Systems"
+  ROW "MOBO  Motherboards"
+  ROW "CPU   Processors"
+  ROW "CARD  Expansion cards"
+  ROW "DRV   Drives"
+  ROW "PERI  Peripherals"
+  ROW "SW    Software"
+  ROW "MAN   Manuals"
+  ROW "CBL   Cables"
+  ROW "PART  Parts"
+ Static 65535 "&Status"
+ ComboBox 102 "A  Active"
+  ROW "A  Active" SELECTED
+  ROW "D  Disposed of"
+ Static 65535 "T&ype"
+ Edit 103 ""
+ Static 65535 "Cond&ition"
+ ComboBox 104 ""
+  ROW "" SELECTED
+  ROW "NEW  New"
+  ROW "EXC  Excellent"
+  ROW "GD   Good"
+  ROW "FR   Fair"
+  ROW "PR   Poor"
+ Static 65535 "&Works"
+ ComboBox 109 "?  Not tested"
+  ROW "?  Not tested" SELECTED
+  ROW "Y  Yes"
+  ROW "I  Intermittently"
+  ROW "N  No"
+ Static 65535 "&Quantity"
+ Edit 110 "1"
+ Static 65535 ""
+ Edit 111 ""
+ Static 65535 "&Location"
+ Edit 112 ""
+ Button 136 "..."
+ Static 65535 "Part of"
+ Edit 113 ""
+ Static 65535 ""
+ Edit 114 "(no location)"
+ Static 65535 "Ta&gs"
+ Edit 119 ""
+ Button 143 "..."
+ Static 65535 "S&erial" HIDDEN
+ Edit 107 "" HIDDEN
+ Static 65535 "Desc&ription" HIDDEN
+ Edit 108 "" HIDDEN
+ Static 65535 "Date acq&uired" HIDDEN
+ Edit 115 "" HIDDEN
+ Static 65535 "Acquired &from" HIDDEN
+ Edit 116 "" HIDDEN
+ Static 65535 "&Price paid" HIDDEN
+ Edit 117 "" HIDDEN
+ Static 65535 "Current &value" HIDDEN
+ Edit 118 "" HIDDEN
+ Static 65535 "Created" HIDDEN
+ Edit 120 "" HIDDEN
+ Static 65535 "Updated" HIDDEN
+ Edit 121 "" HIDDEN
+ Edit 122 "" HIDDEN
+ Button 148 "Parts"
+ Button 149 "Service"
+ Button 150 "Loans"
+ Button 151 "Used with"
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ Button 94 "&Help"
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+INVWIN "RETROINV - Items by ID" DISABLED
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID" CHECKED
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 1546 "Next o&rder"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|3 items|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status"
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0A@0+55 1F@55+80 2B@135+100 3F@235+100 4F@335+40 5F@375+40 6B@415+100 7F@515+55
+  ListBox 1 ""
+   ROW "       1 DRV Drives                IBM                            5150                           yes        1 Office" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+56"DRV Drives" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+28"Office"
+   ROW "       2 DRV Drives                Tandon                         TM100-2                        no         2 Box B2"
+   ROW "       3 CARD Expansion cards      Hercules                       Graphics Card                  ?          1 Shelf A1" CUT
+=SNAP NEWPICK
+#32770 "New item" ACTIVE
+ Static 65535 "Item ID"
+ Edit 100 ""
+ Static 65535 "&Maker"
+ Edit 105 "Commodore"
+ Static 65535 "Mo&del"
+ Edit 106 "PET 2001"
+ WTAB 95 "&Overview|&Technical|&Acquisition|&Notes" CUR 0
+ Static 65535 "&Category"
+ ComboBox 101 "DRV   Drives"
+  ROW "SYS   Systems"
+  ROW "MOBO  Motherboards"
+  ROW "CPU   Processors"
+  ROW "CARD  Expansion cards"
+  ROW "DRV   Drives" SELECTED
+  ROW "PERI  Peripherals"
+  ROW "SW    Software"
+  ROW "MAN   Manuals"
+  ROW "CBL   Cables"
+  ROW "PART  Parts"
+ Static 65535 "&Status"
+ ComboBox 102 "A  Active"
+  ROW "A  Active" SELECTED
+  ROW "D  Disposed of"
+ Static 65535 "T&ype"
+ Edit 103 ""
+ Static 65535 "Cond&ition"
+ ComboBox 104 ""
+  ROW "" SELECTED
+  ROW "NEW  New"
+  ROW "EXC  Excellent"
+  ROW "GD   Good"
+  ROW "FR   Fair"
+  ROW "PR   Poor"
+ Static 65535 "&Works"
+ ComboBox 109 "?  Not tested"
+  ROW "?  Not tested" SELECTED
+  ROW "Y  Yes"
+  ROW "I  Intermittently"
+  ROW "N  No"
+ Static 65535 "&Quantity"
+ Edit 110 "1"
+ Static 65535 ""
+ Edit 111 ""
+ Static 65535 "&Location"
+ Edit 112 "OFF" FOCUS
+ Button 136 "..."
+ Static 65535 "Part of"
+ Edit 113 ""
+ Static 65535 ""
+ Edit 114 "Office"
+ Static 65535 "Ta&gs"
+ Edit 119 ""
+ Button 143 "..."
+ Static 65535 "S&erial" HIDDEN
+ Edit 107 "" HIDDEN
+ Static 65535 "Desc&ription" HIDDEN
+ Edit 108 "" HIDDEN
+ Static 65535 "Date acq&uired" HIDDEN
+ Edit 115 "" HIDDEN
+ Static 65535 "Acquired &from" HIDDEN
+ Edit 116 "" HIDDEN
+ Static 65535 "&Price paid" HIDDEN
+ Edit 117 "" HIDDEN
+ Static 65535 "Current &value" HIDDEN
+ Edit 118 "" HIDDEN
+ Static 65535 "Created" HIDDEN
+ Edit 120 "" HIDDEN
+ Static 65535 "Updated" HIDDEN
+ Edit 121 "" HIDDEN
+ Edit 122 "" HIDDEN
+ Button 148 "Parts"
+ Button 149 "Service"
+ Button 150 "Loans"
+ Button 151 "Used with"
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ Button 94 "&Help"
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+INVWIN "RETROINV - Items by ID" DISABLED
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID" CHECKED
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 1546 "Next o&rder"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|3 items|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status"
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0A@0+55 1F@55+80 2B@135+100 3F@235+100 4F@335+40 5F@375+40 6B@415+100 7F@515+55
+  ListBox 1 ""
+   ROW "       1 DRV Drives                IBM                            5150                           yes        1 Office" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+56"DRV Drives" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+28"Office"
+   ROW "       2 DRV Drives                Tandon                         TM100-2                        no         2 Box B2"
+   ROW "       3 CARD Expansion cards      Hercules                       Graphics Card                  ?          1 Shelf A1" CUT
+=SNAP ADDED
+INVWIN "RETROINV - Items by ID" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID" CHECKED
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 1546 "Next o&rder"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|4 items|Item 4 added"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status"
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0A@0+55 1F@55+80 2B@135+100 3F@235+100 4F@335+40 5F@375+40 6B@415+100 7F@515+55
+  ListBox 1 "" FOCUS
+   ROW "       1 DRV Drives                IBM                            5150                           yes        1 Office" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+56"DRV Drives" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+28"Office"
+   ROW "       2 DRV Drives                Tandon                         TM100-2                        no         2 Box B2"
+   ROW "       3 CARD Expansion cards      Hercules                       Graphics Card                  ?          1 Shelf A1" CUT
+   ROW "       4 DRV Drives                Commodore                      PET 2001                       ?          1 Office"
+=SNAP NEWSHOWN
+#32770 "Item 4" ACTIVE
+ Static 65535 "Item ID"
+ Static 100 "4"
+ Static 65535 "Maker"
+ Edit 105 "Commodore"
+ Static 65535 "Model"
+ Edit 106 "PET 2001"
+ WTAB 95 "&Overview|&Technical|&Acquisition|&Notes" CUR 0 FOCUS
+ Static 65535 "Category"
+ Static 101 "DRV   Drives"
+ Static 65535 "Status"
+ Static 102 "A  Active"
+ Static 65535 "Type"
+ Static 103 ""
+ Static 65535 "Condition"
+ Static 104 ""
+ Static 65535 "Works"
+ Static 109 "?  Not tested"
+ Static 65535 "Quantity"
+ Static 110 "1"
+ Static 65535 ""
+ Edit 111 "Available 1"
+ Static 65535 "Location"
+ Static 112 "OFF"
+ Static 65535 "Part of"
+ Edit 113 ""
+ Static 65535 ""
+ Static 114 "Office"
+ Static 65535 "Tags"
+ Edit 119 ""
+ Static 65535 "Serial" HIDDEN
+ Static 107 "" HIDDEN
+ Static 65535 "Description" HIDDEN
+ Edit 108 "" HIDDEN
+ Static 65535 "Date acquired" HIDDEN
+ Static 115 "" HIDDEN
+ Static 65535 "Acquired from" HIDDEN
+ Static 116 "" HIDDEN
+ Static 65535 "Price paid" HIDDEN
+ Static 117 "" HIDDEN
+ Static 65535 "Current value" HIDDEN
+ Static 118 "" HIDDEN
+ Static 65535 "Created" HIDDEN
+ Static 120 "2026-10-08" HIDDEN
+ Static 65535 "Updated" HIDDEN
+ Static 121 "2026-10-08" HIDDEN
+ Edit 122 "" HIDDEN
+ Button 148 "Parts"
+ Button 149 "Service"
+ Button 150 "Loans"
+ Button 151 "Used with"
+ Static 99 ""
+ Button 2 "Close" DEFAULT
+ Button 98 "Edit"
+ Button 94 "&Help"
+INVWIN "RETROINV - Items by ID" DISABLED
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID" CHECKED
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 1546 "Next o&rder"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|4 items|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status"
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0A@0+55 1F@55+80 2B@135+100 3F@235+100 4F@335+40 5F@375+40 6B@415+100 7F@515+55
+  ListBox 1 ""
+   ROW "       1 DRV Drives                IBM                            5150                           yes        1 Office"
+    DRAW 000000/FFFFFF 0R@42+6"1" 1L@55+56"DRV Drives" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+28"Office"
+   ROW "       2 DRV Drives                Tandon                         TM100-2                        no         2 Box B2"
+   ROW "       3 CARD Expansion cards      Hercules                       Graphics Card                  ?          1 Shelf A1" CUT
+   ROW "       4 DRV Drives                Commodore                      PET 2001                       ?          1 Office" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"4" 1L@55+56"DRV Drives" 2L@135+56"Commodore" 3L@235+48"PET 2001" 4L@335+6"?" 5R@402+6"1" 6L@415+28"Office"
+=END

@@ -1,0 +1,1052 @@
+# CSV.SCR - EXPORT and IMPORT: the files they write and read beside
+# the data (named through $D), table and path checks, flags, paging of
+# an export through its scratch file, REPLACE, the file-exists and
+# no-export-in-progress errors, the exports of two sessions at once;
+# imports by position and by header, read-only columns ignored,
+# refused lines reported with nothing added, the count of refusals
+# beyond those listed, the location rules (codes and names unique, a
+# parent on an earlier line, the depth limit), the exclusive rule, the
+# audit rows; an export imported back; the answers of a disk failure
+# while adding and after refused lines.  The clock is 2026-10-08.
+
+> HELLO CONSOLE
+< +OK
+> LOGIN ADMIN admin
+< +OK LEVEL=3 MUSTCHG=1
+> PASSWD admin secret1
+< +OK
+
+# An empty table: the file holds only the Ctrl-Z that ends it.
+> EXPORT MAINT FILE=$DEMPTY.CSV
+< +DATA
+< K ROWS=0
+< .
+@FILE $DEMPTY.CSV
+< \x1A
+@FILE $DNONE.CSV
+< (no file)
+
+# AUDIT before any import, whose K row names the file's path, which
+# differs between systems.
+> EXPORT AUDIT FILE=$DAUDIT.CSV
+< +DATA
+< K ROWS=21
+< .
+@FILE $DAUDIT.CSV
+< 1,20261008,"12:00:00","SYSTEM","SYSTEM","CATS",1,"I","CAT_CODE","","SYS"
+< 2,20261008,"12:00:00","SYSTEM","SYSTEM","CATS",2,"I","CAT_CODE","","MOBO"
+< 3,20261008,"12:00:00","SYSTEM","SYSTEM","CATS",3,"I","CAT_CODE","","CPU"
+< 4,20261008,"12:00:00","SYSTEM","SYSTEM","CATS",4,"I","CAT_CODE","","CARD"
+< 5,20261008,"12:00:00","SYSTEM","SYSTEM","CATS",5,"I","CAT_CODE","","DRV"
+< 6,20261008,"12:00:00","SYSTEM","SYSTEM","CATS",6,"I","CAT_CODE","","PERI"
+< 7,20261008,"12:00:00","SYSTEM","SYSTEM","CATS",7,"I","CAT_CODE","","SW"
+< 8,20261008,"12:00:00","SYSTEM","SYSTEM","CATS",8,"I","CAT_CODE","","MAN"
+< 9,20261008,"12:00:00","SYSTEM","SYSTEM","CATS",9,"I","CAT_CODE","","CBL"
+< 10,20261008,"12:00:00","SYSTEM","SYSTEM","CATS",10,"I","CAT_CODE","","PART"
+< 11,20261008,"12:00:00","SYSTEM","SYSTEM","LTYPES",1,"I","LT_CODE","","ROOM"
+< 12,20261008,"12:00:00","SYSTEM","SYSTEM","LTYPES",2,"I","LT_CODE","","SHELF"
+< 13,20261008,"12:00:00","SYSTEM","SYSTEM","LTYPES",3,"I","LT_CODE","","RACK"
+< 14,20261008,"12:00:00","SYSTEM","SYSTEM","LTYPES",4,"I","LT_CODE","","CABINET"
+< 15,20261008,"12:00:00","SYSTEM","SYSTEM","LTYPES",5,"I","LT_CODE","","DRAWER"
+< 16,20261008,"12:00:00","SYSTEM","SYSTEM","LTYPES",6,"I","LT_CODE","","BOX"
+< 17,20261008,"12:00:00","SYSTEM","SYSTEM","LTYPES",7,"I","LT_CODE","","BIN"
+< 18,20261008,"12:00:00","SYSTEM","SYSTEM","LTYPES",8,"I","LT_CODE","","BUCKET"
+< 19,20261008,"12:00:00","SYSTEM","SYSTEM","USERS",1,"I","USER_ID","","1"
+< 20,20261008,"12:00:00","CONSOLE","ADMIN","USERS",1,"L","","",""
+< 21,20261008,"12:00:00","CONSOLE","ADMIN","USERS",1,"W","PWHASH","",""
+< \x1A
+
+# IMPORT ITEMS by position: ITEM_ID (read-only) is ignored, an empty
+# value takes the default of ITEM ADD, a line may stop early, blank
+# lines are skipped and a Ctrl-Z ends the file.  WORKS is stored upper
+# case.  One K row names the import, then each record has its I row.
+@WRITE $DIN.CSV
+= 77,"CPU","","Intel","8088",,"  spaced",,,4
+=
+= ,MAN,,"IBM","Tech ""Ref""","6025005","a, b, c",GD,y,1,0,,,,,0,19850101,"shop",12.5
+= \x20\x20\x20
+= ,CBL,,Bel\\kin
+= \x1A
+= ,CPU,,never
+> IMPORT ITEMS FILE=$DIN.CSV
+< +OK ADDED=3
+@TABLE ITEMS FIELDS=ITEM_ID,CATEGORY,MFR,MODEL,SERIALNO,DESCR,COND,WORKS,QTY,ON_LOAN,LOC_ID,PARENT_ID,ACQ_DATE,ACQ_SRC,ACQ_PRICE,STATUS,CREATED
+< F ITEM_ID CATEGORY MFR MODEL SERIALNO DESCR COND WORKS QTY ON_LOAN LOC_ID PARENT_ID ACQ_DATE ACQ_SRC ACQ_PRICE STATUS CREATED
+< R 1 CPU Intel 8088 "" "  spaced" "" ? 4 0 0 0 "" "" "" A 20261008
+< R 2 MAN IBM "Tech \"Ref\"" 6025005 "a, b, c" GD Y 1 0 0 0 19850101 shop 12.50 A 20261008
+< R 3 CBL "Bel\\kin" "" "" "" "" ? 1 0 0 0 "" "" "" A 20261008
+@TABLE AUDIT FIELDS=AUD_ID,USERNAME,TBL,REC_ID,ACTION,FLD
+< F AUD_ID USERNAME TBL REC_ID ACTION FLD
+< R 1 SYSTEM CATS 1 I CAT_CODE
+< R 2 SYSTEM CATS 2 I CAT_CODE
+< R 3 SYSTEM CATS 3 I CAT_CODE
+< R 4 SYSTEM CATS 4 I CAT_CODE
+< R 5 SYSTEM CATS 5 I CAT_CODE
+< R 6 SYSTEM CATS 6 I CAT_CODE
+< R 7 SYSTEM CATS 7 I CAT_CODE
+< R 8 SYSTEM CATS 8 I CAT_CODE
+< R 9 SYSTEM CATS 9 I CAT_CODE
+< R 10 SYSTEM CATS 10 I CAT_CODE
+< R 11 SYSTEM LTYPES 1 I LT_CODE
+< R 12 SYSTEM LTYPES 2 I LT_CODE
+< R 13 SYSTEM LTYPES 3 I LT_CODE
+< R 14 SYSTEM LTYPES 4 I LT_CODE
+< R 15 SYSTEM LTYPES 5 I LT_CODE
+< R 16 SYSTEM LTYPES 6 I LT_CODE
+< R 17 SYSTEM LTYPES 7 I LT_CODE
+< R 18 SYSTEM LTYPES 8 I LT_CODE
+< R 19 SYSTEM USERS 1 I USER_ID
+< R 20 ADMIN USERS 1 L ""
+< R 21 ADMIN USERS 1 W PWHASH
+< R 22 ADMIN ITEMS 0 K IMPORT
+< R 23 ADMIN ITEMS 1 I ITEM_ID
+< R 24 ADMIN ITEMS 2 I ITEM_ID
+< R 25 ADMIN ITEMS 3 I ITEM_ID
+
+# Argument errors: the table, the path, the flags, other keys and
+# positional arguments.
+> EXPORT
+< -ERR 102 missing argument FIELD=TABLE
+> EXPORT USERS FILE=$DX.CSV
+< -ERR 102 table not allowed FIELD=TABLE
+> EXPORT SEQ FILE=$DX.CSV
+< -ERR 102 table not allowed FIELD=TABLE
+> EXPORT FOO FILE=$DX.CSV
+< -ERR 102 table not allowed FIELD=TABLE
+> EXPORT ITEMS
+< -ERR 102 bad file name FIELD=FILE
+> EXPORT ITEMS FILE=
+< -ERR 102 bad file name FIELD=FILE
+> EXPORT ITEMS FILE=$DX.DBF
+< -ERR 102 bad file name FIELD=FILE
+> EXPORT ITEMS FILE=$DX.&C0
+< -ERR 102 bad file name FIELD=FILE
+> EXPORT ITEMS FILE=$D
+< -ERR 102 bad file name FIELD=FILE
+> EXPORT ITEMS FILE="A B.CSV"
+< -ERR 102 bad file name FIELD=FILE
+> EXPORT ITEMS FILE=$DX.CSV HEADER=2
+< -ERR 102 bad or missing argument FIELD=HEADER
+> EXPORT ITEMS FILE=$DX.CSV HEADER= REPLACE=yes
+< -ERR 102 bad or missing argument FIELD=REPLACE
+> EXPORT ITEMS FILE=$DX.CSV REPLACE=yes
+< -ERR 102 bad or missing argument FIELD=REPLACE
+> EXPORT ITEMS FILE=$DX.CSV PAGE=5
+< -ERR 102 unexpected key FIELD=PAGE
+> EXPORT ITEMS $DX.CSV
+< -ERR 100 too many arguments
+> EXPORT ITEMS EXTRA FILE=$DX.CSV
+< -ERR 100 too many arguments
+# DOS device names, in any directory and with any extension, and
+# extensions that DOS cuts to those of data files.
+> EXPORT ITEMS FILE=$DNUL.CSV
+< -ERR 102 bad file name FIELD=FILE
+> EXPORT ITEMS FILE=PRN
+< -ERR 102 bad file name FIELD=FILE
+> EXPORT ITEMS FILE=$Dcon
+< -ERR 102 bad file name FIELD=FILE
+> EXPORT ITEMS FILE=$DITEMS.DBFX
+< -ERR 102 bad file name FIELD=FILE
+> IMPORT ITEMS FILE=$DAUX.CSV
+< -ERR 102 bad file name FIELD=FILE
+> IMPORT LOCS FILE=$DLOCS.NDXA
+< -ERR 102 bad file name FIELD=FILE
+@FILE $DX.CSV
+< (no file)
+
+# No export of that name in progress: a continuation is refused.
+> EXPORT ITEMS FILE=$DX.CSV AFTER=ITEMS::5
+< -ERR 204 no export in progress
+
+> LOC ADD LOC_NAME="Shelf A, top" LTYPE=BIN LOC_CODE=A1 CAPACITY=12
+< +OK ID=1
+> LOC ADD LOC_NAME=B2 LTYPE=BIN LOC_CODE=B2
+< +OK ID=2
+> LOC ADD LOC_NAME="  indented" LTYPE=BIN LOC_CODE=C3
+< +OK ID=3
+> ITEM ADD CATEGORY=SYS MFR=IBM MODEL=5150 SERIALNO=0012345 COND=GD LOC_ID=B2 ACQ_DATE=19840312 ACQ_PRICE=450 CUR_VALUE=1200.5 NOTES="never exported"
+< +OK ID=4
+> ITEM ADD CATEGORY=CARD MFR="M\x81ller" MODEL="  XT" DESCR="a, b" QTY=2 LOC_ID=A1 TAGS=isa
+< +OK ID=5
+> ITEM ADD CATEGORY=SYS MFR=Compaq MODEL="Portable \"Plus\"" ACQ_PRICE=0.99
+< +OK ID=6
+> ITEM ADD CATEGORY=CPU MFR=AMD MODEL=8086
+< +OK ID=7
+> ITEM DEL 7
+< +OK
+> MAINT ADD 1 MTYPE=CL SUMMARY="cleaned, \"tested\""
+< +OK ID=1
+> LOAN OUT 2 HOLDER="Jane Smith" CONTACT=555-0101 DUE=20261020
+< +OK ID=1
+
+# Every exportable table, the deleted item 7 left out; memo fields are
+# never written.
+> EXPORT ITEMS FILE=$DITEMS.CSV
+< +DATA
+< K ROWS=6
+< .
+@FILE $DITEMS.CSV
+< 1,"CPU","","Intel","8088","","  spaced","","?",4,0,0,0,0,0,0,,"",,,"","A",20261008,20261008
+< 2,"MAN","","IBM","Tech ""Ref""","6025005","a, b, c","GD","Y",1,1,0,0,0,0,0,19850101,"shop",12.50,,"","A",20261008,20261008
+< 3,"CBL","","Bel\\kin","","","","","?",1,0,0,0,0,0,0,,"",,,"","A",20261008,20261008
+< 4,"SYS","","IBM","5150","0012345","","GD","?",1,0,0,0,0,2,0,19840312,"",450.00,1200.50,"","A",20261008,20261008
+< 5,"CARD","","M\x81ller","  XT","","a, b","","?",2,0,0,0,0,1,0,,"",,,"isa","A",20261008,20261008
+< 6,"SYS","","Compaq","Portable ""Plus""","","","","?",1,0,0,0,0,0,0,,"",0.99,,"","A",20261008,20261008
+< \x1A
+> EXPORT LOCS FILE=$DLOCS.CSV
+< +DATA
+< K ROWS=3
+< .
+@FILE $DLOCS.CSV
+< 1,0,"Shelf A, top","A1","BIN",12
+< 2,0,"B2","B2","BIN",
+< 3,0,"  indented","C3","BIN",
+< \x1A
+> EXPORT CATS FILE=$DCATS.CSV
+< +DATA
+< K ROWS=10
+< .
+@FILE $DCATS.CSV
+< "SYS","Systems",1
+< "MOBO","Motherboards",2
+< "CPU","Processors",3
+< "CARD","Expansion cards",4
+< "DRV","Drives",5
+< "PERI","Peripherals",6
+< "SW","Software",7
+< "MAN","Manuals",8
+< "CBL","Cables",9
+< "PART","Parts",10
+< \x1A
+> EXPORT LTYPES FILE=$DLTYPES.CSV
+< +DATA
+< K ROWS=8
+< .
+@FILE $DLTYPES.CSV
+< "ROOM","Room",1
+< "SHELF","Shelf",2
+< "RACK","Rack",3
+< "CABINET","Cabinet",4
+< "DRAWER","Drawer",5
+< "BOX","Box",6
+< "BIN","Bin",7
+< "BUCKET","Bucket",8
+< \x1A
+> EXPORT MAINT FILE=$DMAINT.CSV
+< +DATA
+< K ROWS=1
+< .
+@FILE $DMAINT.CSV
+< 1,1,20261008,"CL","cleaned, ""tested""",,""
+< \x1A
+> EXPORT LOANS FILE=$DLOANS.CSV
+< +DATA
+< K ROWS=1
+< .
+@FILE $DLOANS.CSV
+< 1,2,"L",1,"Jane Smith",0,"555-0101",20261008,20261020,,""
+< \x1A
+
+# The file already exists: refused without REPLACE=1, which writes it anew,
+# here with the field names first.
+> EXPORT ITEMS FILE=$DITEMS.CSV
+< -ERR 201 file already exists FIELD=FILE
+> EXPORT ITEMS FILE=$DITEMS.CSV HEADER=1 REPLACE=1
+< +DATA
+< K ROWS=6
+< .
+@FILE $DITEMS.CSV
+< ITEM_ID,CATEGORY,ITEMTYPE,MFR,MODEL,SERIALNO,DESCR,COND,WORKS,QTY,ON_LOAN,RESERVED,IN_USE,ATTACHED,LOC_ID,PARENT_ID,ACQ_DATE,ACQ_SRC,ACQ_PRICE,CUR_VALUE,TAGS,STATUS,CREATED,UPDATED
+< 1,"CPU","","Intel","8088","","  spaced","","?",4,0,0,0,0,0,0,,"",,,"","A",20261008,20261008
+< 2,"MAN","","IBM","Tech ""Ref""","6025005","a, b, c","GD","Y",1,1,0,0,0,0,0,19850101,"shop",12.50,,"","A",20261008,20261008
+< 3,"CBL","","Bel\\kin","","","","","?",1,0,0,0,0,0,0,,"",,,"","A",20261008,20261008
+< 4,"SYS","","IBM","5150","0012345","","GD","?",1,0,0,0,0,2,0,19840312,"",450.00,1200.50,"","A",20261008,20261008
+< 5,"CARD","","M\x81ller","  XT","","a, b","","?",2,0,0,0,0,1,0,,"",,,"isa","A",20261008,20261008
+< 6,"SYS","","Compaq","Portable ""Plus""","","","","?",1,0,0,0,0,0,0,,"",0.99,,"","A",20261008,20261008
+< \x1A
+> EXPORT LOCS FILE=$DLOCS.CSV HEADER=1 REPLACE=0
+< -ERR 201 file already exists FIELD=FILE
+> EXPORT LOCS FILE=$DLOCS.CSV HEADER=0 REPLACE=1
+< +DATA
+< K ROWS=3
+< .
+@FILE $DLOCS.CSV
+< 1,0,"Shelf A, top","A1","BIN",12
+< 2,0,"B2","B2","BIN",
+< 3,0,"  indented","C3","BIN",
+< \x1A
+
+# Fifty-two locations from a file without a header, in the columns of
+# an export: shelves, and a bin in each, its parent the code of the line
+# before.
+@WRITE $DIN.CSV
+= ,,"Shelf 1",L01,SHELF
+= ,L01,"Bin 2",L02,BIN
+= ,,"Shelf 3",L03,SHELF
+= ,L03,"Bin 4",L04,BIN
+= ,,"Shelf 5",L05,SHELF
+= ,L05,"Bin 6",L06,BIN
+= ,,"Shelf 7",L07,SHELF
+= ,L07,"Bin 8",L08,BIN
+= ,,"Shelf 9",L09,SHELF
+= ,L09,"Bin 10",L10,BIN
+= ,,"Shelf 11",L11,SHELF
+= ,L11,"Bin 12",L12,BIN
+= ,,"Shelf 13",L13,SHELF
+= ,L13,"Bin 14",L14,BIN
+= ,,"Shelf 15",L15,SHELF
+= ,L15,"Bin 16",L16,BIN
+= ,,"Shelf 17",L17,SHELF
+= ,L17,"Bin 18",L18,BIN
+= ,,"Shelf 19",L19,SHELF
+= ,L19,"Bin 20",L20,BIN
+= ,,"Shelf 21",L21,SHELF
+= ,L21,"Bin 22",L22,BIN
+= ,,"Shelf 23",L23,SHELF
+= ,L23,"Bin 24",L24,BIN
+= ,,"Shelf 25",L25,SHELF
+= ,L25,"Bin 26",L26,BIN
+= ,,"Shelf 27",L27,SHELF
+= ,L27,"Bin 28",L28,BIN
+= ,,"Shelf 29",L29,SHELF
+= ,L29,"Bin 30",L30,BIN
+= ,,"Shelf 31",L31,SHELF
+= ,L31,"Bin 32",L32,BIN
+= ,,"Shelf 33",L33,SHELF
+= ,L33,"Bin 34",L34,BIN
+= ,,"Shelf 35",L35,SHELF
+= ,L35,"Bin 36",L36,BIN
+= ,,"Shelf 37",L37,SHELF
+= ,L37,"Bin 38",L38,BIN
+= ,,"Shelf 39",L39,SHELF
+= ,L39,"Bin 40",L40,BIN
+= ,,"Shelf 41",L41,SHELF
+= ,L41,"Bin 42",L42,BIN
+= ,,"Shelf 43",L43,SHELF
+= ,L43,"Bin 44",L44,BIN
+= ,,"Shelf 45",L45,SHELF
+= ,L45,"Bin 46",L46,BIN
+= ,,"Shelf 47",L47,SHELF
+= ,L47,"Bin 48",L48,BIN
+= ,,"Shelf 49",L49,SHELF
+= ,L49,"Bin 50",L50,BIN
+= ,,"Shelf 51",L51,SHELF
+= ,L51,"Bin 52",L52,BIN
+> IMPORT LOCS FILE=$DIN.CSV
+< +OK ADDED=52
+> LOC DEL L10
+< +OK
+> LOC DEL L12
+< +OK
+
+# An export examines ENG_EXPROWS records per request (deleted ones
+# counted) and writes the scratch file; the target appears only when
+# the last request renames it.  The cursor LOCS::32 names record
+# ENG_EXPROWS, in hex.
+> EXPORT LOCS FILE=$DPAGE.CSV
+< +DATA
+< K ROWS=48
+< C LOCS::32
+< .
+@FILE $DPAGE.CSV
+< (no file)
+> EXPORT LOCS FILE=$DPAGE.CSV AFTER=LOCS::32
+< +DATA
+< K ROWS=5
+< .
+@FILE $DPAGE.&C0
+< (no file)
+@FILE $DPAGE.CSV
+< 1,0,"Shelf A, top","A1","BIN",12
+< 2,0,"B2","B2","BIN",
+< 3,0,"  indented","C3","BIN",
+< 4,0,"Shelf 1","L01","SHELF",
+< 5,4,"Bin 2","L02","BIN",
+< 6,0,"Shelf 3","L03","SHELF",
+< 7,6,"Bin 4","L04","BIN",
+< 8,0,"Shelf 5","L05","SHELF",
+< 9,8,"Bin 6","L06","BIN",
+< 10,0,"Shelf 7","L07","SHELF",
+< 11,10,"Bin 8","L08","BIN",
+< 12,0,"Shelf 9","L09","SHELF",
+< 14,0,"Shelf 11","L11","SHELF",
+< 16,0,"Shelf 13","L13","SHELF",
+< 17,16,"Bin 14","L14","BIN",
+< 18,0,"Shelf 15","L15","SHELF",
+< 19,18,"Bin 16","L16","BIN",
+< 20,0,"Shelf 17","L17","SHELF",
+< 21,20,"Bin 18","L18","BIN",
+< 22,0,"Shelf 19","L19","SHELF",
+< 23,22,"Bin 20","L20","BIN",
+< 24,0,"Shelf 21","L21","SHELF",
+< 25,24,"Bin 22","L22","BIN",
+< 26,0,"Shelf 23","L23","SHELF",
+< 27,26,"Bin 24","L24","BIN",
+< 28,0,"Shelf 25","L25","SHELF",
+< 29,28,"Bin 26","L26","BIN",
+< 30,0,"Shelf 27","L27","SHELF",
+< 31,30,"Bin 28","L28","BIN",
+< 32,0,"Shelf 29","L29","SHELF",
+< 33,32,"Bin 30","L30","BIN",
+< 34,0,"Shelf 31","L31","SHELF",
+< 35,34,"Bin 32","L32","BIN",
+< 36,0,"Shelf 33","L33","SHELF",
+< 37,36,"Bin 34","L34","BIN",
+< 38,0,"Shelf 35","L35","SHELF",
+< 39,38,"Bin 36","L36","BIN",
+< 40,0,"Shelf 37","L37","SHELF",
+< 41,40,"Bin 38","L38","BIN",
+< 42,0,"Shelf 39","L39","SHELF",
+< 43,42,"Bin 40","L40","BIN",
+< 44,0,"Shelf 41","L41","SHELF",
+< 45,44,"Bin 42","L42","BIN",
+< 46,0,"Shelf 43","L43","SHELF",
+< 47,46,"Bin 44","L44","BIN",
+< 48,0,"Shelf 45","L45","SHELF",
+< 49,48,"Bin 46","L46","BIN",
+< 50,0,"Shelf 47","L47","SHELF",
+< 51,50,"Bin 48","L48","BIN",
+< 52,0,"Shelf 49","L49","SHELF",
+< 53,52,"Bin 50","L50","BIN",
+< 54,0,"Shelf 51","L51","SHELF",
+< 55,54,"Bin 52","L52","BIN",
+< \x1A
+
+# A stopped export leaves its scratch file, which the next first
+# request replaces; a continuation needs the same path, and its
+# scratch file, whose extension ends in the tag 0 of local mode.
+> EXPORT LOCS FILE=$DSTOP.CSV
+< +DATA
+< K ROWS=48
+< C LOCS::32
+< .
+@FILE $DSTOP.CSV
+< (no file)
+@REMOVE $DSTOP.&C0
+> EXPORT LOCS FILE=$DSTOP.CSV AFTER=LOCS::32
+< -ERR 204 no export in progress
+> EXPORT LOCS FILE=$DOTHER.CSV AFTER=LOCS::32
+< -ERR 204 no export in progress
+> EXPORT LOCS FILE=$DSTOP.CSV
+< +DATA
+< K ROWS=48
+< C LOCS::32
+< .
+> EXPORT LOCS FILE=$DSTOP.CSV AFTER=LOCS::32
+< +DATA
+< K ROWS=5
+< .
+@FILE $DSTOP.&C0
+< (no file)
+
+# Two sessions export at once to paths that differ only in their
+# extension.  Each request gives its session's slot as the export's tag
+# (3 for the second of three sessions under @PEERS 3 SELF=2, 0 in local
+# mode), which the scratch file's name ends in, so the two never share
+# one; a continuation from the other session finds no scratch file.
+@PEERS 3 SELF=2
+> EXPORT LOCS FILE=$DTWO.CSV HEADER=1
+< +DATA
+< K ROWS=48
+< C LOCS::32
+< .
+@PEERS 0
+> EXPORT LOCS FILE=$DTWO.CSV HEADER=1 AFTER=LOCS::32
+< -ERR 204 no export in progress
+> EXPORT LOCS FILE=$DTWO.TXT
+< +DATA
+< K ROWS=48
+< C LOCS::32
+< .
+@PEERS 3 SELF=2
+> EXPORT LOCS FILE=$DTWO.CSV HEADER=1 AFTER=LOCS::32
+< +DATA
+< K ROWS=5
+< .
+@PEERS 0
+> EXPORT LOCS FILE=$DTWO.TXT AFTER=LOCS::32
+< +DATA
+< K ROWS=5
+< .
+@FILE $DTWO.CSV
+< LOC_ID,PARENT_ID,LOC_NAME,LOC_CODE,LTYPE,CAPACITY
+< 1,0,"Shelf A, top","A1","BIN",12
+< 2,0,"B2","B2","BIN",
+< 3,0,"  indented","C3","BIN",
+< 4,0,"Shelf 1","L01","SHELF",
+< 5,4,"Bin 2","L02","BIN",
+< 6,0,"Shelf 3","L03","SHELF",
+< 7,6,"Bin 4","L04","BIN",
+< 8,0,"Shelf 5","L05","SHELF",
+< 9,8,"Bin 6","L06","BIN",
+< 10,0,"Shelf 7","L07","SHELF",
+< 11,10,"Bin 8","L08","BIN",
+< 12,0,"Shelf 9","L09","SHELF",
+< 14,0,"Shelf 11","L11","SHELF",
+< 16,0,"Shelf 13","L13","SHELF",
+< 17,16,"Bin 14","L14","BIN",
+< 18,0,"Shelf 15","L15","SHELF",
+< 19,18,"Bin 16","L16","BIN",
+< 20,0,"Shelf 17","L17","SHELF",
+< 21,20,"Bin 18","L18","BIN",
+< 22,0,"Shelf 19","L19","SHELF",
+< 23,22,"Bin 20","L20","BIN",
+< 24,0,"Shelf 21","L21","SHELF",
+< 25,24,"Bin 22","L22","BIN",
+< 26,0,"Shelf 23","L23","SHELF",
+< 27,26,"Bin 24","L24","BIN",
+< 28,0,"Shelf 25","L25","SHELF",
+< 29,28,"Bin 26","L26","BIN",
+< 30,0,"Shelf 27","L27","SHELF",
+< 31,30,"Bin 28","L28","BIN",
+< 32,0,"Shelf 29","L29","SHELF",
+< 33,32,"Bin 30","L30","BIN",
+< 34,0,"Shelf 31","L31","SHELF",
+< 35,34,"Bin 32","L32","BIN",
+< 36,0,"Shelf 33","L33","SHELF",
+< 37,36,"Bin 34","L34","BIN",
+< 38,0,"Shelf 35","L35","SHELF",
+< 39,38,"Bin 36","L36","BIN",
+< 40,0,"Shelf 37","L37","SHELF",
+< 41,40,"Bin 38","L38","BIN",
+< 42,0,"Shelf 39","L39","SHELF",
+< 43,42,"Bin 40","L40","BIN",
+< 44,0,"Shelf 41","L41","SHELF",
+< 45,44,"Bin 42","L42","BIN",
+< 46,0,"Shelf 43","L43","SHELF",
+< 47,46,"Bin 44","L44","BIN",
+< 48,0,"Shelf 45","L45","SHELF",
+< 49,48,"Bin 46","L46","BIN",
+< 50,0,"Shelf 47","L47","SHELF",
+< 51,50,"Bin 48","L48","BIN",
+< 52,0,"Shelf 49","L49","SHELF",
+< 53,52,"Bin 50","L50","BIN",
+< 54,0,"Shelf 51","L51","SHELF",
+< 55,54,"Bin 52","L52","BIN",
+< \x1A
+@FILE $DTWO.TXT
+< 1,0,"Shelf A, top","A1","BIN",12
+< 2,0,"B2","B2","BIN",
+< 3,0,"  indented","C3","BIN",
+< 4,0,"Shelf 1","L01","SHELF",
+< 5,4,"Bin 2","L02","BIN",
+< 6,0,"Shelf 3","L03","SHELF",
+< 7,6,"Bin 4","L04","BIN",
+< 8,0,"Shelf 5","L05","SHELF",
+< 9,8,"Bin 6","L06","BIN",
+< 10,0,"Shelf 7","L07","SHELF",
+< 11,10,"Bin 8","L08","BIN",
+< 12,0,"Shelf 9","L09","SHELF",
+< 14,0,"Shelf 11","L11","SHELF",
+< 16,0,"Shelf 13","L13","SHELF",
+< 17,16,"Bin 14","L14","BIN",
+< 18,0,"Shelf 15","L15","SHELF",
+< 19,18,"Bin 16","L16","BIN",
+< 20,0,"Shelf 17","L17","SHELF",
+< 21,20,"Bin 18","L18","BIN",
+< 22,0,"Shelf 19","L19","SHELF",
+< 23,22,"Bin 20","L20","BIN",
+< 24,0,"Shelf 21","L21","SHELF",
+< 25,24,"Bin 22","L22","BIN",
+< 26,0,"Shelf 23","L23","SHELF",
+< 27,26,"Bin 24","L24","BIN",
+< 28,0,"Shelf 25","L25","SHELF",
+< 29,28,"Bin 26","L26","BIN",
+< 30,0,"Shelf 27","L27","SHELF",
+< 31,30,"Bin 28","L28","BIN",
+< 32,0,"Shelf 29","L29","SHELF",
+< 33,32,"Bin 30","L30","BIN",
+< 34,0,"Shelf 31","L31","SHELF",
+< 35,34,"Bin 32","L32","BIN",
+< 36,0,"Shelf 33","L33","SHELF",
+< 37,36,"Bin 34","L34","BIN",
+< 38,0,"Shelf 35","L35","SHELF",
+< 39,38,"Bin 36","L36","BIN",
+< 40,0,"Shelf 37","L37","SHELF",
+< 41,40,"Bin 38","L38","BIN",
+< 42,0,"Shelf 39","L39","SHELF",
+< 43,42,"Bin 40","L40","BIN",
+< 44,0,"Shelf 41","L41","SHELF",
+< 45,44,"Bin 42","L42","BIN",
+< 46,0,"Shelf 43","L43","SHELF",
+< 47,46,"Bin 44","L44","BIN",
+< 48,0,"Shelf 45","L45","SHELF",
+< 49,48,"Bin 46","L46","BIN",
+< 50,0,"Shelf 47","L47","SHELF",
+< 51,50,"Bin 48","L48","BIN",
+< 52,0,"Shelf 49","L49","SHELF",
+< 53,52,"Bin 50","L50","BIN",
+< 54,0,"Shelf 51","L51","SHELF",
+< 55,54,"Bin 52","L52","BIN",
+< \x1A
+
+# Two exports to one path: the first to end puts its file there, and
+# the second's last request finds it.
+@PEERS 3 SELF=2
+> EXPORT LOCS FILE=$DSAME.CSV
+< +DATA
+< K ROWS=48
+< C LOCS::32
+< .
+@PEERS 0
+> EXPORT LOCS FILE=$DSAME.CSV
+< +DATA
+< K ROWS=48
+< C LOCS::32
+< .
+@PEERS 3 SELF=2
+> EXPORT LOCS FILE=$DSAME.CSV AFTER=LOCS::32
+< +DATA
+< K ROWS=5
+< .
+@PEERS 0
+> EXPORT LOCS FILE=$DSAME.CSV AFTER=LOCS::32
+< -ERR 201 file already exists FIELD=FILE
+
+# The tag is the slot of the script's session, 3 under @PEERS 3
+# SELF=2: without the scratch file whose extension ends in 3 the
+# continuation finds none.
+@PEERS 3 SELF=2
+> EXPORT LOCS FILE=$DSTOP.CSV REPLACE=1
+< +DATA
+< K ROWS=48
+< C LOCS::32
+< .
+@REMOVE $DSTOP.&C3
+> EXPORT LOCS FILE=$DSTOP.CSV REPLACE=1 AFTER=LOCS::32
+< -ERR 204 no export in progress
+@PEERS 0
+
+# IMPORT: argument errors, a missing file, and the exclusive rule.
+> IMPORT
+< -ERR 102 missing argument FIELD=TABLE
+> IMPORT CATS FILE=$DIN.CSV
+< -ERR 102 table not allowed FIELD=TABLE
+> IMPORT LTYPES FILE=$DIN.CSV
+< -ERR 102 table not allowed FIELD=TABLE
+> IMPORT MAINT FILE=$DIN.CSV
+< -ERR 102 table not allowed FIELD=TABLE
+> IMPORT AUDIT FILE=$DIN.CSV
+< -ERR 102 table not allowed FIELD=TABLE
+> IMPORT ITEMS
+< -ERR 102 bad file name FIELD=FILE
+> IMPORT ITEMS FILE=$DIN.NDX
+< -ERR 102 bad file name FIELD=FILE
+> IMPORT ITEMS FILE=$DIN.CSV REPLACE=1
+< -ERR 102 unexpected key FIELD=REPLACE
+> IMPORT ITEMS FILE=$DIN.CSV AFTER=x
+< -ERR 102 unexpected key FIELD=AFTER
+> IMPORT ITEMS FILE=$DIN.CSV HEADER=x
+< -ERR 102 bad or missing argument FIELD=HEADER
+> IMPORT ITEMS $DIN.CSV
+< -ERR 100 too many arguments
+> IMPORT ITEMS FILE=$DNONE.CSV
+< -ERR 200 file not found FIELD=FILE
+@OTHERS 2
+> IMPORT ITEMS FILE=$DNONE.CSV
+< -ERR 402 server busy
+> EXPORT ITEMS FILE=$DX.CSV REPLACE=1
+< +DATA
+< K ROWS=6
+< .
+@REMOVE $DX.CSV
+@OTHERS 0
+
+# By header: names in any case and any order, ON_LOAN (read-only)
+# ignored, fewer columns on a line.
+@WRITE $DIN.CSV
+= model,Mfr,CATEGORY,ON_LOAN,QTY
+= "5160","IBM",SYS,3,2
+= "PCjr","IBM",SYS
+> IMPORT ITEMS FILE=$DIN.CSV HEADER=1
+< +OK ADDED=2
+@TABLE ITEMS FIELDS=ITEM_ID,CATEGORY,MODEL,QTY,ON_LOAN
+< F ITEM_ID CATEGORY MODEL QTY ON_LOAN
+< R 1 CPU 8088 4 0
+< R 2 MAN "Tech \"Ref\"" 1 1
+< R 3 CBL "" 1 0
+< R 4 SYS 5150 1 0
+< R 5 CARD "  XT" 2 0
+< R 6 SYS "Portable \"Plus\"" 1 0
+< D 7 CPU 8086 1 0
+< R 8 SYS 5160 2 0
+< R 9 SYS PCjr 1 0
+
+# Refused lines: nothing is added, each refusal names its line (the
+# header is line 1) and field, or LINE for the line as a whole.
+@WRITE $DIN.CSV
+= CATEGORY,MFR,COND,QTY,LOC_CODE
+= CPU,ok
+= XYZ,bad category
+= CPU,"open quote
+= CPU,"text" after
+= CPU,bad cond,ZZ
+= CPU,bad qty,GD,many
+= CPU,no such bin,GD,1,Q9
+= CPU,a,GD,1,A1,extra
+= CPU,also ok
+> IMPORT ITEMS FILE=$DIN.CSV HEADER=1
+< +DATA
+< F LINE FIELD CODE TEXT
+< R 1 LOC_CODE 102 "unknown column"
+< K ERRORS=1
+< .
+@TABLE ITEMS FIELDS=ITEM_ID
+< F ITEM_ID
+< R 1
+< R 2
+< R 3
+< R 4
+< R 5
+< R 6
+< D 7
+< R 8
+< R 9
+
+# More refusals than are listed: all are counted.
+@WRITE $DIN.CSV
+= ,BAD0
+= ,BAD1
+= ,BAD2
+= ,BAD3
+= ,BAD4
+= ,BAD5
+= ,BAD6
+= ,BAD7
+= ,BAD8
+= ,BAD9
+= ,BAD10
+= ,BAD11
+> IMPORT ITEMS FILE=$DIN.CSV
+< +DATA
+< F LINE FIELD CODE TEXT
+< R 1 CATEGORY 202 "unknown category"
+< R 2 CATEGORY 202 "unknown category"
+< R 3 CATEGORY 202 "unknown category"
+< R 4 CATEGORY 202 "unknown category"
+< R 5 CATEGORY 202 "unknown category"
+< R 6 CATEGORY 202 "unknown category"
+< R 7 CATEGORY 202 "unknown category"
+< R 8 CATEGORY 202 "unknown category"
+< R 9 CATEGORY 202 "unknown category"
+< R 10 CATEGORY 202 "unknown category"
+< K ERRORS=12
+< .
+
+# Header errors stop the check at line 1.
+@WRITE $DIN.CSV
+= MFR,COLOR
+= IBM,red
+> IMPORT ITEMS FILE=$DIN.CSV HEADER=1
+< +DATA
+< F LINE FIELD CODE TEXT
+< R 1 COLOR 102 "unknown column"
+< K ERRORS=1
+< .
+@WRITE $DIN.CSV
+= MFR,mfr
+> IMPORT ITEMS FILE=$DIN.CSV HEADER=1
+< +DATA
+< F LINE FIELD CODE TEXT
+< R 1 MFR 102 "repeated column"
+< K ERRORS=1
+< .
+@WRITE $DIN.CSV
+= MFR,NOTES
+> IMPORT ITEMS FILE=$DIN.CSV HEADER=1
+< +DATA
+< F LINE FIELD CODE TEXT
+< R 1 NOTES 102 "unknown column"
+< K ERRORS=1
+< .
+
+# Locations: a code already in the table or twice in the file, a name
+# twice under one parent (a parent written by an earlier line, named by
+# its code), a missing name, an unknown type or parent, and a chain one
+# level deeper than ENG_MAXLOCDEPTH.
+@WRITE $DIN.CSV
+= LOC_CODE,LOC_NAME,LTYPE,PARENT_ID
+= A1,again,BIN,
+= Z1,Attic,ROOM,
+= Z1,Loft,ROOM,
+= ,Shelf,SHELF,Z1
+= ,shelf,SHELF,Z1
+= Z2,,BIN,
+= Z3,Crate,CRATE,
+= Z4,Box,BOX,Q9
+= Z5,Fine,BIN,A1
+= D1,D1,BOX,
+= D2,D2,BOX,D1
+= D3,D3,BOX,D2
+= D4,D4,BOX,D3
+= D5,D5,BOX,D4
+= D6,D6,BOX,D5
+= D7,D7,BOX,D6
+= D8,D8,BOX,D7
+= D9,D9,BOX,D8
+> IMPORT LOCS FILE=$DIN.CSV HEADER=1
+< +DATA
+< F LINE FIELD CODE TEXT
+< R 4 LOC_CODE 201 "duplicate in file"
+< R 2 LOC_CODE 201 "location code already used"
+< R 6 LOC_NAME 201 "duplicate in file"
+< R 7 LOC_NAME 102 "value required"
+< R 8 LTYPE 202 "unknown location type"
+< R 9 PARENT_ID 202 "unknown location"
+< R 19 PARENT_ID 202 "locations nested more than 8 levels deep"
+< K ERRORS=7
+< .
+# The LOC_ID column numbers the lines of a file: a PARENT_ID that is a
+# number names a line, 0 the top level, and a code a live location or a
+# line's, so an export imports back with its tree.
+@WRITE $DIN.CSV
+= 7,0,"Attic",Z1,ROOM
+= 8,7,"Shelf",Z2,SHELF,40
+= 9,A1,"Box",,BOX
+> IMPORT LOCS FILE=$DIN.CSV
+< +OK ADDED=3
+# The lines may come in any order: a child before its parent is
+# accepted, two lines that are each other's parent are refused.
+@WRITE $DIN.CSV
+= 2,1,"Drawer",Y2,DRAWER
+= 1,0,"Cabinet",Y1,CABINET
+> IMPORT LOCS FILE=$DIN.CSV
+< +OK ADDED=2
+@WRITE $DIN.CSV
+= 1,2,"Loop one",,BOX
+= 2,1,"Loop two",,BOX
+> IMPORT LOCS FILE=$DIN.CSV
+< +DATA
+< F LINE FIELD CODE TEXT
+< R 1 PARENT_ID 202 "cannot be put inside itself or its contents"
+< R 2 PARENT_ID 202 "cannot be put inside itself or its contents"
+< K ERRORS=2
+< .
+@TABLE LOCS FIELDS=LOC_ID,PARENT_ID,LOC_NAME,LOC_CODE,LTYPE,CAPACITY
+< F LOC_ID PARENT_ID LOC_NAME LOC_CODE LTYPE CAPACITY
+< R 1 0 "Shelf A, top" A1 BIN 12
+< R 2 0 B2 B2 BIN ""
+< R 3 0 "  indented" C3 BIN ""
+< R 4 0 "Shelf 1" L01 SHELF ""
+< R 5 4 "Bin 2" L02 BIN ""
+< R 6 0 "Shelf 3" L03 SHELF ""
+< R 7 6 "Bin 4" L04 BIN ""
+< R 8 0 "Shelf 5" L05 SHELF ""
+< R 9 8 "Bin 6" L06 BIN ""
+< R 10 0 "Shelf 7" L07 SHELF ""
+< R 11 10 "Bin 8" L08 BIN ""
+< R 12 0 "Shelf 9" L09 SHELF ""
+< D 13 12 "Bin 10" L10 BIN ""
+< R 14 0 "Shelf 11" L11 SHELF ""
+< D 15 14 "Bin 12" L12 BIN ""
+< R 16 0 "Shelf 13" L13 SHELF ""
+< R 17 16 "Bin 14" L14 BIN ""
+< R 18 0 "Shelf 15" L15 SHELF ""
+< R 19 18 "Bin 16" L16 BIN ""
+< R 20 0 "Shelf 17" L17 SHELF ""
+< R 21 20 "Bin 18" L18 BIN ""
+< R 22 0 "Shelf 19" L19 SHELF ""
+< R 23 22 "Bin 20" L20 BIN ""
+< R 24 0 "Shelf 21" L21 SHELF ""
+< R 25 24 "Bin 22" L22 BIN ""
+< R 26 0 "Shelf 23" L23 SHELF ""
+< R 27 26 "Bin 24" L24 BIN ""
+< R 28 0 "Shelf 25" L25 SHELF ""
+< R 29 28 "Bin 26" L26 BIN ""
+< R 30 0 "Shelf 27" L27 SHELF ""
+< R 31 30 "Bin 28" L28 BIN ""
+< R 32 0 "Shelf 29" L29 SHELF ""
+< R 33 32 "Bin 30" L30 BIN ""
+< R 34 0 "Shelf 31" L31 SHELF ""
+< R 35 34 "Bin 32" L32 BIN ""
+< R 36 0 "Shelf 33" L33 SHELF ""
+< R 37 36 "Bin 34" L34 BIN ""
+< R 38 0 "Shelf 35" L35 SHELF ""
+< R 39 38 "Bin 36" L36 BIN ""
+< R 40 0 "Shelf 37" L37 SHELF ""
+< R 41 40 "Bin 38" L38 BIN ""
+< R 42 0 "Shelf 39" L39 SHELF ""
+< R 43 42 "Bin 40" L40 BIN ""
+< R 44 0 "Shelf 41" L41 SHELF ""
+< R 45 44 "Bin 42" L42 BIN ""
+< R 46 0 "Shelf 43" L43 SHELF ""
+< R 47 46 "Bin 44" L44 BIN ""
+< R 48 0 "Shelf 45" L45 SHELF ""
+< R 49 48 "Bin 46" L46 BIN ""
+< R 50 0 "Shelf 47" L47 SHELF ""
+< R 51 50 "Bin 48" L48 BIN ""
+< R 52 0 "Shelf 49" L49 SHELF ""
+< R 53 52 "Bin 50" L50 BIN ""
+< R 54 0 "Shelf 51" L51 SHELF ""
+< R 55 54 "Bin 52" L52 BIN ""
+< R 56 0 Attic Z1 ROOM ""
+< R 57 56 Shelf Z2 SHELF 40
+< R 58 1 Box "" BOX ""
+< R 59 0 Cabinet Y1 CABINET ""
+< R 60 59 Drawer Y2 DRAWER ""
+
+# An empty file adds nothing.
+@WRITE $DIN.CSV
+> IMPORT ITEMS FILE=$DIN.CSV
+< +OK ADDED=0
+
+# An export with field names imports back as new items, equal but for
+# the read-only fields (ITEM_ID, ON_LOAN, PARENT_ID, the dates of
+# record).
+> EXPORT ITEMS FILE=$DBACK.CSV HEADER=1
+< +DATA
+< K ROWS=8
+< .
+> IMPORT ITEMS FILE=$DBACK.CSV HEADER=1
+< +OK ADDED=8
+> EXPORT ITEMS FILE=$DBACK.CSV REPLACE=1
+< +DATA
+< K ROWS=16
+< .
+@FILE $DBACK.CSV
+< 1,"CPU","","Intel","8088","","  spaced","","?",4,0,0,0,0,0,0,,"",,,"","A",20261008,20261008
+< 2,"MAN","","IBM","Tech ""Ref""","6025005","a, b, c","GD","Y",1,1,0,0,0,0,0,19850101,"shop",12.50,,"","A",20261008,20261008
+< 3,"CBL","","Bel\\kin","","","","","?",1,0,0,0,0,0,0,,"",,,"","A",20261008,20261008
+< 4,"SYS","","IBM","5150","0012345","","GD","?",1,0,0,0,0,2,0,19840312,"",450.00,1200.50,"","A",20261008,20261008
+< 5,"CARD","","M\x81ller","  XT","","a, b","","?",2,0,0,0,0,1,0,,"",,,"isa","A",20261008,20261008
+< 6,"SYS","","Compaq","Portable ""Plus""","","","","?",1,0,0,0,0,0,0,,"",0.99,,"","A",20261008,20261008
+< 8,"SYS","","IBM","5160","","","","?",2,0,0,0,0,0,0,,"",,,"","A",20261008,20261008
+< 9,"SYS","","IBM","PCjr","","","","?",1,0,0,0,0,0,0,,"",,,"","A",20261008,20261008
+< 10,"CPU","","Intel","8088","","  spaced","","?",4,0,0,0,0,0,0,,"",,,"","A",20261008,20261008
+< 11,"MAN","","IBM","Tech ""Ref""","6025005","a, b, c","GD","Y",1,0,0,0,0,0,0,19850101,"shop",12.50,,"","A",20261008,20261008
+< 12,"CBL","","Bel\\kin","","","","","?",1,0,0,0,0,0,0,,"",,,"","A",20261008,20261008
+< 13,"SYS","","IBM","5150","0012345","","GD","?",1,0,0,0,0,2,0,19840312,"",450.00,1200.50,"","A",20261008,20261008
+< 14,"CARD","","M\x81ller","  XT","","a, b","","?",2,0,0,0,0,1,0,,"",,,"isa","A",20261008,20261008
+< 15,"SYS","","Compaq","Portable ""Plus""","","","","?",1,0,0,0,0,0,0,,"",0.99,,"","A",20261008,20261008
+< 16,"SYS","","IBM","5160","","","","?",2,0,0,0,0,0,0,,"",,,"","A",20261008,20261008
+< 17,"SYS","","IBM","PCjr","","","","?",1,0,0,0,0,0,0,,"",,,"","A",20261008,20261008
+< \x1A
+
+# A failure while adding: the disk is full at the file call @FAULT
+# counts to, after one record.  The records added before it stay,
+# flushed by the end of the batch, as the next open shows.  The count
+# follows the engine's writes and is pinned here.
+@WRITE $DIN.CSV
+= ,CPU,,Intel,80286
+= ,CPU,,Intel,80386
+= ,CPU,,Intel,80486
+@FAULT 27
+> IMPORT ITEMS FILE=$DIN.CSV
+< +DATA
+< K ADDED=1
+< K ERROR=302
+< .
+@FAULT 0
+@REOPEN
+@TABLE ITEMS FIELDS=ITEM_ID,MODEL
+< F ITEM_ID MODEL
+< R 1 8088
+< R 2 "Tech \"Ref\""
+< R 3 ""
+< R 4 5150
+< R 5 "  XT"
+< R 6 "Portable \"Plus\""
+< D 7 8086
+< R 8 5160
+< R 9 PCjr
+< R 10 8088
+< R 11 "Tech \"Ref\""
+< R 12 ""
+< R 13 5150
+< R 14 "  XT"
+< R 15 "Portable \"Plus\""
+< R 16 5160
+< R 17 PCjr
+< R 18 80286
+
+# A failure after refused lines: the codes and names of LOCS lines go
+# to a scratch index while the file is checked, and enough of them make
+# it write a page, where the disk is full.  Nothing is added.
+@WRITE $DIN.CSV
+= ,,Again,A1,BIN
+= ,,F01,F01,BIN
+= ,,F02,F02,BIN
+= ,,F03,F03,BIN
+= ,,F04,F04,BIN
+= ,,F05,F05,BIN
+= ,,F06,F06,BIN
+= ,,F07,F07,BIN
+= ,,F08,F08,BIN
+= ,,F09,F09,BIN
+= ,,F10,F10,BIN
+= ,,F11,F11,BIN
+= ,,F12,F12,BIN
+= ,,F13,F13,BIN
+= ,,F14,F14,BIN
+= ,,F15,F15,BIN
+= ,,F16,F16,BIN
+= ,,F17,F17,BIN
+= ,,F18,F18,BIN
+= ,,F19,F19,BIN
+= ,,F20,F20,BIN
+= ,,F21,F21,BIN
+= ,,F22,F22,BIN
+= ,,F23,F23,BIN
+= ,,F24,F24,BIN
+= ,,F25,F25,BIN
+= ,,F26,F26,BIN
+= ,,F27,F27,BIN
+= ,,F28,F28,BIN
+= ,,F29,F29,BIN
+= ,,F30,F30,BIN
+= ,,F31,F31,BIN
+= ,,F32,F32,BIN
+= ,,F33,F33,BIN
+= ,,F34,F34,BIN
+= ,,F35,F35,BIN
+= ,,F36,F36,BIN
+= ,,F37,F37,BIN
+= ,,F38,F38,BIN
+= ,,F39,F39,BIN
+= ,,F40,F40,BIN
+= ,,F41,F41,BIN
+= ,,F42,F42,BIN
+= ,,F43,F43,BIN
+= ,,F44,F44,BIN
+= ,,F45,F45,BIN
+= ,,F46,F46,BIN
+= ,,F47,F47,BIN
+= ,,F48,F48,BIN
+= ,,F49,F49,BIN
+= ,,F50,F50,BIN
+= ,,F51,F51,BIN
+= ,,F52,F52,BIN
+= ,,F53,F53,BIN
+= ,,F54,F54,BIN
+= ,,F55,F55,BIN
+= ,,F56,F56,BIN
+= ,,F57,F57,BIN
+= ,,F58,F58,BIN
+= ,,F59,F59,BIN
+= ,,F60,F60,BIN
+= ,,F61,F61,BIN
+= ,,F62,F62,BIN
+= ,,F63,F63,BIN
+= ,,F64,F64,BIN
+= ,,F65,F65,BIN
+= ,,F66,F66,BIN
+= ,,F67,F67,BIN
+= ,,F68,F68,BIN
+= ,,F69,F69,BIN
+= ,,F70,F70,BIN
+= ,,F71,F71,BIN
+= ,,F72,F72,BIN
+= ,,F73,F73,BIN
+= ,,F74,F74,BIN
+= ,,F75,F75,BIN
+= ,,F76,F76,BIN
+= ,,F77,F77,BIN
+= ,,F78,F78,BIN
+= ,,F79,F79,BIN
+= ,,F80,F80,BIN
+@FAULT 5
+> IMPORT LOCS FILE=$DIN.CSV
+< -ERR 302 disk full
+@FAULT 0
+> LOC GET F01
+< -ERR 200 no such location

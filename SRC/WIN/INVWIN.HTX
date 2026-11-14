@@ -1,0 +1,1312 @@
+INVWIN.HTX - help texts of RETROINV for Windows (INVWIN).
+
+Each section starts with a line "@TOPIC" and ends at the next such
+line; its first line is its title.  Lines before the first section,
+like these, are not shown.  Lines hold at most WH_HELPW characters
+(WHELP.H), the width of the help window.
+
+The build (TEST/hlpchk.py) writes the help window's file, an index of
+the sections before these lines, through which the program reads a
+section with one read, and the Windows Help source, which HC.EXE
+compiles into INVWIN.HLP.  There a paragraph is wrapped; a list of
+keys, lines that start with a blank, each a key, two blanks or more
+and its description, continued by lines indented deeper, becomes an
+entry per key, its description wrapped beside it; another paragraph
+with a line that starts with a blank keeps its lines and spaces; a
+numbered list wraps each "N. " item; a paragraph "See also: " lists
+titles of other sections, which become jumps.
+Section INDEX is Windows Help's alone: its title is the help file's,
+and a jump to every other section but the fields' follows its text.
+A section TOPIC_FIELD holds the help of field FIELD of the form of
+topic TOPIC, which F1 in that field shows; the form's topic ends with
+a jump to each of its fields' sections, and each jumps back.
+@INDEX
+RETROINV for Windows
+
+RETROINV keeps a list of your equipment, where it is kept, what was
+done to it and who borrowed it.  Choose a topic, or press F1 in the
+program for the help of the list or dialog in use; in a form, that
+of the field with the focus.
+
+@LOGIN
+Logging in
+
+Type your user name, Tab, then your password, and press Enter.  The
+password is not shown while you type it.  User names are upper case;
+the password is checked exactly as typed.
+
+After three failed attempts the session ends and the program stops.
+An account that must change its password goes to the password dialog
+first.
+
+A new, empty data directory has one user, ADMIN.  The sample data has
+three: ADMIN (level 3), OPER (level 2) and READER (level 1).  The
+first password is the user name in lower case (admin, oper, reader).
+Each must choose a new password at its first login.
+
+Esc, or Cancel, leaves the program.
+@START
+Getting started
+
+RETROINV keeps a list of your equipment: what each item is, where it
+is kept, what was done to it, who borrowed it and what it is reserved
+for or used with.
+
+1. Make the places first.  Locations > New location adds a room; in
+   Locations > Browse locations, Ins on a room adds a shelf, a box or
+   a bin inside it, down to eight levels.
+2. Then add the items.  Items > New item, or Ins in an item list,
+   opens a new item: give it a category and choose its location with
+   F4.  Enter on a location lists the items kept there, and Ins in
+   that list adds one already placed in it.
+3. An assembly is an item built of others: a PC with its cards and
+   drives.  Select a card and choose Record > Install in to install
+   it in the PC, or open the PC's parts (Record > Parts) and press
+   Ins.  Parts go wherever their assembly goes; Items > Assemblies
+   lists the assemblies.
+
+Ctrl+L on an item lends it, Ctrl+R reserves it and Ctrl+U marks it in
+use with another item, such as a monitor with a PC; Items > Loans and
+holds lists them all.  Record > Service records on an item lists its
+service records, such as repairs and cleaning.  Users of level 1 may
+only look, level 2 may change the inventory, and level 3 also manages
+the users and the data files.
+
+F1 shows the help of the window in front, and Help > Keyboard the keys
+that work everywhere.
+
+See also: Item lists; Locations; Keys everywhere.
+@PASSWD
+Changing the password
+
+Type the old password, then the new one twice, and press Enter.  A
+password is made of printable characters, without spaces, and must
+differ from the old one; one too short or too long is refused, and
+the message gives the lengths allowed.  None of them is shown while
+you type.
+
+  Tab, Shift+Tab     next, previous field
+  Enter              change             Esc             cancel
+
+When the change is required after logging in, the Cancel button reads
+Log out and logs out.
+@ITEMS
+Item lists
+
+  Up, Down, PgUp, PgDn, Home, End   move through the list
+  Left, Right  scroll the columns sideways, as the bar at the foot
+               of a list wider than its window does
+  Shift+Up, Shift+Down   select the rows passed over too
+  Shift+click  select the rows up to the one clicked
+  Ctrl+click   add the row clicked to the selection, or take it away
+  Enter        open the selected item (a double click too)
+  Ctrl+E       edit the selected item (level 2)
+  Ins          a new item (level 2)
+  Del          delete the selected item, after asking (level 2)
+  Ctrl+D       duplicate the selected item and edit the copy; Esc
+               there, with nothing saved, removes the copy again
+               (level 2)
+  Ctrl+L       lend the selected item (level 2)
+  Ctrl+R       reserve it for someone or for another item (level 2)
+  Ctrl+U       mark it in use with another item or a place (level 2)
+  Shift+F8     add mode (below)
+  Ctrl+/       select every row of the list, on every page (below)
+  Ctrl+\       select the row with the dotted frame alone
+  F6, Tab      to the preview beside the list, and back (Shift+F6
+               and Shift+Tab too); Esc there comes back as well
+  Shift+F10    the Record menu at the selected row
+
+Beside the list, on the right, a preview shows the selected item: its
+ID, maker and model, what the item form's Overview page says of it,
+with the place where it is kept, and its notes.  It follows the
+selection once it rests on an item for a moment.  With the focus in
+it Up, Down, PgUp, PgDn, Home and End scroll it, Enter opens the
+item, F5 reads it again, and the keys and the Record menu act on that
+item as they do in the list; a click with the right mouse button on
+it, or Shift+F10, opens that menu there.  Drag the bar between the
+two with the mouse to widen either.  View > Pane beside the list
+hides the preview, or shows it again; both are kept in the settings
+file (WINPANE.ITEM=).
+
+On a serial line or a mailbox the list is shown alone until View >
+Pane beside the list asks for the preview, as reading each item
+holds the program for a while.  There the preview waits longer before
+it follows, still showing the item before, and says "Loading item"
+with the item's ID while it reads.  Esc while it reads stops it: the
+preview then says "Not loaded: press Enter here", and Enter in it
+reads the item after all.
+
+The Record menu (Alt+C) also has the commands without a key, at
+level 2: Move, the selected item with its parts to a location (type
+its code, or choose it with F4); Install in, the item in another
+(type its ID, or find it with F4); Take out, the item out of its
+assembly to a location; and Split units, units of the item into a new
+item (type how many).  At every level it lists the selected item's
+Parts, Service records, Loans and holds, and what is Used with it, and
+Next order sorts the full list by ID, location, maker or serial.
+
+The title bar names the list and its order, and its heading shows an
+arrow; a click on the ID, Maker, Location or Serial number heading
+lists the items in that order, as Next order does.  The Category
+column shows each category's code and name; Items > Browse by
+category lists the items category by category (see Items by
+category).  Items > Assemblies lists
+the assemblies: the items built of others that are installed in none.
+Beside them, in place of the preview, stand the parts of the selected
+assembly, with the keys and commands of the parts' own list (see
+Parts of an item): F6 or Tab goes there and back, Ins installs a
+part in that assembly, and Take out or Move on either side shows
+both again as they then are.  Once the last part of the selected
+assembly is taken out it is no assembly: it leaves the list, which
+takes the keys again.  Enter on an assembly still opens the item.
+View > Pane beside the list hides the parts or shows them again,
+kept in the settings file apart from the preview (WINPANE.ASSY=).
+Works says whether the item works: yes, no, intrm (intermittently) or
+? (not tested).  The Location column names the place where each item
+is; it is empty for an item whose location is not known.  The last
+column says why an item cannot be lent or held now: all its units on
+loan, reserved or in use, installed in another item, disposed of, or
+none left.  On the results of a search Esc goes back to the search
+with its values kept.  In the dialogs of Move and Take out the line
+under the location shows where it is; (no location), the first line of
+the list F4 shows, is for an item whose place is not known.  In the
+dialog of Install in, the item is given by its ID, or by text: F4 or
+the ... button lists the items holding it to choose from, or every
+item when the field is empty, and Enter on text does the same.  Digits
+that are no item's ID are looked for as text, as models and serial
+numbers can be all digits (5150, 0012345).
+
+A split leaves the item with fewer units, keeping its serial number,
+its parts, loans and holds, and makes a new item of the units split
+off, a copy of it lying loose at its location; it must keep at least
+one unit, and every unit on loan, reserved or in use.
+
+Several rows can be selected, among the rows shown: the status bar
+then says how many ("7 selected"), and a move to another page, a new
+order or Home drops them; Shift with an arrow key at the top or bottom
+of the rows shown beeps and keeps them instead.  Del, Move, Install
+in, Take out, Ctrl+L, Ctrl+R and Ctrl+U then act on every selected
+row: they ask once, for the first, and go on through the others, the
+status bar counting them; the first refusal stops them, with a box
+saying how many were done.  Enter, Ctrl+E and the other commands act
+on the row with the dotted frame alone.  The
+parts, a location's contents and the loans and holds select several
+rows the same way.
+
+Shift+F8 turns on add mode, as in File Manager, for rows far apart:
+the arrow keys then move the dotted frame and leave the selection as
+it is, Space selects or clears the row in the frame, and Shift with an
+arrow key or a click adds the rows up to it.  Shift+F8 again, or a
+plain click, ends it; meanwhile the status bar says "Shift+F8 add
+mode".  The preview shows the one selected item, wherever the dotted
+frame is, and with several selected the item in the frame.
+
+Ctrl+/, or Record > Select all, selects every row of the list, not
+only the rows shown, as in File Manager: the status bar says "All 260
+selected", and PgUp, PgDn, Home, End and the scroll bar look through
+them.  Del, Move, Install in, Take out, Ctrl+L, Ctrl+R and Ctrl+U
+then act on every one, as on several rows, Del asking first with
+their number.  An arrow key, a click, another order, or a command
+that shows the list again leaves the row with the dotted frame alone
+selected, as Ctrl+\ does at any time.  The rows are counted first,
+which Esc stops.  A list of more than 4096 rows is too long to select
+at once: narrow it first, with Find or a filter.  A Select all that
+Esc stops, or that the list is too long for, leaves selected what was
+selected before.  As in File Manager, Ctrl+/ and Ctrl+\ are the keys
+where / and \ sit on a US keyboard; on another keyboard use Record >
+Select all.
+
+See also: The item form; Parts of an item; Search; Items by category.
+@ITEM
+The item form
+
+  Tab, Shift+Tab     next, previous field
+  Ctrl+PgDn          next page: Overview, Technical, Acquisition,
+                     Notes; Ctrl+PgUp the previous one
+  PgUp, PgDn         first, last field of the page
+  Enter              save               Esc             cancel
+  F4, Alt+Down       open the list of the category, status, condition
+                     or works, choose the location, or add a tag
+  Ctrl+Enter         a new line in the notes
+
+The ID, maker and model stand above the pages, which a click on a tab,
+or Alt and its underlined letter, shows too; Alt and a field's letter
+shows the field's page.
+
+Category, Status, Condition and Works are codes, chosen from the list
+of the field, which shows each code with its name: F4 or Alt+Down
+opens it, and a letter typed selects the next code starting with it;
+Enter closes the open list, Esc too, back on the code it had.
+Dates are typed as YYYY-MM-DD and numbers without separators; shown in
+the lists and in fields that cannot be changed, they take the formats
+of Control Panel's International settings.  Opened with Enter the form
+only shows the item, its values as text, a long one in a box that
+scrolls; Tab moves among the tabs, those boxes and the buttons, and
+Enter, Esc or Close closes it; its Edit
+button or Ctrl+E, there or in the item list, opens it for editing
+(level 2).  The buttons Parts, Service, Loans and Used with show the
+item's parts, service records, loans and holds, and what is used with
+it, Esc there coming back to the form; they work while the form only
+shows the item, or while editing as long as nothing has been changed;
+save with Enter first otherwise.  Leaving a changed form asks first.
+
+See also: Parts of an item; Service records; Loans and holds.
+@ITEM_ITEM_ID
+Item: Item ID
+
+The item's number, up to 8 digits, which the program gives a new item
+when it is saved.  It cannot be changed; labels, reports and the item
+fields of other forms name the item by it.
+@ITEM_CATEGORY
+Item: Category
+
+The item's category, a code of up to 4 letters and digits, chosen
+from the list of the categories, which shows each code with its name.
+Required.
+@ITEM_STATUS
+Item: Status
+
+A active, D disposed of.  An item with units on loan, reserved or in
+use cannot be disposed of or deleted, nor can one that others are
+reserved for or used with: release them first.
+@ITEM_ITEMTYPE
+Item: Type
+
+What kind of thing the item is, in words of your own, such as
+Computer, Monitor or Disk drive: up to 20 characters.
+@ITEM_COND
+Item: Condition
+
+The looks alone: NEW new, EXC excellent, GD good, FR fair, PR poor,
+or empty, not graded.  Whether it works is the Works field's.
+@ITEM_MFR
+Item: Maker
+
+The maker's name, such as IBM or Commodore: up to 30 characters.  The
+item lists can be sorted by it.
+@ITEM_MODEL
+Item: Model
+
+The model's name or number, such as 5150 or PET 2001: up to 30
+characters.
+@ITEM_SERIALNO
+Item: Serial
+
+The serial number as it is written on the item: up to 30 characters.
+The item lists can be sorted by it, and Search finds an item by it.
+@ITEM_DESCR
+Item: Description
+
+A line about the item, such as its fittings or its origin: up to 60
+characters.
+@ITEM_WORKS
+Item: Works
+
+? not tested (a new item's and a copy's), Y yes, I works
+intermittently, N no; only you set it.  Note a test in the item's
+service records.
+@ITEM_QTY
+Item: Quantity
+
+How many units the item stands for, such as a box of 25 disks: up to
+5 digits, 1 for a single thing.  It cannot go below the units on loan,
+reserved or in use.
+@ITEM_HELD
+Item: Units held
+
+The line beside Quantity says how many units are on loan, reserved or
+in use, or how many are available, and how many things are used with
+the item.  It cannot be changed here: the Loans button lists the loans
+and holds, Used with what is used with the item.
+@ITEM_LOC_ID
+Item: Location
+
+Where the item is kept: choose it from the list of locations that F4
+in the field, or a click on the ... button beside it, shows, or type
+its code, up to 10 characters.  Leave it empty when the place is not
+known.  In that list Enter, OK or a double click takes the line
+chosen, and a letter moves to the next location whose name starts
+with it; Esc or Cancel leaves the field as it was.  A part lies at the
+location of the item it is installed in.
+@ITEM_PARENT_ID
+Item: Part of
+
+The ID, maker and model of the item this one is installed in, empty
+when it stands alone.  It cannot be changed here: install and take out
+parts in the list of the parts (the Parts button).
+@ITEM_WHERE
+Item: Where
+
+The line under Location shows where the location is, such as Office >
+Shelf A > Bin 12, also for a location without a code, which the field
+shows by its number.
+@ITEM_ACQ_DATE
+Item: Date acquired
+
+The day the item was bought or given, typed as YYYY-MM-DD; empty when
+not known.
+@ITEM_ACQ_SRC
+Item: Acquired from
+
+Where the item came from, such as a shop, an auction or a person: up
+to 30 characters.
+@ITEM_ACQ_PRICE
+Item: Price paid
+
+What the item cost, a number with at most two decimals, typed without
+separators; empty when not known.  The valuation report totals it.
+@ITEM_CUR_VALUE
+Item: Current value
+
+What the item is worth today, a number with at most two decimals,
+typed without separators; empty when not known.  The valuation report
+totals it.
+@ITEM_TAGS
+Item: Tags
+
+Words of your own, such as retro or a project, between commas or
+spaces, up to 60 characters in all; each tag 1 to 12 of A-Z 0-9 - _ .
+/ +.  F4 in Tags, or its ... button, lists the tags in use (at most
+50, A to Z; Esc while they load lists those found so far), its title
+saying when that is not all of them: Enter, OK or a double click adds
+the one chosen after a comma, unless the field holds it already; one
+that does not fit is refused under the fields.  A save shows the tags
+as kept: one comma between them, a repeat left out.
+@ITEM_CREATED
+Item: Created
+
+The day the item was first saved, set by the program.
+@ITEM_UPDATED
+Item: Updated
+
+The day the item was last saved, set by the program.
+@ITEM_NOTES
+Item: Notes
+
+Free text about the item, on the Notes page, Ctrl+Enter starting a
+new line.  Notes too long to be edited here are shown read-only, as
+the message under the fields says.
+@PARTS
+Parts of an item
+
+  Up, Down, PgUp, PgDn, Home, End   move through the list
+  Left, Right  scroll the columns sideways, as the bar at the foot
+               of a list wider than its window does
+  Shift+Up, Shift+Down   select the rows passed over too
+  Shift+click  select the rows up to the one clicked
+  Ctrl+click   add the row clicked to the selection, or take it away
+  Enter        open the selected part in the item form
+  Ctrl+E       edit the selected part (level 2)
+  Ins          install an item in this one: type its ID, or find it
+               with F4 (level 2)
+  Esc          back to the list or the item form it was opened from;
+               beside the assemblies, back to them
+  Shift+F10    the Record menu at the selected row
+
+Ins is Record > Install part, and Record > Take out takes the selected
+part out of its assembly, to a location: type its code, or choose it
+with F4 (level 2).
+
+The list shows every part below the item, each part followed by its
+own parts, indented one step per level.  A part keeps its own parts
+when it is installed or taken out, and an installed part always lies
+at the location of the item it is built into.  An item on loan,
+reserved or in use cannot be installed, nor one that would end up
+holding itself, nor one that would make the assembly too deep or too
+large; the message says which.
+@LOCS
+Locations
+
+Every place things are kept, as a tree: rooms, and inside them
+shelves, racks, boxes or bins, down to eight levels.  Each location is
+listed under the one it is inside, indented, with its type, its code
+and its capacity.  Items can be kept at any level.
+
+The tree is on the left, and on the right the items at the selected
+location, which follow the selection once it rests on a location for a
+moment.  Drag the bar between them with the mouse to widen either; the
+width is kept in the settings file (WINSPLIT=).  The Record menu, the
+tool bar and the count on the status bar are those of the side that
+has the focus.  Drag an item from the right onto a location in the
+tree to move it there, as Record > Move does (level 2), or several
+selected items, from one of them; Esc, or letting go anywhere else,
+leaves them where they are.
+
+On a serial line or a mailbox the tree is shown alone, as fetching
+the items would hold the program at each location: Enter opens them.
+View > Pane beside the list says otherwise, there and on any other
+connection, and the settings file keeps it: WINPANE.LOC=1 shows the
+items beside the tree, WINPANE.LOC=0 the tree alone.
+
+  Up, Down, PgUp, PgDn, Home, End   move through the list
+  Left, Right  scroll the columns sideways, as the bar at the foot
+               of a list wider than its window does
+  letter       the next location whose name starts with it
+  F6, Tab      to the items beside the tree, and back (Shift+F6 and
+               Shift+Tab too); Esc there comes back as well
+  Enter        the items at the selected location as a list of
+               their own (a double click too)
+  Ctrl+E       edit the selected location (level 2)
+  Ins          a new location inside the selected one (level 2); in
+               an empty list, at the top level
+  Del          delete the selected location, after asking (level 2);
+               only a location without items and without locations
+               inside it can be deleted
+  Esc          back to the item list
+  Shift+F10    the Record menu at the selected row
+
+Record > Move moves the selected location, with everything inside it,
+into another chosen from the list, or to the top level (level 2).  A
+location cannot go inside itself or one inside it, nor inside one at
+the eighth level: the list, the form's Inside or Ins says so at once.
+A location list opens on the current location, but in a very long
+tree its search may stop short: OK on the row where it stopped then
+asks before choosing it.
+Locations > New location, or a new location whose Inside is left
+empty, adds one at the top level.  To find the items whose location is
+not known, use Search with Location set to "(no location)".
+Locations > Location types lists the types a location can have.
+
+See also: The location form; Contents of a location.
+@LOC
+The location form
+
+  Tab, Shift+Tab     next, previous field
+  PgUp, PgDn         first, last field
+  Enter              save               Esc             cancel
+  F4, Alt+Down       open the list of the types, or choose Inside
+  Ctrl+PgDn          the notes' page, and Ctrl+PgUp back
+  Ctrl+Enter         a new line in the notes
+
+A location is a place where items are kept, such as a room, a shelf
+or a box, and may lie inside another.  Name and Type are required.
+@LOC_LOC_NAME
+Location: Name
+
+What the location is called, such as Office or Shelf A: up to 30
+characters.  Two locations inside the same one cannot have the same
+name.
+@LOC_LTYPE
+Location: Type
+
+A code of up to 8 letters and digits, such as ROOM, SHELF or BOX,
+chosen from the list of the types with their names; a new location
+starts with the type of the others in the same place.  Required.
+@LOC_PARENT_ID
+Location: Inside
+
+The location it is in, chosen with F4 or typed as its code, up to 10
+characters; empty for the top level.  Changing it moves the location
+with everything inside it; a location cannot go inside itself, nor
+inside one at the deepest level.
+@LOC_WHERE
+Location: Where
+
+The line under Inside shows the place of the location it is in, such
+as Office > Shelf A.
+@LOC_LOC_CODE
+Location: Code
+
+Optional: a short code for labels and typing, such as B12, up to 10
+characters: a letter, then letters, digits or -.  The item and search
+forms take a location by it.
+@LOC_CAPACITY
+Location: Capacity
+
+Optional: how much the location holds, a whole number of up to 4
+digits.
+@LOC_NOTES
+Location: Notes
+
+Free text about the location, on the Notes page, Ctrl+Enter starting
+a new line.
+@LOC_LT_NAME
+Location: Type name
+
+The name of the type in Type, shown beside it.
+@CONTENTS
+Contents of a location
+
+The items at one location; the title bar shows where it is and what
+is shown.
+
+  Up, Down, PgUp, PgDn, Home, End   move through the list
+  Left, Right  scroll the columns sideways, as the bar at the foot
+               of a list wider than its window does
+  Shift+Up, Shift+Down   select the rows passed over too
+  Shift+click  select the rows up to the one clicked
+  Ctrl+click   add the row clicked to the selection, or take it away
+  Enter        open the selected item (a double click too)
+  Ctrl+E       edit the selected item (level 2)
+  Ins          a new item at this location (level 2)
+  Del          delete the selected item, after asking (level 2)
+  Ctrl+D       duplicate the selected item and edit the copy; Esc
+               there, with nothing saved, removes the copy again
+               (level 2)
+  Ctrl+L, Ctrl+R, Ctrl+U   lend, reserve or mark in use the selected
+               item (level 2)
+  F6, Tab      beside the tree, back to the tree (Shift+F6 and
+               Shift+Tab too)
+  Esc          back to the locations; beside the tree, back to the
+               tree
+  Shift+F10    the Record menu at the selected row
+
+The Record menu (Alt+C) moves, installs, takes out and splits the
+selected item, and lists its parts, service records, loans and holds
+and what is used with it, as in the item list.  Not installed only
+shows only the items not installed in another, or again all of them,
+installed parts included; Everything below shows the items of every
+location inside this one too, at any depth, or again only its own.
+
+The Location column names where each item is.  A location's contents
+open with all its own items, and with those of every location inside
+it when it holds locations, as a room holds shelves.
+@BYCAT
+Items by category
+
+Items > Browse by category lists the categories, in their order, with
+code, name and order number, and on the right the items of the
+selected category, which follow the selection once it rests on a
+category for a moment.  Drag the bar between them with the mouse to
+widen either.  The Record menu, the tool bar and the count on the
+status bar are those of the side that has the focus.
+
+  Up, Down, PgUp, PgDn, Home, End   move through the list
+  F6, Tab      to the items beside the categories, and back
+               (Shift+F6 and Shift+Tab too); Esc there comes back
+               as well
+  Enter        on a category, its items as a list of their own (a
+               double click too); on an item, the item
+  Ctrl+E       edit the selected category's name or order number,
+               or the selected item (level 2)
+  Ins          a new category, or on the right a new item of the
+               selected category (level 2)
+  Del          delete the selected category or item, after asking
+               (level 2); only a category that no item has can be
+               deleted
+  F5           the list with the focus again, as it is now
+  Esc          back to the item list; from a category's own list
+               of items, back to the categories
+  Shift+F10    the Record menu at the selected row
+
+A category is edited, added and deleted here as in Items >
+Categories, in the same form and by the same rules (see Categories).
+A category saved or added is selected again, wherever its order
+number has put it.
+
+The items on the right, and a category's items listed on their own,
+are an item list with all its keys and commands (see Item lists):
+several rows selected, Move, Install in, Take out, Split units, lend,
+reserve and use, the item's parts, service records and loans, Next
+order and the headings.  An item whose category is changed there, or
+that is deleted, leaves the list at once; it shows under its new
+category as soon as that one is selected.
+
+View > Pane beside the list shows the categories alone, or with the
+items again, and the settings file keeps that and the width of the
+categories (WINPANE.CAT=).  On a serial line or a mailbox the
+categories are shown alone until that entry asks for the items, as
+fetching them would hold the program at each category: Enter opens
+them.
+
+See also: Categories; Item lists; The item form.
+@CATS
+Categories
+
+The categories an item can have, in their order: code, name and order
+number.
+
+  Edit, Enter, Ctrl+E   change the selected category's name or
+                        order number (level 2)
+  New, Ins              a new category (level 2)
+  Delete, Del           delete the selected category, after asking
+                        (level 2); only one that no item has can be
+                        deleted
+  F5                    the list again, as it is now
+  Close, Esc            end the list
+
+The code is given once, when the category is made: up to four letters
+and digits.  The list is sorted by the order number, 0 to 99 (a new
+one without it takes 50), then by code.
+
+Items > Browse by category lists the categories in the main window,
+each with its items beside it, and edits them the same way.
+
+See also: Items by category.
+@CATS_CAT_CODE
+Category: Code
+
+The category's code, up to 4 letters and digits, given once, when the
+category is made: items name their category by it.  Required.
+@CATS_CAT_NAME
+Category: Name
+
+What the category is called, such as Computers: up to 20 characters.
+Required.
+@CATS_SORTORD
+Category: Sort order
+
+Where the category stands in the list and in the item form's list of
+categories: up to 2 digits, 0 to 99, the smaller first, those of one
+order by code.  A new category without it takes 50.
+@LTYPES
+Location types
+
+The types a location can have, such as Room, Shelf, Box or Bin, in
+their order: code, name and order number.
+
+  Edit, Enter, Ctrl+E   change the selected type's name or order
+                        number (level 2)
+  New, Ins              a new type (level 2)
+  Delete, Del           delete the selected type, after asking
+                        (level 2); only one that no location has can
+                        be deleted
+  F5                    the list again, as it is now
+  Close, Esc            end the list
+
+The code is given once, when the type is made: up to eight letters and
+digits.  The list is sorted by the order number, 0 to 99 (a new one
+without it takes 50), then by code.
+@LTYPES_LT_CODE
+Location type: Code
+
+The type's code, up to 8 letters and digits, given once, when the
+type is made: locations name their type by it.  Required.
+@LTYPES_LT_NAME
+Location type: Name
+
+What the type is called, such as Room or Shelf: up to 20 characters.
+Required.
+@LTYPES_SORTORD
+Location type: Sort order
+
+Where the type stands in the list and in the location form's list of
+types: up to 2 digits, 0 to 99, the smaller first, those of one order
+by code.  A new type without it takes 50.
+@SERVICE
+Service records
+
+  Up, Down, PgUp, PgDn, Home, End   move through the list
+  Left, Right  scroll the columns sideways, as the bar at the foot
+               of a list wider than its window does
+  Enter        open the selected record (a double click too)
+  Ctrl+E       edit the selected record (level 2)
+  Ins          a new record for the item (an item's records only,
+               level 2)
+  Del          delete the selected record, after asking (level 2)
+  Esc          back to the item list, from an item's records to the
+               list or the item form they were opened from
+  Shift+F10    the Record menu at the selected row
+
+Items > Service lists the records newest added first.  The Service
+button of the item form, or Record > Service records in an item list,
+lists the item's records by service date, oldest first, those without
+a date before the others.
+@SERVREC
+The service record form
+
+  Tab, Shift+Tab     next, previous field
+  PgUp, PgDn         first, last field
+  Enter              save               Esc             cancel
+  Alt+Down           open the list of the types
+  Ctrl+PgDn          the notes' page, and Ctrl+PgUp back
+  Ctrl+Enter         a new line in the notes
+
+A service record notes one thing done to an item: a repair, a
+cleaning, a test.  Type and summary are required.
+@SERVREC_MAINT_ID
+Service record: Record
+
+The record's number, up to 8 digits, which the program gives a new
+record when it is saved.  It cannot be changed.
+@SERVREC_ITEM_ID
+Service record: Item
+
+The ID of the item the record is about, up to 8 digits.  It cannot be
+changed: a record is added from the item's own list of records.
+@SERVREC_MDATE
+Service record: Date
+
+The day the work was done, typed as YYYY-MM-DD; a new record left
+without a date gets today's.
+@SERVREC_MTYPE
+Service record: Type
+
+What was done: RP repair, CL clean, RC recap, TS test, MD modify, IN
+inspect.  Required.
+@SERVREC_SUMMARY
+Service record: Summary
+
+What was done, in a line: up to 60 characters.  Required.
+@SERVREC_COST
+Service record: Cost
+
+What the work cost, a number with at most two decimals, typed without
+separators; empty when nothing.
+@SERVREC_DONE_BY
+Service record: Done by
+
+Who did the work, a person or a shop: up to 20 characters.
+@SERVREC_NOTES
+Service record: Notes
+
+Free text about the work, on the Notes page, Ctrl+Enter starting a
+new line.
+@LOANS
+Loans and holds
+
+  Up, Down, PgUp, PgDn, Home, End   move through the list
+  Left, Right  scroll the columns sideways, as the bar at the foot
+               of a list wider than its window does
+  Shift+Up, Shift+Down   select the rows passed over too
+  Shift+click  select the rows up to the one clicked
+  Ctrl+click   add the row clicked to the selection, or take it away
+  Enter        open the selected row (a double click too)
+  Ctrl+E       edit the selected row (level 2)
+  Ins, Ctrl+L  lend an item: type its ID, or find it with F4, then
+               fill in the form; in an item's list, lend this item
+               (level 2)
+  Ctrl+R       reserve an item the same way (level 2)
+  Ctrl+U       mark an item in use with another the same way (level 2)
+  Ctrl+PgDn    the next list: open rows, open loans, reservations,
+               uses, the overdue rows, all rows (ended too);
+               Ctrl+PgUp the one before
+  F6, Tab      beside Items > Loans and holds, to the item's history
+               and back (Shift+F6 and Shift+Tab too)
+  Esc          back to the item list, from an item's list to the list
+               or the item form it was opened from; from the history,
+               back to the rows beside it
+  Shift+F10    the Record menu at the selected row
+
+Record > Open item opens the item of the selected row, and Record >
+Return or release returns a loan, or releases a reservation or a use:
+type the date as YYYY-MM-DD, or leave it empty for today (level 2).
+
+A loan lends units of an item to a borrower until a due date.  A
+reservation keeps units for a person, a purpose or another item,
+until a date if one is given.  In use marks units as used with
+another item or somewhere, such as a monitor on a PC; the units keep
+their own location.  Items > Loans and holds lists the open rows of
+every kind, the earliest due first; the title bar names the list
+shown.  A loan or reservation is overdue when it is still open after
+its date; its row is marked in red.  The Loans button of the item
+form, or Record > Loans and holds in an item list, lists every row of
+the item, open and ended, in the order they were made; Used with
+there lists what is reserved for the item or used with it.
+
+Beside each list of Items > Loans and holds stands the history of the
+selected row's item: every loan and hold of that item, open and
+ended, following the selection once it rests on a row.  With the
+focus there the keys and the Record menu are those of an item's own
+list: Ins, Ctrl+L, Ctrl+R and Ctrl+U are for that item, and Return
+or release ends the row selected there.  A change on either side
+shows both again as they then are; when the row whose item's history
+shows leaves the list, as its own return makes it leave the open
+rows, the list takes the keys again.  Drag the bar between the two to
+widen either; View > Pane beside the list hides the history or shows
+it again, kept in the settings file (WINPANE.LOAN=).
+
+See also: Loans, reservations and uses.
+@LOAN
+Loans, reservations and uses
+
+  Tab, Shift+Tab     next, previous field
+  PgUp, PgDn         first, last field
+  Enter              save               Esc             cancel
+  F4                 in the item field, choose the item from a list
+
+A loan needs a borrower and a due date.  A reservation names who or
+what it is for, or the item it is for, and may have a date it lasts
+until.  A use names where or with what the units are used, or the
+item.  An item that is disposed of or installed in an assembly cannot
+be lent, reserved or used.  The date it ended is set by Return or
+release in the list.
+@LOAN_LOAN_ID
+Loan: ID
+
+The row's number, up to 8 digits, which the program gives a new row
+when it is saved.  It cannot be changed.
+@LOAN_ITEM_ID
+Loan: Item
+
+The ID of the item lent, reserved or used, up to 8 digits, asked for
+before the form opens.  It cannot be changed.
+@LOAN_QTY
+Loan: Quantity
+
+How many units of the item, up to 5 digits, 1 unless changed; no more
+than the item has free.  It can be set only on a new row.
+@LOAN_WHAT
+Loan: The item
+
+The maker and model of the item, shown beside its ID.
+@LOAN_HOLDER
+Loan: Borrower
+
+Who borrows the units, or, on a reservation, Reserved for: whom or
+what they are kept for, and on a use, In use with: where or with what
+they are used.  Up to 30 characters.  A loan needs it; a reservation
+or a use needs it or the item in the next field.
+@LOAN_HOST_ID
+Loan: For item
+
+On a reservation the item the units are kept for, on a use (With
+item) the item they are used with, such as the PC a monitor stands
+on.  Type its ID, or text to find it, up to 30 characters: F4, or a
+click on the ... button, lists the items holding it.
+@LOAN_HOSTWHAT
+Loan: The other item
+
+The maker and model of the item in For item or With item, shown
+beside it.
+@LOAN_CONTACT
+Loan: Contact
+
+How to reach the borrower or holder, such as a telephone number: up
+to 30 characters.
+@LOAN_OUT_DATE
+Loan: Date out
+
+The day the units went out, a reservation's From or a use's Since,
+typed as YYYY-MM-DD; a new row without it starts today.  It can be
+set only on a new row.
+@LOAN_DUE_DATE
+Loan: Due date
+
+The day a loan is due back, typed as YYYY-MM-DD; a loan needs it.  On
+a reservation, Until: the day it lasts until, optional.  An open row
+past this date is overdue and marked in red in the lists.
+@LOAN_RET_DATE
+Loan: Date returned
+
+The day a loan was returned, or a reservation or use Released, set by
+Return or release in the list.  It cannot be changed here.
+@LOAN_NOTES
+Loan: Notes
+
+A line of your own about the row: up to 60 characters.
+@SEARCH
+Search
+
+Fill in one of the fields and press Enter:
+
+  Text         finds the text in maker, model, description, tags,
+               serial number and type, in the items that match the
+               filters given
+  Serial       finds an exact serial number
+  Category, Location, Status, Available, Tags, Works
+               alone, list the items that match all the filters given
+
+Location keeps the items at that location only: type its code, or
+choose it from the list that F4 in the field, or its ... button,
+shows; the line under it shows where it is, and (no location), the
+list's first line, finds the items whose place is not known.  All
+below also keeps the items of every location inside it.  Category,
+Status and Works are chosen from their lists, each code with its name.
+Available keeps the items that can be lent, reserved or used: status
+A, not installed in another, with units not on loan, reserved or in
+use.  It already means status A, so Status stays empty with it.  Tags
+keeps the items that carry every tag given, whole (net is not network;
+the Text finds parts of words); F4 in Tags, or its ... button, adds
+one from the tags in use.  Works keeps the items in that state: ? not
+tested, Y, I (intermittently), N, or Y?I, all but the broken ones;
+empty keeps all.
+The results are an item list.  Esc there comes back to this dialog
+with its values kept, and Esc in the dialog then opens the item list.
+@SETTINGS
+Settings
+
+These are kept in the settings file, which INV reads too.  The data
+directory, the station name, the default user, the baud rate and
+RTS/CTS take effect the next time the program starts; the item list
+order at once.
+
+  Tab, Shift+Tab     next, previous field
+  PgUp, PgDn         first, last field
+  Enter              save               Esc             cancel
+  Alt+Down           open the list of a field with fixed choices
+  Space              check or clear RTS/CTS
+
+A file that cannot be written is said, with its name and what went
+wrong, and the dialog comes back with the values as typed.
+@SETTINGS_DIR
+Settings: Data directory
+
+The directory of the data of a local session started without one, up
+to 64 characters; while none is set it shows the default, DATA under
+the current directory.  It takes effect the next time the program
+starts.
+@SETTINGS_STA
+Settings: Station name
+
+The name this machine gives the server, up to 16 characters, which
+the server's sessions and the audit show.  It takes effect the next
+time the program starts.
+@SETTINGS_USR
+Settings: Default user
+
+The user name the login offers, up to 8 characters.  It takes effect
+the next time the program starts.
+@SETTINGS_ORD
+Settings: Item list order
+
+The order the item list opens in: ID, LOC (location), MFR (maker) or
+SERIAL.  It takes effect at once.
+@SETTINGS_BAU
+Settings: Baud rate
+
+The speed of a serial connection to the server: 1200, 2400, 4800,
+9600, 19200 or 38400, the same as the server's.  It takes effect the
+next time the program starts.
+@SETTINGS_RTS
+Settings: RTS/CTS flow control
+
+Checked, the serial connection uses hardware flow control, as the
+server must too; Space checks or clears it.  It takes effect the next
+time the program starts.
+@SETTINGS_CFG
+Settings: Settings file
+
+The settings file these are kept in, INV.CFG unless the program was
+started with another.  It cannot be changed here.
+@SETTINGS_PRG
+Settings: Program
+
+The program and its version, to name when asking for help.
+@USERS
+The users
+
+Each user logs in with a name and a password and has an access
+level: 1 may only look, 2 may also change the inventory, 3 may also
+manage the users and the data files.  The list shows them in name
+order; Status is A for active and D for disabled, and a disabled
+user's row is marked in red.  Chg is T while the user must change the
+password at the next login.
+
+  Up, Down, PgUp, PgDn, Home, End   move through the list
+  Left, Right  scroll the columns sideways, as the bar at the foot
+               of a list wider than its window does
+  Enter        open the selected user (a double click too)
+  Ctrl+E       edit the selected user
+  Ins          a new user
+  Del          delete the selected user, after asking
+  F6, Tab      to the user's entries of the audit log, and back
+               (Shift+F6 and Shift+Tab too); Esc there comes back
+  Esc          back to the list it was opened from
+  Shift+F10    the Record menu at the selected row
+
+View > Pane beside the list puts beside the list the entries of the
+audit log that the selected user made, the newest first: logins,
+changes to the inventory and to the users.  They follow the selection
+once it rests on a user, and are only to read; F1 there explains the
+audit log.  On a serial line or a mailbox the entries show only once
+that entry asks for them.  Drag the bar between the two to widen
+either; the choice is kept in the settings file (WINPANE.USER=).
+
+The last active user of level 3 can be neither deleted, disabled nor
+given a lower level.  Only users of level 3 can open this list.
+
+See also: The user form; Changing the password.
+@USER
+The user form
+
+  Tab, Shift+Tab     next, previous field
+  PgUp, PgDn         first, last field
+  Enter              save               Esc             cancel
+  Alt+Down           open the list of the levels or the status
+
+A new user needs a level and a password and must change the password
+at the first login.  Changes of level and status take effect at the
+user's next login.
+@USER_STATUS
+User: Status
+
+A active, D disabled: a disabled user can no longer log in; set it
+back to A to enable the user again.  The last active user of level 3
+cannot be disabled.
+@USER_USERNAME
+User: User name
+
+The name the user logs in with, up to 8 letters, digits and _, given
+when the user is created; it cannot be changed afterwards.
+@USER_FULLNAME
+User: Full name
+
+The user's own name, which the user list shows: up to 30 characters.
+@USER_GROUP
+User: Group
+
+A group of your own for the user, such as a team or a class, as
+dBASE III Plus PROTECT has: up to 8 characters.  It grants nothing.
+@USER_LEVEL
+User: Level
+
+What the user may do: 1 only look, 2 also change the inventory, 3
+also manage the users and the data files.  Required.  The last active
+user of level 3 cannot be given a lower one.
+@USER_PASSWORD
+User: New password
+
+To give the user a new password, type it here and again in Repeat
+password; the user must change it at the next login.  Left empty, the
+password stays as it is.  A password is 4 to 16 printable characters
+without spaces, and the field takes no more; one too short is refused.
+It is not shown while you type.
+@USER_REPEAT
+User: Repeat password
+
+The new password again, which must be the same as the one typed
+above.  It is not shown while you type.
+@ADMIN
+Backup, restore, pack and reindex
+
+These work on the data files as a whole and need the system to
+themselves: other users must log out first.  Each can take minutes
+when there is much data.  A directory named here is one on the machine
+that holds the data: the server, or this machine when working locally.
+
+  Backup    copies every table, notes file and index into a directory
+            that exists already; a backup there before is replaced
+  Restore   replaces all the data with the backup in a directory,
+            after asking; the indexes are rebuilt from its tables
+  Pack      removes the deleted records for good, after asking, and
+            rebuilds every index; deleted items can then no longer be
+            brought back
+  Reindex   rebuilds every index from its table, as after a damaged
+            index
+
+Each is written to the audit log.  They need access level 3.
+@AUDIT
+The audit log
+
+Every change to the data is written to the audit log: who made it
+(user and station), when, the table, the record, the field, and its
+old and new value.  Logins, failed logins, password changes and the
+work on the data files are there too.  The list shows the newest rows
+first; with a table it shows that table's rows by record, oldest
+first.  Failed logins are marked in red.
+
+  Table        ITEMS, LOCS, CATS, LTYPES, USERS, MAINT, LOANS, or
+               AUDIT for the work on the data files
+  Record       the record's ID (for CATS and LTYPES its number in the
+               file); it needs a table
+  Station      the station the changes came from
+
+Enter shows the list with these filters; empty ones filter nothing.
+In the list Esc goes back to the list the audit log was opened from;
+Left and Right, as the bar at its foot, scroll its columns sideways.
+Values longer than their column are cut.  Packing renumbers the
+records of CATS and LTYPES; rows written before it keep the old
+numbers.  The audit log needs access level 3.
+
+Beside Admin > Users the same list shows what the selected user did,
+with no filter of its own.
+@SESSIONS
+The sessions
+
+The sessions open on the server, yours selected: the station, the
+user, the access level, the state, and the seconds since the
+session's last request.  A station that has not logged in shows no
+user and level 0.  Refresh, or F5 in the list, asks the server again;
+Close or Esc ends the dialog.
+
+Only a server has sessions: working locally, the dialog says this is
+not available.  It needs access level 3.
+@EXPORT
+Export to a CSV file
+
+Writes every record of a table to a text file of comma-separated
+values, one line per record, the way dBASE III Plus writes with
+COPY TO file DELIMITED.  Notes are not written.
+
+  Table        ITEMS, LOCS, CATS, LTYPES (the location types), MAINT,
+               LOANS or AUDIT
+  File         the file to write, on the machine that holds the data:
+               the server, or this machine when working locally
+  Field names  checked, the field names are the first line
+
+  Tab, Shift+Tab     next, previous field
+  PgUp, PgDn         first, last field
+  Enter              export             Esc             cancel
+  Alt+Down           open the list of the tables
+
+Working locally, a file name dialog comes first, listing this
+machine's directories and their CSV files; over a server the file is
+typed as the server names it.  While the export runs, the status bar
+counts the records written, and Esc stops it; the file is then left
+as it was, since it gets its name only once complete.  What was
+written so far stays on the machine that holds the data, under the
+file's name with an extension starting &C.  A file that exists
+already is replaced only after you agree.  Export and import need
+access level 3.
+@IMPORT
+Import a CSV file
+
+Adds the lines of a text file of comma-separated values to ITEMS or
+LOCS as new records, checked as a new item or location typed in a
+form would be.  Nothing that exists is changed or deleted.
+
+  Table        ITEMS or LOCS
+  File         the file to read, on the machine that holds the data
+  Field names  checked when the first line names the columns;
+               otherwise the columns are the table's fields in their
+               order, without the notes
+
+ITEMS: ITEM_ID CATEGORY ITEMTYPE MFR MODEL SERIALNO DESCR COND QTY
+ON_LOAN RESERVED IN_USE ATTACHED LOC_ID PARENT_ID ACQ_DATE ACQ_SRC
+ACQ_PRICE CUR_VALUE TAGS STATUS CREATED UPDATED.  LOCS: LOC_ID
+PARENT_ID LOC_NAME LOC_CODE LTYPE CAPACITY.  Dates are YYYYMMDD;
+CATEGORY, COND and STATUS take the codes of the item form, LTYPE a
+location type's code.
+
+Working locally, a file name dialog comes first, as for an export.
+A value in quotes is kept as it is, with "" standing for one quote.
+An empty value takes the default of a new record.  The columns the
+program fills in itself (item ID, location ID, on loan, reserved, in
+use, attached, the assembly, the dates created and updated) are
+ignored, so an exported file can be imported back: the records get
+new IDs.  An item's LOC_ID takes a
+location's number or its code.  A location's PARENT_ID takes a code,
+naming a location already kept or one on any line of the file, or a
+number: when the file has a LOC_ID column (every export, and every
+file without field names) the number names the line of the file with
+that LOC_ID, otherwise a location already kept.  A location may come
+before or after the ones inside it.
+
+Every line is checked before anything is added.  If any line is
+refused, nothing is added, and the refused lines are listed with
+their reasons.  A disk error while the records are being added can
+stop the import with some of them added; the message says how many.
+The import needs the system to itself: other users must log out
+first.  A large file takes minutes on a slow machine.  Export and
+import need access level 3.
+@REPORTS
+Reports
+
+Fill in the options and press Enter; the dialog opens again for
+another run until Esc.
+
+  Sort by      item listing: by location (grouped, with the items and
+               the quantity of each location), by ID, or by maker
+  Category, Location
+               only the items of that category, chosen from its list,
+               or location, chosen with F4 or the ... button; the
+               line under Location shows where it is
+  All below    checked: also the items of every location inside the
+               one given; the report then goes by location
+  Status       item listing: ALL, A (active) or D (disposed of)
+  Works, Tags  listing, valuation and item labels: only the items in
+               that works state and with every tag given, as in Search
+               (Works ? lists the untested stock)
+  Overdue, As of
+               loans: only those due before the date; the date marks
+               the late loans with ! and heads the pages (empty:
+               today)
+  Output       SCREEN (shown in the preview), the first offered,
+               PRINTER (Windows' default printer) or FILE (the text a
+               plain printer would get, into the file named; an
+               existing file is replaced only after asking)
+
+By location, each location has a heading with its place, such as
+Office > Shelf A, in the order of the location list; the items whose
+place is not known come first.  The valuation lists the active items
+by location with the price paid and the value, subtotals per location,
+the total, and totals by category.  The amounts are each item's own,
+added as stored: they are not multiplied by the quantity.
+
+While a report runs, a dialog counts the pages and the records; its
+Cancel, or Esc, stops it: the report then ends with a line saying so,
+and prints no totals.  The page length is set in INV's settings, kept
+in the same settings file.
+
+In the preview the arrows, PgUp, PgDn, Home and End move through the
+report, and Esc, Enter or Close on its system menu end it.
+
+See also: Labels.
+@LABELS
+Labels
+
+Item labels: one label per item, with its ID and category, maker and
+model, serial number and location.  Type an item ID for one label;
+otherwise the labels of all items, or of the category, location, works
+state and tags given (with All below, also of the locations inside
+it), in the order of the location list.  Category is chosen from its
+list; F4 in Location or Tags, or the ... button beside it, lists them
+to choose from.
+
+Bin labels: one label per location, with its name in double width
+where the printer has such a font, else in bold, its code if it has
+one, its place (such as Office > Shelf A > Bin 12) and its type.  Give
+a location for its label, with All below checked also for every
+location inside it; leave it empty for all locations.
+
+  Output       SCREEN, PRINTER or FILE, as for reports
+
+Labels are printed on continuous stock, one label across.  The label
+width and the pitch (lines from one label to the next) are set in
+INV's settings, kept in the same settings file.  Line the first label
+up by hand before printing.
+@KEYS
+Keys everywhere
+
+  F1           help on the list or dialog in use
+  F10          the menu bar
+  Alt+letter   the menu of that letter (Alt alone, then the arrows);
+               in a dialog, the field or button whose letter is
+               underlined
+  Ctrl+F       the Find box of the tool bar: type a text, then
+               Enter; Esc or Tab goes back to the list
+  F5           the list shown again, as it is now, or the preview
+               beside it while that has the focus (View > Refresh)
+  F6           beside a list with a pane, the other side
+  Shift+F10    the Record menu, at the selected row of the list
+  Alt+F4       exit
+  Esc          back, cancel, close
+  Enter        open, or the dialog's OK
+  Tab          in a dialog, the next field (Shift+Tab the previous)
+
+The Record menu (Alt+C) holds the commands of the list shown (beside
+the location tree, the side with the focus), each beside its key when
+it has one; choosing one is pressing the key.  Commands used less
+often, such as Move or Parts, are in the menu alone.  A click with the
+right mouse button on a row of the list selects it and opens the
+Record menu there.  File > Log out and File > Exit end the login and
+the program.  An entry ending in ... opens a dialog first.  While the
+item list shows, the Items menu checks the Browse entry of its order.
+View > Pane beside the list shows or hides what stands beside the
+item lists, a preview of the selected item, beside the assemblies,
+the selected one's parts, beside the loans and holds, the history of
+the selected row's item, beside the users, the selected user's
+entries of the audit log, and beside the location tree, its items;
+it is grey on the other lists.  On a serial line or a mailbox each
+list shows alone until this entry asks for what stands beside it.
+Help > Help on this screen is F1 for the list shown, and Help >
+Keyboard shows these keys.  Menu entries drawn grey need a higher
+access level than yours, or, in the Record menu, a selected row or
+another list.
+
+Help opens in Windows Help (WINHELP.EXE), where Index lists the
+topics, Back returns to the one before and Search finds a topic by its
+title.
+
+Without Windows Help, or without INVWIN.HLP beside the program, help
+opens in a window of its own: it scrolls with the arrows, PgUp, PgDn,
+Ctrl+Home and Ctrl+End, F1 in it shows these keys, and Esc or Enter
+closes it.
+
+The tool bar under the menus gives New, Open, Edit, Delete, Move,
+Install and Lend of the Record menu, each grey where its entry is,
+and the Find box: Enter or the Find button beside it lists the items
+holding its text; empty, it opens Search > Find text.
+
+The status bar at the bottom names the connection, your user name and
+your level, then, on a local, NetBIOS or TCP/IP connection, the count
+of the list shown.  It is counted as the list opens and when its order
+changes, and follows the records you add, duplicate, split off and
+delete.  Its last panel describes the menu entry highlighted, and says
+what a command changed until the next key or click.
+
+The headings above a list name its columns.  Drag the line at the
+right of a heading with the mouse to widen or narrow that column; Esc
+cancels the drag.  The width holds for every list of those columns
+and is kept in the settings file (WINCOLS.).

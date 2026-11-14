@@ -1,0 +1,6 @@
+=TKA
++OK
++OK LEVEL=3 NAME="System Administrator" TICKET=<t>
+=TKA
++OK
+-ERR 401 bad user name or password

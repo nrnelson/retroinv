@@ -1,0 +1,782 @@
+# SYNTAX.SCR - request syntax and its error codes: 100 syntax error, 101
+# unknown command, 102 bad or missing argument, 103 line too long, 104
+# not available in this version; quoting and escapes; empty lines; and
+# the framing of memo and paged output.
+
+# An empty line, or one of only spaces, is no request and gets no
+# response, in any state.
+>
+@SEND \x20*4
+# Syntax is checked before anything else, even before HELLO.
+> PING "abc
+< -ERR 100 syntax error
+> FOO "abc
+< -ERR 100 syntax error
+> FOO
+< -ERR 101 unknown command
+> FOO CLIENTS
+< -ERR 101 unknown command
+> HELLO PC1
+< +OK
+> LOGIN ADMIN admin
+< +OK LEVEL=3 MUSTCHG=1
+> PASSWD admin secret1
+< +OK
+>
+@SEND \x20*4
+
+# 100: unterminated quote, unknown escape, \x00, a quote inside a bare
+# token, text after a closing quote, a bad key, a positional token after
+# a pair, too many positional tokens or pairs, pairs without a command.
+> HELLO "PC2
+< -ERR 100 syntax error
+> HELLO "A\qB"
+< -ERR 100 syntax error
+> HELLO "A\x00B"
+< -ERR 100 syntax error
+> HELLO "A\x4"
+< -ERR 100 syntax error
+> HELLO A"B
+< -ERR 100 syntax error
+> HELLO "A"B
+< -ERR 100 syntax error
+> ITEM LIST 1CAT=CPU
+< -ERR 100 syntax error
+> ITEM LIST =CPU
+< -ERR 100 syntax error
+> ITEM LIST CAT=CPU 5
+< -ERR 100 syntax error
+> ITEM GET 1 2 3 4 5 6 7
+< -ERR 100 syntax error
+> ITEM LIST K0=1 K1=1 K2=1 K3=1 K4=1 K5=1 K6=1 K7=1 K8=1 K9=1 K10=1 K11=1 K12=1 K13=1 K14=1 K15=1 K16=1 K17=1 K18=1 K19=1 K20=1 K21=1 K22=1 K23=1 K24=1
+< -ERR 100 syntax error
+> CAT=CPU
+< -ERR 100 no command
+> CAT=CPU PAGE=1
+< -ERR 100 no command
+# A syntax error comes before a repeated key.
+> ITEM LIST CAT=A CAT=B "x
+< -ERR 100 syntax error
+# More positional arguments than a command takes.
+> PING X
+< -ERR 100 too many arguments
+> VER 1
+< -ERR 100 too many arguments
+> WHOAMI ME
+< -ERR 100 too many arguments
+> STATUS ALL
+< -ERR 100 too many arguments
+> HELLO PC1 PC2
+< -ERR 100 too many arguments
+> LOGIN ADMIN secret1 X
+< -ERR 100 too many arguments
+> PASSWD secret1 secret2 X
+< -ERR 100 too many arguments
+> BYE NOW
+< -ERR 100 too many arguments
+> ITEM GET 1 2
+< -ERR 100 too many arguments
+# The session is unchanged by all of these.
+> WHOAMI
+< +DATA
+< K USER=ADMIN
+< K LEVEL=3
+< K STATION=PC1
+< .
+
+# 101: unknown verbs and unknown or missing second words of a group.
+> PINGG
+< -ERR 101 unknown command
+> ITEM
+< -ERR 101 unknown command
+> ITEM BAR 1
+< -ERR 101 unknown command
+> USER
+< -ERR 101 unknown command
+> CAT GET CPU
+< -ERR 101 unknown command
+> LOC FIND A1
+< -ERR 101 unknown command
+> "ITEM GET" 1
+< -ERR 101 unknown command
+# Keywords are case-insensitive, and a quoted keyword is still a keyword.
+> ping
+< +OK
+> Ver
+< +OK RETROINV 1.0
+> item get 1
+< -ERR 200 no such item
+> "ITEM" "GET" 1
+< -ERR 200 no such item
+
+# 102: a repeated key, a key a command does not take, missing or bad
+# arguments, naming the field.
+> ITEM LIST CAT=A CAT=B
+< -ERR 102 bad or missing argument FIELD=CAT
+> ITEM LIST cat=A Cat=B
+< -ERR 102 bad or missing argument FIELD=CAT
+> PING K=V
+< -ERR 102 unexpected key FIELD=K
+> WHOAMI user=ME
+< -ERR 102 unexpected key FIELD=USER
+> HELLO
+< -ERR 102 missing argument FIELD=STATION
+> ITEM GET
+< -ERR 102 missing argument FIELD=ID
+> ITEM GET abc
+< -ERR 102 bad ID FIELD=ID
+> ITEM GET 0
+< -ERR 102 bad ID FIELD=ID
+> ITEM GET 000
+< -ERR 102 bad ID FIELD=ID
+> ITEM GET -1
+< -ERR 102 bad ID FIELD=ID
+> ITEM GET +1
+< -ERR 102 bad ID FIELD=ID
+> ITEM GET 1.0
+< -ERR 102 bad ID FIELD=ID
+> ITEM GET ""
+< -ERR 102 bad ID FIELD=ID
+> ITEM GET 100000000
+< -ERR 102 bad ID FIELD=ID
+> ITEM GET 99999999999999999999
+< -ERR 102 bad ID FIELD=ID
+> ITEM GET 99999999
+< -ERR 200 no such item
+> ITEM GET 0000000000001
+< -ERR 200 no such item
+> ITEM LIST PAGE=0
+< -ERR 102 bad page size FIELD=PAGE
+> ITEM LIST PAGE=26
+< -ERR 102 bad page size FIELD=PAGE
+> ITEM LIST PAGE=
+< -ERR 102 bad page size FIELD=PAGE
+> ITEM LIST PAGE=1x
+< -ERR 102 bad page size FIELD=PAGE
+> ITEM LIST PAGE=-1
+< -ERR 102 bad page size FIELD=PAGE
+> ITEM LIST PAGE=000025
+< +DATA
+<*
+> ITEM LIST PAGE=1
+< +DATA
+<*
+
+# 103: a request longer than 292 bytes, whatever it holds; 292 bytes
+# pass.
+@SEND PING\x20*288
+< +OK
+@SEND PING\x20*289
+< -ERR 103 line too long
+@SEND FOOX*290
+< -ERR 103 line too long
+@SEND \x20*293
+< -ERR 103 line too long
+
+# Command words: case, quoting, groups alone; 104 after parsing.  A
+# command in lower case runs as in upper case (assy bom, maint recent), a
+# quoted command word is still that word (LOAN "OUT"), and a group word
+# alone is 101.  A group of a later version is 104 whatever follows its
+# verb, but only once the request has been parsed: a repeated key is 102
+# first.
+> assy bom 1
+< -ERR 200 no such item FIELD=ID
+> maint recent
+< +DATA
+< F MAINT_ID ITEM_ID MDATE MTYPE SUMMARY COST
+< .
+> maint
+< -ERR 101 unknown command
+> LOAN "OUT" 1 QTY=1
+< -ERR 200 no such item FIELD=ITEM
+> ADMIN 1 2 3 4 5 6 7
+< -ERR 101 unknown command
+> AUDIT LIST TBL=ITEMS TBL=LOCS
+< -ERR 102 bad or missing argument FIELD=TBL
+
+# Quoting: spaces, '=', escapes, CP437 bytes, and how values come back.
+> HELLO "My Station"
+< +OK
+> LOGIN ADMIN secret1
+< +OK LEVEL=3 NAME="System Administrator"
+> WHOAMI
+< +DATA
+< K USER=ADMIN
+< K LEVEL=3
+< K STATION="My Station"
+< .
+> HELLO "a\"b\\c=d"
+< +OK
+> LOGIN ADMIN secret1
+< +OK LEVEL=3 NAME="System Administrator"
+> WHOAMI
+< +DATA
+< K USER=ADMIN
+< K LEVEL=3
+< K STATION="a\"b\\c=d"
+< .
+> HELLO \x41\
+< +OK
+> LOGIN ADMIN secret1
+< +OK LEVEL=3 NAME="System Administrator"
+> WHOAMI
+< +DATA
+< K USER=ADMIN
+< K LEVEL=3
+< K STATION="\\x41\\"
+< .
+> HELLO "\x41\x62"
+< +OK
+> LOGIN ADMIN secret1
+< +OK LEVEL=3 NAME="System Administrator"
+> WHOAMI
+< +DATA
+< K USER=ADMIN
+< K LEVEL=3
+< K STATION=Ab
+< .
+> HELLO °±²Û
+< +OK
+> LOGIN ADMIN secret1
+< +OK LEVEL=3 NAME="System Administrator"
+> WHOAMI
+< +DATA
+< K USER=ADMIN
+< K LEVEL=3
+< K STATION=°±²Û
+< .
+# Tabs separate tokens too.
+@SEND PING\x09
+< +OK
+@SEND HELLO\x09PC1
+< +OK
+@SEND LOGIN ADMIN\x09secret1
+< +OK LEVEL=3 NAME="System Administrator"
+
+# Memo output: one L line per memo line, "L" alone for an empty one, '\'
+# doubled, a line longer than 200 written bytes split, and a memo of
+# the engine's largest size still sent whole.
+> ITEM ADD CATEGORY=CPU
+< +OK ID=1
+> ITEM NOTES 1
+< +DATA
+< .
+> ITEM NOTES 1 ADD="one\n\ntwo\\three\x09four"
+< +OK
+> ITEM NOTES 1
+< +DATA
+< L one
+< L
+< L two\\three	four
+< .
+# A data line that begins with '.' is sent with a second '.'; this one
+# begins with "L", so it is not.
+> ITEM NOTES 1 ADD=".dot"
+< +OK
+> ITEM NOTES 1
+< +DATA
+< L one
+< L
+< L two\\three	four
+< L .dot
+< .
+> ITEM ADD CATEGORY=CPU
+< +OK ID=2
+> ITEM NOTES 2 ADD="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\\\\yyyyyyyyyyyyyyyyyyyy"
+< +OK
+> ITEM NOTES 2
+< +DATA
+< L xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+< L \\\\yyyyyyyyyyyyyyyyyyyy
+< .
+> ITEM ADD CATEGORY=CPU
+< +OK ID=3
+> ITEM NOTES 3 ADD="\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"
+< +OK
+> ITEM NOTES 3 ADD="\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"
+< +OK
+> ITEM NOTES 3 ADD="\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"
+< +OK
+> ITEM NOTES 3 ADD="\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"
+< +OK
+> ITEM NOTES 3 ADD="\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"
+< +OK
+> ITEM NOTES 3 ADD="\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"
+< +OK
+> ITEM NOTES 3 ADD="\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"
+< +OK
+> ITEM NOTES 3 ADD="\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"
+< +OK
+> ITEM NOTES 3 ADD="\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"
+< +OK
+> ITEM NOTES 3 ADD="\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"
+< +OK
+> ITEM NOTES 3 ADD="\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"
+< +OK
+> ITEM NOTES 3 ADD="\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"
+< +OK
+> ITEM NOTES 3 ADD="\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"
+< +OK
+> ITEM NOTES 3 ADD="\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"
+< +OK
+> ITEM NOTES 3 ADD="\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"
+< +OK
+> ITEM NOTES 3 ADD="\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"
+< +OK
+> ITEM NOTES 3 ADD="\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"
+< +OK
+> ITEM NOTES 3 ADD="\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"
+< +OK
+> ITEM NOTES 3 ADD="x"
+< -ERR 202 memo too long FIELD=NOTES
+> ITEM NOTES 3
+< +DATA
+< L \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+< L \\\\\\\\\\\\\\\\\\\\
+< L \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+< L \\\\\\\\\\\\\\\\\\\\
+< L \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+< L \\\\\\\\\\\\\\\\\\\\
+< L \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+< L \\\\\\\\\\\\\\\\\\\\
+< L \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+< L \\\\\\\\\\\\\\\\\\\\
+< L \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+< L \\\\\\\\\\\\\\\\\\\\
+< L \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+< L \\\\\\\\\\\\\\\\\\\\
+< L \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+< L \\\\\\\\\\\\\\\\\\\\
+< L \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+< L \\\\\\\\\\\\\\\\\\\\
+< L \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+< L \\\\\\\\\\\\\\\\\\\\
+< L \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+< L \\\\\\\\\\\\\\\\\\\\
+< L \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+< L \\\\\\\\\\\\\\\\\\\\
+< L \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+< L \\\\\\\\\\\\\\\\\\\\
+< L \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+< L \\\\\\\\\\\\\\\\\\\\
+< L \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+< L \\\\\\\\\\\\\\\\\\\\
+< L \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+< L \\\\\\\\\\\\\\\\\\\\
+< L \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+< L \\\\\\\\\\\\\\\\\\\\
+< L \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+< .
+
+# Paged output: PAGE= is a maximum; a page stops early when the sink has
+# less than a line, a C line and the terminator of room left, but always
+# sends at least one record; C means more entries exist.
+> ITEM LIST PAGE=2 FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 1
+< R 2
+< C ITEMS1:2020202020202032:2
+< .
+> ITEM LIST FIELDS=ITEM_ID AFTER=ITEMS1:2020202020202032:2
+< +DATA
+< F ITEM_ID
+< R 3
+< .
+# 680 bytes: after "+DATA", the F line and one R line (23 bytes) less
+# than PROTO_ROOMMIN remain.
+@ROOM 680
+> ITEM LIST FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 1
+< C ITEMS1:2020202020202031:1
+< .
+@ROOM 1
+> ITEM LIST FIELDS=ITEM_ID PAGE=25
+< +DATA
+< F ITEM_ID
+< R 1
+< C ITEMS1:2020202020202031:1
+< .
+@ROOM 0
+> ITEM LIST FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 1
+< R 2
+< R 3
+< .
+
+# Memo text written by another program: every line end dBASE knows (CR
+# LF, a lone LF, a lone CR, the soft return 8D 0A), an 8D alone kept as
+# it is, control bytes and 7F as \xHH, a TAB as it is.
+> ITEM ADD CATEGORY=CPU
+< +OK ID=4
+@MEMO ITEMS 4 NOTES 1 a\x0Db\x0D\x0Ac\x8D\x0Ad\x0A\x0Ae\x01f\x7Fg\x09h\x0Ai\x8Dj\x0D
+> ITEM NOTES 4
+< +DATA
+< L a
+< L b
+< L c
+< L d
+< L
+< L e\x01f\x7Fg	h
+< L ij
+< .
+# A memo whose written form passes PROTO_MAXUNPAGED is cut before the
+# line that would not fit, and K TRUNCATED=1 says so.
+> ITEM ADD CATEGORY=CPU
+< +OK ID=5
+@MEMO ITEMS 5 NOTES 2000 \x01
+> ITEM NOTES 5
+< +DATA
+< L \x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01
+< L \x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01
+< L \x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01
+< L \x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01
+< L \x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01
+< L \x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01
+< L \x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01
+< L \x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01
+< L \x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01
+< L \x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01
+< L \x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01
+< L \x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01
+< L \x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01
+< L \x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01
+< L \x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01
+< L \x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01
+< L \x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01
+< L \x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01
+< L \x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01
+< K TRUNCATED=1
+< .
+
+# STATUS: the record counts, then the host's own lines, cut with
+# K TRUNCATED=1 where they would pass PROTO_MAXUNPAGED.
+@STATUS 2
+> STATUS
+< +DATA
+< K ITEMS=5
+< K LOCS=0
+< K CATS=10
+< K LTYPES=8
+< K MAINT=0
+< K LOANS=0
+< K AUDIT=55
+< K USERS=1
+< K HOSTLINE=1
+< K HOSTLINE=2
+< .
+# 300 host lines do not fit: they stop where the next one would pass the
+# limit, and K TRUNCATED=1 follows.
+@STATUS 300
+> STATUS
+< +DATA
+< K ITEMS=5
+< K LOCS=0
+< K CATS=10
+< K LTYPES=8
+< K MAINT=0
+< K LOANS=0
+< K AUDIT=55
+< K USERS=1
+< K HOSTLINE=1
+< K HOSTLINE=2
+< K HOSTLINE=3
+< K HOSTLINE=4
+< K HOSTLINE=5
+< K HOSTLINE=6
+< K HOSTLINE=7
+< K HOSTLINE=8
+< K HOSTLINE=9
+< K HOSTLINE=10
+< K HOSTLINE=11
+< K HOSTLINE=12
+< K HOSTLINE=13
+< K HOSTLINE=14
+< K HOSTLINE=15
+< K HOSTLINE=16
+< K HOSTLINE=17
+< K HOSTLINE=18
+< K HOSTLINE=19
+< K HOSTLINE=20
+< K HOSTLINE=21
+< K HOSTLINE=22
+< K HOSTLINE=23
+< K HOSTLINE=24
+< K HOSTLINE=25
+< K HOSTLINE=26
+< K HOSTLINE=27
+< K HOSTLINE=28
+< K HOSTLINE=29
+< K HOSTLINE=30
+< K HOSTLINE=31
+< K HOSTLINE=32
+< K HOSTLINE=33
+< K HOSTLINE=34
+< K HOSTLINE=35
+< K HOSTLINE=36
+< K HOSTLINE=37
+< K HOSTLINE=38
+< K HOSTLINE=39
+< K HOSTLINE=40
+< K HOSTLINE=41
+< K HOSTLINE=42
+< K HOSTLINE=43
+< K HOSTLINE=44
+< K HOSTLINE=45
+< K HOSTLINE=46
+< K HOSTLINE=47
+< K HOSTLINE=48
+< K HOSTLINE=49
+< K HOSTLINE=50
+< K HOSTLINE=51
+< K HOSTLINE=52
+< K HOSTLINE=53
+< K HOSTLINE=54
+< K HOSTLINE=55
+< K HOSTLINE=56
+< K HOSTLINE=57
+< K HOSTLINE=58
+< K HOSTLINE=59
+< K HOSTLINE=60
+< K HOSTLINE=61
+< K HOSTLINE=62
+< K HOSTLINE=63
+< K HOSTLINE=64
+< K HOSTLINE=65
+< K HOSTLINE=66
+< K HOSTLINE=67
+< K HOSTLINE=68
+< K HOSTLINE=69
+< K HOSTLINE=70
+< K HOSTLINE=71
+< K HOSTLINE=72
+< K HOSTLINE=73
+< K HOSTLINE=74
+< K HOSTLINE=75
+< K HOSTLINE=76
+< K HOSTLINE=77
+< K HOSTLINE=78
+< K HOSTLINE=79
+< K HOSTLINE=80
+< K HOSTLINE=81
+< K HOSTLINE=82
+< K HOSTLINE=83
+< K HOSTLINE=84
+< K HOSTLINE=85
+< K HOSTLINE=86
+< K HOSTLINE=87
+< K HOSTLINE=88
+< K HOSTLINE=89
+< K HOSTLINE=90
+< K HOSTLINE=91
+< K HOSTLINE=92
+< K HOSTLINE=93
+< K HOSTLINE=94
+< K HOSTLINE=95
+< K HOSTLINE=96
+< K HOSTLINE=97
+< K HOSTLINE=98
+< K HOSTLINE=99
+< K HOSTLINE=100
+< K HOSTLINE=101
+< K HOSTLINE=102
+< K HOSTLINE=103
+< K HOSTLINE=104
+< K HOSTLINE=105
+< K HOSTLINE=106
+< K HOSTLINE=107
+< K HOSTLINE=108
+< K HOSTLINE=109
+< K HOSTLINE=110
+< K HOSTLINE=111
+< K HOSTLINE=112
+< K HOSTLINE=113
+< K HOSTLINE=114
+< K HOSTLINE=115
+< K HOSTLINE=116
+< K HOSTLINE=117
+< K HOSTLINE=118
+< K HOSTLINE=119
+< K HOSTLINE=120
+< K HOSTLINE=121
+< K HOSTLINE=122
+< K HOSTLINE=123
+< K HOSTLINE=124
+< K HOSTLINE=125
+< K HOSTLINE=126
+< K HOSTLINE=127
+< K HOSTLINE=128
+< K HOSTLINE=129
+< K HOSTLINE=130
+< K HOSTLINE=131
+< K HOSTLINE=132
+< K HOSTLINE=133
+< K HOSTLINE=134
+< K HOSTLINE=135
+< K HOSTLINE=136
+< K HOSTLINE=137
+< K HOSTLINE=138
+< K HOSTLINE=139
+< K HOSTLINE=140
+< K HOSTLINE=141
+< K HOSTLINE=142
+< K HOSTLINE=143
+< K HOSTLINE=144
+< K HOSTLINE=145
+< K HOSTLINE=146
+< K HOSTLINE=147
+< K HOSTLINE=148
+< K HOSTLINE=149
+< K HOSTLINE=150
+< K HOSTLINE=151
+< K HOSTLINE=152
+< K HOSTLINE=153
+< K HOSTLINE=154
+< K HOSTLINE=155
+< K HOSTLINE=156
+< K HOSTLINE=157
+< K HOSTLINE=158
+< K HOSTLINE=159
+< K HOSTLINE=160
+< K HOSTLINE=161
+< K HOSTLINE=162
+< K HOSTLINE=163
+< K HOSTLINE=164
+< K HOSTLINE=165
+< K HOSTLINE=166
+< K HOSTLINE=167
+< K HOSTLINE=168
+< K HOSTLINE=169
+< K HOSTLINE=170
+< K HOSTLINE=171
+< K HOSTLINE=172
+< K HOSTLINE=173
+< K HOSTLINE=174
+< K HOSTLINE=175
+< K HOSTLINE=176
+< K HOSTLINE=177
+< K HOSTLINE=178
+< K HOSTLINE=179
+< K HOSTLINE=180
+< K HOSTLINE=181
+< K HOSTLINE=182
+< K HOSTLINE=183
+< K HOSTLINE=184
+< K HOSTLINE=185
+< K HOSTLINE=186
+< K HOSTLINE=187
+< K HOSTLINE=188
+< K HOSTLINE=189
+< K HOSTLINE=190
+< K HOSTLINE=191
+< K HOSTLINE=192
+< K HOSTLINE=193
+< K HOSTLINE=194
+< K HOSTLINE=195
+< K HOSTLINE=196
+< K HOSTLINE=197
+< K HOSTLINE=198
+< K HOSTLINE=199
+< K HOSTLINE=200
+< K HOSTLINE=201
+< K HOSTLINE=202
+< K HOSTLINE=203
+< K HOSTLINE=204
+< K HOSTLINE=205
+< K HOSTLINE=206
+< K HOSTLINE=207
+< K HOSTLINE=208
+< K HOSTLINE=209
+< K HOSTLINE=210
+< K HOSTLINE=211
+< K HOSTLINE=212
+< K HOSTLINE=213
+< K HOSTLINE=214
+< K HOSTLINE=215
+< K HOSTLINE=216
+< K HOSTLINE=217
+< K HOSTLINE=218
+< K HOSTLINE=219
+< K HOSTLINE=220
+< K HOSTLINE=221
+< K HOSTLINE=222
+< K HOSTLINE=223
+< K HOSTLINE=224
+< K HOSTLINE=225
+< K HOSTLINE=226
+< K HOSTLINE=227
+< K HOSTLINE=228
+< K HOSTLINE=229
+< K HOSTLINE=230
+< K HOSTLINE=231
+< K HOSTLINE=232
+< K HOSTLINE=233
+< K HOSTLINE=234
+< K HOSTLINE=235
+< K HOSTLINE=236
+< K HOSTLINE=237
+< K HOSTLINE=238
+< K HOSTLINE=239
+< K HOSTLINE=240
+< K HOSTLINE=241
+< K HOSTLINE=242
+< K HOSTLINE=243
+< K HOSTLINE=244
+< K HOSTLINE=245
+< K HOSTLINE=246
+< K HOSTLINE=247
+< K HOSTLINE=248
+< K HOSTLINE=249
+< K HOSTLINE=250
+< K HOSTLINE=251
+< K HOSTLINE=252
+< K HOSTLINE=253
+< K HOSTLINE=254
+< K HOSTLINE=255
+< K TRUNCATED=1
+< .
+@STATUS 0
+> STATUS
+< +DATA
+< K ITEMS=5
+< K LOCS=0
+< K CATS=10
+< K LTYPES=8
+< K MAINT=0
+< K LOANS=0
+< K AUDIT=55
+< K USERS=1
+< .
+
+# A shorter memo of control bytes is cut as well: 1010 of them, written
+# as four bytes each, are 4050 bytes with the frame, but their 21 L
+# lines with "L " and CR LF bring the response to 4134 bytes, so it
+# stops after 19 lines with K TRUNCATED=1.
+@MEMO ITEMS 5 NOTES 1010 \x01
+> ITEM NOTES 5
+< +DATA
+< L \x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01
+< L \x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01
+< L \x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01
+< L \x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01
+< L \x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01
+< L \x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01
+< L \x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01
+< L \x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01
+< L \x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01
+< L \x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01
+< L \x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01
+< L \x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01
+< L \x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01
+< L \x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01
+< L \x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01
+< L \x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01
+< L \x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01
+< L \x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01
+< L \x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01
+< K TRUNCATED=1
+< .

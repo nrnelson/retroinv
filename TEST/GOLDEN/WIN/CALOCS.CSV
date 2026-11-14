@@ -1,0 +1,5 @@
+LOC_ID,PARENT_ID,LOC_NAME,LOC_CODE,LTYPE,CAPACITY
+1,0,"Office","OFF","ROOM",
+2,1,"Shelf A1","A1","SHELF",
+3,2,"Box B2","B2","BOX",
+

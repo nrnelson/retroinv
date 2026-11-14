@@ -1,0 +1,122 @@
+# WGANB.SCR - two NetBIOS sessions of INVTEST against INVSERV on the
+# Workgroup Add-On server (run by wgagate.sh after MBOX.SCR, which set
+# the password and added item 1).  Requests of both are in flight at
+# once: the two LOGINs, then a PING on RINBB while RINBA's page of
+# items, larger than one NetBIOS message, is still on its way.  Both
+# sessions are listed in the slots of the first two LISTENs, so no
+# half-open session holds one.  Then a minute without a request, past
+# the Add-On's keepalive and NetBEUI's link timeout, after which both
+# sessions still answer and end with BYE.
+
+@CALL 1 RINBA
+> HELLO RINBA
+< +OK
+@CALL 2 RINBB
+> HELLO RINBB
+< +OK
+@S 1
+>& LOGIN ADMIN Wga2gate
+@S 2
+>& LOGIN ADMIN Wga2gate
+@WAIT 2
+< +OK LEVEL=3 NAME="System Administrator"
+@WAIT 1
+< +OK LEVEL=3 NAME="System Administrator"
+
+@S 1
+> ADMIN CLIENTS
+< +DATA
+< F SLOT TYPE STATION USER LEVEL STATE IDLE SELF
+< R 1 NETB RINBA ADMIN 3 3 0 1
+<* R 2 NETB RINBB ADMIN 3 3 * 0
+< .
+
+# Twenty-five items whose rows make a page of over 2 KB.
+> ITEM ADD CATEGORY=SYS MFR="Network Server Corporation" MODEL=NS-25 DESCR="Twenty-five copies of this item make one page of over two KB" TAGS="network,server,netbios,netbeui,session,listen,call,hangup"
+< +OK ID=2
+> ITEM COPY 2
+< +OK ID=3
+> ITEM COPY 2
+< +OK ID=4
+> ITEM COPY 2
+< +OK ID=5
+> ITEM COPY 2
+< +OK ID=6
+> ITEM COPY 2
+< +OK ID=7
+> ITEM COPY 2
+< +OK ID=8
+> ITEM COPY 2
+< +OK ID=9
+> ITEM COPY 2
+< +OK ID=10
+> ITEM COPY 2
+< +OK ID=11
+> ITEM COPY 2
+< +OK ID=12
+> ITEM COPY 2
+< +OK ID=13
+> ITEM COPY 2
+< +OK ID=14
+> ITEM COPY 2
+< +OK ID=15
+> ITEM COPY 2
+< +OK ID=16
+> ITEM COPY 2
+< +OK ID=17
+> ITEM COPY 2
+< +OK ID=18
+> ITEM COPY 2
+< +OK ID=19
+> ITEM COPY 2
+< +OK ID=20
+> ITEM COPY 2
+< +OK ID=21
+> ITEM COPY 2
+< +OK ID=22
+> ITEM COPY 2
+< +OK ID=23
+> ITEM COPY 2
+< +OK ID=24
+> ITEM COPY 2
+< +OK ID=25
+> ITEM COPY 2
+< +OK ID=26
+@S 1
+>& ITEM LIST CAT=SYS FIELDS=ITEM_ID,MFR,DESCR,TAGS PAGE=25
+@S 2
+>& PING
+@WAIT 2
+< +OK
+@WAIT 1
+< +DATA
+< F ITEM_ID MFR DESCR TAGS
+
+# 1100 ticks, about 60 seconds, with no request on either session.
+@S 1
+> PING
+< +OK
+@SLEEP 1100
+> PING
+< +OK
+@S 2
+> PING
+< +OK
+> ADMIN CLIENTS
+< +DATA
+< F SLOT TYPE STATION USER LEVEL STATE IDLE SELF
+<* R 1 NETB RINBA ADMIN 3 3 * 0
+< R 2 NETB RINBB ADMIN 3 3 0 1
+< .
+> BYE
+< +OK
+
+# The session that said BYE is gone.
+@S 1
+> ADMIN CLIENTS
+< +DATA
+< F SLOT TYPE STATION USER LEVEL STATE IDLE SELF
+< R 1 NETB RINBA ADMIN 3 3 0 1
+< .
+> BYE
+< +OK

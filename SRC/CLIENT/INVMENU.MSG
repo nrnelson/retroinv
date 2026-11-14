@@ -1,0 +1,57 @@
+# INVMENU.C: the menu bar and its pull-down entries.  An '&' marks the
+# hot-key letter of an entry (MSG.H, TUI.H); the name of an entry's own
+# key follows two or more blanks, and no other text holds two in a row
+# (INVMENU.H).
+# W=9 menu bar titles, '&' not counted: seven, with the Record menu's
+# (MT_RECORD of TUI.MSG), fit VID_COLS - 2, two cells apart
+100 MN_MITEMS &Items
+101 MN_MLOCS &Locations
+102 MN_MSRCH &Search
+103 MN_MRPT &Reports
+104 MN_MADMIN &Admin
+105 MN_MOPT &Options
+# Items
+# W=76 pull-down entries, '&' not counted: VID_COLS - 4
+110 MN_BYID Browse by &ID
+111 MN_BYLOC Browse by &location
+112 MN_BYMFR Browse by &maker
+113 MN_BYSER Browse by &serial
+114 MN_NEWITEM &New item
+115 MN_ASSY &Assemblies
+116 MN_MAINT S&ervice
+117 MN_LOANS L&oans and holds
+118 MN_CATS &Categories
+# Locations
+# W=76 pull-down entries, '&' not counted: VID_COLS - 4
+120 MN_LOCS &Browse locations
+121 MN_NEWLOC &New location
+122 MN_LTYPES Location &types
+# Search
+# W=76 pull-down entries, '&' not counted: VID_COLS - 4
+130 MN_FIND Find &text        Ctrl-F
+131 MN_SERIAL Find &serial number
+132 MN_FILTER &Filter items
+# Reports
+# W=76 pull-down entries, '&' not counted: VID_COLS - 4
+140 MN_RLIST &Item listing
+141 MN_RVALUE &Valuation
+142 MN_RLOANS &Loans and holds
+143 MN_RLABEL I&tem labels
+144 MN_RBIN &Bin labels
+# Admin
+# W=76 pull-down entries, '&' not counted: VID_COLS - 4
+150 MN_USERS &Users
+151 MN_BACKUP &Backup
+152 MN_RESTORE &Restore
+153 MN_PACK &Pack
+154 MN_AUDIT &Audit log
+155 MN_EXPORT &Export CSV
+156 MN_IMPORT I&mport CSV
+157 MN_REINDEX Re&index
+158 MN_SESSIONS &Sessions
+# Options
+# W=76 pull-down entries, '&' not counted: VID_COLS - 4
+160 MN_SETTINGS &Settings
+161 MN_PASSWD Change &password
+162 MN_LOGOUT &Log out
+163 MN_QUIT &Quit             F3

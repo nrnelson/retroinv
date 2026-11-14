@@ -1,0 +1,294 @@
+# Collection tags and the works state on the item lists: TAG= (whole
+# tags, A-Z folded, every one listed) and WORKS= (any of Y I N ?) on ITEM
+# LIST, ITEM FIND and REPORT ITEMS, with the other filters and ALL=1;
+# their refusals; REPORT ITEMS' WORKS column; and ITEM TAGS, the tags in
+# use, each once in its first spelling, A-Z folded, page by page.
+#
+# Fixture (TAGS as given; WORKS):
+#   1 SYS  IBM 5150         RM  Retro                      Y
+#   2 CARD 3Com 3C509       SH  "retro, network"           y
+#   3 CARD Intel Gigabit    SH  network,modern             (?)
+#   4 CARD Acme Metro       RM  metro,retro2               N
+#   5 DRV  Seagate ST-225   --  "RETRO isa Retro"          I
+#   6 CBL  Acme Cable       --  (none)                     ?
+# Shelf SH stands in room RM; item 2 is on loan.
+
+> HELLO CONSOLE
+< +OK
+> LOGIN ADMIN admin
+< +OK LEVEL=3 MUSTCHG=1
+> PASSWD admin secret1
+< +OK
+> LOC ADD LOC_NAME=Room LTYPE=ROOM LOC_CODE=RM
+< +OK ID=1
+> LOC ADD LOC_NAME=Shelf LTYPE=SHELF LOC_CODE=SH PARENT_ID=RM
+< +OK ID=2
+> ITEM ADD CATEGORY=SYS MFR=IBM MODEL=5150 LOC_ID=RM TAGS=Retro WORKS=Y
+< +OK ID=1
+> ITEM ADD CATEGORY=CARD MFR=3Com MODEL=3C509 LOC_ID=SH TAGS="retro, network" WORKS=y
+< +OK ID=2
+> ITEM ADD CATEGORY=CARD MFR=Intel MODEL=Gigabit LOC_ID=SH TAGS=network,modern
+< +OK ID=3
+> ITEM ADD CATEGORY=CARD MFR=Acme MODEL=Metro LOC_ID=RM TAGS=metro,retro2 WORKS=N
+< +OK ID=4
+> ITEM ADD CATEGORY=DRV MFR=Seagate MODEL=ST-225 TAGS="RETRO isa Retro" WORKS=I
+< +OK ID=5
+> ITEM ADD CATEGORY=CBL MFR=Acme MODEL=Cable WORKS=?
+< +OK ID=6
+> LOAN OUT 2 HOLDER=Al DUE=20261231
+< +OK ID=1
+
+# The stored tags: single commas, a repeat left out, the first spelling.
+> ITEM LIST FIELDS=ITEM_ID,TAGS,WORKS
+< +DATA
+< F ITEM_ID TAGS WORKS
+< R 1 Retro Y
+< R 2 retro,network Y
+< R 3 network,modern ?
+< R 4 metro,retro2 N
+< R 5 RETRO,isa I
+< R 6 "" ?
+< .
+
+# TAG= keeps the items carrying every tag listed, whole and A-Z folded:
+# metro and retro2 are not retro.  An empty TAG= filters nothing.
+> ITEM LIST TAG=retro FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 1
+< R 2
+< R 5
+< .
+> item list tag=RETRO,Network fields=item_id
+< +DATA
+< F ITEM_ID
+< R 2
+< .
+> ITEM LIST TAG="network  retro" FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 2
+< .
+> ITEM LIST TAG=retro2 FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 4
+< .
+> ITEM LIST TAG=retro,isa,modern FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< .
+> ITEM LIST TAG= FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 1
+< R 2
+< R 3
+< R 4
+< R 5
+< R 6
+< .
+
+# Beside CAT=, AVAIL= and LOC=; ITEM FIND's text still matches TAGS as
+# a substring, TAG= only whole tags.
+> ITEM LIST CAT=card TAG=network AVAIL=1 FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 3
+< .
+> ITEM LIST CAT=CARD TAG=network AVAIL=0 FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 2
+< .
+> ITEM LIST LOC=SH TAG=retro FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 2
+< .
+> ITEM FIND net FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 2
+< R 3
+< .
+> ITEM FIND net TAG=retro FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 2
+< .
+> ITEM FIND net TAG=net FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< .
+
+# ALL=1: the tree below LOC=, in tree order, with both filters.
+> ITEM LIST LOC=RM ALL=1 TAG=retro FIELDS=ITEM_ID,LOC_ID
+< +DATA
+< F ITEM_ID LOC_ID
+< R 1 1
+< R 2 2
+< .
+> ITEM FIND giga LOC=RM ALL=1 TAG=network WORKS=? FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 3
+< .
+
+> ITEM LIST LOC=RM ALL=1 WORKS=Y FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 1
+< R 2
+< .
+
+# WORKS=: one letter or several, any case; Y?I leaves out only the
+# items known not to work.
+> ITEM LIST WORKS=Y FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 1
+< R 2
+< .
+> ITEM LIST WORKS=y?i FIELDS=ITEM_ID,WORKS
+< +DATA
+< F ITEM_ID WORKS
+< R 1 Y
+< R 2 Y
+< R 3 ?
+< R 5 I
+< R 6 ?
+< .
+> ITEM LIST WORKS=N FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 4
+< .
+> ITEM LIST WORKS=YNI? FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 1
+< R 2
+< R 3
+< R 4
+< R 5
+< R 6
+< .
+> ITEM FIND acme WORKS=? FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 6
+< .
+
+# Refused filters: another letter, a repeat, more than four letters; a
+# TAG= over 25 characters, with a word that is no tag, or of
+# separators only.
+> ITEM LIST WORKS=X
+< -ERR 102 works must be Y, N, I or ? FIELD=WORKS
+> ITEM LIST WORKS=YNy
+< -ERR 102 works must be Y, N, I or ? FIELD=WORKS
+> ITEM LIST WORKS=YNI?Y
+< -ERR 102 works must be Y, N, I or ? FIELD=WORKS
+> ITEM FIND ibm WORKS=Q
+< -ERR 102 works must be Y, N, I or ? FIELD=WORKS
+> REPORT ITEMS WORKS=YN?Z
+< -ERR 102 works must be Y, N, I or ? FIELD=WORKS
+> ITEM LIST TAG=abcdefghijkl,abcdefghijklm
+< -ERR 102 filter value too long FIELD=TAG
+> ITEM LIST TAG=abcdefghijkl,abcdefghijkl
+< +DATA
+< F ITEM_ID CATEGORY MFR MODEL WORKS QTY AVAIL LOC_ID LOC_NAME STATUS
+< .
+> ITEM LIST TAG=abcdefghijklm
+< -ERR 102 each tag 1-12 of A-Z a-z 0-9 - _ . / + FIELD=TAG
+> ITEM LIST TAG=retro*
+< -ERR 102 each tag 1-12 of A-Z a-z 0-9 - _ . / + FIELD=TAG
+> ITEM FIND ibm TAG=",, ,"
+< -ERR 102 each tag 1-12 of A-Z a-z 0-9 - _ . / + FIELD=TAG
+> ITEM LIST LOC=RM ALL=1 TAG=a:b
+< -ERR 102 each tag 1-12 of A-Z a-z 0-9 - _ . / + FIELD=TAG
+
+# The default columns show WORKS; REPORT ITEMS has COND and WORKS.
+> ITEM LIST TAG=retro WORKS=Y
+< +DATA
+< F ITEM_ID CATEGORY MFR MODEL WORKS QTY AVAIL LOC_ID LOC_NAME STATUS
+< R 1 SYS IBM 5150 Y 1 Y 1 Room A
+< R 2 CARD 3Com 3C509 Y 1 L 2 Shelf A
+< .
+> REPORT ITEMS TAG=retro WORKS=Y
+< +DATA
+< F ITEM_ID CATEGORY MFR MODEL SERIALNO COND WORKS QTY LOC_ID LOC_NAME STATUS ACQ_DATE ACQ_PRICE CUR_VALUE
+< R 1 SYS IBM 5150 "" "" Y 1 1 Room A "" "" ""
+< R 2 CARD 3Com 3C509 "" "" Y 1 2 Shelf A "" "" ""
+< .
+
+# ITEM TAGS: every tag once, A-Z folded, in its first spelling, in A-Z
+# folded order; a page from a cursor starts afresh.
+> ITEM TAGS
+< +DATA
+< F TAG
+< R isa
+< R metro
+< R modern
+< R network
+< R Retro
+< R retro2
+< .
+> item tags after=ITEMS::4
+< +DATA
+< F TAG
+< R isa
+< R RETRO
+< .
+> ITEM TAGS AFTER=ITEMS::5
+< +DATA
+< F TAG
+< .
+> ITEM TAGS AFTER=ITEMS::6
+< +DATA
+< F TAG
+< .
+> ITEM DEL 4
+< +OK
+> ITEM SET 3 STATUS=D
+< +OK
+> ITEM TAGS AFTER=ITEMS::2
+< +DATA
+< F TAG
+< R isa
+< R modern
+< R network
+< R RETRO
+< .
+
+# A page reads at most 200 records: its C line names the last one, and
+# the next page goes on after it.
+@REPEAT 200
+> ITEM ADD CATEGORY=CBL
+< +OK ID=206
+> ITEM ADD CATEGORY=CBL TAGS=last
+< +OK ID=207
+> ITEM TAGS
+< +DATA
+< F TAG
+< R isa
+< R modern
+< R network
+< R Retro
+< C ITEMS::C8
+< .
+> ITEM TAGS AFTER=ITEMS::C8
+< +DATA
+< F TAG
+< R last
+< .
+
+# Its refusals: a bad cursor, a key, a word.
+> ITEM TAGS AFTER=junk
+< -ERR 204 bad cursor
+> ITEM TAGS AFTER=ITEMS1:20:1
+< -ERR 204 bad cursor
+> ITEM TAGS PAGE=2
+< -ERR 102 unexpected key FIELD=PAGE
+> ITEM TAGS ALL
+< -ERR 100 too many arguments

@@ -1,0 +1,51 @@
+/*
+ * WTDRV2.RC - the resources of the test driver's second proof,
+ * TEST/WTDRV2.C: a title, a menu bar and the accelerators.
+ */
+#include <windows.h>
+#include "WTDRV2.H"
+
+STRINGTABLE
+BEGIN
+    WT2_S_TITLE, "WTDRV2 proof"
+END
+
+WT2_MENU MENU
+BEGIN
+    POPUP "&Focus"
+    BEGIN
+        MENUITEM "&List\tCtrl+L", WT2_C_LIST
+        MENUITEM "&Marks\tCtrl+K", WT2_C_MARKS
+        MENUITEM "&Combo\tCtrl+O", WT2_C_COMBO
+        MENUITEM "&Edit\tCtrl+Shift+E", WT2_C_EDIT
+        MENUITEM "&Password\tShift+F2", WT2_C_PASS
+    END
+    POPUP "&Action"
+    BEGIN
+        MENUITEM "&Message...\tF2", WT2_C_MSG
+        MENUITEM "&Busy", WT2_C_BUSY
+        MENUITEM "&Check\tAlt+C", WT2_C_CHECK
+        MENUITEM "&Gone", WT2_C_GONE, GRAYED
+        MENUITEM SEPARATOR
+        POPUP "&Sub"
+        BEGIN
+            MENUITEM "&Deep", WT2_C_DEEP
+        END
+        MENUITEM "E&xit\tCtrl+Q", WT2_C_EXIT
+    END
+END
+
+WT2_ACCEL ACCELERATORS
+BEGIN
+    "L", WT2_C_LIST, VIRTKEY, CONTROL
+    "K", WT2_C_MARKS, VIRTKEY, CONTROL
+    "O", WT2_C_COMBO, VIRTKEY, CONTROL
+    "E", WT2_C_EDIT, VIRTKEY, CONTROL, SHIFT
+    VK_F2, WT2_C_PASS, VIRTKEY, SHIFT
+    VK_F2, WT2_C_MSG, VIRTKEY
+    "C", WT2_C_CHECK, VIRTKEY, ALT
+    "Q", WT2_C_EXIT, VIRTKEY, CONTROL
+    "B", WT2_C_BUSY, VIRTKEY, CONTROL
+    "W", WT2_C_STALL, VIRTKEY, CONTROL
+    "H", WT2_C_HIDE, VIRTKEY, CONTROL
+END

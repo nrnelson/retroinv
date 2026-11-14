@@ -1,0 +1,111 @@
+=SNAP START
+WLISTT "WLISTT #1 0/9 11" ACTIVE
+ WLIST 1 "      ID Cat  Maker           Model           Works   Qty Location   Status"
+  HEAD 000000/C0C0C0 0L@0+11"ID" 1L@67+16"Cat" 2L@105+30"Maker" 3L@225+29"Model" 4L@345+31"Works" 5R@412+16"Qty" 6L@435+41"Location" 7L@517+30"Status"
+  COLS 0A@0+67 1F@67+38 2F@105+120 3F@225+120 4F@345+45 5F@390+45 6F@435+82 7F@517+53
+  ListBox 1 "" FOCUS
+   ROW "1        SYS  IBM             5150            Y         1 Office     A" SELECTED
+    DRAW FFFFFF/000000 0L@0+6"1" 1L@67+21"SYS" 2L@105+19"IBM" 3L@225+24"5150" 4L@345+7"Y" 5R@422+6"1" 6L@435+28"Office" 7L@517+7"A"
+   ROW "2        DRV  Tandon          TM100-2         N         2 Box B2     A"
+=SNAP ADD1
+WLISTT "WLISTT #2 0/10 12" ACTIVE
+ WLIST 1 "      ID Cat  Maker           Model           Works   Qty Location   Status"
+  HEAD 000000/C0C0C0 0L@0+11"ID" 1L@67+16"Cat" 2L@105+30"Maker" 3L@225+29"Model" 4L@345+31"Works" 5R@412+16"Qty" 6L@435+41"Location" 7L@517+30"Status"
+  COLS 0A@0+67 1F@67+38 2F@105+120 3F@225+120 4F@345+45 5F@390+45 6F@435+82 7F@517+53
+  ListBox 1 "" FOCUS
+   ROW "1        SYS  IBM             5150            Y         1 Office     A" SELECTED
+    DRAW FFFFFF/000000 0L@0+6"1" 1L@67+21"SYS" 2L@105+19"IBM" 3L@225+24"5150" 4L@345+7"Y" 5R@422+6"1" 6L@435+28"Office" 7L@517+7"A"
+   ROW "2        DRV  Tandon          TM100-2         N         2 Box B2     A"
+=SNAP ADD2
+WLISTT "WLISTT #3 0/11 13" ACTIVE
+ WLIST 1 "      ID Cat  Maker           Model           Works   Qty Location   Status"
+  HEAD 000000/C0C0C0 0L@0+11"ID" 1L@67+16"Cat" 2L@105+30"Maker" 3L@225+29"Model" 4L@345+31"Works" 5R@412+16"Qty" 6L@435+41"Location" 7L@517+30"Status"
+  COLS 0A@0+67 1F@67+38 2F@105+120 3F@225+120 4F@345+45 5F@390+45 6F@435+82 7F@517+53
+  ListBox 1 "" FOCUS
+   ROW "1        SYS  IBM             5150            Y         1 Office     A" SELECTED
+    DRAW FFFFFF/000000 0L@0+6"1" 1L@67+21"SYS" 2L@105+19"IBM" 3L@225+24"5150" 4L@345+7"Y" 5R@422+6"1" 6L@435+28"Office" 7L@517+7"A"
+   ROW "2        DRV  Tandon          TM100-2         N         2 Box B2     A"
+=SNAP SUB1
+WLISTT "WLISTT #4 0/10 12" ACTIVE
+ WLIST 1 "      ID Cat  Maker           Model           Works   Qty Location   Status"
+  HEAD 000000/C0C0C0 0L@0+11"ID" 1L@67+16"Cat" 2L@105+30"Maker" 3L@225+29"Model" 4L@345+31"Works" 5R@412+16"Qty" 6L@435+41"Location" 7L@517+30"Status"
+  COLS 0A@0+67 1F@67+38 2F@105+120 3F@225+120 4F@345+45 5F@390+45 6F@435+82 7F@517+53
+  ListBox 1 "" FOCUS
+   ROW "1        SYS  IBM             5150            Y         1 Office     A" SELECTED
+    DRAW FFFFFF/000000 0L@0+6"1" 1L@67+21"SYS" 2L@105+19"IBM" 3L@225+24"5150" 4L@345+7"Y" 5R@422+6"1" 6L@435+28"Office" 7L@517+7"A"
+   ROW "2        DRV  Tandon          TM100-2         N         2 Box B2     A"
+=SNAP SUB2
+WLISTT "WLISTT #5 0/9 11" ACTIVE
+ WLIST 1 "      ID Cat  Maker           Model           Works   Qty Location   Status"
+  HEAD 000000/C0C0C0 0L@0+11"ID" 1L@67+16"Cat" 2L@105+30"Maker" 3L@225+29"Model" 4L@345+31"Works" 5R@412+16"Qty" 6L@435+41"Location" 7L@517+30"Status"
+  COLS 0A@0+67 1F@67+38 2F@105+120 3F@225+120 4F@345+45 5F@390+45 6F@435+82 7F@517+53
+  ListBox 1 "" FOCUS
+   ROW "1        SYS  IBM             5150            Y         1 Office     A" SELECTED
+    DRAW FFFFFF/000000 0L@0+6"1" 1L@67+21"SYS" 2L@105+19"IBM" 3L@225+24"5150" 4L@345+7"Y" 5R@422+6"1" 6L@435+28"Office" 7L@517+7"A"
+   ROW "2        DRV  Tandon          TM100-2         N         2 Box B2     A"
+=SNAP SUB3
+WLISTT "WLISTT #6 0/8 10" ACTIVE
+ WLIST 1 "      ID Cat  Maker           Model           Works   Qty Location   Status"
+  HEAD 000000/C0C0C0 0L@0+11"ID" 1L@67+16"Cat" 2L@105+30"Maker" 3L@225+29"Model" 4L@345+31"Works" 5R@412+16"Qty" 6L@435+41"Location" 7L@517+30"Status"
+  COLS 0A@0+67 1F@67+38 2F@105+120 3F@225+120 4F@345+45 5F@390+45 6F@435+82 7F@517+53
+  ListBox 1 "" FOCUS
+   ROW "1        SYS  IBM             5150            Y         1 Office     A" SELECTED
+    DRAW FFFFFF/000000 0L@0+6"1" 1L@67+21"SYS" 2L@105+19"IBM" 3L@225+24"5150" 4L@345+7"Y" 5R@422+6"1" 6L@435+28"Office" 7L@517+7"A"
+   ROW "2        DRV  Tandon          TM100-2         N         2 Box B2     A"
+=SNAP JUMP6
+WLISTT "WLISTT #7 6/8 10" ACTIVE
+ WLIST 1 "      ID Cat  Maker           Model           Works   Qty Location   Status"
+  HEAD 000000/C0C0C0 0L@0+11"ID" 1L@67+16"Cat" 2L@105+30"Maker" 3L@225+29"Model" 4L@345+31"Works" 5R@412+16"Qty" 6L@435+41"Location" 7L@517+30"Status"
+  COLS 0A@0+67 1F@67+38 2F@105+120 3F@225+120 4F@345+45 5F@390+45 6F@435+82 7F@517+53
+  ListBox 1 "" FOCUS
+   ROW "7        PART Long            L07             ?         1 Office     A" SELECTED
+    DRAW FFFFFF/000000 0L@0+6"7" 1L@67+29"PART" 2L@105+24"Long" 3L@225+18"L07" 4L@345+6"?" 5R@422+6"1" 6L@435+28"Office" 7L@517+7"A"
+   ROW "8        PART Long            L08             ?         1 Office     A"
+=SNAP FLOOR
+WLISTT "WLISTT #11 6/6 8" ACTIVE
+ WLIST 1 "      ID Cat  Maker           Model           Works   Qty Location   Status"
+  HEAD 000000/C0C0C0 0L@0+11"ID" 1L@67+16"Cat" 2L@105+30"Maker" 3L@225+29"Model" 4L@345+31"Works" 5R@412+16"Qty" 6L@435+41"Location" 7L@517+30"Status"
+  COLS 0A@0+67 1F@67+38 2F@105+120 3F@225+120 4F@345+45 5F@390+45 6F@435+82 7F@517+53
+  ListBox 1 "" FOCUS
+   ROW "7        PART Long            L07             ?         1 Office     A" SELECTED
+    DRAW FFFFFF/000000 0L@0+6"7" 1L@67+29"PART" 2L@105+24"Long" 3L@225+18"L07" 4L@345+6"?" 5R@422+6"1" 6L@435+28"Office" 7L@517+7"A"
+   ROW "8        PART Long            L08             ?         1 Office     A"
+=SNAP JUMP0
+WLISTT "WLISTT #12 0/6 8" ACTIVE
+ WLIST 1 "      ID Cat  Maker           Model           Works   Qty Location   Status"
+  HEAD 000000/C0C0C0 0L@0+11"ID" 1L@67+16"Cat" 2L@105+30"Maker" 3L@225+29"Model" 4L@345+31"Works" 5R@412+16"Qty" 6L@435+41"Location" 7L@517+30"Status"
+  COLS 0A@0+67 1F@67+38 2F@105+120 3F@225+120 4F@345+45 5F@390+45 6F@435+82 7F@517+53
+  ListBox 1 "" FOCUS
+   ROW "1        SYS  IBM             5150            Y         1 Office     A" SELECTED
+    DRAW FFFFFF/000000 0L@0+6"1" 1L@67+21"SYS" 2L@105+19"IBM" 3L@225+24"5150" 4L@345+7"Y" 5R@422+6"1" 6L@435+28"Office" 7L@517+7"A"
+   ROW "2        DRV  Tandon          TM100-2         N         2 Box B2     A"
+=SNAP END
+WLISTT "WLISTT #13 9/9 11" ACTIVE
+ WLIST 1 "      ID Cat  Maker           Model           Works   Qty Location   Status"
+  HEAD 000000/C0C0C0 0L@0+11"ID" 1L@67+16"Cat" 2L@105+30"Maker" 3L@225+29"Model" 4L@345+31"Works" 5R@412+16"Qty" 6L@435+41"Location" 7L@517+30"Status"
+  COLS 0A@0+67 1F@67+38 2F@105+120 3F@225+120 4F@345+45 5F@390+45 6F@435+82 7F@517+53
+  ListBox 1 "" FOCUS
+   ROW "10       PART Long            L10             ?         1 Office     A"
+    DRAW 000000/FFFFFF 0L@0+12"10" 1L@67+29"PART" 2L@105+24"Long" 3L@225+18"L10" 4L@345+6"?" 5R@422+6"1" 6L@435+28"Office" 7L@517+7"A"
+   ROW "11       PART Long            L11             ?         1 Office     A" SELECTED
+    DRAW FFFFFF/000000 0L@0+12"11" 1L@67+29"PART" 2L@105+24"Long" 3L@225+18"L11" 4L@345+6"?" 5R@422+6"1" 6L@435+28"Office" 7L@517+7"A"
+=SNAP ENDADD
+WLISTT "WLISTT #14 9/9 11" ACTIVE
+ WLIST 1 "      ID Cat  Maker           Model           Works   Qty Location   Status"
+  HEAD 000000/C0C0C0 0L@0+11"ID" 1L@67+16"Cat" 2L@105+30"Maker" 3L@225+29"Model" 4L@345+31"Works" 5R@412+16"Qty" 6L@435+41"Location" 7L@517+30"Status"
+  COLS 0A@0+67 1F@67+38 2F@105+120 3F@225+120 4F@345+45 5F@390+45 6F@435+82 7F@517+53
+  ListBox 1 "" FOCUS
+   ROW "10       PART Long            L10             ?         1 Office     A"
+    DRAW 000000/FFFFFF 0L@0+12"10" 1L@67+29"PART" 2L@105+24"Long" 3L@225+18"L10" 4L@345+6"?" 5R@422+6"1" 6L@435+28"Office" 7L@517+7"A"
+   ROW "11       PART Long            L11             ?         1 Office     A" SELECTED
+    DRAW FFFFFF/000000 0L@0+12"11" 1L@67+29"PART" 2L@105+24"Long" 3L@225+18"L11" 4L@345+6"?" 5R@422+6"1" 6L@435+28"Office" 7L@517+7"A"
+=SNAP TOP
+WLISTT "WLISTT #15 0/9 11" ACTIVE
+ WLIST 1 "      ID Cat  Maker           Model           Works   Qty Location   Status"
+  HEAD 000000/C0C0C0 0L@0+11"ID" 1L@67+16"Cat" 2L@105+30"Maker" 3L@225+29"Model" 4L@345+31"Works" 5R@412+16"Qty" 6L@435+41"Location" 7L@517+30"Status"
+  COLS 0A@0+67 1F@67+38 2F@105+120 3F@225+120 4F@345+45 5F@390+45 6F@435+82 7F@517+53
+  ListBox 1 "" FOCUS
+   ROW "1        SYS  IBM             5150            Y         1 Office     A" SELECTED
+    DRAW FFFFFF/000000 0L@0+6"1" 1L@67+21"SYS" 2L@105+19"IBM" 3L@225+24"5150" 4L@345+7"Y" 5R@422+6"1" 6L@435+28"Office" 7L@517+7"A"
+   ROW "2        DRV  Tandon          TM100-2         N         2 Box B2     A"
+=END

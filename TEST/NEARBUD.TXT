@@ -1,0 +1,161 @@
+# Near data budgets of INV.EXE and of THIN, its network-only build
+# (NEAR_EXES of MAKEFILE), checked by TEST/OMFNEAR.PY.
+#
+# Format: one "MODULE BYTES" pair per line; "#" starts a comment.  MODULE
+# is an object file's name without .OBJ, BYTES the most static near data
+# (DGROUP without the stack: initialised data, constants and string
+# literals, zero-initialised data and near communals) that one object may
+# hold under any of the three compilers (Open Watcom, Watcom C 6.5,
+# Turbo C 2.01).  OMFNEAR.PY fails when a module is over its budget,
+# when a module has no budget line, when the modules measured plus the
+# LIB line exceed MAX_NEAR of TEST/mapchk.sh, or when all budgets
+# together exceed MAX_NEAR.
+#
+# Every module is budgeted at its largest size under the three compilers
+# plus a tenth of that size, rounded up, or plus 32 bytes where that is
+# more; a module that grows past its budget is measured again and its
+# line raised in the same change, as long as the total stays within
+# MAX_NEAR.  Turbo C 2.01 gives most of the largest figures: it stores
+# every repeated string literal again.  Buffers kept in far blocks, on
+# the near heap or on the stack are not counted here.
+#
+# Why MAX_NEAR leaves room: DGROUP is one 64 KB segment holding the static
+# near data (at most MAX_NEAR), the stack (_stklen of SRC/COMPAT/CDOS.C,
+# the size every build links with) and the near heap, which holds the
+# engine's handles and buffers with every table open and the client's
+# list view descriptors and form values.  MAX_NEAR is set so that the
+# heap keeps room to grow beside the other two.  Under Turbo C and Open
+# Watcom INV and THIN hold their near heaps to the sizes their near-heap
+# modules give: CMEM_NEARHEAP of COMPAT.H under Open Watcom, under Turbo
+# C the smaller CMEM_INVHEAP of CMEMHI.C and CMEM_REMHEAP of CMEMHR.C, so
+# that the part of DGROUP their static data, stack and heap leave goes to
+# the far heap; TEST/mapchk.sh checks that MAX_NEAR, the stack and the
+# heap fit.  The stack is checked separately, by the golden-screen runs
+# of TEST/T_SCR.SH, which fill it with a pattern at start-up; only runs
+# with /KEYS: do that, so the stack of INV /CMD is not measured.
+
+# The C library's own near data (start-up code, stdio, heap state, the
+# compiler's helper segments): the map's DGROUP total less the modules
+# below, largest under Turbo C 2.01, with the same margin.  No object file
+# holds it; it is only added to the total.
+LIB         1312
+
+# Database layer
+DBF           38
+DBT           34
+NDX          138
+KEYEXPR       95
+PACK          64
+
+# Engine
+SCHEMA       542
+CSCHEMA       36
+CSCHDAT       32
+TABLES       118
+IDGEN         57
+AUDIT         60
+CURSOR        32
+EDIT         582
+USERS        150
+CODES         54
+LOCS          63
+ITEMS        174
+ASSY          52
+MAINT         72
+LOANS         54
+CSV           77
+INITDATA      48
+ADMIN        128
+
+# Protocol
+TOKEN         32
+RESPONSE     198
+SESSION       32
+DISPATCH    1147
+DPSESS       135
+DPUSER       127
+DPITEM       245
+DPLOC        142
+DPASSY        96
+DPMAINT       60
+DPLOAN       271
+DPCSV        133
+DPADMIN      147
+
+# Platform layer
+CDOS          94
+CMEM          36
+CMEMHI        36
+CMEMHR        36
+CVIDEO       120
+CKEY          78
+CMOUSE        40
+CTIMER        32
+CPRN         170
+CTEXT        106
+CZERO         96
+CNETB        165
+CNBNAME       32
+CNBDRAIN      32
+CUART        275
+
+# Client core
+LINK          52
+LINKLOC      178
+LINKNOL       92
+LINKNET       48
+NBCLI         40
+RESPRD        38
+LINKSER       48
+SERCLI        39
+MSG          909
+RQ            63
+RQERR         32
+TUI          487
+LISTV         53
+PAGER         92
+FORM          43
+FMODEL        45
+MEMO          39
+MEMOIO        58
+KEYSCR       439
+CFG          203
+ARGS          62
+PRINT         32
+RPT          366
+RPTRUN       280
+SESS         108
+ITEMLS       199
+
+# Program and screens
+INV         1353
+INVLOC       229
+INVNOL       208
+INVMENU      192
+INVCOM       101
+SCRLOGIN     151
+SCRPASS      127
+SCRUSER       66
+SCRADMIN      58
+SCRZFORM     711
+SCRLOC       130
+SCRCODE       46
+SCRKFORM     198
+CODETAB       37
+SCRPICK      119
+SCRSRCH       38
+SCRSFORM     338
+SCRSET       345
+SCRITEM      170
+SCRIFORM     596
+SCRLFORM     304
+SCRMAINT      76
+SCRMFORM     346
+SCRNFORM     433
+SCRAFORM     145
+SCRASSY       60
+SCRLOAN      110
+SCRRPT        42
+SCRRFORM     490
+SCRCSV         3
+SCRCFORM     210

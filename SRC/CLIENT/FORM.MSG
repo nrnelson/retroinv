@@ -1,0 +1,14 @@
+# FORM.C: the messages of the forms (MF_).
+250 MF_REQUIRED This field must be filled in
+251 MF_BADNUM Not a valid number for this field
+252 MF_NEGNUM The number may not be negative
+253 MF_BADDATE Not a valid date (YYYY-MM-DD)
+254 MF_BADCHOICE Not one of the choices (F4 shows them)
+255 MF_YN YN
+# W=30 memo field: FORM_MEMODISP
+256 MF_MEMOLINES Lines: ^1 (F4 to open)
+257 MF_MEMONEW (after saving)
+
+258 MF_SAVEMEMO Save the record with Enter first, then write the notes
+259 MF_PARTIAL The record was added; some fields may not have been saved
+260 MF_MEMOKEY F4 opens the notes

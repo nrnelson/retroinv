@@ -1,0 +1,51 @@
+/*
+ * SETUP.RC - the resources of SETUP, the installer of RETROINV's Windows
+ * client (SETUP.C): its dialog and its texts, in the Windows character
+ * set.  A text's %s are filled in as SETUP.H says; the dialog takes its
+ * caption from SU_S_TITLE, as the message boxes do.
+ */
+#include <windows.h>
+#include "SETUP.H"
+
+SU_R_MAIN DIALOG 0, 0, 224, 100
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "Helv"
+BEGIN
+    LTEXT "Install the Windows client of RETROINV, INVWIN, and its icon.",
+          -1, 8, 8, 208, 16
+    LTEXT "&Directory:", -1, 8, 32, 56, 8
+    EDITTEXT SU_C_DIR, 68, 30, 148, 12, ES_UPPERCASE | ES_AUTOHSCROLL
+    LTEXT "&Link switches:", -1, 8, 48, 56, 8
+    EDITTEXT SU_C_OPTS, 68, 46, 148, 12, ES_AUTOHSCROLL
+    LTEXT "", SU_C_NOTE, 68, 62, 148, 16
+    DEFPUSHBUTTON "&Install", IDOK, 112, 80, 48, 14
+    PUSHBUTTON "Cancel", IDCANCEL, 168, 80, 48, 14
+END
+
+STRINGTABLE
+BEGIN
+    SU_S_TITLE, "RETROINV Setup"
+    SU_S_USAGE, "usage: SETUP [/U]"
+    SU_S_NOLIST, "SETUP cannot read %s. Start SETUP from the RETROINV disk that holds INVWIN."
+    SU_S_BADDIR, "Give a whole path below a drive's root, such as C:\\RETROINV."
+    SU_S_BADOPTS, "Program Manager cannot take a comma, parenthesis, bracket or quote in the link switches, nor so many."
+    SU_S_COPYING, "Copying %s"
+    SU_S_NODIR, "SETUP cannot make %s."
+    SU_S_NOCOPY, "%s could not be copied to %s: %s."
+    SU_S_DONE, "The Windows client is installed in %s, its icon in Program Manager's group RETROINV."
+    SU_S_NOPM, "Program Manager did not answer."
+    SU_S_PMFAIL, "Program Manager did not make the group."
+    SU_S_BYHAND, "%s The Windows client is installed in %s. For its icon, choose File, New in Program Manager, Program Item, with the command line\n%s"
+    SU_S_ASK, "Remove the Windows client from %s, and its group RETROINV? The data and the DOS programs stay."
+    SU_S_FLOPPY, "Run the SETUP of the installation, such as C:\\RETROINV\\SETUP /U."
+    SU_S_GONE, "The Windows client is removed from %s. INSTALL /U removes the rest of RETROINV.%s"
+    SU_S_NODEL, "%s could not be deleted: %s.%s"
+    SU_S_NOGROUP, " Program Manager did not answer: delete its group RETROINV yourself."
+    SU_S_NOTE, "Such as /NET RETROINV; none for one PC."
+    SU_S_RNOENT, "it is not there"
+    SU_S_RFULL, "the disk is full"
+    SU_S_RUSED, "it is in use or read-only"
+    SU_S_RDOS, "DOS error %s"
+    SU_S_RBAD, "it is damaged"
+    SU_S_PACKED, "%s holds the RETROINV disk's compressed files. Give another directory, such as C:\\RETROINV."
+END

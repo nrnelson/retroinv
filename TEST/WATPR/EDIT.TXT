@@ -1,0 +1,31 @@
+/* Our own text in the style of WATTCP's sources, for TEST/T_WATPR.SH. */
+#include <stdio.h>
+#include <tcp.h>
+#  include "Copyright.h"
+#include<mem.h>
+#include <values.h>
+#include <dos.h>
+#include <sys/stat.h>
+
+// a whole-line comment
+static char url[] = "http://host/a";    // after code and a string
+static char quote = '"';        // after a quote character
+static char *s = "a \" // b";
+static char dq = '"', *path = "a//b";  // a quote, then // in a string
+// it's a "comment" with quotes
+/* a block comment holding // keeps it */
+int f(void)
+{
+    return 10;   // holds */ inside
+}
+
+int g(void)
+{
+    return 2;
+}
+
+int h(void)
+{
+    return 30;
+}
+// the last line

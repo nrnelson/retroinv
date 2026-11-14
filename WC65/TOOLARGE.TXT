@@ -1,0 +1,23 @@
+# The functions of the program modules that Watcom C 6.5 may call too
+# large to optimise in full, as OBJECT:NAME (WC65/toolarge.sh).
+CSV.OBJ:eng_export
+DBF.OBJ:dbf_get_num
+DBF.OBJ:load_header
+DBPACK.OBJ:run
+EDIT.OBJ:eng_edit_commit
+FORM.OBJ:form_run
+KEYEXPR.OBJ:parse_call
+KEYEXPR.OBJ:str_format
+KEYSCR.OBJ:ks_snap
+KEYSCR.OBJ:ks_src
+MEMO.OBJ:memo_edit
+NDX.OBJ:insert_up
+NDX.OBJ:locate
+PACK.OBJ:reindex
+SCRRPT.OBJ:go
+TABLES.OBJ:read_marker
+TOKEN.OBJ:proto_parse
+TUI.OBJ:menu_run
+TUI.OBJ:tui_box
+TUI.OBJ:tui_input
+TUI.OBJ:tui_pick_keys

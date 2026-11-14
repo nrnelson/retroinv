@@ -1,0 +1,78 @@
+# SCRITEM.C: item lists, the item form and the item ID prompt (MI_); the
+# item list's headers and empty text are named in ITEMLS.H.
+# W=74 list box title: VID_COLS - 6
+450 MI_T_ID Items by ID
+451 MI_T_LOC Items by location
+452 MI_T_MFR Items by maker
+453 MI_T_SER Items by serial number
+# W=78 column header over the list: VID_COLS - 2
+454 MI_HDR       ID Cat  Maker           Model           Works   Qty Location   Status
+455 MI_HDRSER       ID Maker           Model           Serial number        Location
+
+456 MI_EMPTY No items
+# W=79 key hints: VID_COLS - 1, level digits not counted
+457 MI_HINTLIST Enter=Open 2Ins=New 2Ctrl-E=Edit 2Del=Delete 2Ctrl-D=Duplicate Esc=Back F1=Help
+# W=74 list box title: VID_COLS - 6
+458 MI_PICKAVL Choose an available item
+# W=42 status-line information: TUI_ST_INFOW
+459 MI_ORDER Order: ^1
+
+460 MI_DELQ Delete item ^1?
+# W=40 form title with its ID: FORM_TITLEMAX
+461 MI_TITLE Item ^1
+# W=74 form box title: VID_COLS - 6
+462 MI_NEWTITLE New item
+# W=79 key hints: VID_COLS - 1, level digits not counted
+463 MI_HINTVIEW 2Ctrl-E=Edit Esc=Back F1=Help
+464 MI_HINTEDIT Enter=Save F4=List Esc=Cancel F1=Help
+
+465 MI_ADDED Item ^1 added
+466 MI_SAVED Item ^1 saved
+467 MI_DELETED Item ^1 deleted
+468 MI_COPIED Copied as item ^1
+# W=56 memo box title: MEMO_TITLEW
+469 MI_NOTES Notes of item ^1
+# The Location field's path and the held units have no label.
+470 MI_L_WHERE
+# W=9 form labels: SCR_V1 - SCR_C1 - 1
+471 MI_L_ID ID
+472 MI_L_CAT Category
+473 MI_L_STATUS Status
+474 MI_L_TYPE Type
+475 MI_L_MFR Maker
+476 MI_L_MODEL Model
+477 MI_L_SERIAL Serial
+478 MI_L_DESCR Descr
+479 MI_L_COND Condition
+480 MI_L_QTY Quantity
+481 MI_L_WORKS Works
+482 MI_L_LOC Location
+483 MI_L_PARENT Parent
+484 MI_L_ACQ Acquired
+485 MI_L_SRC Source
+486 MI_L_PRICE Price
+487 MI_L_VALUE Value
+488 MI_L_TAGS Tags
+489 MI_L_CREATED Created
+490 MI_L_UPDATED Updated
+491 MI_L_NOTES Notes
+# The tab titles (MI_T_TABS here, MA_T_TAB, MV_T_TAB and MB_T_TAB) are
+# all one width, each name between brackets or spaces, so that the names
+# keep their columns as the tabs change.
+# W=23 tab title, exactly
+492 MI_T_TABS \x20Parts  Service  Loans\x20
+# W=77 tab box text from column 2: VID_COLS - 3
+493 MI_TABTXT1 The Record menu (Alt-C) shows the parts installed in this item, its
+494 MI_TABTXT2 service records, its loans and holds, and the items used with it.
+# W=63 prompt label: VID_COLS - 7 - TUI_PROMPTMINW
+495 MI_L_ITEMID Item ID, or text to find it
+
+496 MI_NOITEM No item ^1
+# W=74 prompt title: VID_COLS - 6
+497 MI_SPLITQ Split item ^1
+
+498 MI_SPLIT Split off item ^1
+# W=74 list box title: VID_COLS - 6
+499 MI_PICK Choose an item
+
+500 MI_NOAVAIL None available

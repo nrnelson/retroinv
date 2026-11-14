@@ -1,0 +1,37 @@
++OK
++OK LEVEL=3 MUSTCHG=1
++OK
++DATA
+F CAT_CODE CAT_NAME SORTORD
+R SYS Systems 1
+R MOBO Motherboards 2
+R CPU Processors 3
+R CARD "Expansion cards" 4
+R DRV Drives 5
+R PERI Peripherals 6
+R SW Software 7
+R MAN Manuals 8
+R CBL Cables 9
+R PART Parts 10
+.
++OK ID=1
++OK ID=2
++OK ID=1
++OK ID=2
++OK
++DATA
+F DEPTH LOC_ID PARENT_ID LOC_NAME LOC_CODE LTYPE CAPACITY
+R 1 1 0 Office OFF ROOM ""
+R 2 2 1 "Shelf A" "" SHELF ""
+.
++DATA
+F ITEM_ID CATEGORY MFR MODEL WORKS QTY AVAIL LOC_ID LOC_NAME STATUS
+R 1 SYS IBM 5150 ? 1 Y 2 "Shelf A" A
+.
++DATA
+K ROWS=1
+.
++OK
++OK REMOVED=1
++OK
+-ERR 501 server shutting down

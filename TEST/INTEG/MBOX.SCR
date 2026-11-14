@@ -1,0 +1,72 @@
+# MBOX.SCR - INVTEST's sessions against INVSERV on fresh data through
+# the mailbox E:\, a share of the server's MBOX, and on COM1 (run by
+# wgagate.sh, MBOXEND.SCR after it): each mailbox post is one request
+# file, its station the file's name.  RIMBOX, an administrator's
+# station, sets the password that the first LOGIN must change, adds an
+# item and finds itself listed as a mailbox session; RIREAD, which
+# SRV.CFG names read-only, is capped at level 1 by its file name alone,
+# the same user and password notwithstanding; a session on COM1 lists
+# the item.
+
+@MBOX 1 RIMBOX E:\
+>& HELLO RIMBOX
+>& LOGIN ADMIN admin
+>& PASSWD admin Wga2gate
+>& ITEM ADD CATEGORY=DRV MFR=Tandon MODEL=TM100-2 QTY=2
+>& ADMIN CLIENTS
+>& BYE
+@POST 1
+@WAIT 1
+< +OK
+@WAIT 1
+< +OK LEVEL=3 MUSTCHG=1
+@WAIT 1
+< +OK
+@WAIT 1
+< +OK ID=1
+@WAIT 1
+< +DATA
+< F SLOT TYPE STATION USER LEVEL STATE IDLE SELF
+<* R * MBOX RIMBOX ADMIN 3 3 * 1
+< .
+@WAIT 1
+< +OK
+
+@MBOX 2 RIREAD E:\
+>& HELLO RIREAD
+>& LOGIN ADMIN Wga2gate
+>& ITEM SET 1 QTY=3
+>& ITEM LIST CAT=DRV
+>& BYE
+@POST 2
+@WAIT 2
+< +OK
+@WAIT 2
+< +OK LEVEL=1 NAME="System Administrator"
+@WAIT 2
+< -ERR 203 permission denied
+@WAIT 2
+< +DATA
+< F ITEM_ID CATEGORY MFR MODEL WORKS QTY AVAIL LOC_ID LOC_NAME STATUS
+< R 1 DRV Tandon TM100-2 ? 2 Y 0 "" A
+< .
+@WAIT 2
+< +OK
+
+@COM 3 COM1
+> HELLO RISER
+< +OK
+> LOGIN ADMIN Wga2gate
+< +OK LEVEL=3 NAME="System Administrator"
+> ADMIN CLIENTS
+< +DATA
+< F SLOT TYPE STATION USER LEVEL STATE IDLE SELF
+<* R * COM1 RISER ADMIN 3 3 * 1
+< .
+> ITEM LIST CAT=DRV
+< +DATA
+< F ITEM_ID CATEGORY MFR MODEL WORKS QTY AVAIL LOC_ID LOC_NAME STATUS
+< R 1 DRV Tandon TM100-2 ? 2 Y 0 "" A
+< .
+> BYE
+< +OK

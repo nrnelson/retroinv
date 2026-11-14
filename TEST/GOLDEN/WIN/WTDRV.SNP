@@ -1,0 +1,209 @@
+=SNAP START
+#32770 "WTDRV" ACTIVE
+ POPUP "&File"
+  MENU 201 "&Dialog..."
+  MENU 202 "&Work?F5"
+  MENU 0 "" DISABLED
+  MENU 203 "E&xit"
+ POPUP "&Options"
+  MENU 204 "&Marked?Ctrl+K"
+  MENU 205 "&Gray" DISABLED
+ Static 65535 "&Name:"
+ Edit 101 "" FOCUS
+ Button 102 "&Loaned"
+ ListBox 103 ""
+  ROW "ALPHA" SELECTED
+  ROW "BRAVO"
+ Button 104 "&Add" DEFAULT
+ Button 105 "A&bout..."
+=SNAP TYPED
+#32770 "WTDRV" ACTIVE
+ POPUP "&File"
+  MENU 201 "&Dialog..."
+  MENU 202 "&Work?F5"
+  MENU 0 "" DISABLED
+  MENU 203 "E&xit"
+ POPUP "&Options"
+  MENU 204 "&Marked?Ctrl+K"
+  MENU 205 "&Gray" DISABLED
+ Static 65535 "&Name:"
+ Edit 101 "Zo‰ Lee" FOCUS
+ Button 102 "&Loaned"
+ ListBox 103 ""
+  ROW "ALPHA" SELECTED
+  ROW "BRAVO"
+ Button 104 "&Add" DEFAULT
+ Button 105 "A&bout..."
+=SNAP CHECKED
+#32770 "WTDRV" ACTIVE
+ POPUP "&File"
+  MENU 201 "&Dialog..."
+  MENU 202 "&Work?F5"
+  MENU 0 "" DISABLED
+  MENU 203 "E&xit"
+ POPUP "&Options"
+  MENU 204 "&Marked?Ctrl+K"
+  MENU 205 "&Gray" DISABLED
+ Static 65535 "&Name:"
+ Edit 101 "Zo‰ Lee"
+ Button 102 "&Loaned" FOCUS CHECKED
+ ListBox 103 ""
+  ROW "ALPHA" SELECTED
+  ROW "BRAVO"
+ Button 104 "&Add" DEFAULT
+ Button 105 "A&bout..."
+=SNAP ADDED
+#32770 "WTDRV" ACTIVE
+ POPUP "&File"
+  MENU 201 "&Dialog..."
+  MENU 202 "&Work?F5"
+  MENU 0 "" DISABLED
+  MENU 203 "E&xit"
+ POPUP "&Options"
+  MENU 204 "&Marked?Ctrl+K"
+  MENU 205 "&Gray" DISABLED
+ Static 65535 "&Name:"
+ Edit 101 "Zo‰ Lee"
+ Button 102 "&Loaned" FOCUS CHECKED
+ ListBox 103 ""
+  ROW "ALPHA"
+  ROW "BRAVO"
+  ROW "Zo‰ Lee" SELECTED
+ Button 104 "&Add" DEFAULT
+ Button 105 "A&bout..."
+=SNAP MENU
+#32770 "WTDRV" ACTIVE
+ POPUP "&File"
+  MENU 201 "&Dialog..."
+  MENU 202 "&Work?F5"
+  MENU 0 "" DISABLED
+  MENU 203 "E&xit"
+ POPUP "&Options"
+  MENU 204 "&Marked?Ctrl+K"
+  MENU 205 "&Gray" DISABLED
+ Static 65535 "&Name:"
+ Edit 101 "Zo‰ Lee"
+ Button 102 "&Loaned" FOCUS CHECKED
+ ListBox 103 ""
+  ROW "ALPHA"
+  ROW "BRAVO"
+  ROW "Zo‰ Lee" SELECTED
+ Button 104 "&Add" DEFAULT
+ Button 105 "A&bout..."
+#32768 ""
+=SNAP DIALOG
+#32770 "About WTDRV" ACTIVE
+ Static 65535 "&Password:"
+ Edit 106 "******" FOCUS
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+#32768 "" HIDDEN
+#32770 "WTDRV" DISABLED
+ POPUP "&File"
+  MENU 201 "&Dialog..."
+  MENU 202 "&Work?F5"
+  MENU 0 "" DISABLED
+  MENU 203 "E&xit"
+ POPUP "&Options"
+  MENU 204 "&Marked?Ctrl+K"
+  MENU 205 "&Gray" DISABLED
+ Static 65535 "&Name:"
+ Edit 101 "Zo‰ Lee"
+ Button 102 "&Loaned" CHECKED
+ ListBox 103 ""
+  ROW "ALPHA"
+  ROW "BRAVO"
+  ROW "Zo‰ Lee" SELECTED
+ Button 104 "&Add" DEFAULT
+ Button 105 "A&bout..."
+=SNAP DIALOGOK
+#32770 "WTDRV" ACTIVE
+ POPUP "&File"
+  MENU 201 "&Dialog..."
+  MENU 202 "&Work?F5"
+  MENU 0 "" DISABLED
+  MENU 203 "E&xit"
+ POPUP "&Options"
+  MENU 204 "&Marked?Ctrl+K"
+  MENU 205 "&Gray" DISABLED
+ Static 65535 "&Name:"
+ Edit 101 "Zo‰ Lee"
+ Button 102 "&Loaned" FOCUS CHECKED
+ ListBox 103 ""
+  ROW "ALPHA"
+  ROW "BRAVO"
+  ROW "DIALOG OK" SELECTED
+  ROW "Zo‰ Lee"
+ Button 104 "&Add" DEFAULT
+ Button 105 "A&bout..."
+#32768 "" HIDDEN
+=SNAP CANCEL
+#32770 "WTDRV" ACTIVE
+ POPUP "&File"
+  MENU 201 "&Dialog..."
+  MENU 202 "&Work?F5"
+  MENU 0 "" DISABLED
+  MENU 203 "E&xit"
+ POPUP "&Options"
+  MENU 204 "&Marked?Ctrl+K"
+  MENU 205 "&Gray" DISABLED
+ Static 65535 "&Name:"
+ Edit 101 "Zo‰ Lee"
+ Button 102 "&Loaned" FOCUS CHECKED
+ ListBox 103 ""
+  ROW "ALPHA"
+  ROW "BRAVO"
+  ROW "DIALOG CANCEL" SELECTED
+  ROW "DIALOG OK"
+  ROW "Zo‰ Lee"
+ Button 104 "&Add" DEFAULT
+ Button 105 "A&bout..."
+#32768 "" HIDDEN
+=SNAP MARKED
+#32770 "WTDRV" ACTIVE
+ POPUP "&File"
+  MENU 201 "&Dialog..."
+  MENU 202 "&Work?F5"
+  MENU 0 "" DISABLED
+  MENU 203 "E&xit"
+ POPUP "&Options"
+  MENU 204 "&Marked?Ctrl+K" CHECKED
+  MENU 205 "&Gray" DISABLED
+ Static 65535 "&Name:"
+ Edit 101 "Zo‰ Lee"
+ Button 102 "&Loaned" FOCUS CHECKED
+ ListBox 103 ""
+  ROW "ALPHA"
+  ROW "BRAVO"
+  ROW "DIALOG CANCEL" SELECTED
+  ROW "DIALOG OK"
+  ROW "Zo‰ Lee"
+ Button 104 "&Add" DEFAULT
+ Button 105 "A&bout..."
+#32768 "" HIDDEN
+=SNAP WORKED
+#32770 "WTDRV" ACTIVE
+ POPUP "&File"
+  MENU 201 "&Dialog..."
+  MENU 202 "&Work?F5"
+  MENU 0 "" DISABLED
+  MENU 203 "E&xit"
+ POPUP "&Options"
+  MENU 204 "&Marked?Ctrl+K" CHECKED
+  MENU 205 "&Gray" DISABLED
+ Static 65535 "&Name:"
+ Edit 101 "Zo‰ Lee"
+ Button 102 "&Loaned" FOCUS CHECKED
+ ListBox 103 ""
+  ROW "ALPHA"
+  ROW "BRAVO"
+  ROW "DIALOG CANCEL"
+  ROW "DIALOG OK"
+  ROW "WORK DONE" SELECTED
+  ROW "Zo‰ Lee"
+ Button 104 "&Add" DEFAULT
+ Button 105 "A&bout..."
+#32768 "" HIDDEN
+=SNAP GONE
+#32768 "" HIDDEN
+=END

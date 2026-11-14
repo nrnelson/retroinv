@@ -1,0 +1,57 @@
+# SCRLOC.C: the location tree, form, contents and pick list (MO_).
+# W=74 list box title: VID_COLS - 6
+520 MO_TITLE Locations
+# W=78 tree header: VID_COLS - 2 (the pick list shows SCR_LT_PICKW)
+521 MO_HDR  Name                                   Type               Code       Capacity
+
+522 MO_EMPTY No locations
+# ^1 and ^2 are a location's name, of up to LINK_LOCNAMELEN characters.
+523 MO_DELQ Delete location ^1?
+524 MO_DELETED Location ^2 deleted
+525 MO_ADDED Location ^2 added
+526 MO_SAVED Location ^2 saved
+527 MO_MOVED Location ^2 moved
+# The form's title with the location's name, cut at FORM_TITLEMAX.
+# W=40 form title: FORM_TITLEMAX
+528 MO_FTITLE Location ^1
+# W=66 form box title: the box's width less 6
+529 MO_NEWTITLE New location
+
+530 MO_NOITEMS No items in this location
+# W=54 pick list title: PK_W - 6
+531 MO_PICK Choose a location
+532 MO_MOVETO Move into
+# The lead rows of a pick list, also the path shown for no location.
+# W=56 pick list row and path: SCR_LF_PATHW
+533 MO_NOLOC (no location)
+534 MO_TOP (top level)
+# W=42 status-line information, ^1 one of MO_S_ALL and MO_S_TOP, ^2 one
+# of MO_S_HERE and MO_S_BELOW: TUI_ST_INFOW
+540 MO_SHOW Showing: ^1, ^2
+541 MO_S_ALL all items
+542 MO_S_TOP not installed
+543 MO_S_HERE this location
+544 MO_S_BELOW everything below
+# W=12 form labels: LF_VCOL - 1 - 1
+545 MO_L_NAME Name
+546 MO_L_TYPE Type
+547 MO_L_INSIDE Inside
+548 MO_L_WHERE
+549 MO_L_CODE Code
+550 MO_L_CAP Capacity
+551 MO_L_NOTES Notes
+# W=79 key hints: VID_COLS - 1, level digits not counted
+552 MO_HINT Enter=Contents 2Ins=New 2Ctrl-E=Edit 2Del=Delete Esc=Back F1=Help
+553 MO_HINTEDIT Enter=Save F4=List Esc=Cancel F1=Help
+# W=56 memo box title: MEMO_TITLEW
+554 MO_NOTES Notes of location ^1
+
+555 MO_NOSUCH No location ^1
+# W=56 pick list row and path: SCR_LF_PATHW
+556 MO_ALLLOC (every location)
+557 MO_INSELF A location cannot go inside itself
+# ^1 is a location's name, of up to LINK_LOCNAMELEN characters.
+558 MO_TOODEEP No location can go inside ^1: it is at the deepest level
+# ^1 is a location's name, of up to LINK_LOCNAMELEN characters, or a
+# lead row's text.
+559 MO_PICKQ The list did not reach the current location. Choose ^1?

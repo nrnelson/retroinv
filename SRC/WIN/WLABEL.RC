@@ -1,0 +1,31 @@
+/*
+ * WLABEL.RC - the form dialog's labels of the Windows client's own
+ * (SRC/WIN/WFORM.C), in the Windows character set, each the string
+ * WF_S_LABEL (WFSTR.H) plus the number of the message it stands for:
+ * the full words where INV's screens abbreviate, each label measured
+ * as the dialog opens to take the room it needs (WFORM.H).
+ * A label without one here is the message itself.  MSGNUM.H, which the
+ * build writes from the message sources, defines the message numbers.
+ * WFORM.RC includes this file.
+ */
+#include "MSGNUM.H"
+
+STRINGTABLE
+BEGIN
+    WF_S_LABEL + MI_L_ID, "Item ID"
+    WF_S_LABEL + MI_L_DESCR, "Description"
+    WF_S_LABEL + MI_L_PARENT, "Part of"
+    WF_S_LABEL + MI_L_ACQ, "Date acquired"
+    WF_S_LABEL + MI_L_SRC, "Acquired from"
+    WF_S_LABEL + MI_L_PRICE, "Price paid"
+    WF_S_LABEL + MI_L_VALUE, "Current value"
+    WF_S_LABEL + MH_L_OUT, "Date out"
+    WF_S_LABEL + MH_L_DUE, "Due date"
+    WF_S_LABEL + MH_L_RET, "Date returned"
+    WF_S_LABEL + ME_L_ORDER, "Sort order"
+    WF_S_LABEL + MQ_L_ORDER, "Sort by"
+    WF_S_LABEL + MS_L_ALL, "Include inner locations"
+    WF_S_LABEL + MQ_L_BELOW, "Include inner locations"
+    WF_S_LABEL + MX_L_HEADER, "Field names in first line"
+    WF_S_LABEL + MC_RTSCTS, "RTS/CTS flow control"
+END

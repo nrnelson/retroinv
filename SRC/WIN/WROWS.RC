@@ -1,0 +1,35 @@
+/*
+ * WROWS.RC - the column headers of INVWIN's rows, the WIN.INI names of
+ * the International settings and the item form's tabs and buttons
+ * (SRC/WIN/WROWS.C): the resource script of every program that links
+ * WROWS.C includes this file.
+ */
+#include "WROWSTR.H"
+
+STRINGTABLE
+BEGIN
+    WROW_S_ITEM, "ID|Category|Maker|Model|Works|Qty|Location|Status"
+    WROW_S_SER, "ID|Maker|Model|Serial number|Location"
+    WROW_S_PART, "ID|Category|Maker|Model|Qty|Location|Status"
+    WROW_S_TREE, "Name|Type|Code|Capacity"
+    WROW_S_SVC, "Rec|Item|Date|Type|Cost|Summary"
+    WROW_S_SVCI, "Rec|Date|Type|Cost|Summary"
+    WROW_S_LOAN, "!|Loan|Kind|Item|Qty|Holder|Due|Ended|Maker|Model"
+    WROW_S_LOANI, "!|Loan|Kind|Qty|Holder|Due|Ended"
+    WROW_S_USER, "User|Full name|Group|Level|Status|Chg|Last login"
+    WROW_S_AUDIT, "Date|Time|User|Station|Table|Record|A|Field|Old value|New value"
+    WROW_S_CODE, "Code|Name|Order"
+    WROW_S_INTL, "intl"
+    WROW_S_DATE, "sShortDate"
+    WROW_S_DATED, "M/d/yy"
+    WROW_S_DEC, "sDecimal"
+    WROW_S_DECD, "."
+    WROW_S_THOU, "sThousand"
+    WROW_S_THOUD, ","
+    WROW_S_LZERO, "iLZero"
+    WROW_S_IPAGES, "&Overview|&Technical|&Acquisition|&Notes"
+    WROW_S_IACT, "Parts"
+    WROW_S_IACT + 1, "Service"
+    WROW_S_IACT + 2, "Loans"
+    WROW_S_IACT + 3, "Used with"
+END

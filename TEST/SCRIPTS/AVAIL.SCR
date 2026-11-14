@@ -1,0 +1,685 @@
+# AVAIL=1 on ITEM LIST and ITEM FIND (live, STATUS A, top level, units
+# not all lent, reserved or in use) and AVAIL=0 (every other live item),
+# ITEM FIND with CAT=, LOC= and STATUS= (ANDed with the text match,
+# record order kept) and with ALL=1 (the tree below LOC=), and LOC
+# CONTENTS TOP=1 (installed parts left out).
+#
+# Fixture (A = available):
+#   1 SYS  Compaq Portable      A1  qty 1                 A
+#   2 MOBO IBM 64-256K          A1  installed in 1
+#   3 CPU  Intel 8088           A1  qty 4, all 4 on loan
+#   4 CPU  Intel 8087           B2  qty 4, 2 on loan, zz  A
+#   5 CARD IBM CGA              B2  qty 2, STATUS D
+#   6 DRV  Seagate ST-225       --  qty 1, zz             A
+#   7 CARD Hercules Graphics    B2  deleted
+#   8 CARD Hercules MDA         A1  qty 1, zz             A
+#   9 PART Acme Screw           A1  installed in 2
+#  10 CARD IBM MDA              B2  qty 2, zz             A
+# C3 is an empty location.
+
+> HELLO CONSOLE
+< +OK
+> LOGIN ADMIN admin
+< +OK LEVEL=3 MUSTCHG=1
+> PASSWD admin secret1
+< +OK
+> LOC ADD LOC_NAME=A1 LTYPE=BIN LOC_CODE=A1
+< +OK ID=1
+> LOC ADD LOC_NAME=B2 LTYPE=BIN LOC_CODE=B2
+< +OK ID=2
+> LOC ADD LOC_NAME=C3 LTYPE=BIN LOC_CODE=C3
+< +OK ID=3
+> ITEM ADD CATEGORY=SYS MFR=Compaq MODEL=Portable LOC_ID=A1
+< +OK ID=1
+> ITEM ADD CATEGORY=MOBO MFR=IBM MODEL="64-256K"
+< +OK ID=2
+> ITEM ADD CATEGORY=CPU MFR=Intel MODEL=8088 QTY=4 LOC_ID=A1
+< +OK ID=3
+> ITEM ADD CATEGORY=CPU MFR=Intel MODEL=8087 QTY=4 LOC_ID=B2 TAGS=zz
+< +OK ID=4
+> ITEM ADD CATEGORY=CARD MFR=IBM MODEL=CGA QTY=2 LOC_ID=B2 STATUS=D
+< +OK ID=5
+> ITEM ADD CATEGORY=DRV MFR=Seagate MODEL=ST-225 TAGS=zz
+< +OK ID=6
+> ITEM ADD CATEGORY=CARD MFR=Hercules MODEL=Graphics LOC_ID=B2
+< +OK ID=7
+> ITEM ADD CATEGORY=CARD MFR=Hercules MODEL=MDA LOC_ID=A1 TAGS=zz
+< +OK ID=8
+> ITEM ADD CATEGORY=PART MFR=Acme MODEL=Screw
+< +OK ID=9
+> ITEM ADD CATEGORY=CARD MFR=IBM MODEL=MDA QTY=2 LOC_ID=B2 TAGS=zz
+< +OK ID=10
+> ITEM DEL 7
+< +OK
+> ASSY INSTALL 2 1
+< +OK
+> ASSY INSTALL 9 2
+< +OK
+> LOAN OUT 3 QTY=4 HOLDER=Al DUE=20261231
+< +OK ID=1
+> LOAN OUT 4 QTY=2 HOLDER=Bo DUE=20261231
+< +OK ID=2
+
+# AVAIL=1 on ITEM LIST: installed, fully loaned, STATUS D and deleted
+# items are out; a partly loaned item stays.
+> ITEM LIST AVAIL=1 FIELDS=ITEM_ID,QTY,ON_LOAN
+< +DATA
+< F ITEM_ID QTY ON_LOAN
+< R 1 1 0
+< R 4 4 2
+< R 6 1 0
+< R 8 1 0
+< R 10 2 0
+< .
+> item list avail=1 fields=item_id
+< +DATA
+< F ITEM_ID
+< R 1
+< R 4
+< R 6
+< R 8
+< R 10
+< .
+
+# AVAIL=0 keeps the live items AVAIL=1 leaves out; AVAIL= is no filter.
+> ITEM LIST AVAIL=0 FIELDS=ITEM_ID,QTY,ON_LOAN
+< +DATA
+< F ITEM_ID QTY ON_LOAN
+< R 2 1 0
+< R 3 4 4
+< R 5 2 0
+< R 9 1 0
+< .
+> ITEM LIST AVAIL= FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 1
+< R 2
+< R 3
+< R 4
+< R 5
+< R 6
+< R 8
+< R 9
+< R 10
+< .
+> ITEM LIST FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 1
+< R 2
+< R 3
+< R 4
+< R 5
+< R 6
+< R 8
+< R 9
+< R 10
+< .
+
+# Combined with CAT, LOC and STATUS (AND), in the filters' own orders.
+> ITEM LIST AVAIL=1 CAT=CARD FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 8
+< R 10
+< .
+> ITEM LIST AVAIL=0 CAT=CARD FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 5
+< .
+> ITEM LIST AVAIL=1 CAT=cpu FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 4
+< .
+> ITEM LIST AVAIL=1 CAT=MOBO FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< .
+> ITEM LIST AVAIL=1 CAT=PART FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< .
+> ITEM LIST AVAIL=1 CAT=NONE FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< .
+> ITEM LIST AVAIL=1 LOC=A1 ORDER=ID FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 1
+< R 8
+< .
+> ITEM LIST AVAIL=1 LOC=b2 ORDER=ID FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 4
+< R 10
+< .
+> ITEM LIST AVAIL=0 LOC=B2 ORDER=ID FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 5
+< .
+> ITEM LIST AVAIL=1 LOC=C3 FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< .
+> ITEM LIST AVAIL=1 STATUS=A FIELDS=ITEM_ID
+< -ERR 102 bad or missing argument FIELD=STATUS
+> ITEM LIST AVAIL=1 STATUS=D FIELDS=ITEM_ID
+< -ERR 102 bad or missing argument FIELD=STATUS
+> ITEM LIST AVAIL=1 STATUS= CAT=CARD LOC=B2 ORDER=ID FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 10
+< .
+> ITEM LIST AVAIL=0 STATUS=D FIELDS=ITEM_ID
+< -ERR 102 bad or missing argument FIELD=STATUS
+> ITEM LIST AVAIL=0 STATUS= FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 2
+< R 3
+< R 5
+< R 9
+< .
+> ITEM LIST AVAIL=1 CAT=CARD LOC=B2 STATUS=A ORDER=ID FIELDS=ITEM_ID
+< -ERR 102 bad or missing argument FIELD=STATUS
+> ITEM LIST AVAIL=1 CAT=CPU LOC=A1 ORDER=ID FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< .
+> ITEM LIST AVAIL=1 ORDER=LOC FIELDS=ITEM_ID,LOC_ID
+< +DATA
+< F ITEM_ID LOC_ID
+< R 6 0
+< R 1 1
+< R 8 1
+< R 4 2
+< R 10 2
+< .
+
+# Paging: the filter applies before the page is cut.
+> ITEM LIST AVAIL=1 PAGE=2 FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 1
+< R 4
+< C ITEMS1:2020202020202034:4
+< .
+> ITEM LIST AVAIL=1 PAGE=2 FIELDS=ITEM_ID AFTER=ITEMS1:2020202020202034:4
+< +DATA
+< F ITEM_ID
+< R 6
+< R 8
+< C ITEMS1:2020202020202038:8
+< .
+> ITEM LIST AVAIL=1 PAGE=2 FIELDS=ITEM_ID AFTER=ITEMS1:2020202020202038:8
+< +DATA
+< F ITEM_ID
+< R 10
+< .
+
+# Bad AVAIL values.
+> ITEM LIST AVAIL=2
+< -ERR 102 bad or missing argument FIELD=AVAIL
+> ITEM LIST AVAIL=x
+< -ERR 102 bad or missing argument FIELD=AVAIL
+> ITEM LIST AVAIL=yes
+< -ERR 102 bad or missing argument FIELD=AVAIL
+> ITEM LIST AVAIL=01
+< -ERR 102 bad or missing argument FIELD=AVAIL
+> ITEM LIST AVAIL=-1
+< -ERR 102 bad or missing argument FIELD=AVAIL
+> ITEM LIST AVAIL=1 AVAIL=0
+< -ERR 102 bad or missing argument FIELD=AVAIL
+
+# ITEM FIND: AVAIL=1 and the filters of ITEM LIST.  The text alone first.
+> ITEM FIND ibm FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 2
+< R 5
+< R 10
+< .
+> ITEM FIND intel FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 3
+< R 4
+< .
+> ITEM FIND hercules FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 8
+< .
+> ITEM FIND ibm AVAIL=1 FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 10
+< .
+> ITEM FIND intel AVAIL=1 FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 4
+< .
+> ITEM FIND hercules AVAIL=1 FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 8
+< .
+> ITEM FIND ibm AVAIL=0 FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 2
+< R 5
+< .
+> ITEM FIND ibm AVAIL= CAT= LOC= STATUS= FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 2
+< R 5
+< R 10
+< .
+> ITEM FIND ibm CAT=CARD FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 5
+< R 10
+< .
+> ITEM FIND ibm cat=card avail=1 FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 10
+< .
+> ITEM FIND ibm CAT=MOBO FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 2
+< .
+> ITEM FIND intel CAT=CARD FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< .
+> ITEM FIND ibm LOC=A1 FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 2
+< .
+> ITEM FIND ibm LOC=b2 FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 5
+< R 10
+< .
+> ITEM FIND intel LOC=A1 FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 3
+< .
+> ITEM FIND intel LOC=A1 AVAIL=1 FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< .
+> ITEM FIND ibm LOC=C3 FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< .
+> ITEM FIND ibm STATUS=D FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 5
+< .
+> ITEM FIND ibm STATUS=a FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 2
+< R 10
+< .
+> ITEM FIND ibm STATUS=D AVAIL=1 FIELDS=ITEM_ID
+< -ERR 102 bad or missing argument FIELD=STATUS
+> ITEM FIND ibm STATUS=Q FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< .
+> ITEM FIND ibm CAT=NONE FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< .
+> ITEM FIND ibm CAT=CARD LOC=B2 STATUS=A AVAIL=1 FIELDS=ITEM_ID
+< -ERR 102 bad or missing argument FIELD=STATUS
+> ITEM FIND ibm AVAIL=1 STATUS= FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 10
+< .
+> ITEM FIND ibm CAT=CARD LOC=A1 FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< .
+> ITEM FIND hercules CAT=CARD LOC=B2 FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< .
+
+# FIND keeps record order, not the location order of LOC=, and pages by
+# record number.
+> ITEM FIND zz FIELDS=ITEM_ID,LOC_ID
+< +DATA
+< F ITEM_ID LOC_ID
+< R 4 2
+< R 6 0
+< R 8 1
+< R 10 2
+< .
+> ITEM FIND zz AVAIL=1 FIELDS=ITEM_ID,LOC_ID
+< +DATA
+< F ITEM_ID LOC_ID
+< R 4 2
+< R 6 0
+< R 8 1
+< R 10 2
+< .
+> ITEM FIND zz LOC=B2 FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 4
+< R 10
+< .
+> ITEM FIND zz CAT=CARD FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 8
+< R 10
+< .
+> ITEM FIND zz AVAIL=1 PAGE=2 FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 4
+< R 6
+< C ITEMS::6
+< .
+> ITEM FIND zz AVAIL=1 PAGE=2 FIELDS=ITEM_ID AFTER=ITEMS::6
+< +DATA
+< F ITEM_ID
+< R 8
+< R 10
+< .
+
+# ITEM FIND errors: those of ITEM LIST, and no ORDER.
+> ITEM FIND ibm AVAIL=2
+< -ERR 102 bad or missing argument FIELD=AVAIL
+> ITEM FIND ibm AVAIL=x
+< -ERR 102 bad or missing argument FIELD=AVAIL
+> ITEM FIND ibm AVAIL=01
+< -ERR 102 bad or missing argument FIELD=AVAIL
+> ITEM FIND ibm CAT=TOOLONG
+< -ERR 102 filter value too long FIELD=CAT
+> ITEM FIND ibm LOC=TOOLONGCODE
+< -ERR 200 no such location FIELD=LOC
+> ITEM FIND ibm STATUS=AB
+< -ERR 102 filter value too long FIELD=STATUS
+> ITEM FIND ibm ORDER=ID
+< -ERR 102 unexpected key FIELD=ORDER
+> ITEM FIND ibm ALL=1
+< -ERR 102 missing argument FIELD=LOC
+> ITEM FIND "" CAT=CARD
+< -ERR 102 bad search text FIELD=TEXT
+> ITEM LIST CAT=TOOLONG
+< -ERR 102 filter value too long FIELD=CAT
+> ITEM LIST LOC=TOOLONGCODE AVAIL=1
+< -ERR 200 no such location FIELD=LOC
+
+# LOC CONTENTS: TOP=1 leaves out the installed parts of every depth.
+> LOC CONTENTS A1 FIELDS=ITEM_ID,PARENT_ID
+< +DATA
+< F ITEM_ID PARENT_ID
+< R 1 0
+< R 2 1
+< R 3 0
+< R 8 0
+< R 9 2
+< .
+> LOC CONTENTS A1 TOP=1 FIELDS=ITEM_ID,PARENT_ID
+< +DATA
+< F ITEM_ID PARENT_ID
+< R 1 0
+< R 3 0
+< R 8 0
+< .
+> loc contents a1 top=1 fields=item_id
+< +DATA
+< F ITEM_ID
+< R 1
+< R 3
+< R 8
+< .
+> LOC CONTENTS A1 TOP=0 FIELDS=ITEM_ID,PARENT_ID
+< +DATA
+< F ITEM_ID PARENT_ID
+< R 1 0
+< R 2 1
+< R 3 0
+< R 8 0
+< R 9 2
+< .
+> LOC CONTENTS A1 TOP= FIELDS=ITEM_ID,PARENT_ID
+< +DATA
+< F ITEM_ID PARENT_ID
+< R 1 0
+< R 2 1
+< R 3 0
+< R 8 0
+< R 9 2
+< .
+> LOC CONTENTS B2 TOP=1 FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 4
+< R 5
+< R 10
+< .
+> LOC CONTENTS C3 TOP=1 FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< .
+> LOC CONTENTS C3 TOP=0 FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< .
+> LOC CONTENTS C3
+< +DATA
+< F ITEM_ID CATEGORY MFR MODEL WORKS QTY AVAIL LOC_ID LOC_NAME STATUS
+< .
+> LOC CONTENTS ZZ TOP=1
+< -ERR 200 no such location
+> LOC CONTENTS TOP=1
+< -ERR 102 missing argument FIELD=LOC
+> LOC CONTENTS A1 TOP=2
+< -ERR 102 bad or missing argument FIELD=TOP
+> LOC CONTENTS A1 TOP=x
+< -ERR 102 bad or missing argument FIELD=TOP
+> LOC CONTENTS A1 TOP=01
+< -ERR 102 bad or missing argument FIELD=TOP
+> LOC CONTENTS A1 TOP=-1
+< -ERR 102 bad or missing argument FIELD=TOP
+> LOC CONTENTS A1 TOP=1 TOP=0
+< -ERR 102 bad or missing argument FIELD=TOP
+
+# Removing the part from its assembly makes it top level, so TOP=1
+# lists it where ASSY REMOVE put it.
+> ASSY REMOVE 9 LOC=B2
+< +OK
+> LOC CONTENTS B2 TOP=1 FIELDS=ITEM_ID,PARENT_ID
+< +DATA
+< F ITEM_ID PARENT_ID
+< R 4 0
+< R 5 0
+< R 9 0
+< R 10 0
+< .
+> LOC CONTENTS A1 TOP=1 FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 1
+< R 3
+< R 8
+< .
+> ITEM LIST AVAIL=1 CAT=PART FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 9
+< .
+> ITEM FIND screw AVAIL=1 FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 9
+< .
+
+# Reserved and in-use units count as lent ones: item 10 (qty 2) with
+# one unit reserved and one in use with item 1 is unavailable, and
+# available again once either ends; item 1, the host, stays available.
+# The column AVAIL says why an item is not available: L R U for the
+# first of its counters, I installed, D disposed, N no unit at all.
+> LOAN RESERVE 10 HOLDER=Show
+< +OK ID=3
+> LOAN USE 10 HOST=1
+< +OK ID=4
+> ITEM ADD CATEGORY=PART MFR=Acme MODEL=Washer QTY=0
+< +OK ID=11
+> ITEM LIST FIELDS=ITEM_ID,QTY,AVAIL
+< +DATA
+< F ITEM_ID QTY AVAIL
+< R 1 1 Y
+< R 2 1 I
+< R 3 4 L
+< R 4 4 Y
+< R 5 2 D
+< R 6 1 Y
+< R 8 1 Y
+< R 9 1 Y
+< R 10 2 R
+< R 11 0 N
+< .
+> ITEM LIST FIELDS=AVAIL,QTY
+< +DATA
+< F AVAIL QTY
+< R Y 1
+< R I 1
+< R L 4
+< R Y 4
+< R D 2
+< R Y 1
+< R Y 1
+< R Y 1
+< R R 2
+< R N 0
+< .
+> ITEM LIST FIELDS=ITEM_ID,AVAIL,AVAIL
+< -ERR 102 duplicate FIELD=AVAIL
+> ITEM DEL 11
+< +OK
+> ITEM LIST AVAIL=1 CAT=CARD FIELDS=ITEM_ID,QTY,RESERVED,IN_USE
+< +DATA
+< F ITEM_ID QTY RESERVED IN_USE
+< R 8 1 0 0
+< .
+> ITEM LIST AVAIL=0 FIELDS=ITEM_ID,ON_LOAN,RESERVED,IN_USE,ATTACHED
+< +DATA
+< F ITEM_ID ON_LOAN RESERVED IN_USE ATTACHED
+< R 2 0 0 0 0
+< R 3 4 0 0 0
+< R 5 0 0 0 0
+< R 10 0 1 1 0
+< .
+> LOAN RETURN 3
+< +OK
+> ITEM FIND mda AVAIL=1 FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 8
+< R 10
+< .
+> LOAN RETURN 4
+< +OK
+
+# ITEM FIND ALL=1: the items at LOC= and at every location below it,
+# in tree order, the filters applied inside the walk; its cursor is an
+# ITEMS2 cursor, and the request needs LOC=.
+> LOC ADD LOC_NAME=Drawer LTYPE=BIN PARENT_ID=A1 LOC_CODE=D4
+< +OK ID=4
+> ITEM ADD CATEGORY=CARD MFR=IBM MODEL=EGA LOC_ID=D4
+< +OK ID=12
+> ITEM ADD CATEGORY=CARD MFR=IBM MODEL=VGA LOC_ID=D4 STATUS=D
+< +OK ID=13
+> ITEM FIND ibm LOC=A1 FIELDS=ITEM_ID,LOC_ID
+< +DATA
+< F ITEM_ID LOC_ID
+< R 2 1
+< .
+> ITEM FIND ibm LOC=A1 ALL=1 FIELDS=ITEM_ID,LOC_ID
+< +DATA
+< F ITEM_ID LOC_ID
+< R 2 1
+< R 12 4
+< R 13 4
+< .
+> ITEM FIND ibm LOC=A1 ALL=1 AVAIL=1 FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 12
+< .
+> ITEM FIND ibm LOC=A1 ALL=1 STATUS=D FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 13
+< .
+> ITEM FIND ibm LOC=A1 ALL=1 PAGE=1 FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 2
+< C ITEMS2:20202020202020312020202020202032:2
+< .
+> ITEM FIND ibm LOC=A1 ALL=1 PAGE=1 FIELDS=ITEM_ID AFTER=ITEMS2:20202020202020312020202020202032:2
+< +DATA
+< F ITEM_ID
+< R 12
+< C ITEMS2:20202020202020342020202020203132:C
+< .
+> ITEM FIND ibm LOC=D4 ALL=1 CAT=CARD FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 12
+< R 13
+< .
+> ITEM FIND ibm LOC=0 ALL=1 FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 2
+< R 12
+< R 13
+< R 5
+< R 10
+< .
+> ITEM FIND ibm LOC=ZZ ALL=1
+< -ERR 200 no such location FIELD=LOC
+> ITEM FIND ibm LOC=A1 ALL=1 AFTER=ITEMS::2
+< -ERR 204 bad cursor
+> ITEM FIND ibm LOC=A1 ALL=2
+< -ERR 102 bad or missing argument FIELD=ALL
+> ITEM FIND "" LOC=A1 ALL=1
+< -ERR 102 bad search text FIELD=TEXT
+
+# An installed item that was disposed of says D, its status first.
+> ITEM ADD CATEGORY=PART MFR=Acme MODEL=Spent STATUS=D
+< +OK ID=14
+> ASSY INSTALL 14 1
+< +OK
+> ITEM FIND spent FIELDS=ITEM_ID,PARENT_ID,STATUS,AVAIL
+< +DATA
+< F ITEM_ID PARENT_ID STATUS AVAIL
+< R 14 1 D D
+< .

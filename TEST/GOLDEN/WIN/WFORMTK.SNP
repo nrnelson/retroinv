@@ -1,0 +1,231 @@
+=SNAP FLAGON
+#32770 "Search items" ACTIVE
+ WTAB 95 "&Record|&Notes" CUR 0
+ Static 65535 "&Text"
+ Edit 100 "A"
+ Static 65535 "&Location"
+ Edit 101 ""
+ Static 65535 "&Quantity"
+ Edit 102 ""
+ Static 65535 "&Price paid"
+ Edit 103 ""
+ Static 65535 "&Date acquired"
+ Edit 104 ""
+ Static 65535 "&Overdue"
+ Button 105 "" FOCUS CHECKED
+ Static 65535 "&Status"
+ ComboBox 106 ""
+  ROW "" SELECTED
+  ROW "A"
+  ROW "D"
+ Static 65535 "&Condition"
+ ComboBox 107 "NEW"
+  ROW "NEW" SELECTED
+  ROW "EXC"
+  ROW "GD"
+ Static 65535 "Item ID"
+ Edit 108 "R-1"
+ Static 65535 "Browse by &&ID"
+ Edit 109 ""
+ Static 65535 "N&ew password"
+ Edit 110 ""
+ Edit 111 "First line??Caf‚ au lait" HIDDEN
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+WFORMT "WFORMT" DISABLED
+=SNAP DATELONG
+#32770 "Search items" ACTIVE
+ WTAB 95 "&Record|&Notes" CUR 0
+ Static 65535 "&Text"
+ Edit 100 "A"
+ Static 65535 "&Location"
+ Edit 101 ""
+ Static 65535 "&Quantity"
+ Edit 102 ""
+ Static 65535 "&Price paid"
+ Edit 103 ""
+ Static 65535 "&Date acquired"
+ Edit 104 "20261008X" FOCUS
+ Static 65535 "&Overdue"
+ Button 105 "" CHECKED
+ Static 65535 "&Status"
+ ComboBox 106 ""
+  ROW "" SELECTED
+  ROW "A"
+  ROW "D"
+ Static 65535 "&Condition"
+ ComboBox 107 "NEW"
+  ROW "NEW" SELECTED
+  ROW "EXC"
+  ROW "GD"
+ Static 65535 "Item ID"
+ Edit 108 "R-1"
+ Static 65535 "Browse by &&ID"
+ Edit 109 ""
+ Static 65535 "N&ew password"
+ Edit 110 ""
+ Edit 111 "First line??Caf‚ au lait" HIDDEN
+ Static 99 "Not a valid date (YYYY-MM-DD)"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+WFORMT "WFORMT" DISABLED
+=SNAP NEGQTY
+#32770 "Search items" ACTIVE
+ WTAB 95 "&Record|&Notes" CUR 0
+ Static 65535 "&Text"
+ Edit 100 "A"
+ Static 65535 "&Location"
+ Edit 101 ""
+ Static 65535 "&Quantity"
+ Edit 102 "-5" FOCUS
+ Static 65535 "&Price paid"
+ Edit 103 ""
+ Static 65535 "&Date acquired"
+ Edit 104 "20261008X"
+ Static 65535 "&Overdue"
+ Button 105 "" CHECKED
+ Static 65535 "&Status"
+ ComboBox 106 ""
+  ROW "" SELECTED
+  ROW "A"
+  ROW "D"
+ Static 65535 "&Condition"
+ ComboBox 107 "NEW"
+  ROW "NEW" SELECTED
+  ROW "EXC"
+  ROW "GD"
+ Static 65535 "Item ID"
+ Edit 108 "R-1"
+ Static 65535 "Browse by &&ID"
+ Edit 109 ""
+ Static 65535 "N&ew password"
+ Edit 110 ""
+ Edit 111 "First line??Caf‚ au lait" HIDDEN
+ Static 99 "The number may not be negative"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+WFORMT "WFORMT" DISABLED
+=SNAP BADQTY
+#32770 "Search items" ACTIVE
+ WTAB 95 "&Record|&Notes" CUR 0
+ Static 65535 "&Text"
+ Edit 100 "A"
+ Static 65535 "&Location"
+ Edit 101 ""
+ Static 65535 "&Quantity"
+ Edit 102 "1x" FOCUS
+ Static 65535 "&Price paid"
+ Edit 103 ""
+ Static 65535 "&Date acquired"
+ Edit 104 "20261008X"
+ Static 65535 "&Overdue"
+ Button 105 "" CHECKED
+ Static 65535 "&Status"
+ ComboBox 106 ""
+  ROW "" SELECTED
+  ROW "A"
+  ROW "D"
+ Static 65535 "&Condition"
+ ComboBox 107 "NEW"
+  ROW "NEW" SELECTED
+  ROW "EXC"
+  ROW "GD"
+ Static 65535 "Item ID"
+ Edit 108 "R-1"
+ Static 65535 "Browse by &&ID"
+ Edit 109 ""
+ Static 65535 "N&ew password"
+ Edit 110 ""
+ Edit 111 "First line??Caf‚ au lait" HIDDEN
+ Static 99 "Not a valid number for this field"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+WFORMT "WFORMT" DISABLED
+=SNAP PRICE3
+#32770 "Search items" ACTIVE
+ WTAB 95 "&Record|&Notes" CUR 0
+ Static 65535 "&Text"
+ Edit 100 "A"
+ Static 65535 "&Location"
+ Edit 101 ""
+ Static 65535 "&Quantity"
+ Edit 102 "7"
+ Static 65535 "&Price paid"
+ Edit 103 "1.234" FOCUS
+ Static 65535 "&Date acquired"
+ Edit 104 "20261008X"
+ Static 65535 "&Overdue"
+ Button 105 "" CHECKED
+ Static 65535 "&Status"
+ ComboBox 106 ""
+  ROW "" SELECTED
+  ROW "A"
+  ROW "D"
+ Static 65535 "&Condition"
+ ComboBox 107 "NEW"
+  ROW "NEW" SELECTED
+  ROW "EXC"
+  ROW "GD"
+ Static 65535 "Item ID"
+ Edit 108 "R-1"
+ Static 65535 "Browse by &&ID"
+ Edit 109 ""
+ Static 65535 "N&ew password"
+ Edit 110 ""
+ Edit 111 "First line??Caf‚ au lait" HIDDEN
+ Static 99 "Not a valid number for this field"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+WFORMT "WFORMT" DISABLED
+=SNAP BADDATE
+#32770 "Search items" ACTIVE
+ WTAB 95 "&Record|&Notes" CUR 0
+ Static 65535 "&Text"
+ Edit 100 "A"
+ Static 65535 "&Location"
+ Edit 101 ""
+ Static 65535 "&Quantity"
+ Edit 102 "7"
+ Static 65535 "&Price paid"
+ Edit 103 "12.5"
+ Static 65535 "&Date acquired"
+ Edit 104 "2026-13-45" FOCUS
+ Static 65535 "&Overdue"
+ Button 105 "" CHECKED
+ Static 65535 "&Status"
+ ComboBox 106 ""
+  ROW "" SELECTED
+  ROW "A"
+  ROW "D"
+ Static 65535 "&Condition"
+ ComboBox 107 "NEW"
+  ROW "NEW" SELECTED
+  ROW "EXC"
+  ROW "GD"
+ Static 65535 "Item ID"
+ Edit 108 "R-1"
+ Static 65535 "Browse by &&ID"
+ Edit 109 ""
+ Static 65535 "N&ew password"
+ Edit 110 ""
+ Edit 111 "First line??Caf‚ au lait" HIDDEN
+ Static 99 "Not a valid date (YYYY-MM-DD)"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+WFORMT "WFORMT" DISABLED
+=SNAP PASSED
+WFORMT "ALL 1 1 #1" ACTIVE FOCUS
+=END

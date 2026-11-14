@@ -1,0 +1,51 @@
+# SCRSET.C: the settings screen, and the Windows client's settings dialog
+# (SCRSET.H).
+# W=74 form box title: VID_COLS - 6
+680 MC_TITLE Settings
+# W=16 form labels: SET_VCOL - 1 - 1
+681 MC_DATA Data directory
+682 MC_STATION Station name
+683 MC_USER Default user
+684 MC_ORDER Item list order
+685 MC_SNOW CGA snow
+# W=11 form label: SET_MONOV - SET_MONOC - 1
+686 MC_MONO Monochrome
+# W=12 form label: SET_BIOSV - SET_BIOSC - 1
+687 MC_BIOS BIOS output
+# W=16 form labels: SET_VCOL - 1 - 1
+688 MC_ADAPTER Adapter
+# W=14 form labels: SET_VCOL2 - SET_COL2 - 1
+689 MC_CFGFILE Settings file
+# W=16 form labels: SET_VCOL - 1 - 1
+690 MC_PROGRAM Program
+# W=14 form labels: SET_VCOL2 - SET_COL2 - 1
+691 MC_DOS DOS
+# W=79 key hints: VID_COLS - 1, level digits not counted
+692 MC_HINT Enter=Save F4=List Esc=Cancel F1=Help
+# W=12 adapter names, ^1 of MC_DIRECT and MC_VIABIOS
+693 MC_MDA MDA
+694 MC_CGA CGA
+695 MC_EGA EGA or VGA
+# W=26 adapter field: SET_INFOW
+696 MC_DIRECT ^1, direct video
+697 MC_VIABIOS ^1, BIOS output
+
+698 MC_SAVED Saved; data directory, station and BIOS output apply from the next start
+699 MC_SAVEFAIL Cannot save the settings (^2): ^1
+# W=16 form labels: SET_VCOL - 1 - 1
+700 MC_PRINTER Printer
+# W=4 form label: SET_TYPEV - SET_TYPEC - 1
+701 MC_PRTYPE Type
+# W=10 form label: SET_PAGEV - SET_PAGEC - 1
+702 MC_PAGELEN Page lines
+# W=5 form label: SET_LBLWV - SET_LBLWC - 1
+703 MC_LABELW Label
+# W=1 form label: SET_LBLHV - SET_LBLHC - 1
+704 MC_LABELH x
+
+705 MC_RANGE Not a valid number (^1 to ^2)
+# W=16 the Windows client's form labels: WT_VCOL - 1 of SRC/WIN/WSET.C
+706 MC_BAUD Baud rate
+707 MC_RTSCTS RTS/CTS
+
+708 MC_WSAVED Saved; data directory, station, default user, baud rate and RTS/CTS apply from the next start

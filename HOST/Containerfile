@@ -1,0 +1,83 @@
+# Containerfile - the RETROINV build host as a container image: Debian 13
+# with the build and test tools and Open Watcom v2, for "sh HOST/run.sh".
+#
+# The image holds tools only.  The repository and the period software are
+# mounted when the container runs (HOST/run.sh), so neither is ever part
+# of it.  UID and GID name the user the build runs as; HOST/run.sh passes
+# the caller's, so that what the build writes into the mounted
+# directories belongs to the caller.
+#
+# The tool versions are those of the tested Debian 13 host: the base image
+# is pinned by digest and every package comes from one instant of
+# snapshot.debian.org, so every rebuild installs the same versions.  No
+# locale and no time zone is set: the scripts sort with LC_ALL=C where
+# order matters, Python reads its files as UTF-8 in the POSIX locale too,
+# and the tests set every date they check, so the image runs in the POSIX
+# locale on UTC.
+
+ARG BASE=docker.io/library/debian:trixie-20260918-slim@sha256:7792b1f7702a86946cd518db72b6a407302c3e9bc1635634368b878189e8221c
+
+# Open Watcom v2, the dated snapshot the build is tested with, fetched
+# and checked in a stage of its own, so that curl stays out of the image.
+# Only what the build uses is kept: the x86-64 Linux tools of binl64
+# (wlink.lnk and the resource compiler wrc among them), the headers of h
+# (the Windows ones of h/win too), the 16-bit DOS and Windows libraries
+# of lib286 and the licence.
+FROM ${BASE} AS watcom
+ARG OW_URL=https://github.com/open-watcom/open-watcom-v2/releases/download/2026-10-01-Build/ow-snapshot.tar.xz
+ARG OW_SHA256=e6aa1b1e40ac8bbf97658d2c70fff8a4242d6ca4a1c60806f2baa5317083d4fe
+RUN set -eu; \
+    apt-get update; \
+    apt-get install -y --no-install-recommends ca-certificates curl xz-utils; \
+    curl -fsSL --retry 5 -o /tmp/ow.tar.xz "$OW_URL"; \
+    echo "$OW_SHA256  /tmp/ow.tar.xz" | sha256sum -c -; \
+    mkdir /opt/watcom; \
+    tar xJf /tmp/ow.tar.xz -C /opt/watcom --no-same-owner; \
+    find /opt/watcom -mindepth 1 -maxdepth 1 ! -name binl64 ! -name h \
+        ! -name lib286 ! -name license.txt -exec rm -rf {} +
+
+FROM ${BASE}
+ARG SNAPSHOT=20261021T000000Z
+
+# patch applies WATTCP.DIF, sfdisk (fdisk) partitions the VM disks and
+# libc6-dev, which gcc only recommends, holds the C library's headers.
+# dosbox-x's postinst gives the binary cap_net_raw when setcap is there
+# (iproute2 brings it); a rootless container cannot grant that, so the
+# kernel would refuse to start the binary.  No test uses raw sockets.
+RUN set -eu; \
+    rm -f /etc/apt/sources.list /etc/apt/sources.list.d/*; \
+    s=http://snapshot.debian.org/archive; \
+    for a in "debian trixie" "debian trixie-updates" \
+             "debian-security trixie-security"; do \
+        echo "deb [check-valid-until=no] $s/${a% *}/$SNAPSHOT/ ${a#* } main"; \
+    done > /etc/apt/sources.list; \
+    export DEBIAN_FRONTEND=noninteractive; \
+    apt-get -o Acquire::Retries=5 update; \
+    apt-get -o Acquire::Retries=5 upgrade -y; \
+    apt-get -o Acquire::Retries=5 install -y --no-install-recommends \
+        gcc libc6-dev make python3 7zip dosbox-x qemu-system-x86 qemu-utils \
+        nasm mtools mscompress syslinux-common samba iproute2 \
+        netcat-traditional patch fdisk tini; \
+    if getcap /usr/bin/dosbox-x | grep -q cap_; then \
+        setcap -r /usr/bin/dosbox-x; \
+    fi; \
+    apt-get clean; \
+    rm -rf /var/lib/apt/lists/*
+
+COPY --from=watcom /opt/watcom /opt/watcom
+
+# The user comes last, so that the layers above are shared by the images
+# of every user.
+ARG UID=1000
+ARG GID=1000
+RUN set -eu; \
+    getent group "$GID" >/dev/null || groupadd -g "$GID" build; \
+    useradd -l -m -d /home/build -u "$UID" -g "$GID" -s /bin/sh build; \
+    install -d -o "$UID" -g "$GID" /home/build/retro-dl /work
+
+USER build
+WORKDIR /work
+# tini passes a signal to the whole process group of the command (-g), so
+# that an interrupt reaches a recipe's emulators and not make alone,
+# with a terminal or without one, under any engine.
+ENTRYPOINT ["/usr/bin/tini", "-g", "--"]

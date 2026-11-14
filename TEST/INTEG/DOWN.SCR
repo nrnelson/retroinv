@@ -1,0 +1,24 @@
+# DOWN.SCR - the last INVTEST run of srvgate.sh, against INVSERV started
+# again on the same data: the change INV /CMD made is still there, and
+# once ADMIN SHUTDOWN has been answered another session's request is
+# refused with 501.
+
+@CALL 1 RIADMIN
+> HELLO RIADMIN
+< +OK
+> LOGIN ADMIN Srv2gate
+< +OK LEVEL=3 NAME="System Administrator"
+> ITEM LIST CAT=DRV
+< +DATA
+< F ITEM_ID CATEGORY MFR MODEL WORKS QTY AVAIL LOC_ID LOC_NAME STATUS
+< R 25 DRV Tandon TM100-2 ? 2 Y 0 "" A
+< .
+@CALL 2 RIREAD
+> HELLO RIREAD
+< +OK
+@S 1
+> ADMIN SHUTDOWN
+< +OK
+@S 2
+> PING
+< -ERR 501 server shutting down

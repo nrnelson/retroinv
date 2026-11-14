@@ -1,0 +1,73 @@
+# TUI.C and RQERR.C: messages shared by every screen (MT_ in TUI.H and
+# RQERR.H) and TUI.C's own.
+# Format: "nnn NAME text", the source format (see MSG.H); ^1 and ^2 take
+# arguments.
+1 MT_NOTAVAIL Not available in local mode
+2 MT_NOTFOUND The record no longer exists
+3 MT_DUP Already exists
+4 MT_PERM Permission denied (your access level is ^1)
+5 MT_RESTART The list has changed; starting again at the top
+6 MT_DBERR Database error ^1: ^2
+7 MT_REINDEX Rebuild the indexes: Admin > Reindex, or DBPACK /R
+8 MT_BADPW Invalid user name or password
+9 MT_DISABLED Account disabled
+10 MT_BUSY Other sessions are open; this needs the system to itself
+11 MT_EXPIRED Session expired
+12 MT_MUSTCHG Password change required
+13 MT_ENDED The session has ended
+14 MT_INTERNAL Internal error ^1
+15 MT_NOMEM Not enough memory
+16 MT_YESNO YN
+17 MT_QUIT Quit RETROINV?
+18 MT_DISCARD Discard the changes?
+19 MT_SAVEFIRST Save with Enter or leave with Esc first
+# W=42 status-line information: TUI_ST_INFOW
+20 MT_WORKING Working... records: ^1
+
+21 MT_NOCHOICE Nothing to choose from
+22 MT_NOHELP No help: ^1
+# W=74 message box title: VID_COLS - 6
+23 MT_ERRTITLE Error
+# W=79 key hints: VID_COLS - 1, level digits not counted
+24 MT_HINTOK Enter=OK
+29 MT_HINTPICK Enter=Choose Esc=Cancel F1=Help
+
+33 MT_REPLACE Replace ^1?
+# W=10 the program's name: report page headings (RPT.C), the home box
+42 MT_PROG RETROINV
+# TUI.C's own.
+# W=5 connection on the status line: TUI_ST_CONNW
+25 MT_LOCAL LOCAL
+26 MT_NET NET
+41 MT_COM COM
+# W=74 help box title: VID_COLS - 6
+27 MT_HELPTITLE Help
+# W=79 key hints: VID_COLS - 1, level digits not counted
+28 MT_HINTHELP Up/Down=Scroll PgUp/PgDn=Page Esc=Close F9=Keys
+30 MT_HINTYN Y=Yes N=No
+31 MT_HINTPROMPT Enter=OK Esc=Cancel
+32 MT_HINTMENU Enter=Choose Left/Right=Menu Esc=Close F1=Help
+# W=9 menu bar title, '&' not counted, as INVMENU.MSG's
+51 MT_RECORD Re&cord
+
+# RQERR.C's: the lost link and the texts of rqe_text.
+34 MT_LOST Connection to the server lost. If a change was being saved, it may have been made: check first.
+35 MT_EIO a read or write error
+36 MT_EINDEX an index is damaged
+37 MT_EFULL the disk is full
+38 MT_EHANDLES too many open files (raise FILES=)
+39 MT_EINUSE a file is in use by another program
+40 MT_EOTHER error ^1
+# The other texts of rqe_doserr.
+43 MT_CFNOPATH no such file or directory
+44 MT_CFACCESS access denied
+45 MT_CFNAME not a name the file can have
+46 MT_CFOTHER DOS error ^1
+# The words of an item's works state in the order of ITL_WORKS
+# (ITEMLS.H), kept with the texts every screen has at hand, as each item
+# row and each row of the item listing shows one.
+# W=5 the Works column of the item rows and of the item listing
+47 MT_WK_Q ?
+48 MT_WK_Y yes
+49 MT_WK_I intrm
+50 MT_WK_N no

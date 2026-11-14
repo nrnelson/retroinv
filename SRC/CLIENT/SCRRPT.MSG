@@ -1,0 +1,52 @@
+# SCRRPT.C: the report and label screens (MQ_).
+# The subtitle's location, ^1 its path: cut at RPT_SUBLEN.
+1000 MQ_ANDBELOW ^1 and below
+# W=65 form box title: SCR_POPW - 6
+1002 MQ_T_LOANS Loans and holds
+1003 MQ_T_ILABEL Item labels
+1004 MQ_T_BLABEL Bin labels
+# W=79 key hints: VID_COLS - 1, level digits not counted
+1005 MQ_HINT Enter=Run F4=List Esc=Back F1=Help
+1006 MQ_HINTV Esc=Close F1=Help
+# W=9 form labels: 11 - 1 - 1 and 36 - 26 - 1
+1007 MQ_L_ORDER Order
+1008 MQ_L_CAT Category
+1009 MQ_L_LOC Location
+1010 MQ_L_STATUS Status
+1011 MQ_L_OUT Output
+1012 MQ_L_FILE File
+1013 MQ_L_OVERDUE Overdue
+1014 MQ_L_ASOF As of
+1015 MQ_L_ITEM Item ID
+1016 MQ_L_BELOW All below
+# The location's path has no label.
+1019 MQ_L_WHERE
+# W=42 status-line information: TUI_ST_INFOW
+1017 MQ_PROGRESS Pages: ^1  Records: ^2
+
+1018 MQ_NEEDFILE Type the name of the file
+1020 MQ_Q_NODEV No printer on this port. Retry?
+1021 MQ_Q_PAPER Printer out of paper. Retry?
+1022 MQ_Q_NOTREADY Printer not ready. Retry?
+1023 MQ_CANCELLED Printing cancelled
+1024 MQ_STOPPED Report stopped
+1025 MQ_FILEERR File error on ^1 (DOS error ^2)
+1026 MQ_SCRATCH Cannot write ^1 here: choose File output
+1027 MQ_DONE Done; records: ^1
+1028 MQ_NOTFOUND Not found
+1029 MQ_VSHOWN Shown: first ^1 lines
+# W=9 form labels: 11 - 1 - 1 and 36 - 26 - 1
+1030 MQ_L_TAG Tags
+1031 MQ_L_WORKS Works
+# The names of a works filter's choices in the order of scr_works_filt
+# (SCRSFORM.H), after the code in their pick list, and in a run's
+# subtitle; the report screens' own, so that a report form and its run
+# read no other page of texts.
+# W=36 choice names: TUI_PICKW - SCR_WORKSW - 1
+1032 MQ_C_WQ Not tested
+1033 MQ_C_WY Yes
+1034 MQ_C_WI Intermittently
+1035 MQ_C_WN No
+1036 MQ_C_WK Not known broken
+
+1037 MQ_BADFILE Not a name a report file can have

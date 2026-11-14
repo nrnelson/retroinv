@@ -1,0 +1,9 @@
+/*
+ * WSMOKE.RC - the resources of the Windows smoke test, TEST/WSMOKE.C.
+ */
+#include "WSMOKE.H"
+
+STRINGTABLE
+BEGIN
+    WSM_S_TITLE, "RETROINV Windows smoke test"
+END

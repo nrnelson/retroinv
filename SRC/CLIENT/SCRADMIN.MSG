@@ -1,0 +1,45 @@
+# SCRADMIN.C: backup, restore, pack, reindex, the audit log and the
+# sessions (MZ_).
+# W=74 prompt box titles: VID_COLS - 6
+580 MZ_T_BACKUP Back up the data
+581 MZ_T_RESTORE Restore the data from a backup
+# W=33 prompt label beside its 40-cell field: VID_COLS - 7 - 40
+582 MZ_L_DIR Directory
+
+583 MZ_RESTOREQ Replace all the data with the backup in ^1? This cannot be undone.
+584 MZ_PACKQ Remove the deleted records for good and rebuild every index? This cannot be undone.
+585 MZ_WAIT Working; with much data this takes minutes...
+586 MZ_BACKEDUP Data backed up to ^1
+587 MZ_RESTORED Data restored from ^1
+588 MZ_PACKED Data packed; records removed: ^1
+589 MZ_REINDEXED Every index rebuilt
+590 MZ_NODIR Directory ^1 not found
+591 MZ_NOBACKUP No complete backup in ^1
+592 MZ_DIRERR Backup or data directory: ^2
+# W=74 form box title: VID_COLS - 6
+593 MZ_T_AUDIT Audit log
+# W=5 form label: AU_V1 - AU_C1 - 1
+594 MZ_L_TBL Table
+# W=6 form label: AU_V2 - AU_C2 - 1
+595 MZ_L_REC Record
+# W=7 form label: AU_V3 - AU_C3 - 1
+596 MZ_L_STA Station
+# W=79 key hints: VID_COLS - 1, level digits not counted
+597 MZ_HINTFORM Enter=Show Esc=Back F1=Help
+598 MZ_HINTLIST Esc=Filter F1=Help
+# W=78 list header: VID_COLS - 2
+599 MZ_HDR  Date       Time  User     Table    Record A Field      Old value  New value
+
+600 MZ_EMPTY No audit rows
+601 MZ_NEEDTBL A record needs its table
+# W=74 box title: VID_COLS - 6
+602 MZ_T_SESS Sessions
+# W=78 column header: VID_COLS - 2
+603 MZ_SHDR  Slot Type Station          User     Level State             Idle
+# W=79 key hints: VID_COLS - 1, level digits not counted
+604 MZ_SHINT F5=Refresh Esc=Back F1=Help
+# W=15 session states 0..3: SS_STATEW
+605 MZ_STATE0 Connected
+606 MZ_STATE1 Not logged in
+607 MZ_STATE2 Password change
+608 MZ_STATE3 Logged in

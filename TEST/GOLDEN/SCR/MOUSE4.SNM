@@ -1,0 +1,1300 @@
+=SNAP START PALETTE=MONO CURSOR=2,36,LINE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ New item ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ ID                      Category                Status    A                  ³|
+|³ Type                                            Condition                    ³|
+|³ Maker                                                                        ³|
+|³ Model                                                                        ³|
+|³ Serial                                                                       ³|
+|³ Descr                                                                        ³|
+|³ Works     ?             Quantity  1                                          ³|
+|³ Location                Parent                                               ³|
+|³           (no location)                                                      ³|
+|³ Acquired                Source                                               ³|
+|³ Price                   Value                                                ³|
+|³ Tags                                                                         ³|
+|³ Created                 Updated                                              ³|
+|³ Notes     (after saving)                                                     ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  Parts  Service  Loans  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ The Record menu (Alt-C) shows the parts installed in this item, its          ³|
+|³ service records, its loans and holds, and the items used with it.            ³|
+|³                                                                              ³|
+|³                                                                              ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+| Enter=Save F4=List Esc=Cancel F1=Help                                          |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCEEEECCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCAAAAAAAACCDDDDDCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDCCCCCAAAAACCCCCDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAAAACCCDDDDDDDDDDCCCCAAAAAAACCCDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAACCCCCCAACCCCCCAAACCCCCCCCAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+=SNAP TYPEL1 PALETTE=MONO CURSOR=3,12,LINE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ New item ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ ID                      Category                Status    A                  ³|
+|³ Type                                            Condition                    ³|
+|³ Maker                                                                        ³|
+|³ Model                                                                        ³|
+|³ Serial                                                                       ³|
+|³ Descr                                                                        ³|
+|³ Works     ?             Quantity  1                                          ³|
+|³ Location                Parent                                               ³|
+|³           (no location)                                                      ³|
+|³ Acquired                Source                                               ³|
+|³ Price                   Value                                                ³|
+|³ Tags                                                                         ³|
+|³ Created                 Updated                                              ³|
+|³ Notes     (after saving)                                                     ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  Parts  Service  Loans  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ The Record menu (Alt-C) shows the parts installed in this item, its          ³|
+|³ service records, its loans and holds, and the items used with it.            ³|
+|³                                                                              ³|
+|³                                                                              ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+| Enter=Save F4=List Esc=Cancel F1=Help                                          |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCDDDDCCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCAAAAAAAACCDDDDDCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDCCCCCAAAAACCCCCDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAAAACCCDDDDDDDDDDCCCCAAAAAAACCCDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAACCCCCCAACCCCCCAAACCCCCCCCAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+=SNAP MAKERL PALETTE=MONO CURSOR=4,12,LINE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ New item ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ ID                      Category                Status    A                  ³|
+|³ Type                                            Condition                    ³|
+|³ Maker                                                                        ³|
+|³ Model                                                                        ³|
+|³ Serial                                                                       ³|
+|³ Descr                                                                        ³|
+|³ Works     ?             Quantity  1                                          ³|
+|³ Location                Parent                                               ³|
+|³           (no location)                                                      ³|
+|³ Acquired                Source                                               ³|
+|³ Price                   Value                                                ³|
+|³ Tags                                                                         ³|
+|³ Created                 Updated                                              ³|
+|³ Notes     (after saving)                                                     ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  Parts  Service  Loans  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ The Record menu (Alt-C) shows the parts installed in this item, its          ³|
+|³ service records, its loans and holds, and the items used with it.            ³|
+|³                                                                              ³|
+|³                                                                              ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+| Enter=Save F4=List Esc=Cancel F1=Help                                          |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCDDDDCCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCAAAAAAAACCDDDDDCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDCCCCCAAAAACCCCCDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAAAACCCDDDDDDDDDDCCCCAAAAAAACCCDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAACCCCCCAACCCCCCAAACCCCCCCCAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+=SNAP TYPEV PALETTE=MONO CURSOR=3,12,LINE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ New item ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ ID                      Category                Status    A                  ³|
+|³ Type                                            Condition                    ³|
+|³ Maker                                                                        ³|
+|³ Model                                                                        ³|
+|³ Serial                                                                       ³|
+|³ Descr                                                                        ³|
+|³ Works     ?             Quantity  1                                          ³|
+|³ Location                Parent                                               ³|
+|³           (no location)                                                      ³|
+|³ Acquired                Source                                               ³|
+|³ Price                   Value                                                ³|
+|³ Tags                                                                         ³|
+|³ Created                 Updated                                              ³|
+|³ Notes     (after saving)                                                     ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  Parts  Service  Loans  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ The Record menu (Alt-C) shows the parts installed in this item, its          ³|
+|³ service records, its loans and holds, and the items used with it.            ³|
+|³                                                                              ³|
+|³                                                                              ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+| Enter=Save F4=List Esc=Cancel F1=Help                                          |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCDDDDCCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCAAAAAAAACCDDDDDCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDCCCCCAAAAACCCCCDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAAAACCCDDDDDDDDDDCCCCAAAAAAACCCDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAACCCCCCAACCCCCCAAACCCCCCCCAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+=SNAP MODELV PALETTE=MONO CURSOR=5,12,LINE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ New item ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ ID                      Category                Status    A                  ³|
+|³ Type                                            Condition                    ³|
+|³ Maker                                                                        ³|
+|³ Model                                                                        ³|
+|³ Serial                                                                       ³|
+|³ Descr                                                                        ³|
+|³ Works     ?             Quantity  1                                          ³|
+|³ Location                Parent                                               ³|
+|³           (no location)                                                      ³|
+|³ Acquired                Source                                               ³|
+|³ Price                   Value                                                ³|
+|³ Tags                                                                         ³|
+|³ Created                 Updated                                              ³|
+|³ Notes     (after saving)                                                     ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  Parts  Service  Loans  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ The Record menu (Alt-C) shows the parts installed in this item, its          ³|
+|³ service records, its loans and holds, and the items used with it.            ³|
+|³                                                                              ³|
+|³                                                                              ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+| Enter=Save F4=List Esc=Cancel F1=Help                                          |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCDDDDCCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCAAAAAAAACCDDDDDCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDCCCCCAAAAACCCCCDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAAAACCCDDDDDDDDDDCCCCAAAAAAACCCDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAACCCCCCAACCCCCCAAACCCCCCCCAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+=SNAP BLANK PALETTE=MONO CURSOR=3,12,LINE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ New item ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ ID                      Category                Status    A                  ³|
+|³ Type                                            Condition                    ³|
+|³ Maker                                                                        ³|
+|³ Model                                                                        ³|
+|³ Serial                                                                       ³|
+|³ Descr                                                                        ³|
+|³ Works     ?             Quantity  1                                          ³|
+|³ Location                Parent                                               ³|
+|³           (no location)                                                      ³|
+|³ Acquired                Source                                               ³|
+|³ Price                   Value                                                ³|
+|³ Tags                                                                         ³|
+|³ Created                 Updated                                              ³|
+|³ Notes     (after saving)                                                     ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  Parts  Service  Loans  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ The Record menu (Alt-C) shows the parts installed in this item, its          ³|
+|³ service records, its loans and holds, and the items used with it.            ³|
+|³                                                                              ³|
+|³                                                                              ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+| Enter=Save F4=List Esc=Cancel F1=Help                                          |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCDDDDCCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCAAAAAAAACCDDDDDCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDCCCCCAAAAACCCCCDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAAAACCCDDDDDDDDDDCCCCAAAAAAACCCDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAACCCCCCAACCCCCCAAACCCCCCCCAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+=SNAP PASTVAL PALETTE=MONO CURSOR=3,12,LINE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ New item ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ ID                      Category                Status    A                  ³|
+|³ Type                                            Condition                    ³|
+|³ Maker                                                                        ³|
+|³ Model                                                                        ³|
+|³ Serial                                                                       ³|
+|³ Descr                                                                        ³|
+|³ Works     ?             Quantity  1                                          ³|
+|³ Location                Parent                                               ³|
+|³           (no location)                                                      ³|
+|³ Acquired                Source                                               ³|
+|³ Price                   Value                                                ³|
+|³ Tags                                                                         ³|
+|³ Created                 Updated                                              ³|
+|³ Notes     (after saving)                                                     ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  Parts  Service  Loans  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ The Record menu (Alt-C) shows the parts installed in this item, its          ³|
+|³ service records, its loans and holds, and the items used with it.            ³|
+|³                                                                              ³|
+|³                                                                              ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+| Enter=Save F4=List Esc=Cancel F1=Help                                          |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCDDDDCCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCAAAAAAAACCDDDDDCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDCCCCCAAAAACCCCCDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAAAACCCDDDDDDDDDDCCCCAAAAAAACCCDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAACCCCCCAACCCCCCAAACCCCCCCCAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+=SNAP LEFTC PALETTE=MONO CURSOR=3,12,LINE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ New item ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ ID                      Category                Status    A                  ³|
+|³ Type                                            Condition                    ³|
+|³ Maker                                                                        ³|
+|³ Model                                                                        ³|
+|³ Serial                                                                       ³|
+|³ Descr                                                                        ³|
+|³ Works     ?             Quantity  1                                          ³|
+|³ Location                Parent                                               ³|
+|³           (no location)                                                      ³|
+|³ Acquired                Source                                               ³|
+|³ Price                   Value                                                ³|
+|³ Tags                                                                         ³|
+|³ Created                 Updated                                              ³|
+|³ Notes     (after saving)                                                     ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  Parts  Service  Loans  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ The Record menu (Alt-C) shows the parts installed in this item, its          ³|
+|³ service records, its loans and holds, and the items used with it.            ³|
+|³                                                                              ³|
+|³                                                                              ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+| Enter=Save F4=List Esc=Cancel F1=Help                                          |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCDDDDCCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCAAAAAAAACCDDDDDCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDCCCCCAAAAACCCCCDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAAAACCCDDDDDDDDDDCCCCAAAAAAACCCDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAACCCCCCAACCCCCCAAACCCCCCCCAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+=SNAP LEFTE PALETTE=MONO CURSOR=3,12,LINE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ New item ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ ID                      Category                Status    A                  ³|
+|³ Type                                            Condition                    ³|
+|³ Maker                                                                        ³|
+|³ Model                                                                        ³|
+|³ Serial                                                                       ³|
+|³ Descr                                                                        ³|
+|³ Works     ?             Quantity  1                                          ³|
+|³ Location                Parent                                               ³|
+|³           (no location)                                                      ³|
+|³ Acquired                Source                                               ³|
+|³ Price                   Value                                                ³|
+|³ Tags                                                                         ³|
+|³ Created                 Updated                                              ³|
+|³ Notes     (after saving)                                                     ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  Parts  Service  Loans  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ The Record menu (Alt-C) shows the parts installed in this item, its          ³|
+|³ service records, its loans and holds, and the items used with it.            ³|
+|³                                                                              ³|
+|³                                                                              ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+| Enter=Save F4=List Esc=Cancel F1=Help                                          |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCDDDDCCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCAAAAAAAACCDDDDDCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDCCCCCAAAAACCCCCDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAAAACCCDDDDDDDDDDCCCCAAAAAAACCCDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAACCCCCCAACCCCCCAAACCCCCCCCAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+=SNAP RIGHTE PALETTE=MONO CURSOR=3,12,LINE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ New item ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ ID                      Category                Status    A                  ³|
+|³ Type                                            Condition                    ³|
+|³ Maker                                                                        ³|
+|³ Model                                                                        ³|
+|³ Serial                                                                       ³|
+|³ Descr                                                                        ³|
+|³ Works     ?             Quantity  1                                          ³|
+|³ Location                Parent                                               ³|
+|³           (no location)                                                      ³|
+|³ Acquired                Source                                               ³|
+|³ Price                   Value                                                ³|
+|³ Tags                                                                         ³|
+|³ Created                 Updated                                              ³|
+|³ Notes     (after saving)                                                     ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  Parts  Service  Loans  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ The Record menu (Alt-C) shows the parts installed in this item, its          ³|
+|³ service records, its loans and holds, and the items used with it.            ³|
+|³                                                                              ³|
+|³                                                                              ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+| Enter=Save F4=List Esc=Cancel F1=Help                                          |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCDDDDCCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCAAAAAAAACCDDDDDCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDCCCCCAAAAACCCCCDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAAAACCCDDDDDDDDDDCCCCAAAAAAACCCDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAACCCCCCAACCCCCCAAACCCCCCCCAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+=SNAP RIGHTC PALETTE=MONO CURSOR=3,12,LINE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ New item ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ ID                      Category                Status    A                  ³|
+|³ Type                                            Condition                    ³|
+|³ Maker                                                                        ³|
+|³ Model                                                                        ³|
+|³ Serial                                                                       ³|
+|³ Descr                                                                        ³|
+|³ Works     ?             Quantity  1                                          ³|
+|³ Location                Parent                                               ³|
+|³           (no location)                                                      ³|
+|³ Acquired                Source                                               ³|
+|³ Price                   Value                                                ³|
+|³ Tags                                                                         ³|
+|³ Created                 Updated                                              ³|
+|³ Notes     (after saving)                                                     ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  Parts  Service  Loans  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ The Record menu (Alt-C) shows the parts installed in this item, its          ³|
+|³ service records, its loans and holds, and the items used with it.            ³|
+|³                                                                              ³|
+|³                                                                              ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+| Enter=Save F4=List Esc=Cancel F1=Help                                          |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCDDDDCCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCAAAAAAAACCDDDDDCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDCCCCCAAAAACCCCCDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAAAACCCDDDDDDDDDDCCCCAAAAAAACCCDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAACCCCCCAACCCCCCAAACCCCCCCCAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+=SNAP DESCRV PALETTE=MONO CURSOR=7,12,LINE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ New item ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ ID                      Category                Status    A                  ³|
+|³ Type                                            Condition                    ³|
+|³ Maker                                                                        ³|
+|³ Model                                                                        ³|
+|³ Serial                                                                       ³|
+|³ Descr                                                                        ³|
+|³ Works     ?             Quantity  1                                          ³|
+|³ Location                Parent                                               ³|
+|³           (no location)                                                      ³|
+|³ Acquired                Source                                               ³|
+|³ Price                   Value                                                ³|
+|³ Tags                                                                         ³|
+|³ Created                 Updated                                              ³|
+|³ Notes     (after saving)                                                     ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  Parts  Service  Loans  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ The Record menu (Alt-C) shows the parts installed in this item, its          ³|
+|³ service records, its loans and holds, and the items used with it.            ³|
+|³                                                                              ³|
+|³                                                                              ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+| Enter=Save F4=List Esc=Cancel F1=Help                                          |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCDDDDCCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCAAAAAAAACCDDDDDCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDCCCCCAAAAACCCCCDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAAAACCCDDDDDDDDDDCCCCAAAAAAACCCDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAACCCCCCAACCCCCCAAACCCCCCCCAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+=SNAP PASTDES PALETTE=MONO CURSOR=7,12,LINE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ New item ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ ID                      Category                Status    A                  ³|
+|³ Type                                            Condition                    ³|
+|³ Maker                                                                        ³|
+|³ Model                                                                        ³|
+|³ Serial                                                                       ³|
+|³ Descr                                                                        ³|
+|³ Works     ?             Quantity  1                                          ³|
+|³ Location                Parent                                               ³|
+|³           (no location)                                                      ³|
+|³ Acquired                Source                                               ³|
+|³ Price                   Value                                                ³|
+|³ Tags                                                                         ³|
+|³ Created                 Updated                                              ³|
+|³ Notes     (after saving)                                                     ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  Parts  Service  Loans  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ The Record menu (Alt-C) shows the parts installed in this item, its          ³|
+|³ service records, its loans and holds, and the items used with it.            ³|
+|³                                                                              ³|
+|³                                                                              ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+| Enter=Save F4=List Esc=Cancel F1=Help                                          |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCDDDDCCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCAAAAAAAACCDDDDDCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDCCCCCAAAAACCCCCDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAAAACCCDDDDDDDDDDCCCCAAAAAAACCCDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAACCCCCCAACCCCCCAAACCCCCCCCAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+=SNAP QTYL PALETTE=MONO CURSOR=8,37,LINE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ New item ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ ID                      Category                Status    A                  ³|
+|³ Type                                            Condition                    ³|
+|³ Maker                                                                        ³|
+|³ Model                                                                        ³|
+|³ Serial                                                                       ³|
+|³ Descr                                                                        ³|
+|³ Works     ?             Quantity  1                                          ³|
+|³ Location                Parent                                               ³|
+|³           (no location)                                                      ³|
+|³ Acquired                Source                                               ³|
+|³ Price                   Value                                                ³|
+|³ Tags                                                                         ³|
+|³ Created                 Updated                                              ³|
+|³ Notes     (after saving)                                                     ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  Parts  Service  Loans  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ The Record menu (Alt-C) shows the parts installed in this item, its          ³|
+|³ service records, its loans and holds, and the items used with it.            ³|
+|³                                                                              ³|
+|³                                                                              ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+| Enter=Save F4=List Esc=Cancel F1=Help                                          |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCDDDDCCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCAAAAAAAACCAEEEECCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDCCCCCAAAAACCCCCDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAAAACCCDDDDDDDDDDCCCCAAAAAAACCCDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAACCCCCCAACCCCCCAAACCCCCCCCAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+=SNAP LOCV PALETTE=MONO CURSOR=9,12,LINE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ New item ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ ID                      Category                Status    A                  ³|
+|³ Type                                            Condition                    ³|
+|³ Maker                                                                        ³|
+|³ Model                                                                        ³|
+|³ Serial                                                                       ³|
+|³ Descr                                                                        ³|
+|³ Works     ?             Quantity  1                                          ³|
+|³ Location                Parent                                               ³|
+|³           (no location)                                                      ³|
+|³ Acquired                Source                                               ³|
+|³ Price                   Value                                                ³|
+|³ Tags                                                                         ³|
+|³ Created                 Updated                                              ³|
+|³ Notes     (after saving)                                                     ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  Parts  Service  Loans  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ The Record menu (Alt-C) shows the parts installed in this item, its          ³|
+|³ service records, its loans and holds, and the items used with it.            ³|
+|³                                                                              ³|
+|³                                                                              ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+| Enter=Save F4=List Esc=Cancel F1=Help                                          |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCDDDDCCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCAAAAAAAACCDDDDDCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCEEEEEEEEEECCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDCCCCCAAAAACCCCCDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAAAACCCDDDDDDDDDDCCCCAAAAAAACCCDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAACCCCCCAACCCCCCAAACCCCCCCCAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+=SNAP TAGSL PALETTE=MONO CURSOR=12,12,LINE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ New item ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ ID                      Category                Status    A                  ³|
+|³ Type                                            Condition                    ³|
+|³ Maker                                                                        ³|
+|³ Model                                                                        ³|
+|³ Serial                                                                       ³|
+|³ Descr                                                                        ³|
+|³ Works     ?             Quantity  1                                          ³|
+|³ Location                Parent                                               ³|
+|³           (no location)                                                      ³|
+|³ Acquired                Source                                               ³|
+|³ Price                   Value                                                ³|
+|³ Tags                                                                         ³|
+|³ Created                 Updated                                              ³|
+|³ Notes     (after saving)                                                     ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  Parts  Service  Loans  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ The Record menu (Alt-C) shows the parts installed in this item, its          ³|
+|³ service records, its loans and holds, and the items used with it.            ³|
+|³                                                                              ³|
+|³                                                                              ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+| Enter=Save F4=List Esc=Cancel F1=Help                                          |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCDDDDCCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCAAAAAAAACCDDDDDCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEECCCCCAAAAACCCCCDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAAAACCCDDDDDDDDDDCCCCAAAAAAACCCDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAACCCCCCAACCCCCCAAACCCCCCCCAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+=SNAP IDL PALETTE=MONO CURSOR=12,12,LINE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ New item ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ ID                      Category                Status    A                  ³|
+|³ Type                                            Condition                    ³|
+|³ Maker                                                                        ³|
+|³ Model                                                                        ³|
+|³ Serial                                                                       ³|
+|³ Descr                                                                        ³|
+|³ Works     ?             Quantity  1                                          ³|
+|³ Location                Parent                                               ³|
+|³           (no location)                                                      ³|
+|³ Acquired                Source                                               ³|
+|³ Price                   Value                                                ³|
+|³ Tags                                                                         ³|
+|³ Created                 Updated                                              ³|
+|³ Notes     (after saving)                                                     ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  Parts  Service  Loans  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ The Record menu (Alt-C) shows the parts installed in this item, its          ³|
+|³ service records, its loans and holds, and the items used with it.            ³|
+|³                                                                              ³|
+|³                                                                              ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+| Enter=Save F4=List Esc=Cancel F1=Help                                          |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCDDDDCCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCAAAAAAAACCDDDDDCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEECCCCCAAAAACCCCCDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAAAACCCDDDDDDDDDDCCCCAAAAAAACCCDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAACCCCCCAACCCCCCAAACCCCCCCCAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+=SNAP CREATED PALETTE=MONO CURSOR=13,12,LINE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ New item ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ ID                      Category                Status    A                  ³|
+|³ Type                                            Condition                    ³|
+|³ Maker                                                                        ³|
+|³ Model                                                                        ³|
+|³ Serial                                                                       ³|
+|³ Descr                                                                        ³|
+|³ Works     ?             Quantity  1                                          ³|
+|³ Location                Parent                                               ³|
+|³           (no location)                                                      ³|
+|³ Acquired                Source                                               ³|
+|³ Price                   Value                                                ³|
+|³ Tags                                                                         ³|
+|³ Created                 Updated                                              ³|
+|³ Notes     (after saving)                                                     ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  Parts  Service  Loans  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ The Record menu (Alt-C) shows the parts installed in this item, its          ³|
+|³ service records, its loans and holds, and the items used with it.            ³|
+|³                                                                              ³|
+|³                                                                              ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+| Enter=Save F4=List Esc=Cancel F1=Help                                          |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCDDDDCCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCAAAAAAAACCDDDDDCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDCCCCCAAAAACCCCCDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCC|
+|CCAAAAAAACCCDDDDDDDDDDCCCCAAAAAAACCCDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAACCCCCCAACCCCCCAAACCCCCCCCAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+=SNAP NOTES PALETTE=MONO CURSOR=13,12,LINE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ New item ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ ID                      Category                Status    A                  ³|
+|³ Type                                            Condition                    ³|
+|³ Maker                                                                        ³|
+|³ Model                                                                        ³|
+|³ Serial                                                                       ³|
+|³ Descr                                                                        ³|
+|³ Works     ?             Quantity  1                                          ³|
+|³ Location                Parent                                               ³|
+|³           (no location)                                                      ³|
+|³ Acquired                Source                                               ³|
+|³ Price                   Value                                                ³|
+|³ Tags                                                                         ³|
+|³ Created                 Updated                                              ³|
+|³ Notes     (after saving)                                                     ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  Parts  Service  Loans  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ The Record menu (Alt-C) shows the parts installed in this item, its          ³|
+|³ service records, its loans and holds, and the items used with it.            ³|
+|³                                                                              ³|
+|³                                                                              ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+| Enter=Save F4=List Esc=Cancel F1=Help                                          |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCDDDDCCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCAAAAAAAACCDDDDDCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDCCCCCAAAAACCCCCDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCC|
+|CCAAAAAAACCCDDDDDDDDDDCCCCAAAAAAACCCDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAACCCCCCAACCCCCCAAACCCCCCCCAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+=SNAP BAREMPT PALETTE=MONO CURSOR=4,16,LINE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ New item ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ ID                      Category                Status    A                  ³|
+|³ Type                                            Condition                    ³|
+|³ Maker     Acme                                                               ³|
+|³ Model                                                                        ³|
+|³ Serial                                                                       ³|
+|³ Descr                                                                        ³|
+|³ Works     ?             Quantity  1                                          ³|
+|³ Location                Parent                                               ³|
+|³           (no location)                                                      ³|
+|³ Acquired                Source                                               ³|
+|³ Price                   Value                                                ³|
+|³ Tags                                                                         ³|
+|³ Created                 Updated                                              ³|
+|³ Notes     (after saving)                                                     ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  Parts  Service  Loans  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ The Record menu (Alt-C) shows the parts installed in this item, its          ³|
+|³ service records, its loans and holds, and the items used with it.            ³|
+|³                                                                              ³|
+|³                                                                              ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+| Enter=Save F4=List Esc=Cancel F1=Help                                          |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCDDDDCCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCAAAAAAAACCDDDDDCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDCCCCCAAAAACCCCCDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAAAACCCDDDDDDDDDDCCCCAAAAAAACCCDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAACCCCCCAACCCCCCAAACCCCCCCCAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+=SNAP BARBUSY PALETTE=MONO CURSOR=4,16,LINE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ New item ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ ID                      Category                Status    A                  ³|
+|³ Type                                            Condition                    ³|
+|³ Maker     Acme                                                               ³|
+|³ Model                                                                        ³|
+|³ Serial                                                                       ³|
+|³ Descr                                                                        ³|
+|³ Works     ?             Quantity  1                                          ³|
+|³ Location                Parent                                               ³|
+|³           (no location)                                                      ³|
+|³ Acquired                Source                                               ³|
+|³ Price                   Value                                                ³|
+|³ Tags                                                                         ³|
+|³ Created                 Updated                                              ³|
+|³ Notes     (after saving)                                                     ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  Parts  Service  Loans  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ The Record menu (Alt-C) shows the parts installed in this item, its          ³|
+|³ service records, its loans and holds, and the items used with it.            ³|
+|³                                                                              ³|
+|³                                                                              ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+| Save with Enter or leave with Esc first                                        |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCDDDDCCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCAAAAAAAACCDDDDDCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDCCCCCAAAAACCCCCDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAAAACCCDDDDDDDDDDCCCCAAAAAAACCCDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+=SNAP F10BUSY PALETTE=MONO CURSOR=4,16,LINE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ New item ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ ID                      Category                Status    A                  ³|
+|³ Type                                            Condition                    ³|
+|³ Maker     Acme                                                               ³|
+|³ Model                                                                        ³|
+|³ Serial                                                                       ³|
+|³ Descr                                                                        ³|
+|³ Works     ?             Quantity  1                                          ³|
+|³ Location                Parent                                               ³|
+|³           (no location)                                                      ³|
+|³ Acquired                Source                                               ³|
+|³ Price                   Value                                                ³|
+|³ Tags                                                                         ³|
+|³ Created                 Updated                                              ³|
+|³ Notes     (after saving)                                                     ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  Parts  Service  Loans  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ The Record menu (Alt-C) shows the parts installed in this item, its          ³|
+|³ service records, its loans and holds, and the items used with it.            ³|
+|³                                                                              ³|
+|³                                                                              ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+| Save with Enter or leave with Esc first                                        |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCDDDDCCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCAAAAAAAACCDDDDDCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDCCCCCAAAAACCCCCDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAAAACCCDDDDDDDDDDCCCCAAAAAAACCCDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+=SNAP VIEW PALETTE=MONO CURSOR=0,0,HIDE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ Item 1 ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ ID        1             Category  SYS           Status    A                  ³|
+|³ Type                                            Condition GD                 ³|
+|³ Maker     IBM                                                                ³|
+|³ Model     5150                                                               ³|
+|³ Serial    0012345                                                            ³|
+|³ Descr     IBM Personal Computer                                              ³|
+|³ Works     Y             Quantity  1      Available 1                         ³|
+|³ Location  OFF           Parent                                               ³|
+|³           Office                                                             ³|
+|³ Acquired                Source                                               ³|
+|³ Price                   Value                                                ³|
+|³ Tags                                                                         ³|
+|³ Created   2026-10-08    Updated   2026-10-08                                 ³|
+|³ Notes     Lines: 2 (F4 to open)                                              ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  Parts  Service  Loans  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ The Record menu (Alt-C) shows the parts installed in this item, its          ³|
+|³ service records, its loans and holds, and the items used with it.            ³|
+|³                                                                              ³|
+|³                                                                              ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+| Ctrl-E=Edit Esc=Back F1=Help                                                   |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=70 E=01
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCEEEECCCCCCCCCCAAAAAACCCCECCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCAAAAAAAAACEEECCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCC|
+|CCAAAAACCCCCECCCCCCCCCCCCCAAAAAAAACCEEEEECCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CCAAAAAAAACCEEEEEEEEEECCCCAAAAAACCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CCCCCCCCCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCC|
+|CCAAAAAAAACCEEEEEEEEEECCCCAAAAAACCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEECCCCCAAAAACCCCCEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCC|
+|CCAAAAAAACCCEEEEEEEEEECCCCAAAAAAACCCEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAAACCCCCCAAACCCCCCAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+=SNAP EDIT4 PALETTE=MONO CURSOR=4,15,LINE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ Item 1 ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ ID        1             Category  SYS           Status    A                  ³|
+|³ Type                                            Condition GD                 ³|
+|³ Maker     IBM                                                                ³|
+|³ Model     5150                                                               ³|
+|³ Serial    0012345                                                            ³|
+|³ Descr     IBM Personal Computer                                              ³|
+|³ Works     Y             Quantity  1      Available 1                         ³|
+|³ Location  OFF           Parent                                               ³|
+|³           Office                                                             ³|
+|³ Acquired                Source                                               ³|
+|³ Price                   Value                                                ³|
+|³ Tags                                                                         ³|
+|³ Created   2026-10-08    Updated   2026-10-08                                 ³|
+|³ Notes     Lines: 2 (F4 to open)                                              ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  Parts  Service  Loans  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ The Record menu (Alt-C) shows the parts installed in this item, its          ³|
+|³ service records, its loans and holds, and the items used with it.            ³|
+|³                                                                              ³|
+|³                                                                              ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+| Enter=Save F4=List Esc=Cancel F1=Help                                          |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCDDDDCCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCAAAEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCAAAAAAAACCDDDDDCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDCCCCCAAAAACCCCCDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAAAACCCDDDDDDDDDDCCCCAAAAAAACCCDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAACCCCCCAACCCCCCAAACCCCCCCCAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+=SNAP EDIT6 PALETTE=MONO CURSOR=6,19,LINE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ Item 1 ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ ID        1             Category  SYS           Status    A                  ³|
+|³ Type                                            Condition GD                 ³|
+|³ Maker     IBM                                                                ³|
+|³ Model     5150                                                               ³|
+|³ Serial    0012345                                                            ³|
+|³ Descr     IBM Personal Computer                                              ³|
+|³ Works     Y             Quantity  1      Available 1                         ³|
+|³ Location  OFF           Parent                                               ³|
+|³           Office                                                             ³|
+|³ Acquired                Source                                               ³|
+|³ Price                   Value                                                ³|
+|³ Tags                                                                         ³|
+|³ Created   2026-10-08    Updated   2026-10-08                                 ³|
+|³ Notes     Lines: 2 (F4 to open)                                              ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+|ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  Parts  Service  Loans  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿|
+|³ The Record menu (Alt-C) shows the parts installed in this item, its          ³|
+|³ service records, its loans and holds, and the items used with it.            ³|
+|³                                                                              ³|
+|³                                                                              ³|
+|ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ|
+| Enter=Save F4=List Esc=Cancel F1=Help                                          |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCDDDDCCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCAAAAAAAEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCAAAAAAAACCDDDDDCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDCCCCCAAAAACCCCCDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAAAACCCDDDDDDDDDDCCCCAAAAAAACCCDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAACCCCCCAACCCCCCAAACCCCCCCCAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|

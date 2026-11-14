@@ -1,0 +1,1622 @@
+=SNAP LOANS
+INVWIN "RETROINV - Open loans and holds" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1538 "Open &item..."
+  MENU 1540 "&Return or release..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1058 "Next li&st?Ctrl+PgDn"
+  MENU 629 "Ne&xt pane?F6"
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" CHECKED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|~Delete|-|~Move|~Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|4 loans and holds|"
+ WLIST 208 "!     Loan Kind         Item    Qty Holder                         Due        Ended      Maker                          Model" HBAR 0 338
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@153+20"Item" 4R@197+16"Qty" 5L@220+31"Holder" 6L@320+20"Due" 7L@385+31"Ended" 8L@450+30"Maker" 9L@550+29"Model"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+55 4F@180+40 5F@220+100 6F@320+65 7F@385+65 8F@450+100 9F@550+100
+  ListBox 1 "" FOCUS
+   ROW "         2 On loan         1      1 Bob Ray                        2026-11-01            IBM                            5150" SELECTED
+    DRAW FFFFFF/000000 1R@57+6"2" 2L@70+37"On loan" 3R@167+6"1" 4R@207+6"1" 5L@220+41"Bob Ray" 6L@320+54"2026-11-01" 8L@450+19"IBM" 9L@550+24"5150"
+   ROW "         3 On loan         2      1 Cy Dunn                        2026-11-01            Tandon                         TM100-2"
+   ROW "         4 Reserved        2      1 Di Fox                         2026-11-10            Tandon                         TM100-2"
+   ROW "         5 On loan         3      1 Flo Ito                        2026-11-20            Hercules                       Graphics Card"
+ WSPLIT 220 "" AT 314 LIMITS 40 588
+ WLIST 221 "!     Loan Kind        Qty Holder                         Due        Ended" HBAR 0 83
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@142+16"Qty" 4L@165+31"Holder" 5L@265+20"Due" 6L@330+31"Ended"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+40 4F@165+100 5F@265+65 6F@330+65
+  ListBox 1 ""
+   ROW "         1 On loan       1 Ann Lee                        2026-10-20 2026-10-03" SELECTED
+    DRAW FFFFFF/000000 1R@57+6"1" 2L@70+37"On loan" 3R@152+6"1" 4L@165+40"Ann Lee" 5L@265+54"2026-10-20" 6L@330+54"2026-10-03"
+   ROW "         2 On loan       1 Bob Ray                        2026-11-01"
+#32768 "" HIDDEN
+=SNAP SEVERAL
+INVWIN "RETROINV - Open loans and holds" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1538 "Open &item..."
+  MENU 1540 "&Return or release..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1058 "Next li&st?Ctrl+PgDn"
+  MENU 629 "Ne&xt pane?F6"
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" CHECKED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|~Delete|-|~Move|~Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|2 selected|"
+ WLIST 208 "!     Loan Kind         Item    Qty Holder                         Due        Ended      Maker                          Model" HBAR 0 338
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@153+20"Item" 4R@197+16"Qty" 5L@220+31"Holder" 6L@320+20"Due" 7L@385+31"Ended" 8L@450+30"Maker" 9L@550+29"Model"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+55 4F@180+40 5F@220+100 6F@320+65 7F@385+65 8F@450+100 9F@550+100
+  ListBox 1 "" FOCUS
+   ROW "         2 On loan         1      1 Bob Ray                        2026-11-01            IBM                            5150" SELECTED
+    DRAW FFFFFF/000000 1R@57+6"2" 2L@70+37"On loan" 3R@167+6"1" 4R@207+6"1" 5L@220+41"Bob Ray" 6L@320+54"2026-11-01" 8L@450+19"IBM" 9L@550+24"5150"
+   ROW "         3 On loan         2      1 Cy Dunn                        2026-11-01            Tandon                         TM100-2" SELECTED
+    DRAW FFFFFF/000000 1R@57+6"3" 2L@70+37"On loan" 3R@167+6"2" 4R@207+6"1" 5L@220+41"Cy Dunn" 6L@320+54"2026-11-01" 8L@450+37"Tandon" 9L@550+43"TM100-2"
+   ROW "         4 Reserved        2      1 Di Fox                         2026-11-10            Tandon                         TM100-2"
+   ROW "         5 On loan         3      1 Flo Ito                        2026-11-20            Hercules                       Graphics Card"
+ WSPLIT 220 "" AT 314 LIMITS 40 588
+ WLIST 221 "!     Loan Kind        Qty Holder                         Due        Ended" HBAR 0 83
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@142+16"Qty" 4L@165+31"Holder" 5L@265+20"Due" 6L@330+31"Ended"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+40 4F@165+100 5F@265+65 6F@330+65
+  ListBox 1 ""
+   ROW "         3 On loan       1 Cy Dunn                        2026-11-01" SELECTED
+    DRAW FFFFFF/000000 1R@57+6"3" 2L@70+37"On loan" 3R@152+6"1" 4L@165+41"Cy Dunn" 5L@265+54"2026-11-01"
+   ROW "         4 Reserved      1 Di Fox                         2026-11-10"
+#32768 "" HIDDEN
+=SNAP SAME
+INVWIN "RETROINV - Open loans and holds" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1538 "Open &item..."
+  MENU 1540 "&Return or release..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1058 "Next li&st?Ctrl+PgDn"
+  MENU 629 "Ne&xt pane?F6"
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" CHECKED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|~Delete|-|~Move|~Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|4 loans and holds|"
+ WLIST 208 "!     Loan Kind         Item    Qty Holder                         Due        Ended      Maker                          Model" HBAR 0 338
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@153+20"Item" 4R@197+16"Qty" 5L@220+31"Holder" 6L@320+20"Due" 7L@385+31"Ended" 8L@450+30"Maker" 9L@550+29"Model"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+55 4F@180+40 5F@220+100 6F@320+65 7F@385+65 8F@450+100 9F@550+100
+  ListBox 1 "" FOCUS
+   ROW "         2 On loan         1      1 Bob Ray                        2026-11-01            IBM                            5150"
+    DRAW 000000/FFFFFF 1R@57+6"2" 2L@70+37"On loan" 3R@167+6"1" 4R@207+6"1" 5L@220+41"Bob Ray" 6L@320+54"2026-11-01" 8L@450+19"IBM" 9L@550+24"5150"
+   ROW "         3 On loan         2      1 Cy Dunn                        2026-11-01            Tandon                         TM100-2"
+   ROW "         4 Reserved        2      1 Di Fox                         2026-11-10            Tandon                         TM100-2" SELECTED
+    DRAW FFFFFF/000000 1R@57+6"4" 2L@70+46"Reserved" 3R@167+6"2" 4R@207+6"1" 5L@220+30"Di Fox" 6L@320+54"2026-11-10" 8L@450+37"Tandon" 9L@550+43"TM100-2"
+   ROW "         5 On loan         3      1 Flo Ito                        2026-11-20            Hercules                       Graphics Card"
+ WSPLIT 220 "" AT 314 LIMITS 40 588
+ WLIST 221 "!     Loan Kind        Qty Holder                         Due        Ended" HBAR 0 83
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@142+16"Qty" 4L@165+31"Holder" 5L@265+20"Due" 6L@330+31"Ended"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+40 4F@165+100 5F@265+65 6F@330+65
+  ListBox 1 ""
+   ROW "         3 On loan       1 Cy Dunn                        2026-11-01" SELECTED
+    DRAW FFFFFF/000000 1R@57+6"3" 2L@70+37"On loan" 3R@152+6"1" 4L@165+41"Cy Dunn" 5L@265+54"2026-11-01"
+   ROW "         4 Reserved      1 Di Fox                         2026-11-10"
+#32768 "" HIDDEN
+=SNAP HISTORY
+INVWIN "RETROINV - Open loans and holds" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1540 "&Return or release..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 629 "Ne&xt pane?F6"
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" CHECKED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|~Delete|-|~Move|~Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|2 loans and holds|"
+ WLIST 208 "!     Loan Kind         Item    Qty Holder                         Due        Ended      Maker                          Model" HBAR 0 338
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@153+20"Item" 4R@197+16"Qty" 5L@220+31"Holder" 6L@320+20"Due" 7L@385+31"Ended" 8L@450+30"Maker" 9L@550+29"Model"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+55 4F@180+40 5F@220+100 6F@320+65 7F@385+65 8F@450+100 9F@550+100
+  ListBox 1 ""
+   ROW "         2 On loan         1      1 Bob Ray                        2026-11-01            IBM                            5150"
+    DRAW 000000/FFFFFF 1R@57+6"2" 2L@70+37"On loan" 3R@167+6"1" 4R@207+6"1" 5L@220+41"Bob Ray" 6L@320+54"2026-11-01" 8L@450+19"IBM" 9L@550+24"5150"
+   ROW "         3 On loan         2      1 Cy Dunn                        2026-11-01            Tandon                         TM100-2"
+   ROW "         4 Reserved        2      1 Di Fox                         2026-11-10            Tandon                         TM100-2" SELECTED
+    DRAW FFFFFF/000000 1R@57+6"4" 2L@70+46"Reserved" 3R@167+6"2" 4R@207+6"1" 5L@220+30"Di Fox" 6L@320+54"2026-11-10" 8L@450+37"Tandon" 9L@550+43"TM100-2"
+   ROW "         5 On loan         3      1 Flo Ito                        2026-11-20            Hercules                       Graphics Card"
+ WSPLIT 220 "" AT 314 LIMITS 40 588
+ WLIST 221 "!     Loan Kind        Qty Holder                         Due        Ended" HBAR 0 83
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@142+16"Qty" 4L@165+31"Holder" 5L@265+20"Due" 6L@330+31"Ended"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+40 4F@165+100 5F@265+65 6F@330+65
+  ListBox 1 "" FOCUS
+   ROW "         3 On loan       1 Cy Dunn                        2026-11-01" SELECTED
+    DRAW FFFFFF/000000 1R@57+6"3" 2L@70+37"On loan" 3R@152+6"1" 4L@165+41"Cy Dunn" 5L@265+54"2026-11-01"
+   ROW "         4 Reserved      1 Di Fox                         2026-11-10"
+#32768 "" HIDDEN
+=SNAP KEPT
+INVWIN "RETROINV - Open loans and holds" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1540 "&Return or release..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 629 "Ne&xt pane?F6"
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" CHECKED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|~Delete|-|~Move|~Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|2 loans and holds|Loan 3 returned"
+ WLIST 208 "!     Loan Kind         Item    Qty Holder                         Due        Ended      Maker                          Model" HBAR 0 338
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@153+20"Item" 4R@197+16"Qty" 5L@220+31"Holder" 6L@320+20"Due" 7L@385+31"Ended" 8L@450+30"Maker" 9L@550+29"Model"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+55 4F@180+40 5F@220+100 6F@320+65 7F@385+65 8F@450+100 9F@550+100
+  ListBox 1 ""
+   ROW "         2 On loan         1      1 Bob Ray                        2026-11-01            IBM                            5150"
+    DRAW 000000/FFFFFF 1R@57+6"2" 2L@70+37"On loan" 3R@167+6"1" 4R@207+6"1" 5L@220+41"Bob Ray" 6L@320+54"2026-11-01" 8L@450+19"IBM" 9L@550+24"5150"
+   ROW "         4 Reserved        2      1 Di Fox                         2026-11-10            Tandon                         TM100-2" SELECTED
+    DRAW FFFFFF/000000 1R@57+6"4" 2L@70+46"Reserved" 3R@167+6"2" 4R@207+6"1" 5L@220+30"Di Fox" 6L@320+54"2026-11-10" 8L@450+37"Tandon" 9L@550+43"TM100-2"
+   ROW "         5 On loan         3      1 Flo Ito                        2026-11-20            Hercules                       Graphics Card"
+ WSPLIT 220 "" AT 314 LIMITS 40 588
+ WLIST 221 "!     Loan Kind        Qty Holder                         Due        Ended" HBAR 0 83
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@142+16"Qty" 4L@165+31"Holder" 5L@265+20"Due" 6L@330+31"Ended"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+40 4F@165+100 5F@265+65 6F@330+65
+  ListBox 1 "" FOCUS
+   ROW "         3 On loan       1 Cy Dunn                        2026-11-01 2026-10-07" SELECTED
+    DRAW FFFFFF/000000 1R@57+6"3" 2L@70+37"On loan" 3R@152+6"1" 4L@165+41"Cy Dunn" 5L@265+54"2026-11-01" 6L@330+54"2026-10-07"
+   ROW "         4 Reserved      1 Di Fox                         2026-11-10"
+#32768 "" HIDDEN
+=SNAP ABOVE
+INVWIN "RETROINV - Open loans and holds" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1540 "&Return or release..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 629 "Ne&xt pane?F6"
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" CHECKED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|~Delete|-|~Move|~Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|3 loans and holds|Loan 6 added"
+ WLIST 208 "!     Loan Kind         Item    Qty Holder                         Due        Ended      Maker                          Model" HBAR 0 338
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@153+20"Item" 4R@197+16"Qty" 5L@220+31"Holder" 6L@320+20"Due" 7L@385+31"Ended" 8L@450+30"Maker" 9L@550+29"Model"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+55 4F@180+40 5F@220+100 6F@320+65 7F@385+65 8F@450+100 9F@550+100
+  ListBox 1 ""
+   ROW "         2 On loan         1      1 Bob Ray                        2026-11-01            IBM                            5150"
+    DRAW 000000/FFFFFF 1R@57+6"2" 2L@70+37"On loan" 3R@167+6"1" 4R@207+6"1" 5L@220+41"Bob Ray" 6L@320+54"2026-11-01" 8L@450+19"IBM" 9L@550+24"5150"
+   ROW "         6 On loan         2      1 Eve Hall                       2026-11-05            Tandon                         TM100-2"
+   ROW "         4 Reserved        2      1 Di Fox                         2026-11-10            Tandon                         TM100-2" SELECTED
+    DRAW FFFFFF/000000 1R@57+6"4" 2L@70+46"Reserved" 3R@167+6"2" 4R@207+6"1" 5L@220+30"Di Fox" 6L@320+54"2026-11-10" 8L@450+37"Tandon" 9L@550+43"TM100-2"
+   ROW "         5 On loan         3      1 Flo Ito                        2026-11-20            Hercules                       Graphics Card"
+ WSPLIT 220 "" AT 314 LIMITS 40 588
+ WLIST 221 "!     Loan Kind        Qty Holder                         Due        Ended" HBAR 0 83
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@142+16"Qty" 4L@165+31"Holder" 5L@265+20"Due" 6L@330+31"Ended"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+40 4F@165+100 5F@265+65 6F@330+65
+  ListBox 1 "" FOCUS
+   ROW "         3 On loan       1 Cy Dunn                        2026-11-01 2026-10-07" SELECTED
+    DRAW FFFFFF/000000 1R@57+6"3" 2L@70+37"On loan" 3R@152+6"1" 4L@165+41"Cy Dunn" 5L@265+54"2026-11-01" 6L@330+54"2026-10-07"
+   ROW "         4 Reserved      1 Di Fox                         2026-11-10"
+   ROW "         6 On loan       1 Eve Hall                       2026-11-05"
+#32768 "" HIDDEN
+=SNAP ENDED
+INVWIN "RETROINV - Open loans and holds" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1538 "Open &item..."
+  MENU 1540 "&Return or release..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1058 "Next li&st?Ctrl+PgDn"
+  MENU 629 "Ne&xt pane?F6"
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" CHECKED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|~Delete|-|~Move|~Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|3 loans and holds|Loan 6 returned"
+ WLIST 208 "!     Loan Kind         Item    Qty Holder                         Due        Ended      Maker                          Model" HBAR 0 338
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@153+20"Item" 4R@197+16"Qty" 5L@220+31"Holder" 6L@320+20"Due" 7L@385+31"Ended" 8L@450+30"Maker" 9L@550+29"Model"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+55 4F@180+40 5F@220+100 6F@320+65 7F@385+65 8F@450+100 9F@550+100
+  ListBox 1 "" FOCUS
+   ROW "         2 On loan         1      1 Bob Ray                        2026-11-01            IBM                            5150"
+    DRAW 000000/FFFFFF 1R@57+6"2" 2L@70+37"On loan" 3R@167+6"1" 4R@207+6"1" 5L@220+41"Bob Ray" 6L@320+54"2026-11-01" 8L@450+19"IBM" 9L@550+24"5150"
+   ROW "         4 Reserved        2      1 Di Fox                         2026-11-10            Tandon                         TM100-2" SELECTED
+    DRAW FFFFFF/000000 1R@57+6"4" 2L@70+46"Reserved" 3R@167+6"2" 4R@207+6"1" 5L@220+30"Di Fox" 6L@320+54"2026-11-10" 8L@450+37"Tandon" 9L@550+43"TM100-2"
+   ROW "         5 On loan         3      1 Flo Ito                        2026-11-20            Hercules                       Graphics Card"
+ WSPLIT 220 "" AT 314 LIMITS 40 588
+ WLIST 221 "!     Loan Kind        Qty Holder                         Due        Ended" HBAR 0 83
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@142+16"Qty" 4L@165+31"Holder" 5L@265+20"Due" 6L@330+31"Ended"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+40 4F@165+100 5F@265+65 6F@330+65
+  ListBox 1 ""
+   ROW "         3 On loan       1 Cy Dunn                        2026-11-01 2026-10-07" SELECTED
+    DRAW FFFFFF/000000 1R@57+6"3" 2L@70+37"On loan" 3R@152+6"1" 4L@165+41"Cy Dunn" 5L@265+54"2026-11-01" 6L@330+54"2026-10-07"
+   ROW "         4 Reserved      1 Di Fox                         2026-11-10"
+   ROW "         6 On loan       1 Eve Hall                       2026-11-05 2026-10-08"
+#32768 "" HIDDEN
+=SNAP EDITED
+INVWIN "RETROINV - Open loans and holds" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1538 "Open &item..."
+  MENU 1540 "&Return or release..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1058 "Next li&st?Ctrl+PgDn"
+  MENU 629 "Ne&xt pane?F6"
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" CHECKED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|~Delete|-|~Move|~Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|3 loans and holds|Reservation 4 saved"
+ WLIST 208 "!     Loan Kind         Item    Qty Holder                         Due        Ended      Maker                          Model" HBAR 0 338
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@153+20"Item" 4R@197+16"Qty" 5L@220+31"Holder" 6L@320+20"Due" 7L@385+31"Ended" 8L@450+30"Maker" 9L@550+29"Model"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+55 4F@180+40 5F@220+100 6F@320+65 7F@385+65 8F@450+100 9F@550+100
+  ListBox 1 "" FOCUS
+   ROW "         2 On loan         1      1 Bob Ray                        2026-11-01            IBM                            5150"
+    DRAW 000000/FFFFFF 1R@57+6"2" 2L@70+37"On loan" 3R@167+6"1" 4R@207+6"1" 5L@220+41"Bob Ray" 6L@320+54"2026-11-01" 8L@450+19"IBM" 9L@550+24"5150"
+   ROW "         4 Reserved        2      1 Di Wolf                        2026-11-10            Tandon                         TM100-2" SELECTED
+    DRAW FFFFFF/000000 1R@57+6"4" 2L@70+46"Reserved" 3R@167+6"2" 4R@207+6"1" 5L@220+35"Di Wolf" 6L@320+54"2026-11-10" 8L@450+37"Tandon" 9L@550+43"TM100-2"
+   ROW "         5 On loan         3      1 Flo Ito                        2026-11-20            Hercules                       Graphics Card"
+ WSPLIT 220 "" AT 314 LIMITS 40 588
+ WLIST 221 "!     Loan Kind        Qty Holder                         Due        Ended" HBAR 0 83
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@142+16"Qty" 4L@165+31"Holder" 5L@265+20"Due" 6L@330+31"Ended"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+40 4F@165+100 5F@265+65 6F@330+65
+  ListBox 1 ""
+   ROW "         3 On loan       1 Cy Dunn                        2026-11-01 2026-10-07" SELECTED
+    DRAW FFFFFF/000000 1R@57+6"3" 2L@70+37"On loan" 3R@152+6"1" 4L@165+41"Cy Dunn" 5L@265+54"2026-11-01" 6L@330+54"2026-10-07"
+   ROW "         4 Reserved      1 Di Wolf                        2026-11-10"
+   ROW "         6 On loan       1 Eve Hall                       2026-11-05 2026-10-08"
+#32768 "" HIDDEN
+=SNAP RELEASED
+INVWIN "RETROINV - Open loans and holds" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1538 "Open &item..."
+  MENU 1540 "&Return or release..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1058 "Next li&st?Ctrl+PgDn"
+  MENU 629 "Ne&xt pane?F6"
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" CHECKED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|~Delete|-|~Move|~Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|2 loans and holds|Reservation 4 released"
+ WLIST 208 "!     Loan Kind         Item    Qty Holder                         Due        Ended      Maker                          Model" HBAR 0 338
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@153+20"Item" 4R@197+16"Qty" 5L@220+31"Holder" 6L@320+20"Due" 7L@385+31"Ended" 8L@450+30"Maker" 9L@550+29"Model"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+55 4F@180+40 5F@220+100 6F@320+65 7F@385+65 8F@450+100 9F@550+100
+  ListBox 1 "" FOCUS
+   ROW "         2 On loan         1      1 Bob Ray                        2026-11-01            IBM                            5150"
+    DRAW 000000/FFFFFF 1R@57+6"2" 2L@70+37"On loan" 3R@167+6"1" 4R@207+6"1" 5L@220+41"Bob Ray" 6L@320+54"2026-11-01" 8L@450+19"IBM" 9L@550+24"5150"
+   ROW "         5 On loan         3      1 Flo Ito                        2026-11-20            Hercules                       Graphics Card" SELECTED
+    DRAW FFFFFF/000000 1R@57+6"5" 2L@70+37"On loan" 3R@167+6"3" 4R@207+6"1" 5L@220+29"Flo Ito" 6L@320+54"2026-11-20" 8L@450+42"Hercules" 9L@550+67"Graphics Card"
+ WSPLIT 220 "" AT 314 LIMITS 40 588
+ WLIST 221 "!     Loan Kind        Qty Holder                         Due        Ended" HBAR 0 83
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@142+16"Qty" 4L@165+31"Holder" 5L@265+20"Due" 6L@330+31"Ended"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+40 4F@165+100 5F@265+65 6F@330+65
+  ListBox 1 ""
+   ROW "         5 On loan       1 Flo Ito                        2026-11-20" SELECTED
+    DRAW FFFFFF/000000 1R@57+6"5" 2L@70+37"On loan" 3R@152+6"1" 4L@165+29"Flo Ito" 5L@265+54"2026-11-20"
+#32768 "" HIDDEN
+=SNAP ALONE
+INVWIN "RETROINV - Open loans and holds" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1538 "Open &item..."
+  MENU 1540 "&Return or release..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1058 "Next li&st?Ctrl+PgDn"
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|~Delete|-|~Move|~Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|2 loans and holds|"
+ WLIST 208 "!     Loan Kind         Item    Qty Holder                         Due        Ended      Maker                          Model" HBAR 0 20
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@153+20"Item" 4R@197+16"Qty" 5L@220+31"Holder" 6L@320+20"Due" 7L@385+31"Ended" 8L@450+30"Maker" 9L@550+29"Model"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+55 4F@180+40 5F@220+100 6F@320+65 7F@385+65 8F@450+100 9F@550+100
+  ListBox 1 "" FOCUS
+   ROW "         2 On loan         1      1 Bob Ray                        2026-11-01            IBM                            5150"
+    DRAW 000000/FFFFFF 1R@57+6"2" 2L@70+37"On loan" 3R@167+6"1" 4R@207+6"1" 5L@220+41"Bob Ray" 6L@320+54"2026-11-01" 8L@450+19"IBM" 9L@550+24"5150"
+   ROW "         5 On loan         3      1 Flo Ito                        2026-11-20            Hercules                       Graphics Card" SELECTED
+    DRAW FFFFFF/000000 1R@57+6"5" 2L@70+37"On loan" 3R@167+6"3" 4R@207+6"1" 5L@220+29"Flo Ito" 6L@320+54"2026-11-20" 8L@450+42"Hercules" 9L@550+67"Graphics Card"
+#32768 "" HIDDEN
+=SNAP BOTH
+INVWIN "RETROINV - Open loans and holds" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1538 "Open &item..."
+  MENU 1540 "&Return or release..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1058 "Next li&st?Ctrl+PgDn"
+  MENU 629 "Ne&xt pane?F6"
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" CHECKED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|~Delete|-|~Move|~Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|2 loans and holds|"
+ WLIST 208 "!     Loan Kind         Item    Qty Holder                         Due        Ended      Maker                          Model" HBAR 0 338
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@153+20"Item" 4R@197+16"Qty" 5L@220+31"Holder" 6L@320+20"Due" 7L@385+31"Ended" 8L@450+30"Maker" 9L@550+29"Model"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+55 4F@180+40 5F@220+100 6F@320+65 7F@385+65 8F@450+100 9F@550+100
+  ListBox 1 "" FOCUS
+   ROW "         2 On loan         1      1 Bob Ray                        2026-11-01            IBM                            5150"
+    DRAW 000000/FFFFFF 1R@57+6"2" 2L@70+37"On loan" 3R@167+6"1" 4R@207+6"1" 5L@220+41"Bob Ray" 6L@320+54"2026-11-01" 8L@450+19"IBM" 9L@550+24"5150"
+   ROW "         5 On loan         3      1 Flo Ito                        2026-11-20            Hercules                       Graphics Card" SELECTED
+    DRAW FFFFFF/000000 1R@57+6"5" 2L@70+37"On loan" 3R@167+6"3" 4R@207+6"1" 5L@220+29"Flo Ito" 6L@320+54"2026-11-20" 8L@450+42"Hercules" 9L@550+67"Graphics Card"
+ WSPLIT 220 "" AT 314 LIMITS 40 588
+ WLIST 221 "!     Loan Kind        Qty Holder                         Due        Ended" HBAR 0 83
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@142+16"Qty" 4L@165+31"Holder" 5L@265+20"Due" 6L@330+31"Ended"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+40 4F@165+100 5F@265+65 6F@330+65
+  ListBox 1 ""
+   ROW "         5 On loan       1 Flo Ito                        2026-11-20" SELECTED
+    DRAW FFFFFF/000000 1R@57+6"5" 2L@70+37"On loan" 3R@152+6"1" 4L@165+29"Flo Ito" 5L@265+54"2026-11-20"
+#32768 "" HIDDEN
+=SNAP DRAGGED
+INVWIN "RETROINV - Open loans and holds" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1538 "Open &item..."
+  MENU 1540 "&Return or release..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1058 "Next li&st?Ctrl+PgDn"
+  MENU 629 "Ne&xt pane?F6"
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" CHECKED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|~Delete|-|~Move|~Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|2 loans and holds|"
+ WLIST 208 "!     Loan Kind         Item    Qty Holder                         Due        Ended      Maker                          Model" HBAR 0 397
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@153+20"Item" 4R@197+16"Qty" 5L@220+31"Holder" 6L@320+20"Due" 7L@385+31"Ended" 8L@450+30"Maker" 9L@550+29"Model"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+55 4F@180+40 5F@220+100 6F@320+65 7F@385+65 8F@450+100 9F@550+100
+  ListBox 1 "" FOCUS
+   ROW "         2 On loan         1      1 Bob Ray                        2026-11-01            IBM                            5150"
+    DRAW 000000/FFFFFF 1R@57+6"2" 2L@70+37"On loan" 3R@167+6"1" 4R@207+6"1" 5L@220+41"Bob Ray" 6L@320+54"2026-11-01" 8L@450+19"IBM" 9L@550+24"5150"
+   ROW "         5 On loan         3      1 Flo Ito                        2026-11-20            Hercules                       Graphics Card" SELECTED
+    DRAW FFFFFF/000000 1R@57+6"5" 2L@70+37"On loan" 3R@167+6"3" 4R@207+6"1" 5L@220+29"Flo Ito" 6L@320+54"2026-11-20" 8L@450+42"Hercules" 9L@550+67"Graphics Card"
+ WSPLIT 220 "" AT 255 LIMITS 40 588
+ WLIST 221 "!     Loan Kind        Qty Holder                         Due        Ended" HBAR 0 24
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@142+16"Qty" 4L@165+31"Holder" 5L@265+20"Due" 6L@330+31"Ended"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+40 4F@165+100 5F@265+65 6F@330+65
+  ListBox 1 ""
+   ROW "         5 On loan       1 Flo Ito                        2026-11-20" SELECTED
+    DRAW FFFFFF/000000 1R@57+6"5" 2L@70+37"On loan" 3R@152+6"1" 4L@165+29"Flo Ito" 5L@265+54"2026-11-20"
+#32768 "" HIDDEN
+=SNAP OPENLOAN
+INVWIN "RETROINV - Open loans" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1538 "Open &item..."
+  MENU 1540 "&Return or release..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1058 "Next li&st?Ctrl+PgDn"
+  MENU 629 "Ne&xt pane?F6"
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" CHECKED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|~Delete|-|~Move|~Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|2 loans and holds|"
+ WLIST 208 "!     Loan Kind         Item    Qty Holder                         Due        Ended      Maker                          Model" HBAR 0 397
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@153+20"Item" 4R@197+16"Qty" 5L@220+31"Holder" 6L@320+20"Due" 7L@385+31"Ended" 8L@450+30"Maker" 9L@550+29"Model"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+55 4F@180+40 5F@220+100 6F@320+65 7F@385+65 8F@450+100 9F@550+100
+  ListBox 1 "" FOCUS
+   ROW "         2 On loan         1      1 Bob Ray                        2026-11-01            IBM                            5150" SELECTED
+    DRAW FFFFFF/000000 1R@57+6"2" 2L@70+37"On loan" 3R@167+6"1" 4R@207+6"1" 5L@220+41"Bob Ray" 6L@320+54"2026-11-01" 8L@450+19"IBM" 9L@550+24"5150"
+   ROW "         5 On loan         3      1 Flo Ito                        2026-11-20            Hercules                       Graphics Card"
+ WSPLIT 220 "" AT 255 LIMITS 40 588
+ WLIST 221 "!     Loan Kind        Qty Holder                         Due        Ended" HBAR 0 24
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@142+16"Qty" 4L@165+31"Holder" 5L@265+20"Due" 6L@330+31"Ended"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+40 4F@165+100 5F@265+65 6F@330+65
+  ListBox 1 ""
+   ROW "         1 On loan       1 Ann Lee                        2026-10-20 2026-10-03" SELECTED
+    DRAW FFFFFF/000000 1R@57+6"1" 2L@70+37"On loan" 3R@152+6"1" 4L@165+40"Ann Lee" 5L@265+54"2026-10-20" 6L@330+54"2026-10-03"
+   ROW "         2 On loan       1 Bob Ray                        2026-11-01"
+#32768 "" HIDDEN
+=SNAP ADDMODE
+INVWIN "RETROINV - Open loans" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1538 "Open &item..."
+  MENU 1540 "&Return or release..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1058 "Next li&st?Ctrl+PgDn"
+  MENU 629 "Ne&xt pane?F6"
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" CHECKED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|~Delete|-|~Move|~Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|Shift+F8 add mode: 1 selected|"
+ WLIST 208 "!     Loan Kind         Item    Qty Holder                         Due        Ended      Maker                          Model" HBAR 0 397
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@153+20"Item" 4R@197+16"Qty" 5L@220+31"Holder" 6L@320+20"Due" 7L@385+31"Ended" 8L@450+30"Maker" 9L@550+29"Model"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+55 4F@180+40 5F@220+100 6F@320+65 7F@385+65 8F@450+100 9F@550+100
+  ListBox 1 "" FOCUS
+   ROW "         2 On loan         1      1 Bob Ray                        2026-11-01            IBM                            5150"
+    DRAW 000000/FFFFFF 1R@57+6"2" 2L@70+37"On loan" 3R@167+6"1" 4R@207+6"1" 5L@220+41"Bob Ray" 6L@320+54"2026-11-01" 8L@450+19"IBM" 9L@550+24"5150"
+   ROW "         5 On loan         3      1 Flo Ito                        2026-11-20            Hercules                       Graphics Card" SELECTED
+    DRAW FFFFFF/000000 1R@57+6"5" 2L@70+37"On loan" 3R@167+6"3" 4R@207+6"1" 5L@220+29"Flo Ito" 6L@320+54"2026-11-20" 8L@450+42"Hercules" 9L@550+67"Graphics Card"
+ WSPLIT 220 "" AT 255 LIMITS 40 588
+ WLIST 221 "!     Loan Kind        Qty Holder                         Due        Ended" HBAR 0 24
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@142+16"Qty" 4L@165+31"Holder" 5L@265+20"Due" 6L@330+31"Ended"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+40 4F@165+100 5F@265+65 6F@330+65
+  ListBox 1 ""
+   ROW "         5 On loan       1 Flo Ito                        2026-11-20" SELECTED
+    DRAW FFFFFF/000000 1R@57+6"5" 2L@70+37"On loan" 3R@152+6"1" 4L@165+29"Flo Ito" 5L@265+54"2026-11-20"
+#32768 "" HIDDEN
+=SNAP NOUSES
+INVWIN "RETROINV - In use" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter" DISABLED
+  MENU 1093 "&Edit...?Ctrl+E" DISABLED
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1538 "Open &item..." DISABLED
+  MENU 1540 "&Return or release..." DISABLED
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1058 "Next li&st?Ctrl+PgDn"
+  MENU 629 "Ne&xt pane?F6"
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" CHECKED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|~Open|~Edit|~Delete|-|~Move|~Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|0 loans and holds|"
+ WLIST 208 "!     Loan Kind         Item    Qty Holder                         Due        Ended      Maker                          Model" HBAR 0 397
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@153+20"Item" 4R@197+16"Qty" 5L@220+31"Holder" 6L@320+20"Due" 7L@385+31"Ended" 8L@450+30"Maker" 9L@550+29"Model"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+55 4F@180+40 5F@220+100 6F@320+65 7F@385+65 8F@450+100 9F@550+100
+  ListBox 1 "" FOCUS
+   ROW "No loans or holds"
+    DRAW 000000/FFFFFF 0I@0+82"No loans or holds"
+ WSPLIT 220 "" AT 255 LIMITS 40 588
+ WLIST 221 "!     Loan Kind        Qty Holder                         Due        Ended" HBAR 0 24 DISABLED
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@142+16"Qty" 4L@165+31"Holder" 5L@265+20"Due" 6L@330+31"Ended"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+40 4F@165+100 5F@265+65 6F@330+65
+  ListBox 1 ""
+#32768 "" HIDDEN
+=SNAP NOKEY
+INVWIN "RETROINV - In use" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter" DISABLED
+  MENU 1093 "&Edit...?Ctrl+E" DISABLED
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1538 "Open &item..." DISABLED
+  MENU 1540 "&Return or release..." DISABLED
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1058 "Next li&st?Ctrl+PgDn"
+  MENU 629 "Ne&xt pane?F6"
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" CHECKED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|~Open|~Edit|~Delete|-|~Move|~Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|0 loans and holds|"
+ WLIST 208 "!     Loan Kind         Item    Qty Holder                         Due        Ended      Maker                          Model" HBAR 0 397
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@153+20"Item" 4R@197+16"Qty" 5L@220+31"Holder" 6L@320+20"Due" 7L@385+31"Ended" 8L@450+30"Maker" 9L@550+29"Model"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+55 4F@180+40 5F@220+100 6F@320+65 7F@385+65 8F@450+100 9F@550+100
+  ListBox 1 "" FOCUS
+   ROW "No loans or holds"
+    DRAW 000000/FFFFFF 0I@0+82"No loans or holds"
+ WSPLIT 220 "" AT 255 LIMITS 40 588
+ WLIST 221 "!     Loan Kind        Qty Holder                         Due        Ended" HBAR 0 24 DISABLED
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@142+16"Qty" 4L@165+31"Holder" 5L@265+20"Due" 6L@330+31"Ended"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+40 4F@165+100 5F@265+65 6F@330+65
+  ListBox 1 ""
+#32768 "" HIDDEN
+=SNAP READER
+INVWIN "RETROINV - Open loans and holds" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..." DISABLED
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..." DISABLED
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users" DISABLED
+  MENU 53 "&Backup..." DISABLED
+  MENU 54 "&Restore..." DISABLED
+  MENU 55 "&Pack" DISABLED
+  MENU 56 "Re&index" DISABLED
+  MENU 57 "&Audit log..." DISABLED
+  MENU 58 "&Sessions..." DISABLED
+  MENU 50 "&Export CSV..." DISABLED
+  MENU 51 "I&mport CSV..." DISABLED
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E" DISABLED
+  MENU 557 "&New...?Ins" DISABLED
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1540 "&Return or release..." DISABLED
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L" DISABLED
+  MENU 1106 "Reser&ve...?Ctrl+R" DISABLED
+  MENU 1109 "Use wit&h...?Ctrl+U" DISABLED
+  MENU 0 "" DISABLED
+  MENU 629 "Ne&xt pane?F6"
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" CHECKED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "~New|Open|~Edit|~Delete|-|~Move|~Install|~Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|READER, level 1|2 loans and holds|"
+ WLIST 208 "!     Loan Kind         Item    Qty Holder                         Due        Ended      Maker                          Model" HBAR 0 397
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@153+20"Item" 4R@197+16"Qty" 5L@220+31"Holder" 6L@320+20"Due" 7L@385+31"Ended" 8L@450+30"Maker" 9L@550+29"Model"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+55 4F@180+40 5F@220+100 6F@320+65 7F@385+65 8F@450+100 9F@550+100
+  ListBox 1 ""
+   ROW "         2 On loan         1      1 Bob Ray                        2026-11-01            IBM                            5150" SELECTED
+    DRAW FFFFFF/000000 1R@57+6"2" 2L@70+37"On loan" 3R@167+6"1" 4R@207+6"1" 5L@220+41"Bob Ray" 6L@320+54"2026-11-01" 8L@450+19"IBM" 9L@550+24"5150"
+   ROW "         5 On loan         3      1 Flo Ito                        2026-11-20            Hercules                       Graphics Card"
+ WSPLIT 220 "" AT 255 LIMITS 40 588
+ WLIST 221 "!     Loan Kind        Qty Holder                         Due        Ended" HBAR 0 24
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@142+16"Qty" 4L@165+31"Holder" 5L@265+20"Due" 6L@330+31"Ended"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+40 4F@165+100 5F@265+65 6F@330+65
+  ListBox 1 "" FOCUS
+   ROW "         1 On loan       1 Ann Lee                        2026-10-20 2026-10-03" SELECTED
+    DRAW FFFFFF/000000 1R@57+6"1" 2L@70+37"On loan" 3R@152+6"1" 4L@165+40"Ann Lee" 5L@265+54"2026-10-20" 6L@330+54"2026-10-03"
+   ROW "         2 On loan       1 Bob Ray                        2026-11-01"
+#32768 "" HIDDEN
+=SNAP REFUSED
+#32770 "RETROINV" ACTIVE
+ Button 2 "OK" FOCUS DEFAULT
+ Static 65535 ""
+ Static 65535 "Permission denied (your access level is 1)"
+#32768 "" HIDDEN
+INVWIN "RETROINV - Open loans and holds" DISABLED
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..." DISABLED
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..." DISABLED
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users" DISABLED
+  MENU 53 "&Backup..." DISABLED
+  MENU 54 "&Restore..." DISABLED
+  MENU 55 "&Pack" DISABLED
+  MENU 56 "Re&index" DISABLED
+  MENU 57 "&Audit log..." DISABLED
+  MENU 58 "&Sessions..." DISABLED
+  MENU 50 "&Export CSV..." DISABLED
+  MENU 51 "I&mport CSV..." DISABLED
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E" DISABLED
+  MENU 557 "&New...?Ins" DISABLED
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1540 "&Return or release..." DISABLED
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L" DISABLED
+  MENU 1106 "Reser&ve...?Ctrl+R" DISABLED
+  MENU 1109 "Use wit&h...?Ctrl+U" DISABLED
+  MENU 0 "" DISABLED
+  MENU 629 "Ne&xt pane?F6"
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" CHECKED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "~New|Open|~Edit|~Delete|-|~Move|~Install|~Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|READER, level 1|2 loans and holds|"
+ WLIST 208 "!     Loan Kind         Item    Qty Holder                         Due        Ended      Maker                          Model" HBAR 0 397
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@153+20"Item" 4R@197+16"Qty" 5L@220+31"Holder" 6L@320+20"Due" 7L@385+31"Ended" 8L@450+30"Maker" 9L@550+29"Model"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+55 4F@180+40 5F@220+100 6F@320+65 7F@385+65 8F@450+100 9F@550+100
+  ListBox 1 ""
+   ROW "         2 On loan         1      1 Bob Ray                        2026-11-01            IBM                            5150" SELECTED
+    DRAW FFFFFF/000000 1R@57+6"2" 2L@70+37"On loan" 3R@167+6"1" 4R@207+6"1" 5L@220+41"Bob Ray" 6L@320+54"2026-11-01" 8L@450+19"IBM" 9L@550+24"5150"
+   ROW "         5 On loan         3      1 Flo Ito                        2026-11-20            Hercules                       Graphics Card"
+ WSPLIT 220 "" AT 255 LIMITS 40 588
+ WLIST 221 "!     Loan Kind        Qty Holder                         Due        Ended" HBAR 0 24
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@142+16"Qty" 4L@165+31"Holder" 5L@265+20"Due" 6L@330+31"Ended"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+40 4F@165+100 5F@265+65 6F@330+65
+  ListBox 1 ""
+   ROW "         1 On loan       1 Ann Lee                        2026-10-20 2026-10-03" SELECTED
+    DRAW FFFFFF/000000 1R@57+6"1" 2L@70+37"On loan" 3R@152+6"1" 4L@165+40"Ann Lee" 5L@265+54"2026-10-20" 6L@330+54"2026-10-03"
+   ROW "         2 On loan       1 Bob Ray                        2026-11-01"
+=END

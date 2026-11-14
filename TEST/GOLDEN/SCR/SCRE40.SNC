@@ -1,0 +1,208 @@
+=SNAP DEEPHELP PALETTE=COLOR CURSOR=0,0,HIDE VRAM=OK
+| Record                                                                         |
+|ฺฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ Item 5 ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฟ|
+|ษออออออออออออออออออออออออออออออออออออ Help ออออออออออออออออออออออออออออออออออออป|
+|บ    The notes editor                                                          บ|
+|บ                                                                              บ|
+|บ      arrows, Home, End, PgUp, PgDn     move                                  บ|
+|บ      Ctrl-Home, Ctrl-End               first, last line                      บ|
+|บ      Enter        split the line       Backspace, Del   join lines           บ|
+|บ      Ins          insert or overwrite  Ctrl-Y           delete the line      บ|
+|บ      Ctrl-S       save                 Esc, F3          back (asks if        บ|
+|บ                                                         changed)             บ|
+|บ                                                                              บ|
+|บ                                                                              บ|
+|บ                                                                              บ|
+|บ                                                                              บ|
+|บ                                                                              บ|
+|บ                                                                              บ|
+|บ                                                                              บ|
+|บ                                                                              บ|
+|บ                                                                              บ|
+|บ                                                                              บ|
+|ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ|
+|ภฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤู|
+| Up/Down=Scroll PgUp/PgDn=Page Esc=Close F9=Keys                                |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=70 B=74 C=1B D=1E E=17
+|AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EDDDDDDDEEEEEEEEDDDDDDDDDEEEEEEDDDEEEEEEEDDEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+|AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|
+=SNAP DEEPMEMO PALETTE=COLOR CURSOR=0,0,HIDE VRAM=OK
+| Record                                                                         |
+|ฺฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ Item 5 ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฟ|
+|ณ ID        5             Category  PERI          Status    A                  ณ|
+|ณ Type                                            Condition                    ณ|
+|ณ Maker     Commodore                                                          ณ|
+|ณ Model     M35-A                                                              ณ|
+|ณ Serฺฤฤฤษออออออออออออออออ Notes of service record 1 อออออออออออออออออปฤฤฤฤฟ   ณ|
+|ฺฤฤฤฤณ ReบTwo caps.                                                   บ    ณฤฤฤฟ|
+|ณ    ณ DaบTested OK.                                                  บ    ณ   ณ|
+|ณ    ณ Suบ                                                            บ    ณ   ณ|
+|ณ    ณ Coบ                                                            บ    ณ   ณ|
+|ณ    ณ Noบ                                                            บ    ณ   ณ|
+|ณ    ภฤฤฤบ                                                            บฤฤฤฤู   ณ|
+|ณ        บ                                                            บ        ณ|
+|ณ        บ                                                            บ        ณ|
+|ณ        บ                                                            บ        ณ|
+|ณ        บ                                                            บ        ณ|
+|ณ        ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ        ณ|
+|ณ                                                                              ณ|
+|ณ                                                                              ณ|
+|ณ                                                                              ณ|
+|ณ                                                                              ณ|
+|ภฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤู|
+| Esc=Close F1=Help                                                              |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=70 B=74 C=1B D=1E E=17 F=1F G=07
+|AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CEFFEEEEEEEEGGGGGGGGEEEEEEFFFFFFFFEEGGGGEEEEEEEEEEFFFFFFEEEEGEEEEEEEEEEEEEEEEEEC|
+|CEFFFFEEEEEEGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEFFFFFFFFFEGGGEEEEEEEEEEEEEEEEC|
+|CEFFFFFEEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEFFFFFEEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEFFFCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCEEEC|
+|CCCCCCEFFCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECEEEECCCCC|
+|CDDDDCEFFCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECEEEECDDDC|
+|CEEEECEFFCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECGGEECEEEC|
+|CFFFFCEFFCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECEEEECFFFC|
+|CEEEECEFFCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECEEEECEEEC|
+|CEEEECCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCEEEC|
+|CEEEEEEEECEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECEEEEEEEEC|
+|CEEEEEEEECEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECEEEEEEEEC|
+|CEEEEEEEECEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECEEEEEEEEC|
+|CEEEEEEEECEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECEEEEEEEEC|
+|CEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EDDDEEEEEEEDDEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+|AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|
+=SNAP DEEPREC PALETTE=COLOR CURSOR=0,0,HIDE VRAM=OK
+| Record                                                                         |
+|ฺฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ Item 5 ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฟ|
+|ณ ID        5             Category  PERI          Status    A                  ณ|
+|ณ Type                                            Condition                    ณ|
+|ณ Maker     Commodore                                                          ณ|
+|ณ Model     M35-A                                                              ณ|
+|ณ Serฺฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ Service record 1 ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฟ   ณ|
+|ฺฤฤฤฤณ Record    1             Item      5                                 ณฤฤฤฟ|
+|ณ    ณ Date      2026-10-01    Type      RP                                ณ   ณ|
+|ณ    ณ Summary   Recapped the power supply                                 ณ   ณ|
+|ณ    ณ Cost      12.50         Done by   N. Fisher                         ณ   ณ|
+|ณ    ณ Notes     Lines: 2 (F4 to open)                                     ณ   ณ|
+|ณ    ภฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤู   ณ|
+|ณ                                                                              ณ|
+|ณ                                                                              ณ|
+|ณ                                                                              ณ|
+|ณ                                                                              ณ|
+|ณ                                                                              ณ|
+|ณ                                                                              ณ|
+|ณ                                                                              ณ|
+|ณ                                                                              ณ|
+|ณ                                                                              ณ|
+|ภฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤู|
+| Ctrl-E=Edit Esc=Back F1=Help                                                   |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=70 B=74 C=1B D=1E E=17 F=1F G=07
+|AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CEFFEEEEEEEEGGGGGGGGEEEEEEFFFFFFFFEEGGGGEEEEEEEEEEFFFFFFEEEEGEEEEEEEEEEEEEEEEEEC|
+|CEFFFFEEEEEEGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEFFFFFFFFFEGGGEEEEEEEEEEEEEEEEC|
+|CEFFFFFEEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEFFFFFEEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEFFFCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCEEEC|
+|CCCCCCEFFFFFFEEEEGGGGGGGGEEEEEEFFFFEEEEEEGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEECCCCC|
+|CDDDDCEFFFFEEEEEEGGGGGGGGGGEEEEFFFFEEEEEEGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECDDDC|
+|CEEEECEFFFFFFFEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEECEEEC|
+|CFFFFCEFFFFEEEEEEGGGGGGGGEEEEEEFFFFFFFEEEGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEECFFFC|
+|CEEEECEFFFFFEEEEEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEEEEEEEEEEEEEEEEEEEEEEEEEEEECEEEC|
+|CEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EDDDDDDEEEEEEDDDEEEEEEDDEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+|AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|
+=SNAP DEEPTAB PALETTE=COLOR CURSOR=0,0,HIDE VRAM=OK
+| Record                                                                         |
+|ฺฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ Item 5 ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฟ|
+|ณ ID        5             Category  PERI          Status    A                  ณ|
+|ณ Type                                            Condition                    ณ|
+|ณ Maker     Commodore                                                          ณ|
+|ณ Model     M35-A                                                              ณ|
+|ณ Serial    SN-0185                                                            ณ|
+|ฺฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ  Parts [Service] Loans  ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฟ|
+|ณ     Rec Date       Ty     Cost Summary                                       ณ|
+|ณ       3 2025-01-01 TS          Tested                                        ณ|
+|ณ       1 2026-10-01 RP    12.50 Recapped the power supply                     ณ|
+|ณ                                                                              ณ|
+|ณ                                                                              ณ|
+|ณ                                                                              ณ|
+|ณ                                                                              ณ|
+|ณ                                                                              ณ|
+|ณ                                                                              ณ|
+|ณ                                                                              ณ|
+|ณ                                                                              ณ|
+|ณ                                                                              ณ|
+|ณ                                                                              ณ|
+|ณ                                                                              ณ|
+|ภฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤู|
+| Enter=Open Ins=New Ctrl-E=Edit Del=Delete Esc=Form F1=Help                     |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=70 B=74 C=1B D=1E E=17 F=1F G=07 H=30
+|AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CEFFEEEEEEEEGGGGGGGGEEEEEEFFFFFFFFEEGGGGEEEEEEEEEEFFFFFFEEEEGEEEEEEEEEEEEEEEEEEC|
+|CEFFFFEEEEEEGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEFFFFFFFFFEGGGEEEEEEEEEEEEEEEEC|
+|CEFFFFFEEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEFFFFFEEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEFFFFFFEEEEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EDDDDDEEEEEEDDDEEEEEDDDDDDEEEEEEDDDEEEEEEEEDDDEEEEEEDDEEEEEEEEEEEEEEEEEEEEEEEEEE|
+|AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|

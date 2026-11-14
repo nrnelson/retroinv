@@ -1,0 +1,40 @@
+/*
+ * WFORM.RC - the strings of the form dialog (SRC/WIN/WFORM.C) and the
+ * template of its pick list (SRC/WIN/WPICK.C), in the Windows character
+ * set: the resource script of every program that links WFORM.C includes
+ * this file.  The pick list's procedure sizes the dialog to its list;
+ * the dialog clips its children, as the parent of a list window must
+ * (WLIST.H).
+ * The labels of the Windows client's own are WLABEL.RC's.
+ */
+#include <windows.h>
+#include "WFSTR.H"
+#include "WLABEL.RC"
+
+WF_R_PICK DIALOG 0, 0, 160, 120
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU |
+      WS_CLIPCHILDREN
+FONT 8, "Helv"
+BEGIN
+    CONTROL "", WF_C_PICK, "LISTBOX", WS_CHILD | WS_VISIBLE | WS_BORDER |
+        WS_VSCROLL | WS_TABSTOP | LBS_NOTIFY | LBS_NOINTEGRALHEIGHT,
+        8, 8, 144, 80
+    DEFPUSHBUTTON "OK", IDOK, 48, 98, 48, 14
+    PUSHBUTTON "Cancel", IDCANCEL, 104, 98, 48, 14
+END
+
+STRINGTABLE
+BEGIN
+    WF_S_OK, "OK"
+    WF_S_CANCEL, "Cancel"
+    WF_S_LINE, "A line holds at most %d characters, no tab or control character; Ctrl+Enter starts a new line"
+    WF_S_LINES, "The notes hold at most %d lines"
+    WF_S_SAVEFIRST, "Save with OK or leave with Cancel first"
+    WF_S_BYTES, "The notes hold at most %d characters, each line break counting two"
+    WF_S_PICK, "..."
+    WF_S_EDIT, "Edit"
+    WF_S_CLOSE, "Close"
+    WF_S_HELP, "&Help"
+    WF_S_PAGES, "&Record|&Notes"
+    WF_S_EDITCAP, "%s - Edit"
+END

@@ -1,0 +1,44 @@
+=SNAP INIT
+WTDRV2 "WTDRV2 proof" ACTIVE FOCUS
+ POPUP "&Focus"
+  MENU 101 "&List?Ctrl+L"
+  MENU 102 "&Marks?Ctrl+K"
+  MENU 103 "&Combo?Ctrl+O"
+  MENU 104 "&Edit?Ctrl+Shift+E"
+  MENU 105 "&Password?Shift+F2"
+ POPUP "&Action"
+  MENU 201 "&Message...?F2"
+  MENU 202 "&Busy"
+  MENU 203 "&Check?Alt+C"
+  MENU 204 "&Gone" DISABLED
+  MENU 0 "" DISABLED
+  POPUP "&Sub"
+   MENU 301 "&Deep"
+  MENU 205 "E&xit?Ctrl+Q"
+ Static 10 "Caf‚:"
+ ListBox 20 ""
+  ROW "Alpha" SELECTED
+  ROW "Beta"
+  ROW "Gamma"
+  ROW "R‚sum‚"
+  ROW LONG
+ ListBox 21 ""
+  ROW "Aa"
+  ROW "Bb"
+  ROW "Cc"
+  ROW "Dd"
+ ComboBox 30 "Two"
+  ROW "One"
+  ROW "Two" SELECTED
+  ROW "Three"
+  Edit 1001 "Two"
+ Edit 40 ""
+ Edit 41 ""
+ Button 50 "&Off" DISABLED
+ Button 51 "Hid" HIDDEN
+ Button 52 "&Go" DEFAULT
+ Button 53 "C&heck" CHECKED
+ Button 54 "Tri" MIXED
+ Static 60 "idle"
+ComboLBox 1000 "" HIDDEN
+=FAIL 4 BUSY

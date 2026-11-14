@@ -1,0 +1,49 @@
+@CERETROINV  Item listing                                       2026-10-08  Page 1F
+
+
+E      ID Cat  Maker          Model          Serial       Works   Qty LocationF
+-------------------------------------------------------------------------------
+EGarageF
+       5 PERI Commodore      M35-A          SN-0185      no        3 Garage
+      12 CPU  Commodore      5150 CGA       SN-0007      no        1 Garage
+      19 PART Commodore      M33-E          SN-0703      ?         2 Garage
+      26 SW   Commodore      M32-B          SN-0962      intrm     3 Garage
+      33 CARD Commodore      M31-D          SN-0221      yes       1 Garage
+      40 SYS  Commodore      M30-A          SN-0480      yes       2 Garage
+Items: 6   Quantity: 12
+
+EGarage > Shelf A, bottomF
+       1 MOBO Hercules       M07-B          SN-0037      yes       2 Shelf A, ~
+       8 CBL  Hercules       M06-D          SN-0296      yes       3 Shelf A, ~
+      15 PERI Hercules       M05-A          SN-0555      no        1 Shelf A, ~
+      22 CPU  Hercules       M04-C          SN-0814      ?         2 Shelf A, ~
+      29 PART Hercules       M03-E          SN-0073      no        3 Shelf A, ~
+      36 SW   Hercules       M02-B          SN-0332      no        1 Shelf A, ~
+      43 CARD Hercules       M01-D          SN-0591      ?         2 Shelf A, ~
+Items: 7   Quantity: 14
+
+ERETROINV  Item listing                                       2026-10-08  Page 2F
+
+
+E      ID Cat  Maker          Model          Serial       Works   Qty LocationF
+-------------------------------------------------------------------------------
+EGarage > Shelf A, topF
+       7 MAN  IBM            M49-C          SN-0259      no        2 Shelf A, ~
+      14 DRV  IBM            M48-E          SN-0518      ?         3 Shelf A, ~
+      21 MOBO IBM            M47-B          SN-0777      no        1 Shelf A, ~
+      28 CBL  IBM            M46-D          SN-0036      no        2 Shelf A, ~
+      35 PERI IBM            M45-A          SN-0295      ?         3 Shelf A, ~
+      42 CPU  IBM            M44-C          SN-0554      intrm     1 Shelf A, ~
+Items: 6   Quantity: 12
+
+EGarage > Shelf A, top > Bin B1F
+       2 CPU  Logitech       M14-C          SN-0074      intrm     3 Bin B1
+       9 PART Logitech       M13-E          SN-0333      yes       1 Bin B1
+      16 SW   Logitech       M12-B          SN-0592      yes       2 Bin B1
+      23 CARD Logitech       M11-D          SN-0851      no        3 Bin B1
+      30 SYS  Logitech       M10-A          SN-0110      ?         1 Bin B1
+      37 MAN  Logitech       M09-C          SN-0369      no        2 Bin B1
+      44 DRV  Logitech       M08-E          SN-0628      no        3 Bin B1
+Items: 7   Quantity: 15
+
+ERETROINV  Item listing                                       2026-10-08  Page 3F

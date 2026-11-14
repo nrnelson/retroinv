@@ -1,0 +1,49 @@
+# SMB.CNF - the smb.conf template of smbd.sh: a private smbd, run by an
+# unprivileged user, serving one directory to the MS Network Client 3.0
+# of the TCP/IP test VM.  smbd.sh fills in @PORT@, @RUN@ (the server's
+# state directory), @USER@, @NAME@, @SHARE@ and @PATH@.
+#
+# Client 3.0 offers the dialects "PC NETWORK PROGRAM 1.0", "MICROSOFT
+# NETWORKS 3.0" and "DOS LM1.2X002", which Samba counts as LANMAN2; its
+# default floor is SMB2, which the client cannot speak.  The server speaks
+# exactly LANMAN2, which has no Unix extensions, and follows no link, so
+# no client can create a link in the share or reach past it.  The client
+# logs on as its computer name with an empty password: no such user
+# exists, so it is mapped to the guest account, which must be the user
+# running smbd, who cannot change to any other.  The client sends a
+# LANMAN password hash, which a guest logon never checks, so "lanman auth"
+# and "ntlm auth" keep their defaults, which refuse LANMAN and NTLMv1
+# hashes.
+#
+# The share is a mailbox both sides poll.  Oplocks are off as a
+# precaution: a client holding one may cache a file that the other side
+# renames, writes or deletes.
+[global]
+    netbios name = @NAME@
+    smb ports = @PORT@
+    interfaces = 127.0.0.1
+    bind interfaces only = yes
+    disable netbios = yes
+    server min protocol = LANMAN2
+    server max protocol = LANMAN2
+    smb1 unix extensions = no
+    map to guest = bad user
+    guest account = @USER@
+    pid directory = @RUN@
+    lock directory = @RUN@
+    state directory = @RUN@
+    cache directory = @RUN@
+    private dir = @RUN@
+    ncalrpc dir = @RUN@/ncalrpc
+    passdb backend = tdbsam:@RUN@/passdb.tdb
+    log level = 3
+    load printers = no
+    disable spoolss = yes
+
+[@SHARE@]
+    path = @PATH@
+    guest ok = yes
+    read only = no
+    oplocks = no
+    level2 oplocks = no
+    follow symlinks = no

@@ -1,0 +1,11 @@
+RETROINV  Item listing                                       2026-10-08  Page 1
+Totals
+
+      ID Cat  Maker          Model          Serial       Works   Qty Location
+-------------------------------------------------------------------------------
+       2 SYS  Short          row
+       3 SYS  Many           units                       yes   ***** A1
+       4 SYS  Many           more                        yes   ***** A1
+
+Total items: 3   Quantity: *
+

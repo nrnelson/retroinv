@@ -1,0 +1,441 @@
+# TICKET.SCR - the login table, on the fake one of T_PROTO3.C: LOGIN with
+# TICKET=NEW and with a ticket, PASSWD's new ticket and BYE TICKET=END;
+# every argument error, uncounted; a failed ticket login answered,
+# audited and closing the session at once, dropping the ticket on 401
+# and 403; the binding to the user and the station; MUSTCHG through a
+# ticket; level, READONLY= and status changes taking effect at the next
+# ticket login; PASSWD and USER RESET revoking a user's tickets; a new
+# session offered no tickets again; PASSWD without a ticket answered +OK
+# alone; a ticket login failing on a file error keeping its ticket; the
+# throttle told of password logins and refusing them, never a ticket's.
+
+# In local mode, and on a session not offered tickets, TICKET= is
+# refused as any key the command does not take.
+> HELLO STA1
+< +OK
+> LOGIN ADMIN admin TICKET=NEW
+< -ERR 102 unexpected key FIELD=TICKET
+@TICKETS
+> LOGIN ADMIN admin TICKET=NEW
+< -ERR 102 unexpected key FIELD=TICKET
+> LOGIN ADMIN TICKET=00000000000000000000000000000001
+< -ERR 102 unexpected key FIELD=TICKET
+> BYE TICKET=END
+< -ERR 102 unexpected key FIELD=TICKET
+
+# A mailbox session.  Argument errors are not failed logins.
+@SESSION MB1
+@MBOX
+> HELLO MB1
+< +OK
+> LOGIN ADMIN admin TICKET=OLD
+< -ERR 102 bad ticket FIELD=TICKET
+> LOGIN ADMIN TICKET=0000000000000000000000000000000a
+< -ERR 102 bad ticket FIELD=TICKET
+> LOGIN ADMIN TICKET=0000000000000000000000000000001
+< -ERR 102 bad ticket FIELD=TICKET
+> LOGIN ADMIN TICKET=000000000000000000000000000000001
+< -ERR 102 bad ticket FIELD=TICKET
+> LOGIN ADMIN TICKET=
+< -ERR 102 bad ticket FIELD=TICKET
+> LOGIN ADMIN admin TICKET=00000000000000000000000000000001
+< -ERR 100 too many arguments
+> LOGIN ADMIN TICKET=NEW
+< -ERR 102 missing argument FIELD=PASSWORD
+> LOGIN ADMIN admin TICKET=NEW X=1
+< -ERR 102 unexpected key FIELD=X
+> LOGIN TICKET=NEW
+< -ERR 102 missing argument FIELD=USERNAME
+> BYE TICKET=NEW
+< -ERR 102 bad ticket FIELD=TICKET
+> BYE TICKET=00000000000000000000000000000001
+< -ERR 102 bad ticket FIELD=TICKET
+> BYE X=1
+< -ERR 102 unexpected key FIELD=X
+> PASSWD admin secret1 TICKET=NEW
+< -ERR 400 HELLO or LOGIN required
+
+# The seeded ADMIN asks for a ticket: it comes last, MUSTCHG pending.
+@TICK 3
+> LOGIN ADMIN admin TICKET=new
+< +OK LEVEL=3 MUSTCHG=1 TICKET=00000000000000000000000000000001
+@STORE
+< T 00000000000000000000000000000001 ADMIN MB1 3
+> WHOAMI
+< -ERR 404 password change required
+> PASSWD admin secret1 TICKET=NEW
+< -ERR 102 unexpected key FIELD=TICKET
+# PASSWD drops the user's tickets and gives the session a new one.
+@TICK 5
+> PASSWD admin secret1
+< +OK TICKET=00000000000000000000000000000002
+@STORE
+< T 00000000000000000000000000000002 ADMIN MB1 5
+> BYE
+< +OK
+@CLOSED
+
+# The next file logs in with the ticket, the name in any case.
+@SESSION MB1
+@MBOX
+> HELLO MB1
+< +OK
+@TICK 9
+> LOGIN admin TICKET=00000000000000000000000000000002
+< +OK LEVEL=3 NAME="System Administrator"
+@STORE
+< T 00000000000000000000000000000002 ADMIN MB1 9
+> WHOAMI
+< +DATA
+< K USER=ADMIN
+< K LEVEL=3
+< K STATION=MB1
+< .
+> USER ADD BOB LEVEL=2 PASSWORD=bobpw1 FULLNAME="Bob Smith"
+< +OK
+> BYE
+< +OK
+@CLOSED
+
+# The ticket PASSWD replaced: 401, and the session closed at once.
+@SESSION MB1
+@MBOX
+> HELLO MB1
+< +OK
+> LOGIN ADMIN TICKET=00000000000000000000000000000001
+< -ERR 401 bad user name or password
+@CLOSED
+> PING
+@CLOSED
+
+# A ticket held for another station: 401, and the ticket dropped.
+@SESSION MB2
+@MBOX
+> HELLO MB2
+< +OK
+> LOGIN ADMIN TICKET=00000000000000000000000000000002
+< -ERR 401 bad user name or password
+@CLOSED
+@STORE
+
+# BOB: MUSTCHG through a ticket, and PASSWD with one, which drops his
+# ticket of another station too.
+@SESSION MB3
+@MBOX
+> HELLO MB3
+< +OK
+> LOGIN BOB bobpw1 TICKET=NEW
+< +OK LEVEL=2 MUSTCHG=1 TICKET=00000000000000000000000000000003
+@SESSION MB2
+@MBOX
+> HELLO MB2
+< +OK
+> LOGIN BOB bobpw1 TICKET=NEW
+< +OK LEVEL=2 MUSTCHG=1 TICKET=00000000000000000000000000000004
+> BYE
+< +OK
+@CLOSED
+@SESSION MB2
+@MBOX
+> HELLO MB2
+< +OK
+> LOGIN BOB TICKET=00000000000000000000000000000004
+< +OK LEVEL=2 MUSTCHG=1
+> ITEM GET 1
+< -ERR 404 password change required
+@STORE
+< T 00000000000000000000000000000003 BOB MB3 9
+< T 00000000000000000000000000000004 BOB MB2 9
+> PASSWD bobpw1 bobpw2
+< +OK TICKET=00000000000000000000000000000005
+@STORE
+< T 00000000000000000000000000000005 BOB MB2 9
+> BYE TICKET=end
+< +OK
+@CLOSED
+@STORE
+
+# A ticket another user names: 401, and the ticket dropped.
+@SESSION MB2
+@MBOX
+> HELLO MB2
+< +OK
+> LOGIN BOB bobpw2 TICKET=NEW
+< +OK LEVEL=2 NAME="Bob Smith" TICKET=00000000000000000000000000000006
+@SESSION MB2
+@MBOX
+> HELLO MB2
+< +OK
+> LOGIN ADMIN TICKET=00000000000000000000000000000006
+< -ERR 401 bad user name or password
+@CLOSED
+@STORE
+
+# A password login, and HELLO, leave the session without its ticket,
+# so BYE TICKET=END then drops nothing.
+@SESSION MB2
+@MBOX
+> HELLO MB2
+< +OK
+> LOGIN BOB bobpw2 TICKET=NEW
+< +OK LEVEL=2 NAME="Bob Smith" TICKET=00000000000000000000000000000007
+> LOGIN BOB bobpw2
+< +OK LEVEL=2 NAME="Bob Smith"
+> BYE TICKET=END
+< +OK
+@CLOSED
+@STORE
+< T 00000000000000000000000000000007 BOB MB2 9
+@SESSION MB2
+@MBOX
+> HELLO MB2
+< +OK
+> LOGIN BOB TICKET=00000000000000000000000000000007
+< +OK LEVEL=2 NAME="Bob Smith"
+> HELLO MB2
+< +OK
+> BYE TICKET=END
+< +OK
+@CLOSED
+@STORE
+< T 00000000000000000000000000000007 BOB MB2 9
+
+# Changes to BOB's account take effect at the next ticket login.
+@SESSION NET1
+> HELLO NET1
+< +OK
+> LOGIN ADMIN secret1
+< +OK LEVEL=3 NAME="System Administrator"
+> USER SET BOB LEVEL=1
+< +OK
+@SESSION MB2
+@MBOX
+> HELLO MB2
+< +OK
+> LOGIN BOB TICKET=00000000000000000000000000000007
+< +OK LEVEL=1 NAME="Bob Smith"
+@SESSION NET1
+> HELLO NET1
+< +OK
+> LOGIN ADMIN secret1
+< +OK LEVEL=3 NAME="System Administrator"
+> USER SET BOB LEVEL=2
+< +OK
+@READONLY MB2
+@SESSION MB2
+@MBOX
+> HELLO MB2
+< +OK
+> LOGIN BOB TICKET=00000000000000000000000000000007
+< +OK LEVEL=1 NAME="Bob Smith"
+@READONLY
+@SESSION NET1
+> HELLO NET1
+< +OK
+> LOGIN ADMIN secret1
+< +OK LEVEL=3 NAME="System Administrator"
+> USER SET BOB STATUS=D
+< +OK
+# Disabled: 403, the session closed and the ticket dropped.
+@SESSION MB2
+@MBOX
+> HELLO MB2
+< +OK
+> LOGIN BOB TICKET=00000000000000000000000000000007
+< -ERR 403 account disabled
+@CLOSED
+@STORE
+
+# USER RESET revokes BOB's ticket: the tag no longer matches.
+@SESSION NET1
+> HELLO NET1
+< +OK
+> LOGIN ADMIN secret1
+< +OK LEVEL=3 NAME="System Administrator"
+> USER SET BOB STATUS=A
+< +OK
+@SESSION MB2
+@MBOX
+> HELLO MB2
+< +OK
+> LOGIN BOB bobpw2 TICKET=NEW
+< +OK LEVEL=2 NAME="Bob Smith" TICKET=00000000000000000000000000000008
+@SESSION NET1
+> HELLO NET1
+< +OK
+> LOGIN ADMIN secret1
+< +OK LEVEL=3 NAME="System Administrator"
+> USER RESET BOB PASSWORD=bobpw3
+< +OK
+@SESSION MB2
+@MBOX
+> HELLO MB2
+< +OK
+> LOGIN BOB TICKET=00000000000000000000000000000008
+< -ERR 401 bad user name or password
+@CLOSED
+@STORE
+
+# A failed password login with TICKET=NEW counts as any other.
+@SESSION MB2
+@MBOX
+> HELLO MB2
+< +OK
+> LOGIN BOB wrong TICKET=NEW
+< -ERR 401 bad user name or password
+> LOGIN BOB wrong TICKET=NEW
+< -ERR 401 bad user name or password
+> LOGIN BOB wrong TICKET=NEW
+< -ERR 401 bad user name or password
+@CLOSED
+@STORE
+
+# The rows: L for the password logins only, an F of FLD TICKET for each
+# failed ticket login, with NEWVAL the stored name.
+@TABLE AUDIT FIELDS=STATION,USERNAME,REC_ID,ACTION,FLD,NEWVAL
+< F STATION USERNAME REC_ID ACTION FLD NEWVAL
+< R SYSTEM SYSTEM 1 I CAT_CODE SYS
+< R SYSTEM SYSTEM 2 I CAT_CODE MOBO
+< R SYSTEM SYSTEM 3 I CAT_CODE CPU
+< R SYSTEM SYSTEM 4 I CAT_CODE CARD
+< R SYSTEM SYSTEM 5 I CAT_CODE DRV
+< R SYSTEM SYSTEM 6 I CAT_CODE PERI
+< R SYSTEM SYSTEM 7 I CAT_CODE SW
+< R SYSTEM SYSTEM 8 I CAT_CODE MAN
+< R SYSTEM SYSTEM 9 I CAT_CODE CBL
+< R SYSTEM SYSTEM 10 I CAT_CODE PART
+< R SYSTEM SYSTEM 1 I LT_CODE ROOM
+< R SYSTEM SYSTEM 2 I LT_CODE SHELF
+< R SYSTEM SYSTEM 3 I LT_CODE RACK
+< R SYSTEM SYSTEM 4 I LT_CODE CABINET
+< R SYSTEM SYSTEM 5 I LT_CODE DRAWER
+< R SYSTEM SYSTEM 6 I LT_CODE BOX
+< R SYSTEM SYSTEM 7 I LT_CODE BIN
+< R SYSTEM SYSTEM 8 I LT_CODE BUCKET
+< R SYSTEM SYSTEM 1 I USER_ID 1
+< R MB1 ADMIN 1 L "" ""
+< R MB1 ADMIN 1 W PWHASH ""
+< R MB1 ADMIN 2 I USER_ID 2
+< R MB1 "" 1 F TICKET ADMIN
+< R MB2 "" 1 F TICKET ADMIN
+< R MB3 BOB 2 L "" ""
+< R MB2 BOB 2 L "" ""
+< R MB2 BOB 2 W PWHASH ""
+< R MB2 BOB 2 L "" ""
+< R MB2 "" 1 F TICKET ADMIN
+< R MB2 BOB 2 L "" ""
+< R MB2 BOB 2 L "" ""
+< R NET1 ADMIN 1 L "" ""
+< R NET1 ADMIN 2 U LEVEL 1
+< R NET1 ADMIN 1 L "" ""
+< R NET1 ADMIN 2 U LEVEL 2
+< R NET1 ADMIN 1 L "" ""
+< R NET1 ADMIN 2 U STATUS D
+< R MB2 "" 2 F TICKET BOB
+< R NET1 ADMIN 1 L "" ""
+< R NET1 ADMIN 2 U STATUS A
+< R MB2 BOB 2 L "" ""
+< R NET1 ADMIN 1 L "" ""
+< R NET1 ADMIN 2 W PWHASH ""
+< R MB2 "" 2 F TICKET BOB
+< R MB2 "" 2 F USERNAME BOB
+< R MB2 "" 2 F USERNAME BOB
+< R MB2 "" 2 F USERNAME BOB
+
+# A session after a mailbox one is offered no tickets again.
+@SESSION NET2
+> HELLO NET2
+< +OK
+> LOGIN ADMIN secret1 TICKET=NEW
+< -ERR 102 unexpected key FIELD=TICKET
+# PASSWD on a session holding no ticket is answered +OK alone, whether
+# the session is offered tickets or not.
+> LOGIN ADMIN secret1
+< +OK LEVEL=3 NAME="System Administrator"
+> PASSWD secret1 secret2
+< +OK
+@SESSION MB4
+@MBOX
+> HELLO MB4
+< +OK
+> LOGIN ADMIN secret2 X TICKET=NEW
+< -ERR 100 too many arguments
+> LOGIN ADMIN secret2
+< +OK LEVEL=3 NAME="System Administrator"
+> PASSWD secret2 secret1
+< +OK
+
+# A ticket login that fails on a file error, the F row of a disabled
+# user unwritten, closes the session but keeps the ticket.
+> LOGIN BOB bobpw3 TICKET=NEW
+< +OK LEVEL=2 MUSTCHG=1 TICKET=00000000000000000000000000000009
+@SESSION NET2
+> HELLO NET2
+< +OK
+> LOGIN ADMIN secret1
+< +OK LEVEL=3 NAME="System Administrator"
+> USER SET BOB STATUS=D
+< +OK
+@SESSION MB4
+@MBOX
+> HELLO MB4
+< +OK
+@FAULT 1
+> LOGIN BOB TICKET=00000000000000000000000000000009
+< -ERR 302 disk full
+@CLOSED
+@STORE
+< T 00000000000000000000000000000009 BOB MB4 9
+
+# The throttle is told of the outcome of every password LOGIN of a live
+# user, by its stored name, and of none naming no user; from the tick of
+# @REFUSE on, a password LOGIN naming the user it refuses, the right
+# password included, is answered and counted as a wrong one, and is told
+# of nothing, on a session offered tickets or not and with TICKET=NEW;
+# a ticket LOGIN is never refused.
+@SESSION MB5
+@MBOX
+> HELLO MB5
+< +OK
+@TICK 20
+> LOGIN admin secret1 TICKET=NEW
+< +OK LEVEL=3 NAME="System Administrator" TICKET=00000000000000000000000000000010
+@NOTED
+< N ADMIN 1 20
+> BYE
+< +OK
+@CLOSED
+@SESSION NET3
+> HELLO NET3
+< +OK
+> LOGIN admin wrong1
+< -ERR 401 bad user name or password
+@NOTED
+< N ADMIN 0 20
+> LOGIN NOSUCH wrong1
+< -ERR 401 bad user name or password
+@NOTED
+@TICK 21
+@REFUSE ADMIN
+> LOGIN ADMIN secret1
+< -ERR 401 bad user name or password
+@CLOSED
+@NOTED
+@SESSION MB5
+@MBOX
+> HELLO MB5
+< +OK
+> LOGIN ADMIN secret1 TICKET=NEW
+< -ERR 401 bad user name or password
+> LOGIN ADMIN TICKET=00000000000000000000000000000010
+< +OK LEVEL=3 NAME="System Administrator"
+# Without TICKET=, a key is checked before the count of arguments, as
+# DPSESS.C checks them.
+> LOGIN a b c X=1
+< -ERR 102 unexpected key FIELD=X
+> PASSWD a b c X=1
+< -ERR 102 unexpected key FIELD=X
+> BYE TICKET=END
+< +OK
+@CLOSED
+@REFUSE

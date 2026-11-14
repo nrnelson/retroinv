@@ -1,0 +1,5 @@
+/*
+ * WSETUP.RC - the resources of SETUP's test TEST/WSETUP.C: none.  The
+ * resource compiler's second pass, which binds it, marks the program
+ * for Windows 3.0.
+ */

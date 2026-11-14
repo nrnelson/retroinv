@@ -1,0 +1,5 @@
+# Git never converts line ends, whatever core.autocrlf says: every file is
+# checked out with the bytes it has in the index, LF for the scripts and
+# sources the host runs, CR LF where a file needs it (SRC/TCP/WATTCP.DIF
+# keeps the archive's CR LF, which patch matches exactly).
+* -text

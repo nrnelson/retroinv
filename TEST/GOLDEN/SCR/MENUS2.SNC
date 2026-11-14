@@ -1,0 +1,156 @@
+=SNAP MRPT PALETTE=COLOR CURSOR=0,0,HIDE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options                              |
+|                          ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿                                   |
+|                          ³ Item listing    ³                                   |
+|                          ³ Valuation       ³                                   |
+|                          ³ Loans and holds ³                                   |
+|          ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ³ Item labels     ³ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿          |
+|          ³               ³ Bin labels      ³                        ³          |
+|          ³   User        ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙstrator                 ³          |
+|          ³   Access level      3 (administrator)                    ³          |
+|          ³   Today             2026-10-08                           ³          |
+|          ³                                                          ³          |
+|          ³   Item records      3                                    ³          |
+|          ³   Location records  3                                    ³          |
+|          ³   Category records  10                                   ³          |
+|          ³                                                          ³          |
+|          ³   Press F10 or Alt-letter for the menus, F1 for help.    ³          |
+|          ³                                                          ³          |
+|          ³                                                          ³          |
+|          ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ          |
+|                                                                                |
+|                                                                                |
+|                                                                                |
+|                                                                                |
+| Enter=Choose Left/Right=Menu Esc=Close F1=Help                                 |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=70 B=74 C=30 D=17 E=1B F=1F G=1E
+|ABAAAAAABAAAAAAAAAABAAAAAAACCCCCCCAABAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDEEEEEEEEEEEEEEEEEEEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDECCCCCCCCCCCCCCCCCEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDEABAAAAAAAAAAAAAAAEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDEABAAAAAAAAAAAAAAAEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DDDDDDDDDDEEEEEEEEEEEEEEEEEAABAAAAAAAAAAAAAAEEEEEEEEEEEEEEEEEEEEEEEEEEDDDDDDDDDD|
+|DDDDDDDDDDEDDDDDDDDDDDDDDDEABAAAAAAAAAAAAAAAEDDDDDDDDDDDDDDDDDDDDDDDDEDDDDDDDDDD|
+|DDDDDDDDDDEDDDFFFFFFFFFFFFEEEEEEEEEEEEEEEEEEEFFFFFFFDDDDDDDDDDDDDDDDDEDDDDDDDDDD|
+|DDDDDDDDDDEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDEDDDDDDDDDD|
+|DDDDDDDDDDEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDEDDDDDDDDDD|
+|DDDDDDDDDDEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDEDDDDDDDDDD|
+|DDDDDDDDDDEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDEDDDDDDDDDD|
+|DDDDDDDDDDEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDEDDDDDDDDDD|
+|DDDDDDDDDDEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDEDDDDDDDDDD|
+|DDDDDDDDDDEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDEDDDDDDDDDD|
+|DDDDDDDDDDEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDEDDDDDDDDDD|
+|DDDDDDDDDDEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDEDDDDDDDDDD|
+|DDDDDDDDDDEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDEDDDDDDDDDD|
+|DDDDDDDDDDEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DGGGGGDDDDDDDDGGGGGGGGGGDDDDDDGGGDDDDDDDGGDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|
+=SNAP MADMIN PALETTE=COLOR CURSOR=0,0,HIDE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options                              |
+|                                   ÚÄÄÄÄÄÄÄÄÄÄÄÄ¿                               |
+|                                   ³ Users      ³                               |
+|                                   ³ Backup     ³                               |
+|                                   ³ Restore    ³                               |
+|          ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ³ Pack       ³ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿          |
+|          ³                        ³ Reindex    ³                    ³          |
+|          ³   User              Sys³ Audit log  ³tor                 ³          |
+|          ³   Access level      3 (³ Sessions   ³                    ³          |
+|          ³   Today             202³ Export CSV ³                    ³          |
+|          ³                        ³ Import CSV ³                    ³          |
+|          ³   Item records      3  ÀÄÄÄÄÄÄÄÄÄÄÄÄÙ                    ³          |
+|          ³   Location records  3                                    ³          |
+|          ³   Category records  10                                   ³          |
+|          ³                                                          ³          |
+|          ³   Press F10 or Alt-letter for the menus, F1 for help.    ³          |
+|          ³                                                          ³          |
+|          ³                                                          ³          |
+|          ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ          |
+|                                                                                |
+|                                                                                |
+|                                                                                |
+|                                                                                |
+| Enter=Choose Left/Right=Menu Esc=Close F1=Help                                 |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=70 B=74 C=30 D=17 E=1B F=1F G=1E
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAACCCCCAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDEEEEEEEEEEEEEEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDECCCCCCCCCCCCEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDEABAAAAAAAAAAEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDEABAAAAAAAAAAEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DDDDDDDDDDEEEEEEEEEEEEEEEEEEEEEEEEEEABAAAAAAAAAAEEEEEEEEEEEEEEEEEEEEEEDDDDDDDDDD|
+|DDDDDDDDDDEDDDDDDDDDDDDDDDDDDDDDDDDEAAABAAAAAAAAEDDDDDDDDDDDDDDDDDDDDEDDDDDDDDDD|
+|DDDDDDDDDDEDDDFFFFFFFFFFFFFFFFFFFFFEABAAAAAAAAAAEFFFDDDDDDDDDDDDDDDDDEDDDDDDDDDD|
+|DDDDDDDDDDEDDDDDDDDDDDDDDDDDDDDDDDDEABAAAAAAAAAAEDDDDDDDDDDDDDDDDDDDDEDDDDDDDDDD|
+|DDDDDDDDDDEDDDDDDDDDDDDDDDDDDDDDDDDEABAAAAAAAAAAEDDDDDDDDDDDDDDDDDDDDEDDDDDDDDDD|
+|DDDDDDDDDDEDDDDDDDDDDDDDDDDDDDDDDDDEAABAAAAAAAAAEDDDDDDDDDDDDDDDDDDDDEDDDDDDDDDD|
+|DDDDDDDDDDEDDDDDDDDDDDDDDDDDDDDDDDDEEEEEEEEEEEEEEDDDDDDDDDDDDDDDDDDDDEDDDDDDDDDD|
+|DDDDDDDDDDEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDEDDDDDDDDDD|
+|DDDDDDDDDDEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDEDDDDDDDDDD|
+|DDDDDDDDDDEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDEDDDDDDDDDD|
+|DDDDDDDDDDEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDEDDDDDDDDDD|
+|DDDDDDDDDDEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDEDDDDDDDDDD|
+|DDDDDDDDDDEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDEDDDDDDDDDD|
+|DDDDDDDDDDEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DGGGGGDDDDDDDDGGGGGGGGGGDDDDDDGGGDDDDDDDGGDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|
+=SNAP MOPT PALETTE=COLOR CURSOR=0,0,HIDE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options                              |
+|                                          ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿               |
+|                                          ³ Settings            ³               |
+|                                          ³ Change password     ³               |
+|                                          ³ Log out             ³               |
+|          ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ RETROI³ Quit             F3 ³ÄÄÄÄ¿          |
+|          ³                               ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ    ³          |
+|          ³   User              System Administrator                 ³          |
+|          ³   Access level      3 (administrator)                    ³          |
+|          ³   Today             2026-10-08                           ³          |
+|          ³                                                          ³          |
+|          ³   Item records      3                                    ³          |
+|          ³   Location records  3                                    ³          |
+|          ³   Category records  10                                   ³          |
+|          ³                                                          ³          |
+|          ³   Press F10 or Alt-letter for the menus, F1 for help.    ³          |
+|          ³                                                          ³          |
+|          ³                                                          ³          |
+|          ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ          |
+|                                                                                |
+|                                                                                |
+|                                                                                |
+|                                                                                |
+| Enter=Choose Left/Right=Menu Esc=Close F1=Help                                 |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=70 B=74 C=30 D=17 E=1B F=1E G=1F
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAACCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDEEEEEEEEEEEEEEEEEEEEEEEDDDDDDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDECCCCCCCCCCCCCCCCCCCCCEDDDDDDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDEAAAAAAAABAAAAAAAAAAAAEDDDDDDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDEABAAAAAAAAAAAAAAAAAAAEDDDDDDDDDDDDDDD|
+|DDDDDDDDDDEEEEEEEEEEEEEEEEEEEEEEEEEFFFFFFFEABAAAAAAAAAAAAAAAAAAAEEEEEEDDDDDDDDDD|
+|DDDDDDDDDDEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDEEEEEEEEEEEEEEEEEEEEEEEDDDDEDDDDDDDDDD|
+|DDDDDDDDDDEDDDGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGDDDDDDDDDDDDDDDDDEDDDDDDDDDD|
+|DDDDDDDDDDEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDEDDDDDDDDDD|
+|DDDDDDDDDDEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDEDDDDDDDDDD|
+|DDDDDDDDDDEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDEDDDDDDDDDD|
+|DDDDDDDDDDEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDEDDDDDDDDDD|
+|DDDDDDDDDDEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDEDDDDDDDDDD|
+|DDDDDDDDDDEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDEDDDDDDDDDD|
+|DDDDDDDDDDEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDEDDDDDDDDDD|
+|DDDDDDDDDDEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDEDDDDDDDDDD|
+|DDDDDDDDDDEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDEDDDDDDDDDD|
+|DDDDDDDDDDEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDEDDDDDDDDDD|
+|DDDDDDDDDDEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DFFFFFDDDDDDDDFFFFFFFFFFDDDDDDFFFDDDDDDDFFDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|

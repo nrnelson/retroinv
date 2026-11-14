@@ -1,0 +1,78 @@
+# DISKS.TXT - the release disks and the files on each, read by
+# REL/mkdist.sh, which writes the images and the zip, and REL/distchk.sh,
+# which checks them.
+#
+# A line "=L KB IMAGE LABEL SERIAL" defines disk L: a FAT12 floppy of KB
+# kilobytes (360, 720, 1200 or 1440) written to IMAGE, with the volume
+# label LABEL and the volume serial number SERIAL (eight hex digits),
+# fixed so that the image is the same byte for byte at every build.
+#
+# Every other line is "DISKS ROLES PATH SOURCE": the file PATH (8.3
+# names, "/" between directories) goes on each disk whose letter is in
+# DISKS, copied from SOURCE, a path from the repository root; in both,
+# the mark @THIN@ stands for the network-only client's name, THIN of
+# SRCS.MK.  LICENSE and a source under REL/ are text: their @NAME@ marks
+# are replaced by the values mkdist.sh is given and their lines end in
+# CR LF.  The source SAMPLE is the sample data directory that mkdist.sh
+# makes; every file of it goes into PATH.  The source LIST is INSTALL's
+# list of the disk's set, which mkdist.sh writes from these lines.
+#
+# ROLES are the letters of the installations INSTALL copies the file
+# into (SRC/TOOLS/INSTPLAN.H): S one PC alone, V the server, N a
+# network client, T the network-only client, W the Windows client
+# besides one of those; D marks the sample data, copied for S and V
+# when the user wants it, and K a settings file that an earlier
+# installation's copy of is kept unless the user says to replace it.
+# The roles INSTALL offers are those of the set's programs.  Z marks a
+# file the disks hold compressed (SRC/TOOLS/LZEXP.H), under the name
+# COMPRESS -r gives it, the sample data in DATA._ with each file under
+# its own name; the zip holds it as it is.  Every file is compressed but
+# INSTALL and its list, which must run and be read as they are, SETUP,
+# which Windows starts from the disk, and the texts a reader opens on
+# the disk: README.TXT, LICENSE.TXT and WATTCP.TXT, WATTCP's notice.
+#
+# The Watcom C 6.5 build is the release of the DOS programs on every disk;
+# no other build is shipped.  Every PC installs from the disks with
+# INSTALL, which is on every disk, so that it starts from any, and no
+# program runs from them; each set is the fewest disks of its size that
+# hold its files.  The 360 KB set, for the PCs whose drives read nothing
+# larger, XTs among them, is two disks: the first the clients, INV and
+# the network-only client, the second the server with the bridge, the
+# tools and the sample data.  The Windows client INVWIN, with INV.MSG,
+# its Windows Help file INVWIN.HLP, its help text INVWIN.HTX and its
+# installer SETUP, needs a 286 or better and is not in that set.  The
+# first 720 KB disk holds every DOS file, the second the Windows client,
+# all that SETUP copies.  The 1.2 MB disk, for an AT whose only floppy
+# drive is a 5.25-inch 1.2 MB one, and the 1.44 MB disk hold them all.
+# The one 1440 KB disk is also written as a zip, its files as they are
+# in a folder LABEL/ of LABEL.ZIP.
+
+=A 360 DISK360A.IMG RETROINV1 52490361
+=B 360 DISK360B.IMG RETROINV2 52490362
+=M 720 DISK720A.IMG RETROINV1 52490721
+=N 720 DISK720B.IMG RETROINV2 52490722
+=K 1200 DISK120.IMG RETROINV 52491200
+=H 1440 DISK144.IMG RETROINV 52491440
+
+ABMNKH SVNT README.TXT REL/README.TXT
+ABMNKH SVNT LICENSE.TXT LICENSE
+ABMNKH V WATTCP.TXT REL/WATTCP.TXT
+ABMNKH SVNT INSTALL.EXE BIN/WC65/INSTALL.EXE
+ABMNKH SVNT INSTALL.LST LIST
+AMKH SVNZ INV.EXE BIN/WC65/INV.EXE
+AMNKH SVNTWZ INV.MSG BIN/INV.MSG
+AMKH SVNTZ INV.HLP BIN/INV.HLP
+AMKH TZ @THIN@.EXE BIN/WC65/@THIN@.EXE
+BMKH DZ DATA SAMPLE
+BMKH VZ INVSERV.EXE BIN/WC65/INVSERV.EXE
+BMKH VZ INVSERV.MSG BIN/INVSERV.MSG
+BMKH VKZ INVSERV.CFG REL/INVSERV.CFG
+BMKH VZ INVTCP.EXE BIN/WC65/INVTCP.EXE
+BMKH VKZ WATTCP.CFG REL/WATTCP.CFG
+BMKH VZ DBPACK.EXE BIN/WC65/DBPACK.EXE
+BMKH VZ INVDUMP.EXE BIN/WC65/INVDUMP.EXE
+BMKH VZ COMTEST.EXE BIN/WC65/COMTEST.EXE
+NKH WZ INVWIN.EXE BIN/WIN/INVWIN.EXE
+NKH WZ INVWIN.HLP BIN/INVWIN.HLP
+NKH WZ INVWIN.HTX BIN/INVWIN.HTX
+NKH W SETUP.EXE BIN/WIN/SETUP.EXE

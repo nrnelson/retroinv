@@ -1,0 +1,132 @@
+@CALL 1 RINBA
+1> HELLO RINBA
+1< +OK
+@CALL 2 RINBB
+2> HELLO RINBB
+2< +OK
+@S 1
+1>& LOGIN ***
+@S 2
+2>& LOGIN ***
+@WAIT 2
+2< +OK LEVEL=3 NAME="System Administrator"
+@WAIT 1
+1< +OK LEVEL=3 NAME="System Administrator"
+@S 1
+1> ADMIN CLIENTS
+1< +DATA
+1< F SLOT TYPE STATION USER LEVEL STATE IDLE SELF
+1< R 1 NETB RINBA ADMIN 3 3 * 1
+1< R 2 NETB RINBB ADMIN 3 3 * 0
+1< .
+1> ITEM ADD CATEGORY=SYS MFR="Network Server Corporation" MODEL=NS-25 DESCR="Twenty-five copies of this item make one page of over two KB" TAGS="network,server,netbios,netbeui,session,listen,call,hangup"
+1< +OK ID=2
+1> ITEM COPY 2
+1< +OK ID=3
+1> ITEM COPY 2
+1< +OK ID=4
+1> ITEM COPY 2
+1< +OK ID=5
+1> ITEM COPY 2
+1< +OK ID=6
+1> ITEM COPY 2
+1< +OK ID=7
+1> ITEM COPY 2
+1< +OK ID=8
+1> ITEM COPY 2
+1< +OK ID=9
+1> ITEM COPY 2
+1< +OK ID=10
+1> ITEM COPY 2
+1< +OK ID=11
+1> ITEM COPY 2
+1< +OK ID=12
+1> ITEM COPY 2
+1< +OK ID=13
+1> ITEM COPY 2
+1< +OK ID=14
+1> ITEM COPY 2
+1< +OK ID=15
+1> ITEM COPY 2
+1< +OK ID=16
+1> ITEM COPY 2
+1< +OK ID=17
+1> ITEM COPY 2
+1< +OK ID=18
+1> ITEM COPY 2
+1< +OK ID=19
+1> ITEM COPY 2
+1< +OK ID=20
+1> ITEM COPY 2
+1< +OK ID=21
+1> ITEM COPY 2
+1< +OK ID=22
+1> ITEM COPY 2
+1< +OK ID=23
+1> ITEM COPY 2
+1< +OK ID=24
+1> ITEM COPY 2
+1< +OK ID=25
+1> ITEM COPY 2
+1< +OK ID=26
+@S 1
+1>& ITEM LIST CAT=SYS FIELDS=ITEM_ID,MFR,DESCR,TAGS PAGE=25
+@S 2
+2>& PING
+@WAIT 2
+2< +OK
+@WAIT 1
+1< +DATA
+1< F ITEM_ID MFR DESCR TAGS
+1< R 2 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 3 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 4 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 5 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 6 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 7 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 8 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 9 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 10 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 11 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 12 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 13 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 14 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 15 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 16 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 17 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 18 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 19 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 20 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 21 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 22 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 23 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 24 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 25 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 26 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< .
+@S 1
+1> PING
+1< +OK
+@SLEEP 1100
+1> PING
+1< +OK
+@S 2
+2> PING
+2< +OK
+2> ADMIN CLIENTS
+2< +DATA
+2< F SLOT TYPE STATION USER LEVEL STATE IDLE SELF
+2< R 1 NETB RINBA ADMIN 3 3 * 0
+2< R 2 NETB RINBB ADMIN 3 3 * 1
+2< .
+2> BYE
+2< +OK
+@S 1
+1> ADMIN CLIENTS
+1< +DATA
+1< F SLOT TYPE STATION USER LEVEL STATE IDLE SELF
+1< R 1 NETB RINBA ADMIN 3 3 * 1
+1< .
+1> BYE
+1< +OK
+INVTEST PASS

@@ -1,0 +1,74 @@
+# WNET.SCR - the script of WNET (TEST/WNET.C) against INVSERV in "make
+# winnb": on the data TEST/KEYS/SEED.REQ seeds, HELLO, VER, a login and
+# the item list, then a list of fifteen more items whose page, over
+# NB_MSGMAX bytes, comes in two messages, and the end of the server.
+
+> HELLO WINNB
+< +OK
+> VER
+< +OK RETROINV 1.0
+> LOGIN ADMIN Retro1986
+< +OK LEVEL=3 NAME="System Administrator"
+> ITEM LIST
+< +DATA
+< F ITEM_ID CATEGORY MFR MODEL WORKS QTY AVAIL LOC_ID LOC_NAME STATUS
+< R 1 SYS IBM 5150 Y 1 Y 1 Office A
+< R 2 DRV Tandon TM100-2 N 2 Y 3 "Box B2" A
+< R 3 CARD Hercules "Graphics Card" ? 1 Y 2 "Shelf A1" A
+< .
+
+> ITEM ADD CATEGORY=SYS MFR="Network Server Corporation" MODEL=NS-25 DESCR="Fifteen copies of this item make a page of over two KB" TAGS="network,server,netbios,netbeui,session,listen,call,hangup"
+< +OK ID=4
+> ITEM COPY 4
+< +OK ID=5
+> ITEM COPY 4
+< +OK ID=6
+> ITEM COPY 4
+< +OK ID=7
+> ITEM COPY 4
+< +OK ID=8
+> ITEM COPY 4
+< +OK ID=9
+> ITEM COPY 4
+< +OK ID=10
+> ITEM COPY 4
+< +OK ID=11
+> ITEM COPY 4
+< +OK ID=12
+> ITEM COPY 4
+< +OK ID=13
+> ITEM COPY 4
+< +OK ID=14
+> ITEM COPY 4
+< +OK ID=15
+> ITEM COPY 4
+< +OK ID=16
+> ITEM COPY 4
+< +OK ID=17
+> ITEM COPY 4
+< +OK ID=18
+> ITEM LIST FIELDS=ITEM_ID,MFR,DESCR,TAGS PAGE=25
+< +DATA
+< F ITEM_ID MFR DESCR TAGS
+< R 1 IBM "IBM Personal Computer" ""
+< R 2 Tandon "" ""
+< R 3 Hercules "" ""
+< R 4 "Network Server Corporation" "Fifteen copies of this item make a page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+< R 5 "Network Server Corporation" "Fifteen copies of this item make a page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+< R 6 "Network Server Corporation" "Fifteen copies of this item make a page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+< R 7 "Network Server Corporation" "Fifteen copies of this item make a page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+< R 8 "Network Server Corporation" "Fifteen copies of this item make a page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+< R 9 "Network Server Corporation" "Fifteen copies of this item make a page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+< R 10 "Network Server Corporation" "Fifteen copies of this item make a page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+< R 11 "Network Server Corporation" "Fifteen copies of this item make a page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+< R 12 "Network Server Corporation" "Fifteen copies of this item make a page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+< R 13 "Network Server Corporation" "Fifteen copies of this item make a page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+< R 14 "Network Server Corporation" "Fifteen copies of this item make a page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+< R 15 "Network Server Corporation" "Fifteen copies of this item make a page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+< R 16 "Network Server Corporation" "Fifteen copies of this item make a page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+< R 17 "Network Server Corporation" "Fifteen copies of this item make a page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+< R 18 "Network Server Corporation" "Fifteen copies of this item make a page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+< .
+
+> ADMIN SHUTDOWN
+< +OK

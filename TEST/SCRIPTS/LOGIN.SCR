@@ -1,0 +1,330 @@
+# LOGIN.SCR - HELLO and LOGIN: their order, the seeded ADMIN account and
+# its forced password change, wrong passwords and the close after three
+# failures, disabled and unknown users, a second HELLO, and the audit
+# rows of logins, failed logins and password changes.
+
+# Before HELLO only HELLO, PING, VER and BYE run.
+> PING
+< +OK
+> VER
+< +OK RETROINV 1.0
+> LOGIN ADMIN admin
+< -ERR 400 HELLO or LOGIN required
+> WHOAMI
+< -ERR 400 HELLO or LOGIN required
+> PASSWD admin secret1
+< -ERR 400 HELLO or LOGIN required
+> BYE
+< +OK
+@CLOSED
+@SESSION
+
+# HELLO needs a station of 1 to 16 characters, no control bytes.
+> HELLO
+< -ERR 102 missing argument FIELD=STATION
+> HELLO STATION1234567890
+< -ERR 102 bad station name FIELD=STATION
+> HELLO ""
+< -ERR 102 bad station name FIELD=STATION
+> HELLO "A\x01B"
+< -ERR 102 bad station name FIELD=STATION
+# No space at either end, as AUDIT.STATION would lose it.
+> HELLO " STA1"
+< -ERR 102 bad station name FIELD=STATION
+> HELLO "STA1 "
+< -ERR 102 bad station name FIELD=STATION
+> LOGIN ADMIN admin
+< -ERR 400 HELLO or LOGIN required
+> HELLO STA1
+< +OK
+
+# After HELLO and before LOGIN.
+> WHOAMI
+< -ERR 400 HELLO or LOGIN required
+> ITEM GET 1
+< -ERR 400 HELLO or LOGIN required
+> LOGIN ADMIN
+< -ERR 102 missing argument FIELD=PASSWORD
+> LOGIN
+< -ERR 102 missing argument FIELD=USERNAME
+
+# The seeded ADMIN must change its password first.
+> LOGIN ADMIN admin
+< +OK LEVEL=3 MUSTCHG=1
+> WHOAMI
+< -ERR 404 password change required
+> STATUS
+< -ERR 404 password change required
+> USER LIST
+< -ERR 404 password change required
+> ASSY BOM 1
+< -ERR 404 password change required
+> FOO
+< -ERR 101 unknown command
+> PING
+< +OK
+> VER
+< +OK RETROINV 1.0
+
+# Wrong old password: 401, but not a failed login.
+> PASSWD WRONG secret1
+< -ERR 401 wrong password
+> PASSWD ADMIN secret1
+< -ERR 401 wrong password
+# The new password must be valid and differ from the old one.
+> PASSWD admin admin
+< -ERR 102 new password must differ from the old one FIELD=NEW
+> PASSWD admin abc
+< -ERR 102 password too short, too long or not printable FIELD=NEW
+> PASSWD admin
+< -ERR 102 missing argument FIELD=NEW
+> PASSWD
+< -ERR 102 missing argument FIELD=OLD
+> WHOAMI
+< -ERR 404 password change required
+> PASSWD admin secret1
+< +OK
+> WHOAMI
+< +DATA
+< K USER=ADMIN
+< K LEVEL=3
+< K STATION=STA1
+< .
+
+# A changed password is needed from now on; the old one fails.
+> LOGIN ADMIN admin
+< -ERR 401 bad user name or password
+> WHOAMI
+< -ERR 400 HELLO or LOGIN required
+# User names are upper-cased, passwords are case-sensitive.
+> LOGIN admin SECRET1
+< -ERR 401 bad user name or password
+> LOGIN admin secret1
+< +OK LEVEL=3 NAME="System Administrator"
+> WHOAMI
+< +DATA
+< K USER=ADMIN
+< K LEVEL=3
+< K STATION=STA1
+< .
+
+# A new user must change the password, and a disabled one cannot log in
+# (only someone who knows the password learns that it is disabled).
+> USER ADD BOB LEVEL=2 PASSWORD=bobpass1 FULLNAME="Bob Smith"
+< +OK
+> USER ADD CAROL LEVEL=1 PASSWORD=carolpw1
+< +OK
+> USER SET CAROL STATUS=D
+< +OK
+> LOGIN BOB bobpass1
+< +OK LEVEL=2 MUSTCHG=1
+> PASSWD bobpass1 bobpass2
+< +OK
+> WHOAMI
+< +DATA
+< K USER=BOB
+< K LEVEL=2
+< K STATION=STA1
+< .
+> LOGIN CAROL wrongpw1
+< -ERR 401 bad user name or password
+> LOGIN CAROL carolpw1
+< -ERR 403 account disabled
+# Unknown and malformed names.
+> LOGIN NOBODY secret1
+< -ERR 401 bad user name or password
+@CLOSED
+> PING
+@SESSION
+> HELLO STA2
+< +OK
+> LOGIN TOOLONGNAME secret1
+< -ERR 401 bad user name or password
+> LOGIN "A B" secret1
+< -ERR 401 bad user name or password
+
+# A second HELLO logs out and sets the new station.
+> LOGIN ADMIN secret1
+< +OK LEVEL=3 NAME="System Administrator"
+> HELLO STA3
+< +OK
+> WHOAMI
+< -ERR 400 HELLO or LOGIN required
+> LOGIN ADMIN secret1
+< +OK LEVEL=3 NAME="System Administrator"
+> WHOAMI
+< +DATA
+< K USER=ADMIN
+< K LEVEL=3
+< K STATION=STA3
+< .
+
+# Failures are counted across HELLO: the third closes the session.
+@SESSION
+> HELLO STA6
+< +OK
+> LOGIN ADMIN bad1
+< -ERR 401 bad user name or password
+> HELLO STA6
+< +OK
+> LOGIN ADMIN bad2
+< -ERR 401 bad user name or password
+> HELLO STA6
+< +OK
+> LOGIN ADMIN bad3
+< -ERR 401 bad user name or password
+@CLOSED
+
+# Only a successful LOGIN resets the count: two failures, a success,
+# two failures, and the next one closes.
+@SESSION
+> HELLO STA4
+< +OK
+> LOGIN ADMIN bad1
+< -ERR 401 bad user name or password
+> HELLO STA4
+< +OK
+> LOGIN ADMIN bad2
+< -ERR 401 bad user name or password
+> LOGIN ADMIN secret1
+< +OK LEVEL=3 NAME="System Administrator"
+> LOGIN ADMIN bad3
+< -ERR 401 bad user name or password
+> WHOAMI
+< -ERR 400 HELLO or LOGIN required
+> LOGIN BOB bad4
+< -ERR 401 bad user name or password
+> PING
+< +OK
+> LOGIN BOB bobpass9
+< -ERR 401 bad user name or password
+@CLOSED
+# A closed session runs nothing and answers nothing.
+> PING
+> HELLO STA4
+
+# A transport's fixed station wins over the one HELLO names.
+@SESSION MBOX1
+> WHOAMI
+< -ERR 400 HELLO or LOGIN required
+> HELLO OTHER
+< +OK
+> LOGIN BOB bobpass2
+< +OK LEVEL=2 NAME="Bob Smith"
+> WHOAMI
+< +DATA
+< K USER=BOB
+< K LEVEL=2
+< K STATION=MBOX1
+< .
+> BYE
+< +OK
+@CLOSED
+> PING
+
+# A fixed station holding a control byte is not used: HELLO's is.
+@SESSION \x20ST\x01A\x20
+> HELLO OTHER
+< +OK
+> LOGIN BOB bobpass2
+< +OK LEVEL=2 NAME="Bob Smith"
+> WHOAMI
+< +DATA
+< K USER=BOB
+< K LEVEL=2
+< K STATION=OTHER
+< .
+@SESSION ST\x7FA
+> HELLO OTHER2
+< +OK
+> LOGIN BOB bobpass2
+< +OK LEVEL=2 NAME="Bob Smith"
+> WHOAMI
+< +DATA
+< K USER=BOB
+< K LEVEL=2
+< K STATION=OTHER2
+< .
+@SESSION MB\x41X
+> HELLO OTHER3
+< +OK
+> LOGIN BOB bobpass2
+< +OK LEVEL=2 NAME="Bob Smith"
+> WHOAMI
+< +DATA
+< K USER=BOB
+< K LEVEL=2
+< K STATION=MBAX
+< .
+
+# Accounts and passwords survive a reopen.
+@REOPEN
+@SESSION
+> HELLO STA5
+< +OK
+> LOGIN ADMIN secret1
+< +OK LEVEL=3 NAME="System Administrator"
+
+# LASTLOGIN is set by every login; MUSTCHG is cleared by PASSWD.
+@TABLE USERS FIELDS=USER_ID,USERNAME,LEVEL,STATUS,MUSTCHG,LASTLOGIN
+< F USER_ID USERNAME LEVEL STATUS MUSTCHG LASTLOGIN
+< R 1 ADMIN 3 A F 20261008
+< R 2 BOB 2 A F 20261008
+< R 3 CAROL 1 D T ""
+
+# The seed rows carry SYSTEM; a login is an L row with the user; a failed
+# login an F row with no user, the user's ID and stored name, or 0 and
+# "?" for an unknown or malformed name; a password change one W row
+# without values.
+@TABLE AUDIT FIELDS=STATION,USERNAME,TBL,REC_ID,ACTION,FLD,OLDVAL,NEWVAL
+< F STATION USERNAME TBL REC_ID ACTION FLD OLDVAL NEWVAL
+< R SYSTEM SYSTEM CATS 1 I CAT_CODE "" SYS
+< R SYSTEM SYSTEM CATS 2 I CAT_CODE "" MOBO
+< R SYSTEM SYSTEM CATS 3 I CAT_CODE "" CPU
+< R SYSTEM SYSTEM CATS 4 I CAT_CODE "" CARD
+< R SYSTEM SYSTEM CATS 5 I CAT_CODE "" DRV
+< R SYSTEM SYSTEM CATS 6 I CAT_CODE "" PERI
+< R SYSTEM SYSTEM CATS 7 I CAT_CODE "" SW
+< R SYSTEM SYSTEM CATS 8 I CAT_CODE "" MAN
+< R SYSTEM SYSTEM CATS 9 I CAT_CODE "" CBL
+< R SYSTEM SYSTEM CATS 10 I CAT_CODE "" PART
+< R SYSTEM SYSTEM LTYPES 1 I LT_CODE "" ROOM
+< R SYSTEM SYSTEM LTYPES 2 I LT_CODE "" SHELF
+< R SYSTEM SYSTEM LTYPES 3 I LT_CODE "" RACK
+< R SYSTEM SYSTEM LTYPES 4 I LT_CODE "" CABINET
+< R SYSTEM SYSTEM LTYPES 5 I LT_CODE "" DRAWER
+< R SYSTEM SYSTEM LTYPES 6 I LT_CODE "" BOX
+< R SYSTEM SYSTEM LTYPES 7 I LT_CODE "" BIN
+< R SYSTEM SYSTEM LTYPES 8 I LT_CODE "" BUCKET
+< R SYSTEM SYSTEM USERS 1 I USER_ID "" 1
+< R STA1 ADMIN USERS 1 L "" "" ""
+< R STA1 ADMIN USERS 1 W PWHASH "" ""
+< R STA1 "" USERS 1 F USERNAME "" ADMIN
+< R STA1 "" USERS 1 F USERNAME "" ADMIN
+< R STA1 ADMIN USERS 1 L "" "" ""
+< R STA1 ADMIN USERS 2 I USER_ID "" 2
+< R STA1 ADMIN USERS 3 I USER_ID "" 3
+< R STA1 ADMIN USERS 3 U STATUS A D
+< R STA1 BOB USERS 2 L "" "" ""
+< R STA1 BOB USERS 2 W PWHASH "" ""
+< R STA1 "" USERS 3 F USERNAME "" CAROL
+< R STA1 "" USERS 3 F USERNAME "" CAROL
+< R STA1 "" USERS 0 F USERNAME "" ?
+< R STA2 "" USERS 0 F USERNAME "" ?
+< R STA2 "" USERS 0 F USERNAME "" ?
+< R STA2 ADMIN USERS 1 L "" "" ""
+< R STA3 ADMIN USERS 1 L "" "" ""
+< R STA6 "" USERS 1 F USERNAME "" ADMIN
+< R STA6 "" USERS 1 F USERNAME "" ADMIN
+< R STA6 "" USERS 1 F USERNAME "" ADMIN
+< R STA4 "" USERS 1 F USERNAME "" ADMIN
+< R STA4 "" USERS 1 F USERNAME "" ADMIN
+< R STA4 ADMIN USERS 1 L "" "" ""
+< R STA4 "" USERS 1 F USERNAME "" ADMIN
+< R STA4 "" USERS 2 F USERNAME "" BOB
+< R STA4 "" USERS 2 F USERNAME "" BOB
+< R MBOX1 BOB USERS 2 L "" "" ""
+< R OTHER BOB USERS 2 L "" "" ""
+< R OTHER2 BOB USERS 2 L "" "" ""
+< R MBAX BOB USERS 2 L "" "" ""
+< R STA5 ADMIN USERS 1 L "" "" ""

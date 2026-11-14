@@ -1,0 +1,33 @@
+# SCRUSER.C: the user list and the user form (MU_).
+# W=74 list box title: VID_COLS - 6
+760 MU_TITLE Users
+# W=78 list header: VID_COLS - 2
+761 MU_HDR  User     Full name                      Group    Level Status Chg Last login
+
+762 MU_EMPTY No users
+# W=79 key hints: VID_COLS - 1, level digits not counted
+763 MU_HINT Enter/Ctrl-E=Edit Ins=New Del=Delete Esc=Back F1=Help
+
+764 MU_DELQ Delete user ^1?
+765 MU_DELETED User ^1 deleted
+766 MU_ADDED User ^1 added
+767 MU_SAVED User ^1 saved
+# W=40 form title with its name: FORM_TITLEMAX
+768 MU_FTITLE User ^1
+# W=56 form box title: 62 - 6
+769 MU_NEWTITLE New user
+# W=79 key hints: VID_COLS - 1, level digits not counted
+770 MU_HINTEDIT Enter=Save F4=List Esc=Cancel F1=Help
+
+771 MU_NOMATCH The password and its repetition differ
+# W=7 form label beside the user name: UF_SVCOL - UF_SCOL - 1
+772 MU_L_STATUS Status
+# W=16 form labels: UF_VCOL - UF_LCOL - 1
+773 MU_L_USER User name
+774 MU_L_NAME Full name
+775 MU_L_GROUP Group
+776 MU_L_LEVEL Level
+777 MU_L_PW New password
+778 MU_L_REPEAT Repeat password
+
+779 MU_PWONLY The new password was saved; the rest may not have been saved

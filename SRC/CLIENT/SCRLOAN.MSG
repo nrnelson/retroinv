@@ -1,0 +1,30 @@
+# SCRLOAN.C: the lists of loans and holds, the Loans tab and the forms
+# of its rows (MB_); the texts both clients show are SCRNFORM.MSG's.
+# W=23 tab title, exactly, as MI_T_TABS
+870 MB_T_TAB \x20Parts  Service [Loans]
+# W=79 key hints: VID_COLS - 1, level digits not counted; ^1 the next
+# view (MB_W_VIEW), or in the tab the other rows (MB_W_OWN, MB_W_HOST):
+# of the list and of the tab
+871 MB_HINT Enter=Open 2Ins=New 2Ctrl-E=Edit Ctrl-PgDn=^1 Esc=Back F1=Help
+872 MB_HINTTAB Enter=Open 2Ins=New 2Ctrl-E=Edit Ctrl-PgDn=^1 Esc=Form F1=Help
+873 MB_HINTVIEW 2Ctrl-E=Edit Esc=Back F1=Help
+874 MB_HINTEDIT Enter=Save Esc=Cancel F1=Help
+875 MB_HINTHOST Enter=Save F4=List Esc=Cancel F1=Help
+# W=12 views in the key hints, in the order of SCR_LV_
+876 MB_W_VIEW Open
+877 MB_W_VLOAN Loans
+878 MB_W_VRES Reservations
+879 MB_W_VUSE In use
+880 MB_W_VOVER Overdue
+881 MB_W_VALL All
+882 MB_W_OWN This item
+883 MB_W_HOST Used with it
+# W=42 status-line information: TUI_ST_INFOW
+884 MB_INFOOWN Showing: its loans and holds
+885 MB_INFOHOST Showing: what is used with it
+
+886 MB_BADDATE Not a valid date (YYYY-MM-DD, or empty for today)
+# W=36 the choice of a new row's kind: TUI_PICKW
+888 MB_K_NEW Lend...
+889 MB_K_NEWRES Reserve...
+890 MB_K_NEWUSE Use with...

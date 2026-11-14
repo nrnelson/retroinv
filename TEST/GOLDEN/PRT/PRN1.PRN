@@ -1,0 +1,52 @@
+@CBERETROINV  Item listing                                       2026-10-08  Page 1F
+
+
+E      ID Cat  Maker          Model          Serial       Works   Qty LocationF
+-------------------------------------------------------------------------------
+EOfficeF
+       1 SYS  IBM            5150           0012345      yes       1 Office
+Items: 1   Quantity: 1
+
+EOffice > Shelf A1F
+       3 CARD Hercules       Graphics Card  HGC-0042     ?         1 Shelf A1
+Items: 1   Quantity: 1
+
+EOffice > Shelf A1 > Box B2F
+       2 DRV  Tandon         TM100-2                     no        2 Box B2
+Items: 1   Quantity: 2
+
+Total items: 3   Quantity: 4
+@CBERETROINV  Valuation                                          2026-10-08  Page 1F
+
+
+E      ID Cat  Maker            Model               Qty        Paid       ValueF
+-------------------------------------------------------------------------------
+EOfficeF
+       1 SYS  IBM              5150                  1
+Subtotal                       Items: 1              1        0.00        0.00
+
+EOffice > Shelf A1F
+       3 CARD Hercules         Graphics Card         1
+Subtotal                       Items: 1              1        0.00        0.00
+
+EOffice > Shelf A1 > Box B2F
+       2 DRV  Tandon           TM100-2               2
+Subtotal                       Items: 1              2        0.00        0.00
+
+Total                          Items: 3              4        0.00        0.00
+
+ETotals by categoryF
+ECat  Name                                 Items    Qty        Paid       ValueF
+SYS  Systems                                  1      1        0.00        0.00
+CARD Expansion cards                          1      1        0.00        0.00
+DRV  Drives                                   1      2        0.00        0.00
+@CBERETROINV  Open loans and holds                               2026-10-08  Page 1F
+
+
+E!     Loan     Item Kind     Qty Holder       Contact    Due        Maker/modelF
+-------------------------------------------------------------------------------
+!        1        2 On loan    1 Jane Smith              2026-10-01 Tandon TM1~
+         2        3 On loan    1 Bob Jones               2026-11-01 Hercules G~
+
+Loans and holds: 2   Overdue: 1
+

@@ -1,0 +1,1997 @@
+=SNAP ASSY
+INVWIN "RETROINV - Assemblies" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 629 "Ne&xt pane?F6"
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" CHECKED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|3 assemblies|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status" HBAR 0 258
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0F@0+55 1F@55+80 2F@135+100 3F@235+100 4F@335+40 5F@375+40 6F@415+100 7F@515+55
+  ListBox 1 "" FOCUS
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Office" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+28"Office"
+   ROW "       5 SYS Systems               Compaq                         Portable                       ?          1 Shelf A1"
+   ROW "       7 SYS Systems               Zenith                         Z-150                          ?          1 Shelf A1"
+ WSPLIT 220 "" AT 314 LIMITS 40 588
+ WLIST 221 "      ID Category                  Maker                                        Model                             Qty Location                       Status" HBAR 0 223
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2I@135+30"Maker" 3L@255+29"Model" 4R@372+16"Qty" 5L@395+41"Location" 6L@495+30"Status"
+  COLS 0F@0+55 1F@55+80 2F@135+120 3F@255+100 4F@355+40 5F@395+100 6F@495+40
+  ListBox 1 ""
+   ROW "       3 CARD Expansion cards      Hercules                                     Graphics Card                       1 Office                         A" SELECTED CUT
+    DRAW FFFFFF/000000 0R@42+6"3" 1L@55+111"CARD Expansion cards" 2I@135+42"Hercules" 3L@255+67"Graphics Card" 4R@382+6"1" 5L@395+28"Office" 6L@495+7"A"
+   ROW "       4 CARD Expansion cards      AST                                          SixPakPlus                          1 Office                         A" CUT
+#32768 "" HIDDEN
+=SNAP FOLLOW
+INVWIN "RETROINV - Assemblies" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 629 "Ne&xt pane?F6"
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" CHECKED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|3 assemblies|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status" HBAR 0 258
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0F@0+55 1F@55+80 2F@135+100 3F@235+100 4F@335+40 5F@375+40 6F@415+100 7F@515+55
+  ListBox 1 "" FOCUS
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Office"
+    DRAW 000000/FFFFFF 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+28"Office"
+   ROW "       5 SYS Systems               Compaq                         Portable                       ?          1 Shelf A1" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"5" 1L@55+63"SYS Systems" 2L@135+39"Compaq" 3L@235+39"Portable" 4L@335+6"?" 5R@402+6"1" 6L@415+40"Shelf A1"
+   ROW "       7 SYS Systems               Zenith                         Z-150                          ?          1 Shelf A1"
+ WSPLIT 220 "" AT 314 LIMITS 40 588
+ WLIST 221 "      ID Category                  Maker                                        Model                             Qty Location                       Status" HBAR 0 223
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2I@135+30"Maker" 3L@255+29"Model" 4R@372+16"Qty" 5L@395+41"Location" 6L@495+30"Status"
+  COLS 0F@0+55 1F@55+80 2F@135+120 3F@255+100 4F@355+40 5F@395+100 6F@495+40
+  ListBox 1 ""
+   ROW "       6 DRV Drives                Seagate                                      ST-225                              1 Shelf A1                       A" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"6" 1L@55+56"DRV Drives" 2I@135+40"Seagate" 3L@255+35"ST-225" 4R@382+6"1" 5L@395+40"Shelf A1" 6L@495+7"A"
+#32768 "" HIDDEN
+=SNAP ASSYSVC
+INVWIN "RETROINV - Service records of item 5 Compaq Portable" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter" DISABLED
+  MENU 1093 "&Edit...?Ctrl+E" DISABLED
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" DISABLED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|~Open|~Edit|~Delete|-|~Move|~Install|~Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|0 service records|"
+ WLIST 208 "     Rec Date       Type      Cost Summary"
+  HEAD 000000/C0C0C0 0R@28+20"Rec" 1L@55+23"Date" 2L@120+24"Type" 3R@182+21"Cost" 4L@210+43"Summary"
+  COLS 0F@0+55 1F@55+65 2F@120+35 3F@155+55 4F@210+300
+  ListBox 1 "" FOCUS
+   ROW "No service records"
+    DRAW 000000/FFFFFF 0I@0+89"No service records"
+#32768 "" HIDDEN
+=SNAP ASSYBACK
+INVWIN "RETROINV - Assemblies" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 629 "Ne&xt pane?F6"
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" CHECKED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|3 assemblies|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status" HBAR 0 258
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0F@0+55 1F@55+80 2F@135+100 3F@235+100 4F@335+40 5F@375+40 6F@415+100 7F@515+55
+  ListBox 1 "" FOCUS
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Office"
+    DRAW 000000/FFFFFF 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+28"Office"
+   ROW "       5 SYS Systems               Compaq                         Portable                       ?          1 Shelf A1" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"5" 1L@55+63"SYS Systems" 2L@135+39"Compaq" 3L@235+39"Portable" 4L@335+6"?" 5R@402+6"1" 6L@415+40"Shelf A1"
+   ROW "       7 SYS Systems               Zenith                         Z-150                          ?          1 Shelf A1"
+ WSPLIT 220 "" AT 314 LIMITS 40 588
+ WLIST 221 "      ID Category                  Maker                                        Model                             Qty Location                       Status" HBAR 0 223
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2I@135+30"Maker" 3L@255+29"Model" 4R@372+16"Qty" 5L@395+41"Location" 6L@495+30"Status"
+  COLS 0F@0+55 1F@55+80 2F@135+120 3F@255+100 4F@355+40 5F@395+100 6F@495+40
+  ListBox 1 ""
+   ROW "       6 DRV Drives                Seagate                                      ST-225                              1 Shelf A1                       A" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"6" 1L@55+56"DRV Drives" 2I@135+40"Seagate" 3L@255+35"ST-225" 4R@382+6"1" 5L@395+40"Shelf A1" 6L@495+7"A"
+#32768 "" HIDDEN
+=SNAP MOVED
+INVWIN "RETROINV - Assemblies" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 629 "Ne&xt pane?F6"
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" CHECKED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|3 assemblies|Item 1 moved to Office > Shelf A1 > Box B2"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status" HBAR 0 258
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0F@0+55 1F@55+80 2F@135+100 3F@235+100 4F@335+40 5F@375+40 6F@415+100 7F@515+55
+  ListBox 1 "" FOCUS
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "       5 SYS Systems               Compaq                         Portable                       ?          1 Shelf A1"
+   ROW "       7 SYS Systems               Zenith                         Z-150                          ?          1 Shelf A1"
+ WSPLIT 220 "" AT 314 LIMITS 40 588
+ WLIST 221 "      ID Category                  Maker                                        Model                             Qty Location                       Status" HBAR 0 223
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2I@135+30"Maker" 3L@255+29"Model" 4R@372+16"Qty" 5L@395+41"Location" 6L@495+30"Status"
+  COLS 0F@0+55 1F@55+80 2F@135+120 3F@255+100 4F@355+40 5F@395+100 6F@495+40
+  ListBox 1 ""
+   ROW "       3 CARD Expansion cards      Hercules                                     Graphics Card                       1 Box B2                         A" SELECTED CUT
+    DRAW FFFFFF/000000 0R@42+6"3" 1L@55+111"CARD Expansion cards" 2I@135+42"Hercules" 3L@255+67"Graphics Card" 4R@382+6"1" 5L@395+34"Box B2" 6L@495+7"A"
+   ROW "       4 CARD Expansion cards      AST                                          SixPakPlus                          1 Box B2                         A" CUT
+#32768 "" HIDDEN
+=SNAP PARTS
+INVWIN "RETROINV - Assemblies" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&Install part...?Ins"
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1539 "&Take out..."
+  MENU 0 "" DISABLED
+  MENU 629 "Ne&xt pane?F6"
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" CHECKED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|~Delete|-|~Move|~Install|~Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|2 parts|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status" HBAR 0 258
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0F@0+55 1F@55+80 2F@135+100 3F@235+100 4F@335+40 5F@375+40 6F@415+100 7F@515+55
+  ListBox 1 ""
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "       5 SYS Systems               Compaq                         Portable                       ?          1 Shelf A1"
+   ROW "       7 SYS Systems               Zenith                         Z-150                          ?          1 Shelf A1"
+ WSPLIT 220 "" AT 314 LIMITS 40 588
+ WLIST 221 "      ID Category                  Maker                                        Model                             Qty Location                       Status" HBAR 0 223
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2I@135+30"Maker" 3L@255+29"Model" 4R@372+16"Qty" 5L@395+41"Location" 6L@495+30"Status"
+  COLS 0F@0+55 1F@55+80 2F@135+120 3F@255+100 4F@355+40 5F@395+100 6F@495+40
+  ListBox 1 "" FOCUS
+   ROW "       3 CARD Expansion cards      Hercules                                     Graphics Card                       1 Box B2                         A" SELECTED CUT
+    DRAW FFFFFF/000000 0R@42+6"3" 1L@55+111"CARD Expansion cards" 2I@135+42"Hercules" 3L@255+67"Graphics Card" 4R@382+6"1" 5L@395+34"Box B2" 6L@495+7"A"
+   ROW "       4 CARD Expansion cards      AST                                          SixPakPlus                          1 Box B2                         A" CUT
+#32768 "" HIDDEN
+=SNAP INSTALL
+INVWIN "RETROINV - Assemblies" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&Install part...?Ins"
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1539 "&Take out..."
+  MENU 0 "" DISABLED
+  MENU 629 "Ne&xt pane?F6"
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" CHECKED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|~Delete|-|~Move|~Install|~Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|3 parts|Item 2 installed in item 1"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status" HBAR 0 258
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0F@0+55 1F@55+80 2F@135+100 3F@235+100 4F@335+40 5F@375+40 6F@415+100 7F@515+55
+  ListBox 1 ""
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "       5 SYS Systems               Compaq                         Portable                       ?          1 Shelf A1"
+   ROW "       7 SYS Systems               Zenith                         Z-150                          ?          1 Shelf A1"
+ WSPLIT 220 "" AT 314 LIMITS 40 588
+ WLIST 221 "      ID Category                  Maker                                        Model                             Qty Location                       Status" HBAR 0 223
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2I@135+30"Maker" 3L@255+29"Model" 4R@372+16"Qty" 5L@395+41"Location" 6L@495+30"Status"
+  COLS 0F@0+55 1F@55+80 2F@135+120 3F@255+100 4F@355+40 5F@395+100 6F@495+40
+  ListBox 1 "" FOCUS
+   ROW "       2 DRV Drives                Tandon                                       TM100-2                             2 Box B2                         A" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"2" 1L@55+56"DRV Drives" 2I@135+37"Tandon" 3L@255+43"TM100-2" 4R@382+6"2" 5L@395+34"Box B2" 6L@495+7"A"
+   ROW "       3 CARD Expansion cards      Hercules                                     Graphics Card                       1 Box B2                         A" CUT
+   ROW "       4 CARD Expansion cards      AST                                          SixPakPlus                          1 Box B2                         A" CUT
+#32768 "" HIDDEN
+=SNAP PARTSVC
+INVWIN "RETROINV - Service records of item 4 AST SixPakPlus" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter" DISABLED
+  MENU 1093 "&Edit...?Ctrl+E" DISABLED
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" DISABLED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|~Open|~Edit|~Delete|-|~Move|~Install|~Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|0 service records|"
+ WLIST 208 "     Rec Date       Type      Cost Summary"
+  HEAD 000000/C0C0C0 0R@28+20"Rec" 1L@55+23"Date" 2L@120+24"Type" 3R@182+21"Cost" 4L@210+43"Summary"
+  COLS 0F@0+55 1F@55+65 2F@120+35 3F@155+55 4F@210+300
+  ListBox 1 "" FOCUS
+   ROW "No service records"
+    DRAW 000000/FFFFFF 0I@0+89"No service records"
+#32768 "" HIDDEN
+=SNAP PARTBACK
+#32770 "Item 4" ACTIVE
+ Static 65535 "Item ID"
+ Static 100 "4"
+ Static 65535 "Maker"
+ Edit 105 "AST"
+ Static 65535 "Model"
+ Edit 106 "SixPakPlus"
+ WTAB 95 "&Overview|&Technical|&Acquisition|&Notes" CUR 0 FOCUS
+ Static 65535 "Category"
+ Static 101 "CARD  Expansion cards"
+ Static 65535 "Status"
+ Static 102 "A  Active"
+ Static 65535 "Type"
+ Static 103 ""
+ Static 65535 "Condition"
+ Static 104 ""
+ Static 65535 "Works"
+ Static 109 "?  Not tested"
+ Static 65535 "Quantity"
+ Static 110 "1"
+ Static 65535 ""
+ Edit 111 ""
+ Static 65535 "Location"
+ Static 112 "B2"
+ Static 65535 "Part of"
+ Edit 113 "1 IBM 5150"
+ Static 65535 ""
+ Static 114 "Office > Shelf A1 > Box B2"
+ Static 65535 "Tags"
+ Edit 119 ""
+ Static 65535 "Serial" HIDDEN
+ Static 107 "" HIDDEN
+ Static 65535 "Description" HIDDEN
+ Edit 108 "" HIDDEN
+ Static 65535 "Date acquired" HIDDEN
+ Static 115 "" HIDDEN
+ Static 65535 "Acquired from" HIDDEN
+ Static 116 "" HIDDEN
+ Static 65535 "Price paid" HIDDEN
+ Static 117 "" HIDDEN
+ Static 65535 "Current value" HIDDEN
+ Static 118 "" HIDDEN
+ Static 65535 "Created" HIDDEN
+ Static 120 "2026-10-08" HIDDEN
+ Static 65535 "Updated" HIDDEN
+ Static 121 "2026-10-08" HIDDEN
+ Edit 122 "" HIDDEN
+ Button 148 "Parts"
+ Button 149 "Service"
+ Button 150 "Loans"
+ Button 151 "Used with"
+ Static 99 ""
+ Button 2 "Close" DEFAULT
+ Button 98 "Edit"
+ Button 94 "&Help"
+#32768 "" HIDDEN
+INVWIN "RETROINV - Assemblies" DISABLED
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&Install part...?Ins"
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1539 "&Take out..."
+  MENU 0 "" DISABLED
+  MENU 629 "Ne&xt pane?F6"
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" CHECKED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|~Delete|-|~Move|~Install|~Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|3 parts|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status" HBAR 0 258
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0F@0+55 1F@55+80 2F@135+100 3F@235+100 4F@335+40 5F@375+40 6F@415+100 7F@515+55
+  ListBox 1 ""
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "       5 SYS Systems               Compaq                         Portable                       ?          1 Shelf A1"
+   ROW "       7 SYS Systems               Zenith                         Z-150                          ?          1 Shelf A1"
+ WSPLIT 220 "" AT 314 LIMITS 40 588
+ WLIST 221 "      ID Category                  Maker                                        Model                             Qty Location                       Status" HBAR 0 223
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2I@135+30"Maker" 3L@255+29"Model" 4R@372+16"Qty" 5L@395+41"Location" 6L@495+30"Status"
+  COLS 0F@0+55 1F@55+80 2F@135+120 3F@255+100 4F@355+40 5F@395+100 6F@495+40
+  ListBox 1 ""
+   ROW "       2 DRV Drives                Tandon                                       TM100-2                             2 Box B2                         A"
+    DRAW 000000/FFFFFF 0R@42+6"2" 1L@55+56"DRV Drives" 2I@135+37"Tandon" 3L@255+43"TM100-2" 4R@382+6"2" 5L@395+34"Box B2" 6L@495+7"A"
+   ROW "       3 CARD Expansion cards      Hercules                                     Graphics Card                       1 Box B2                         A" CUT
+   ROW "       4 CARD Expansion cards      AST                                          SixPakPlus                          1 Box B2                         A" SELECTED CUT
+    DRAW FFFFFF/000000 0R@42+6"4" 1L@55+111"CARD Expansion cards" 2I@135+21"AST" 3L@255+53"SixPakPlus" 4R@382+6"1" 5L@395+34"Box B2" 6L@495+7"A"
+=SNAP OUT2
+INVWIN "RETROINV - Assemblies" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&Install part...?Ins"
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1539 "&Take out..."
+  MENU 0 "" DISABLED
+  MENU 629 "Ne&xt pane?F6"
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" CHECKED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|~Delete|-|~Move|~Install|~Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|1 part|2 items taken out"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status" HBAR 0 258
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0F@0+55 1F@55+80 2F@135+100 3F@235+100 4F@335+40 5F@375+40 6F@415+100 7F@515+55
+  ListBox 1 ""
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "       5 SYS Systems               Compaq                         Portable                       ?          1 Shelf A1"
+   ROW "       7 SYS Systems               Zenith                         Z-150                          ?          1 Shelf A1"
+ WSPLIT 220 "" AT 314 LIMITS 40 588
+ WLIST 221 "      ID Category                  Maker                                        Model                             Qty Location                       Status" HBAR 0 223
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2I@135+30"Maker" 3L@255+29"Model" 4R@372+16"Qty" 5L@395+41"Location" 6L@495+30"Status"
+  COLS 0F@0+55 1F@55+80 2F@135+120 3F@255+100 4F@355+40 5F@395+100 6F@495+40
+  ListBox 1 "" FOCUS
+   ROW "       4 CARD Expansion cards      AST                                          SixPakPlus                          1 Box B2                         A" SELECTED CUT
+    DRAW FFFFFF/000000 0R@42+6"4" 1L@55+111"CARD Expansion cards" 2I@135+21"AST" 3L@255+53"SixPakPlus" 4R@382+6"1" 5L@395+34"Box B2" 6L@495+7"A"
+#32768 "" HIDDEN
+=SNAP PARTFORM
+#32770 "Item 4" ACTIVE
+ Static 65535 "Item ID"
+ Static 100 "4"
+ Static 65535 "Maker"
+ Edit 105 "AST"
+ Static 65535 "Model"
+ Edit 106 "SixPakPlus"
+ WTAB 95 "&Overview|&Technical|&Acquisition|&Notes" CUR 0 FOCUS
+ Static 65535 "Category"
+ Static 101 "CARD  Expansion cards"
+ Static 65535 "Status"
+ Static 102 "A  Active"
+ Static 65535 "Type"
+ Static 103 ""
+ Static 65535 "Condition"
+ Static 104 ""
+ Static 65535 "Works"
+ Static 109 "?  Not tested"
+ Static 65535 "Quantity"
+ Static 110 "1"
+ Static 65535 ""
+ Edit 111 ""
+ Static 65535 "Location"
+ Static 112 "B2"
+ Static 65535 "Part of"
+ Edit 113 "1 IBM 5150"
+ Static 65535 ""
+ Static 114 "Office > Shelf A1 > Box B2"
+ Static 65535 "Tags"
+ Edit 119 ""
+ Static 65535 "Serial" HIDDEN
+ Static 107 "" HIDDEN
+ Static 65535 "Description" HIDDEN
+ Edit 108 "" HIDDEN
+ Static 65535 "Date acquired" HIDDEN
+ Static 115 "" HIDDEN
+ Static 65535 "Acquired from" HIDDEN
+ Static 116 "" HIDDEN
+ Static 65535 "Price paid" HIDDEN
+ Static 117 "" HIDDEN
+ Static 65535 "Current value" HIDDEN
+ Static 118 "" HIDDEN
+ Static 65535 "Created" HIDDEN
+ Static 120 "2026-10-08" HIDDEN
+ Static 65535 "Updated" HIDDEN
+ Static 121 "2026-10-08" HIDDEN
+ Edit 122 "" HIDDEN
+ Button 148 "Parts"
+ Button 149 "Service"
+ Button 150 "Loans"
+ Button 151 "Used with"
+ Static 99 ""
+ Button 2 "Close" DEFAULT
+ Button 98 "Edit"
+ Button 94 "&Help"
+#32768 "" HIDDEN
+INVWIN "RETROINV - Assemblies" DISABLED
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&Install part...?Ins"
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1539 "&Take out..."
+  MENU 0 "" DISABLED
+  MENU 629 "Ne&xt pane?F6"
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" CHECKED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|~Delete|-|~Move|~Install|~Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|1 part|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status" HBAR 0 258
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0F@0+55 1F@55+80 2F@135+100 3F@235+100 4F@335+40 5F@375+40 6F@415+100 7F@515+55
+  ListBox 1 ""
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "       5 SYS Systems               Compaq                         Portable                       ?          1 Shelf A1"
+   ROW "       7 SYS Systems               Zenith                         Z-150                          ?          1 Shelf A1"
+ WSPLIT 220 "" AT 314 LIMITS 40 588
+ WLIST 221 "      ID Category                  Maker                                        Model                             Qty Location                       Status" HBAR 0 223
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2I@135+30"Maker" 3L@255+29"Model" 4R@372+16"Qty" 5L@395+41"Location" 6L@495+30"Status"
+  COLS 0F@0+55 1F@55+80 2F@135+120 3F@255+100 4F@355+40 5F@395+100 6F@495+40
+  ListBox 1 ""
+   ROW "       4 CARD Expansion cards      AST                                          SixPakPlus                          1 Box B2                         A" SELECTED CUT
+    DRAW FFFFFF/000000 0R@42+6"4" 1L@55+111"CARD Expansion cards" 2I@135+21"AST" 3L@255+53"SixPakPlus" 4R@382+6"1" 5L@395+34"Box B2" 6L@495+7"A"
+=SNAP MASTER
+INVWIN "RETROINV - Assemblies" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 629 "Ne&xt pane?F6"
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" CHECKED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|3 assemblies|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status" HBAR 0 258
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0F@0+55 1F@55+80 2F@135+100 3F@235+100 4F@335+40 5F@375+40 6F@415+100 7F@515+55
+  ListBox 1 "" FOCUS
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "       5 SYS Systems               Compaq                         Portable                       ?          1 Shelf A1"
+   ROW "       7 SYS Systems               Zenith                         Z-150                          ?          1 Shelf A1"
+ WSPLIT 220 "" AT 314 LIMITS 40 588
+ WLIST 221 "      ID Category                  Maker                                        Model                             Qty Location                       Status" HBAR 0 223
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2I@135+30"Maker" 3L@255+29"Model" 4R@372+16"Qty" 5L@395+41"Location" 6L@495+30"Status"
+  COLS 0F@0+55 1F@55+80 2F@135+120 3F@255+100 4F@355+40 5F@395+100 6F@495+40
+  ListBox 1 ""
+   ROW "       4 CARD Expansion cards      AST                                          SixPakPlus                          1 Box B2                         A" SELECTED CUT
+    DRAW FFFFFF/000000 0R@42+6"4" 1L@55+111"CARD Expansion cards" 2I@135+21"AST" 3L@255+53"SixPakPlus" 4R@382+6"1" 5L@395+34"Box B2" 6L@495+7"A"
+#32768 "" HIDDEN
+=SNAP ALONE
+INVWIN "RETROINV - Assemblies" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|3 assemblies|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status"
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0F@0+55 1F@55+80 2F@135+100 3F@235+100 4F@335+40 5F@375+40 6F@415+100 7F@515+55
+  ListBox 1 "" FOCUS
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "       5 SYS Systems               Compaq                         Portable                       ?          1 Shelf A1"
+   ROW "       7 SYS Systems               Zenith                         Z-150                          ?          1 Shelf A1"
+#32768 "" HIDDEN
+=SNAP BOTH
+INVWIN "RETROINV - Assemblies" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 629 "Ne&xt pane?F6"
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" CHECKED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|3 assemblies|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status" HBAR 0 258
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0F@0+55 1F@55+80 2F@135+100 3F@235+100 4F@335+40 5F@375+40 6F@415+100 7F@515+55
+  ListBox 1 "" FOCUS
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "       5 SYS Systems               Compaq                         Portable                       ?          1 Shelf A1"
+   ROW "       7 SYS Systems               Zenith                         Z-150                          ?          1 Shelf A1"
+ WSPLIT 220 "" AT 314 LIMITS 40 588
+ WLIST 221 "      ID Category                  Maker                                        Model                             Qty Location                       Status" HBAR 0 223
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2I@135+30"Maker" 3L@255+29"Model" 4R@372+16"Qty" 5L@395+41"Location" 6L@495+30"Status"
+  COLS 0F@0+55 1F@55+80 2F@135+120 3F@255+100 4F@355+40 5F@395+100 6F@495+40
+  ListBox 1 ""
+   ROW "       4 CARD Expansion cards      AST                                          SixPakPlus                          1 Box B2                         A" SELECTED CUT
+    DRAW FFFFFF/000000 0R@42+6"4" 1L@55+111"CARD Expansion cards" 2I@135+21"AST" 3L@255+53"SixPakPlus" 4R@382+6"1" 5L@395+34"Box B2" 6L@495+7"A"
+#32768 "" HIDDEN
+=SNAP DRAGGED
+INVWIN "RETROINV - Assemblies" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 629 "Ne&xt pane?F6"
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" CHECKED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|3 assemblies|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status" HBAR 0 317
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0F@0+55 1F@55+80 2F@135+100 3F@235+100 4F@335+40 5F@375+40 6F@415+100 7F@515+55
+  ListBox 1 "" FOCUS
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "       5 SYS Systems               Compaq                         Portable                       ?          1 Shelf A1"
+   ROW "       7 SYS Systems               Zenith                         Z-150                          ?          1 Shelf A1"
+ WSPLIT 220 "" AT 255 LIMITS 40 588
+ WLIST 221 "      ID Category                  Maker                                        Model                             Qty Location                       Status" HBAR 0 164
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2I@135+30"Maker" 3L@255+29"Model" 4R@372+16"Qty" 5L@395+41"Location" 6L@495+30"Status"
+  COLS 0F@0+55 1F@55+80 2F@135+120 3F@255+100 4F@355+40 5F@395+100 6F@495+40
+  ListBox 1 ""
+   ROW "       4 CARD Expansion cards      AST                                          SixPakPlus                          1 Box B2                         A" SELECTED CUT
+    DRAW FFFFFF/000000 0R@42+6"4" 1L@55+111"CARD Expansion cards" 2I@135+21"AST" 3L@255+53"SixPakPlus" 4R@382+6"1" 5L@395+34"Box B2" 6L@495+7"A"
+#32768 "" HIDDEN
+=SNAP READER
+INVWIN "RETROINV - Assemblies" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..." DISABLED
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..." DISABLED
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users" DISABLED
+  MENU 53 "&Backup..." DISABLED
+  MENU 54 "&Restore..." DISABLED
+  MENU 55 "&Pack" DISABLED
+  MENU 56 "Re&index" DISABLED
+  MENU 57 "&Audit log..." DISABLED
+  MENU 58 "&Sessions..." DISABLED
+  MENU 50 "&Export CSV..." DISABLED
+  MENU 51 "I&mport CSV..." DISABLED
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E" DISABLED
+  MENU 557 "&Install part...?Ins" DISABLED
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1539 "&Take out..." DISABLED
+  MENU 0 "" DISABLED
+  MENU 629 "Ne&xt pane?F6"
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" CHECKED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "~New|Open|~Edit|~Delete|-|~Move|~Install|~Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|READER, level 1|1 part|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status" HBAR 0 317
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0F@0+55 1F@55+80 2F@135+100 3F@235+100 4F@335+40 5F@375+40 6F@415+100 7F@515+55
+  ListBox 1 ""
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "       5 SYS Systems               Compaq                         Portable                       ?          1 Shelf A1"
+   ROW "       7 SYS Systems               Zenith                         Z-150                          ?          1 Shelf A1"
+ WSPLIT 220 "" AT 255 LIMITS 40 588
+ WLIST 221 "      ID Category                  Maker                                        Model                             Qty Location                       Status" HBAR 0 164
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2I@135+30"Maker" 3L@255+29"Model" 4R@372+16"Qty" 5L@395+41"Location" 6L@495+30"Status"
+  COLS 0F@0+55 1F@55+80 2F@135+120 3F@255+100 4F@355+40 5F@395+100 6F@495+40
+  ListBox 1 "" FOCUS
+   ROW "       4 CARD Expansion cards      AST                                          SixPakPlus                          1 Box B2                         A" SELECTED CUT
+    DRAW FFFFFF/000000 0R@42+6"4" 1L@55+111"CARD Expansion cards" 2I@135+21"AST" 3L@255+53"SixPakPlus" 4R@382+6"1" 5L@395+34"Box B2" 6L@495+7"A"
+#32768 "" HIDDEN
+=SNAP REFUSED
+#32770 "RETROINV" ACTIVE
+ Button 2 "OK" FOCUS DEFAULT
+ Static 65535 ""
+ Static 65535 "Permission denied (your access level is 1)"
+#32768 "" HIDDEN
+INVWIN "RETROINV - Assemblies" DISABLED
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..." DISABLED
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..." DISABLED
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users" DISABLED
+  MENU 53 "&Backup..." DISABLED
+  MENU 54 "&Restore..." DISABLED
+  MENU 55 "&Pack" DISABLED
+  MENU 56 "Re&index" DISABLED
+  MENU 57 "&Audit log..." DISABLED
+  MENU 58 "&Sessions..." DISABLED
+  MENU 50 "&Export CSV..." DISABLED
+  MENU 51 "I&mport CSV..." DISABLED
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E" DISABLED
+  MENU 557 "&Install part...?Ins" DISABLED
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1539 "&Take out..." DISABLED
+  MENU 0 "" DISABLED
+  MENU 629 "Ne&xt pane?F6"
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" CHECKED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "~New|Open|~Edit|~Delete|-|~Move|~Install|~Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|READER, level 1|1 part|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status" HBAR 0 317
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0F@0+55 1F@55+80 2F@135+100 3F@235+100 4F@335+40 5F@375+40 6F@415+100 7F@515+55
+  ListBox 1 ""
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "       5 SYS Systems               Compaq                         Portable                       ?          1 Shelf A1"
+   ROW "       7 SYS Systems               Zenith                         Z-150                          ?          1 Shelf A1"
+ WSPLIT 220 "" AT 255 LIMITS 40 588
+ WLIST 221 "      ID Category                  Maker                                        Model                             Qty Location                       Status" HBAR 0 164
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2I@135+30"Maker" 3L@255+29"Model" 4R@372+16"Qty" 5L@395+41"Location" 6L@495+30"Status"
+  COLS 0F@0+55 1F@55+80 2F@135+120 3F@255+100 4F@355+40 5F@395+100 6F@495+40
+  ListBox 1 ""
+   ROW "       4 CARD Expansion cards      AST                                          SixPakPlus                          1 Box B2                         A" SELECTED CUT
+    DRAW FFFFFF/000000 0R@42+6"4" 1L@55+111"CARD Expansion cards" 2I@135+21"AST" 3L@255+53"SixPakPlus" 4R@382+6"1" 5L@395+34"Box B2" 6L@495+7"A"
+=SNAP LAST
+INVWIN "RETROINV - Assemblies" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 629 "Ne&xt pane?F6"
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" CHECKED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|2 assemblies|Item 6 taken out to Office > Shelf A1"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status" HBAR 0 317
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0F@0+55 1F@55+80 2F@135+100 3F@235+100 4F@335+40 5F@375+40 6F@415+100 7F@515+55
+  ListBox 1 "" FOCUS
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Box B2"
+    DRAW 000000/FFFFFF 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "       7 SYS Systems               Zenith                         Z-150                          ?          1 Shelf A1" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"7" 1L@55+63"SYS Systems" 2L@135+30"Zenith" 3L@235+28"Z-150" 4L@335+6"?" 5R@402+6"1" 6L@415+40"Shelf A1"
+ WSPLIT 220 "" AT 255 LIMITS 40 588
+ WLIST 221 "      ID Category                  Maker                                        Model                             Qty Location                       Status" HBAR 0 164
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2I@135+30"Maker" 3L@255+29"Model" 4R@372+16"Qty" 5L@395+41"Location" 6L@495+30"Status"
+  COLS 0F@0+55 1F@55+80 2F@135+120 3F@255+100 4F@355+40 5F@395+100 6F@495+40
+  ListBox 1 ""
+   ROW "       8 CARD Expansion cards      Paradise                                     EGA                                 1 Shelf A1                       A" SELECTED CUT
+    DRAW FFFFFF/000000 0R@42+6"8" 1L@55+111"CARD Expansion cards" 2I@135+41"Paradise" 3L@255+22"EGA" 4R@382+6"1" 5L@395+40"Shelf A1" 6L@495+7"A"
+#32768 "" HIDDEN
+=SNAP LAST2
+INVWIN "RETROINV - Assemblies" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 629 "Ne&xt pane?F6"
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" CHECKED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|1 assembly|Item 8 taken out to Office > Shelf A1"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status" HBAR 0 317
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0F@0+55 1F@55+80 2F@135+100 3F@235+100 4F@335+40 5F@375+40 6F@415+100 7F@515+55
+  ListBox 1 "" FOCUS
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+34"Box B2"
+ WSPLIT 220 "" AT 255 LIMITS 40 588
+ WLIST 221 "      ID Category                  Maker                                        Model                             Qty Location                       Status" HBAR 0 164
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2I@135+30"Maker" 3L@255+29"Model" 4R@372+16"Qty" 5L@395+41"Location" 6L@495+30"Status"
+  COLS 0F@0+55 1F@55+80 2F@135+120 3F@255+100 4F@355+40 5F@395+100 6F@495+40
+  ListBox 1 ""
+   ROW "       4 CARD Expansion cards      AST                                          SixPakPlus                          1 Box B2                         A" SELECTED CUT
+    DRAW FFFFFF/000000 0R@42+6"4" 1L@55+111"CARD Expansion cards" 2I@135+21"AST" 3L@255+53"SixPakPlus" 4R@382+6"1" 5L@395+34"Box B2" 6L@495+7"A"
+#32768 "" HIDDEN
+=SNAP EMPTY
+INVWIN "RETROINV - Assemblies" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter" DISABLED
+  MENU 1093 "&Edit...?Ctrl+E" DISABLED
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..." DISABLED
+  MENU 1092 "Dupli&cate...?Ctrl+D" DISABLED
+  MENU 1537 "&Install in..." DISABLED
+  MENU 1539 "&Take out..." DISABLED
+  MENU 1541 "Split &units..." DISABLED
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L" DISABLED
+  MENU 1106 "Reser&ve...?Ctrl+R" DISABLED
+  MENU 1109 "Use wit&h...?Ctrl+U" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts" DISABLED
+  MENU 1543 "&Service records" DISABLED
+  MENU 1544 "Loans &and holds" DISABLED
+  MENU 1545 "Used &with it" DISABLED
+  MENU 0 "" DISABLED
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" CHECKED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|~Open|~Edit|~Delete|-|~Move|~Install|~Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|0 assemblies|Item 4 taken out to Office > Shelf A1"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status" HBAR 0 317
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0F@0+55 1F@55+80 2F@135+100 3F@235+100 4F@335+40 5F@375+40 6F@415+100 7F@515+55
+  ListBox 1 "" FOCUS
+   ROW "No assemblies"
+    DRAW 000000/FFFFFF 0I@0+68"No assemblies"
+ WSPLIT 220 "" AT 255 LIMITS 40 588
+ WLIST 221 "      ID Category                  Maker                                        Model                             Qty Location                       Status" HBAR 0 164 DISABLED
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2I@135+30"Maker" 3L@255+29"Model" 4R@372+16"Qty" 5L@395+41"Location" 6L@495+30"Status"
+  COLS 0F@0+55 1F@55+80 2F@135+120 3F@255+100 4F@355+40 5F@395+100 6F@495+40
+  ListBox 1 ""
+#32768 "" HIDDEN
+=SNAP TYPES
+INVWIN "RETROINV - Assemblies" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter" DISABLED
+  MENU 1093 "&Edit...?Ctrl+E" DISABLED
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..." DISABLED
+  MENU 1092 "Dupli&cate...?Ctrl+D" DISABLED
+  MENU 1537 "&Install in..." DISABLED
+  MENU 1539 "&Take out..." DISABLED
+  MENU 1541 "Split &units..." DISABLED
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L" DISABLED
+  MENU 1106 "Reser&ve...?Ctrl+R" DISABLED
+  MENU 1109 "Use wit&h...?Ctrl+U" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts" DISABLED
+  MENU 1543 "&Service records" DISABLED
+  MENU 1544 "Loans &and holds" DISABLED
+  MENU 1545 "Used &with it" DISABLED
+  MENU 0 "" DISABLED
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" CHECKED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|~Open|~Edit|~Delete|-|~Move|~Install|~Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|0 assemblies|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status" HBAR 0 317
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0F@0+55 1F@55+80 2F@135+100 3F@235+100 4F@335+40 5F@375+40 6F@415+100 7F@515+55
+  ListBox 1 "" FOCUS
+   ROW "No assemblies"
+    DRAW 000000/FFFFFF 0I@0+68"No assemblies"
+ WSPLIT 220 "" AT 255 LIMITS 40 588
+ WLIST 221 "      ID Category                  Maker                                        Model                             Qty Location                       Status" HBAR 0 164 DISABLED
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2I@135+30"Maker" 3L@255+29"Model" 4R@372+16"Qty" 5L@395+41"Location" 6L@495+30"Status"
+  COLS 0F@0+55 1F@55+80 2F@135+120 3F@255+100 4F@355+40 5F@395+100 6F@495+40
+  ListBox 1 ""
+#32768 "" HIDDEN
+=END

@@ -1,0 +1,822 @@
+== mkitems .
+MKITEMS: ITEMS.DBF, 9 records
+MKITEMS: LOCS.DBF, 5 records
+MKITEMS: CATS.DBF, 10 records
+MKITEMS: LTYPES.DBF, 8 records
+MKITEMS: USERS.DBF, 3 records
+== exit 0
+== files
+2762986667 4173 ITEMS.DBF
+ 83 1a 0a 08 09 00 00 00 41 03 73 01 00 00 00 00
+ 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+2030061527 8452 ITEMS.DBT
+ 11 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+ 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+1894452884 653 LOCS.DBF
+ 83 1a 0a 08 05 00 00 00 01 01 4f 00 00 00 00 00
+ 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+3883216239 597 LOCS.DBT
+ 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+ 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+1783970080 400 CATS.DBF
+ 03 1a 0a 08 0a 00 00 00 81 00 1b 00 00 00 00 00
+ 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+171898251 378 LTYPES.DBF
+ 03 1a 0a 08 08 00 00 00 81 00 1f 00 00 00 00 00
+ 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+3077398045 704 USERS.DBF
+ 03 1a 0a 08 03 00 00 00 81 01 6a 00 00 00 00 00
+ 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+== invdump ITEMS
+Table        ITEMS.DBF
+Version      83h (dBASE III, with memo)
+Last update  2026-10-08
+Records      9
+Header       833 bytes
+Record       371 bytes
+Fields       25
+Memo         yes (ITEMS.DBT)
+
+Field  Name        Type       Width  Dec  Offset
+    1  ITEM_ID     N Numeric      8    0       1
+    2  CATEGORY    C Character    4            9
+    3  ITEMTYPE    C Character   20           13
+    4  MFR         C Character   30           33
+    5  MODEL       C Character   30           63
+    6  SERIALNO    C Character   30           93
+    7  DESCR       C Character   60          123
+    8  COND        C Character    3          183
+    9  WORKS       C Character    1          186
+   10  QTY         N Numeric      5    0     187
+   11  ON_LOAN     N Numeric      5    0     192
+   12  RESERVED    N Numeric      5    0     197
+   13  IN_USE      N Numeric      5    0     202
+   14  ATTACHED    N Numeric      5    0     207
+   15  LOC_ID      N Numeric      8    0     212
+   16  PARENT_ID   N Numeric      8    0     220
+   17  ACQ_DATE    D Date         8          228
+   18  ACQ_SRC     C Character   30          236
+   19  ACQ_PRICE   N Numeric      9    2     266
+   20  CUR_VALUE   N Numeric      9    2     275
+   21  TAGS        C Character   60          284
+   22  STATUS      C Character    1          344
+   23  CREATED     D Date         8          345
+   24  UPDATED     D Date         8          353
+   25  NOTES       M Memo        10          361
+** Total **                     371
+
+1: 1|SYS|Desktop PC|IBM|5150 Personal Computer|0123456|IBM PC with 256 KB, two 360 KB floppy drives, CGA|GD|Y|1|0|0|0|1|1|0|19960315|Estate sale|75.00|1200.00|IBM,8088,5150,1981|A|20260901|20261008|1
+2: 2|CARD|ISA VGA|Paradise|PVGA1A-JK|PV8-04411|8-bit ISA VGA card, 256 KB, works in an XT bus|EXC|Y|1|0|0|0|0|1|1|20240611|VCF swap meet|40.00|85.50|VGA,8-BIT,ISA|A|20260901|20260901|
+3: 3|DRV|MFM HDD|Seagate|ST-225|1234567-X|20 MB half-height MFM hard disk|GD|I|1|1|0|0|0|2|0|20250120|eBay|25.00|60.00|MFM,ST-506,20MB|A|20260902|20261001|2
+5: 5|PART|RTC module|Dallas|DS12887||Real-time clock with built-in battery, dead||N|0|0|0|0|0|2|0|||0.00|-5.00|RTC,BATTERY|A|20260904|20260904|5
+6: 6|SW|Operating system|Microsoft|MS-DOS 3.10||Original 5.25in disks with manual||?|1|0|0|0|0||0|||||DOS,FLOPPY|A|20260905||
+7: 7|CPU|8088 upgrade|NEC|V20 UPD70108C-8||NEC V20 fitted in place of the 8088|GD|Y|1|0|0|0|0|1|1|20250301|Parts bin|3.50|12.00|CPU,V20|A|20260906|20260906|6
+8: 8|SYS|Luggable PC|Compaq|Portable|1075321|Compaq Portable with 9in amber CRT, 640 KB, two FDD|EXC|Y|1|0|0|0|0|1|0|20230812|Club auction|150.00|650.00|COMPAQ,8088,PORTABLE,1983|A|20260907|20260907|7
+9: 9|CBL|Floppy cable||34-pin twisted||Floppy drive cable with twist, 2 drives|GD|?|3|0|1|1|0|2|0||Parts bin|0.00|2.00|FDD,CABLE|A|20260908|20260908|16
+== exit 0
+== invdump /D /M ITEMS.DBF
+Table        ITEMS.DBF
+Version      83h (dBASE III, with memo)
+Last update  2026-10-08
+Records      9
+Header       833 bytes
+Record       371 bytes
+Fields       25
+Memo         yes (ITEMS.DBT)
+
+Field  Name        Type       Width  Dec  Offset
+    1  ITEM_ID     N Numeric      8    0       1
+    2  CATEGORY    C Character    4            9
+    3  ITEMTYPE    C Character   20           13
+    4  MFR         C Character   30           33
+    5  MODEL       C Character   30           63
+    6  SERIALNO    C Character   30           93
+    7  DESCR       C Character   60          123
+    8  COND        C Character    3          183
+    9  WORKS       C Character    1          186
+   10  QTY         N Numeric      5    0     187
+   11  ON_LOAN     N Numeric      5    0     192
+   12  RESERVED    N Numeric      5    0     197
+   13  IN_USE      N Numeric      5    0     202
+   14  ATTACHED    N Numeric      5    0     207
+   15  LOC_ID      N Numeric      8    0     212
+   16  PARENT_ID   N Numeric      8    0     220
+   17  ACQ_DATE    D Date         8          228
+   18  ACQ_SRC     C Character   30          236
+   19  ACQ_PRICE   N Numeric      9    2     266
+   20  CUR_VALUE   N Numeric      9    2     275
+   21  TAGS        C Character   60          284
+   22  STATUS      C Character    1          344
+   23  CREATED     D Date         8          345
+   24  UPDATED     D Date         8          353
+   25  NOTES       M Memo        10          361
+** Total **                     371
+
+1: 1|SYS|Desktop PC|IBM|5150 Personal Computer|0123456|IBM PC with 256 KB, two 360 KB floppy drives, CGA|GD|Y|1|0|0|0|1|1|0|19960315|Estate sale|75.00|1200.00|IBM,8088,5150,1981|A|20260901|20261008|1
+  NOTES (block 1, 217 bytes):
+    Original IBM PC, type 5150, 64K-256K motherboard (rev B BIOS
+    dated 10/27/82), fully populated with 256 KB.
+
+    Two full-height Tandon TM100-2A 5.25in drives.  Case has a
+    small dent on the left side; PSU fan replaced.
+2: 2|CARD|ISA VGA|Paradise|PVGA1A-JK|PV8-04411|8-bit ISA VGA card, 256 KB, works in an XT bus|EXC|Y|1|0|0|0|0|1|1|20240611|VCF swap meet|40.00|85.50|VGA,8-BIT,ISA|A|20260901|20260901|
+3: 3|DRV|MFM HDD|Seagate|ST-225|1234567-X|20 MB half-height MFM hard disk|GD|I|1|1|0|0|0|2|0|20250120|eBay|25.00|60.00|MFM,ST-506,20MB|A|20260902|20261001|2
+  NOTES (block 2, 705 bytes):
+    Seagate ST-225, 20 MB, MFM, 615 cylinders, 4 heads, 17 sectors
+    per track, half-height 5.25in, stepper-motor head positioner.
+
+    Arrived stuck (stiction).  Freed by turning the spindle by hand
+    through the bottom access hole with the drive powered off, then
+    it spun up normally.  Low-level formatted with the WD 1002-WX2
+    controller BIOS at C800:5, interleave 3, which suits a 4.77 MHz
+    8088.  Defect list from the label: cyl 212 head 1, cyl 488
+    head 3; both entered in the format program before formatting.
+
+    SpinRite-style surface scan found no further bad sectors.  Keep
+    parked (SHIPDISK) before moving; this model does not auto-park.
+    Jumpers: drive select 2 with the twisted cable, terminator on.
+*4: 4|PERI|Keyboard|IBM|Model F XT 83-key||XT keyboard, stuck keys|FR|N|1|0|0|0|0|0|0|19980704|Flea market|5.00|0.00|KEYBOARD,XT|D|20260903|20260910|4
+  NOTES (block 4, 39 bytes):
+    Keys sticky after a spill; disposed of.
+5: 5|PART|RTC module|Dallas|DS12887||Real-time clock with built-in battery, dead||N|0|0|0|0|0|2|0|||0.00|-5.00|RTC,BATTERY|A|20260904|20260904|5
+  NOTES (block 5, 96 bytes):
+    Battery inside the module is dead.  Kept only as a footprint
+    sample for the replacement socket.
+6: 6|SW|Operating system|Microsoft|MS-DOS 3.10||Original 5.25in disks with manual||?|1|0|0|0|0||0|||||DOS,FLOPPY|A|20260905||
+7: 7|CPU|8088 upgrade|NEC|V20 UPD70108C-8||NEC V20 fitted in place of the 8088|GD|Y|1|0|0|0|0|1|1|20250301|Parts bin|3.50|12.00|CPU,V20|A|20260906|20260906|6
+  NOTES (block 6, 0 bytes):
+8: 8|SYS|Luggable PC|Compaq|Portable|1075321|Compaq Portable with 9in amber CRT, 640 KB, two FDD|EXC|Y|1|0|0|0|0|1|0|20230812|Club auction|150.00|650.00|COMPAQ,8088,PORTABLE,1983|A|20260907|20260907|7
+  NOTES (block 7, first 4095 bytes):
+    Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.
+    Left running 8 hours at room temperature; no lockups.
+    Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.
+    Left running 8 hours at room temperature; no lockups.
+    Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.
+    Left running 8 hours at room temperature; no lockups.
+    Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.
+    Left running 8 hours at room temperature; no lockups.
+    Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.
+    Left running 8 hours at room temperature; no lockups.
+    Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.
+    Left running 8 hours at room temperature; no lockups.
+    Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.
+    Left running 8 hours at room temperature; no lockups.
+    Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.
+    Left running 8 hours at room temperature; no lockups.
+    Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.
+    Left running 8 hours at room temperature; no lockups.
+    Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.
+    Left running 8 hours at room temperature; no lockups.
+    Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.
+    Left running 8 hours at room temperature; no lockups.
+    Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.
+    Left running 8 hours at room temperature; no lockups.
+    Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.
+    Left running 8 hours at room temperature; no lockups.
+    Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.
+    Left running 8 hours at room temperature; no lockups.
+    Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.
+    Left running 8 hours at room temperature; no lockups.
+    Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.
+    Left running 8 hours at room temperature; no lockups.
+    Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.
+    Left running 8 hours at room temperature; no lockups.
+    Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.
+    Left running 8 hours at room temperature; no lockups.
+    Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.
+    Left running 8 hours at room temperature; no lockups.
+    Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.
+    Left running 8 hours at room temperature; no lockups.
+    Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.
+    Left running 8 hours at room temperature; no lockups.
+    Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.
+    Left running 8 hours at room temperature; no lockups.
+    Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.
+    Left running 8 hours at room temperature; no lockups.
+    Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.
+    Left running 8 hours at room temperature; no lockups.
+    Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.
+    Left running 8 hours at room temperature; no lockups.
+    Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.
+    Left running 8 hours at room temperature; no lockups.
+    Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.
+    Left running 8 hours at room temperature; no lockups.
+    Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.
+    Left running 8 hours at room temperature; no lockups.
+    Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.
+    Left running 8 hours at room temperature; no lockups.
+    Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.
+    Left running 8 hours at room temperature; no lockups.
+    Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.
+    Left running 8 hours at room temperature; no lockups.
+    Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.
+    Left running 8 hours at room temperature; no lockups.
+    Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.
+    Left running 8 hours at room temperature; no lockups.
+    Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.
+    Left running 8 hours at room temperature; no lockups.
+    Burn-in pass: P
+    [memo cut at 4095 bytes]
+9: 9|CBL|Floppy cable||34-pin twisted||Floppy drive cable with twist, 2 drives|GD|?|3|0|1|1|0|2|0||Parts bin|0.00|2.00|FDD,CABLE|A|20260908|20260908|16
+  NOTES (block 16, 258 bytes):
+    Flat 34-wire ribbon with the twist between the drive A: and drive B: connec
+    tors, two card-edge plugs and one IDC header for the controller.
+    Typed in the dBASE memo editor, which wraps
+    with a soft break.
+    A bare CR ends here
+    and a bare LF ends here
+    as well.
+== exit 0
+== invdump /H LOCS
+Table        LOCS.DBF
+Version      83h (dBASE III, with memo)
+Last update  2026-10-08
+Records      5
+Header       257 bytes
+Record       79 bytes
+Fields       7
+Memo         yes (LOCS.DBT)
+
+Field  Name        Type       Width  Dec  Offset
+    1  LOC_ID      N Numeric      8    0       1
+    2  PARENT_ID   N Numeric      8    0       9
+    3  LOC_NAME    C Character   30           17
+    4  LOC_CODE    C Character   10           47
+    5  LTYPE       C Character    8           57
+    6  CAPACITY    N Numeric      4    0      65
+    7  NOTES       M Memo        10           69
+** Total **                      79
+== exit 0
+== invdump /S CATS
+Field  Name        Type       Width  Dec  Offset
+    1  CAT_CODE    C Character    4            1
+    2  CAT_NAME    C Character   20            5
+    3  SORTORD     N Numeric      2    0      25
+** Total **                      27
+== exit 0
+== invdump /M LOCS
+Table        LOCS.DBF
+Version      83h (dBASE III, with memo)
+Last update  2026-10-08
+Records      5
+Header       257 bytes
+Record       79 bytes
+Fields       7
+Memo         yes (LOCS.DBT)
+
+Field  Name        Type       Width  Dec  Offset
+    1  LOC_ID      N Numeric      8    0       1
+    2  PARENT_ID   N Numeric      8    0       9
+    3  LOC_NAME    C Character   30           17
+    4  LOC_CODE    C Character   10           47
+    5  LTYPE       C Character    8           57
+    6  CAPACITY    N Numeric      4    0      65
+    7  NOTES       M Memo        10           69
+** Total **                      79
+
+1: 1|4|Shelf A, top level|A1|SHELF|6|1
+  NOTES (block 1, 83 bytes):
+    Heavy steel shelving, top level holds complete systems.
+    Keep away from the window.
+2: 2|3|Small parts bin 12|B12|BIN|40|
+3: 3|0|Workbench||RACK||
+4: 4|0|Garage|GAR|ROOM||
+== exit 0
+== invdump USERS
+Table        USERS.DBF
+Version      03h (dBASE III)
+Last update  2026-10-08
+Records      3
+Header       385 bytes
+Record       106 bytes
+Fields       11
+Memo         no
+
+Field  Name        Type       Width  Dec  Offset
+    1  USER_ID     N Numeric      4    0       1
+    2  USERNAME    C Character    8            5
+    3  FULLNAME    C Character   30           13
+    4  GROUPNAME   C Character    8           43
+    5  LEVEL       N Numeric      1    0      51
+    6  SALT        C Character    4           52
+    7  PWHASH      C Character   32           56
+    8  STATUS      C Character    1           88
+    9  MUSTCHG     L Logical      1           89
+   10  LASTLOGIN   D Date         8           90
+   11  CREATED     D Date         8           98
+** Total **                     106
+
+1: 1|ADMIN|Administrator|STAFF|3|||A|T||20261008
+2: 2|GUEST|Visitor account|VISIT|1|||D|F|20261001|20260915
+3: 3|BENCH|Workbench terminal|STAFF|2|||A|||20260920
+== exit 0
+== invdump /F:ITEM_ID,mfr,MODEL,PARENT_ID /R:2-4 /D ITEMS
+Table        ITEMS.DBF
+Version      83h (dBASE III, with memo)
+Last update  2026-10-08
+Records      9
+Header       833 bytes
+Record       371 bytes
+Fields       25
+Memo         yes (ITEMS.DBT)
+
+Field  Name        Type       Width  Dec  Offset
+    1  ITEM_ID     N Numeric      8    0       1
+    2  CATEGORY    C Character    4            9
+    3  ITEMTYPE    C Character   20           13
+    4  MFR         C Character   30           33
+    5  MODEL       C Character   30           63
+    6  SERIALNO    C Character   30           93
+    7  DESCR       C Character   60          123
+    8  COND        C Character    3          183
+    9  WORKS       C Character    1          186
+   10  QTY         N Numeric      5    0     187
+   11  ON_LOAN     N Numeric      5    0     192
+   12  RESERVED    N Numeric      5    0     197
+   13  IN_USE      N Numeric      5    0     202
+   14  ATTACHED    N Numeric      5    0     207
+   15  LOC_ID      N Numeric      8    0     212
+   16  PARENT_ID   N Numeric      8    0     220
+   17  ACQ_DATE    D Date         8          228
+   18  ACQ_SRC     C Character   30          236
+   19  ACQ_PRICE   N Numeric      9    2     266
+   20  CUR_VALUE   N Numeric      9    2     275
+   21  TAGS        C Character   60          284
+   22  STATUS      C Character    1          344
+   23  CREATED     D Date         8          345
+   24  UPDATED     D Date         8          353
+   25  NOTES       M Memo        10          361
+** Total **                     371
+
+2: 2|Paradise|PVGA1A-JK|1
+3: 3|Seagate|ST-225|0
+*4: 4|IBM|Model F XT 83-key|0
+== exit 0
+== invdump /F:NOTES,ITEM_ID /R:3 /M ITEMS
+Table        ITEMS.DBF
+Version      83h (dBASE III, with memo)
+Last update  2026-10-08
+Records      9
+Header       833 bytes
+Record       371 bytes
+Fields       25
+Memo         yes (ITEMS.DBT)
+
+Field  Name        Type       Width  Dec  Offset
+    1  ITEM_ID     N Numeric      8    0       1
+    2  CATEGORY    C Character    4            9
+    3  ITEMTYPE    C Character   20           13
+    4  MFR         C Character   30           33
+    5  MODEL       C Character   30           63
+    6  SERIALNO    C Character   30           93
+    7  DESCR       C Character   60          123
+    8  COND        C Character    3          183
+    9  WORKS       C Character    1          186
+   10  QTY         N Numeric      5    0     187
+   11  ON_LOAN     N Numeric      5    0     192
+   12  RESERVED    N Numeric      5    0     197
+   13  IN_USE      N Numeric      5    0     202
+   14  ATTACHED    N Numeric      5    0     207
+   15  LOC_ID      N Numeric      8    0     212
+   16  PARENT_ID   N Numeric      8    0     220
+   17  ACQ_DATE    D Date         8          228
+   18  ACQ_SRC     C Character   30          236
+   19  ACQ_PRICE   N Numeric      9    2     266
+   20  CUR_VALUE   N Numeric      9    2     275
+   21  TAGS        C Character   60          284
+   22  STATUS      C Character    1          344
+   23  CREATED     D Date         8          345
+   24  UPDATED     D Date         8          353
+   25  NOTES       M Memo        10          361
+** Total **                     371
+
+3: 2|3
+  NOTES (block 2, 705 bytes):
+    Seagate ST-225, 20 MB, MFM, 615 cylinders, 4 heads, 17 sectors
+    per track, half-height 5.25in, stepper-motor head positioner.
+
+    Arrived stuck (stiction).  Freed by turning the spindle by hand
+    through the bottom access hole with the drive powered off, then
+    it spun up normally.  Low-level formatted with the WD 1002-WX2
+    controller BIOS at C800:5, interleave 3, which suits a 4.77 MHz
+    8088.  Defect list from the label: cyl 212 head 1, cyl 488
+    head 3; both entered in the format program before formatting.
+
+    SpinRite-style surface scan found no further bad sectors.  Keep
+    parked (SHIPDISK) before moving; this model does not auto-park.
+    Jumpers: drive select 2 with the twisted cable, terminator on.
+== exit 0
+== invdump /R:6- /F:ITEM_ID,UPDATED ITEMS
+Table        ITEMS.DBF
+Version      83h (dBASE III, with memo)
+Last update  2026-10-08
+Records      9
+Header       833 bytes
+Record       371 bytes
+Fields       25
+Memo         yes (ITEMS.DBT)
+
+Field  Name        Type       Width  Dec  Offset
+    1  ITEM_ID     N Numeric      8    0       1
+    2  CATEGORY    C Character    4            9
+    3  ITEMTYPE    C Character   20           13
+    4  MFR         C Character   30           33
+    5  MODEL       C Character   30           63
+    6  SERIALNO    C Character   30           93
+    7  DESCR       C Character   60          123
+    8  COND        C Character    3          183
+    9  WORKS       C Character    1          186
+   10  QTY         N Numeric      5    0     187
+   11  ON_LOAN     N Numeric      5    0     192
+   12  RESERVED    N Numeric      5    0     197
+   13  IN_USE      N Numeric      5    0     202
+   14  ATTACHED    N Numeric      5    0     207
+   15  LOC_ID      N Numeric      8    0     212
+   16  PARENT_ID   N Numeric      8    0     220
+   17  ACQ_DATE    D Date         8          228
+   18  ACQ_SRC     C Character   30          236
+   19  ACQ_PRICE   N Numeric      9    2     266
+   20  CUR_VALUE   N Numeric      9    2     275
+   21  TAGS        C Character   60          284
+   22  STATUS      C Character    1          344
+   23  CREATED     D Date         8          345
+   24  UPDATED     D Date         8          353
+   25  NOTES       M Memo        10          361
+** Total **                     371
+
+6: 6|
+7: 7|20260906
+8: 8|20260907
+9: 9|20260908
+== exit 0
+== invdump /R:5-2 ITEMS
+INVDUMP: bad record range 5-2
+usage: INVDUMP [/H] [/S] [/D] [/M] [/F:FIELD,FIELD...] [/R:from-to] FILE[.DBF]
+  /H  header and fields only     /S  fields only
+  /D  include deleted records    /M  print memo text
+  /F  print only these fields    /R  record range, e.g. /R:10-20
+== exit 1
+== invdump /F:NOPE ITEMS
+INVDUMP: no field NOPE in the table
+== exit 1
+== invdump /X ITEMS
+INVDUMP: unknown switch /X
+usage: INVDUMP [/H] [/S] [/D] [/M] [/F:FIELD,FIELD...] [/R:from-to] FILE[.DBF]
+  /H  header and fields only     /S  fields only
+  /D  include deleted records    /M  print memo text
+  /F  print only these fields    /R  record range, e.g. /R:10-20
+== exit 1
+== invdump /R:-2 /F:ITEM_ID,MODEL ITEMS
+Table        ITEMS.DBF
+Version      83h (dBASE III, with memo)
+Last update  2026-10-08
+Records      9
+Header       833 bytes
+Record       371 bytes
+Fields       25
+Memo         yes (ITEMS.DBT)
+
+Field  Name        Type       Width  Dec  Offset
+    1  ITEM_ID     N Numeric      8    0       1
+    2  CATEGORY    C Character    4            9
+    3  ITEMTYPE    C Character   20           13
+    4  MFR         C Character   30           33
+    5  MODEL       C Character   30           63
+    6  SERIALNO    C Character   30           93
+    7  DESCR       C Character   60          123
+    8  COND        C Character    3          183
+    9  WORKS       C Character    1          186
+   10  QTY         N Numeric      5    0     187
+   11  ON_LOAN     N Numeric      5    0     192
+   12  RESERVED    N Numeric      5    0     197
+   13  IN_USE      N Numeric      5    0     202
+   14  ATTACHED    N Numeric      5    0     207
+   15  LOC_ID      N Numeric      8    0     212
+   16  PARENT_ID   N Numeric      8    0     220
+   17  ACQ_DATE    D Date         8          228
+   18  ACQ_SRC     C Character   30          236
+   19  ACQ_PRICE   N Numeric      9    2     266
+   20  CUR_VALUE   N Numeric      9    2     275
+   21  TAGS        C Character   60          284
+   22  STATUS      C Character    1          344
+   23  CREATED     D Date         8          345
+   24  UPDATED     D Date         8          353
+   25  NOTES       M Memo        10          361
+** Total **                     371
+
+1: 1|5150 Personal Computer
+2: 2|PVGA1A-JK
+== exit 0
+== invdump /R:9- /F:ITEM_ID,MODEL /M ITEMS
+Table        ITEMS.DBF
+Version      83h (dBASE III, with memo)
+Last update  2026-10-08
+Records      9
+Header       833 bytes
+Record       371 bytes
+Fields       25
+Memo         yes (ITEMS.DBT)
+
+Field  Name        Type       Width  Dec  Offset
+    1  ITEM_ID     N Numeric      8    0       1
+    2  CATEGORY    C Character    4            9
+    3  ITEMTYPE    C Character   20           13
+    4  MFR         C Character   30           33
+    5  MODEL       C Character   30           63
+    6  SERIALNO    C Character   30           93
+    7  DESCR       C Character   60          123
+    8  COND        C Character    3          183
+    9  WORKS       C Character    1          186
+   10  QTY         N Numeric      5    0     187
+   11  ON_LOAN     N Numeric      5    0     192
+   12  RESERVED    N Numeric      5    0     197
+   13  IN_USE      N Numeric      5    0     202
+   14  ATTACHED    N Numeric      5    0     207
+   15  LOC_ID      N Numeric      8    0     212
+   16  PARENT_ID   N Numeric      8    0     220
+   17  ACQ_DATE    D Date         8          228
+   18  ACQ_SRC     C Character   30          236
+   19  ACQ_PRICE   N Numeric      9    2     266
+   20  CUR_VALUE   N Numeric      9    2     275
+   21  TAGS        C Character   60          284
+   22  STATUS      C Character    1          344
+   23  CREATED     D Date         8          345
+   24  UPDATED     D Date         8          353
+   25  NOTES       M Memo        10          361
+** Total **                     371
+
+9: 9|34-pin twisted
+== exit 0
+== invdump /R:12- ITEMS
+Table        ITEMS.DBF
+Version      83h (dBASE III, with memo)
+Last update  2026-10-08
+Records      9
+Header       833 bytes
+Record       371 bytes
+Fields       25
+Memo         yes (ITEMS.DBT)
+
+Field  Name        Type       Width  Dec  Offset
+    1  ITEM_ID     N Numeric      8    0       1
+    2  CATEGORY    C Character    4            9
+    3  ITEMTYPE    C Character   20           13
+    4  MFR         C Character   30           33
+    5  MODEL       C Character   30           63
+    6  SERIALNO    C Character   30           93
+    7  DESCR       C Character   60          123
+    8  COND        C Character    3          183
+    9  WORKS       C Character    1          186
+   10  QTY         N Numeric      5    0     187
+   11  ON_LOAN     N Numeric      5    0     192
+   12  RESERVED    N Numeric      5    0     197
+   13  IN_USE      N Numeric      5    0     202
+   14  ATTACHED    N Numeric      5    0     207
+   15  LOC_ID      N Numeric      8    0     212
+   16  PARENT_ID   N Numeric      8    0     220
+   17  ACQ_DATE    D Date         8          228
+   18  ACQ_SRC     C Character   30          236
+   19  ACQ_PRICE   N Numeric      9    2     266
+   20  CUR_VALUE   N Numeric      9    2     275
+   21  TAGS        C Character   60          284
+   22  STATUS      C Character    1          344
+   23  CREATED     D Date         8          345
+   24  UPDATED     D Date         8          353
+   25  NOTES       M Memo        10          361
+** Total **                     371
+
+== exit 0
+== invdump /M CATS
+Table        CATS.DBF
+Version      03h (dBASE III)
+Last update  2026-10-08
+Records      10
+Header       129 bytes
+Record       27 bytes
+Fields       3
+Memo         no
+
+Field  Name        Type       Width  Dec  Offset
+    1  CAT_CODE    C Character    4            1
+    2  CAT_NAME    C Character   20            5
+    3  SORTORD     N Numeric      2    0      25
+** Total **                      27
+
+1: SYS|Systems|1
+2: MOBO|Motherboards|2
+3: CPU|Processors|3
+4: CARD|Expansion cards|4
+5: DRV|Drives|5
+6: PERI|Peripherals|6
+7: SW|Software|7
+8: MAN|Manuals|8
+9: CBL|Cables|9
+10: PART|Parts|10
+== exit 0
+== invdump /H /S USERS
+Table        USERS.DBF
+Version      03h (dBASE III)
+Last update  2026-10-08
+Records      3
+Header       385 bytes
+Record       106 bytes
+Fields       11
+Memo         no
+
+Field  Name        Type       Width  Dec  Offset
+    1  USER_ID     N Numeric      4    0       1
+    2  USERNAME    C Character    8            5
+    3  FULLNAME    C Character   30           13
+    4  GROUPNAME   C Character    8           43
+    5  LEVEL       N Numeric      1    0      51
+    6  SALT        C Character    4           52
+    7  PWHASH      C Character   32           56
+    8  STATUS      C Character    1           88
+    9  MUSTCHG     L Logical      1           89
+   10  LASTLOGIN   D Date         8           90
+   11  CREATED     D Date         8           98
+** Total **                     106
+== exit 0
+== invdump /F:ITEM_ID,DESCRIPTION1 ITEMS
+INVDUMP: no field DESCRIPTIO... in the table
+== exit 1
+== invdump /F: ITEMS
+INVDUMP: /F names no fields
+== exit 1
+== invdump /F ITEMS
+INVDUMP: unknown switch /F
+usage: INVDUMP [/H] [/S] [/D] [/M] [/F:FIELD,FIELD...] [/R:from-to] FILE[.DBF]
+  /H  header and fields only     /S  fields only
+  /D  include deleted records    /M  print memo text
+  /F  print only these fields    /R  record range, e.g. /R:10-20
+== exit 1
+== invdump /R ITEMS
+INVDUMP: unknown switch /R
+usage: INVDUMP [/H] [/S] [/D] [/M] [/F:FIELD,FIELD...] [/R:from-to] FILE[.DBF]
+  /H  header and fields only     /S  fields only
+  /D  include deleted records    /M  print memo text
+  /F  print only these fields    /R  record range, e.g. /R:10-20
+== exit 1
+== invdump /R:2-4 /R:3- /F:ITEM_ID ITEMS
+Table        ITEMS.DBF
+Version      83h (dBASE III, with memo)
+Last update  2026-10-08
+Records      9
+Header       833 bytes
+Record       371 bytes
+Fields       25
+Memo         yes (ITEMS.DBT)
+
+Field  Name        Type       Width  Dec  Offset
+    1  ITEM_ID     N Numeric      8    0       1
+    2  CATEGORY    C Character    4            9
+    3  ITEMTYPE    C Character   20           13
+    4  MFR         C Character   30           33
+    5  MODEL       C Character   30           63
+    6  SERIALNO    C Character   30           93
+    7  DESCR       C Character   60          123
+    8  COND        C Character    3          183
+    9  WORKS       C Character    1          186
+   10  QTY         N Numeric      5    0     187
+   11  ON_LOAN     N Numeric      5    0     192
+   12  RESERVED    N Numeric      5    0     197
+   13  IN_USE      N Numeric      5    0     202
+   14  ATTACHED    N Numeric      5    0     207
+   15  LOC_ID      N Numeric      8    0     212
+   16  PARENT_ID   N Numeric      8    0     220
+   17  ACQ_DATE    D Date         8          228
+   18  ACQ_SRC     C Character   30          236
+   19  ACQ_PRICE   N Numeric      9    2     266
+   20  CUR_VALUE   N Numeric      9    2     275
+   21  TAGS        C Character   60          284
+   22  STATUS      C Character    1          344
+   23  CREATED     D Date         8          345
+   24  UPDATED     D Date         8          353
+   25  NOTES       M Memo        10          361
+** Total **                     371
+
+3: 3
+5: 5
+6: 6
+7: 7
+8: 8
+9: 9
+== exit 0
+== invdump /H: ITEMS
+INVDUMP: unknown switch /H:
+usage: INVDUMP [/H] [/S] [/D] [/M] [/F:FIELD,FIELD...] [/R:from-to] FILE[.DBF]
+  /H  header and fields only     /S  fields only
+  /D  include deleted records    /M  print memo text
+  /F  print only these fields    /R  record range, e.g. /R:10-20
+== exit 1
+== invdump nofile
+INVDUMP: cannot open nofile.dbf: DBF_ENOENT (file or path not found)
+== exit 2
+== invdump NOFILE
+INVDUMP: cannot open NOFILE.DBF: DBF_ENOENT (file or path not found)
+== exit 2
+== invdump JUNK
+INVDUMP: cannot open JUNK.DBF: DBF_EFORMAT (not a valid dBASE III file)
+== exit 2
+== invdump /M LOCS
+INVDUMP: cannot open LOCS.DBT: DBF_ENOENT (file or path not found); memo text not shown
+Table        LOCS.DBF
+Version      83h (dBASE III, with memo)
+Last update  2026-10-08
+Records      5
+Header       257 bytes
+Record       79 bytes
+Fields       7
+Memo         yes (LOCS.DBT)
+
+Field  Name        Type       Width  Dec  Offset
+    1  LOC_ID      N Numeric      8    0       1
+    2  PARENT_ID   N Numeric      8    0       9
+    3  LOC_NAME    C Character   30           17
+    4  LOC_CODE    C Character   10           47
+    5  LTYPE       C Character    8           57
+    6  CAPACITY    N Numeric      4    0      65
+    7  NOTES       M Memo        10           69
+** Total **                      79
+
+1: 1|4|Shelf A, top level|A1|SHELF|6|1
+2: 2|3|Small parts bin 12|B12|BIN|40|
+3: 3|0|Workbench||RACK||
+4: 4|0|Garage|GAR|ROOM||
+== exit 2
+== dbpack ITEMS /C
+ITEMS.DBF: no interrupted pack left
+== exit 0
+== dbpack ITEMS /R
+usage: DBPACK table[.DBF] [/P] [/R index[.NDX] ...] [/C]
+  /P  pack the table (default without /R)
+  /R  rebuild the listed indexes, after the pack
+  /C  only finish or undo an interrupted pack (and, with /R, rebuilds)
+== exit 1
+== dbpack ITEMS /P /R
+usage: DBPACK table[.DBF] [/P] [/R index[.NDX] ...] [/C]
+  /P  pack the table (default without /R)
+  /R  rebuild the listed indexes, after the pack
+  /C  only finish or undo an interrupted pack (and, with /R, rebuilds)
+== exit 1
+== dbpack ITEMS /C /R
+usage: DBPACK table[.DBF] [/P] [/R index[.NDX] ...] [/C]
+  /P  pack the table (default without /R)
+  /R  rebuild the listed indexes, after the pack
+  /C  only finish or undo an interrupted pack (and, with /R, rebuilds)
+== exit 1
+== dbpack 
+DBPACK: empty name
+== exit 1
+== dbpack ITEMS /R 
+DBPACK: empty name
+== exit 1
+== dbpack 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+DBPACK: cannot pack 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.DBF: DBF_ENOENT (file or path not found)
+== exit 2
+== dbpack 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+DBPACK: name too long: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+== exit 1
+== dbpack ITEMS /R ODD NONE
+DBPACK: cannot recover ODD.NDX: DBF_EFORMAT (not a valid dBASE III file)
+DBPACK: these files do not form a state a stopped run leaves; resolve them
+        by hand (keep one complete set, delete or rename the others):
+          ODD.%NX
+          ODD.#NX
+== exit 2
+== dbpack ITEMS /C /R ODD NONE
+ITEMS.DBF: no interrupted pack left
+DBPACK: cannot recover ODD.NDX: DBF_EFORMAT (not a valid dBASE III file)
+DBPACK: these files do not form a state a stopped run leaves; resolve them
+        by hand (keep one complete set, delete or rename the others):
+          ODD.%NX
+          ODD.#NX
+NONE.NDX: no interrupted rebuild left
+== exit 2
+== dbpack ODD /C
+DBPACK: cannot recover ODD.DBF: DBF_EFORMAT (not a valid dBASE III file)
+DBPACK: these files do not form a state a stopped run leaves; resolve them
+        by hand (keep one complete set, delete or rename the others):
+          ODD.$DB
+== exit 2
+== dbpack JUNK /C
+DBPACK: cannot recover JUNK.DBF: DBF_EFORMAT (not a valid dBASE III file)
+DBPACK: these files do not form a state a stopped run leaves; resolve them
+        by hand (keep one complete set, delete or rename the others):
+          JUNK.$DB
+          JUNK.%DB
+          JUNK.%DT
+== exit 2
+== dbpack CATS /C
+CATS.DBF: no interrupted pack left
+== exit 0
+== files left
+CATS.DBF
+JUNK.$DB
+JUNK.%DB
+JUNK.%DT
+ODD.#NX
+ODD.$DB
+ODD.%NX
+3077398045 704 CATS.DBF
+3077398045 704 USERS.DBF

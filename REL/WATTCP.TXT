@@ -1,0 +1,23 @@
+WATTCP licence notice for INVTCP.EXE
+==============================================================================
+
+INVTCP.EXE, the TCP/IP bridge of RETROINV, is built with WATTCP, the
+Waterloo TCP/IP library of Erick Engelke, release of 14 September 1994:
+
+  Copyright (c) 1990, 1991, 1992, 1993 Erick Engelke
+  Portions Copyright (c) 1993 Quentin Smart
+  Portions Copyright (c) 1991 University of Waterloo
+  Portions Copyright (c) 1990 National Center for Supercomputer Applications
+  Portions Copyright (c) 1990 Clarkson University
+  Portions Copyright (c) 1983, 1986 Imagen Corporation
+
+WATTCP's licence lets programs built with the library be given away or sold
+as compiled executables.  It does not allow the library, or any part of it,
+to be sold, nor modified versions of it to be passed on in source, object or
+library form, without the author's written permission.  These disks
+therefore carry the library only as it is linked into INVTCP.EXE: no WATTCP
+source, object or library file is included.  WATTCP comes with no warranty,
+not even the implied warranty of merchantability or fitness for a particular
+purpose.
+
+The other programs on these disks do not contain WATTCP.

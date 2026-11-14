@@ -1,0 +1,96 @@
+# The server's texts (MD_ in SRVSCR.C, the status screen, and in SRVRUN.C,
+# the failures said on standard error once this file is loaded).
+# Format: "nnn NAME text", the source format (see SRC/CLIENT/MSG.H); ^1
+# and ^2 take arguments.
+# The title and the uptime share the top row.
+# W=55 title, with a name of NB_NAMELEN - 1: VID_COLS - SS_UPW - 1
+1070 MD_TITLE RETROINV server ^1
+# W=24 uptime, with ^1 at most "49710d 23:59:59": SS_UPW
+1071 MD_UPTIME Up ^1
+# W=21 MD_UPTIME's ^1: SS_UPW - 3
+1072 MD_DAYS ^1d ^2
+# W=19 labels of the settings rows: SS_VAL - 2
+1073 MD_DATA Data directory
+1074 MD_RO Read-only stations
+
+# W=59 a settings value: VID_COLS - SS_VAL
+1075 MD_NONE none
+# W=19 labels of the settings rows: SS_VAL - 2
+1076 MD_OPEN Sessions open
+1077 MD_LISTEN Waiting for calls
+
+# W=79 VID_COLS - 1
+1078 MD_NOSESS No session is open.
+# Column headings, each at most as wide as its column.
+# W=4 SS_SLOTW
+1079 MD_COLSLOT Slot
+# W=4 PROTO_KINDLEN
+1080 MD_COLTYPE Type
+# W=16 ENG_STALEN
+1081 MD_COLSTA Station
+# W=8 ENG_USERLEN
+1082 MD_COLUSER User
+# W=5 SS_LVLW
+1083 MD_COLLVL Level
+# W=18 SS_STATEW
+1084 MD_COLSTATE State
+# W=13 SS_IDLEW
+1085 MD_COLIDLE Idle
+# Session states (PROTO_S_NEW .. PROTO_S_CLOSED).
+# W=18 SS_STATEW
+1086 MD_STNEW connected
+1087 MD_STHELLO logging in
+1088 MD_STMUSTCHG changing password
+1089 MD_STREADY ready
+1090 MD_STCLOSED closing
+# The trace row: MD_TROFF or MD_TRON, then the trace events
+# (CONN_EV_OPEN .. CONN_EV_CLOSE), ^1 the slot.
+# W=79 the trace row: VID_COLS - 1; MD_EVOPEN..MD_EVREQ's ^2 (a station, a user, a request line) is cut at the row
+1091 MD_TROFF Trace off
+1092 MD_TRON Trace on
+1093 MD_EVOPEN Slot ^1 opened from ^2
+1094 MD_EVLOGIN Slot ^1 logged in as ^2
+1095 MD_EVREQ Slot ^1: ^2
+1096 MD_EVCLOSE Slot ^1 closed
+# The bottom row; MD_YESNO holds the capital letters that answer MD_ASK,
+# yes then no.
+# W=79 VID_COLS - 1
+1097 MD_HINT F2=Trace  F3=Shut down  F5=Refresh
+1098 MD_ASK Sessions open: ^1.  Shut the server down?  Y=Yes N=No
+1099 MD_YESNO YN
+1100 MD_STOPPING Shutting down: waiting for the sessions to end
+# SRVRUN.C: failures on standard error, after "INVSERV: ".  They are
+# lines of the console, not drawn in a slot of fixed width: no W=.
+1101 MD_NODATA cannot open the data directory: ^1 (error ^2)
+1102 MD_NOLOG cannot open the event log ^1 (error ^2)
+1103 MD_NOMEM not enough memory for the sessions
+1104 MD_NAMEUSE the name ^1 is in use
+1105 MD_NONAME cannot add the name ^1 (NetBIOS error ^2)
+1106 MD_NOSCREEN cannot set up the screen
+1107 MD_NOCLOSE cannot close the data files (error ^1)
+1108 MD_NOLOGW cannot write the event log ^1 (error ^2)
+1109 MD_STUCK ^1 NetBIOS commands pending; waiting (any key ends the wait)
+1110 MD_NOPORT there is no serial port COM^1
+1111 MD_PORTUSE the serial port COM^1 is in use
+1112 MD_NOMBOX cannot find the mailbox ^1 or its REQUEST and RESPONSE directories
+# The serial ports' rows and the mailbox's row, below the sessions.
+# W=19 labels of the settings rows: SS_VAL - 2
+1120 MD_SERIAL Serial ports
+1121 MD_MAILBOX Mailbox
+1122 MD_PORT COM^1
+# The ports' column headings, each at most as wide as its column.
+# W=5 SS_BAUDW
+1123 MD_COLBAUD Baud
+# W=6 SS_CHIPW
+1124 MD_COLCHIP Chip
+# W=7 SS_ERRW
+1125 MD_COLOVER Overrun
+1126 MD_COLFRAME Framing
+1127 MD_COLPAR Parity
+1128 MD_COLLOST Lost
+# Chips (UART_T_8250 .. UART_T_16550A).
+# W=6 SS_CHIPW
+1129 MD_C8250 8250
+1130 MD_C16450 16450
+1131 MD_C16550 16550
+1132 MD_C16550A 16550A

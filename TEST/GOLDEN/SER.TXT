@@ -1,0 +1,49 @@
+@COM 1 COM1
+1> HELLO RISER
+1< +OK
+1> LOGIN ***
+1< +OK LEVEL=3 NAME="System Administrator"
+1> ADMIN CLIENTS
+1< +DATA
+1< F SLOT TYPE STATION USER LEVEL STATE IDLE SELF
+1< R 5 COM1 RISER ADMIN 3 3 * 1
+1< .
+1>& PING
+1>& ITEM LIST FIELDS=ITEM_ID,MFR,DESCR,TAGS PAGE=25
+1>& PING
+@WAIT 1
+1< +OK
+@WAIT 1
+1< +DATA
+1< F ITEM_ID MFR DESCR TAGS
+1< R 1 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 2 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 3 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 4 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 5 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 6 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 7 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 8 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 9 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 10 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 11 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 12 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 13 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 14 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 15 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 16 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 17 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 18 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 19 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 20 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 21 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 22 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 23 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 24 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< R 25 "Network Server Corporation" "Twenty-five copies of this item make one page of over two KB" network,server,netbios,netbeui,session,listen,call,hangup
+1< .
+@WAIT 1
+1< +OK
+1> BYE
+1< +OK
+INVTEST PASS

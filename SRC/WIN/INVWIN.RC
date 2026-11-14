@@ -1,0 +1,310 @@
+/*
+ * INVWIN.RC - the resources of the Windows client, SRC/WIN/INVWIN.C: its
+ * icon, its drag cursor, its tool bar's glyphs, its dialogs and its own
+ * texts, in the Windows character set, the strings of the form dialog,
+ * the file name dialog, the dialogs and strings of the reports, the help
+ * of the menu entries, and the engine's schema data.  The icon, named as
+ * the window class, is the file SRC/WIN/INVICON.PY writes at build time,
+ * the cursor the file SRC/WIN/INVDRAG.PY writes, the glyphs, named as
+ * the tool bar's class (WTOOL.H), the file SRC/WIN/INVTOOL.PY writes, the
+ * schema data the file of SRC/COMPAT/CSCHBIN.C.
+ */
+#include <windows.h>
+#include "CSCHDAT.H"
+#include "INVWIN.H"
+#include "WFORM.RC"
+#include "WFILE.RC"
+#include "WRPT.RC"
+#include "WROWS.RC"
+
+INVWIN ICON INVWIN.ICO
+IW_R_DRAG CURSOR INVDRAG.CUR
+WTOOL BITMAP INVTOOL.BMP
+CSCH_RES CSCH_TYPE DISCARDABLE CSCHDAT.BIN
+
+IW_R_ABOUT DIALOG 0, 0, 160, 56
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "About RETROINV"
+FONT 8, "Helv"
+BEGIN
+    CTEXT "", IW_C_VERSION, 8, 10, 144, 8
+    CTEXT "Retro Hardware Inventory", -1, 8, 20, 144, 8
+    DEFPUSHBUTTON "OK", IDOK, 56, 36, 48, 14
+END
+
+IW_R_LOGIN DIALOG 0, 0, 176, 86
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "RETROINV"
+FONT 8, "Helv"
+BEGIN
+    LTEXT "&User name:", -1, 8, 10, 56, 8
+    EDITTEXT IW_C_USER, 68, 8, 64, 12, ES_UPPERCASE | ES_AUTOHSCROLL
+    LTEXT "&Password:", -1, 8, 26, 56, 8
+    EDITTEXT IW_C_PASS, 68, 24, 64, 12, ES_PASSWORD | ES_AUTOHSCROLL
+    LTEXT "", IW_C_MSG, 8, 42, 160, 16
+    DEFPUSHBUTTON "OK", IDOK, 32, 64, 48, 14
+    PUSHBUTTON "Cancel", IDCANCEL, 96, 64, 48, 14
+END
+
+IW_R_PASSWD DIALOG 0, 0, 176, 102
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Change password"
+FONT 8, "Helv"
+BEGIN
+    LTEXT "&Old password:", -1, 8, 10, 76, 8
+    EDITTEXT IW_C_OLD, 88, 8, 80, 12, ES_PASSWORD | ES_AUTOHSCROLL
+    LTEXT "&New password:", -1, 8, 26, 76, 8
+    EDITTEXT IW_C_NEW, 88, 24, 80, 12, ES_PASSWORD | ES_AUTOHSCROLL
+    LTEXT "&Repeat new password:", -1, 8, 42, 76, 8
+    EDITTEXT IW_C_REPEAT, 88, 40, 80, 12, ES_PASSWORD | ES_AUTOHSCROLL
+    LTEXT "", IW_C_MSG, 8, 58, 160, 16
+    DEFPUSHBUTTON "OK", IDOK, 32, 80, 48, 14
+    PUSHBUTTON "Cancel", IDCANCEL, 96, 80, 48, 14
+END
+
+IW_R_SESS DIALOG 0, 0, 288, 124
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "Helv"
+BEGIN
+    LTEXT "", IW_C_SHDR, 8, 6, 272, 8, SS_NOPREFIX
+    CONTROL "", IW_C_SROWS, "LISTBOX", WS_CHILD | WS_VISIBLE | WS_BORDER |
+        WS_VSCROLL | WS_TABSTOP | LBS_NOINTEGRALHEIGHT | LBS_OWNERDRAWFIXED |
+        LBS_HASSTRINGS | LBS_WANTKEYBOARDINPUT, 8, 16, 272, 84
+    PUSHBUTTON "&Refresh", IW_C_REFRESH, 168, 104, 48, 14
+    DEFPUSHBUTTON "Close", IDOK, 224, 104, 48, 14
+END
+
+IW_R_CODES DIALOG 0, 0, 216, 124
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "Helv"
+BEGIN
+    LTEXT "", IW_C_CHDR, 8, 6, 144, 8, SS_NOPREFIX
+    CONTROL "", IW_C_CROWS, "LISTBOX", WS_CHILD | WS_VISIBLE | WS_BORDER |
+        WS_VSCROLL | WS_TABSTOP | LBS_NOTIFY | LBS_NOINTEGRALHEIGHT |
+        LBS_WANTKEYBOARDINPUT | LBS_OWNERDRAWFIXED | LBS_HASSTRINGS, 8, 16,
+        144, 100
+    DEFPUSHBUTTON "&Edit...", IW_C_CEDIT, 160, 16, 48, 14
+    PUSHBUTTON "&New...", IW_C_CNEW, 160, 34, 48, 14
+    PUSHBUTTON "&Delete", IW_C_CDEL, 160, 52, 48, 14
+    PUSHBUTTON "Close", IDCANCEL, 160, 102, 48, 14
+END
+
+IW_R_HELP DIALOG 0, 0, 280, 160
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "RETROINV Help"
+FONT 8, "Helv"
+BEGIN
+    EDITTEXT IW_C_HELP, 0, 0, 280, 160, ES_MULTILINE | ES_AUTOVSCROLL |
+        WS_VSCROLL
+END
+
+STRINGTABLE
+BEGIN
+    IW_S_TITLE, "RETROINV"
+    IW_S_USAGE, "Usage: INVWIN [/LOCAL [dir] | /NET name | /COMn | /TCP:addr[:port] | /MBOX:dir] [/CFG:file]"
+    IW_S_LOCAL, "Data: %s"
+    IW_S_NET, "Server: %s"
+    IW_S_COM, "Serial port: %s"
+    IW_S_NOCALL, "Cannot call %s: %s."
+    IW_S_NOCFG, "Cannot read the settings file %s: %s."
+    IW_S_NOOPEN, "Cannot open the data directory %s: %s (error %d)."
+    IW_S_REFUSED, "%s refused the session: %s (error %d)."
+    IW_S_NOCLOSE, "Cannot close the data files (error %d)."
+    IW_S_NOFRAME, "Windows refused the program's window."
+    IW_S_NOMSG, "Cannot read the messages %s: %s."
+    IW_S_USER, "%s, level %d"
+    IW_S_TOOMANY, "Too many failed logins."
+    IW_S_NOANSWER, "No answer from the server at %s."
+    IW_S_MHELP, "&Help"
+    IW_S_MABOUT, "&About RETROINV..."
+    IW_S_LOGOUT, "&Log out"
+    IW_S_PWNOMATCH, "The new password and its repetition differ."
+    IW_S_PWINVALID, "Not a valid password (%d to %d characters)."
+    IW_S_PWSAME, "The new password must differ from the old one."
+    IW_S_PWOLD, "The old password is wrong."
+    IW_S_NOLIST, "Cannot open the list (error %d)."
+    IW_S_LTITLE, "%s - %s"
+    IW_S_NOFORM, "Cannot open the form."
+    IW_S_NOCALLNB, "Cannot call %s: %s (NetBIOS error %02X)."
+    IW_S_NOPORT, "Cannot open %s: %s."
+    IW_S_ENONB, "no NetBIOS"
+    IW_S_ENAME, "local name refused"
+    IW_S_ECALL, "no answer"
+    IW_S_ENOMEM, "no memory"
+    IW_S_EREFUSED, "refused"
+    IW_S_ENOPORT, "no such port"
+    IW_S_EBUSY, "port in use"
+    IW_S_ESETUP, "the port refused its settings"
+    IW_S_ENOTCP, "no Windows Sockets"
+    IW_S_ECANCEL, "cancelled"
+    IW_S_EMBXARG, "path too long, or station not 1 to 8 letters, digits, - or _"
+    IW_S_NBBUSY, "NetBIOS still holds %d commands of the closed connection; ending now may let it write into freed memory. Retry waits again."
+    IW_S_TCP, "TCP/IP server: %s"
+    IW_S_NOCALLWS, "Cannot call %s: %s (Windows Sockets error %d)."
+    IW_S_MHELPON, "&Help on this screen\tF1"
+    IW_S_MKEYS, "&Keyboard"
+    IW_S_MBOX, "Mailbox: %s"
+    IW_S_NOMBOX, "Cannot use the mailbox %s: %s."
+    IW_S_NOSTA, "Cannot use the mailbox %s: this computer has no name. Add STATION=name (1-8 letters or digits) to the settings file %s."
+    IW_S_MREC, "Re&cord"
+    IW_S_ROPEN, "&Open\tEnter"
+    IW_S_REDIT, "&Edit...\tCtrl+E"
+    IW_S_RNEW, "&New...\tIns"
+    IW_S_RDEL, "&Delete\tDel"
+    IW_S_RCOPY, "Dupli&cate...\tCtrl+D"
+    IW_S_RMOVE, "&Move..."
+    IW_S_RINTO, "&Install in..."
+    IW_S_ROUT, "&Take out..."
+    IW_S_RPART, "&Install part...\tIns"
+    IW_S_RRET, "&Return or release..."
+    IW_S_RPARTS, "&Parts"
+    IW_S_RSVC, "&Service records"
+    IW_S_RLOANS, "Loans &and holds"
+    IW_S_RUSED, "Used &with it"
+    IW_S_RBELOW, "Everythin&g below"
+    IW_S_RNEXT, "Next li&st\tCtrl+PgDn"
+    IW_S_RORDER, "Next o&rder"
+    IW_S_RBACK, "&Back\tEsc"
+    IW_S_RSPLIT, "Split &units..."
+    IW_S_RTOP, "Not installed onl&y"
+    IW_S_MSTART, "&Getting started"
+    IW_S_CTITLE, "%s (%s, %s)"
+    IW_S_ENODIR, "no such directory"
+    IW_S_ENOSUB, "it has no %s subdirectory, which the server's MAILBOX= directory needs"
+    IW_S_MOVETO, "Move %s into"
+    IW_S_RLEND, "&Lend...\tCtrl+L"
+    IW_S_RRES, "Reser&ve...\tCtrl+R"
+    IW_S_RUSE, "Use wit&h...\tCtrl+U"
+    IW_S_RITEM, "Open &item..."
+    IW_S_TOOL, "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+    IW_S_MFILE, "&File"
+    IW_S_MEXIT, "E&xit\tAlt+F4"
+    IW_S_NITEMS, "%lu items"
+    IW_S_NITEMS + 1, "%lu item"
+    IW_S_NASSY, "%lu assemblies"
+    IW_S_NASSY + 1, "%lu assembly"
+    IW_S_NPARTS, "%lu parts"
+    IW_S_NPARTS + 1, "%lu part"
+    IW_S_NLOCS, "%lu locations"
+    IW_S_NLOCS + 1, "%lu location"
+    IW_S_NSVC, "%lu service records"
+    IW_S_NSVC + 1, "%lu service record"
+    IW_S_NHOLDS, "%lu loans and holds"
+    IW_S_NHOLDS + 1, "%lu loan or hold"
+    IW_S_NUSERS, "%lu users"
+    IW_S_NUSERS + 1, "%lu user"
+    IW_S_NAUDIT, "%lu entries"
+    IW_S_NAUDIT + 1, "%lu entry"
+    IW_S_RPANE, "Ne&xt pane\tF6"
+    IW_S_NHERE, "%lu items in %s"
+    IW_S_NHERE + 1, "%lu item in %s"
+    IW_S_DRAG, "Drop the item on a location to move it there; Esc cancels"
+    IW_S_NSEL, "%u selected"
+    IW_S_NADD, "Shift+F8 add mode: %u selected"
+    IW_S_NALL, "All %u selected"
+    IW_S_COLLECT, "Collecting %u..."
+    IW_S_DELALL, "Delete all %u items in this list, including those not shown?"
+    IW_S_OVER, "Select all takes at most %u rows, fewer in a small window. Narrow the list first (Find, a filter)."
+    IW_S_PLOAD, "Loading item %s..."
+    IW_S_PNONE, "Not loaded: press Enter here"
+    IW_S_PGONE, "Not found"
+    IW_S_MVIEW, "&View"
+    IW_S_VPANE, "&Pane beside the list"
+    IW_S_VREFRESH, "&Refresh\tF5"
+    IW_S_RALL, "Select all\tCtrl+/"
+    IW_S_NCATS, "%lu categories"
+    IW_S_NCATS + 1, "%lu category"
+    IW_S_MBYCAT, "Browse by ca&tegory"
+    IW_S_MORE, "%s and %u more"
+    IW_S_EACH, "For each of the %u selected items"
+    IW_S_DELN, "Delete the %u selected items?"
+    IW_S_STOPPED, "%s\n\nStopped at %s: %u of %u done."
+    IW_S_HALTED, "Stopped: %u of %u done."
+    IW_G_DOING + IW_S_RMOVE, "Moving %u of %u..."
+    IW_G_DOING + IW_S_RINTO, "Installing %u of %u..."
+    IW_G_DOING + IW_S_ROUT, "Taking out %u of %u..."
+    IW_G_DOING + IW_S_RRET, "Ending %u of %u..."
+    IW_G_DOING + IW_S_RLEND, "Lending %u of %u..."
+    IW_G_DOING + IW_S_RRES, "Reserving %u of %u..."
+    IW_G_DOING + IW_S_RUSE, "Adding use %u of %u..."
+    IW_G_DOING + IW_S_RDEL, "Deleting %u of %u..."
+    IW_G_DONE + IW_S_RMOVE, "%u items moved"
+    IW_G_DONE + IW_S_RINTO, "%u items installed"
+    IW_G_DONE + IW_S_ROUT, "%u items taken out"
+    IW_G_DONE + IW_S_RRET, "%u loans and holds ended"
+    IW_G_DONE + IW_S_RLEND, "%u loans added"
+    IW_G_DONE + IW_S_RRES, "%u reservations added"
+    IW_G_DONE + IW_S_RUSE, "%u uses added"
+    IW_G_DONE + IW_S_RDEL, "%u items deleted"
+END
+
+/* The menu entries' help (IW_H_MENU), in the order of the menu bar. */
+STRINGTABLE
+BEGIN
+    IW_H_MENU + MN_LOGOUT, "Log out, then log in again as any user"
+    IW_H_MENU + IW_S_MEXIT, "End RETROINV"
+    IW_H_MENU + MN_BYID, "List every item in order of its ID"
+    IW_H_MENU + MN_BYLOC, "List every item in order of its location"
+    IW_H_MENU + MN_BYMFR, "List every item in order of maker and model"
+    IW_H_MENU + MN_BYSER, "List every item in order of serial number"
+    IW_H_MENU + IW_S_MBYCAT, "List the categories, each one's items beside it"
+    IW_H_MENU + MN_NEWITEM, "Add an item"
+    IW_H_MENU + MN_ASSY, "List the items built of others"
+    IW_H_MENU + MN_MAINT, "List the service records, newest first"
+    IW_H_MENU + MN_LOANS, "List the open loans, reservations and uses"
+    IW_H_MENU + MN_CATS, "Show, add, change or delete the item categories"
+    IW_H_MENU + MN_LOCS, "Show the locations as a tree"
+    IW_H_MENU + MN_NEWLOC, "Add a location at the top level"
+    IW_H_MENU + MN_LTYPES, "Show, add, change or delete the location types"
+    IW_H_MENU + MN_FIND, "Find the items whose text holds what you type"
+    IW_H_MENU + MN_SERIAL, "Find the items by their serial number"
+    IW_H_MENU + MN_FILTER, "List the items that match the filters you give"
+    IW_H_MENU + MN_RLIST, "Report the items, by location, ID or maker"
+    IW_H_MENU + MN_RVALUE, "Report the value of the active items"
+    IW_H_MENU + MN_RLOANS, "Report the loans out, or only the overdue ones"
+    IW_H_MENU + MN_RLABEL, "Make a label for each item, or for one"
+    IW_H_MENU + MN_RBIN, "Make a label for each location"
+    IW_H_MENU + MN_USERS, "List the users and their access levels"
+    IW_H_MENU + MN_BACKUP, "Copy the data files to a directory"
+    IW_H_MENU + MN_RESTORE, "Copy the data files back from a backup"
+    IW_H_MENU + MN_PACK, "Remove the deleted records from the data files"
+    IW_H_MENU + MN_REINDEX, "Rebuild every index of the data files"
+    IW_H_MENU + MN_AUDIT, "Show the changes and failed logins logged"
+    IW_H_MENU + MN_SESSIONS, "Show the sessions open on the server"
+    IW_H_MENU + MN_EXPORT, "Write a table to a CSV file"
+    IW_H_MENU + MN_IMPORT, "Add the records of a CSV file to the items or locations"
+    IW_H_MENU + MN_SETTINGS, "Change the settings of this program"
+    IW_H_MENU + MN_PASSWD, "Change your password"
+    IW_H_MENU + IW_S_MHELPON, "Show the help of the list or dialog in use"
+    IW_H_MENU + IW_S_MSTART, "Show how to begin with RETROINV"
+    IW_H_MENU + IW_S_MKEYS, "Show the keys that work everywhere"
+    IW_H_MENU + IW_S_MABOUT, "Show the program's version"
+    IW_H_MENU + IW_S_ROPEN, "Show the selected record; a location's or category's items"
+    IW_H_MENU + IW_S_REDIT, "Change the selected record"
+    IW_H_MENU + IW_S_RNEW, "Add a record to this list"
+    IW_H_MENU + IW_S_RDEL, "Delete the selected record"
+    IW_H_MENU + IW_S_RCOPY, "Duplicate the selected item and edit the copy"
+    IW_H_MENU + IW_S_RMOVE, "Move the selected item or location to another location"
+    IW_H_MENU + IW_S_RINTO, "Install the selected item in another item"
+    IW_H_MENU + IW_S_ROUT, "Take the selected item out of its assembly"
+    IW_H_MENU + IW_S_RPART, "Install another item in this one as a part"
+    IW_H_MENU + IW_S_RRET, "End the selected loan, reservation or use"
+    IW_H_MENU + IW_S_RPARTS, "List the parts of the selected item"
+    IW_H_MENU + IW_S_RSVC, "List the service records of the selected item"
+    IW_H_MENU + IW_S_RLOANS, "List the loans and holds of the selected item"
+    IW_H_MENU + IW_S_RUSED, "List what is reserved for or used with the item"
+    IW_H_MENU + IW_S_RBELOW, "Show the items of the locations inside this one too"
+    IW_H_MENU + IW_S_RNEXT, "Show the next view of the loans and holds"
+    IW_H_MENU + IW_S_RORDER, "Sort the list in its next order"
+    IW_H_MENU + IW_S_RBACK, "Go back to the list shown before"
+    IW_H_MENU + IW_S_RSPLIT, "Split units off the selected item into a new item"
+    IW_H_MENU + IW_S_RTOP, "Show only the items not installed in another"
+    IW_H_MENU + IW_S_RLEND, "Lend an item"
+    IW_H_MENU + IW_S_RRES, "Reserve an item for someone or for another item"
+    IW_H_MENU + IW_S_RUSE, "Mark an item in use with another item or a place"
+    IW_H_MENU + IW_S_RITEM, "Show the item of the selected row"
+    IW_H_MENU + IW_S_RPANE, "Move to the other side of the split view"
+    IW_H_MENU + IW_S_VPANE, "Show or hide the pane beside this list"
+    IW_H_MENU + IW_S_VREFRESH, "Fetch the list or the preview again"
+    IW_H_MENU + IW_S_RALL, "Select every row of the list, on every page"
+END

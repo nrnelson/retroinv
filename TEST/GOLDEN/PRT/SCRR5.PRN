@@ -1,0 +1,111 @@
+@CERETROINV  Item listing                                       2026-10-08  Page 1F
+
+
+E      ID Cat  Maker          Model          Serial       Works   Qty LocationF
+-------------------------------------------------------------------------------
+EGarageF
+       5 PERI Commodore      M35-A          SN-0185      no        3 Garage
+      12 CPU  Commodore      5150 CGA       SN-0007      no        1 Garage
+      19 PART Commodore      M33-E          SN-0703      ?         2 Garage
+      26 SW   Commodore      M32-B          SN-0962      intrm     3 Garage
+      33 CARD Commodore      M31-D          SN-0221      yes       1 Garage
+      40 SYS  Commodore      M30-A          SN-0480      yes       2 Garage
+Items: 6   Quantity: 12
+
+EGarage > Shelf A, bottomF
+       1 MOBO Hercules       M07-B          SN-0037      yes       2 Shelf A, ~
+       8 CBL  Hercules       M06-D          SN-0296      yes       3 Shelf A, ~
+      15 PERI Hercules       M05-A          SN-0555      no        1 Shelf A, ~
+      22 CPU  Hercules       M04-C          SN-0814      ?         2 Shelf A, ~
+      29 PART Hercules       M03-E          SN-0073      no        3 Shelf A, ~
+      36 SW   Hercules       M02-B          SN-0332      no        1 Shelf A, ~
+      43 CARD Hercules       M01-D          SN-0591      ?         2 Shelf A, ~
+Items: 7   Quantity: 14
+
+ERETROINV  Item listing                                       2026-10-08  Page 2F
+
+
+E      ID Cat  Maker          Model          Serial       Works   Qty LocationF
+-------------------------------------------------------------------------------
+EGarage > Shelf A, topF
+       7 MAN  IBM            M49-C          SN-0259      no        2 Shelf A, ~
+      14 DRV  IBM            M48-E          SN-0518      ?         3 Shelf A, ~
+      21 MOBO IBM            M47-B          SN-0777      no        1 Shelf A, ~
+      28 CBL  IBM            M46-D          SN-0036      no        2 Shelf A, ~
+      35 PERI IBM            M45-A          SN-0295      ?         3 Shelf A, ~
+      42 CPU  IBM            M44-C          SN-0554      intrm     1 Shelf A, ~
+Items: 6   Quantity: 12
+
+EGarage > Shelf A, top > Bin B1F
+       2 CPU  Logitech       M14-C          SN-0074      intrm     3 Bin B1
+       9 PART Logitech       M13-E          SN-0333      yes       1 Bin B1
+      16 SW   Logitech       M12-B          SN-0592      yes       2 Bin B1
+      23 CARD Logitech       M11-D          SN-0851      no        3 Bin B1
+      30 SYS  Logitech       M10-A          SN-0110      ?         1 Bin B1
+      37 MAN  Logitech       M09-C          SN-0369      no        2 Bin B1
+      44 DRV  Logitech       M08-E          SN-0628      no        3 Bin B1
+Items: 7   Quantity: 15
+
+ERETROINV  Item listing                                       2026-10-08  Page 3F
+
+
+E      ID Cat  Maker          Model          Serial       Works   Qty LocationF
+-------------------------------------------------------------------------------
+EGarage > Shelf A, top > Bin B2F
+       3 CARD Tandon         M21-D          SN-0111      ?         1 Bin B2
+      10 SYS  Tandon         M20-A          SN-0370      intrm     2 Bin B2
+      17 MAN  Tandon         M19-C          SN-0629      yes       3 Bin B2
+      24 DRV  Tandon         M18-E          SN-0888      yes       1 Bin B2
+      31 MOBO Tandon         M17-B          SN-0147      no        2 Bin B2
+      38 CBL  Tandon         M16-D          SN-0406      ?         3 Bin B2
+      45 PERI Tandon         M15-A          SN-0665      no        1 Bin B2
+Items: 7   Quantity: 13
+
+EOffice > Cabinet > Drawer 1F
+       4 DRV  Seagate        M28-E          SN-0148      no        2 Drawer 1
+      11 MOBO Seagate        M27-B          SN-0407      ?         3 Drawer 1
+      18 CBL  Seagate        M26-D          SN-0666      intrm     1 Drawer 1
+      25 PERI Seagate        M25-A          SN-0925      yes       2 Drawer 1
+      32 CPU  Seagate        M24-C          SN-0184      yes       3 Drawer 1
+      39 PART Seagate        M23-E          SN-0443      no        1 Drawer 1
+Items: 6   Quantity: 12
+
+ERETROINV  Item listing                                       2026-10-08  Page 4F
+
+
+E      ID Cat  Maker          Model          Serial       Works   Qty LocationF
+-------------------------------------------------------------------------------
+EOffice > DeskF
+       6 SW   Western Digita M42-B          SN-0222      ?         1 Desk
+      13 CARD Western Digita M41-D          SN-0481      no        2 Desk
+      20 SYS  Western Digita M40-A          SN-0740      no        3 Desk
+      27 MAN  Western Digita M39-C          SN-0999      ?         1 Desk
+      34 DRV  Western Digita M38-E          SN-0258      intrm     2 Desk
+      41 MOBO Western Digita M37-B          SN-0517      yes       3 Desk
+Items: 6   Quantity: 12
+
+Total items: 45   Quantity: 90
+@ENo. 26                           SWF
+Commodore M32-B
+S/N SN-0962
+Loc Garage
+
+
+ENo. 36                           SWF
+Hercules M02-B
+S/N SN-0332
+Loc Shelf A, bottom
+
+
+ENo. 16                           SWF
+Logitech M12-B
+S/N SN-0592
+Loc Bin B1
+
+
+ENo. 6                            SWF
+Western Digital M42-B
+S/N SN-0222
+Loc Desk
+
+

@@ -1,0 +1,233 @@
+# ADMDATA.SCR - ADMIN PACK, REINDEX, BACKUP and RESTORE through the
+# protocol: their answers and K audit rows, their argument errors, the
+# directories refused before anything changes; a command that fails
+# part-way leaves the data opened again, and one whose files cannot be
+# opened again leaves the engine with none: every command but HELLO,
+# BYE, PING and VER is then 300 until the data is opened anew; PACK
+# keeps the marker a failed change left, so its rows are flagged.  The
+# gate (203, 402) is in PERMS.SCR; a backup and its restore need a
+# second directory, and TEST/T_ADMIN.C makes them.
+
+> HELLO CONSOLE
+< +OK
+> LOGIN ADMIN admin
+< +OK LEVEL=3 MUSTCHG=1
+> PASSWD admin secret1
+< +OK
+> LOC ADD LOC_NAME=A1 LTYPE=BIN LOC_CODE=A1
+< +OK ID=1
+> LOC ADD LOC_NAME=A2 LTYPE=BIN LOC_CODE=A2
+< +OK ID=2
+> ITEM ADD CATEGORY=SYS MFR=IBM MODEL=5150 LOC_ID=A1 NOTES=first
+< +OK ID=1
+> ITEM ADD CATEGORY=CPU MFR=Intel MODEL=8088 LOC_ID=A1
+< +OK ID=2
+> ITEM ADD CATEGORY=DRV MFR=Tandon MODEL=TM100 LOC_ID=A2
+< +OK ID=3
+> ITEM NOTES 1 ADD=second
+< +OK
+> ITEM DEL 2
+< +OK
+> ITEM DEL 3
+< +OK
+> LOC DEL A2
+< +OK
+
+# PACK drops the deleted records of every table and rebuilds every
+# index; the records keep their IDs and codes, and their notes.
+> ADMIN PACK X
+< -ERR 100 too many arguments
+> ADMIN PACK FOO=1
+< -ERR 102 unexpected key FIELD=FOO
+> ADMIN PACK
+< +OK REMOVED=3
+@TABLE ITEMS FIELDS=ITEM_ID,MFR,LOC_ID
+< F ITEM_ID MFR LOC_ID
+< R 1 IBM 1
+@TABLE LOCS FIELDS=LOC_CODE
+< F LOC_CODE
+< R A1
+> ITEM GET 1
+< +DATA
+< K ITEM_ID=1
+< K CATEGORY=SYS
+< K ITEMTYPE=""
+< K MFR=IBM
+< K MODEL=5150
+< K SERIALNO=""
+< K DESCR=""
+< K COND=""
+< K WORKS=?
+< K QTY=1
+< K ON_LOAN=0
+< K RESERVED=0
+< K IN_USE=0
+< K ATTACHED=0
+< K LOC_ID=1
+< K PARENT_ID=0
+< K ACQ_DATE=""
+< K ACQ_SRC=""
+< K ACQ_PRICE=""
+< K CUR_VALUE=""
+< K TAGS=""
+< K STATUS=A
+< K CREATED=20261008
+< K UPDATED=20261008
+< .
+> ITEM NOTES 1
+< +DATA
+< L first
+< L second
+< .
+> LOC CONTENTS A1
+< +DATA
+< F ITEM_ID CATEGORY MFR MODEL WORKS QTY AVAIL LOC_ID LOC_NAME STATUS
+< R 1 SYS IBM 5150 ? 1 Y 1 A1 A
+< .
+> AUDIT LIST TBL=AUDIT FIELDS=STATION,USERNAME,REC_ID,ACTION,FLD
+< +DATA
+< F STATION USERNAME REC_ID ACTION FLD
+< R CONSOLE ADMIN 0 K PACK
+< .
+> admin pack
+< +OK REMOVED=0
+> ITEM ADD CATEGORY=CPU MFR=NEC MODEL=V20 LOC_ID=A1
+< +OK ID=4
+> ITEM LIST ORDER=MFR FIELDS=ITEM_ID,MFR
+< +DATA
+< F ITEM_ID MFR
+< R 1 IBM
+< R 4 NEC
+< .
+
+# REINDEX rebuilds every index and takes nothing more.
+> ADMIN REINDEX X
+< -ERR 100 too many arguments
+> ADMIN REINDEX DIR=X
+< -ERR 102 unexpected key FIELD=DIR
+> ADMIN REINDEX
+< +OK
+> ITEM LIST ORDER=LOC FIELDS=ITEM_ID,LOC_ID
+< +DATA
+< F ITEM_ID LOC_ID
+< R 1 1
+< R 4 1
+< .
+> AUDIT LIST FIELDS=ACTION,FLD PAGE=1
+< +DATA
+< F ACTION FLD
+< R K REINDEX
+< C AUDIT::22
+< .
+
+# BACKUP and RESTORE need DIR=, a directory other than the data's.
+> ADMIN BACKUP
+< -ERR 102 missing argument FIELD=DIR
+> ADMIN BACKUP X DIR=$D
+< -ERR 100 too many arguments
+> ADMIN BACKUP DIR=$D FOO=1
+< -ERR 102 unexpected key FIELD=FOO
+> ADMIN BACKUP DIR=
+< -ERR 102 bad directory name FIELD=DIR
+> ADMIN BACKUP DIR="A B"
+< -ERR 102 bad directory name FIELD=DIR
+> ADMIN BACKUP DIR=A*
+< -ERR 102 bad directory name FIELD=DIR
+> ADMIN BACKUP DIR=$D
+< -ERR 102 same as the data directory FIELD=DIR
+> ADMIN BACKUP DIR=$DNOSUCH
+< -ERR 200 no such directory FIELD=DIR
+> ADMIN RESTORE
+< -ERR 102 missing argument FIELD=DIR
+> ADMIN RESTORE DIR=$D
+< -ERR 102 same as the data directory FIELD=DIR
+> ADMIN RESTORE DIR=$DNOSUCH
+< -ERR 200 no such directory FIELD=DIR
+> AUDIT LIST FIELDS=ACTION,FLD PAGE=1
+< +DATA
+< F ACTION FLD
+< R K REINDEX
+< C AUDIT::22
+< .
+
+# A command that fails part-way answers its error with the data opened
+# again: here the marker cannot be written.
+@FAULT 1
+> ADMIN REINDEX
+< -ERR 302 disk full
+> ITEM GET 1
+< +DATA
+< K ITEM_ID=1
+< K CATEGORY=SYS
+< K ITEMTYPE=""
+< K MFR=IBM
+< K MODEL=5150
+< K SERIALNO=""
+< K DESCR=""
+< K COND=""
+< K WORKS=?
+< K QTY=1
+< K ON_LOAN=0
+< K RESERVED=0
+< K IN_USE=0
+< K ATTACHED=0
+< K LOC_ID=1
+< K PARENT_ID=0
+< K ACQ_DATE=""
+< K ACQ_SRC=""
+< K ACQ_PRICE=""
+< K CUR_VALUE=""
+< K TAGS=""
+< K STATUS=A
+< K CREATED=20261008
+< K UPDATED=20261008
+< .
+> AUDIT LIST FIELDS=ACTION,FLD PAGE=1
+< +DATA
+< F ACTION FLD
+< R K REINDEX
+< C AUDIT::22
+< .
+
+# When the files cannot be opened again the engine holds none: every
+# command that reads the data is 300, the others still answer, until
+# the data is opened anew, which repairs what the command left.
+@FAULT 20
+> ADMIN REINDEX
+< -ERR 302 disk full
+> PING
+< +OK
+> ITEM GET 1
+< -ERR 300 database I/O error
+> LOGIN ADMIN secret1
+< -ERR 300 database I/O error
+> STATUS
+< -ERR 300 database I/O error
+> HELLO CONSOLE
+< +OK
+@REOPEN
+> LOGIN ADMIN secret1
+< +OK LEVEL=3 NAME="System Administrator"
+> ITEM LIST FIELDS=ITEM_ID,MFR
+< +DATA
+< F ITEM_ID MFR
+< R 1 IBM
+< R 4 NEC
+< .
+
+# PACK keeps the count line of the marker a failed change left: the
+# change's audit row, written before the failure, is flagged by an X
+# row.
+@FAULT 15
+> ITEM SET 1 MFR=Compaq
+< -ERR 302 disk full
+> ADMIN PACK
+< +OK REMOVED=0
+> AUDIT LIST FIELDS=ACTION,TBL,REC_ID,FLD,NEWVAL PAGE=3
+< +DATA
+< F ACTION TBL REC_ID FLD NEWVAL
+< R K AUDIT 0 PACK ""
+< R X AUDIT 36 AUD_ID 36
+< R U ITEMS 1 MFR Compaq
+< C AUDIT::24
+< .

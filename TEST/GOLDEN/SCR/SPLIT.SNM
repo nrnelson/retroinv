@@ -1,0 +1,728 @@
+=SNAP VIEW PALETTE=MONO CURSOR=0,0,HIDE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|зддддддддддддддддддддддддддддддддддд Item 2 ддддддддддддддддддддддддддддддддддд©|
+|Ё ID        2             Category  DRV           Status    A                  Ё|
+|Ё Type                                            Condition                    Ё|
+|Ё Maker     Tandon                                                             Ё|
+|Ё Model     TM100-2                                                            Ё|
+|Ё Serial                                                                       Ё|
+|Ё Descr                                                                        Ё|
+|Ё Works     N             Quantity  2      Available 2                         Ё|
+|Ё Location  B2            Parent                                               Ё|
+|Ё           Office > Shelf A1 > Box B2                                         Ё|
+|Ё Acquired                Source                                               Ё|
+|Ё Price                   Value                                                Ё|
+|Ё Tags                                                                         Ё|
+|Ё Created   2026-10-08    Updated   2026-10-08                                 Ё|
+|Ё Notes     Lines: 0 (F4 to open)                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+|здддддддддддддддддддддддддд  Parts  Service  Loans  ддддддддддддддддддддддддддд©|
+|Ё The Record menu (Alt-C) shows the parts installed in this item, its          Ё|
+|Ё service records, its loans and holds, and the items used with it.            Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+| Ctrl-E=Edit Esc=Back F1=Help                                                   |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=70 E=01
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCEEEECCCCCCCCCCAAAAAACCCCECCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCAAAAAAAAACEEECCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCC|
+|CCAAAAACCCCCECCCCCCCCCCCCCAAAAAAAACCEEEEECCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CCAAAAAAAACCEEEEEEEEEECCCCAAAAAACCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CCCCCCCCCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCC|
+|CCAAAAAAAACCEEEEEEEEEECCCCAAAAAACCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEECCCCCAAAAACCCCCEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCC|
+|CCAAAAAAACCCEEEEEEEEEECCCCAAAAAAACCCEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAAACCCCCCAAACCCCCCAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+=SNAP ASK PALETTE=MONO CURSOR=11,41,LINE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|зддддддддддддддддддддддддддддддддддд Item 2 ддддддддддддддддддддддддддддддддддд©|
+|Ё ID        2             Category  DRV           Status    A                  Ё|
+|Ё Type                                            Condition                    Ё|
+|Ё Maker     Tandon                                                             Ё|
+|Ё Model     TM100-2                                                            Ё|
+|Ё Serial                                                                       Ё|
+|Ё Descr                                                                        Ё|
+|Ё Works     N             Quantity  2      Available 2                         Ё|
+|Ё Location  B2            Pareимм Split item 2 мм╩                             Ё|
+|Ё           Office > Shelf A1 ╨                  ╨                             Ё|
+|Ё Acquired                Sour╨ Quantity         ╨                             Ё|
+|Ё Price                   Valu╨                  ╨                             Ё|
+|Ё Tags                        хмммммммммммммммммм╪                             Ё|
+|Ё Created   2026-10-08    Updated   2026-10-08                                 Ё|
+|Ё Notes     Lines: 0 (F4 to open)                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+|здддддддддддддддддддддддддд  Parts  Service  Loans  ддддддддддддддддддддддддддд©|
+|Ё The Record menu (Alt-C) shows the parts installed in this item, its          Ё|
+|Ё service records, its loans and holds, and the items used with it.            Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+| Enter=OK Esc=Cancel                                                            |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCDDDDCCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCAAAAAAAACCDDDDDCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAACCCAAAAAAAAAAAAAACCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAACCAAAAAAAACEEEEECCCCDDDDDDDDDDDDDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDCCCCCAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAAAACCCDDDDDDDDDDCCCCAAAAAAACCCDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAACCCCAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+=SNAP EMPTY PALETTE=MONO CURSOR=0,0,HIDE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|зддддддддддддддддддддддддддддддддддд Item 2 ддддддддддддддддддддддддддддддддддд©|
+|Ё ID        2             Category  DRV           Status    A                  Ё|
+|Ё Type                                            Condition                    Ё|
+|Ё Maker     Tandon                                                             Ё|
+|Ё Model     TM100-2                                                            Ё|
+|Ё Serial                                                                       Ё|
+|Ё Descr                                                                        Ё|
+|Ё Works     N             Quantity  2      Available 2                         Ё|
+|Ё Location  B2            Parent                                               Ё|
+|Ё           Office > Shelf A1 > Box B2                                         Ё|
+|Ё Acquired                Source                                               Ё|
+|Ё Price                   Value                                                Ё|
+|Ё Tags                                                                         Ё|
+|Ё Created   2026-10-08    Updated   2026-10-08                                 Ё|
+|Ё Notes     Lines: 0 (F4 to open)                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+|здддддддддддддддддддддддддд  Parts  Service  Loans  ддддддддддддддддддддддддддд©|
+|Ё The Record menu (Alt-C) shows the parts installed in this item, its          Ё|
+|Ё service records, its loans and holds, and the items used with it.            Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+| Ctrl-E=Edit Esc=Back F1=Help                                                   |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=70 E=01
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCEEEECCCCCCCCCCAAAAAACCCCECCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCAAAAAAAAACEEECCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCC|
+|CCAAAAACCCCCECCCCCCCCCCCCCAAAAAAAACCEEEEECCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CCAAAAAAAACCEEEEEEEEEECCCCAAAAAACCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CCCCCCCCCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCC|
+|CCAAAAAAAACCEEEEEEEEEECCCCAAAAAACCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEECCCCCAAAAACCCCCEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCC|
+|CCAAAAAAACCCEEEEEEEEEECCCCAAAAAAACCCEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAAACCCCCCAAACCCCCCAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+=SNAP CANCEL PALETTE=MONO CURSOR=0,0,HIDE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|зддддддддддддддддддддддддддддддддддд Item 2 ддддддддддддддддддддддддддддддддддд©|
+|Ё ID        2             Category  DRV           Status    A                  Ё|
+|Ё Type                                            Condition                    Ё|
+|Ё Maker     Tandon                                                             Ё|
+|Ё Model     TM100-2                                                            Ё|
+|Ё Serial                                                                       Ё|
+|Ё Descr                                                                        Ё|
+|Ё Works     N             Quantity  2      Available 2                         Ё|
+|Ё Location  B2            Parent                                               Ё|
+|Ё           Office > Shelf A1 > Box B2                                         Ё|
+|Ё Acquired                Source                                               Ё|
+|Ё Price                   Value                                                Ё|
+|Ё Tags                                                                         Ё|
+|Ё Created   2026-10-08    Updated   2026-10-08                                 Ё|
+|Ё Notes     Lines: 0 (F4 to open)                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+|здддддддддддддддддддддддддд  Parts  Service  Loans  ддддддддддддддддддддддддддд©|
+|Ё The Record menu (Alt-C) shows the parts installed in this item, its          Ё|
+|Ё service records, its loans and holds, and the items used with it.            Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+| Ctrl-E=Edit Esc=Back F1=Help                                                   |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=70 E=01
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCEEEECCCCCCCCCCAAAAAACCCCECCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCAAAAAAAAACEEECCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCC|
+|CCAAAAACCCCCECCCCCCCCCCCCCAAAAAAAACCEEEEECCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CCAAAAAAAACCEEEEEEEEEECCCCAAAAAACCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CCCCCCCCCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCC|
+|CCAAAAAAAACCEEEEEEEEEECCCCAAAAAACCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEECCCCCAAAAACCCCCEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCC|
+|CCAAAAAAACCCEEEEEEEEEECCCCAAAAAAACCCEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAAACCCCCCAAACCCCCCAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+=SNAP DIGITS PALETTE=MONO CURSOR=11,42,LINE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|зддддддддддддддддддддддддддддддддддд Item 2 ддддддддддддддддддддддддддддддддддд©|
+|Ё ID        2             Category  DRV           Status    A                  Ё|
+|Ё Type                                            Condition                    Ё|
+|Ё Maker     Tandon                                                             Ё|
+|Ё Model     TM100-2                                                            Ё|
+|Ё Serial                                                                       Ё|
+|Ё Descr                                                                        Ё|
+|Ё Works     N             Quantity  2      Available 2                         Ё|
+|Ё Location  B2            Pareимм Split item 2 мм╩                             Ё|
+|Ё           Office > Shelf A1 ╨                  ╨                             Ё|
+|Ё Acquired                Sour╨ Quantity 1       ╨                             Ё|
+|Ё Price                   Valu╨                  ╨                             Ё|
+|Ё Tags                        хмммммммммммммммммм╪                             Ё|
+|Ё Created   2026-10-08    Updated   2026-10-08                                 Ё|
+|Ё Notes     Lines: 0 (F4 to open)                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+|здддддддддддддддддддддддддд  Parts  Service  Loans  ддддддддддддддддддддддддддд©|
+|Ё The Record menu (Alt-C) shows the parts installed in this item, its          Ё|
+|Ё service records, its loans and holds, and the items used with it.            Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+| Enter=OK Esc=Cancel                                                            |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCDDDDCCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCAAAAAAAACCDDDDDCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAACCCAAAAAAAAAAAAAACCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAACCAAAAAAAACEEEEECCCCDDDDDDDDDDDDDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDCCCCCAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAAAACCCDDDDDDDDDDCCCCAAAAAAACCCDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAACCCCAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+=SNAP TOOBIG PALETTE=MONO CURSOR=0,0,HIDE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|зддддддддддддддддддддддддддддддддддд Item 2 ддддддддддддддддддддддддддддддддддд©|
+|Ё ID        2             Category  DRV           Status    A                  Ё|
+|Ё Type                                            Condition                    Ё|
+|Ё Maker     Tandon                                                             Ё|
+|Ё Model     TM100-2                                                            Ё|
+|Ё Serial                                                                       Ё|
+|Ё Descr                                                                        Ё|
+|Ё Works     N             Quantity  2      Available 2                         Ё|
+|Ё Location  B2            Parent                                               Ё|
+|Ё           Office > Shelf A1 > Box B2                                         Ё|
+|Ё Acquired                Source                                               Ё|
+|Ё Price                   Value                                                Ё|
+|Ё Tags                                                                         Ё|
+|Ё Created   2026-10-08    Updated   2026-10-08                                 Ё|
+|Ё Notes     Lines: 0 (F4 to open)                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+|здддддддддддддддддддддддддд  Parts  Service  Loans  ддддддддддддддддддддддддддд©|
+|Ё The Record menu (Alt-C) shows the parts installed in this item, its          Ё|
+|Ё service records, its loans and holds, and the items used with it.            Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+| Not enough on hand                                                             |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=70 E=01
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCEEEECCCCCCCCCCAAAAAACCCCECCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCAAAAAAAAACEEECCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCC|
+|CCAAAAACCCCCECCCCCCCCCCCCCAAAAAAAACCEEEEECCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CCAAAAAAAACCEEEEEEEEEECCCCAAAAAACCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CCCCCCCCCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCC|
+|CCAAAAAAAACCEEEEEEEEEECCCCAAAAAACCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEECCCCCAAAAACCCCCEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCC|
+|CCAAAAAAACCCEEEEEEEEEECCCCAAAAAAACCCEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|DDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+=SNAP SPLIT PALETTE=MONO CURSOR=0,0,HIDE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|зддддддддддддддддддддддддддддддддддд Item 2 ддддддддддддддддддддддддддддддддддд©|
+|Ё ID        2             Category  DRV           Status    A                  Ё|
+|Ё Type                                            Condition                    Ё|
+|Ё Maker     Tandon                                                             Ё|
+|Ё Model     TM100-2                                                            Ё|
+|Ё Serial                                                                       Ё|
+|Ё Descr                                                                        Ё|
+|Ё Works     N             Quantity  1      Available 1                         Ё|
+|Ё Location  B2            Parent                                               Ё|
+|Ё           Office > Shelf A1 > Box B2                                         Ё|
+|Ё Acquired                Source                                               Ё|
+|Ё Price                   Value                                                Ё|
+|Ё Tags                                                                         Ё|
+|Ё Created   2026-10-08    Updated   2026-10-08                                 Ё|
+|Ё Notes     Lines: 0 (F4 to open)                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+|здддддддддддддддддддддддддд  Parts  Service  Loans  ддддддддддддддддддддддддддд©|
+|Ё The Record menu (Alt-C) shows the parts installed in this item, its          Ё|
+|Ё service records, its loans and holds, and the items used with it.            Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+| Split off item 4                                                               |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=70 E=01
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCEEEECCCCCCCCCCAAAAAACCCCECCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCAAAAAAAAACEEECCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCC|
+|CCAAAAACCCCCECCCCCCCCCCCCCAAAAAAAACCEEEEECCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CCAAAAAAAACCEEEEEEEEEECCCCAAAAAACCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CCCCCCCCCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCC|
+|CCAAAAAAAACCEEEEEEEEEECCCCAAAAAACCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEECCCCCAAAAACCCCCEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCC|
+|CCAAAAAAACCCEEEEEEEEEECCCCAAAAAAACCCEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+=SNAP LIST PALETTE=MONO CURSOR=0,0,HIDE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|здддддддддддддддддддддддддддддддд Items by ID ддддддддддддддддддддддддддддддддд©|
+|Ё      ID Cat  Maker           Model           Works   Qty Location   Status   Ё|
+|Ё       1 SYS  IBM             5150            yes       1 Office              Ё|
+|Ё       2 DRV  Tandon          TM100-2         no        1 Box B2              Ё|
+|Ё       3 CARD Hercules        Graphics Card   ?         1 Shelf A1            Ё|
+|Ё       4 DRV  Tandon          TM100-2         no        1 Box B2              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+| Enter=Open Ins=New Ctrl-E=Edit Del=Delete Ctrl-D=Duplicate Esc=Back F1=Help    |
+| TEST              LOCAL  ADMIN 3     Order: ID                                 |
+=ATTR A=0F B=09 C=07 D=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAACCCCCCAAACCCCCAAAAAACCCCCCAAACCCCCCCCAAAAAACCCCCCCCCCCAAACCCCCCAACCCCCCCCC|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+=SNAP NEWITEM PALETTE=MONO CURSOR=0,0,HIDE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|зддддддддддддддддддддддддддддддддддд Item 4 ддддддддддддддддддддддддддддддддддд©|
+|Ё ID        4             Category  DRV           Status    A                  Ё|
+|Ё Type                                            Condition                    Ё|
+|Ё Maker     Tandon                                                             Ё|
+|Ё Model     TM100-2                                                            Ё|
+|Ё Serial                                                                       Ё|
+|Ё Descr                                                                        Ё|
+|Ё Works     N             Quantity  1      Available 1                         Ё|
+|Ё Location  B2            Parent                                               Ё|
+|Ё           Office > Shelf A1 > Box B2                                         Ё|
+|Ё Acquired                Source                                               Ё|
+|Ё Price                   Value                                                Ё|
+|Ё Tags                                                                         Ё|
+|Ё Created   2026-10-08    Updated   2026-10-08                                 Ё|
+|Ё Notes     Lines: 0 (F4 to open)                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+|здддддддддддддддддддддддддд  Parts  Service  Loans  ддддддддддддддддддддддддддд©|
+|Ё The Record menu (Alt-C) shows the parts installed in this item, its          Ё|
+|Ё service records, its loans and holds, and the items used with it.            Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+| Ctrl-E=Edit Esc=Back F1=Help                                                   |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=70 E=01
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCEEEECCCCCCCCCCAAAAAACCCCECCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCAAAAAAAAACEEECCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCC|
+|CCAAAAACCCCCECCCCCCCCCCCCCAAAAAAAACCEEEEECCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CCAAAAAAAACCEEEEEEEEEECCCCAAAAAACCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEC|
+|CCCCCCCCCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCC|
+|CCAAAAAAAACCEEEEEEEEEECCCCAAAAAACCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEECCCCCAAAAACCCCCEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCC|
+|CCAAAAAAACCCEEEEEEEEEECCCCAAAAAAACCCEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAAACCCCCCAAACCCCCCAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+=SNAP EDIT PALETTE=MONO CURSOR=2,39,LINE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|зддддддддддддддддддддддддддддддддддд Item 1 ддддддддддддддддддддддддддддддддддд©|
+|Ё ID        1             Category  SYS           Status    A                  Ё|
+|Ё Type                                            Condition GD                 Ё|
+|Ё Maker     IBM                                                                Ё|
+|Ё Model     5150                                                               Ё|
+|Ё Serial    0012345                                                            Ё|
+|Ё Descr     IBM Personal Computer                                              Ё|
+|Ё Works     Y             Quantity  1      Available 1                         Ё|
+|Ё Location  OFF           Parent                                               Ё|
+|Ё           Office                                                             Ё|
+|Ё Acquired                Source                                               Ё|
+|Ё Price                   Value                                                Ё|
+|Ё Tags                                                                         Ё|
+|Ё Created   2026-10-08    Updated   2026-10-08                                 Ё|
+|Ё Notes     Lines: 2 (F4 to open)                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+|здддддддддддддддддддддддддд  Parts  Service  Loans  ддддддддддддддддддддддддддд©|
+|Ё The Record menu (Alt-C) shows the parts installed in this item, its          Ё|
+|Ё service records, its loans and holds, and the items used with it.            Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+| Enter=Save F4=List Esc=Cancel F1=Help                                          |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCAAAECCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCAAAAAAAACCDDDDDCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDCCCCCAAAAACCCCCDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAAAACCCDDDDDDDDDDCCCCAAAAAAACCCDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAACCCCCCAACCCCCCAAACCCCCCCCAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+=SNAP EDITBOX PALETTE=MONO CURSOR=11,41,LINE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|зддддддддддддддддддддддддддддддддддд Item 1 ддддддддддддддддддддддддддддддддддд©|
+|Ё ID        1             Category  SYS           Status    A                  Ё|
+|Ё Type                                            Condition GD                 Ё|
+|Ё Maker     IBM                                                                Ё|
+|Ё Model     5150                                                               Ё|
+|Ё Serial    0012345                                                            Ё|
+|Ё Descr     IBM Personal Computer                                              Ё|
+|Ё Works     Y             Quantity  1      Available 1                         Ё|
+|Ё Location  OFF           Pareимм Split item 1 мм╩                             Ё|
+|Ё           Office            ╨                  ╨                             Ё|
+|Ё Acquired                Sour╨ Quantity         ╨                             Ё|
+|Ё Price                   Valu╨                  ╨                             Ё|
+|Ё Tags                        хмммммммммммммммммм╪                             Ё|
+|Ё Created   2026-10-08    Updated   2026-10-08                                 Ё|
+|Ё Notes     Lines: 2 (F4 to open)                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+|здддддддддддддддддддддддддд  Parts  Service  Loans  ддддддддддддддддддддддддддд©|
+|Ё The Record menu (Alt-C) shows the parts installed in this item, its          Ё|
+|Ё service records, its loans and holds, and the items used with it.            Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+| Enter=OK Esc=Cancel                                                            |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCDDDDCCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCAAAAAAAACCDDDDDCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAACCCAAAAAAAAAAAAAACCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAACCAAAAAAAACEEEEECCCCDDDDDDDDDDDDDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDCCCCCAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAAAACCCDDDDDDDDDDCCCCAAAAAAACCCDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAACCCCAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+=SNAP CHANGED PALETTE=MONO CURSOR=2,37,LINE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|зддддддддддддддддддддддддддддддддддд Item 1 ддддддддддддддддддддддддддддддддддд©|
+|Ё ID        1             Category  X             Status    A                  Ё|
+|Ё Type                                            Condition GD                 Ё|
+|Ё Maker     IBM                                                                Ё|
+|Ё Model     5150                                                               Ё|
+|Ё Serial    0012345                                                            Ё|
+|Ё Descr     IBM Personal Computer                                              Ё|
+|Ё Works     Y             Quantity  1      Available 1                         Ё|
+|Ё Location  OFF           Parent                                               Ё|
+|Ё           Office                                                             Ё|
+|Ё Acquired                Source                                               Ё|
+|Ё Price                   Value                                                Ё|
+|Ё Tags                                                                         Ё|
+|Ё Created   2026-10-08    Updated   2026-10-08                                 Ё|
+|Ё Notes     Lines: 2 (F4 to open)                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+|здддддддддддддддддддддддддд  Parts  Service  Loans  ддддддддддддддддддддддддддд©|
+|Ё The Record menu (Alt-C) shows the parts installed in this item, its          Ё|
+|Ё service records, its loans and holds, and the items used with it.            Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+| Save with Enter or leave with Esc first                                        |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCEEEECCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCAAAAAAAACCDDDDDCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDCCCCCAAAAACCCCCDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAAAACCCDDDDDDDDDDCCCCAAAAAAACCCDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+=SNAP LEAVE PALETTE=MONO CURSOR=0,0,HIDE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|зддддддддддддддддддддддддддддддддддд Item 1 ддддддддддддддддддддддддддддддддддд©|
+|Ё ID        1             Category  X             Status    A                  Ё|
+|Ё Type                                            Condition GD                 Ё|
+|Ё Maker     IBM                                                                Ё|
+|Ё Model     5150                                                               Ё|
+|Ё Serial    0012345                                                            Ё|
+|Ё Descr     IBM Personal Computer                                              Ё|
+|Ё Works     Y             Quantity  1      Available 1                         Ё|
+|Ё Location  OFF           Paимммммммммммммммммммммм╩                           Ё|
+|Ё           Office          ╨                      ╨                           Ё|
+|Ё Acquired                So╨ Discard the changes? ╨                           Ё|
+|Ё Price                   Va╨                      ╨                           Ё|
+|Ё Tags                      хмммммммммммммммммммммм╪                           Ё|
+|Ё Created   2026-10-08    Updated   2026-10-08                                 Ё|
+|Ё Notes     Lines: 2 (F4 to open)                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+|здддддддддддддддддддддддддд  Parts  Service  Loans  ддддддддддддддддддддддддддд©|
+|Ё The Record menu (Alt-C) shows the parts installed in this item, its          Ё|
+|Ё service records, its loans and holds, and the items used with it.            Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+| Y=Yes N=No                                                                     |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCDDDDCCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCAAAAAAAACCDDDDDCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAACCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAACCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDCCCCCAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAAAACCCDDDDDDDDDDCCCCAAAAAAACCCDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CACCCCCACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+=SNAP OUT PALETTE=MONO CURSOR=0,0,HIDE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|здддддддддддддддддддддддддддддддд Items by ID ддддддддддддддддддддддддддддддддд©|
+|Ё      ID Cat  Maker           Model           Works   Qty Location   Status   Ё|
+|Ё       1 SYS  IBM             5150            yes       1 Office              Ё|
+|Ё       2 DRV  Tandon          TM100-2         no        1 Box B2              Ё|
+|Ё       3 CARD Hercules        Graphics Card   ?         1 Shelf A1            Ё|
+|Ё       4 DRV  Tandon          TM100-2         no        1 Box B2              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+| Enter=Open Ins=New Ctrl-E=Edit Del=Delete Ctrl-D=Duplicate Esc=Back F1=Help    |
+| TEST              LOCAL  ADMIN 3     Order: ID                                 |
+=ATTR A=0F B=09 C=07 D=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC|
+|CDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAACCCCCCAAACCCCCAAAAAACCCCCCAAACCCCCCCCAAAAAACCCCCCCCCCCAAACCCCCCAACCCCCCCCC|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|

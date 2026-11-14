@@ -1,0 +1,30 @@
+# SCRVERB.H: the verbs of the Record menu, the bar's last, which each
+# screen fills with its own (tui_record), in the order of their numbers
+# (SV_); a verb's own key is named after two or more blanks, as the bar's
+# entries name theirs (INVMENU.H), and is the key it gives (tui_verbs).
+# Paged, as only an open menu reads them.
+# W=76 pull-down entries, '&' not counted: VID_COLS - 4
+710 MW_OPEN &Open             Enter
+711 MW_EDIT &Edit             Ctrl-E
+712 MW_NEW &New              Ins
+713 MW_DEL &Delete           Del
+714 MW_DUP Dupli&cate        Ctrl-D
+715 MW_PART &Install part     Ins
+716 MW_MOVE &Move
+717 MW_INTO &Install in
+718 MW_OUT &Take out
+719 MW_END &Return or release
+720 MW_ITEM Open &item
+721 MW_LEND &Lend             Ctrl-L
+722 MW_RES Reser&ve          Ctrl-R
+723 MW_USE Use wit&h         Ctrl-U
+724 MW_PARTS &Parts
+725 MW_SVC &Service records
+726 MW_LOANS Loans &and holds
+727 MW_USED Used &with it
+728 MW_SPLIT Split &units
+729 MW_TOP Not installed onl&y
+730 MW_BELOW Everythin&g below
+731 MW_NEXT Ne&xt view        Ctrl-PgDn
+732 MW_PREV &Previous view    Ctrl-PgUp
+733 MW_BACK &Back             Esc

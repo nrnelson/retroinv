@@ -1,0 +1,289 @@
+=SNAP START
+#32770 "WTABT" ACTIVE
+ WTAB 100 "Overview|Technical|Ac&quisition|Notes" CUR 0
+ Edit 101 "" FOCUS
+ Static 102 "SEEN 0 CUR 0"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WTABT "WTABT" DISABLED
+=SNAP CTAB
+#32770 "WTABT" ACTIVE
+ WTAB 100 "Overview|Technical|Ac&quisition|Notes" CUR 1
+ Edit 101 "" FOCUS
+ Static 102 "SEEN 1 CUR 1"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WTABT "WTABT" DISABLED
+=SNAP CTAB3
+#32770 "WTABT" ACTIVE
+ WTAB 100 "Overview|Technical|Ac&quisition|Notes" CUR 3
+ Edit 101 "" FOCUS
+ Static 102 "SEEN 3 CUR 3"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WTABT "WTABT" DISABLED
+=SNAP CTABWRAP
+#32770 "WTABT" ACTIVE
+ WTAB 100 "Overview|Technical|Ac&quisition|Notes" CUR 0
+ Edit 101 "" FOCUS
+ Static 102 "SEEN 4 CUR 0"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WTABT "WTABT" DISABLED
+=SNAP CSTABWRP
+#32770 "WTABT" ACTIVE
+ WTAB 100 "Overview|Technical|Ac&quisition|Notes" CUR 3
+ Edit 101 "" FOCUS
+ Static 102 "SEEN 5 CUR 3"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WTABT "WTABT" DISABLED
+=SNAP CSTAB
+#32770 "WTABT" ACTIVE
+ WTAB 100 "Overview|Technical|Ac&quisition|Notes" CUR 2
+ Edit 101 "" FOCUS
+ Static 102 "SEEN 6 CUR 2"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WTABT "WTABT" DISABLED
+=SNAP EDITLEFT
+#32770 "WTABT" ACTIVE
+ WTAB 100 "Overview|Technical|Ac&quisition|Notes" CUR 2
+ Edit 101 "" FOCUS
+ Static 102 "SEEN 6 CUR 2"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WTABT "WTABT" DISABLED
+=SNAP FOCUS
+#32770 "WTABT" ACTIVE
+ WTAB 100 "Overview|Technical|Ac&quisition|Notes" CUR 2 FOCUS
+ Edit 101 ""
+ Static 102 "SEEN 6 CUR 2"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WTABT "WTABT" DISABLED
+=SNAP RIGHT
+#32770 "WTABT" ACTIVE
+ WTAB 100 "Overview|Technical|Ac&quisition|Notes" CUR 3 FOCUS
+ Edit 101 ""
+ Static 102 "SEEN 7 CUR 3"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WTABT "WTABT" DISABLED
+=SNAP RIGHTEND
+#32770 "WTABT" ACTIVE
+ WTAB 100 "Overview|Technical|Ac&quisition|Notes" CUR 3 FOCUS
+ Edit 101 ""
+ Static 102 "SEEN 7 CUR 3"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WTABT "WTABT" DISABLED
+=SNAP LEFT0
+#32770 "WTABT" ACTIVE
+ WTAB 100 "Overview|Technical|Ac&quisition|Notes" CUR 0 FOCUS
+ Edit 101 ""
+ Static 102 "SEEN 10 CUR 0"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WTABT "WTABT" DISABLED
+=SNAP LEFTEND
+#32770 "WTABT" ACTIVE
+ WTAB 100 "Overview|Technical|Ac&quisition|Notes" CUR 0 FOCUS
+ Edit 101 ""
+ Static 102 "SEEN 10 CUR 0"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WTABT "WTABT" DISABLED
+=SNAP CTABFOC
+#32770 "WTABT" ACTIVE
+ WTAB 100 "Overview|Technical|Ac&quisition|Notes" CUR 1 FOCUS
+ Edit 101 ""
+ Static 102 "SEEN 11 CUR 1"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WTABT "WTABT" DISABLED
+=SNAP TAB
+#32770 "WTABT" ACTIVE
+ WTAB 100 "Overview|Technical|Ac&quisition|Notes" CUR 1
+ Edit 101 "" FOCUS
+ Static 102 "SEEN 11 CUR 1"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WTABT "WTABT" DISABLED
+=SNAP ALTQ
+#32770 "WTABT" ACTIVE
+ WTAB 100 "Overview|Technical|Ac&quisition|Notes" CUR 2
+ Edit 101 "" FOCUS
+ Static 102 "SEEN 12 CUR 2"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WTABT "WTABT" DISABLED
+=SNAP ALTT
+#32770 "WTABT" ACTIVE
+ WTAB 100 "Overview|Technical|Ac&quisition|Notes" CUR 1
+ Edit 101 "" FOCUS
+ Static 102 "SEEN 13 CUR 1"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WTABT "WTABT" DISABLED
+=SNAP ALTTCUR
+#32770 "WTABT" ACTIVE
+ WTAB 100 "Overview|Technical|Ac&quisition|Notes" CUR 1
+ Edit 101 "" FOCUS
+ Static 102 "SEEN 13 CUR 1"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WTABT "WTABT" DISABLED
+=SNAP ALTA
+#32770 "WTABT" ACTIVE
+ WTAB 100 "Overview|Technical|Ac&quisition|Notes" CUR 1
+ Edit 101 "" FOCUS
+ Static 102 "SEEN 13 CUR 1"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WTABT "WTABT" DISABLED
+=SNAP ALTZ
+#32770 "WTABT" ACTIVE
+ WTAB 100 "Overview|Technical|Ac&quisition|Notes" CUR 1
+ Edit 101 "" FOCUS
+ Static 102 "SEEN 13 CUR 1"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WTABT "WTABT" DISABLED
+=SNAP CLICK2
+#32770 "WTABT" ACTIVE
+ WTAB 100 "Overview|Technical|Ac&quisition|Notes" CUR 2 FOCUS
+ Edit 101 ""
+ Static 102 "SEEN 14 CUR 2"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WTABT "WTABT" DISABLED
+=SNAP TAB2
+#32770 "WTABT" ACTIVE
+ WTAB 100 "Overview|Technical|Ac&quisition|Notes" CUR 2
+ Edit 101 "" FOCUS
+ Static 102 "SEEN 14 CUR 2"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WTABT "WTABT" DISABLED
+=SNAP CLICKCUR
+#32770 "WTABT" ACTIVE
+ WTAB 100 "Overview|Technical|Ac&quisition|Notes" CUR 2 FOCUS
+ Edit 101 ""
+ Static 102 "SEEN 14 CUR 2"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WTABT "WTABT" DISABLED
+=SNAP TAB3
+#32770 "WTABT" ACTIVE
+ WTAB 100 "Overview|Technical|Ac&quisition|Notes" CUR 2
+ Edit 101 "" FOCUS
+ Static 102 "SEEN 14 CUR 2"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WTABT "WTABT" DISABLED
+=SNAP CLICKOUT
+#32770 "WTABT" ACTIVE
+ WTAB 100 "Overview|Technical|Ac&quisition|Notes" CUR 2 FOCUS
+ Edit 101 ""
+ Static 102 "SEEN 14 CUR 2"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WTABT "WTABT" DISABLED
+=SNAP SETCUR
+#32770 "WTABT" ACTIVE
+ WTAB 100 "Overview|Technical|Ac&quisition|Notes" CUR 3 FOCUS
+ Edit 101 ""
+ Static 102 "SEEN 14 CUR 3"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WTABT "WTABT" DISABLED
+=SNAP SETNONE
+#32770 "WTABT" ACTIVE
+ WTAB 100 "Overview|Technical|Ac&quisition|Notes" CUR 3 FOCUS
+ Edit 101 ""
+ Static 102 "SEEN 14 CUR -1 RECT 0"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WTABT "WTABT" DISABLED
+=SNAP TEXT
+#32770 "WTABT" ACTIVE
+ WTAB 100 "One|Two" CUR 1 FOCUS
+ Edit 101 ""
+ Static 102 "SEEN 14 CUR -1 RECT 0"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WTABT "WTABT" DISABLED
+=SNAP TEXTCTAB
+#32770 "WTABT" ACTIVE
+ WTAB 100 "One|Two" CUR 0 FOCUS
+ Edit 101 ""
+ Static 102 "SEEN 15 CUR 0"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WTABT "WTABT" DISABLED
+=SNAP TEXTALTT
+#32770 "WTABT" ACTIVE
+ WTAB 100 "One|Two" CUR 1 FOCUS
+ Edit 101 ""
+ Static 102 "SEEN 16 CUR 1"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WTABT "WTABT" DISABLED
+=SNAP MANY
+#32770 "WTABT" ACTIVE
+ WTAB 100 "Zero|One|Two|Three|Four|Five|Six|Seven|Eight|Nine|Ten|Eleven|Twelve" CUR 1 FOCUS
+ Edit 101 ""
+ Static 102 "SEEN 16 CUR 1"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WTABT "WTABT" DISABLED
+=SNAP MANY0
+#32770 "WTABT" ACTIVE
+ WTAB 100 "Zero|One|Two|Three|Four|Five|Six|Seven|Eight|Nine|Ten|Eleven|Twelve" CUR 0 FOCUS
+ Edit 101 ""
+ Static 102 "SEEN 17 CUR 0"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WTABT "WTABT" DISABLED
+=SNAP MANYWRAP
+#32770 "WTABT" ACTIVE
+ WTAB 100 "Zero|One|Two|Three|Four|Five|Six|Seven|Eight|Nine|Ten|Eleven|Twelve" CUR 7 FOCUS
+ Edit 101 ""
+ Static 102 "SEEN 18 CUR 7"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WTABT "WTABT" DISABLED
+=SNAP MANYCTAB
+#32770 "WTABT" ACTIVE
+ WTAB 100 "Zero|One|Two|Three|Four|Five|Six|Seven|Eight|Nine|Ten|Eleven|Twelve" CUR 0 FOCUS
+ Edit 101 ""
+ Static 102 "SEEN 19 CUR 0"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WTABT "WTABT" DISABLED
+=SNAP PGUPWRAP
+#32770 "WTABT" ACTIVE
+ WTAB 100 "Zero|One|Two|Three|Four|Five|Six|Seven|Eight|Nine|Ten|Eleven|Twelve" CUR 7 FOCUS
+ Edit 101 ""
+ Static 102 "SEEN 20 CUR 7"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WTABT "WTABT" DISABLED
+=SNAP PGDNWRAP
+#32770 "WTABT" ACTIVE
+ WTAB 100 "Zero|One|Two|Three|Four|Five|Six|Seven|Eight|Nine|Ten|Eleven|Twelve" CUR 0 FOCUS
+ Edit 101 ""
+ Static 102 "SEEN 21 CUR 0"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WTABT "WTABT" DISABLED
+=SNAP PGDN
+#32770 "WTABT" ACTIVE
+ WTAB 100 "Zero|One|Two|Three|Four|Five|Six|Seven|Eight|Nine|Ten|Eleven|Twelve" CUR 1 FOCUS
+ Edit 101 ""
+ Static 102 "SEEN 22 CUR 1"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WTABT "WTABT" DISABLED
+=END

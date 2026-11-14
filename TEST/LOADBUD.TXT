@@ -1,0 +1,37 @@
+# Load size budgets of the programs with free-memory floors (LOAD_EXES of
+# MAKEFILE), checked by TEST/mapchk.sh -l on every map of their builds.
+#
+# Format: one "PROGRAM BUILD BYTES" line per program and build; "#"
+# starts a comment.  BUILD is OW (Open Watcom, "make all"), TC (Turbo C
+# 2.01, "make tc") or WC65 (Watcom C 6.5, "make wc65"); BYTES is the most
+# the program may take at load, the end of the highest segment of its map
+# rounded up to a paragraph, as "sh TEST/mapchk.sh -v" prints it.
+#
+# Each budget is the load size the program's floors were last measured
+# at: INV_FREEKB_*, INVNET_FREEKB_* (INV /NET), INVCOM_FREEKB_* (INV
+# /COM1), INVSCR_FREEKB_* and INVSCRNET_FREEKB_* for INV, the THIN*
+# figures for THIN, INVSERV_FREEKB_* for INVSERV, INVNET_FREEKB_* for
+# INVTEST and INVTCP_FREEKB_* for INVTCP.  A floor leaves the deepest
+# screens no more than its 4 KB step, and sometimes only a few bytes, so
+# a program that loads larger can fail at its floor; this check catches
+# that at link time instead of in the gates that run the floors.  When
+# growth is justified, run those gates ("make integ", or "make tcp" for
+# INVTCP) with the larger program: if they pass, raise the line to the
+# new load size; if not, trim the program or raise the floor in MAKEFILE
+# and then the line.  A program that shrinks keeps its line.
+
+INV         OW      246288
+INV         TC      284688
+INV         WC65    243424
+INVTHIN     OW      135328
+INVTHIN     TC      149472
+INVTHIN     WC65    128880
+INVSERV     OW      168976
+INVSERV     TC      192896
+INVSERV     WC65    163392
+INVTEST     OW       38704
+INVTEST     TC       34304
+INVTEST     WC65     28624
+INVTCP      OW       76752
+INVTCP      TC       76480
+INVTCP      WC65     72144

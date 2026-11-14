@@ -1,0 +1,388 @@
+# ITEM SPLIT: units moved to a new top-level item (fields and notes as
+# ITEM COPY makes them, SERIALNO blank, the location of the top-level
+# item), unit conservation, the loan and last-unit limits, every
+# argument error, the level gate and the audit rows.  The clock moves to
+# 2026-10-20 before the first split, so CREATED and UPDATED tell the old
+# item from the new one.
+
+> HELLO CONSOLE
+< +OK
+> LOGIN ADMIN admin
+< +OK LEVEL=3 MUSTCHG=1
+> PASSWD admin secret1
+< +OK
+> LOC ADD LOC_NAME=A1 LTYPE=BIN LOC_CODE=A1
+< +OK ID=1
+> LOC ADD LOC_NAME=B2 LTYPE=BIN LOC_CODE=B2
+< +OK ID=2
+> ITEM ADD CATEGORY=CARD ITEMTYPE="ISA VGA" MFR=IBM MODEL="5150 CGA" SERIALNO=SN-0001 DESCR="Colour graphics adapter" COND=gd QTY=10 LOC_ID=A1 ACQ_DATE=19860214 ACQ_SRC="Swap meet" ACQ_PRICE=12.5 CUR_VALUE=40 TAGS=video,isa
+< +OK ID=1
+> ITEM NOTES 1 ADD="lot note"
+< +OK
+> ITEM ADD CATEGORY=SYS MFR=Compaq MODEL=Portable QTY=3 LOC_ID=B2
+< +OK ID=2
+> ITEM ADD CATEGORY=PART MFR=Acme MODEL=Screw QTY=20
+< +OK ID=3
+> ITEM ADD CATEGORY=CPU MFR=Intel MODEL=8088 QTY=10
+< +OK ID=4
+> ITEM ADD CATEGORY=CPU MFR=Intel MODEL=8087 QTY=5
+< +OK ID=5
+> ITEM ADD CATEGORY=DRV MFR=Seagate MODEL=ST-225
+< +OK ID=6
+> ITEM ADD CATEGORY=SW MFR=Microsoft MODEL=DOS QTY=2
+< +OK ID=7
+> ITEM ADD CATEGORY=SYS MFR=IBM MODEL=5160 QTY=10 LOC_ID=A1
+< +OK ID=8
+> ITEM ADD CATEGORY=SYS MFR=Gone QTY=5
+< +OK ID=9
+> ITEM DEL 9
+< +OK
+> ASSY INSTALL 3 2
+< +OK
+> LOAN OUT 4 QTY=3 HOLDER=Jane DUE=20261231
+< +OK ID=1
+> LOAN OUT 7 QTY=1 HOLDER=Bob DUE=20261231
+< +OK ID=2
+
+# Argument errors, each naming its field.  Nothing changes.
+> ITEM SPLIT
+< -ERR 102 missing argument FIELD=ID
+> ITEM SPLIT 0 QTY=1
+< -ERR 102 bad ID FIELD=ID
+> ITEM SPLIT x QTY=1
+< -ERR 102 bad ID FIELD=ID
+> ITEM SPLIT -1 QTY=1
+< -ERR 102 bad ID FIELD=ID
+> ITEM SPLIT 1 2 QTY=1
+< -ERR 100 too many arguments
+> ITEM SPLIT 1
+< -ERR 102 bad or missing argument FIELD=QTY
+> ITEM SPLIT 1 QTY=
+< -ERR 102 bad or missing argument FIELD=QTY
+> ITEM SPLIT 1 QTY=0
+< -ERR 102 bad or missing argument FIELD=QTY
+> ITEM SPLIT 1 QTY=abc
+< -ERR 102 not a number FIELD=QTY
+> ITEM SPLIT 1 QTY=1.5
+< -ERR 102 not a number FIELD=QTY
+> ITEM SPLIT 1 QTY=+5
+< -ERR 102 not a number FIELD=QTY
+> ITEM SPLIT 1 QTY=-1
+< -ERR 102 negative value FIELD=QTY
+> ITEM SPLIT 1 QTY=123456
+< -ERR 102 bad value FIELD=QTY
+> ITEM SPLIT 1 QTY=1 MFR=X
+< -ERR 102 unexpected key FIELD=MFR
+> ITEM SPLIT 1 QTY=1 LOC_ID=B2
+< -ERR 102 unexpected key FIELD=LOC_ID
+> ITEM SPLIT 1 QTY=1 QTY=2
+< -ERR 102 bad or missing argument FIELD=QTY
+> ITEM SPLIT 99 QTY=1
+< -ERR 200 no such item
+> ITEM SPLIT 9 QTY=1
+< -ERR 200 no such item
+> ITEM SPLIT 99999999 QTY=1
+< -ERR 200 no such item
+
+# Too many: the whole lot, or more, is refused.
+> ITEM SPLIT 1 QTY=10
+< -ERR 202 not enough on hand FIELD=QTY
+> ITEM SPLIT 1 QTY=11
+< -ERR 202 not enough on hand FIELD=QTY
+> ITEM SPLIT 6 QTY=1
+< -ERR 202 not enough on hand FIELD=QTY
+> ITEM LIST FIELDS=ITEM_ID,QTY,ON_LOAN
+< +DATA
+< F ITEM_ID QTY ON_LOAN
+< R 1 10 0
+< R 2 3 0
+< R 3 20 0
+< R 4 10 3
+< R 5 5 0
+< R 6 1 0
+< R 7 2 1
+< R 8 10 0
+< .
+
+# A split of an item with no loans: the new item has the fields and the
+# notes, a blank SERIALNO, no loans, today's dates and the old location;
+# the old one keeps its serial and loses the units.
+@NOW 20261020 120000
+> ITEM SPLIT 1 QTY=4
+< +OK ID=10
+> ITEM GET 1
+< +DATA
+< K ITEM_ID=1
+< K CATEGORY=CARD
+< K ITEMTYPE="ISA VGA"
+< K MFR=IBM
+< K MODEL="5150 CGA"
+< K SERIALNO=SN-0001
+< K DESCR="Colour graphics adapter"
+< K COND=GD
+< K WORKS=?
+< K QTY=6
+< K ON_LOAN=0
+< K RESERVED=0
+< K IN_USE=0
+< K ATTACHED=0
+< K LOC_ID=1
+< K PARENT_ID=0
+< K ACQ_DATE=19860214
+< K ACQ_SRC="Swap meet"
+< K ACQ_PRICE=12.50
+< K CUR_VALUE=40.00
+< K TAGS=video,isa
+< K STATUS=A
+< K CREATED=20261008
+< K UPDATED=20261020
+< .
+> ITEM GET 10
+< +DATA
+< K ITEM_ID=10
+< K CATEGORY=CARD
+< K ITEMTYPE="ISA VGA"
+< K MFR=IBM
+< K MODEL="5150 CGA"
+< K SERIALNO=""
+< K DESCR="Colour graphics adapter"
+< K COND=GD
+< K WORKS=?
+< K QTY=4
+< K ON_LOAN=0
+< K RESERVED=0
+< K IN_USE=0
+< K ATTACHED=0
+< K LOC_ID=1
+< K PARENT_ID=0
+< K ACQ_DATE=19860214
+< K ACQ_SRC="Swap meet"
+< K ACQ_PRICE=12.50
+< K CUR_VALUE=40.00
+< K TAGS=video,isa
+< K STATUS=A
+< K CREATED=20261020
+< K UPDATED=20261020
+< .
+> ITEM NOTES 10
+< +DATA
+< L lot note
+< .
+> ITEM NOTES 1
+< +DATA
+< L lot note
+< .
+
+# Splitting off a piece of an installed lot: the piece is top level and
+# lies where the machine stands; the lot stays installed.
+> ITEM SPLIT 3 QTY=5
+< +OK ID=11
+> ITEM LIST FIELDS=ITEM_ID,QTY,PARENT_ID,LOC_ID
+< +DATA
+< F ITEM_ID QTY PARENT_ID LOC_ID
+< R 1 6 0 1
+< R 2 3 0 2
+< R 3 15 2 2
+< R 4 10 0 0
+< R 5 5 0 0
+< R 6 1 0 0
+< R 7 2 0 0
+< R 8 10 0 1
+< R 10 4 0 1
+< R 11 5 0 2
+< .
+> ASSY CHILDREN 2 FIELDS=ITEM_ID,QTY
+< +DATA
+< F ITEM_ID QTY
+< R 3 15
+< .
+> LOC CONTENTS B2 TOP=1 FIELDS=ITEM_ID,PARENT_ID
+< +DATA
+< F ITEM_ID PARENT_ID
+< R 2 0
+< R 11 0
+< .
+
+# An assembly keeps its parts when some of its units are split off; the
+# new item has none.
+> ITEM SPLIT 2 QTY=1
+< +OK ID=12
+> ASSY CHILDREN 2 FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 3
+< .
+> ASSY CHILDREN 12 FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< .
+> ITEM GET 12
+< +DATA
+< K ITEM_ID=12
+< K CATEGORY=SYS
+< K ITEMTYPE=""
+< K MFR=Compaq
+< K MODEL=Portable
+< K SERIALNO=""
+< K DESCR=""
+< K COND=""
+< K WORKS=?
+< K QTY=1
+< K ON_LOAN=0
+< K RESERVED=0
+< K IN_USE=0
+< K ATTACHED=0
+< K LOC_ID=2
+< K PARENT_ID=0
+< K ACQ_DATE=""
+< K ACQ_SRC=""
+< K ACQ_PRICE=""
+< K CUR_VALUE=""
+< K TAGS=""
+< K STATUS=A
+< K CREATED=20261020
+< K UPDATED=20261020
+< .
+
+# Units on loan stay: n <= QTY - ON_LOAN (item 4: 10 units, 3 out).
+> ITEM SPLIT 4 QTY=8
+< -ERR 202 not enough on hand FIELD=QTY
+> ITEM SPLIT 4 QTY=7
+< +OK ID=13
+> ITEM SPLIT 4 QTY=1
+< -ERR 202 not enough on hand FIELD=QTY
+> ITEM GET 4
+< +DATA
+<*
+> ITEM LIST FIELDS=ITEM_ID,QTY,ON_LOAN CAT=CPU
+< +DATA
+< F ITEM_ID QTY ON_LOAN
+< R 4 3 3
+< R 5 5 0
+< R 13 7 0
+< .
+> LOAN GET 1
+< +DATA
+< K LOAN_ID=1
+< K ITEM_ID=4
+< K KIND=L
+< K QTY=3
+< K HOLDER=Jane
+< K HOST_ID=0
+< K CONTACT=""
+< K OUT_DATE=20261008
+< K DUE_DATE=20261231
+< K RET_DATE=""
+< K NOTES=""
+< .
+
+# At least one unit stays when none is out (item 5: 5 units).
+> ITEM SPLIT 5 QTY=5
+< -ERR 202 not enough on hand FIELD=QTY
+> ITEM SPLIT 5 QTY=4
+< +OK ID=14
+> ITEM SPLIT 5 QTY=1
+< -ERR 202 not enough on hand FIELD=QTY
+
+# One unit out of two: that unit stays, so one can go (item 7).
+> ITEM SPLIT 7 QTY=2
+< -ERR 202 not enough on hand FIELD=QTY
+> ITEM SPLIT 7 QTY=1
+< +OK ID=15
+> ITEM SPLIT 7 QTY=1
+< -ERR 202 not enough on hand FIELD=QTY
+> LOAN GET 2
+< +DATA
+<*
+
+# Units are conserved: each pair adds up to the old quantity.
+> ITEM LIST FIELDS=ITEM_ID,QTY,ON_LOAN,PARENT_ID,LOC_ID
+< +DATA
+< F ITEM_ID QTY ON_LOAN PARENT_ID LOC_ID
+< R 1 6 0 0 1
+< R 2 2 0 0 2
+< R 3 15 0 2 2
+< R 4 3 3 0 0
+< R 5 1 0 0 0
+< R 6 1 0 0 0
+< R 7 1 1 0 0
+< R 8 10 0 0 1
+< R 10 4 0 0 1
+< R 11 5 0 0 2
+< R 12 1 0 0 2
+< R 13 7 0 0 0
+< R 14 4 0 0 0
+< R 15 1 0 0 0
+< .
+
+# Levels: a reader may not split, an operator may.
+> USER ADD READER LEVEL=1 PASSWORD=readpw01
+< +OK
+> USER ADD OPER LEVEL=2 PASSWORD=operpw01
+< +OK
+@SESSION
+> HELLO PC1
+< +OK
+> LOGIN READER readpw01
+< +OK LEVEL=1 MUSTCHG=1
+> PASSWD readpw01 readpw02
+< +OK
+> ITEM SPLIT 8 QTY=3
+< -ERR 203 permission denied
+> ITEM SPLIT 8
+< -ERR 203 permission denied
+> ITEM GET 8
+< +DATA
+<*
+@SESSION
+> HELLO PC2
+< +OK
+> LOGIN OPER operpw01
+< +OK LEVEL=2 MUSTCHG=1
+> PASSWD operpw01 operpw02
+< +OK
+> ITEM SPLIT 8 QTY=3
+< +OK ID=16
+> ITEM LIST FIELDS=ITEM_ID,QTY CAT=SYS
+< +DATA
+< F ITEM_ID QTY
+< R 2 2
+< R 8 7
+< R 12 1
+< R 16 3
+< .
+
+# Audit: the new item's insert row, one U row for the old item's QTY by
+# the operator; refused splits write nothing.
+@SESSION
+> HELLO CONSOLE
+< +OK
+> LOGIN ADMIN secret1
+< +OK LEVEL=3 NAME="System Administrator"
+> AUDIT LIST TBL=ITEMS REC=8 FIELDS=USERNAME,ACTION,FLD,OLDVAL,NEWVAL
+< +DATA
+< F USERNAME ACTION FLD OLDVAL NEWVAL
+< R ADMIN I ITEM_ID "" 8
+< R OPER U QTY 10 7
+< .
+> AUDIT LIST TBL=ITEMS REC=16 FIELDS=USERNAME,ACTION,FLD,OLDVAL,NEWVAL
+< +DATA
+< F USERNAME ACTION FLD OLDVAL NEWVAL
+< R OPER I ITEM_ID "" 16
+< .
+> AUDIT LIST TBL=ITEMS REC=6 FIELDS=ACTION,FLD,OLDVAL,NEWVAL
+< +DATA
+< F ACTION FLD OLDVAL NEWVAL
+< R I ITEM_ID "" 6
+< .
+> AUDIT LIST TBL=ITEMS REC=5 FIELDS=ACTION,FLD,OLDVAL,NEWVAL
+< +DATA
+< F ACTION FLD OLDVAL NEWVAL
+< R I ITEM_ID "" 5
+< R U QTY 5 1
+< .
+> AUDIT LIST TBL=ITEMS REC=14 FIELDS=ACTION,FLD,OLDVAL,NEWVAL
+< +DATA
+< F ACTION FLD OLDVAL NEWVAL
+< R I ITEM_ID "" 14
+< .

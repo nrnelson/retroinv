@@ -1,0 +1,12 @@
+RETROINV  Overdue loans and reservations                     2026-10-08  Page 1
+
+
+!     Loan     Item Kind     Qty Holder       Contact    Due        Maker/model
+-------------------------------------------------------------------------------
+!        5        2 On loan    1 Eve                     2026-10-01 Hercules G~
+!        7       12 Reserved   2 Jonathan Li~ 555-0101-2 2026-02-01 IBM 5150
+         9       40 Reserved   1 For item 3   x          2026-10-09
+        11       41 In use     1 With item 12
+
+Loans and holds: 4   Overdue: 2
+

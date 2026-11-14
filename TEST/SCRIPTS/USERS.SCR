@@ -1,0 +1,322 @@
+# USER commands: every success and error response, FIELD= reporting,
+# the last-admin rule, deleted names and a reset password.
+
+> HELLO CONSOLE
+< +OK
+> LOGIN ADMIN admin
+< +OK LEVEL=3 MUSTCHG=1
+> PASSWD admin secret1
+< +OK
+
+# The seeded administrator.
+> USER LIST
+< +DATA
+< F USERNAME FULLNAME GROUPNAME LEVEL STATUS MUSTCHG LASTLOGIN
+< R ADMIN "System Administrator" ADMIN 3 A F 20261008
+< .
+> USER GET ADMIN
+< +DATA
+< K USER_ID=1
+< K USERNAME=ADMIN
+< K FULLNAME="System Administrator"
+< K GROUPNAME=ADMIN
+< K LEVEL=3
+< K STATUS=A
+< K MUSTCHG=F
+< K LASTLOGIN=20261008
+< K CREATED=20261008
+< .
+> USER GET admin
+< +DATA
+< K USER_ID=1
+< K USERNAME=ADMIN
+< K FULLNAME="System Administrator"
+< K GROUPNAME=ADMIN
+< K LEVEL=3
+< K STATUS=A
+< K MUSTCHG=F
+< K LASTLOGIN=20261008
+< K CREATED=20261008
+< .
+> USER GET NOBODY
+< -ERR 200 no such user
+> USER GET
+< -ERR 102 missing argument FIELD=USERNAME
+> USER GET ADMIN EXTRA
+< -ERR 100 too many arguments
+> USER GET ADMIN LEVEL=3
+< -ERR 102 unexpected key FIELD=LEVEL
+
+# USER ADD: success, then each refusal.
+> USER ADD BOB LEVEL=2 PASSWORD=bobpw1 FULLNAME="Bob Smith" GROUP=ops
+< +OK
+> USER GET BOB
+< +DATA
+< K USER_ID=2
+< K USERNAME=BOB
+< K FULLNAME="Bob Smith"
+< K GROUPNAME=OPS
+< K LEVEL=2
+< K STATUS=A
+< K MUSTCHG=T
+< K LASTLOGIN=""
+< K CREATED=20261008
+< .
+> USER ADD bob LEVEL=1 PASSWORD=other1
+< -ERR 201 user already exists FIELD=USERNAME
+> USER ADD SYSTEM LEVEL=1 PASSWORD=system1
+< -ERR 201 name reserved for the system FIELD=USERNAME
+> USER ADD B-B LEVEL=1 PASSWORD=abcd1
+< -ERR 102 user name too long, empty or not A-Z 0-9 _ FIELD=USERNAME
+> USER ADD TOOLONGNM LEVEL=1 PASSWORD=abcd1
+< -ERR 102 user name too long, empty or not A-Z 0-9 _ FIELD=USERNAME
+> USER ADD CAROL PASSWORD=abcd1
+< -ERR 102 level required FIELD=LEVEL
+> USER ADD CAROL LEVEL=4 PASSWORD=abcd1
+< -ERR 102 level must be 1, 2 or 3 FIELD=LEVEL
+> USER ADD CAROL LEVEL=X PASSWORD=abcd1
+< -ERR 102 level must be 1, 2 or 3 FIELD=LEVEL
+> USER ADD CAROL LEVEL=1
+< -ERR 102 password too short, too long or not printable FIELD=PASSWORD
+> USER ADD CAROL LEVEL=1 PASSWORD=abc
+< -ERR 102 password too short, too long or not printable FIELD=PASSWORD
+> USER ADD CAROL LEVEL=1 PASSWORD=12345678901234567
+< -ERR 102 password too short, too long or not printable FIELD=PASSWORD
+> USER ADD CAROL LEVEL=1 PASSWORD="has space"
+< -ERR 102 password too short, too long or not printable FIELD=PASSWORD
+> USER ADD CAROL LEVEL=1 PASSWORD=abcd1 STATUS=D
+< -ERR 102 unexpected key FIELD=STATUS
+> USER ADD CAROL LEVEL=1 PASSWORD=abcd1 PWHASH=00
+< -ERR 102 unexpected key FIELD=PWHASH
+> USER ADD CAROL LEVEL=1 PASSWORD=abcd1 FOO=1
+< -ERR 102 unexpected key FIELD=FOO
+> USER ADD CAROL LEVEL=1 PASSWORD=abcd1 FULLNAME="1234567890123456789012345678901"
+< -ERR 102 value too long FIELD=FULLNAME
+> USER ADD LEVEL=1 PASSWORD=abcd1
+< -ERR 102 missing argument FIELD=USERNAME
+> USER ADD CAROL DAVE LEVEL=1 PASSWORD=abcd1
+< -ERR 100 too many arguments
+> USER ADD CAROL LEVEL=1 LEVEL=2 PASSWORD=abcd1
+< -ERR 102 bad or missing argument FIELD=LEVEL
+> USER LIST
+< +DATA
+< F USERNAME FULLNAME GROUPNAME LEVEL STATUS MUSTCHG LASTLOGIN
+< R ADMIN "System Administrator" ADMIN 3 A F 20261008
+< R BOB "Bob Smith" OPS 2 A T ""
+< .
+
+# USER SET.
+> USER SET BOB FULLNAME="Robert Smith" LEVEL=1 GROUP=staff
+< +OK
+> USER GET BOB
+< +DATA
+< K USER_ID=2
+< K USERNAME=BOB
+< K FULLNAME="Robert Smith"
+< K GROUPNAME=STAFF
+< K LEVEL=1
+< K STATUS=A
+< K MUSTCHG=T
+< K LASTLOGIN=""
+< K CREATED=20261008
+< .
+> USER SET BOB STATUS=X
+< -ERR 102 status must be A or D FIELD=STATUS
+# GROUPNAME=, the field's own name, sets the group as GROUP= does; the
+# two together are refused.
+> USER SET BOB GROUPNAME=crew
+< +OK
+> USER LIST PAGE=2
+< +DATA
+< F USERNAME FULLNAME GROUPNAME LEVEL STATUS MUSTCHG LASTLOGIN
+< R ADMIN "System Administrator" ADMIN 3 A F 20261008
+< R BOB "Robert Smith" CREW 1 A T ""
+< .
+> USER SET BOB GROUP=staff GROUPNAME=crew
+< -ERR 102 bad or missing argument FIELD=GROUPNAME
+> USER SET BOB groupname=staff
+< +OK
+> USER SET BOB LEVEL=0
+< -ERR 102 level must be 1, 2 or 3 FIELD=LEVEL
+> USER SET BOB PASSWORD=abcd1
+< -ERR 102 unexpected key FIELD=PASSWORD
+> USER SET BOB MUSTCHG=F
+< -ERR 102 unexpected key FIELD=MUSTCHG
+> USER SET BOB USERNAME=ROB
+< -ERR 102 unexpected key FIELD=USERNAME
+> USER SET NOBODY LEVEL=1
+< -ERR 200 no such user
+> USER SET
+< -ERR 102 missing argument FIELD=USERNAME
+> USER SET BOB
+< +OK
+> USER GET BOB
+< +DATA
+< K USER_ID=2
+< K USERNAME=BOB
+< K FULLNAME="Robert Smith"
+< K GROUPNAME=STAFF
+< K LEVEL=1
+< K STATUS=A
+< K MUSTCHG=T
+< K LASTLOGIN=""
+< K CREATED=20261008
+< .
+
+# The last active administrator cannot be lowered, disabled or deleted.
+> USER SET ADMIN LEVEL=2
+< -ERR 202 the last active administrator must remain FIELD=LEVEL
+> USER SET ADMIN STATUS=D
+< -ERR 202 the last active administrator must remain FIELD=STATUS
+> USER DEL ADMIN
+< -ERR 202 the last active administrator must remain
+> USER GET ADMIN
+< +DATA
+< K USER_ID=1
+< K USERNAME=ADMIN
+< K FULLNAME="System Administrator"
+< K GROUPNAME=ADMIN
+< K LEVEL=3
+< K STATUS=A
+< K MUSTCHG=F
+< K LASTLOGIN=20261008
+< K CREATED=20261008
+< .
+
+# USER RESET.
+> USER RESET BOB
+< -ERR 102 missing argument FIELD=PASSWORD
+> USER RESET BOB PASSWORD=abc
+< -ERR 102 password too short, too long or not printable FIELD=PASSWORD
+> USER RESET BOB PASSWORD=newpw1
+< +OK
+> USER RESET NOBODY PASSWORD=newpw1
+< -ERR 200 no such user
+> USER RESET BOB PASSWORD=newpw1 LEVEL=1
+< -ERR 102 unexpected key FIELD=LEVEL
+> USER RESET
+< -ERR 102 missing argument FIELD=USERNAME
+
+# Bob logs in with the reset password and must change it.
+@SESSION
+> HELLO BOBPC
+< +OK
+> LOGIN BOB bobpw1
+< -ERR 401 bad user name or password
+> LOGIN BOB newpw1
+< +OK LEVEL=1 MUSTCHG=1
+> USER LIST
+< -ERR 404 password change required
+> PASSWD newpw1 bobpw2
+< +OK
+
+# A second administrator lets the first be disabled; a disabled user
+# cannot log in.
+@SESSION
+> HELLO CONSOLE
+< +OK
+> LOGIN ADMIN secret1
+< +OK LEVEL=3 NAME="System Administrator"
+> USER ADD CARL LEVEL=3 PASSWORD=carlpw1
+< +OK
+> USER SET ADMIN STATUS=D
+< +OK
+> USER SET CARL STATUS=D
+< -ERR 202 the last active administrator must remain FIELD=STATUS
+> USER SET ADMIN STATUS=a
+< +OK
+> USER SET CARL STATUS=D
+< +OK
+> USER GET CARL
+< +DATA
+< K USER_ID=3
+< K USERNAME=CARL
+< K FULLNAME=""
+< K GROUPNAME=""
+< K LEVEL=3
+< K STATUS=D
+< K MUSTCHG=T
+< K LASTLOGIN=""
+< K CREATED=20261008
+< .
+@SESSION
+> HELLO CARLPC
+< +OK
+> LOGIN CARL carlpw1
+< -ERR 403 account disabled
+
+# USER DEL; a deleted name is not found and may be added again.
+@SESSION
+> HELLO CONSOLE
+< +OK
+> LOGIN ADMIN secret1
+< +OK LEVEL=3 NAME="System Administrator"
+> USER DEL BOB
+< +OK
+> USER GET BOB
+< -ERR 200 no such user
+> USER DEL BOB
+< -ERR 200 no such user
+> USER SET BOB LEVEL=2
+< -ERR 200 no such user
+> USER RESET BOB PASSWORD=abcd1
+< -ERR 200 no such user
+> USER DEL
+< -ERR 102 missing argument FIELD=USERNAME
+> USER DEL BOB X=1
+< -ERR 102 unexpected key FIELD=X
+> USER ADD BOB LEVEL=2 PASSWORD=bobpw9
+< +OK
+> USER LIST
+< +DATA
+< F USERNAME FULLNAME GROUPNAME LEVEL STATUS MUSTCHG LASTLOGIN
+< R ADMIN "System Administrator" ADMIN 3 A F 20261008
+< R BOB "" "" 2 A T ""
+< R CARL "" "" 3 D T ""
+< .
+@TABLE USERS FIELDS=USER_ID,USERNAME,LEVEL,STATUS,MUSTCHG
+< F USER_ID USERNAME LEVEL STATUS MUSTCHG
+< R 1 ADMIN 3 A F
+< D 2 BOB 1 A F
+< R 3 CARL 3 D T
+< R 4 BOB 2 A T
+@SESSION
+> HELLO BOBPC
+< +OK
+> LOGIN BOB bobpw2
+< -ERR 401 bad user name or password
+> LOGIN BOB bobpw9
+< +OK LEVEL=2 MUSTCHG=1
+
+# Persistence: the accounts survive a reopen; USER LIST walked one user
+# per page.
+@REOPEN
+@SESSION
+> HELLO CONSOLE
+< +OK
+> LOGIN ADMIN secret1
+< +OK LEVEL=3 NAME="System Administrator"
+> USER LIST
+< +DATA
+< F USERNAME FULLNAME GROUPNAME LEVEL STATUS MUSTCHG LASTLOGIN
+< R ADMIN "System Administrator" ADMIN 3 A F 20261008
+< R BOB "" "" 2 A T 20261008
+< R CARL "" "" 3 D T ""
+< .
+> USER LIST PAGE=1
+< +DATA
+< F USERNAME FULLNAME GROUPNAME LEVEL STATUS MUSTCHG LASTLOGIN
+< R ADMIN "System Administrator" ADMIN 3 A F 20261008
+< C USERS1:41444D494E:1
+< .
+> USER LIST PAGE=1 AFTER=USERS1:41444D494E:1
+< +DATA
+< F USERNAME FULLNAME GROUPNAME LEVEL STATUS MUSTCHG LASTLOGIN
+< R BOB "" "" 2 A T 20261008
+< C USERS1:424F42:4
+< .
+> USER LIST PAGE=1 AFTER=USERS1:424F42:4
+< +DATA
+< F USERNAME FULLNAME GROUPNAME LEVEL STATUS MUSTCHG LASTLOGIN
+< R CARL "" "" 3 D T ""
+< .

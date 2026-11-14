@@ -1,0 +1,11 @@
+=SNAP NONB
+#32770 "RETROINV" ACTIVE
+ Button 2 "OK" FOCUS DEFAULT
+ Static 65535 ""
+ Static 65535 "Cannot call RISRV: no NetBIOS."
+INVWIN "RETROINV" DISABLED
+ WTOOL 218 "~New|~Open|~Edit|~Delete|-|~Move|~Install|~Lend|-|*|~Find"
+  Edit 219 "" DISABLED
+ WSTAT 201 "Server: RISRV|||"
+=SNAP GONE
+=END

@@ -1,0 +1,116 @@
+=SNAP PARTIAL
+#32770 "Search items" ACTIVE
+ Button 2 "OK" FOCUS DEFAULT
+ Static 65535 ""
+ Static 65535 "Saving stopped after 1 of 2 lines; the stored notes are unchanged"
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+#32770 "Search items" DISABLED
+ WTAB 95 "&Record|&Notes" CUR 1
+ Static 65535 "&Text" HIDDEN
+ Edit 100 "x" HIDDEN
+ Static 65535 "&Location" HIDDEN
+ Edit 101 "" HIDDEN
+ Static 65535 "&Quantity" HIDDEN
+ Edit 102 "" HIDDEN
+ Static 65535 "&Price paid" HIDDEN
+ Edit 103 "" HIDDEN
+ Static 65535 "&Date acquired" HIDDEN
+ Edit 104 "" HIDDEN
+ Static 65535 "&Overdue" HIDDEN
+ Button 105 "" HIDDEN
+ Static 65535 "&Status" HIDDEN
+ ComboBox 106 "" HIDDEN
+  ROW "" SELECTED
+  ROW "A"
+  ROW "D"
+ Static 65535 "&Condition" HIDDEN
+ ComboBox 107 "NEW" HIDDEN
+  ROW "NEW" SELECTED
+  ROW "EXC"
+  ROW "GD"
+ Static 65535 "Item ID" HIDDEN
+ Edit 108 "R-1" HIDDEN
+ Static 65535 "Browse by &&ID" HIDDEN
+ Edit 109 "" HIDDEN
+ Static 65535 "N&ew password" HIDDEN
+ Edit 110 "" HIDDEN
+ Edit 111 "PART??second line"
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WFORMT "WFORMT" DISABLED
+=SNAP FAILED
+#32770 "Search items" ACTIVE
+ Button 2 "OK" FOCUS DEFAULT
+ Static 65535 ""
+ Static 65535 "Database error 302: the disk is full"
+ComboLBox 1000 "" HIDDEN
+ComboLBox 1000 "" HIDDEN
+#32770 "Search items" DISABLED
+ WTAB 95 "&Record|&Notes" CUR 1
+ Static 65535 "&Text" HIDDEN
+ Edit 100 "x" HIDDEN
+ Static 65535 "&Location" HIDDEN
+ Edit 101 "" HIDDEN
+ Static 65535 "&Quantity" HIDDEN
+ Edit 102 "" HIDDEN
+ Static 65535 "&Price paid" HIDDEN
+ Edit 103 "" HIDDEN
+ Static 65535 "&Date acquired" HIDDEN
+ Edit 104 "" HIDDEN
+ Static 65535 "&Overdue" HIDDEN
+ Button 105 "" HIDDEN
+ Static 65535 "&Status" HIDDEN
+ ComboBox 106 "" HIDDEN
+  ROW "" SELECTED
+  ROW "A"
+  ROW "D"
+ Static 65535 "&Condition" HIDDEN
+ ComboBox 107 "NEW" HIDDEN
+  ROW "NEW" SELECTED
+  ROW "EXC"
+  ROW "GD"
+ Static 65535 "Item ID" HIDDEN
+ Edit 108 "R-1" HIDDEN
+ Static 65535 "Browse by &&ID" HIDDEN
+ Edit 109 "" HIDDEN
+ Static 65535 "N&ew password" HIDDEN
+ Edit 110 "" HIDDEN
+ Edit 111 "PART??second line"
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WFORMT "WFORMT" DISABLED
+=SNAP SAVED
+WFORMT "ALL 1 1 #3 LINES 2" ACTIVE FOCUS
+=SNAP VIEW
+#32770 "Search items" ACTIVE
+ WTAB 95 "&Record|&Notes" CUR 0 FOCUS
+ Static 65535 "Text"
+ Static 100 "x"
+ Static 65535 "Location"
+ Static 101 ""
+ Static 65535 "Quantity"
+ Static 102 ""
+ Static 65535 "Price paid"
+ Static 103 ""
+ Static 65535 "Date acquired"
+ Static 104 ""
+ Static 65535 "Overdue"
+ Button 105 "" DISABLED
+ Static 65535 "Status"
+ Static 106 ""
+ Static 65535 "Condition"
+ Static 107 "NEW"
+ Static 65535 "Item ID"
+ Static 108 "R-1"
+ Static 65535 "Browse by &&ID"
+ Static 109 ""
+ Static 65535 "New password"
+ Edit 110 "" DISABLED
+ Edit 111 "PART??second line" HIDDEN
+ Static 99 ""
+ Button 2 "Close" DEFAULT
+WFORMT "ALL 1 1 #3 LINES 2" DISABLED
+=END

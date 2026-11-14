@@ -1,0 +1,9 @@
+/*
+ * WTESTE.RC - the resources of the unit tests built as Windows programs
+ * that link the engine or its schema reader: its schema data, the file of
+ * SRC/COMPAT/CSCHBIN.C.  The resource compiler's second pass, which
+ * binds it, marks the program for Windows 3.0.
+ */
+#include "CSCHDAT.H"
+
+CSCH_RES CSCH_TYPE DISCARDABLE CSCHDAT.BIN

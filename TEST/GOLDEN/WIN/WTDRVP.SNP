@@ -1,0 +1,19 @@
+=SNAP START
+#32770 "WTDRV" ACTIVE
+ POPUP "&File"
+  MENU 201 "&Dialog..."
+  MENU 202 "&Work?F5"
+  MENU 0 "" DISABLED
+  MENU 203 "E&xit"
+ POPUP "&Options"
+  MENU 204 "&Marked?Ctrl+K"
+  MENU 205 "&Gray" DISABLED
+ Static 65535 "&Name:"
+ Edit 101 "" FOCUS
+ Button 102 "&Loaned"
+ ListBox 103 ""
+  ROW "ALPHA" SELECTED
+  ROW "BRAVO"
+ Button 104 "&Add" DEFAULT
+ Button 105 "A&bout..."
+=FAIL 0 PLACE

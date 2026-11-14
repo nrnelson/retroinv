@@ -1,0 +1,1087 @@
+# PERMS.SCR - which commands run in which session state and at which
+# user level: 400 before LOGIN, 404 while a password change is pending,
+# 203 below the command's level or on a read-only station, 402 for a
+# command that needs the system to itself while other sessions are
+# open.  An unknown command is 101 in every state; so is a group word
+# alone or with an unknown second word.  A command that passes the gate gets its own
+# answer (data, +OK, or an error of the command such as 200), never one
+# of the gate's codes.
+
+# Not yet HELLO: every command but HELLO PING VER BYE is 400, LOGIN too.
+> FOO
+< -ERR 101 unknown command
+> ITEM
+< -ERR 101 unknown command
+> ITEM FOO 1
+< -ERR 101 unknown command
+> ASSY
+< -ERR 101 unknown command
+> MAINT FOO 1
+< -ERR 101 unknown command
+> LOGIN ADMIN admin
+< -ERR 400 HELLO or LOGIN required
+> ITEM GET 1
+< -ERR 400 HELLO or LOGIN required
+> MAINT LIST 1
+< -ERR 400 HELLO or LOGIN required
+> ADMIN PACK
+< -ERR 400 HELLO or LOGIN required
+
+# HELLO but no LOGIN.
+> HELLO PC1
+< +OK
+> FOO
+< -ERR 101 unknown command
+> USER BAR
+< -ERR 101 unknown command
+> PASSWD admin secret1
+< -ERR 400 HELLO or LOGIN required
+> WHOAMI
+< -ERR 400 HELLO or LOGIN required
+> STATUS
+< -ERR 400 HELLO or LOGIN required
+> USER LIST
+< -ERR 400 HELLO or LOGIN required
+> USER GET ADMIN
+< -ERR 400 HELLO or LOGIN required
+> USER ADD X LEVEL=1 PASSWORD=abcd
+< -ERR 400 HELLO or LOGIN required
+> USER SET ADMIN LEVEL=1
+< -ERR 400 HELLO or LOGIN required
+> USER RESET ADMIN PASSWORD=abcd
+< -ERR 400 HELLO or LOGIN required
+> USER DEL ADMIN
+< -ERR 400 HELLO or LOGIN required
+> ITEM GET 1
+< -ERR 400 HELLO or LOGIN required
+> ITEM LIST
+< -ERR 400 HELLO or LOGIN required
+> ITEM FIND x
+< -ERR 400 HELLO or LOGIN required
+> ITEM SERIAL x
+< -ERR 400 HELLO or LOGIN required
+> ITEM TAGS
+< -ERR 400 HELLO or LOGIN required
+> ITEM NOTES 1
+< -ERR 400 HELLO or LOGIN required
+> ITEM NOTES 1 ADD="x"
+< -ERR 400 HELLO or LOGIN required
+> ITEM ADD CATEGORY=CPU
+< -ERR 400 HELLO or LOGIN required
+> ITEM SET 1 MFR=X
+< -ERR 400 HELLO or LOGIN required
+> ITEM DEL 1
+< -ERR 400 HELLO or LOGIN required
+> ITEM UNDEL 1
+< -ERR 400 HELLO or LOGIN required
+> ITEM COPY 1
+< -ERR 400 HELLO or LOGIN required
+> CAT LIST
+< -ERR 400 HELLO or LOGIN required
+> CAT ADD X CAT_NAME=X
+< -ERR 400 HELLO or LOGIN required
+> CAT SET CPU CAT_NAME=X
+< -ERR 400 HELLO or LOGIN required
+> CAT DEL CPU
+< -ERR 400 HELLO or LOGIN required
+> LTYPE LIST
+< -ERR 400 HELLO or LOGIN required
+> LTYPE ADD X LT_NAME=X
+< -ERR 400 HELLO or LOGIN required
+> LTYPE SET BIN LT_NAME=X
+< -ERR 400 HELLO or LOGIN required
+> LTYPE DEL BIN
+< -ERR 400 HELLO or LOGIN required
+> LOC GET A1
+< -ERR 400 HELLO or LOGIN required
+> LOC LIST
+< -ERR 400 HELLO or LOGIN required
+> LOC CONTENTS A1
+< -ERR 400 HELLO or LOGIN required
+> LOC NOTES A1
+< -ERR 400 HELLO or LOGIN required
+> LOC NOTES A1 ADD="x"
+< -ERR 400 HELLO or LOGIN required
+> LOC ADD LOC_NAME=A1 LTYPE=BIN LOC_CODE=A1
+< -ERR 400 HELLO or LOGIN required
+> LOC SET A1 LOC_NAME=X
+< -ERR 400 HELLO or LOGIN required
+> LOC DEL A1
+< -ERR 400 HELLO or LOGIN required
+> ASSY LIST
+< -ERR 400 HELLO or LOGIN required
+> ASSY BOM 1
+< -ERR 400 HELLO or LOGIN required
+> ASSY PATH 1
+< -ERR 400 HELLO or LOGIN required
+> ASSY CHILDREN 1
+< -ERR 400 HELLO or LOGIN required
+> ASSY INSTALL 3 1
+< -ERR 400 HELLO or LOGIN required
+> ASSY REMOVE 3 LOC=A1
+< -ERR 400 HELLO or LOGIN required
+> ASSY MOVE 1 LOC=A1
+< -ERR 400 HELLO or LOGIN required
+> MAINT GET 1
+< -ERR 400 HELLO or LOGIN required
+> MAINT LIST 1
+< -ERR 400 HELLO or LOGIN required
+> MAINT RECENT
+< -ERR 400 HELLO or LOGIN required
+> MAINT NOTES 1
+< -ERR 400 HELLO or LOGIN required
+> MAINT ADD 1 MTYPE=CL SUMMARY=x
+< -ERR 400 HELLO or LOGIN required
+> MAINT SET 1 SUMMARY=y
+< -ERR 400 HELLO or LOGIN required
+> MAINT DEL 1
+< -ERR 400 HELLO or LOGIN required
+> MAINT NOTES 1 ADD="x"
+< -ERR 400 HELLO or LOGIN required
+> LOAN GET 1
+< -ERR 400 HELLO or LOGIN required
+> LOAN LIST
+< -ERR 400 HELLO or LOGIN required
+> LOAN OVERDUE
+< -ERR 400 HELLO or LOGIN required
+> LOAN OUT 1 HOLDER=Jo DUE=20991231
+< -ERR 400 HELLO or LOGIN required
+> LOAN ADD 1 HOLDER=Jo DUE=20991231
+< -ERR 400 HELLO or LOGIN required
+> LOAN RESERVE 1 HOLDER=Jo
+< -ERR 400 HELLO or LOGIN required
+> LOAN USE 1 HOLDER=Jo
+< -ERR 400 HELLO or LOGIN required
+> LOAN RETURN 1
+< -ERR 400 HELLO or LOGIN required
+> LOAN SET 1 CONTACT=x
+< -ERR 400 HELLO or LOGIN required
+> ASSY
+< -ERR 101 unknown command
+> LOAN FOO
+< -ERR 101 unknown command
+> REPORT
+< -ERR 101 unknown command
+> REPORT BINS
+< -ERR 101 unknown command
+> REPORT ITEMS
+< -ERR 400 HELLO or LOGIN required
+> REPORT LOANS
+< -ERR 400 HELLO or LOGIN required
+> EXPORT ITEMS FILE=X.CSV
+< -ERR 400 HELLO or LOGIN required
+@OTHERS 1
+> IMPORT ITEMS FILE=X.CSV
+< -ERR 400 HELLO or LOGIN required
+@OTHERS 0
+> AUDIT LIST
+< -ERR 400 HELLO or LOGIN required
+> PING
+< +OK
+
+# While the password change is pending: 404, for the groups of later
+# versions too; unknown still 101.
+> LOGIN ADMIN admin
+< +OK LEVEL=3 MUSTCHG=1
+> FOO
+< -ERR 101 unknown command
+> WHOAMI
+< -ERR 404 password change required
+> STATUS
+< -ERR 404 password change required
+> USER LIST
+< -ERR 404 password change required
+> ITEM GET 1
+< -ERR 404 password change required
+> ITEM ADD CATEGORY=CPU
+< -ERR 404 password change required
+> CAT LIST
+< -ERR 404 password change required
+> LTYPE LIST
+< -ERR 404 password change required
+> LOC LIST
+< -ERR 404 password change required
+> ASSY BOM 1
+< -ERR 404 password change required
+> MAINT ADD 1 MTYPE=CL SUMMARY=x
+< -ERR 404 password change required
+> LOAN OVERDUE
+< -ERR 404 password change required
+> ASSY FOO
+< -ERR 101 unknown command
+> REPORT FOO
+< -ERR 101 unknown command
+> REPORT ITEMS
+< -ERR 404 password change required
+> REPORT LOANS
+< -ERR 404 password change required
+> EXPORT ITEMS FILE=X
+< -ERR 404 password change required
+> IMPORT ITEMS FILE=X
+< -ERR 404 password change required
+> AUDIT LIST
+< -ERR 404 password change required
+> HELLO PC1
+< +OK
+> LOGIN ADMIN admin
+< +OK LEVEL=3 MUSTCHG=1
+> PASSWD admin secret1
+< +OK
+
+# BYE still runs while the password change is pending.
+@SESSION
+> HELLO PC1
+< +OK
+> LOGIN ADMIN secret1
+< +OK LEVEL=3 NAME="System Administrator"
+> USER ADD TEMP2 LEVEL=1 PASSWORD=temppw01
+< +OK
+> LOGIN TEMP2 temppw01
+< +OK LEVEL=1 MUSTCHG=1
+> BYE
+< +OK
+@CLOSED
+@SESSION
+> HELLO PC1
+< +OK
+> LOGIN ADMIN secret1
+< +OK LEVEL=3 NAME="System Administrator"
+
+# Level 3: every command runs.  Two more users for the other levels.
+> USER ADD OPER LEVEL=2 PASSWORD=operpw01
+< +OK
+> USER ADD READER LEVEL=1 PASSWORD=readpw01
+< +OK
+> USER LIST
+< +DATA
+<*
+> USER GET OPER
+< +DATA
+<*
+> USER SET OPER FULLNAME="Op Erator"
+< +OK
+> USER RESET READER PASSWORD=readpw02
+< +OK
+> USER ADD TEMP LEVEL=1 PASSWORD=temppw01
+< +OK
+> USER DEL TEMP
+< +OK
+> CAT ADD BOOK CAT_NAME=Books
+< +OK
+> CAT SET BOOK SORTORD=11
+< +OK
+> LTYPE ADD CRATE LT_NAME=Crate
+< +OK
+> LTYPE SET CRATE SORTORD=11
+< +OK
+> LOC ADD LOC_NAME="Shelf A1" LTYPE=BIN LOC_CODE=A1
+< +OK ID=1
+> LOC SET A1 LTYPE=SHELF
+< +OK
+> ITEM ADD CATEGORY=CPU MFR=Intel MODEL=8088
+< +OK ID=1
+> ITEM SET 1 LOC_ID=A1
+< +OK
+> ITEM COPY 1
+< +OK ID=2
+> ITEM DEL 2
+< +OK
+> ITEM UNDEL 2
+< +OK
+> ITEM NOTES 1 ADD="first note"
+< +OK
+> STATUS
+< +DATA
+< K ITEMS=2
+< K LOCS=1
+< K CATS=11
+< K LTYPES=9
+< K MAINT=0
+< K LOANS=0
+< K AUDIT=44
+< K USERS=5
+< .
+> WHOAMI
+< +DATA
+< K USER=ADMIN
+< K LEVEL=3
+< K STATION=PC1
+< .
+# The assembly, maintenance and loan commands pass the gate at every
+# level they need and give their own answers; a group word alone or
+# with an unknown second word is 101.
+> ASSY LIST
+< +DATA
+< F ITEM_ID CATEGORY MFR MODEL WORKS QTY AVAIL LOC_ID LOC_NAME STATUS
+< .
+> ASSY BOM 1
+< +DATA
+< F LEVEL ITEM_ID CATEGORY MFR MODEL WORKS QTY AVAIL LOC_ID LOC_NAME STATUS
+< .
+> ASSY PATH 1
+< +DATA
+< F LEVEL ITEM_ID CATEGORY MFR MODEL LOC_ID LOC_NAME
+< .
+> ASSY CHILDREN 1
+< +DATA
+< F ITEM_ID CATEGORY MFR MODEL WORKS QTY AVAIL LOC_ID LOC_NAME STATUS
+< .
+> ASSY INSTALL 2 1
+< +OK
+> ASSY BOM 1
+< +DATA
+< F LEVEL ITEM_ID CATEGORY MFR MODEL WORKS QTY AVAIL LOC_ID LOC_NAME STATUS
+< R 1 2 CPU Intel 8088 ? 1 I 1 "Shelf A1" A
+< .
+> ASSY REMOVE 2 LOC=A1
+< +OK
+> ASSY MOVE 1 LOC=A1
+< +OK
+> MAINT ADD 1 MTYPE=CL SUMMARY=x
+< +OK ID=1
+> MAINT GET 1
+< +DATA
+<*
+> MAINT LIST 1
+< +DATA
+<*
+> MAINT RECENT
+< +DATA
+<*
+> MAINT NOTES 1
+< +DATA
+< .
+> MAINT SET 1 SUMMARY=y
+< +OK
+> MAINT NOTES 1 ADD="x"
+< +OK
+> MAINT DEL 1
+< +OK
+> LOAN GET 1
+< -ERR 200 not found FIELD=ID
+> LOAN LIST
+< +DATA
+<*
+> LOAN OVERDUE
+< +DATA
+<*
+> LOAN OUT 1 HOLDER=Jo DUE=20991231
+< +OK ID=1
+> LOAN ADD 1 HOLDER=Jo DUE=20991231
+< -ERR 202 not enough on hand FIELD=QTY
+> LOAN RESERVE 1 HOLDER=Jo
+< -ERR 202 not enough on hand FIELD=QTY
+> LOAN USE 1 HOLDER=Jo
+< -ERR 202 not enough on hand FIELD=QTY
+> LOAN RETURN 1
+< +OK
+> LOAN SET 1 CONTACT=x
+< +OK
+> ASSY
+< -ERR 101 unknown command
+> MAINT
+< -ERR 101 unknown command
+> LOAN
+< -ERR 101 unknown command
+> ASSY FOO 1
+< -ERR 101 unknown command
+> MAINT FOO
+< -ERR 101 unknown command
+> LOAN LOST
+< -ERR 101 unknown command
+# REPORT ITEMS, REPORT LOANS, EXPORT and IMPORT run at level 3 (IMPORT
+# only while no other session is open); REPORT alone or with an unknown
+# word is 101.
+> REPORT ITEMS
+< +DATA
+< F ITEM_ID CATEGORY MFR MODEL SERIALNO COND WORKS QTY LOC_ID LOC_NAME STATUS ACQ_DATE ACQ_PRICE CUR_VALUE
+< R 1 CPU Intel 8088 "" "" ? 1 1 "Shelf A1" A "" "" ""
+< R 2 CPU Intel 8088 "" "" ? 1 1 "Shelf A1" A "" "" ""
+< .
+> REPORT LOANS OVERDUE=1
+< +DATA
+< F LATE LOAN_ID ITEM_ID KIND QTY HOLDER HOST_ID CONTACT OUT_DATE DUE_DATE MFR MODEL
+< .
+> EXPORT ITEMS FILE=$DPERMS.CSV REPLACE=1
+< +DATA
+< K ROWS=2
+< .
+> EXPORT
+< -ERR 102 missing argument FIELD=TABLE
+> IMPORT ITEMS FILE=$DNONE.CSV
+< -ERR 200 file not found FIELD=FILE
+@OTHERS 1
+> IMPORT ITEMS FILE=$DPERMS.CSV
+< -ERR 402 server busy
+> ADMIN PACK
+< -ERR 402 server busy
+> ADMIN REINDEX X
+< -ERR 402 server busy
+> ADMIN BACKUP
+< -ERR 402 server busy
+> ADMIN RESTORE DIR=$D
+< -ERR 402 server busy
+> AUDIT LIST TBL=ITEMS REC=1 PAGE=2
+< +DATA
+< F AUD_ID ADATE ATIME STATION USERNAME TBL REC_ID ACTION FLD OLDVAL NEWVAL
+< R 39 20261008 12:00:00 PC1 ADMIN ITEMS 1 I ITEM_ID "" 1
+< R 40 20261008 12:00:00 PC1 ADMIN ITEMS 1 M LOC_ID 0 1
+< C AUDIT1:4954454D5320202020202020202020312020202020203430:28
+< .
+@OTHERS 0
+> REPORT
+< -ERR 101 unknown command
+> REPORT BINS
+< -ERR 101 unknown command
+# AUDIT and ADMIN are groups: alone or with an unknown word, 101.  ADMIN
+# SHUTDOWN passes the gate and needs a server: 104 in local mode.
+> AUDIT
+< -ERR 101 unknown command
+> AUDIT LIST TBL=TOOLONGNAME
+< -ERR 102 filter value too long FIELD=TBL
+> ADMIN
+< -ERR 101 unknown command
+> ADMIN BACKUP
+< -ERR 102 missing argument FIELD=DIR
+> ADMIN SHUTDOWN
+< -ERR 104 command needs the server
+
+# Level 2: items, locations, categories, location types, assemblies,
+# maintenance records and loans; no users.
+> LOGIN OPER operpw01
+< +OK LEVEL=2 MUSTCHG=1
+> PASSWD operpw01 operpw02
+< +OK
+> USER LIST
+< -ERR 203 permission denied
+> USER GET OPER
+< -ERR 203 permission denied
+> USER ADD X LEVEL=1 PASSWORD=abcdef
+< -ERR 203 permission denied
+> USER SET OPER LEVEL=3
+< -ERR 203 permission denied
+> USER RESET ADMIN PASSWORD=abcdef
+< -ERR 203 permission denied
+> USER DEL ADMIN
+< -ERR 203 permission denied
+> ITEM GET 1
+< +DATA
+<*
+> ITEM LIST
+< +DATA
+<*
+> ITEM FIND Intel
+< +DATA
+<*
+> ITEM SERIAL X
+< +DATA
+<*
+> ITEM NOTES 1
+< +DATA
+< L first note
+< .
+> ITEM ADD CATEGORY=CPU
+< +OK ID=3
+> ITEM SET 3 MFR=NEC
+< +OK
+> ITEM SET 3 WORKS=Y TAGS=spare
+< +OK
+> ITEM TAGS
+< +DATA
+<*
+> ITEM COPY 3
+< +OK ID=4
+> ITEM DEL 4
+< +OK
+> ITEM UNDEL 4
+< +OK
+> ITEM NOTES 3 ADD="by oper"
+< +OK
+> CAT LIST
+< +DATA
+<*
+> CAT ADD MAG CAT_NAME=Magazines
+< +OK
+> CAT SET MAG SORTORD=12
+< +OK
+> CAT DEL MAG
+< +OK
+> LTYPE LIST
+< +DATA
+<*
+> LTYPE ADD TUB LT_NAME=Tub
+< +OK
+> LTYPE SET TUB SORTORD=12
+< +OK
+> LTYPE DEL TUB
+< +OK
+> LOC GET A1
+< +DATA
+<*
+> LOC LIST
+< +DATA
+<*
+> LOC CONTENTS A1
+< +DATA
+<*
+> LOC NOTES A1
+< +DATA
+< .
+> LOC NOTES A1 ADD="bin note"
+< +OK
+> LOC ADD LOC_NAME=B2 LTYPE=BIN LOC_CODE=B2
+< +OK ID=2
+> LOC SET B2 LOC_NAME="Shelf B2"
+< +OK
+> LOC DEL B2
+< +OK
+> STATUS
+< +DATA
+<*
+> WHOAMI
+< +DATA
+< K USER=OPER
+< K LEVEL=2
+< K STATION=PC1
+< .
+> ASSY LIST
+< +DATA
+< F ITEM_ID CATEGORY MFR MODEL WORKS QTY AVAIL LOC_ID LOC_NAME STATUS
+< .
+> ASSY BOM 1
+< +DATA
+< F LEVEL ITEM_ID CATEGORY MFR MODEL WORKS QTY AVAIL LOC_ID LOC_NAME STATUS
+< .
+> ASSY PATH 1
+< +DATA
+< F LEVEL ITEM_ID CATEGORY MFR MODEL LOC_ID LOC_NAME
+< .
+> ASSY CHILDREN 1
+< +DATA
+< F ITEM_ID CATEGORY MFR MODEL WORKS QTY AVAIL LOC_ID LOC_NAME STATUS
+< .
+> ASSY INSTALL 3 1
+< +OK
+> ASSY REMOVE 3 LOC=A1
+< +OK
+> ASSY MOVE 1 LOC=A1
+< +OK
+> MAINT ADD 1 MTYPE=CL SUMMARY=x
+< +OK ID=2
+> MAINT GET 2
+< +DATA
+<*
+> MAINT LIST 1
+< +DATA
+<*
+> MAINT RECENT
+< +DATA
+<*
+> MAINT NOTES 2
+< +DATA
+< .
+> MAINT SET 2 SUMMARY=y
+< +OK
+> MAINT NOTES 2 ADD="by oper"
+< +OK
+> MAINT DEL 1
+< -ERR 200 not found FIELD=ID
+> LOAN GET 1
+< +DATA
+<*
+> LOAN LIST
+< +DATA
+<*
+> LOAN OVERDUE
+< +DATA
+<*
+> LOAN OUT 1 HOLDER=Jo DUE=20991231
+< +OK ID=2
+> LOAN ADD 1 HOLDER=Jo DUE=20991231
+< -ERR 202 not enough on hand FIELD=QTY
+> LOAN RESERVE 1 HOLDER=Jo
+< -ERR 202 not enough on hand FIELD=QTY
+> LOAN USE 1 HOLDER=Jo
+< -ERR 202 not enough on hand FIELD=QTY
+> LOAN RETURN 2
+< +OK
+> LOAN SET 2 CONTACT=x
+< +OK
+> REPORT ITEMS
+< +DATA
+< F ITEM_ID CATEGORY MFR MODEL SERIALNO COND WORKS QTY LOC_ID LOC_NAME STATUS ACQ_DATE ACQ_PRICE CUR_VALUE
+< R 1 CPU Intel 8088 "" "" ? 1 1 "Shelf A1" A "" "" ""
+< R 2 CPU Intel 8088 "" "" ? 1 1 "Shelf A1" A "" "" ""
+< R 3 CPU NEC "" "" "" Y 1 1 "Shelf A1" A "" "" ""
+< R 4 CPU NEC "" "" "" ? 1 0 "" A "" "" ""
+< .
+> REPORT LOANS
+< +DATA
+< F LATE LOAN_ID ITEM_ID KIND QTY HOLDER HOST_ID CONTACT OUT_DATE DUE_DATE MFR MODEL
+< .
+> EXPORT ITEMS FILE=X.CSV
+< -ERR 203 permission denied
+@OTHERS 1
+> IMPORT ITEMS FILE=X.CSV
+< -ERR 203 permission denied
+> ADMIN PACK
+< -ERR 203 permission denied
+@OTHERS 0
+> AUDIT LIST
+< -ERR 203 permission denied
+> ADMIN RESTORE DIR=X
+< -ERR 203 permission denied
+
+# Level 1: reading only.
+> LOGIN READER readpw02
+< +OK LEVEL=1 MUSTCHG=1
+> PASSWD readpw02 readpw03
+< +OK
+> USER LIST
+< -ERR 203 permission denied
+> USER GET READER
+< -ERR 203 permission denied
+> USER SET READER FULLNAME=X
+< -ERR 203 permission denied
+> USER ADD X LEVEL=1 PASSWORD=abcdef
+< -ERR 203 permission denied
+> USER RESET OPER PASSWORD=abcdef
+< -ERR 203 permission denied
+> USER DEL OPER
+< -ERR 203 permission denied
+> ITEM GET 1
+< +DATA
+<*
+> ITEM LIST
+< +DATA
+<*
+> ITEM FIND Intel
+< +DATA
+<*
+> ITEM SERIAL X
+< +DATA
+<*
+> ITEM LIST TAG=spare WORKS=Y FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 3
+< .
+> ITEM FIND nec TAG=spare WORKS=Y AVAIL=1 FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 3
+< .
+> ITEM TAGS
+< +DATA
+< F TAG
+< R spare
+< .
+> ITEM NOTES 1
+< +DATA
+< L first note
+< .
+> ITEM NOTES 1 ADD="not allowed"
+< -ERR 203 permission denied
+> ITEM NOTES 1 NEW="not allowed"
+< -ERR 203 permission denied
+> ITEM ADD CATEGORY=CPU
+< -ERR 203 permission denied
+> ITEM SET 1 MFR=X
+< -ERR 203 permission denied
+> ITEM SET 1 WORKS=Y
+< -ERR 203 permission denied
+> ITEM DEL 1
+< -ERR 203 permission denied
+> ITEM UNDEL 1
+< -ERR 203 permission denied
+> ITEM COPY 1
+< -ERR 203 permission denied
+> CAT LIST
+< +DATA
+<*
+> CAT ADD X CAT_NAME=X
+< -ERR 203 permission denied
+> CAT SET CPU CAT_NAME=X
+< -ERR 203 permission denied
+> CAT DEL BOOK
+< -ERR 203 permission denied
+> LTYPE LIST
+< +DATA
+<*
+> LTYPE ADD X LT_NAME=X
+< -ERR 203 permission denied
+> LTYPE SET BIN LT_NAME=X
+< -ERR 203 permission denied
+> LTYPE DEL CRATE
+< -ERR 203 permission denied
+> LOC GET A1
+< +DATA
+<*
+> LOC LIST
+< +DATA
+<*
+> LOC CONTENTS A1
+< +DATA
+<*
+> LOC NOTES A1
+< +DATA
+< L bin note
+< .
+> LOC NOTES A1 ADD="not allowed"
+< -ERR 203 permission denied
+> LOC NOTES A1 END="not allowed"
+< -ERR 203 permission denied
+> LOC ADD LOC_NAME=C3 LTYPE=BIN LOC_CODE=C3
+< -ERR 203 permission denied
+> LOC SET A1 LOC_NAME=X
+< -ERR 203 permission denied
+> LOC DEL A1
+< -ERR 203 permission denied
+> STATUS
+< +DATA
+<*
+> WHOAMI
+< +DATA
+< K USER=READER
+< K LEVEL=1
+< K STATION=PC1
+< .
+> ASSY LIST
+< +DATA
+< F ITEM_ID CATEGORY MFR MODEL WORKS QTY AVAIL LOC_ID LOC_NAME STATUS
+< .
+> ASSY BOM 1
+< +DATA
+< F LEVEL ITEM_ID CATEGORY MFR MODEL WORKS QTY AVAIL LOC_ID LOC_NAME STATUS
+< .
+> ASSY PATH 1
+< +DATA
+< F LEVEL ITEM_ID CATEGORY MFR MODEL LOC_ID LOC_NAME
+< .
+> ASSY CHILDREN 1
+< +DATA
+< F ITEM_ID CATEGORY MFR MODEL WORKS QTY AVAIL LOC_ID LOC_NAME STATUS
+< .
+> ASSY INSTALL 3 1
+< -ERR 203 permission denied
+> ASSY REMOVE 3 LOC=A1
+< -ERR 203 permission denied
+> ASSY MOVE 1 LOC=A1
+< -ERR 203 permission denied
+> MAINT GET 2
+< +DATA
+<*
+> MAINT LIST 1
+< +DATA
+<*
+> MAINT RECENT
+< +DATA
+<*
+> MAINT NOTES 2
+< +DATA
+< L by oper
+< .
+> MAINT ADD 1 MTYPE=CL SUMMARY=x
+< -ERR 203 permission denied
+> MAINT SET 1 SUMMARY=y
+< -ERR 203 permission denied
+> MAINT DEL 1
+< -ERR 203 permission denied
+> MAINT NOTES 1 ADD="x"
+< -ERR 203 permission denied
+> MAINT NOTES 1 PART="x"
+< -ERR 203 permission denied
+> LOAN GET 1
+< +DATA
+<*
+> LOAN LIST
+< +DATA
+<*
+> LOAN OVERDUE
+< +DATA
+<*
+> LOAN OUT 1 HOLDER=Jo DUE=20991231
+< -ERR 203 permission denied
+> LOAN ADD 1 HOLDER=Jo DUE=20991231
+< -ERR 203 permission denied
+> LOAN RESERVE 1 HOLDER=Jo
+< -ERR 203 permission denied
+> LOAN USE 1 HOLDER=Jo
+< -ERR 203 permission denied
+> LOAN RETURN 1
+< -ERR 203 permission denied
+> LOAN SET 1 CONTACT=x
+< -ERR 203 permission denied
+> REPORT ITEMS
+< +DATA
+< F ITEM_ID CATEGORY MFR MODEL SERIALNO COND WORKS QTY LOC_ID LOC_NAME STATUS ACQ_DATE ACQ_PRICE CUR_VALUE
+< R 1 CPU Intel 8088 "" "" ? 1 1 "Shelf A1" A "" "" ""
+< R 2 CPU Intel 8088 "" "" ? 1 1 "Shelf A1" A "" "" ""
+< R 3 CPU NEC "" "" "" Y 1 1 "Shelf A1" A "" "" ""
+< R 4 CPU NEC "" "" "" ? 1 0 "" A "" "" ""
+< .
+> REPORT LOANS
+< +DATA
+< F LATE LOAN_ID ITEM_ID KIND QTY HOLDER HOST_ID CONTACT OUT_DATE DUE_DATE MFR MODEL
+< .
+> EXPORT ITEMS FILE=X.CSV
+< -ERR 203 permission denied
+> IMPORT LOCS FILE=X.CSV
+< -ERR 203 permission denied
+> REPORT LISTING
+< -ERR 101 unknown command
+> ADMIN PACK
+< -ERR 203 permission denied
+> ADMIN REINDEX
+< -ERR 203 permission denied
+> ADMIN BACKUP DIR=X
+< -ERR 203 permission denied
+> AUDIT LIST TBL=ITEMS
+< -ERR 203 permission denied
+
+# The level is checked before the arguments and the record: 203 also for
+# a request that would fail at level 3.
+> ITEM SET
+< -ERR 203 permission denied
+> ITEM NOTES BAD ADD=x
+< -ERR 203 permission denied
+> ITEM NOTES 9 ADD=x
+< -ERR 203 permission denied
+> LOC ADD
+< -ERR 203 permission denied
+> LOC NOTES ZZ ADD=x
+< -ERR 203 permission denied
+> CAT ADD
+< -ERR 203 permission denied
+> LTYPE ADD
+< -ERR 203 permission denied
+> USER GET
+< -ERR 203 permission denied
+> USER DEL ADMIN EXTRA
+< -ERR 203 permission denied
+
+# A read-only station caps every user at level 1, its name matched
+# without regard to case.  Whether the station is capped is decided at
+# HELLO, and the level it caps at LOGIN.
+@READONLY RO1,Ro2
+> HELLO ro1
+< +OK
+> LOGIN ADMIN secret1
+< +OK LEVEL=1 NAME="System Administrator"
+> WHOAMI
+< +DATA
+< K USER=ADMIN
+< K LEVEL=1
+< K STATION=ro1
+< .
+> USER LIST
+< -ERR 203 permission denied
+> USER ADD X LEVEL=1 PASSWORD=abcdef
+< -ERR 203 permission denied
+> ITEM ADD CATEGORY=CPU
+< -ERR 203 permission denied
+> ITEM SET 1 MFR=X
+< -ERR 203 permission denied
+> ITEM DEL 1
+< -ERR 203 permission denied
+> ITEM NOTES 1 ADD="not allowed"
+< -ERR 203 permission denied
+> CAT ADD X CAT_NAME=X
+< -ERR 203 permission denied
+> LTYPE ADD X LT_NAME=X
+< -ERR 203 permission denied
+> LOC ADD LOC_NAME=C3 LTYPE=BIN LOC_CODE=C3
+< -ERR 203 permission denied
+> LOC DEL A1
+< -ERR 203 permission denied
+> ASSY INSTALL 3 1
+< -ERR 203 permission denied
+> MAINT ADD 1 MTYPE=CL SUMMARY=x
+< -ERR 203 permission denied
+> MAINT NOTES 1 ADD="not allowed"
+< -ERR 203 permission denied
+> LOAN OUT 1 HOLDER=Jo DUE=20991231
+< -ERR 203 permission denied
+> LOAN RETURN 1
+< -ERR 203 permission denied
+> ASSY BOM 1
+< +DATA
+< F LEVEL ITEM_ID CATEGORY MFR MODEL WORKS QTY AVAIL LOC_ID LOC_NAME STATUS
+< .
+> ITEM GET 1
+< +DATA
+<*
+> CAT LIST
+< +DATA
+<*
+> LTYPE LIST
+< +DATA
+<*
+> EXPORT ITEMS FILE=X.CSV
+< -ERR 203 permission denied
+> IMPORT ITEMS FILE=X.CSV
+< -ERR 203 permission denied
+> REPORT ITEMS
+< +DATA
+< F ITEM_ID CATEGORY MFR MODEL SERIALNO COND WORKS QTY LOC_ID LOC_NAME STATUS ACQ_DATE ACQ_PRICE CUR_VALUE
+< R 1 CPU Intel 8088 "" "" ? 1 1 "Shelf A1" A "" "" ""
+< R 2 CPU Intel 8088 "" "" ? 1 1 "Shelf A1" A "" "" ""
+< R 3 CPU NEC "" "" "" Y 1 1 "Shelf A1" A "" "" ""
+< R 4 CPU NEC "" "" "" ? 1 0 "" A "" "" ""
+< .
+> REPORT LOANS
+< +DATA
+< F LATE LOAN_ID ITEM_ID KIND QTY HOLDER HOST_ID CONTACT OUT_DATE DUE_DATE MFR MODEL
+< .
+> AUDIT LIST
+< -ERR 203 permission denied
+> ADMIN PACK
+< -ERR 203 permission denied
+# The user's own password may still be changed.
+> PASSWD secret1 secret2
+< +OK
+> HELLO RO2
+< +OK
+> LOGIN OPER operpw02
+< +OK LEVEL=1 NAME="Op Erator"
+> LOC SET A1 LOC_NAME=X
+< -ERR 203 permission denied
+# Another station gets the user's own level back: PACK passes the level
+# gate and meets the busy one.
+> HELLO PC2
+< +OK
+> LOGIN ADMIN secret2
+< +OK LEVEL=3 NAME="System Administrator"
+> USER LIST
+< +DATA
+<*
+@OTHERS 1
+> ADMIN PACK
+< -ERR 402 server busy
+@OTHERS 0
+# A changed list applies from the next HELLO.
+@READONLY PC2
+> USER GET ADMIN
+< +DATA
+<*
+> HELLO PC2
+< +OK
+> LOGIN ADMIN secret2
+< +OK LEVEL=1 NAME="System Administrator"
+> USER GET ADMIN
+< -ERR 203 permission denied
+
+# A level change takes effect at the next LOGIN.
+@READONLY
+> HELLO PC3
+< +OK
+> LOGIN ADMIN secret2
+< +OK LEVEL=3 NAME="System Administrator"
+> USER SET READER LEVEL=2
+< +OK
+> LOGIN READER readpw03
+< +OK LEVEL=2 NAME=""
+> ITEM SET 1 MFR=Zilog
+< +OK
+
+# No audit rows are written by commands the gate refused: every row
+# below comes from a command that ran.
+@TABLE AUDIT FIELDS=STATION,USERNAME,TBL,REC_ID,ACTION,FLD
+< F STATION USERNAME TBL REC_ID ACTION FLD
+< R SYSTEM SYSTEM CATS 1 I CAT_CODE
+< R SYSTEM SYSTEM CATS 2 I CAT_CODE
+< R SYSTEM SYSTEM CATS 3 I CAT_CODE
+< R SYSTEM SYSTEM CATS 4 I CAT_CODE
+< R SYSTEM SYSTEM CATS 5 I CAT_CODE
+< R SYSTEM SYSTEM CATS 6 I CAT_CODE
+< R SYSTEM SYSTEM CATS 7 I CAT_CODE
+< R SYSTEM SYSTEM CATS 8 I CAT_CODE
+< R SYSTEM SYSTEM CATS 9 I CAT_CODE
+< R SYSTEM SYSTEM CATS 10 I CAT_CODE
+< R SYSTEM SYSTEM LTYPES 1 I LT_CODE
+< R SYSTEM SYSTEM LTYPES 2 I LT_CODE
+< R SYSTEM SYSTEM LTYPES 3 I LT_CODE
+< R SYSTEM SYSTEM LTYPES 4 I LT_CODE
+< R SYSTEM SYSTEM LTYPES 5 I LT_CODE
+< R SYSTEM SYSTEM LTYPES 6 I LT_CODE
+< R SYSTEM SYSTEM LTYPES 7 I LT_CODE
+< R SYSTEM SYSTEM LTYPES 8 I LT_CODE
+< R SYSTEM SYSTEM USERS 1 I USER_ID
+< R PC1 ADMIN USERS 1 L ""
+< R PC1 ADMIN USERS 1 L ""
+< R PC1 ADMIN USERS 1 W PWHASH
+< R PC1 ADMIN USERS 1 L ""
+< R PC1 ADMIN USERS 2 I USER_ID
+< R PC1 TEMP2 USERS 2 L ""
+< R PC1 ADMIN USERS 1 L ""
+< R PC1 ADMIN USERS 3 I USER_ID
+< R PC1 ADMIN USERS 4 I USER_ID
+< R PC1 ADMIN USERS 3 U FULLNAME
+< R PC1 ADMIN USERS 4 W PWHASH
+< R PC1 ADMIN USERS 5 I USER_ID
+< R PC1 ADMIN USERS 5 D ""
+< R PC1 ADMIN CATS 11 I CAT_CODE
+< R PC1 ADMIN CATS 11 U SORTORD
+< R PC1 ADMIN LTYPES 9 I LT_CODE
+< R PC1 ADMIN LTYPES 9 U SORTORD
+< R PC1 ADMIN LOCS 1 I LOC_ID
+< R PC1 ADMIN LOCS 1 U LTYPE
+< R PC1 ADMIN ITEMS 1 I ITEM_ID
+< R PC1 ADMIN ITEMS 1 M LOC_ID
+< R PC1 ADMIN ITEMS 2 I ITEM_ID
+< R PC1 ADMIN ITEMS 2 D ""
+< R PC1 ADMIN ITEMS 2 D ""
+< R PC1 ADMIN ITEMS 1 U NOTES
+< R PC1 ADMIN ITEMS 2 P PARENT_ID
+< R PC1 ADMIN ITEMS 2 P PARENT_ID
+< R PC1 ADMIN MAINT 1 I MAINT_ID
+< R PC1 ADMIN MAINT 1 U SUMMARY
+< R PC1 ADMIN MAINT 1 U DETAIL
+< R PC1 ADMIN MAINT 1 D ""
+< R PC1 ADMIN LOANS 1 I LOAN_ID
+< R PC1 ADMIN ITEMS 1 O ON_LOAN
+< R PC1 ADMIN LOANS 1 U RET_DATE
+< R PC1 ADMIN ITEMS 1 R ON_LOAN
+< R PC1 ADMIN LOANS 1 U CONTACT
+< R PC1 OPER USERS 3 L ""
+< R PC1 OPER USERS 3 W PWHASH
+< R PC1 OPER ITEMS 3 I ITEM_ID
+< R PC1 OPER ITEMS 3 U MFR
+< R PC1 OPER ITEMS 3 U WORKS
+< R PC1 OPER ITEMS 3 U TAGS
+< R PC1 OPER ITEMS 4 I ITEM_ID
+< R PC1 OPER ITEMS 4 D ""
+< R PC1 OPER ITEMS 4 D ""
+< R PC1 OPER ITEMS 3 U NOTES
+< R PC1 OPER CATS 12 I CAT_CODE
+< R PC1 OPER CATS 12 U SORTORD
+< R PC1 OPER CATS 12 D ""
+< R PC1 OPER LTYPES 10 I LT_CODE
+< R PC1 OPER LTYPES 10 U SORTORD
+< R PC1 OPER LTYPES 10 D ""
+< R PC1 OPER LOCS 1 U NOTES
+< R PC1 OPER LOCS 2 I LOC_ID
+< R PC1 OPER LOCS 2 U LOC_NAME
+< R PC1 OPER LOCS 2 D ""
+< R PC1 OPER ITEMS 3 M LOC_ID
+< R PC1 OPER ITEMS 3 P PARENT_ID
+< R PC1 OPER ITEMS 3 P PARENT_ID
+< R PC1 OPER MAINT 2 I MAINT_ID
+< R PC1 OPER MAINT 2 U SUMMARY
+< R PC1 OPER MAINT 2 U DETAIL
+< R PC1 OPER LOANS 2 I LOAN_ID
+< R PC1 OPER ITEMS 1 O ON_LOAN
+< R PC1 OPER LOANS 2 U RET_DATE
+< R PC1 OPER ITEMS 1 R ON_LOAN
+< R PC1 OPER LOANS 2 U CONTACT
+< R PC1 READER USERS 4 L ""
+< R PC1 READER USERS 4 W PWHASH
+< R ro1 ADMIN USERS 1 L ""
+< R ro1 ADMIN USERS 1 W PWHASH
+< R RO2 OPER USERS 3 L ""
+< R PC2 ADMIN USERS 1 L ""
+< R PC2 ADMIN USERS 1 L ""
+< R PC3 ADMIN USERS 1 L ""
+< R PC3 ADMIN USERS 4 U LEVEL
+< R PC3 READER USERS 4 L ""
+< R PC3 READER ITEMS 1 U MFR

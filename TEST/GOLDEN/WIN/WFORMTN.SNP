@@ -1,0 +1,627 @@
+=SNAP ITEM
+#32770 "Item 1" ACTIVE
+ Static 65535 "Item ID"
+ Static 100 "1"
+ Static 65535 "Maker"
+ Edit 105 "IBM"
+ Static 65535 "Model"
+ Edit 106 "5150"
+ WTAB 95 "&Overview|&Technical|&Acquisition|&Notes" CUR 0 FOCUS
+ Static 65535 "Category"
+ Static 101 "SYS   Systems"
+ Static 65535 "Status"
+ Static 102 "A  Active"
+ Static 65535 "Type"
+ Static 103 ""
+ Static 65535 "Condition"
+ Static 104 "GD   Good"
+ Static 65535 "Works"
+ Static 109 "Y  Yes"
+ Static 65535 "Quantity"
+ Static 110 "1"
+ Static 65535 ""
+ Edit 111 ""
+ Static 65535 "Location"
+ Static 112 "OFF"
+ Static 65535 "Part of"
+ Edit 113 "0"
+ Static 65535 ""
+ Static 114 "Office"
+ Static 65535 "Tags"
+ Edit 119 ""
+ Static 65535 "Serial" HIDDEN
+ Static 107 "0012345" HIDDEN
+ Static 65535 "Description" HIDDEN
+ Edit 108 "IBM Personal Computer" HIDDEN
+ Static 65535 "Date acquired" HIDDEN
+ Static 115 "" HIDDEN
+ Static 65535 "Acquired from" HIDDEN
+ Static 116 "" HIDDEN
+ Static 65535 "Price paid" HIDDEN
+ Static 117 "" HIDDEN
+ Static 65535 "Current value" HIDDEN
+ Static 118 "" HIDDEN
+ Static 65535 "Created" HIDDEN
+ Static 120 "" HIDDEN
+ Static 65535 "Updated" HIDDEN
+ Static 121 "" HIDDEN
+ Edit 122 "" HIDDEN
+ Button 148 "Parts"
+ Button 149 "Service"
+ Button 150 "Loans"
+ Button 151 "Used with"
+ Static 99 ""
+ Button 2 "Close" DEFAULT
+ Button 98 "Edit"
+WFORMT "WFORMT" DISABLED
+=SNAP TYPED
+#32770 "Item 1" ACTIVE
+ Static 65535 "Item ID"
+ Static 100 "1"
+ Static 65535 "Maker"
+ Edit 105 "IBM"
+ Static 65535 "Model"
+ Edit 106 "5150"
+ WTAB 95 "&Overview|&Technical|&Acquisition|&Notes" CUR 0 FOCUS
+ Static 65535 "Category"
+ Static 101 "SYS   Systems"
+ Static 65535 "Status"
+ Static 102 "A  Active"
+ Static 65535 "Type"
+ Static 103 ""
+ Static 65535 "Condition"
+ Static 104 "GD   Good"
+ Static 65535 "Works"
+ Static 109 "Y  Yes"
+ Static 65535 "Quantity"
+ Static 110 "1"
+ Static 65535 ""
+ Edit 111 ""
+ Static 65535 "Location"
+ Static 112 "OFF"
+ Static 65535 "Part of"
+ Edit 113 "0"
+ Static 65535 ""
+ Static 114 "Office"
+ Static 65535 "Tags"
+ Edit 119 ""
+ Static 65535 "Serial" HIDDEN
+ Static 107 "0012345" HIDDEN
+ Static 65535 "Description" HIDDEN
+ Edit 108 "IBM Personal Computer" HIDDEN
+ Static 65535 "Date acquired" HIDDEN
+ Static 115 "" HIDDEN
+ Static 65535 "Acquired from" HIDDEN
+ Static 116 "" HIDDEN
+ Static 65535 "Price paid" HIDDEN
+ Static 117 "" HIDDEN
+ Static 65535 "Current value" HIDDEN
+ Static 118 "" HIDDEN
+ Static 65535 "Created" HIDDEN
+ Static 120 "" HIDDEN
+ Static 65535 "Updated" HIDDEN
+ Static 121 "" HIDDEN
+ Edit 122 "" HIDDEN
+ Button 148 "Parts"
+ Button 149 "Service"
+ Button 150 "Loans"
+ Button 151 "Used with"
+ Static 99 ""
+ Button 2 "Close" DEFAULT
+ Button 98 "Edit"
+WFORMT "WFORMT" DISABLED
+=SNAP PARTOF
+#32770 "Item 1" ACTIVE
+ Static 65535 "Item ID"
+ Static 100 "1"
+ Static 65535 "Maker"
+ Edit 105 "IBM"
+ Static 65535 "Model"
+ Edit 106 "5150"
+ WTAB 95 "&Overview|&Technical|&Acquisition|&Notes" CUR 0
+ Static 65535 "Category"
+ Static 101 "SYS   Systems"
+ Static 65535 "Status"
+ Static 102 "A  Active"
+ Static 65535 "Type"
+ Static 103 ""
+ Static 65535 "Condition"
+ Static 104 "GD   Good"
+ Static 65535 "Works"
+ Static 109 "Y  Yes"
+ Static 65535 "Quantity"
+ Static 110 "1"
+ Static 65535 ""
+ Edit 111 ""
+ Static 65535 "Location"
+ Static 112 "OFF"
+ Static 65535 "Part of"
+ Edit 113 "0" FOCUS
+ Static 65535 ""
+ Static 114 "Office"
+ Static 65535 "Tags"
+ Edit 119 ""
+ Static 65535 "Serial" HIDDEN
+ Static 107 "0012345" HIDDEN
+ Static 65535 "Description" HIDDEN
+ Edit 108 "IBM Personal Computer" HIDDEN
+ Static 65535 "Date acquired" HIDDEN
+ Static 115 "" HIDDEN
+ Static 65535 "Acquired from" HIDDEN
+ Static 116 "" HIDDEN
+ Static 65535 "Price paid" HIDDEN
+ Static 117 "" HIDDEN
+ Static 65535 "Current value" HIDDEN
+ Static 118 "" HIDDEN
+ Static 65535 "Created" HIDDEN
+ Static 120 "" HIDDEN
+ Static 65535 "Updated" HIDDEN
+ Static 121 "" HIDDEN
+ Edit 122 "" HIDDEN
+ Button 148 "Parts"
+ Button 149 "Service"
+ Button 150 "Loans"
+ Button 151 "Used with"
+ Static 99 ""
+ Button 2 "Close" DEFAULT
+ Button 98 "Edit"
+WFORMT "WFORMT" DISABLED
+=SNAP TAGS
+#32770 "Item 1" ACTIVE
+ Static 65535 "Item ID"
+ Static 100 "1"
+ Static 65535 "Maker"
+ Edit 105 "IBM"
+ Static 65535 "Model"
+ Edit 106 "5150"
+ WTAB 95 "&Overview|&Technical|&Acquisition|&Notes" CUR 0
+ Static 65535 "Category"
+ Static 101 "SYS   Systems"
+ Static 65535 "Status"
+ Static 102 "A  Active"
+ Static 65535 "Type"
+ Static 103 ""
+ Static 65535 "Condition"
+ Static 104 "GD   Good"
+ Static 65535 "Works"
+ Static 109 "Y  Yes"
+ Static 65535 "Quantity"
+ Static 110 "1"
+ Static 65535 ""
+ Edit 111 ""
+ Static 65535 "Location"
+ Static 112 "OFF"
+ Static 65535 "Part of"
+ Edit 113 "0"
+ Static 65535 ""
+ Static 114 "Office"
+ Static 65535 "Tags"
+ Edit 119 "" FOCUS
+ Static 65535 "Serial" HIDDEN
+ Static 107 "0012345" HIDDEN
+ Static 65535 "Description" HIDDEN
+ Edit 108 "IBM Personal Computer" HIDDEN
+ Static 65535 "Date acquired" HIDDEN
+ Static 115 "" HIDDEN
+ Static 65535 "Acquired from" HIDDEN
+ Static 116 "" HIDDEN
+ Static 65535 "Price paid" HIDDEN
+ Static 117 "" HIDDEN
+ Static 65535 "Current value" HIDDEN
+ Static 118 "" HIDDEN
+ Static 65535 "Created" HIDDEN
+ Static 120 "" HIDDEN
+ Static 65535 "Updated" HIDDEN
+ Static 121 "" HIDDEN
+ Edit 122 "" HIDDEN
+ Button 148 "Parts"
+ Button 149 "Service"
+ Button 150 "Loans"
+ Button 151 "Used with"
+ Static 99 ""
+ Button 2 "Close" DEFAULT
+ Button 98 "Edit"
+WFORMT "WFORMT" DISABLED
+=SNAP PARTS
+#32770 "Item 1" ACTIVE
+ Static 65535 "Item ID"
+ Static 100 "1"
+ Static 65535 "Maker"
+ Edit 105 "IBM"
+ Static 65535 "Model"
+ Edit 106 "5150"
+ WTAB 95 "&Overview|&Technical|&Acquisition|&Notes" CUR 0
+ Static 65535 "Category"
+ Static 101 "SYS   Systems"
+ Static 65535 "Status"
+ Static 102 "A  Active"
+ Static 65535 "Type"
+ Static 103 ""
+ Static 65535 "Condition"
+ Static 104 "GD   Good"
+ Static 65535 "Works"
+ Static 109 "Y  Yes"
+ Static 65535 "Quantity"
+ Static 110 "1"
+ Static 65535 ""
+ Edit 111 ""
+ Static 65535 "Location"
+ Static 112 "OFF"
+ Static 65535 "Part of"
+ Edit 113 "0"
+ Static 65535 ""
+ Static 114 "Office"
+ Static 65535 "Tags"
+ Edit 119 ""
+ Static 65535 "Serial" HIDDEN
+ Static 107 "0012345" HIDDEN
+ Static 65535 "Description" HIDDEN
+ Edit 108 "IBM Personal Computer" HIDDEN
+ Static 65535 "Date acquired" HIDDEN
+ Static 115 "" HIDDEN
+ Static 65535 "Acquired from" HIDDEN
+ Static 116 "" HIDDEN
+ Static 65535 "Price paid" HIDDEN
+ Static 117 "" HIDDEN
+ Static 65535 "Current value" HIDDEN
+ Static 118 "" HIDDEN
+ Static 65535 "Created" HIDDEN
+ Static 120 "" HIDDEN
+ Static 65535 "Updated" HIDDEN
+ Static 121 "" HIDDEN
+ Edit 122 "" HIDDEN
+ Button 148 "Parts" FOCUS DEFAULT
+ Button 149 "Service"
+ Button 150 "Loans"
+ Button 151 "Used with"
+ Static 99 ""
+ Button 2 "Close"
+ Button 98 "Edit"
+WFORMT "WFORMT" DISABLED
+=SNAP CLOSE
+#32770 "Item 1" ACTIVE
+ Static 65535 "Item ID"
+ Static 100 "1"
+ Static 65535 "Maker"
+ Edit 105 "IBM"
+ Static 65535 "Model"
+ Edit 106 "5150"
+ WTAB 95 "&Overview|&Technical|&Acquisition|&Notes" CUR 0
+ Static 65535 "Category"
+ Static 101 "SYS   Systems"
+ Static 65535 "Status"
+ Static 102 "A  Active"
+ Static 65535 "Type"
+ Static 103 ""
+ Static 65535 "Condition"
+ Static 104 "GD   Good"
+ Static 65535 "Works"
+ Static 109 "Y  Yes"
+ Static 65535 "Quantity"
+ Static 110 "1"
+ Static 65535 ""
+ Edit 111 ""
+ Static 65535 "Location"
+ Static 112 "OFF"
+ Static 65535 "Part of"
+ Edit 113 "0"
+ Static 65535 ""
+ Static 114 "Office"
+ Static 65535 "Tags"
+ Edit 119 ""
+ Static 65535 "Serial" HIDDEN
+ Static 107 "0012345" HIDDEN
+ Static 65535 "Description" HIDDEN
+ Edit 108 "IBM Personal Computer" HIDDEN
+ Static 65535 "Date acquired" HIDDEN
+ Static 115 "" HIDDEN
+ Static 65535 "Acquired from" HIDDEN
+ Static 116 "" HIDDEN
+ Static 65535 "Price paid" HIDDEN
+ Static 117 "" HIDDEN
+ Static 65535 "Current value" HIDDEN
+ Static 118 "" HIDDEN
+ Static 65535 "Created" HIDDEN
+ Static 120 "" HIDDEN
+ Static 65535 "Updated" HIDDEN
+ Static 121 "" HIDDEN
+ Edit 122 "" HIDDEN
+ Button 148 "Parts"
+ Button 149 "Service"
+ Button 150 "Loans"
+ Button 151 "Used with"
+ Static 99 ""
+ Button 2 "Close" FOCUS DEFAULT
+ Button 98 "Edit"
+WFORMT "WFORMT" DISABLED
+=SNAP EDIT
+#32770 "Item 1" ACTIVE
+ Static 65535 "Item ID"
+ Static 100 "1"
+ Static 65535 "Maker"
+ Edit 105 "IBM"
+ Static 65535 "Model"
+ Edit 106 "5150"
+ WTAB 95 "&Overview|&Technical|&Acquisition|&Notes" CUR 0
+ Static 65535 "Category"
+ Static 101 "SYS   Systems"
+ Static 65535 "Status"
+ Static 102 "A  Active"
+ Static 65535 "Type"
+ Static 103 ""
+ Static 65535 "Condition"
+ Static 104 "GD   Good"
+ Static 65535 "Works"
+ Static 109 "Y  Yes"
+ Static 65535 "Quantity"
+ Static 110 "1"
+ Static 65535 ""
+ Edit 111 ""
+ Static 65535 "Location"
+ Static 112 "OFF"
+ Static 65535 "Part of"
+ Edit 113 "0"
+ Static 65535 ""
+ Static 114 "Office"
+ Static 65535 "Tags"
+ Edit 119 ""
+ Static 65535 "Serial" HIDDEN
+ Static 107 "0012345" HIDDEN
+ Static 65535 "Description" HIDDEN
+ Edit 108 "IBM Personal Computer" HIDDEN
+ Static 65535 "Date acquired" HIDDEN
+ Static 115 "" HIDDEN
+ Static 65535 "Acquired from" HIDDEN
+ Static 116 "" HIDDEN
+ Static 65535 "Price paid" HIDDEN
+ Static 117 "" HIDDEN
+ Static 65535 "Current value" HIDDEN
+ Static 118 "" HIDDEN
+ Static 65535 "Created" HIDDEN
+ Static 120 "" HIDDEN
+ Static 65535 "Updated" HIDDEN
+ Static 121 "" HIDDEN
+ Edit 122 "" HIDDEN
+ Button 148 "Parts"
+ Button 149 "Service"
+ Button 150 "Loans"
+ Button 151 "Used with"
+ Static 99 ""
+ Button 2 "Close"
+ Button 98 "Edit" FOCUS DEFAULT
+WFORMT "WFORMT" DISABLED
+=SNAP MAKER
+#32770 "Item 1" ACTIVE
+ Static 65535 "Item ID"
+ Static 100 "1"
+ Static 65535 "Maker"
+ Edit 105 "IBM" FOCUS
+ Static 65535 "Model"
+ Edit 106 "5150"
+ WTAB 95 "&Overview|&Technical|&Acquisition|&Notes" CUR 0
+ Static 65535 "Category"
+ Static 101 "SYS   Systems"
+ Static 65535 "Status"
+ Static 102 "A  Active"
+ Static 65535 "Type"
+ Static 103 ""
+ Static 65535 "Condition"
+ Static 104 "GD   Good"
+ Static 65535 "Works"
+ Static 109 "Y  Yes"
+ Static 65535 "Quantity"
+ Static 110 "1"
+ Static 65535 ""
+ Edit 111 ""
+ Static 65535 "Location"
+ Static 112 "OFF"
+ Static 65535 "Part of"
+ Edit 113 "0"
+ Static 65535 ""
+ Static 114 "Office"
+ Static 65535 "Tags"
+ Edit 119 ""
+ Static 65535 "Serial" HIDDEN
+ Static 107 "0012345" HIDDEN
+ Static 65535 "Description" HIDDEN
+ Edit 108 "IBM Personal Computer" HIDDEN
+ Static 65535 "Date acquired" HIDDEN
+ Static 115 "" HIDDEN
+ Static 65535 "Acquired from" HIDDEN
+ Static 116 "" HIDDEN
+ Static 65535 "Price paid" HIDDEN
+ Static 117 "" HIDDEN
+ Static 65535 "Current value" HIDDEN
+ Static 118 "" HIDDEN
+ Static 65535 "Created" HIDDEN
+ Static 120 "" HIDDEN
+ Static 65535 "Updated" HIDDEN
+ Static 121 "" HIDDEN
+ Edit 122 "" HIDDEN
+ Button 148 "Parts"
+ Button 149 "Service"
+ Button 150 "Loans"
+ Button 151 "Used with"
+ Static 99 ""
+ Button 2 "Close" DEFAULT
+ Button 98 "Edit"
+WFORMT "WFORMT" DISABLED
+=SNAP ITEMEND
+WFORMT "VIEW 0 1 #3" ACTIVE FOCUS
+=SNAP ALL
+#32770 "Search items" ACTIVE
+ WTAB 95 "&Record|&Notes" CUR 0 FOCUS
+ Static 65535 "Text"
+ Static 100 ""
+ Static 65535 "Location"
+ Static 101 ""
+ Static 65535 "Quantity"
+ Static 102 ""
+ Static 65535 "Price paid"
+ Static 103 ""
+ Static 65535 "Date acquired"
+ Static 104 ""
+ Static 65535 "Overdue"
+ Button 105 "" DISABLED
+ Static 65535 "Status"
+ Static 106 ""
+ Static 65535 "Condition"
+ Static 107 "XX"
+ Static 65535 "Item ID"
+ Static 108 "R-1"
+ Static 65535 "Browse by &&ID"
+ Static 109 ""
+ Static 65535 "New password"
+ Edit 110 "" DISABLED
+ Edit 111 "First line??Caf‚ au lait" HIDDEN
+ Static 99 ""
+ Button 2 "Close" DEFAULT
+WFORMT "VIEW 0 1 #3" DISABLED
+=SNAP ALLCLOSE
+#32770 "Search items" ACTIVE
+ WTAB 95 "&Record|&Notes" CUR 0
+ Static 65535 "Text"
+ Static 100 ""
+ Static 65535 "Location"
+ Static 101 ""
+ Static 65535 "Quantity"
+ Static 102 ""
+ Static 65535 "Price paid"
+ Static 103 ""
+ Static 65535 "Date acquired"
+ Static 104 ""
+ Static 65535 "Overdue"
+ Button 105 "" DISABLED
+ Static 65535 "Status"
+ Static 106 ""
+ Static 65535 "Condition"
+ Static 107 "XX"
+ Static 65535 "Item ID"
+ Static 108 "R-1"
+ Static 65535 "Browse by &&ID"
+ Static 109 ""
+ Static 65535 "New password"
+ Edit 110 "" DISABLED
+ Edit 111 "First line??Caf‚ au lait" HIDDEN
+ Static 99 ""
+ Button 2 "Close" FOCUS DEFAULT
+WFORMT "VIEW 0 1 #3" DISABLED
+=SNAP STRIP
+#32770 "Search items" ACTIVE
+ WTAB 95 "&Record|&Notes" CUR 0 FOCUS
+ Static 65535 "Text"
+ Static 100 ""
+ Static 65535 "Location"
+ Static 101 ""
+ Static 65535 "Quantity"
+ Static 102 ""
+ Static 65535 "Price paid"
+ Static 103 ""
+ Static 65535 "Date acquired"
+ Static 104 ""
+ Static 65535 "Overdue"
+ Button 105 "" DISABLED
+ Static 65535 "Status"
+ Static 106 ""
+ Static 65535 "Condition"
+ Static 107 "XX"
+ Static 65535 "Item ID"
+ Static 108 "R-1"
+ Static 65535 "Browse by &&ID"
+ Static 109 ""
+ Static 65535 "New password"
+ Edit 110 "" DISABLED
+ Edit 111 "First line??Caf‚ au lait" HIDDEN
+ Static 99 ""
+ Button 2 "Close" DEFAULT
+WFORMT "VIEW 0 1 #3" DISABLED
+=SNAP NOTES
+#32770 "Search items" ACTIVE
+ WTAB 95 "&Record|&Notes" CUR 1 FOCUS
+ Static 65535 "Text" HIDDEN
+ Static 100 "" HIDDEN
+ Static 65535 "Location" HIDDEN
+ Static 101 "" HIDDEN
+ Static 65535 "Quantity" HIDDEN
+ Static 102 "" HIDDEN
+ Static 65535 "Price paid" HIDDEN
+ Static 103 "" HIDDEN
+ Static 65535 "Date acquired" HIDDEN
+ Static 104 "" HIDDEN
+ Static 65535 "Overdue" HIDDEN
+ Button 105 "" DISABLED HIDDEN
+ Static 65535 "Status" HIDDEN
+ Static 106 "" HIDDEN
+ Static 65535 "Condition" HIDDEN
+ Static 107 "XX" HIDDEN
+ Static 65535 "Item ID" HIDDEN
+ Static 108 "R-1" HIDDEN
+ Static 65535 "Browse by &&ID" HIDDEN
+ Static 109 "" HIDDEN
+ Static 65535 "New password" HIDDEN
+ Edit 110 "" DISABLED HIDDEN
+ Edit 111 "First line??Caf‚ au lait"
+ Static 99 ""
+ Button 2 "Close" DEFAULT
+WFORMT "VIEW 0 1 #3" DISABLED
+=SNAP MEMO
+#32770 "Search items" ACTIVE
+ WTAB 95 "&Record|&Notes" CUR 1
+ Static 65535 "Text" HIDDEN
+ Static 100 "" HIDDEN
+ Static 65535 "Location" HIDDEN
+ Static 101 "" HIDDEN
+ Static 65535 "Quantity" HIDDEN
+ Static 102 "" HIDDEN
+ Static 65535 "Price paid" HIDDEN
+ Static 103 "" HIDDEN
+ Static 65535 "Date acquired" HIDDEN
+ Static 104 "" HIDDEN
+ Static 65535 "Overdue" HIDDEN
+ Button 105 "" DISABLED HIDDEN
+ Static 65535 "Status" HIDDEN
+ Static 106 "" HIDDEN
+ Static 65535 "Condition" HIDDEN
+ Static 107 "XX" HIDDEN
+ Static 65535 "Item ID" HIDDEN
+ Static 108 "R-1" HIDDEN
+ Static 65535 "Browse by &&ID" HIDDEN
+ Static 109 "" HIDDEN
+ Static 65535 "New password" HIDDEN
+ Edit 110 "" DISABLED HIDDEN
+ Edit 111 "First line??Caf‚ au lait" FOCUS
+ Static 99 ""
+ Button 2 "Close" DEFAULT
+WFORMT "VIEW 0 1 #3" DISABLED
+=SNAP TYPEDX
+#32770 "Search items" ACTIVE
+ WTAB 95 "&Record|&Notes" CUR 1
+ Static 65535 "Text" HIDDEN
+ Static 100 "" HIDDEN
+ Static 65535 "Location" HIDDEN
+ Static 101 "" HIDDEN
+ Static 65535 "Quantity" HIDDEN
+ Static 102 "" HIDDEN
+ Static 65535 "Price paid" HIDDEN
+ Static 103 "" HIDDEN
+ Static 65535 "Date acquired" HIDDEN
+ Static 104 "" HIDDEN
+ Static 65535 "Overdue" HIDDEN
+ Button 105 "" DISABLED HIDDEN
+ Static 65535 "Status" HIDDEN
+ Static 106 "" HIDDEN
+ Static 65535 "Condition" HIDDEN
+ Static 107 "XX" HIDDEN
+ Static 65535 "Item ID" HIDDEN
+ Static 108 "R-1" HIDDEN
+ Static 65535 "Browse by &&ID" HIDDEN
+ Static 109 "" HIDDEN
+ Static 65535 "New password" HIDDEN
+ Edit 110 "" DISABLED HIDDEN
+ Edit 111 "First line??Caf‚ au lait" FOCUS
+ Static 99 ""
+ Button 2 "Close" DEFAULT
+WFORMT "VIEW 0 1 #3" DISABLED
+=SNAP ALLEND
+WFORMT "ALL 0 1 #4" ACTIVE FOCUS
+=END

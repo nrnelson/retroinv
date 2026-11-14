@@ -1,0 +1,299 @@
+RETROINV  Valuation                                          2026-10-08  Page 1
+
+
+      ID Cat  Maker            Model               Qty        Paid       Value
+-------------------------------------------------------------------------------
+       1 C1   Mfr              Model                 1        1.00        1.00
+       2 C2   Mfr              Model                 1        2.00        1.00
+       3 C3   Mfr              Model                 1        3.00        1.00
+       4 C4   Mfr              Model                 1        4.00        1.00
+       5 C5   Mfr              Model                 1        5.00        1.00
+       6 C6   Mfr              Model                 1        6.00        1.00
+       7 C7   Mfr              Model                 1        7.00        1.00
+       8 C8   Mfr              Model                 1        8.00        1.00
+       9 C9   Mfr              Model                 1        9.00        1.00
+      10 C10  Mfr              Model                 1       10.00        1.00
+      11 C11  Mfr              Model                 1       11.00        1.00
+      12 C12  Mfr              Model                 1       12.00        1.00
+      13 C13  Mfr              Model                 1       13.00        1.00
+      14 C14  Mfr              Model                 1       14.00        1.00
+      15 C15  Mfr              Model                 1       15.00        1.00
+      16 C16  Mfr              Model                 1       16.00        1.00
+      17 C17  Mfr              Model                 1       17.00        1.00
+      18 C18  Mfr              Model                 1       18.00        1.00
+      19 C19  Mfr              Model                 1       19.00        1.00
+RETROINV  Valuation                                          2026-10-08  Page 2
+
+
+      ID Cat  Maker            Model               Qty        Paid       Value
+-------------------------------------------------------------------------------
+      20 C20  Mfr              Model                 1       20.00        1.00
+      21 C21  Mfr              Model                 1       21.00        1.00
+      22 C22  Mfr              Model                 1       22.00        1.00
+      23 C23  Mfr              Model                 1       23.00        1.00
+      24 C24  Mfr              Model                 1       24.00        1.00
+      25 C25  Mfr              Model                 1       25.00        1.00
+      26 C26  Mfr              Model                 1       26.00        1.00
+      27 C27  Mfr              Model                 1       27.00        1.00
+      28 C28  Mfr              Model                 1       28.00        1.00
+      29 C29  Mfr              Model                 1       29.00        1.00
+      30 C30  Mfr              Model                 1       30.00        1.00
+      31 C31  Mfr              Model                 1       31.00        1.00
+      32 C32  Mfr              Model                 1       32.00        1.00
+      33 C33  Mfr              Model                 1       33.00        1.00
+      34 C34  Mfr              Model                 1       34.00        1.00
+      35 C35  Mfr              Model                 1       35.00        1.00
+      36 C36  Mfr              Model                 1       36.00        1.00
+      37 C37  Mfr              Model                 1       37.00        1.00
+      38 C38  Mfr              Model                 1       38.00        1.00
+RETROINV  Valuation                                          2026-10-08  Page 3
+
+
+      ID Cat  Maker            Model               Qty        Paid       Value
+-------------------------------------------------------------------------------
+      39 C39  Mfr              Model                 1       39.00        1.00
+      40 C40  Mfr              Model                 1       40.00        1.00
+      41 C41  Mfr              Model                 1       41.00        1.00
+      42 C42  Mfr              Model                 1       42.00        1.00
+      43 C43  Mfr              Model                 1       43.00        1.00
+      44 C44  Mfr              Model                 1       44.00        1.00
+      45 C45  Mfr              Model                 1       45.00        1.00
+      46 C46  Mfr              Model                 1       46.00        1.00
+      47 C47  Mfr              Model                 1       47.00        1.00
+      48 C48  Mfr              Model                 1       48.00        1.00
+      49 C49  Mfr              Model                 1       49.00        1.00
+      50 C50  Mfr              Model                 1       50.00        1.00
+      51 C51  Mfr              Model                 1       51.00        1.00
+      52 C52  Mfr              Model                 1       52.00        1.00
+      53 C53  Mfr              Model                 1       53.00        1.00
+      54 C54  Mfr              Model                 1       54.00        1.00
+      55 C55  Mfr              Model                 1       55.00        1.00
+      56 C56  Mfr              Model                 1       56.00        1.00
+      57 C57  Mfr              Model                 1       57.00        1.00
+RETROINV  Valuation                                          2026-10-08  Page 4
+
+
+      ID Cat  Maker            Model               Qty        Paid       Value
+-------------------------------------------------------------------------------
+      58 C58  Mfr              Model                 1       58.00        1.00
+      59 C59  Mfr              Model                 1       59.00        1.00
+      60 C60  Mfr              Model                 1       60.00        1.00
+      61 C61  Mfr              Model                 1       61.00        1.00
+      62 C62  Mfr              Model                 1       62.00        1.00
+      63 C63  Mfr              Model                 1       63.00        1.00
+      64 C64  Mfr              Model                 1       64.00        1.00
+      65 C65  Mfr              Model                 1       65.00        1.00
+      66 C66  Mfr              Model                 1       66.00        1.00
+      67 C67  Mfr              Model                 1       67.00        1.00
+      68 C68  Mfr              Model                 1       68.00        1.00
+      69 C69  Mfr              Model                 1       69.00        1.00
+      70 C70  Mfr              Model                 1       70.00        1.00
+      71 C71  Mfr              Model                 1       71.00        1.00
+      72 C72  Mfr              Model                 1       72.00        1.00
+      73 C73  Mfr              Model                 1       73.00        1.00
+      74 C74  Mfr              Model                 1       74.00        1.00
+      75 C75  Mfr              Model                 1       75.00        1.00
+      76 C76  Mfr              Model                 1       76.00        1.00
+RETROINV  Valuation                                          2026-10-08  Page 5
+
+
+      ID Cat  Maker            Model               Qty        Paid       Value
+-------------------------------------------------------------------------------
+      77 C77  Mfr              Model                 1       77.00        1.00
+      78 C78  Mfr              Model                 1       78.00        1.00
+      79 C79  Mfr              Model                 1       79.00        1.00
+      80 C80  Mfr              Model                 1       80.00        1.00
+      81 C81  Mfr              Model                 1       81.00        1.00
+      82 C82  Mfr              Model                 1       82.00        1.00
+      83 C83  Mfr              Model                 1       83.00        1.00
+      84 C84  Mfr              Model                 1       84.00        1.00
+      85 C85  Mfr              Model                 1       85.00        1.00
+      86 C86  Mfr              Model                 1       86.00        1.00
+      87 C87  Mfr              Model                 1       87.00        1.00
+      88 C88  Mfr              Model                 1       88.00        1.00
+      89 C89  Mfr              Model                 1       89.00        1.00
+      90 C90  Mfr              Model                 1       90.00        1.00
+      91 C91  Mfr              Model                 1       91.00        1.00
+      92 C92  Mfr              Model                 1       92.00        1.00
+      93 C93  Mfr              Model                 1       93.00        1.00
+      94 C94  Mfr              Model                 1       94.00        1.00
+      95 C95  Mfr              Model                 1       95.00        1.00
+RETROINV  Valuation                                          2026-10-08  Page 6
+
+
+      ID Cat  Maker            Model               Qty        Paid       Value
+-------------------------------------------------------------------------------
+      96 C96  Mfr              Model                 1       96.00        1.00
+      97 C97  Mfr              Model                 1       97.00        1.00
+      98 C98  Mfr              Model                 1       98.00        1.00
+      99 C99  Mfr              Model                 1       99.00        1.00
+     100 C100 Mfr              Model                 1      100.00        1.00
+     101 C101 Mfr              Model                 1      101.00        1.00
+     102 C102 Mfr              Model                 1      102.00        1.00
+     103 C103 Mfr              Model                 1      103.00        1.00
+     104 C104 Mfr              Model                 1      104.00        1.00
+     105 C105 Mfr              Model                 1      105.00        1.00
+     106 C106 Mfr              Model                 1      106.00        1.00
+     107 C107 Mfr              Model                 1      107.00        1.00
+     108 C108 Mfr              Model                 1      108.00        1.00
+     109 C109 Mfr              Model                 1      109.00        1.00
+     110 C110 Mfr              Model                 1      110.00        1.00
+     111 C111 Mfr              Model                 1      111.00        1.00
+     112 C112 Mfr              Model                 1      112.00        1.00
+     113 C113 Mfr              Model                 1      113.00        1.00
+     114 C114 Mfr              Model                 1      114.00        1.00
+RETROINV  Valuation                                          2026-10-08  Page 7
+
+
+      ID Cat  Maker            Model               Qty        Paid       Value
+-------------------------------------------------------------------------------
+     115 C115 Mfr              Model                 1      115.00        1.00
+     116 C116 Mfr              Model                 1      116.00        1.00
+     117 C117 Mfr              Model                 1      117.00        1.00
+     118 C118 Mfr              Model                 1      118.00        1.00
+     119 C119 Mfr              Model                 1      119.00        1.00
+     120 C120 Mfr              Model                 1      120.00        1.00
+     121 C1   Gold             Bar                   1 ***********        1.00
+
+Total                          Items: 121          121 ***********      121.00
+
+Totals by category
+Cat  Name                                 Items    Qty        Paid       Value
+C1   First                                    2      2 ***********        2.00
+C2   Second                                   1      1        2.00        1.00
+C3   Third                                    1      1        3.00        1.00
+C4                                            1      1        4.00        1.00
+C5                                            1      1        5.00        1.00
+C6                                            1      1        6.00        1.00
+C7                                            1      1        7.00        1.00
+RETROINV  Valuation                                          2026-10-08  Page 8
+
+
+Cat  Name                                 Items    Qty        Paid       Value
+-------------------------------------------------------------------------------
+Totals by category (continued)
+C8                                            1      1        8.00        1.00
+C9                                            1      1        9.00        1.00
+C10                                           1      1       10.00        1.00
+C11                                           1      1       11.00        1.00
+C12                                           1      1       12.00        1.00
+C13                                           1      1       13.00        1.00
+C14                                           1      1       14.00        1.00
+C15                                           1      1       15.00        1.00
+C16                                           1      1       16.00        1.00
+C17                                           1      1       17.00        1.00
+C18                                           1      1       18.00        1.00
+C19                                           1      1       19.00        1.00
+C20                                           1      1       20.00        1.00
+C21                                           1      1       21.00        1.00
+C22                                           1      1       22.00        1.00
+C23                                           1      1       23.00        1.00
+C24                                           1      1       24.00        1.00
+C25                                           1      1       25.00        1.00
+RETROINV  Valuation                                          2026-10-08  Page 9
+
+
+Cat  Name                                 Items    Qty        Paid       Value
+-------------------------------------------------------------------------------
+Totals by category (continued)
+C26                                           1      1       26.00        1.00
+C27                                           1      1       27.00        1.00
+C28                                           1      1       28.00        1.00
+C29                                           1      1       29.00        1.00
+C30                                           1      1       30.00        1.00
+C31                                           1      1       31.00        1.00
+C32                                           1      1       32.00        1.00
+C33                                           1      1       33.00        1.00
+C34                                           1      1       34.00        1.00
+C35                                           1      1       35.00        1.00
+C36                                           1      1       36.00        1.00
+C37                                           1      1       37.00        1.00
+C38                                           1      1       38.00        1.00
+C39                                           1      1       39.00        1.00
+C40                                           1      1       40.00        1.00
+C41                                           1      1       41.00        1.00
+C42                                           1      1       42.00        1.00
+C43                                           1      1       43.00        1.00
+RETROINV  Valuation                                         2026-10-08  Page 10
+
+
+Cat  Name                                 Items    Qty        Paid       Value
+-------------------------------------------------------------------------------
+Totals by category (continued)
+C44                                           1      1       44.00        1.00
+C45                                           1      1       45.00        1.00
+C46                                           1      1       46.00        1.00
+C47                                           1      1       47.00        1.00
+C48                                           1      1       48.00        1.00
+C49                                           1      1       49.00        1.00
+C50                                           1      1       50.00        1.00
+C51                                           1      1       51.00        1.00
+C52                                           1      1       52.00        1.00
+C53                                           1      1       53.00        1.00
+C54                                           1      1       54.00        1.00
+C55                                           1      1       55.00        1.00
+C56                                           1      1       56.00        1.00
+C57                                           1      1       57.00        1.00
+C58                                           1      1       58.00        1.00
+C59                                           1      1       59.00        1.00
+C60                                           1      1       60.00        1.00
+C61                                           1      1       61.00        1.00
+RETROINV  Valuation                                         2026-10-08  Page 11
+
+
+Cat  Name                                 Items    Qty        Paid       Value
+-------------------------------------------------------------------------------
+Totals by category (continued)
+C62                                           1      1       62.00        1.00
+C63                                           1      1       63.00        1.00
+C64                                           1      1       64.00        1.00
+C65                                           1      1       65.00        1.00
+C66                                           1      1       66.00        1.00
+C67                                           1      1       67.00        1.00
+C68                                           1      1       68.00        1.00
+C69                                           1      1       69.00        1.00
+C70                                           1      1       70.00        1.00
+C71                                           1      1       71.00        1.00
+C72                                           1      1       72.00        1.00
+C73                                           1      1       73.00        1.00
+C74                                           1      1       74.00        1.00
+C75                                           1      1       75.00        1.00
+C76                                           1      1       76.00        1.00
+C77                                           1      1       77.00        1.00
+C78                                           1      1       78.00        1.00
+C79                                           1      1       79.00        1.00
+RETROINV  Valuation                                         2026-10-08  Page 12
+
+
+Cat  Name                                 Items    Qty        Paid       Value
+-------------------------------------------------------------------------------
+Totals by category (continued)
+C80                                           1      1       80.00        1.00
+C81                                           1      1       81.00        1.00
+C82                                           1      1       82.00        1.00
+C83                                           1      1       83.00        1.00
+C84                                           1      1       84.00        1.00
+C85                                           1      1       85.00        1.00
+C86                                           1      1       86.00        1.00
+C87                                           1      1       87.00        1.00
+C88                                           1      1       88.00        1.00
+C89                                           1      1       89.00        1.00
+C90                                           1      1       90.00        1.00
+C91                                           1      1       91.00        1.00
+C92                                           1      1       92.00        1.00
+C93                                           1      1       93.00        1.00
+C94                                           1      1       94.00        1.00
+C95                                           1      1       95.00        1.00
+C96                                           1      1       96.00        1.00
+C97                                           1      1       97.00        1.00
+RETROINV  Valuation                                         2026-10-08  Page 13
+
+
+Cat  Name                                 Items    Qty        Paid       Value
+-------------------------------------------------------------------------------
+Totals by category (continued)
+C98                                           1      1       98.00        1.00
+C99                                           1      1       99.00        1.00
+C100                                          1      1      100.00        1.00
+Other categories                             20     20     2210.00       20.00
+

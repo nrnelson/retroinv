@@ -1,0 +1,1840 @@
+# RETROINV build.  GNU make; see DOC/BUILD.md for the toolchain.
+#
+#   make all    Open Watcom cross-build of every DOS EXE into BIN/ and of
+#               every Windows program into BIN/WIN/
+#   make wsmoke  the Windows smoke test, BIN/WIN/WSMOKE.EXE, alone
+#   make test   gcc host unit tests (strict C89), after lint
+#   make dostest  the unit tests as Watcom DOS programs, run in DOSBox-X
+#   make dbcheck  sample tables checked by CHKDBF and opened in dBASE III Plus
+#   make lint   reject constructs the compilers let through
+#   make tc     Turbo C 2.01 build in headless DOSBox-X
+#   make wc65   Watcom C 6.5 build in headless DOSBox-X
+#   make wc95   Watcom C 9.5 build of the Windows programs of WC95_EXES
+#               in headless DOSBox-X
+#   make tctest, wc65test  a period build's DOS tests in DOSBox-X
+#   make wc95test  the wc95 build's Windows programs on the Windows 3.0
+#               test machine, as wintest
+#   make tc310, wc65310    a period build's DOS tests on MS-DOS 3.10 (QEMU)
+#   make integ  the image shell check, the two-VM NetBIOS, server, screen
+#               and starvation gates, winser, winnb, winmbx, the Samba mailbox
+#               gate and the Workgroup Add-On gate under QEMU (builds the
+#               VM images once), as its parts nbgate, winser, winnb, winmbx,
+#               integow, integtc and integwc65
+#   make nbgate  integ's image shell check and NetBIOS gates alone
+#   make integow, integtc, integwc65  integ's gates of one build alone
+#   make stvgate  integ's starvation gate alone
+#   make smbgate  integ's Samba mailbox gate alone
+#   make wgagate  the image shell check, then integ's Workgroup Add-On
+#               gate alone
+#   make shellgate  the check of the images' shell patch alone
+#   make tcp    the TCP probe of every build on MS-DOS 3.30 and 3.10, and
+#               the two-VM TCP gate of every build, under QEMU
+#   make dostest1  dostest with each stage's runs one after another (the
+#               boot checks of TEST/T_BOOT.SH still side by side)
+#   make wintest  the Windows programs on the Windows 3.0 test machine, in
+#               standard and 386 enhanced mode under QEMU
+#   make winhelp  INVWIN's Windows Help file, compiled by the Windows 3.0
+#               SDK's HC.EXE in DOSBox-X (HC/install.sh); not part of gate
+#   make winhelpchk  winhelp, then two more compiles of it, which must
+#               give the same file; not part of gate
+#   make winimg  the test machine's disk alone (TEST/WIN/mkwin.sh)
+#   make wintcp  the Winsock test on the Windows for Workgroups 3.11
+#               test machine through INVTCP into INVSERV, under QEMU
+#   make wfwimg  that machine's disk alone (TEST/WIN/mkwin.sh -w wfw311)
+#   make winser  the Windows programs' serial link to INVSERV on MS-DOS
+#               3.10, in every mode, under QEMU
+#   make winnb  the NET link of the Windows programs against INVSERV on
+#               another machine, in both modes, under QEMU
+#   make winmbx  the MBOX link of the Windows client against INVSERV's
+#               mailbox on a Workgroup Add-On share, in both modes, under
+#               QEMU
+#   make gate   the commit gate: the targets of GATE_TARGETS side by side
+#   make fullgate  the full gate: the commit gate, then dostest1
+#   make dist   the release floppy images in DIST/, from the Watcom C 6.5
+#               build and the Windows client, with sample data, and the
+#               zip of the 1.44 MB disk's files
+#   make distcheck  make dist, then check the images and the zip, install
+#               from them under QEMU and run the installed DOS programs
+#   make lzcheck  make dist, then round trips of every file of the disks
+#               through REL/szdd.py and the expander, msexpand too
+#   make clean
+
+include SRCS.MK
+
+WATCOM ?= /opt/watcom
+export WATCOM
+WBIN := $(firstword $(wildcard $(WATCOM)/binl64) $(WATCOM)/binl)
+export PATH := $(WBIN):$(PATH)
+
+WCC   := wcc
+WLINK := wlink
+WRC   := wrc
+# The flags of every Open Watcom compile: 8086 code, optimised for size,
+# without stack checks; -we turns every warning into an error so "make
+# all" is warning-free.  WCFLAGS_DOS adds the DOS target and WCFLAGS_WIN
+# (below) the Windows one.
+WCFLAGS_BASE := -0 -os -s -zq -wx -we -i=$(WATCOM)/h
+WCFLAGS_DOS := -bt=dos -zc
+WCFLAGS_ANSI := -za
+# Sources under SRC/COMPAT/, the Windows sources of WIN_NOANSI, which
+# include windows.h, WATTCP's kernel modules (WATTCP_KERNEL) and our
+# sources that include its headers (WATTCP_USERS), the patterns of
+# NOANSI, are built without -za, except the portable ones of
+# COMPAT_PORTABLE (SRCS.MK), held to strict C89 like the rest.  The
+# WATTCP files take its byte packing and signed char, -zp1 -j, as its
+# structs are laid out only so; the kernel modules also -w0, as WATTCP's
+# 1994 C is changed only as WATTCP.DIF needs, not for its warnings.
+WIN_NOANSI := SRC/WIN/% TEST/WSMOKE.C TEST/WTEST.C TEST/WTDRV.C \
+	TEST/WTDRV2.C TEST/WLISTT.C TEST/WSOCKT.C TEST/WFORMT.C \
+	TEST/WSERT.C TEST/WNET.C TEST/WSKT.C TEST/WTABT.C \
+	TEST/WCHRT.C TEST/WSETUP.C
+NOANSI := SRC/COMPAT/% $(WIN_NOANSI) $(WATTCP_KERNEL) $(WATTCP_USERS)
+wc_ansi = $(if $(filter-out $(COMPAT_PORTABLE),$(filter $(NOANSI),$(1))),,$(WCFLAGS_ANSI))
+WCFLAGS_WATTCP := -zp1 -j
+wc_wattcp = $(if $(filter $(1),$(WATTCP_KERNEL)),$(WCFLAGS_WATTCP) -w0,$(if $(filter $(1),$(WATTCP_USERS)),$(WCFLAGS_WATTCP)))
+
+HOSTCC := gcc
+# The sanitizer switches given to every host compile and link; empty except
+# under "make asan" (see test below).
+HOST_SAN :=
+HOSTCFLAGS := -std=c89 -pedantic -Wall -Wextra -Wconversion -Werror -DHOST_LINUX $(HOST_SAN)
+# Upper-case .C means C++ to gcc, so each source is wrapped in
+# -x c ... -x none.
+HOSTC = -x c $(1) -x none
+# The link flags that send a host test's malloc and free calls through
+# the wrappers of TESTFW.H's TF_MALLOC section.
+HOST_WRAPMEM := -Wl,--wrap=malloc,--wrap=free
+
+BIN := BIN
+OBJ := OBJ
+# The host build's objects and programs.
+HOSTOBJ := $(OBJ)/HOST
+
+# The header directories a source may include from, by the directory it
+# is in (INC_<dir>), and those a single source adds (INC_<path>): each
+# layer reads its own headers and those of the layers it is built on, so
+# that a header of a layer above is not found.  The client reaches the
+# engine only through the protocol of LINK.C and its LOCAL backend
+# LINKLOC.C; LINKNOL.C, LINKLOC.C's stand-in in a program without the
+# engine, reads the engine's text numbers; SRC/COMPAT/ holds the schema
+# tables of the engine, the host tool that writes them as a resource
+# (CSCHBIN.C) and three DOS-only tests; MSG.C also reads the
+# generated $(OBJ)/MSGSTMP.H.  The server is built on the protocol, and
+# its main module and status screen use the client's message module;
+# INVTEST's script interpreter drives the client's NetBIOS, serial and
+# mailbox sessions, and TCPTEST reads the TCP bridge's sockets.  The TCP
+# bridge is built on COMPAT alone, the Windows client on the client's
+# protocol modules, and its installer SETUP reads the list of INSTALL's
+# SRC/TOOLS/INSTPLAN.H.  The tests read them all, and the tests of the
+# Windows programs' own modules (WTDRV, WTDRV2, WLISTT, WFORMT, WTABT,
+# WCHRT) and SETUP's (WSETUP, T_SETUP) those of SRC/WIN/ too, WFORMT's
+# resource script as well.  The resource
+# scripts of the Windows programs that link the engine read its schema
+# data from $(OBJ)/WIN (CSCH_BLOB, below), INVWIN's its icon too, WCHRT's
+# the tool bar's glyphs, and those of INVWIN and WFORMT the message names
+# (MSG_NAMESH).  A source in a
+# directory without an INC_<dir> stops make.
+INC_SRC/COMPAT := SRC/COMPAT
+INC_SRC/COMPAT/CSCHEMA.C := SRC/DBF SRC/ENGINE
+INC_SRC/COMPAT/CSCHDAT.C := SRC/DBF SRC/ENGINE
+INC_SRC/COMPAT/CSCHBIN.C := SRC/DBF SRC/ENGINE
+INC_SRC/COMPAT/T_DTA.C := TEST
+INC_SRC/COMPAT/T_CLOCK.C := TEST
+INC_SRC/COMPAT/T_NHEAP.C := TEST
+INC_SRC/COMPAT/T_MSGLO.C := TEST SRC/CLIENT
+INC_SRC/COMPAT/T_WCOMP.C := TEST SRC/DBF SRC/ENGINE
+INC_SRC/COMPAT/T_UART.C := TEST
+INC_SRC/COMPAT/T_CWATT.C := TEST
+INC_SRC/DBF := SRC/COMPAT SRC/DBF
+INC_SRC/ENGINE := SRC/COMPAT SRC/DBF SRC/ENGINE
+INC_SRC/PROTO := SRC/COMPAT SRC/DBF SRC/ENGINE SRC/PROTO
+INC_SRC/CLIENT := SRC/COMPAT SRC/CLIENT
+INC_SRC/CLIENT/LINK.C := SRC/DBF SRC/ENGINE SRC/PROTO
+INC_SRC/CLIENT/LINKLOC.C := SRC/DBF SRC/ENGINE SRC/PROTO
+INC_SRC/CLIENT/LINKNOL.C := SRC/DBF SRC/ENGINE
+INC_SRC/CLIENT/MSG.C := $(OBJ)
+INC_SRC/SERVER := SRC/COMPAT SRC/DBF SRC/ENGINE SRC/PROTO SRC/SERVER
+INC_SRC/SERVER/SRVRUN.C := SRC/CLIENT
+INC_SRC/SERVER/SRVSCR.C := SRC/CLIENT
+INC_SRC/TOOLS := SRC/COMPAT SRC/DBF SRC/TOOLS
+INC_SRC/TOOLS/INVSCR.C := SRC/CLIENT
+INC_SRC/TOOLS/TCPTEST.C := SRC/TCP
+INC_SRC/TCP := SRC/COMPAT SRC/TCP
+INC_SRC/WIN := SRC/COMPAT SRC/CLIENT SRC/WIN
+INC_SRC/WIN/SETUP.C := SRC/TOOLS
+INC_SRC/WIN/SETUPL.C := SRC/TOOLS
+INC_TEST := SRC/COMPAT SRC/DBF SRC/ENGINE SRC/PROTO SRC/SERVER SRC/CLIENT \
+	SRC/TOOLS SRC/TCP TEST
+INC_TEST/WTDRV.C := SRC/WIN
+INC_TEST/WTDRV2.C := SRC/WIN
+INC_TEST/WLISTT.C := SRC/WIN
+INC_TEST/WFORMT.C := SRC/WIN
+INC_TEST/WTABT.C := SRC/WIN
+INC_TEST/WCHRT.C := SRC/WIN
+INC_TEST/WSETUP.C := SRC/WIN
+INC_TEST/T_SETUP.C := SRC/WIN
+INC_TEST/WFORMT.RC := SRC/WIN $(OBJ)/WIN
+INC_TEST/WLISTT.RC := $(OBJ)/WIN
+INC_TEST/WCHRT.RC := $(OBJ)/WIN
+INC_TEST/WTESTE.RC := $(OBJ)/WIN
+INC_SRC/WIN/INVWIN.RC := $(OBJ)/WIN
+# WATTCP's kernel modules read its headers and SRC/COMPAT/WTSHIM.H, and our
+# sources that include its headers read them too.
+INC_$(WATTCP_DIR)/SRC := $(WATTCP_DIR)/INCLUDE SRC/COMPAT
+inc_dir = $(patsubst %/,%,$(dir $(1)))
+inc_dirs = $(or $(INC_$(inc_dir)), \
+	$(error $(1): no INC_$(inc_dir) in MAKEFILE)) $(INC_$(1)) \
+	$(if $(filter $(1),$(WATTCP_USERS)),$(WATTCP_DIR)/INCLUDE)
+wc_inc = $(patsubst %,-i=%,$(call inc_dirs,$(1)))
+host_inc = $(patsubst %,-I%,$(call inc_dirs,$(1)))
+
+# The goals of "make test" (see test below): one run per program of
+# HOST_TESTS and the script checks.
+HOST_RUNS := $(addprefix hostrun/,$(HOST_TESTS))
+HOST_CHECKS := testrun/dump testrun/inv testrun/scr testrun/chkdbf testrun/chkbad testrun/rcache \
+	testrun/watpr testrun/unpack testrun/asmck testrun/nechk testrun/shlib testrun/vmgate \
+	testrun/admchk testrun/tools testrun/colchk testrun/cbochk testrun/tabchk \
+	testrun/labchk testrun/frmchk testrun/chrtchk testrun/toolchk testrun/menuchk \
+	testrun/framchk testrun/splitchk testrun/headchk testrun/dlgchk testrun/mousechk \
+	testrun/rtfchk testrun/dragchk testrun/selchk testrun/szdd
+
+.PHONY: all wsmoke test asan lint tc wc65 wc95 tctest wc65test wc95test tc310 wc65310 integ nbgate integow integtc integwc65 stvgate smbgate wgagate shellgate tcp dostest dostest1 wintest winhelp winhelpchk winimg winser \
+	wintcp wfwimg winnb winmbx dbcheck \
+	gate fullgate dist distcheck lzcheck clean \
+	testrun $(HOST_RUNS) $(HOST_CHECKS)
+.SUFFIXES:
+.DELETE_ON_ERROR:
+
+all: $(foreach e,$(EXES),$(BIN)/$(e).EXE) $(foreach e,$(WIN_EXES) $(WIN_TOOLS),$(BIN)/WIN/$(e).EXE) \
+	$(BIN)/QEXIT.COM
+wsmoke: $(BIN)/WIN/WSMOKE.EXE
+
+# Objects live under OBJ/WC/<model>/ so a source shared by executables of
+# different memory models is compiled once per model.  The programs of
+# WC_ELIM (the tools INVDUMP, DBPACK, COMTEST and INSTALL, the test programs
+# NBTEST, INVTEST and TCPTEST, and INVTCP) take theirs from
+# OBJ/WC/<model>z/, compiled with each function in a segment of its own
+# (-zm), and are linked with "option eliminate", which drops every
+# function nothing references: they use only part of the modules they
+# link.  INV, THIN and INVSERV call most of what they link, and -zm makes
+# them larger (THIN by 1.6 KB).  Each object gets a .D file listing the
+# headers it read, so header edits rebuild it; objects also depend on
+# the build files so a flag change rebuilds everything.
+WC_ELIM := NBTEST INVTEST INVDUMP DBPACK COMTEST INSTALL TCPTEST INVTCP
+$(if $(filter-out $(EXES),$(WC_ELIM)),$(error WC_ELIM names $(filter-out $(EXES),$(WC_ELIM)), not in EXES))
+wc_dir = $($(1)_MODEL)$(if $(filter $(1),$(WC_ELIM)),z)
+WC_DIRS := s m $(addsuffix z,s m)
+WDEPS = -ad=$(@:.OBJ=.D) -adt=$@ -add=$<
+BUILDFILES := MAKEFILE SRCS.MK
+
+# $(call wc_rule,BUILD,DIR,FLAGS): compile into $(OBJ)/BUILD/DIR/ with
+# the target flags FLAGS, DIR being a model letter, z added for -zm.
+define wc_rule
+$(OBJ)/$(1)/$(2)/%.OBJ: %.C $(BUILDFILES)
+	@mkdir -p $$(dir $$@)
+	$$(WCC) $$(WCFLAGS_BASE) $(3) $$(call wc_inc,$$<) -m$(2:z=)$(if $(filter %z,$(2)), -zm) $$(call wc_ansi,$$<) $$(call wc_wattcp,$$<) $$(WDEPS) -fo=$$@ $$<
+endef
+$(foreach d,$(WC_DIRS),$(eval $(call wc_rule,WC,$(d),$(WCFLAGS_DOS))))
+
+# WATTCP's build tree, WATTCP_DIR: SRC/TCP/WATPREP.PY prepares it from the
+# archive WATTCP_ZIP, under RETRO_DL (the period downloads, exported to
+# every script the rules run; unset or empty means ~/retro-dl, as in
+# TEST/shlib.sh), and writes its stamp .ok last.  The kernel
+# modules are targets of the same rule and the objects of our sources
+# that include WATTCP's headers depend on the stamp, so only what
+# compiles them waits for the tree, and all of them are built again when
+# it is prepared again, after a change of the archive, of our changes or
+# of the script.  WATPREP extracts the modules of its KERNEL list, which
+# make lint holds to those of WATTCP_KERNEL.  A missing archive fails the
+# build: its rule runs WATPREP, which names the path and the SHA-256 the
+# archive must have.
+override RETRO_DL := $(or $(strip $(RETRO_DL)),$(HOME)/retro-dl)
+export RETRO_DL
+# The help compiler of winhelp (HC/install.sh).  Where it is installed,
+# wintest adds INVWIN's runs with Windows Help, which need its file; the
+# gate's machines need no SDK.
+HC_DIR ?= $(RETRO_DL)/win30hc
+export HC_DIR
+ifneq ($(wildcard $(HC_DIR)/HC.EXE),)
+INVWIN_WINKEYS += $(INVWIN_WINHLPKEYS)
+endif
+WATTCP_ZIP := $(RETRO_DL)/wattcp/dl/retropc/source.zip
+WATPREP := python3 -I SRC/TCP/WATPREP.PY $(WATTCP_ZIP) SRC/TCP/WATTCP.DIF $(WATTCP_DIR)
+
+# Two makes in one tree (make tc beside make wc65) can both find the tree
+# out of date, and the second's WATPREP would replace or, failing, delete
+# the tree the first one's build is reading.  So WATPREP runs under the
+# lock $(WATTCP_DIR).LCK, and only when, once the lock is had, a target
+# is still missing or not newer than every prerequisite.  The targets are
+# precious, so a make stopped or failing here never deletes them: they
+# may be the other make's, and WATPREP itself leaves the tree whole.
+WATTCP_TARGETS := $(WATTCP_DIR)/.ok $(WATTCP_KERNEL)
+.PRECIOUS: $(WATTCP_TARGETS)
+$(WATTCP_TARGETS) &: $(WATTCP_ZIP) SRC/TCP/WATTCP.DIF SRC/TCP/WATPREP.PY
+	@mkdir -p $(dir $(WATTCP_DIR))
+	@flock $(WATTCP_DIR).LCK sh -c 'for p in $^; do for t in $(WATTCP_TARGETS); do \
+		[ "$$t" -nt "$$p" ] || { echo "$(WATPREP)"; exec $(WATPREP); }; done; done'
+
+$(foreach d,$(WC_DIRS),$(patsubst %.C,$(OBJ)/WC/$(d)/%.OBJ,$(WATTCP_USERS))): $(WATTCP_DIR)/.ok
+
+$(WATTCP_ZIP):
+	@echo "WATTCP's archive is missing; RETRO_DL names the directory of the period downloads" >&2
+	@$(WATPREP)
+
+# The stamp of the build tree when one of the programs $(1) links WATTCP.
+wattcp_for = $(if $(filter $(WATTCP_KERNEL),$(foreach e,$(1),$($(e)_SRCS))),$(WATTCP_DIR)/.ok)
+
+# wlink has no warnings-as-errors switch, so wlink_run keeps its output
+# in a log, shows it and fails on a warning as on an error: $(call
+# wlink_run,LOG,NAME,DIRECTIVES) links program NAME.  For a DOS program
+# the map is then checked against the segment budgets and for the
+# functions it must link, <NAME>_MAPSYMS of SRCS.MK, and the
+# objects of the programs in NEAR_EXES against their near data budgets in
+# TEST/NEARBUD.TXT and the near data limit MAX_NEAR of TEST/mapchk.sh;
+# .DELETE_ON_ERROR removes the EXE of a link or check that fails.
+# Every DOS program gets the stack of the Turbo C build, _stklen of
+# SRC/COMPAT/CDOS.C, which TEST/mapchk.sh counts in DGROUP.  $(call
+# mapchk_args,NAME,BUILD) gives TEST/mapchk.sh the program's near data
+# budget, <NAME>_MAXNEAR of SRCS.MK, when it is set, and for a program of
+# LOAD_EXES, those with free-memory floors, the build (OW, TC or WC65)
+# whose load size budget in TEST/LOADBUD.TXT the map must keep.
+LOAD_EXES := INV $(THIN) INVSERV INVTEST INVTCP
+mapchk_args = $(if $($(1)_MAXNEAR),-n $($(1)_MAXNEAR)) \
+	$(if $(and $(2),$(filter $(1),$(LOAD_EXES))),-l $(2))
+wlink_run = $(WLINK) option quiet $(3) >$(1) 2>&1; rc=$$?; cat $(1); \
+	if [ $$rc -ne 0 ] || grep -qi warning $(1); then \
+		echo "wlink: $(2) failed or warned" >&2; exit 1; fi
+NEAR_EXES := INV $(THIN)
+NEARCHK := python3 -I TEST/OMFNEAR.PY -q --max-near TEST/mapchk.sh TEST/NEARBUD.TXT
+DOS_STACK := $(shell sed -n 's/^unsigned _stklen = \([0-9][0-9]*\);.*/\1/p' SRC/COMPAT/CDOS.C)
+ifeq ($(DOS_STACK),)
+$(error _stklen not found in SRC/COMPAT/CDOS.C)
+endif
+define exe_rule
+$$(if $$(filter s m,$$($(1)_MODEL)),,$$(error $(1)_MODEL must be s or m))
+$(1)_OBJS := $$(patsubst %.C,$(OBJ)/WC/$$(call wc_dir,$(1))/%.OBJ,$$($(1)_SRCS))
+ALL_OBJS += $$($(1)_OBJS)
+$(2)/$(1).EXE: $$($(1)_OBJS) TEST/mapchk.sh $$(if $$(filter $(1),$(NEAR_EXES)),TEST/OMFNEAR.PY TEST/NEARBUD.TXT) \
+	$$(if $$(filter $(1),$(LOAD_EXES)),TEST/LOADBUD.TXT)
+	@mkdir -p $(2)
+	@$$(call wlink_run,$(OBJ)/$(1).LNK,$(1),system dos option map=$(2)/$(1).MAP \
+		option stack=$(DOS_STACK) $(if $(filter $(1),$(WC_ELIM)),option eliminate) \
+		name $$@ $$(foreach o,$$($(1)_OBJS),file $$(o)))
+	@sh TEST/mapchk.sh $(call mapchk_args,$(1),OW) $(2)/$(1).MAP
+	$$(if $$($(1)_MAPSYMS),@$$(foreach s,$$($(1)_MAPSYMS),grep -qw $$(s)_ $(2)/$(1).MAP || \
+		{ echo "$(1): $$(s) is not linked" >&2; exit 1; };))
+	$$(if $$(filter $(1),$(NEAR_EXES)),@$(NEARCHK) $$($(1)_OBJS))
+	@echo "linked $$@"
+endef
+$(foreach e,$(EXES),$(eval $(call exe_rule,$(e),$(BIN))))
+$(foreach e,$(DOS_TESTS),$(eval $(call exe_rule,$(e),$(BIN)/TEST)))
+
+# Windows programs (WIN_EXES of SRCS.MK), built by Open Watcom for Win16:
+# each object goes to OBJ/WIN/<model>/<source path>.OBJ, apart from the
+# DOS objects of the same source, and the program and its map to BIN/WIN/.
+# -zW gives every function declared __export, a WCALLBACK of
+# SRC/COMPAT/CWIN.H, the entry code that loads DS from AX; wlink exports
+# each of them.  That entry code works only in an exported function: the
+# loader patches out its first instructions, which copy DS into AX, for
+# exported entries alone, so that DS comes from the AX that Windows or a
+# MakeProcInstance thunk sets.  -zw gives the same code to every FAR
+# PASCAL function, which buys nothing without the export and costs bytes
+# in WinMain.  -zW also gives every far function that calls another an
+# odd saved BP, the mark of the frames real-mode Windows walks to mend
+# the return addresses on the stack when it moves or discards a code
+# segment.  That walk also keeps a return offset in each frame's BP-2,
+# where it expects the saved DS, which -zW saves only in exported
+# functions; hence the mark for protected mode only below.  WINVER 0x0300
+# leaves out of windows.h what Windows 3.0 lacks, so a later call does
+# not compile; STRICT gives each kind of handle a type of its own, so that
+# a handle passed for another does not compile either.  Without -zc,
+# constants stay in DGROUP rather than in a code segment Windows may
+# discard.
+WCFLAGS_WIN := -bt=windows -zW -dWINVER=0x0300 -dSTRICT -i=$(WATCOM)/h/win
+$(foreach d,$(WC_DIRS),$(eval $(call wc_rule,WIN,$(d),$(WCFLAGS_WIN))))
+# The Windows programs of WIN_ELIM are compiled and linked as those of
+# WC_ELIM are, to drop what they do not call: SETUP, which must fit
+# beside INVWIN on the release disks and calls few of CDOS.C's functions.
+WIN_ELIM := SETUP
+
+# The resource script NAME_RC is compiled into OBJ/WIN/NAME.RES, again when
+# a header or resource script beside it changes (it may include those),
+# and bound into the program by wrc -30 -t:
+# -30 marks it for Windows 3.0 (3.10 otherwise) and -t for protected mode
+# only, so that Windows 3.0 refuses to start it in real mode, whose stack
+# walk our frames would mislead (DOC/DESIGN.md).  wlink makes a Win16
+# segment fixed and preloaded unless told, and its TYPE CODE and TYPE
+# DATA forms set the other kind's segments, so WIN_SEGMENTS names
+# classes: CODE moveable, discardable and loaded on its first call, and
+# the four classes of DGROUP, each moveable, as the group stays fixed
+# while one of them is.  The code is packed into segments of at most
+# WIN_PACKCODE bytes, units that Windows can drop and load again on their
+# own.  A program has WIN_STACK bytes of stack, or <NAME>_WINSTACK of
+# SRCS.MK when its deepest calls need more (win_stack), and starts with a
+# local heap of WIN_HEAP bytes, which Windows grows inside DGROUP on
+# demand.  Its module description is "RETROINV NAME", not wlink's
+# default, the path it was built at; it is passed as two words, each
+# carrying one quote, since wlink re-quotes an argument with a blank.
+# TEST/mapchk.sh -w checks the map with that stack and the program's near
+# data budget, and TEST/NECHK.PY then checks the header: Windows 3.00,
+# protected mode only, those sizes, and every import one that
+# TEST/W30EXP.TXT lists as a function of Windows 3.0.
+WIN_STACK := 8192
+WIN_HEAP := 1024
+WIN_PACKCODE := 16384
+WIN_SEGMENTS := segment class CODE moveable discardable loadoncall \
+	segment class BEGDATA moveable segment class DATA moveable \
+	segment class BSS moveable segment class STACK moveable
+win_stack = $(or $($(1)_WINSTACK),$(WIN_STACK))
+WIN_LINKOPTS := option heapsize=$(WIN_HEAP) option packcode=$(WIN_PACKCODE) \
+	$(WIN_SEGMENTS)
+WRCFLAGS := -q -bt=windows
+NECHK := python3 -I TEST/NECHK.PY --heap $(WIN_HEAP) --imports TEST/W30EXP.TXT
+define win_rule
+$$(if $$(filter s m,$$($(1)_MODEL)),,$$(error $(1)_MODEL must be s or m))
+$$(if $$($(1)_RC),,$$(error $(1)_RC must name its resource script))
+$(1)_WINOBJS := $$(patsubst %.C,$(OBJ)/WIN/$$($(1)_MODEL)$(if $(filter $(1),$(WIN_ELIM)),z)/%.OBJ,$$($(1)_SRCS))
+ALL_OBJS += $$($(1)_WINOBJS)
+$(OBJ)/WIN/$(1).RES: $$($(1)_RC) $$(wildcard $$(dir $$($(1)_RC))*.H $$(dir $$($(1)_RC))*.RC) $(BUILDFILES)
+	@mkdir -p $(OBJ)/WIN
+	$(WRC) $(WRCFLAGS) -r -i=$(WATCOM)/h/win $$(call wc_inc,$$<) -fo=$$@ $$<
+$(BIN)/WIN/$(1).EXE: $$($(1)_WINOBJS) $(OBJ)/WIN/$(1).RES TEST/mapchk.sh TEST/NECHK.PY \
+	TEST/W30EXP.TXT
+	@mkdir -p $(BIN)/WIN
+	@$$(call wlink_run,$(OBJ)/WIN/$(1).LNK,$(1),system windows option map=$(BIN)/WIN/$(1).MAP \
+		option stack=$(call win_stack,$(1)) $(WIN_LINKOPTS) \
+		$(if $(filter $(1),$(WIN_ELIM)),option eliminate) option description \'RETROINV $(1)\' \
+		name $$@ $$(foreach o,$$($(1)_WINOBJS),file $$(o)))
+	$(WRC) $(WRCFLAGS) -30 -t $(OBJ)/WIN/$(1).RES $$@
+	@sh TEST/mapchk.sh -w $(call win_stack,$(1)) $(call mapchk_args,$(1)) \
+		$(BIN)/WIN/$(1).MAP
+	@$(NECHK) --stack $(call win_stack,$(1)) $$(NECHK_ICON_$(1)) $$@
+	@echo "linked $$@"
+endef
+# WSMOKE, the test machines' boot check (TEST/WIN/mkwin.sh), has its rule
+# whatever WIN_EXES names.
+$(foreach e,$(sort $(WIN_EXES) $(WIN_TOOLS) WSMOKE),$(eval $(call win_rule,$(e))))
+# WFORMT's resource script includes the form dialog's strings, whose
+# labels (SRC/WIN/WLABEL.RC) name messages, as INVWIN's does
+# (MSG_NAMESH, below).
+$(OBJ)/WIN/WFORMT.RES: SRC/WIN/WFORM.RC SRC/WIN/WLABEL.RC SRC/WIN/WFSTR.H
+# INVWIN's icon is drawn as text in SRC/WIN/INVICON.PY, which writes the
+# icon file its resource script binds; NECHK_ICON_<NAME> has TEST/NECHK.PY
+# check that a program holds its icon.
+WIN_ICON := $(OBJ)/WIN/INVWIN.ICO
+NECHK_ICON_INVWIN := --icon INVWIN
+$(WIN_ICON): SRC/WIN/INVICON.PY
+	@mkdir -p $(OBJ)/WIN
+	python3 -I SRC/WIN/INVICON.PY $@
+$(OBJ)/WIN/INVWIN.RES: $(WIN_ICON)
+# The cursor of an item dragged onto the location tree is drawn as text in
+# SRC/WIN/INVDRAG.PY, which writes the cursor file INVWIN's resource script
+# binds.
+WIN_DRAGCUR := $(OBJ)/WIN/INVDRAG.CUR
+$(WIN_DRAGCUR): SRC/WIN/INVDRAG.PY
+	@mkdir -p $(OBJ)/WIN
+	python3 -I SRC/WIN/INVDRAG.PY $@
+$(OBJ)/WIN/INVWIN.RES: $(WIN_DRAGCUR)
+# The tool bar's glyphs (SRC/WIN/WTOOL.H) are drawn as text in
+# SRC/WIN/INVTOOL.PY, which writes the bitmap the resource scripts of the
+# programs with a tool bar bind.
+WIN_TOOLBMP := $(OBJ)/WIN/INVTOOL.BMP
+$(WIN_TOOLBMP): SRC/WIN/INVTOOL.PY
+	@mkdir -p $(OBJ)/WIN
+	python3 -I SRC/WIN/INVTOOL.PY $@
+$(OBJ)/WIN/INVWIN.RES $(OBJ)/WIN/WCHRT.RES: $(WIN_TOOLBMP)
+# A Windows program keeps the engine's schema data out of DGROUP as its
+# resource CSCH_RES (SRC/COMPAT/CSCHDAT.H), which the host tool
+# SRC/COMPAT/CSCHBIN.C writes from the arrays of CSCHDAT.C into CSCH_BLOB
+# and the resource script of every program that links CSCHEMA.C binds.
+CSCH_BLOB := $(OBJ)/WIN/CSCHDAT.BIN
+$(HOSTOBJ)/CSCHBIN.bin: $(HOSTOBJ)/SRC/COMPAT/CSCHBIN.o
+	$(HOSTCC) $(HOST_SAN) -o $@ $^
+$(CSCH_BLOB): $(HOSTOBJ)/CSCHBIN.bin
+	@mkdir -p $(OBJ)/WIN
+	$< $@
+$(foreach e,$(WIN_EXES),$(if $(filter SRC/COMPAT/CSCHEMA.C,$($(e)_SRCS)),\
+	$(OBJ)/WIN/$(e).RES)): $(CSCH_BLOB) SRC/COMPAT/CSCHDAT.H
+-include $(ALL_OBJS:.OBJ=.D)
+
+# A header named in a .D file that has since been deleted only forces a
+# rebuild instead of stopping make.
+%.H: ;
+
+# Host tests: lint, then every program in HOST_TESTS is built from its
+# <NAME>_SRCS (<NAME>_HOST for one built for the host alone) under the
+# strict host flags and run, as goal hostrun/<NAME>; it must exit with
+# <NAME>_HOSTRC (default 0) when given <NAME>_HOSTARGS, whose scratch
+# directories (arguments under $(OBJ)/ ending in /) are created first.  A
+# test with <NAME>_HOSTCWD runs in that directory (created too), its
+# arguments then naming paths from there.  A test in MALLOC_TESTS links
+# with malloc and free wrapped, for TESTFW.H's TF_MALLOC section, and
+# one with <NAME>_HOSTWRAP with each function it names wrapped.  Each
+# program is killed after HOST_TIMEOUT seconds (600 unless set on the
+# command line or in the environment), far above the slowest one, so a
+# test that hangs fails the run instead of blocking it.
+# TEST/T_DUMP.SH builds INVDUMP and DBPACK and compares what they print
+# on sample tables with TEST/GOLDEN/INVDUMP.TXT, TEST/T_INV.SH runs the
+# host INV /CMD against TEST/GOLDEN/INVCMD.TXT and checks the start-up of
+# INV and THIN, and TEST/T_SCR.SH runs the full-screen client's key
+# scripts against the golden screens in TEST/GOLDEN/SCR/;
+# TEST/T_RCACHE.SH checks the keys and the store of the run cache,
+# TEST/T_WATPR.SH and TEST/T_UNPACK.SH check SRC/TCP/WATPREP.PY and
+# TEST/INTEG/unpack.sh on synthetic archives,
+# TEST/T_ASMCK.SH checks TEST/ASMCHK.PY on small source pairs,
+# TEST/T_NECHK.SH checks TEST/NECHK.PY on synthetic Windows programs,
+# TEST/T_SHLIB.SH checks helpers of TEST/shlib.sh, TEST/T_VMGATE.SH the
+# failure reports of the two-VM gates and the screen gate's runs with
+# stand-ins for the VMs, and TEST/T_TOOLS.SH the command lines, output
+# and exit statuses of the host NBTEST and COMTEST.
+# TEST/szddchk.py compresses files of its own and the sample tables of
+# TEST/GOLDEN/DB3/ with REL/szdd.py and has T_LZEXP expand them.
+# After lint all of these run side by side in a sub-make, each one's
+# output kept together (-Otarget): under an outer "make -j" in its jobs,
+# otherwise HOST_JOBS at a time (by default the host's logical CPU
+# count).  Every test has a scratch directory of its own and the scripts
+# make theirs with mktemp, so no two share a file.
+# "make asan" makes test again in a sub-make with HOST_SAN set and
+# HOSTOBJ $(OBJ)/ASAN, so that a stray memory access, a leak or undefined
+# behaviour fails the test that does it; the scratch directories are
+# those of test.  Each report goes to $(OBJ)/ASAN/SAN.<pid>, as some tests
+# take over their standard error, and the link-order check is off for
+# TEST/T_INV.SH's LD_PRELOAD shim.
+ifndef HOST_JOBS
+HOST_JOBS := $(shell nproc 2>/dev/null || echo 1)
+endif
+HOST_TIMEOUT ?= 600
+
+test: lint
+	@$(MAKE) --no-print-directory -Otarget $(if $(filter --jobserver%,$(MAKEFLAGS)),,-j$(HOST_JOBS)) testrun
+
+asan:
+	@mkdir -p $(OBJ)/ASAN && rm -f $(OBJ)/ASAN/SAN.*
+	@ASAN_OPTIONS=verify_asan_link_order=0:log_path=$(CURDIR)/$(OBJ)/ASAN/SAN \
+	UBSAN_OPTIONS=print_stacktrace=1:log_path=$(CURDIR)/$(OBJ)/ASAN/SAN \
+		$(MAKE) --no-print-directory HOSTOBJ=$(OBJ)/ASAN \
+		HOST_SAN='-g -fsanitize=address,undefined -fno-sanitize-recover=all' test
+
+testrun: $(HOST_RUNS) $(HOST_CHECKS)
+testrun/dump:
+	CFLAGS="$(HOSTCFLAGS) $(call host_inc,TEST/MKITEMS.C)" sh TEST/T_DUMP.SH
+testrun/inv: $(HOSTOBJ)/INV.bin $(HOSTOBJ)/$(THIN).bin $(if $(INV_MSGS),$(BIN)/INV.MSG)
+	sh TEST/T_INV.SH $(HOSTOBJ)/INV.bin $(HOSTOBJ)/$(THIN).bin
+testrun/scr: $(HOSTOBJ)/INV.bin $(if $(INV_MSGS),$(BIN)/INV.MSG) $(BIN)/INV.HLP
+	sh TEST/T_SCR.SH $(HOSTOBJ)/INV.bin
+testrun/chkdbf:
+	python3 -I TEST/CHKDBF.PY --strict $(wildcard TEST/GOLDEN/DB3/*.DBF TEST/GOLDEN/DB3/*.DBT TEST/GOLDEN/DB3/*.NDX)
+testrun/chkbad:
+	python3 -I TEST/DBASE/chkbad.py
+# The backup T_ADMIN leaves of its packed and reindexed data.
+testrun/admchk: hostrun/T_ADMIN
+	python3 -I TEST/CHKDBF.PY --strict $(OBJ)/HOST/ADMB/*
+testrun/rcache:
+	sh TEST/T_RCACHE.SH
+testrun/watpr:
+	sh TEST/T_WATPR.SH
+testrun/unpack:
+	sh TEST/T_UNPACK.SH
+testrun/asmck:
+	sh TEST/T_ASMCK.SH
+testrun/nechk:
+	sh TEST/T_NECHK.SH
+testrun/shlib:
+	sh TEST/T_SHLIB.SH
+testrun/vmgate:
+	sh TEST/T_VMGATE.SH
+testrun/colchk:
+	python3 -I TEST/colchk.py
+testrun/cbochk:
+	python3 -I TEST/cbochk.py
+testrun/tabchk:
+	python3 -I TEST/tabchk.py
+
+testrun/labchk:
+	python3 -I TEST/labchk.py
+testrun/frmchk:
+	python3 -I TEST/frmchk.py
+testrun/chrtchk:
+	python3 -I TEST/chrtchk.py
+testrun/toolchk:
+	python3 -I TEST/toolchk.py
+testrun/menuchk:
+	python3 -I TEST/menuchk.py
+testrun/framchk:
+	python3 -I TEST/framchk.py
+testrun/splitchk:
+	python3 -I TEST/splitchk.py
+testrun/headchk:
+	python3 -I TEST/headchk.py
+testrun/dlgchk:
+	python3 -I TEST/dlgchk.py
+testrun/mousechk:
+	python3 -I TEST/mousechk.py
+testrun/rtfchk:
+	python3 -I TEST/rtfchk.py
+testrun/dragchk:
+	python3 -I TEST/dragchk.py
+testrun/selchk:
+	python3 -I TEST/selchk.py
+testrun/tools: $(HOSTOBJ)/NBTEST.bin $(HOSTOBJ)/COMTEST.bin
+	sh TEST/T_TOOLS.SH $(HOSTOBJ)/NBTEST.bin $(HOSTOBJ)/COMTEST.bin
+testrun/szdd: $(HOSTOBJ)/T_LZEXP.bin
+	python3 -I TEST/szddchk.py REL/szdd.py $< $(wildcard TEST/GOLDEN/DB3/*)
+
+$(HOSTOBJ)/%.o: %.C $(BUILDFILES)
+	@mkdir -p $(dir $@)
+	$(HOSTCC) $(HOSTCFLAGS) $(call host_inc,$<) -MMD -MP -c -o $@ $(call HOSTC,$<)
+
+define host_rule
+$(HOSTOBJ)/$(1).bin: $$(patsubst %.C,$(HOSTOBJ)/%.o,$$(or $$($(1)_HOST),$$($(1)_SRCS)))
+	$(HOSTCC) $(HOST_SAN) -o $$@ $$^ $$(if $$(filter $(1),$(MALLOC_TESTS)),$$(HOST_WRAPMEM)) \
+		$$(foreach f,$$($(1)_HOSTWRAP),-Wl,--wrap=$$(f))
+
+hostrun/$(1): $(HOSTOBJ)/$(1).bin
+	@mkdir -p $(OBJ)/HOST $$(filter $(OBJ)/%/,$$($(1)_HOSTARGS)) $$($(1)_HOSTCWD)
+	@rc=0; $$(if $$($(1)_HOSTCWD),cd $$($(1)_HOSTCWD) && )timeout -k 10 $(HOST_TIMEOUT) \
+		$(CURDIR)/$$< $$($(1)_HOSTARGS) || rc=$$$$?; \
+	case $$$$rc in \
+	124) echo "$(1): timed out after $(HOST_TIMEOUT)s" >&2; exit 1;; \
+	137) echo "$(1): killed by SIGKILL (past the $(HOST_TIMEOUT)s" \
+		"timeout's grace, or from outside)" >&2; exit 1;; esac; \
+	if [ $$$$rc -ne $$(or $$($(1)_HOSTRC),0) ]; then \
+		echo "$(1): exit status $$$$rc, expected $$(or $$($(1)_HOSTRC),0)" >&2; exit 1; fi
+	@echo "$(1): ok"
+endef
+$(foreach t,$(HOST_TESTS),$(eval $(call host_rule,$(t))))
+
+-include $(shell find $(HOSTOBJ) -name '*.d' 2>/dev/null)
+
+# Every C source and header is linted as the build compiles it: with
+# --compat when it is built without -za (NOANSI, less COMPAT_PORTABLE),
+# with --win, the --compat rules and the Windows keyword rule, when it is
+# a Windows source of WIN_NOANSI, with the portable rules otherwise.
+# Only the files of WATTCP_USERS may include WATTCP's headers, and
+# WATTCP_KERNEL must name the modules SRC/TCP/WATPREP.PY extracts.
+LINT_SRCS := $(sort $(shell find SRC TEST -type f \( -iname '*.c' -o -iname '*.h' \) 2>/dev/null))
+WIN_LINT_FILES := $(filter $(WIN_NOANSI),$(LINT_SRCS))
+COMPAT_LINT_FILES := $(filter-out $(COMPAT_PORTABLE) $(WIN_NOANSI),$(filter $(NOANSI),$(LINT_SRCS)))
+LINT_FILES := $(filter-out $(COMPAT_LINT_FILES) $(WIN_LINT_FILES),$(LINT_SRCS))
+# The prose documents, which lint.py --docs holds to no passage pasted twice.
+DOC_LINT_FILES := $(wildcard *.md DOC/*.md REL/*.TXT)
+# The documents that lint.py --names holds to the programs' names as the
+# build gives them, THIN's included.
+NAME_LINT_FILES := README.md DOC/INSTALL.md DOC/CLIENT.md
+# The texts whose references to the documents and their labels lint.py
+# --docs --refs holds to what the documents hold, as it does the
+# documents' own: the build files and every source, script, message,
+# help, setting and note of the source directories, found by name as a
+# tree unpacked from an archive has no git index.  Left out are what the
+# runs write there (TEST/INTEG/vm/, with the period software unpacked for
+# them; the logs, maps and objects match no name), and TEST/T_CHK.SH,
+# whose fixtures name documents of its scratch directory.
+REF_LINT_FILES := $(sort MAKEFILE GNUmakefile $(wildcard *.MK) $(filter-out TEST/T_CHK.SH, \
+	$(shell find SRC TEST REL HC HOST TC WC65 WC95 -path TEST/INTEG/vm -prune -o -type f \( \
+	-iname '*.[ch]' -o -iname '*.asm' -o -iname '*.py' -o -iname '*.sh' -o -iname '*.mk' \
+	-o -iname '*.rc' -o -iname '*.htx' -o -iname '*.hlp' -o -iname '*.msg' -o -iname '*.bat' \
+	-o -iname '*.prg' -o -iname '*.cfg' -o -iname '*.req' -o -iname '*.ini' -o -iname '*.conf' \
+	-o -iname '*.scr' -o -iname '*.txt' -o -iname '*.md' -o -name Containerfile \) -print \
+	2>/dev/null)))
+
+# TEST/ASMCHK.PY holds the machine code kept as bytes in C to its nasm
+# source: the packet driver's receive upcall of SRC/COMPAT/CPKT.C to
+# SRC/COMPAT/CPKTUP.ASM, the serial ports' interrupt handler of
+# SRC/COMPAT/CUART.C to SRC/COMPAT/CUARTISR.ASM.
+lint:
+	@python3 -I TEST/lint.py --wattcp '$(WATTCP_USERS)' $(LINT_FILES)
+	@python3 -I TEST/lint.py --wattcp '$(WATTCP_USERS)' --compat $(COMPAT_LINT_FILES)
+	@python3 -I TEST/lint.py --win $(WIN_LINT_FILES)
+	@python3 -I TEST/lint.py --kernel SRC/TCP/WATPREP.PY $(notdir $(WATTCP_KERNEL))
+	@python3 -I TEST/lint.py --docs $(DOC_LINT_FILES) --refs $(REF_LINT_FILES)
+	@python3 -I TEST/lint.py --names $(THIN) '$(EXES) $(WIN_EXES)' $(NAME_LINT_FILES)
+# INVWIN's and SETUP's string tables, each held to the buffer its
+# strings are loaded into.
+	@python3 -I TEST/lint.py --strings SRC/WIN/INVWIN.RC SRC/WIN/INVWIN.C IW_FMTSZ
+	@python3 -I TEST/lint.py --strings SRC/WIN/SETUP.RC SRC/WIN/SETUP.C SU_LINEMAX
+	@python3 -I TEST/lint.py --scripts TEST '$(SCRE_KEYS)' '$(SCRR_KEYS)' \
+		'$(call dos_files,T_SCRE)' '$(call dos_files,T_SCRR)' \
+		--mono '$(T_SCRE_DOSBOXDATA)' '$(T_SCRR_DOSBOXDATA)'
+	$(if $(INV_MSGS),@python3 -I TEST/msgchk.py $(INV_MSGS) --consts SRC/CLIENT $(SRV_MSGS))
+	@python3 -I TEST/hlpchk.py $(INV_HLPARGS)
+	@python3 -I TEST/hlpchk.py $(INVWIN_HLPARGS)
+	@for v in $(foreach v,$(FREEKB_VARS),$(v)=$($(v))); do \
+		[ "$${v#*=}" -le $(DOS_MAXFREEKB) ] || \
+		{ echo "$${v%%=*} $${v#*=} KB is over DOS_MAXFREEKB $(DOS_MAXFREEKB)"; exit 1; }; \
+	done
+	@. TEST/INTEG/free310.sh; [ $$((FREE310_BASE / 1024 - FREE310_MINKB)) -ge $(DOS_MAXFREEKB) ] || \
+		{ echo "FREE310_MINKB $$FREE310_MINKB KB leaves less than DOS_MAXFREEKB $(DOS_MAXFREEKB) free"; exit 1; }
+	@sh TEST/T_CHK.SH $(OBJ)/HOST/CHKT
+	@python3 -I TEST/ASMCHK.PY SRC/COMPAT/CPKTUP.ASM SRC/COMPAT/CPKT.C cpkt_up CPKT_UP_HEAD
+	@python3 -I TEST/ASMCHK.PY SRC/COMPAT/CUARTISR.ASM SRC/COMPAT/CUART.C cuart_isr \
+		UB_ISR UB_POLL UB_RXBUF UB_TXBUF UB_SHUT
+
+# The message files of the full-screen client and of the server's texts.
+# TEST/msgchk.py checks the message sources INV_MSGS and SRV_MSGS against
+# the message constants of their modules and writes BIN/INV.MSG and
+# BIN/INVSERV.MSG (the =STAMP line, then each message as "nnn text",
+# without its name, CR LF) and their one stamp as MSG_STAMP into
+# OBJ/MSGSTMP.H, which only MSG.C includes: its directory is on MSG.C's
+# include path here (INC_SRC/CLIENT/MSG.C), and the Turbo C and Watcom C
+# 6.5 builds copy it into their header directories (TC_GENINC,
+# WC65_GENINC).  It also writes MSG_NAMESH, every message's constant
+# defined as its number alone, for the resource scripts that name a
+# message (SRC/WIN/WLABEL.RC), which cannot read the C headers that
+# define the constants for the compiler.
+# msgchk rewrites the header only when the stamp changes, so that MSG.C is
+# recompiled only then.  The run is the recipe of the included makefile
+# OBJ/MSG.MK: make brings that up to date first and then starts again,
+# reading every file's time afresh, so a header changed by this run
+# rebuilds MSG.C at once while an unchanged one rebuilds nothing.  MSG.MK
+# is written last, once msgchk has put every file in place whole (renamed
+# from a temporary file), so that a second make in the same tree (a Turbo
+# C build beside a Watcom C 6.5 one, for example) either runs msgchk
+# itself or finds the files complete, never an old header beside new
+# message files; the rule for them and the headers only remakes them
+# when one has been deleted.  GNU make remakes an included makefile even
+# under -n or -q, so with either flag MSG.MK is not included and a stale
+# message file is not shown.
+MSG_DEPS := $(INV_MSGS) $(SRV_MSGS) TEST/msgchk.py SRCS.MK \
+	$(wildcard SRC/CLIENT/*.C SRC/CLIENT/*.H SRC/SERVER/*.C SRC/SERVER/*.H)
+MSG_STAMPH := $(if $(INV_MSGS),$(OBJ)/MSGSTMP.H)
+MSG_NAMESH := $(if $(INV_MSGS),$(OBJ)/WIN/MSGNUM.H)
+MSG_RUN = python3 -I TEST/msgchk.py --out $(BIN)/INV.MSG --header $(OBJ)/MSGSTMP.H \
+	--names $(MSG_NAMESH) $(INV_MSGS) \
+	--out $(BIN)/INVSERV.MSG --consts SRC/CLIENT $(SRV_MSGS)
+
+# The single-letter flags come first in MAKEFLAGS, without a dash.
+MAKE_DRY := $(findstring n,$(firstword x$(MAKEFLAGS)))$(findstring q,$(firstword x$(MAKEFLAGS)))
+ifneq ($(INV_MSGS),)
+ifeq ($(filter clean,$(MAKECMDGOALS))$(MAKE_DRY),)
+include $(OBJ)/MSG.MK
+endif
+endif
+
+$(OBJ)/MSG.MK: $(MSG_DEPS)
+	@mkdir -p $(BIN) $(OBJ)
+	$(MSG_RUN)
+	@echo '# Written by MAKEFILE when the message files were last built.' > $@
+
+$(BIN)/INV.MSG $(BIN)/INVSERV.MSG $(OBJ)/MSGSTMP.H $(MSG_NAMESH) &:
+	@mkdir -p $(BIN) $(OBJ)
+	$(MSG_RUN)
+
+$(foreach d,$(WC_DIRS),$(OBJ)/WC/$(d)/SRC/CLIENT/MSG.OBJ): $(OBJ)/MSGSTMP.H
+$(OBJ)/WIN/m/SRC/CLIENT/MSG.OBJ: $(OBJ)/MSGSTMP.H
+$(HOSTOBJ)/SRC/CLIENT/MSG.o: $(OBJ)/MSGSTMP.H
+$(OBJ)/WIN/WFORMT.RES $(OBJ)/WIN/INVWIN.RES: $(MSG_NAMESH)
+
+# The help texts, each checked by TEST/hlpchk.py against the limits of
+# the module that shows it and the help topics its program's sources use,
+# and written by it with an index of its sections at the head and CR LF
+# line ends: INV.HLP against TUI_HELPW and TUI_HELPLINES of TUI.C, and
+# INVWIN.HTX, INVWIN's help window's, against WH_HELPW of WHELP.H.  Each
+# program finds its file beside it.  INVWIN.HTX's run also writes the
+# Windows Help source $(OBJ)/HC/INVWIN.RTF and its project INVWIN.HPJ,
+# which winhelp compiles into BIN/INVWIN.HLP with HC/runhc.sh.
+INV_HLPARGS := SRC/CLIENT/INV.HLP SRC/CLIENT/TUI.C SRC/CLIENT/MSG.H \
+	$(wildcard SRC/CLIENT/*.C)
+INVWIN_HLPARGS := SRC/WIN/INVWIN.HTX SRC/WIN/WHELP.H SRC/CLIENT/MSG.H \
+	$(INVWIN_SRCS)
+$(BIN)/INV.HLP: $(INV_HLPARGS) TEST/hlpchk.py
+	@mkdir -p $(BIN)
+	python3 -I TEST/hlpchk.py --out $@ $(INV_HLPARGS)
+$(BIN)/INVWIN.HTX $(OBJ)/HC/INVWIN.RTF $(OBJ)/HC/INVWIN.HPJ &: $(INVWIN_HLPARGS) TEST/hlpchk.py
+	@mkdir -p $(BIN) $(OBJ)/HC
+	python3 -I TEST/hlpchk.py --out $(BIN)/INVWIN.HTX --rtf $(OBJ)/HC/INVWIN.RTF $(INVWIN_HLPARGS)
+$(BIN)/INVWIN.HLP: $(OBJ)/HC/INVWIN.HPJ $(OBJ)/HC/INVWIN.RTF HC/runhc.sh HC/hlpstamp.py \
+	HC/TOOLS.SHA TC/TC.CONF
+	DOS_LOCK="$(DOS_LOCK)" DOS_LOCK_WAIT=$(DOS_LOCK_WAIT) sh HC/runhc.sh $(OBJ)/HC/INVWIN.HPJ $@
+winhelp: $(BIN)/INVWIN.HLP
+# winhelpchk compiles INVWIN.HLP's source twice more and checks the three
+# files equal, the build's stamp and its context numbers, what
+# HC/hlpstamp.py changes and what it and HC/runhc.sh refuse (TEST/hcchk.py).
+winhelpchk: $(BIN)/INVWIN.HLP
+	python3 -I TEST/hcchk.py $(BIN)/INVWIN.HLP $(OBJ)/HC/INVWIN.RTF $(OBJ)/HC/INVWIN.HPJ $(OBJ)/HCCHK
+
+# Programs and tests that load the message file find it in BIN/; the host
+# tests in MSG_TESTS are given that directory as an argument.
+all dostest tctest wc65test tc310 wc65310: $(if $(INV_MSGS),$(BIN)/INV.MSG $(BIN)/INVSERV.MSG) \
+	$(BIN)/INV.HLP
+# The Windows client's help text is built with the programs.
+all: $(BIN)/INVWIN.HTX
+$(if $(MSG_TESTS),$(addprefix hostrun/,$(MSG_TESTS)): $(BIN)/INV.MSG)
+hostrun/T_SRVSCR hostrun/T_INVSRV: $(BIN)/INVSERV.MSG
+# T_SCRE and T_SCRR also open the help, from INV.HLP beside INV.MSG.
+hostrun/T_SCRE hostrun/T_SCRR: $(BIN)/INV.HLP
+# T_SCHBIN reads the schema data the Windows programs bind, named on its
+# command line.
+T_SCHBIN_HOSTARGS := $(CSCH_BLOB)
+hostrun/T_SCHBIN: $(CSCH_BLOB)
+
+# DOS unit tests.  First WRAPCHK.COM checks that QEMU, as boot310.sh starts
+# it, wraps IP on 16-bit near calls as an 8086 does, and SHELLCHK.COM that
+# the shell reloads its transient part after a program (in dostest, then
+# TEST/T_BOOT.SH checks boot310.sh itself).  Then come the runs in
+# headless DOSBox-X (DOS 3.10, 8086) and those on the real Compaq MS-DOS
+# 3.10 under QEMU, whose file sharing and directory updates DOSBox-X does
+# not reproduce, as dosbox_jobs and dos310_jobs below list them.  On
+# MS-DOS 3.10 the test program runs from the scratch hard disk C: of
+# TEST/INTEG/boot310.sh, since the floppy has too little room for it.  The
+# Compaq boot floppy has no CONFIG.SYS, and DOS's default FILES=8 is too
+# few for a memo pack or for an enlarged handle table; the floppy runs get
+# FILES=45.  The per-test settings of SRCS.MK (<NAME>_DOSDATA,
+# <NAME>_DOSRAM, <NAME>_DOSKEYS and the others) are those of the table in
+# DOC/BUILD.md ("Programs and scripts"), which the dj_ functions below
+# read.  DOSBOX_LONG_TESTS and DOS_LONG_TESTS name the tests whose runs
+# take longest in each stage, longest first; their runs start first.
+DOS_MONO_TESTS := T_VIDEO T_DOSX T_TUI T_SCRE T_SCRR T_SRVSCR
+DOS310_CFG := $(OBJ)/DOS310/CONFIG.SYS
+# The RAM disk size of a unit test's MS-DOS 3.10 boots unless
+# <NAME>_DOSRAMKB says otherwise; it names the boot's CONFIG.SYS
+# (dos310_ramcfg).  TEST/T_INV.SH, TEST/T_SCR.SH and TEST/T_PRN.SH boot
+# without -m with FREE310_MINKB of TEST/INTEG/free310.sh instead.
+DOS310_RAMKB := 320
+
+# <NAME>_DOSKEYS, the number of a screen test's key scripts, one per
+# boot, stands for <NAME>_DOSRUNS, 1 to that number, and for each boot n
+# <NAME>_DOSRUNn, TEST/KEYS/<P>n.KEY, TEST/GOLDEN/SCR/<P>n.SNC and the
+# files of <NAME>_DOSKEYDATA named <P>n (any extension); <P>_KEYS, the
+# key scripts named from <NAME>_HOSTCWD, then ends the host test's
+# arguments.  key_test makes them for each test that has it: key_p is
+# <P>, <NAME> without its T_, key_up the path back to the repository root
+# from <NAME>_HOSTCWD, key_run the files of one boot.
+key_p = $(1:T_%=%)
+key_up = $(subst / ,/,$(patsubst %,../,$(subst /, ,$($(1)_HOSTCWD))))
+key_run = $(strip TEST/KEYS/$(call key_p,$(1))$(2).KEY TEST/GOLDEN/SCR/$(call key_p,$(1))$(2).SNC \
+	$(foreach f,$($(1)_DOSKEYDATA),$(if $(filter $(call key_p,$(1))$(2),$(basename $(notdir $(f)))),$(f))))
+define key_test
+$(1)_DOSRUNS := $$(shell seq 1 $$($(1)_DOSKEYS))
+$$(if $$(filter $$($(1)_DOSKEYS),$$(lastword $$($(1)_DOSRUNS))),,$$(error $(1)_DOSKEYS must be a whole number, 1 or more))
+$$(foreach n,$$($(1)_DOSRUNS),$$(eval $(1)_DOSRUN$$(n) := $$(call key_run,$(1),$$(n))))
+$(call key_p,$(1))_KEYS := $$(foreach n,$$($(1)_DOSRUNS),$$(call key_up,$(1))TEST/KEYS/$(call key_p,$(1))$$(n).KEY)
+$(1)_HOSTARGS += $$($(call key_p,$(1))_KEYS)
+endef
+$(foreach t,$(DOS_TESTS),$(if $($(t)_DOSKEYS),$(eval $(call key_test,$(t)))))
+
+# The least free conventional memory, in KB, that INV /LOCAL of each
+# build (OW, TC, WC65) is documented to need ("Runtime requirements" in
+# DOC/BUILD.md): on MS-DOS 3.10, TEST/T_INV.SH and TEST/T_SCR.SH run INV
+# with that much free (-m), and so do both under DOSBox-X, and the boots
+# of <NAME>_DOSFLOOR run with it too, so the documented figures are
+# checked.
+INV_FREEKB_OW := 312
+INV_FREEKB_TC := 356
+INV_FREEKB_WC65 := 312
+
+# The least free conventional memory, in KB, that INVSERV (serving the
+# transports of TEST/INTEG/SRV.CFG), INV /CMD /NET and INV /CMD /COM1 of
+# each build need with the network loaded ("Runtime requirements" in
+# DOC/BUILD.md): the least at which TEST/INTEG/srvgate.sh passes with -m
+# (the server), -c (INVTEST and INV /NET) or -s (INV /COM1), one less
+# failing.  They are exact, as with less the program stops at start-up,
+# while INV_FREEKB_* go in 4 KB steps, as INV's deepest screens fail one
+# at a time as memory shrinks.  "make integ" runs the server gate with
+# them.
+INVSERV_FREEKB_OW := 245
+INVSERV_FREEKB_TC := 285
+INVSERV_FREEKB_WC65 := 246
+INVNET_FREEKB_OW := 249
+INVNET_FREEKB_TC := 316
+INVNET_FREEKB_WC65 := 254
+INVCOM_FREEKB_OW := 249
+INVCOM_FREEKB_TC := 315
+INVCOM_FREEKB_WC65 := 254
+
+# The same for THIN, the network-only client of SRCS.MK, run in INV's
+# place (srvgate.sh -t): THIN /CMD /NET and THIN /CMD /COM1, the least
+# at which the gate passes with -c or -s, one less failing.  "make integ"
+# runs the server gate a second time with THIN and them.
+THINNET_FREEKB_OW := 140
+THINNET_FREEKB_TC := 170
+THINNET_FREEKB_WC65 := 142
+THINCOM_FREEKB_OW := 140
+THINCOM_FREEKB_TC := 169
+THINCOM_FREEKB_WC65 := 142
+# And the least, in 4 KB steps as INV_FREEKB_*, at which the deepest
+# screens open with the network loaded: THIN's over COM1 (THINSCR) and
+# over NET (THINSCRNET), and INV's over COM1 (INVSCR) and over NET
+# (INVSCRNET).  At each the matching run of TEST/INTEG/scrgate.sh -r
+# passes, 4 KB less failing; that gate runs INV's deepest key scripts,
+# those that set INV_FREEKB_*, against the server, and "make integ" runs
+# it with all four runs.
+THINSCR_FREEKB_OW := 188
+THINSCR_FREEKB_TC := 208
+THINSCR_FREEKB_WC65 := 184
+THINSCRNET_FREEKB_OW := 188
+THINSCRNET_FREEKB_TC := 212
+THINSCRNET_FREEKB_WC65 := 188
+INVSCR_FREEKB_OW := 296
+INVSCR_FREEKB_TC := 356
+INVSCR_FREEKB_WC65 := 296
+INVSCRNET_FREEKB_OW := 296
+INVSCRNET_FREEKB_TC := 356
+INVSCRNET_FREEKB_WC65 := 300
+
+# The least free conventional memory, in KB, that INVTCP of each build
+# needs with NetBIOS and the packet driver loaded: the least at which
+# TEST/INTEG/tcpgate.sh passes with -m, one less failing.  "make tcp"
+# runs the TCP gate with them.
+INVTCP_FREEKB_OW := 107
+INVTCP_FREEKB_TC := 103
+INVTCP_FREEKB_WC65 := 105
+
+# The ceiling of every figure above ("Floor" in DOC/DESIGN.md); "make
+# lint" checks each against it, and that the least RAM disk of the DOS
+# test boots (FREE310_MINKB of TEST/INTEG/free310.sh), theirs when no -m
+# KB is given, leaves it free.
+DOS_MAXFREEKB := 384
+FREEKB_VARS := $(foreach p,INV INVNET INVCOM THINNET THINCOM THINSCR THINSCRNET INVSCR INVSCRNET INVSERV INVTCP,$(foreach b,OW TC WC65,$(p)_FREEKB_$(b)))
+
+# The CONFIG.SYS files are written by free310_config of
+# TEST/INTEG/free310.sh: DOS310_CFG without a RAM disk; that of test $(1)
+# with one, and those of all the tests, one per RAM disk size, each in
+# $(OBJ)/DOS310R<KB>/.
+$(DOS310_CFG): MAKEFILE TEST/INTEG/free310.sh
+	@mkdir -p $(dir $@)
+	. TEST/INTEG/free310.sh; free310_config $@
+
+dos310_ramcfg = $(OBJ)/DOS310R$(or $($(1)_DOSRAMKB),$(DOS310_RAMKB))/CONFIG.SYS
+DOS310_RAMCFGS := $(sort $(foreach t,$(DOS_TESTS),$(if $($(t)_DOSRAM),$(call dos310_ramcfg,$(t)))))
+
+$(OBJ)/DOS310R%/CONFIG.SYS: MAKEFILE TEST/INTEG/free310.sh
+	@mkdir -p $(dir $@)
+	. TEST/INTEG/free310.sh; free310_config $@ $*
+
+dos_files = $($(1)_DOSDATA) $(foreach r,$($(1)_DOSRUNS),$($(1)_DOSRUN$(r)))
+dosbox_files = $(call dos_files,$(1)) $($(1)_DOSBOXDATA)
+
+# The emulator runs go stage by stage, through dos_pool; DOC/BUILD.md
+# ("Emulator stages, the lock and the gate") gives what a user sees of
+# them.  The DOSBox-X stage (DOSBOX) runs DOSBOX_JOBS at a time, by
+# default half of DOS_JOBS, at least 1; the MS-DOS 3.10 stage (DOS310)
+# and the Windows stage (WIN) DOS_JOBS at a time, by default the host's
+# logical CPU count less 2, at least 1.  Each run is a goal of a sub-make,
+# dosjob/<build>/<kind>/<NAME>/<run>: <build> is OW (the Open Watcom tests
+# in $(BIN)/TEST, INV in $(BIN), the Windows programs in $(BIN)/WIN), TC,
+# WC65 or WC95 (programs in $(BIN)/<build>); <run> is a boot number from
+# <NAME>_DOSRUNS, a key script of <NAME>_WINKEYS, or -.  The DOSBox-X kinds
+# are cga (unit test <NAME> through TEST/rundos.sh), hgc (the same with a
+# Hercules adapter), cgainv (TEST/T_INV.SH -d dosbox -m, <NAME> T_INV),
+# cgascr and hgcscr (TEST/T_SCR.SH -d cga or -d hercules -m, <NAME>
+# T_SCR).  The MS-DOS 3.10 kinds are boot (one boot of unit test <NAME>),
+# share (the test with SHARE loaded), nodisk (the test with an empty B:,
+# boot310.sh -b), page1 (T_VIDEO on video page 1, between PAGE1 and PAGE1
+# CHECK), wide (T_VIDEO WIDE after PAGE1 WIDE), inv (TEST/T_INV.SH -d
+# qemu, <NAME> T_INV), scr (TEST/T_SCR.SH -d qemu, <NAME> T_SCR), prn
+# (TEST/T_PRN.SH, <NAME> T_PRN), nonb (the build's <NAME>.EXE, INVSERV or
+# INVTCP, with no NetBIOS provider: given <NAME>_NONBARGS of SRCS.MK, it
+# must exit with <NAME>_NONBRC), mbox (TEST/INTEG/mbox310.sh, <NAME>
+# INVSERV), com (the build's <NAME>.EXE, COMTEST, given <NAME>_COMARGS
+# on a machine with a 16550A as COM2: it must exit with 0 and print a
+# line matching <NAME>_COMPASS) and crit (the build's <NAME>.EXE,
+# INVTEST, running TEST/INTEG/NODISK.SCR with an empty B:; it must exit
+# with 1 and print a line matching dj_critpass).  The Windows kinds, those
+# of dj_win_<kind>, run a program of WIN_EXES through TEST/WIN/wintest.sh
+# in one mode of Windows 3.0 (see wintest).  Every run writes its
+# own log, $(OBJ)/<prefix><NAME>.<ext> or, for a test with several boots,
+# $(OBJ)/<prefix><NAME>.<run>.<ext>, <prefix> being empty for OW and "<build>."
+# otherwise and <ext> CGA or HGC (the DOSBox-X runs, by adapter), 310 (MS-DOS
+# 3.10), SHR (with SHARE), NOD (with an empty B:), PG1 (on page 1), WID (wide),
+# LPT (T_PRN.SH, whose <NAME> is also that of a unit test), NNB (nonb), MBX
+# (mbox), COM (com) or that of dj_win_<kind>; and <log>.ok beside it once
+# the run passed.  A cga or hgc run copies the program and its data files
+# (DOSDATA, the boot files, DOSBOXDATA) into a directory of its own,
+# $(OBJ)/RUN/<log name>, which rundos.sh mounts read-only; a Windows run
+# makes its directory there too, and keeps it only when it failed.
+#
+# The runs of the tests with <NAME>_DOSSERIAL go first, one at a time
+# (pool_ser), then those of the stage's long tests in that order
+# (pool_first), then the others in the order of the list; at a width of 1
+# they all keep the order of the list, and the MS-DOS 3.10 sub-make runs
+# with -S in place of -k (pool_k).  With DOS_SERIAL_LATER set, as "make
+# gate" sets it, a stage leaves the DOSSERIAL runs out, at any width, and
+# dosserial runs them.  Every run holds the emulator lock
+# $(DOS_LOCK).LCK (dos_lock), exclusive for the DOSSERIAL tests and shared
+# otherwise, and fails when it has not had it within DOS_LOCK_WAIT
+# seconds.
+#
+# A pool's sub-make is given its own -j, so the jobserver of an outer
+# "make -j" is left out of its MAKEFLAGS (the variables given on the
+# command line stay).  Under "make gate", which sets DOS_POOL_SHARED, the
+# pools instead share the gate's jobserver of DOS_JOBS slots.
+ifndef DOS_JOBS
+DOS_JOBS := $(shell n=$$(nproc 2>/dev/null || echo 3); n=$$((n - 2)); [ $$n -ge 1 ] || n=1; echo $$n)
+endif
+ifndef DOSBOX_JOBS
+DOSBOX_JOBS := $(shell case '$(DOS_JOBS)' in (''|*[!0-9]*) n=1 ;; (*) n=$$(($(DOS_JOBS) / 2)) ;; esac; [ $$n -ge 1 ] || n=1; echo $$n)
+endif
+# DOSTIME_SCALE, a whole number from 1 to 9 (default 1), multiplies the
+# host-side time limit of the tests' emulator runs, so that a slower or more
+# heavily shared host can run more emulators at once without false timeouts:
+# the -t of TEST/INTEG/boot310.sh, TEST/rundos.sh and TEST/DBASE/rundb.sh, the
+# DOSBox-X limits of TEST/T_INV.SH and TEST/T_SCR.SH, the build instances'
+# TC_TIMEOUT, WC65_TIMEOUT and WC95_TIMEOUT, and the TIMEOUT of
+# TEST/INTEG/run2vm.sh, tcpprobe.sh, tcpgate.sh, smbgate.sh, smbprobe.sh,
+# stvgate.sh and wintcp.sh, the -t of TEST/WIN/runwin.sh (the runs of wintest,
+# wc95test and wintcp and the boot check of TEST/WIN/mkwin.sh), and the -t of
+# TEST/WIN/winser.sh (its machines and each step of its relay).  The other
+# setup steps (the dBASE install, the Watcom C 9.5 install, TEST/INTEG/mkimg.sh
+# and mkwga.sh) keep fixed limits.  The limits keep their values here, in
+# SRCS.MK and in the scripts; each of those scripts that starts an emulator
+# multiplies the limit it was given, once (dos_secs of TEST/shlib.sh), from the
+# exported variable.  Unset or empty means 1, here and in the scripts; make
+# also drops blanks around the value.
+override DOSTIME_SCALE := $(or $(strip $(DOSTIME_SCALE)),1)
+ifneq ($(filter-out 1 2 3 4 5 6 7 8 9,$(DOSTIME_SCALE))$(words $(DOSTIME_SCALE)),1)
+$(error DOSTIME_SCALE must be a whole number from 1 to 9: '$(DOSTIME_SCALE)')
+endif
+export DOSTIME_SCALE
+DOS_LOCK := $(OBJ)/DOSRUN
+# The longest wait for the emulator lock, in seconds: an exclusive taker
+# may wait for the longest run going, and a shared one behind it; 1800,
+# times DOSTIME_SCALE like the runs it waits for.
+DOS_LOCK_WAIT := $(word $(DOSTIME_SCALE), \
+	1800 3600 5400 7200 9000 10800 12600 14400 16200)
+
+# $(call dos_lock,s|x,FAIL): shell commands that take the emulator lock,
+# shared (s) or exclusive (x), through dos_lock_take of TEST/shlib.sh (on
+# descriptor 8, after passing through the queue lock on descriptor 7,
+# held on by an exclusive taker); FAIL, shell commands, runs when it is
+# not had within DOS_LOCK_WAIT seconds.  The lock is held until the shell
+# ends; the emulator command itself is given 7>&- 8>&- so that nothing it
+# leaves running holds it.
+dos_lock = . TEST/shlib.sh; DOS_LOCK=$(DOS_LOCK); \
+	dos_lock_take $(1) $(DOS_LOCK_WAIT) || { $(2); };
+# The FAIL commands of a recipe that cannot have the lock.
+dos_nolock = echo "$@: the emulator lock $(DOS_LOCK).LCK was not free within $(DOS_LOCK_WAIT)s" >&2; exit 1
+
+# The run cache (TEST/runcache.sh), on when DOS_CACHE_DIR names its
+# directory: a run whose key, the digest of everything that can change
+# its result, matches a pass stored there within DOS_CACHE_DAYS days is
+# not run again; its stored log is shown, behind a line that says so, and
+# it prints cached: instead of passed:.  The key holds the run's command
+# line, each file that it names, the directory of a cga or hgc run, the
+# test machine's INPUTS.SHA for a Windows run (it covers runwin.sh) and,
+# for a script kind, TEST/KEYS/, TEST/GOLDEN/, REL/SAMPLE.REQ (the seed
+# of "#@ SAMPLE"), the INV.MSG, INV.HLP and T_PRN.EXE the scripts may
+# take and the sources the script reads; besides those, what every run
+# of a stage shares (runcache.sh global): the emulators, the boot floppy,
+# the scripts, MAKEFILE and DOS_CACHE_SALT.
+# DOS_CACHE is 1 (use the cache), write (run everything and store the
+# passes) or 0 (off).  A test with <NAME>_DOSSERIAL or in
+# DOS_NOCACHE_TESTS always runs and is never stored.  A run that fails
+# where the cache holds a pass for its key removes that pass and prints
+# RUN CACHE CONTRADICTION.
+DOS_CACHE ?= 1
+ifneq ($(filter-out 0 1 write,$(DOS_CACHE))$(words $(DOS_CACHE)),1)
+$(error DOS_CACHE must be 1, write or 0: '$(DOS_CACHE)')
+endif
+DOS_CACHE_ON := $(if $(strip $(DOS_CACHE_DIR)),$(filter 1 write,$(DOS_CACHE)))
+# The setting of a target that must run every run: the cache only stores.
+DOS_CACHE_STORE := DOS_CACHE=$(if $(filter 0,$(DOS_CACHE)),0,write)
+
+# The MAKEFLAGS of a sub-make given its own -j, and the command starting it.
+sub_mflags = $(filter-out -j% --jobserver-auth=% --jobserver-fds=%,$(MAKEFLAGS))
+SUBMAKE = MAKEFLAGS='$(subst ','\'',$(sub_mflags))' $(MAKE) --no-print-directory
+
+# $(call dj,WHAT,<build>/<kind>/<NAME>/<run>): the run's log, title, cmd
+# (shell command), rc (the exit status it must end with), pass (the line
+# its log must hold, if any), serial (non-empty when it runs alone), prep
+# (shell commands, each ended by ;, that set up its files), keyx (the
+# paths its key holds besides the files its command names) or cache
+# (non-empty when the run cache is used for it); each dj_WHAT takes the
+# four fields as $(1) to $(4).
+dj_w = $(word $(2),$(subst /, ,$(1)))
+dj = $(call dj_$(1),$(call dj_w,$(2),1),$(call dj_w,$(2),2),$(call dj_w,$(2),3),$(call dj_w,$(2),4))
+dj_pfx = $(if $(filter OW,$(1)),,$(1).)
+dj_dir = $(if $(filter OW,$(1)),$(BIN)/TEST,$(BIN)/$(1))
+dj_bindir = $(if $(filter OW,$(1)),$(BIN),$(BIN)/$(1))
+dj_windir = $(if $(filter OW,$(1)),$(BIN)/WIN,$(BIN)/$(1))
+dj_inv = $(dj_bindir)/INV.EXE
+dj_files = $(if $(filter -,$(4)),,$($(3)_DOSRUN$(4)))
+dj_ext = $(if $(dj_win_$(2)),$(word 4,$(dj_win_$(2))),$(if $(filter share,$(2)),SHR,$(if $(filter nodisk,$(2)),NOD,$(if $(filter page1,$(2)),PG1,$(if $(filter wide,$(2)),WID,$(if $(filter prn,$(2)),LPT,$(if $(filter nonb,$(2)),NNB,$(if $(filter mbox,$(2)),MBX,$(if $(filter com,$(2)),COM,$(if $(filter cga cgainv cgascr,$(2)),CGA,$(if $(filter hgc hgcscr,$(2)),HGC,310)))))))))))
+dj_log = $(OBJ)/$(call dj_pfx,$(1))$(3)$(if $(filter -,$(4)),,.$(4)).$(call dj_ext,$(1),$(2))
+# A run of a script kind (dj_run_<kind>) has the script's command line,
+# without the sh that starts it, as its title.  dj_title_win and
+# dj_cmd_win serve every Windows kind (dj_fn).
+dj_script = $(if $(value dj_run_$(2)),$(call dj_run_$(2),$(1),$(2),$(3),$(4)))
+dj_fn = $(if $(dj_win_$(2)),win,$(2))
+dj_title = $(or $(dj_script),$(call dj_title_$(dj_fn),$(1),$(2),$(3),$(4)))
+dj_title_boot = $(3) on MS-DOS 3.10$(if $(call dj_files,$(1),$(2),$(3),$(4)), $(notdir $(call dj_files,$(1),$(2),$(3),$(4))))$(if \
+	$(call dj_floor,$(1),$(2),$(3),$(4)), with $(INV_FREEKB_$(1)) KB free)
+dj_title_share = $(3) with SHARE on MS-DOS 3.10
+dj_title_nodisk = $(3) with an empty B: on MS-DOS 3.10
+dj_title_crit = $(3) with its mailbox on an empty B: on MS-DOS 3.10
+dj_title_page1 = $(3) on video page 1 on MS-DOS 3.10
+dj_title_wide = $(3) with 81 columns in the BIOS data on MS-DOS 3.10
+dj_title_nonb = $(3) without NetBIOS on MS-DOS 3.10
+dj_title_com = $(3) $($(3)_COMARGS) on MS-DOS 3.10
+dj_title_cga = $(3) in DOSBox-X
+dj_title_hgc = $(3) in DOSBox-X with a Hercules adapter
+dj_rc = $(if $(filter nonb,$(2)),$($(3)_NONBRC),$(if $(filter crit,$(2)),1,0))
+dj_pass = $(if $(filter boot share nodisk page1 wide,$(2)),^$(3) PASS [0-9],$(if $(filter com,$(2)),$($(3)_COMPASS),$(if \
+	$(filter crit,$(2)),$(dj_critpass),$(if $(dj_win_$(2)),$($(3)_WINPASS)))))
+dj_critpass := ^mailbox failed: FIND-REQ, DOS error [0-9]
+dj_serial = $($(3)_DOSSERIAL)
+dj_cmd = $(if $(dj_script),sh $(dj_script),$(call dj_cmd_$(dj_fn),$(1),$(2),$(3),$(4)))
+dj_prep = $(if $(value dj_prep_$(2)),$(call dj_prep_$(2),$(1),$(2),$(3),$(4)))
+dj_keyx = $(if $(dj_script),TEST/KEYS TEST/GOLDEN REL/SAMPLE.REQ $(call dj_comp,$(1)),$(if $(value dj_prep_$(2)),$(dj_cdir),$(if \
+	$(dj_win_$(2)),$(WINIMG_DIR)/INPUTS.SHA)))
+dj_cache = $(if $(DOS_RCG),$(if $(or $(dj_serial),$(filter $(3),$(DOS_NOCACHE_TESTS))),,1))
+# The files beside INV.EXE, or in $(BIN), that the script kinds may take.
+dj_comp = $(sort $(foreach d,$(patsubst %/,%,$(dir $(call dj_inv,$(1)))),$(d)/INV.MSG $(d)/INV.HLP $(d)/COMTEST.EXE $(d)/NBTEST.EXE $(d)/TCPTEST.EXE $(d)/T_PRN.EXE $(d)/TEST/T_PRN.EXE) \
+	$(BIN)/INV.MSG $(BIN)/INV.HLP)
+
+# One boot of a unit test: the program runs from the scratch hard disk C:
+# of boot310.sh, with its data files beside it there and on the floppy
+# together with the boot's own files; a VDISK RAM disk is then D:.
+dj_floor = $(filter $(4),$($(3)_DOSFLOOR))
+dj_cmd_boot = sh $(if $(call dj_floor,$(1),$(2),$(3),$(4)),TEST/INTEG/boot310m.sh $(INV_FREEKB_$(1)),TEST/INTEG/boot310.sh) \
+	-t $(call dj_qtime,$(3))$(if $($(3)_UART), -s) -h $(call dj_dir,$(1))/$(3).EXE \
+	$(if $(call dj_floor,$(1),$(2),$(3),$(4)),,-f $(if $($(3)_DOSRAM),$(call dos310_ramcfg,$(3)),$(DOS310_CFG))) \
+	$(foreach d,$($(3)_DOSDATA) $(call dj_files,$(1),$(2),$(3),$(4)),-f $(d)) $(foreach d,$($(3)_DOSDATA),-h $(d)) \
+	$(if $($(3)_DOSPRE),"$($(3)_DOSPRE)") "C:\\$(3) $(if $($(3)_DOSRAM),D,A):\\$(foreach d,$(call dj_files,$(1),$(2),$(3),$(4)), A:\\$(notdir $(d)))$(if $($(3)_DOSARGS), $($(3)_DOSARGS))"
+dj_cmd_share = sh TEST/INTEG/boot310.sh -t $(call dj_qtime,$(3)) -h $(call dj_dir,$(1))/$(3).EXE -f $(DOS310_CFG) SHARE "C:\\$(3) A:\\ SHARE"
+dj_cmd_nodisk = sh TEST/INTEG/boot310.sh -b -t $(call dj_qtime,$(3)) -h $(call dj_dir,$(1))/$(3).EXE -f $(DOS310_CFG) "C:\\$(3) A:\\ NODISK"
+dj_cmd_crit = sh TEST/INTEG/boot310.sh -b -t $(call dj_qtime,$(3)) -h $(dj_bindir)/$(3).EXE -f TEST/INTEG/NODISK.SCR "C:\\$(3) - A:\\NODISK.SCR"
+dj_cmd_pg = sh TEST/INTEG/boot310.sh -t $(call dj_qtime,$(3)) -h $(call dj_dir,$(1))/$(3).EXE -f $(DOS310_CFG) -f $(BIN)/PAGE1.COM
+dj_cmd_page1 = $(dj_cmd_pg) PAGE1 "C:\\$(3) A:\\ PAGE1" "PAGE1 CHECK"
+dj_cmd_wide = $(dj_cmd_pg) "PAGE1 WIDE" "C:\\$(3) A:\\ WIDE"
+dj_cmd_nonb = sh TEST/INTEG/boot310.sh -c -h $(dj_bindir)/$(3).EXE$(if $(filter INVSERV,$(3)), -h $(BIN)/INVSERV.MSG) "C:" "$(3)$(if $($(3)_NONBARGS), $($(3)_NONBARGS))"
+dj_cmd_com = sh TEST/INTEG/boot310.sh -s -c -h $(dj_bindir)/$(3).EXE "C:" "$(3) $($(3)_COMARGS)"
+dj_run_inv = TEST/T_INV.SH -d qemu -m $(INV_FREEKB_$(1)) $(call dj_inv,$(1))
+dj_run_scr = TEST/T_SCR.SH -d qemu -m $(INV_FREEKB_$(1)) $(call dj_inv,$(1))
+dj_run_prn = TEST/T_PRN.SH -m $(INV_FREEKB_$(1)) $(call dj_inv,$(1))
+dj_run_mbox = TEST/INTEG/mbox310.sh $(dj_bindir)/INVSERV.EXE $(BIN)/INVSERV.MSG $(DOS310_CFG)
+# A unit test's MS-DOS 3.10 boot gets <NAME>_DOSTIME seconds when SRCS.MK
+# sets it, else 300 (each times DOSTIME_SCALE, as are the limits below).
+dj_qtime = $(if $($(1)_DOSTIME),$($(1)_DOSTIME),300)
+# A unit test gets 300 s under DOSBox-X, one of a period compiler's build
+# 900 s: runs side by side, and beside the builds under "make gate", take
+# longer than one alone.
+dj_dbtime = $(if $(filter OW,$(1)),300,900)
+dj_cdir = $(OBJ)/RUN/$(notdir $(dj_log))
+dj_prep_cga = rm -rf $(dj_cdir) && mkdir -p $(dj_cdir) && cp $(call dj_dir,$(1))/$(3).EXE $(call dosbox_files,$(3)) $(dj_cdir)/ || \
+	{ echo "    FAILED: $(dj_title) (its files were not copied)"; exit 1; };
+dj_prep_hgc = $(dj_prep_cga)
+dj_cmd_cga = sh TEST/rundos.sh -t $(call dj_dbtime,$(1)) $(dj_cdir)/$(3).EXE
+dj_cmd_hgc = sh TEST/rundos.sh -m hercules -t $(call dj_dbtime,$(1)) $(dj_cdir)/$(3).EXE
+dj_run_cgainv = TEST/T_INV.SH -d dosbox -m $(INV_FREEKB_$(1)) $(call dj_inv,$(1))
+dj_run_cgascr = TEST/T_SCR.SH -d cga -m $(INV_FREEKB_$(1)) $(call dj_inv,$(1))
+dj_run_hgcscr = TEST/T_SCR.SH -d hercules -m $(INV_FREEKB_$(1)) $(call dj_inv,$(1))
+
+# The Windows kinds: the emulator and mode of TEST/WIN/runwin.sh, the
+# mode a report must name, kept apart from the letter so that a wrong one
+# fails, the log's extension and the end of the title.  WIN_KINDS holds
+# the two protected modes the programs are built for; winr and wincga are
+# the real-mode kinds that a build without the mark for protected mode
+# only would add to it.
+dj_win_winr := qemu r REAL WR real mode under QEMU
+dj_win_wins := qemu s STANDARD WS standard mode under QEMU
+dj_win_win3 := qemu 3 ENHANCED W3 386 enhanced mode under QEMU
+dj_win_wincga := dosbox r REAL WCG real mode on an 8086 with a CGA (DOSBox-X)
+WIN_KINDS := wins win3
+# A Windows run of program <NAME>: <run> is - or the letter x of its key
+# script TEST/<NAME>x.KEY (dj_wkey x, or empty for TEST/<NAME>.KEY), with
+# the arguments dj_wargs: <NAME>_WINARGSx when SRCS.MK sets it, else
+# <NAME>_WINARGS, and its data directory seeded by the requests of each
+# file of dj_wseed in turn: <NAME>_WINSEEDx when SRCS.MK sets it, else
+# <NAME>_WINSEED, and the files of dj_wdata beside the program:
+# <NAME>_WINDATAx when SRCS.MK sets it, else <NAME>_WINDATA.  It gets
+# <NAME>_WINTIME seconds when SRCS.MK sets it,
+# else WIN_TIME, and must leave a file equal to each golden of
+# <NAME>_WINCMPx under the golden's name and, when SRCS.MK sets
+# <NAME>_WINPRNx, print what equals that golden (wintest.sh -o).  When
+# SRCS.MK sets <NAME>_WININTLx, the run's WIN.INI has that file's [intl]
+# section, the machine's International settings (wintest.sh -I).
+WIN_TIME := 300
+dj_wkey = $(filter-out -,$(4))
+dj_wargs = $(or $($(3)_WINARGS$(dj_wkey)),$($(3)_WINARGS))
+dj_wseed = $(or $($(3)_WINSEED$(dj_wkey)),$($(3)_WINSEED))
+dj_wdata = $(or $($(3)_WINDATA$(dj_wkey)),$($(3)_WINDATA))
+dj_title_win = $(3)$(if $(dj_wargs), $(dj_wargs))$(if $($(3)_WINKEYS), with $(3)$(dj_wkey).KEY) in Windows 3.0 \
+	$(wordlist 5,$(words $(dj_win_$(2))),$(dj_win_$(2)))
+dj_cmd_win = $(strip sh TEST/WIN/wintest.sh -e $(word 1,$(dj_win_$(2))) -m $(word 2,$(dj_win_$(2))) \
+	-M $(word 3,$(dj_win_$(2))) -t $(or $($(3)_WINTIME),$(WIN_TIME)) $(foreach f,$(dj_wdata),-f $(f)) $(if $($(3)_WINDIR),-d $($(3)_WINDIR)) \
+	$(if $(dj_wseed),$(foreach q,$(dj_wseed),-q $(q)) -i $(HOSTOBJ)/INV.bin) \
+	$(if $($(3)_WINKEYS),-k TEST/$(3)$(dj_wkey).KEY -g TEST/GOLDEN/WIN/$(3)$(dj_wkey).SNP) \
+	$(foreach c,$($(3)_WINCMP$(dj_wkey)),-c $(c)) \
+	$(if $($(3)_WINPRN$(dj_wkey)),-o $($(3)_WINPRN$(dj_wkey))) \
+	$(if $($(3)_WININTL$(dj_wkey)),-I $($(3)_WININTL$(dj_wkey))) \
+	$(dj_cdir) $(dj_windir)/$(3).EXE $(dj_wargs))
+
+# A run that the run cache may serve writes the manifest of its key to
+# <log>.KEY; one whose key cannot be made runs and is not stored.
+dosjob/%:
+	@$(call dj,prep,$*) log=$(call dj,log,$*); key=; \
+	$(if $(call dj,cache,$*),key=$$log.KEY; sh TEST/runcache.sh key $(DOS_RCG) $* '$(call dj,pass,$*)' \
+		'$(subst ','\'',$(call dj,cmd,$*))' $(call dj,keyx,$*) >$$key || key=; \
+	$(if $(filter 1,$(DOS_CACHE)),if [ -n "$$key" ] && when=$$(sh TEST/runcache.sh get $$key $$log); then \
+		: >$$log.ok; echo "    cached: $(call dj,title,$*) (passed $$when)"; exit 0; fi;)) \
+	$(call dos_lock,$(if $(call dj,serial,$*),x,s),why="no emulator lock $(DOS_LOCK).LCK within $(DOS_LOCK_WAIT)s"; \
+		echo "$$why" >$$log; echo "    FAILED: $(call dj,title,$*) ($$why)"; exit 1) \
+	t0=$$(date +%s); rc=0; $(call dj,cmd,$*) </dev/null >$$log 2>&1 7>&- 8>&- || rc=$$?; \
+	t=$$(($$(date +%s) - t0)); \
+	if [ $$rc -eq $(call dj,rc,$*) ]$(if $(call dj,pass,$*), && grep -q "$(call dj,pass,$*)" $$log); then \
+		: >$$log.ok; [ -z "$$key" ] || sh TEST/runcache.sh put $$key $$log $$t; \
+		echo "    passed: $(call dj,title,$*) ($${t}s)"; \
+	else [ -z "$$key" ] || ! dropped=$$(sh TEST/runcache.sh drop $$key) || \
+			echo "    RUN CACHE CONTRADICTION: $(call dj,title,$*) failed; the cache held a pass for key $$dropped"; \
+		echo "    FAILED: $(call dj,title,$*) (status $$rc, $${t}s)"; exit 1; fi
+
+# The DOSBox-X runs of build $(1) for the unit tests $(2): each test (those
+# with <NAME>_NODOSBOX excepted), for OW those of DOS_MONO_TESTS again with
+# a Hercules adapter, TEST/T_INV.SH, then TEST/T_SCR.SH with a CGA and
+# with a Hercules adapter, both scripts with the build's
+# INV_FREEKB_<build> free.  A test passes when rundos.sh does (exit 0
+# and its "<NAME> PASS n" line).
+dosbox_jobs = $(foreach t,$(2),$(if $($(t)_NODOSBOX),,dosjob/$(1)/cga/$(t)/-)) \
+	$(if $(filter OW,$(1)),$(foreach t,$(filter $(DOS_MONO_TESTS),$(2)),$(if $($(t)_NODOSBOX),,dosjob/OW/hgc/$(t)/-))) \
+	dosjob/$(1)/cgainv/T_INV/- \
+	dosjob/$(1)/cgascr/T_SCR/- dosjob/$(1)/hgcscr/T_SCR/-
+
+# The MS-DOS 3.10 runs of build $(1) for the unit tests $(2): every boot
+# of each test, INV /CMD through TEST/T_INV.SH, the golden screens through
+# TEST/T_SCR.SH, printing on the parallel port through TEST/T_PRN.SH (with
+# the build's T_PRN.EXE, so only when T_PRN is among the tests $(2)), the
+# tests of $(2) that are in DOS_SHARE_TESTS once more with SHARE loaded
+# (argument "A:\ SHARE") to exercise sharing violations, and T_CFILE, when
+# among them, once more with an empty B: (argument "A:\ NODISK") for a
+# critical error failed without a prompt, and T_VIDEO, when among them,
+# once more on video page 1 (kind page1): its run must also leave page 1
+# as PAGE1.COM painted it, which the errorlevel of PAGE1 CHECK, the run's
+# own, tells; and once more with a column count other than 80 in the BIOS
+# data area (kind wide); and INVSERV and INVTCP, which must refuse to
+# start without a NetBIOS provider (kind nonb); and INVSERV once more,
+# serving a request file of its mailbox without NetBIOS (kind mbox,
+# TEST/INTEG/mbox310.sh); and INVTEST with its mailbox on an empty B:
+# (kind crit), whose post must fail at its first call with the DOS error
+# and no critical-error prompt; and COMTEST in the loopback of a 16550A
+# (kind com).  A unit test run must end with its "<NAME> PASS n" line.
+dos310_jobs = $(foreach t,$(2),$(if $($(t)_DOSRUNS),$(foreach r,$($(t)_DOSRUNS),dosjob/$(1)/boot/$(t)/$(r)),dosjob/$(1)/boot/$(t)/-)) \
+	dosjob/$(1)/inv/T_INV/- dosjob/$(1)/scr/T_SCR/- \
+	$(if $(filter T_PRN,$(2)),dosjob/$(1)/prn/T_PRN/-) \
+	$(foreach t,$(filter $(2),$(DOS_SHARE_TESTS)),dosjob/$(1)/share/$(t)/-) \
+	$(if $(filter T_CFILE,$(2)),dosjob/$(1)/nodisk/T_CFILE/-) \
+	$(if $(filter T_VIDEO,$(2)),dosjob/$(1)/page1/T_VIDEO/- dosjob/$(1)/wide/T_VIDEO/-) \
+	dosjob/$(1)/nonb/INVSERV/- dosjob/$(1)/nonb/INVTCP/- dosjob/$(1)/mbox/INVSERV/- \
+	dosjob/$(1)/crit/INVTEST/- \
+	dosjob/$(1)/com/COMTEST/-
+
+# Per stage: its width, the variable that sets it, its long tests and the
+# words that name where it runs.
+pool_var_DOSBOX := DOSBOX_JOBS
+pool_var_DOS310 := DOS_JOBS
+pool_var_WIN := DOS_JOBS
+pool_long_DOSBOX = $(DOSBOX_LONG_TESTS)
+pool_long_DOS310 = $(DOS_LONG_TESTS)
+pool_long_WIN = $(WIN_LONG_TESTS)
+pool_where_DOSBOX := in DOSBox-X
+pool_where_DOS310 := on MS-DOS 3.10
+pool_where_WIN := on Windows 3.0
+# The stage SERIAL, dosserial's, always runs one at a time in a sub-make
+# of its own.
+pool_where_SERIAL := alone among the emulators
+pool_shared = $(if $(filter-out SERIAL,$(1)),$(DOS_POOL_SHARED))
+pool_w = $(if $(filter SERIAL,$(1)),1,$(if $(DOS_POOL_SHARED),$(DOS_JOBS),$($(pool_var_$(1)))))
+# Of the runs $(1): those of the DOSSERIAL tests.
+pool_rn = $(call dj_w,$(1:dosjob/%=%),3)
+dos_serial = $(strip $(foreach j,$(1),$(if $($(call pool_rn,$(j))_DOSSERIAL),$(j))))
+# Of the runs $(2) of stage $(1): those that go first, one at a time; the
+# others, long ones first; and the sub-make's -k or (MS-DOS 3.10, width 1)
+# -S.
+pool_ser = $(if $(filter 1,$(call pool_w,$(1))),,$(call dos_serial,$(2)))
+pool_first = $(foreach l,$(pool_long_$(1)),$(foreach j,$(2),$(if $(filter $(l),$(call pool_rn,$(j))),$(j))))
+pool_rest = $(if $(filter 1,$(call pool_w,$(1))),$(2),$(call pool_first,$(1),$(filter-out $(call pool_ser,$(1),$(2)),$(2))) \
+	$(filter-out $(call pool_ser,$(1),$(2)) $(call pool_first,$(1),$(2)),$(2)))
+pool_k = $(if $(and $(filter DOS310,$(1)),$(filter 1,$(call pool_w,$(1)))),-S,-k)
+
+# $(call dos_pool,<build>,<stage>,<runs>): run the runs of stage DOSBOX,
+# DOS310 or WIN as described above, their list in
+# $(OBJ)/<prefix><stage>.LST and, with the run cache on, the key lines
+# they share in $(OBJ)/<prefix><stage>.RCG, passed to the runs as DOS_RCG
+# (empty when the cache is off or those lines cannot be had); dos_pool_run
+# runs them all, dos_pool those that DOS_SERIAL_LATER leaves to it.
+dos_pool = $(call dos_pool_run,$(1),$(2),$(if $(DOS_SERIAL_LATER),$(filter-out $(call dos_serial,$(3)),$(3)),$(3)))
+define dos_pool_run
+	@case '$(call pool_w,$(2))' in ''|0*|*[!0-9]*) echo "$@: $(if $(call pool_shared,$(2)),DOS_JOBS,$(pool_var_$(2))) must be a whole number, 1 or more: $(call pool_w,$(2))" >&2; exit 2 ;; esac; \
+	mkdir -p $(OBJ); rm -f $(foreach j,$(3),$(foreach l,$(call dj,log,$(j:dosjob/%=%)),$(l) $(l).ok $(l).KEY))
+	@printf '%s\n' $(foreach j,$(3),'$(call dj,log,$(j:dosjob/%=%)) $(call dj,title,$(j:dosjob/%=%))') \
+		>$(OBJ)/$(call dj_pfx,$(1))$(2).LST
+	@lst=$(OBJ)/$(call dj_pfx,$(1))$(2).LST; rcg=; \
+	$(if $(DOS_CACHE_ON),rcg=$(OBJ)/$(call dj_pfx,$(1))$(2).RCG; \
+		sh TEST/runcache.sh global $$rcg || { rcg=; echo "=== the run cache is off for these runs (see above)"; };) \
+	echo "=== $(words $(3)) runs $(pool_where_$(2)), $(if $(call pool_shared,$(2)),sharing the gate's $(DOS_JOBS) jobs,$(call pool_w,$(2)) at a time)"; rc=0; \
+	$(if $(call pool_ser,$(2),$(3)),$(SUBMAKE) -k -j1 $(call pool_ser,$(2),$(3)) || rc=1;) \
+	$(if $(call pool_shared,$(2)),$(MAKE) --no-print-directory $(call pool_k,$(2)),$(SUBMAKE) $(call pool_k,$(2)) -j$(call pool_w,$(2))) \
+		DOS_RCG=$$rcg $(call pool_rest,$(2),$(3)) || rc=1; \
+	hits=0; while read -r log title; do [ ! -f $$log ] || { echo "=== $$title"; cat $$log; \
+		! head -n 1 $$log | grep -q '^=== from the run cache' || hits=$$((hits + 1)); }; done <$$lst; \
+	[ -z "$$rcg" ] || echo "=== $$hits of the $(words $(3)) runs $(pool_where_$(2)) came from the run cache"; \
+	bad=0; while read -r log title; do \
+		if [ -f $$log ] && [ ! -f $$log.ok ]; then bad=$$((bad + 1)); echo "=== FAILED: $$title ($$log)"; cat $$log; fi; \
+	done <$$lst; \
+	if [ $$bad -ne 0 ]; then echo "$@: $$bad of the runs $(pool_where_$(2)) failed (shown above)" >&2; exit 1; fi; \
+	if [ $$rc -ne 0 ]; then echo "$@: the runs $(pool_where_$(2)) did not complete" >&2; exit 1; fi
+endef
+
+# The emulator check that comes before any test on MS-DOS 3.10, holding
+# the emulator lock shared (see dos_lock), output in
+# $(OBJ)/$(1)WRAPCHK.310, $(1) being a prefix that keeps the logs of each
+# build apart (empty for the Open Watcom tests): WRAPCHK, then SHELLCHK,
+# after which the internal ECHO runs only if the shell has reloaded its
+# transient part.
+define wrapchk_run
+@$(call dos_lock,s,$(dos_nolock)) \
+	sh TEST/INTEG/boot310.sh -t 60 -f $(BIN)/WRAPCHK.COM -f $(BIN)/SHELLCHK.COM \
+		WRAPCHK SHELLCHK 'ECHO SHELL OK' > $(OBJ)/$(1)WRAPCHK.310 2>&1 7>&- 8>&- || true; \
+	if ! grep -q "^WRAP OK" $(OBJ)/$(1)WRAPCHK.310; then cat $(OBJ)/$(1)WRAPCHK.310; \
+		echo "$@: the emulator does not wrap 16-bit near calls (see boot310.sh)" >&2; exit 1; fi; \
+	if ! grep -q "^SHELL OK" $(OBJ)/$(1)WRAPCHK.310; then cat $(OBJ)/$(1)WRAPCHK.310; \
+		echo "$@: the shell does not reload its transient part after a program (see boot310.sh)" >&2; exit 1; fi
+endef
+
+# After the emulator check, in dostest only (not tc310 or wc65310),
+# TEST/T_BOOT.SH checks the shell patch and the time-out report of
+# boot310.sh, its log in $(OBJ)/T_BOOT.LOG.  Each target that runs
+# emulators has its runs in emu_runs_<target> and what it needs in
+# emu_deps_<target>, for dosserial.
+emu_deps_dostest := $(foreach t,$(DOS_TESTS),$(BIN)/TEST/$(t).EXE) $(DOS310_CFG) $(DOS310_RAMCFGS) \
+	$(BIN)/INV.EXE $(BIN)/INVSERV.EXE $(BIN)/INVTCP.EXE $(BIN)/INVTEST.EXE \
+	$(BIN)/COMTEST.EXE $(BIN)/NBTEST.EXE $(BIN)/TCPTEST.EXE \
+	$(BIN)/QEXIT.COM $(BIN)/WRAPCHK.COM $(BIN)/SHELLCHK.COM $(BIN)/PAGE1.COM
+dostest_box = $(call dosbox_jobs,OW,$(DOS_TESTS))
+dostest_310 = $(call dos310_jobs,OW,$(DOS_TESTS))
+emu_runs_dostest = $(dostest_box) $(dostest_310)
+dostest: $(emu_deps_dostest)
+	$(call wrapchk_run)
+	@$(call dos_lock,s,$(dos_nolock)) \
+	sh TEST/T_BOOT.SH $(BIN)/SHELLCHK.COM > $(OBJ)/T_BOOT.LOG 2>&1 7>&- 8>&- || \
+		{ cat $(OBJ)/T_BOOT.LOG; echo "$@: TEST/T_BOOT.SH failed (shown above)" >&2; exit 1; }
+	$(call dos_pool,OW,DOSBOX,$(dostest_box))
+	$(call dos_pool,OW,DOS310,$(dostest_310))
+
+# dostest with both stages one run at a time (DOS_JOBS and DOSBOX_JOBS 1,
+# its own pools and DOSSERIAL runs even under "make gate"), so that a
+# failure that depends on host load shows by its absence here; every run
+# runs, none is taken from the run cache.
+dostest1:
+	@$(MAKE) --no-print-directory dostest DOS_JOBS=1 DOSBOX_JOBS=1 DOS_POOL_SHARED= DOS_SERIAL_LATER= $(DOS_CACHE_STORE)
+
+# The disk of the Windows 3.0 test machine, in WINIMG_DIR: TEST/WIN/mkwin.sh
+# builds it again only when its inputs have changed, holding the emulator
+# lock shared for its boot check (see dos_lock).
+WINIMG_DIR ?= $(OBJ)/WIN30
+export WINIMG_DIR
+winimg: $(BIN)/QEXIT.COM $(BIN)/WIN/WSMOKE.EXE
+	@$(call dos_lock,s,$(dos_nolock)) sh TEST/WIN/mkwin.sh 7>&- 8>&-
+
+# The Windows programs on that machine: $(call win_run,<build>,<NAME>...)
+# runs each program with its settings of SRCS.MK, in each kind of
+# WIN_KINDS (dj_win_<kind>), through TEST/WIN/wintest.sh, DOS_JOBS at a
+# time (see dos_pool).  A program with <NAME>_WINKEYS runs once per key
+# script, its snapshot compared with the script's golden; any other is
+# judged by its report, which must also hold a line matching
+# <NAME>_WINPASS, the same line in every mode (so a unit test counts the
+# same checks in each).  It refuses first a program with neither WINPASS
+# nor WINKEYS, which nothing would judge.
+# $(call win_data,NAME): the data files of program NAME's runs, and the
+# request files of their seeds that are made (below).
+win_data = $($(1)_WINDATA) $(foreach k,$($(1)_WINKEYS),$($(1)_WINDATA$(k))) \
+	$(filter $(OBJ)/%,$(foreach k,$($(1)_WINKEYS),$($(1)_WINSEED$(k))))
+win_jobs = $(foreach t,$(2),$(foreach r,$(or $($(t)_WINKEYS),-),$(foreach k,$(WIN_KINDS),dosjob/$(1)/$(k)/$(t)/$(r))))
+define win_run
+	@$(foreach t,$(2),$(if $(or $($(t)_WINPASS),$($(t)_WINKEYS)),,\
+		echo "$@: $(t) has neither $(t)_WINPASS nor $(t)_WINKEYS" >&2; exit 2;)) :
+	$(call dos_pool,$(1),WIN,$(call win_jobs,$(1),$(2)))
+	@rc=0; $(foreach t,$(2),$(if $($(t)_WINPASS),[ "$$(grep -h '$($(t)_WINPASS)' \
+		$(foreach k,$(WIN_KINDS),$(call dj,log,$(1)/$(k)/$(t)/-)) | sort -u | wc -l)" = 1 ] || \
+		{ echo "$@: the runs of $(t) differ in their line of $(t)_WINPASS" >&2; rc=1; };)) exit $$rc
+endef
+
+# A request file that adds N items to a seeded data directory, for the
+# runs whose list must be longer than a committed seed should be
+# (<NAME>_WINSEEDx of SRCS.MK).
+$(OBJ)/ITEMS%.REQ: TEST/WIN/mkitems.sh
+	@mkdir -p $(@D)
+	sh TEST/WIN/mkitems.sh $* >$@
+
+# A request file that adds N rooms, the last holding a bin, for the runs
+# whose location tree must be longer than a pick list's seek goes.
+$(OBJ)/ROOMS%.REQ: TEST/mkrooms.sh
+	@mkdir -p $(@D)
+	sh TEST/mkrooms.sh $* >$@
+
+# A printer driver of the Windows 3.0 setup disks, for a run that prints
+# on another printer than the test machine's (<NAME>_WINDATA of SRCS.MK).
+$(OBJ)/WINDRV/%.DRV: TEST/WIN/windrv.sh TEST/shlib.sh
+	@mkdir -p $(@D)
+	sh TEST/WIN/windrv.sh $*.DRV $@
+
+# wintest runs every program of WIN_EXES once the files of every
+# <NAME>_WINDATA, and of each <NAME>_WINDATAx of its key scripts, are
+# there (BIN/INV.MSG is built).  It refuses first
+# WPROTO's scripts unless they are those T_PROTO runs when none is named
+# (default_scripts of TEST/T_PROTO.C), the only ones it finds there.
+emu_deps_wintest := winimg $(foreach e,$(WIN_EXES),$(BIN)/WIN/$(e).EXE $(call win_data,$(e))) $(HOSTOBJ)/INV.bin
+emu_runs_wintest = $(call win_jobs,OW,$(WIN_EXES))
+wintest: $(emu_deps_wintest)
+	@[ "$$(sed -n '/default_scripts\[\] = {/,/}/s/^ *"\(.*\)",*$$/\1/p' TEST/T_PROTO.C | LC_ALL=C sort | xargs)" = \
+		"$(sort $(notdir $(WPROTO_WINDATA)))" ] || \
+		{ echo "$@: WPROTO_WINDATA is not the list of default_scripts in TEST/T_PROTO.C" >&2; exit 2; }
+	$(call win_run,OW,$(WIN_EXES))
+
+# The disk of the Windows for Workgroups 3.11 test machine, in WFWIMG_DIR,
+# made as winimg makes that of Windows 3.0; then the Winsock test
+# (TEST/INTEG/wintcp.sh): WSOCKT, WSKT and INVWIN's TCP link on that
+# machine through INVTCP into INVSERV, both of the Open Watcom build, on
+# two VMs of integ's NetBIOS image; not part of gate.
+WFWIMG_DIR ?= $(OBJ)/WFW311
+export WFWIMG_DIR
+wfwimg: $(BIN)/QEXIT.COM $(BIN)/WIN/WSMOKE.EXE
+	@$(call dos_lock,s,$(dos_nolock)) sh TEST/WIN/mkwin.sh -w wfw311 7>&- 8>&-
+
+wintcp: wfwimg $(BIN)/WIN/WSOCKT.EXE $(BIN)/WIN/INVWIN.EXE $(BIN)/WIN/WSKT.EXE \
+		$(BIN)/INV.MSG $(BIN)/INVSERV.EXE $(BIN)/INVTCP.EXE \
+		$(BIN)/INVSERV.MSG $(HOSTOBJ)/INV.bin
+	here=TEST/INTEG; . TEST/INTEG/net330.sh; image_current || sh TEST/INTEG/mkimg.sh
+	sh TEST/INTEG/wintcp.sh
+
+# The SERIAL link of the Windows programs between two machines: WSERT and
+# INVWIN on COM1 of the Windows 3.0 test machine, in standard and 386
+# enhanced mode, all side by side, against INVSERV on COM2 of MS-DOS 3.10
+# (TEST/WIN/winser.sh), holding the emulator lock shared (see dos_lock);
+# part of integ, not of gate.
+winser: winimg $(BIN)/WIN/WSERT.EXE $(BIN)/WIN/INVWIN.EXE $(BIN)/INV.MSG \
+		$(BIN)/INVSERV.EXE $(BIN)/INVSERV.MSG $(DOS310_CFG) $(HOSTOBJ)/INV.bin
+	@$(call dos_lock,s,$(dos_nolock)) sh TEST/WIN/winser.sh $(BIN)/WIN/WSERT.EXE \
+		$(BIN)/WIN/INVWIN.EXE $(BIN)/INV.MSG $(BIN)/INVSERV.EXE \
+		$(BIN)/INVSERV.MSG $(DOS310_CFG) $(HOSTOBJ)/INV.bin 7>&- 8>&-
+
+# The NET link of the Windows programs between two machines: the NetBIOS
+# VM image when absent or out of date (as integ), the disk of win30nb, the
+# Windows 3.0 machine with Client NetBEUI, in WINNBIMG_DIR, made as winimg
+# makes win30's, then WNET and INVWIN against INVSERV in standard and 386
+# enhanced mode (TEST/WIN/winnb.sh); part of integ, not of gate.
+WINNBIMG_DIR ?= $(OBJ)/WIN30NB
+export WINNBIMG_DIR
+winnb: $(BIN)/WIN/WNET.EXE $(BIN)/WIN/INVWIN.EXE $(BIN)/INV.MSG \
+		$(BIN)/INVSERV.EXE $(BIN)/INVSERV.MSG $(HOSTOBJ)/INV.bin $(BIN)/QEXIT.COM \
+		$(BIN)/WIN/WSMOKE.EXE
+	here=TEST/INTEG; . TEST/INTEG/net330.sh; image_current || sh TEST/INTEG/mkimg.sh
+	@$(call dos_lock,s,$(dos_nolock)) sh TEST/WIN/mkwin.sh -w win30nb 7>&- 8>&-
+	sh TEST/WIN/winnb.sh $(BIN)/WIN/WNET.EXE $(BIN)/WIN/INVWIN.EXE $(BIN)/INV.MSG \
+		$(HOSTOBJ)/INV.bin
+
+# The MBOX link of the Windows client between two machines: the Workgroup
+# Add-On image when absent or out of date (as wgagate), the disk of
+# win30nb as winnb makes it, then INVWIN against INVSERV's mailbox on the
+# Add-On's share in standard and 386 enhanced mode (TEST/WIN/winmbx.sh);
+# part of integ, not of gate.
+winmbx: $(BIN)/WIN/INVWIN.EXE $(BIN)/INV.MSG $(BIN)/INVSERV.EXE \
+		$(BIN)/INVSERV.MSG $(HOSTOBJ)/INV.bin $(BIN)/QEXIT.COM $(BIN)/WIN/WSMOKE.EXE
+	here=TEST/INTEG; . TEST/INTEG/wga500.sh; wga_current || sh TEST/INTEG/mkwga.sh
+	@$(call dos_lock,s,$(dos_nolock)) sh TEST/WIN/mkwin.sh -w win30nb 7>&- 8>&-
+	sh TEST/WIN/winmbx.sh $(BIN)/WIN/INVWIN.EXE $(BIN)/INV.MSG $(HOSTOBJ)/INV.bin
+
+# Sample tables written by our library (TEST/MKITEMS.C) must pass the
+# structural check and be listed by real dBASE III Plus 1.1 exactly as in
+# TEST/GOLDEN/DB3CHK.TXT; then tables packed and indexes rebuilt by DBPACK
+# must be read and searched by dBASE as in TEST/GOLDEN/PACKCHK.TXT; then
+# CSV files that INV exports must equal dBASE's COPY TO ... DELIMITED,
+# dBASE must APPEND FROM them as in TEST/GOLDEN/CSVCHK.TXT, and INV must
+# import dBASE's files.  The dBASE runs hold the emulator lock shared
+# (see dos_lock).  Needs the dBASE install made by
+# TEST/DBASE/install.sh.
+DBCHK := $(OBJ)/DBCHK
+dbcheck: $(HOSTOBJ)/MKITEMS.bin $(HOSTOBJ)/INV.bin
+	rm -rf $(DBCHK) && mkdir -p $(DBCHK)
+	$(HOSTOBJ)/MKITEMS.bin $(DBCHK)
+	python3 -I TEST/CHKDBF.PY --strict $(DBCHK)/*
+	@echo "sh TEST/DBASE/check.sh $(DBCHK)"; $(call dos_lock,s,$(dos_nolock)) sh TEST/DBASE/check.sh $(DBCHK) 7>&- 8>&-
+	@echo "sh TEST/DBASE/packchk.sh"; $(call dos_lock,s,$(dos_nolock)) sh TEST/DBASE/packchk.sh 7>&- 8>&-
+	@echo "sh TEST/DBASE/csvchk.sh $(HOSTOBJ)/INV.bin"; $(call dos_lock,s,$(dos_nolock)) \
+		sh TEST/DBASE/csvchk.sh $(HOSTOBJ)/INV.bin 7>&- 8>&-
+
+$(HOSTOBJ)/MKITEMS.bin: $(patsubst %.C,$(HOSTOBJ)/%.o,TEST/MKITEMS.C SRC/TOOLS/TOOLSUP.C SRC/DBF/DBF.C SRC/DBF/DBT.C SRC/COMPAT/CZERO.C SRC/COMPAT/CTEXT.C SRC/COMPAT/CDOS.C)
+	$(HOSTCC) $(HOST_SAN) -o $@ $^
+
+# After each period-compiler build the maps are checked against the segment
+# budgets (the Turbo C unit tests, which store every repeated string
+# literal again, only against DGROUP's 64 KB, not the near data limit)
+# and the objects of each program of NEAR_EXES against TEST/NEARBUD.TXT
+# (tc_objs, wc65_objs).
+# Both builds keep their objects under OBJ/<model letter, upper case>/.
+# Each compiles in TC_JOBS or WC65_JOBS DOSBox-X instances at once (by
+# default DOSBOX_JOBS) and holds the emulator lock shared while it does;
+# the checks run inside TC/runtc.sh or WC65/runwc.sh (TC_CHECK,
+# WC65_CHECK), under its build lock, and a failed check fails the build.
+model_dir = $(subst s,S,$(subst m,M,$(subst c,C,$(subst l,L,$(subst h,H,$(1))))))
+tc_objs = $(patsubst %.C,$(BIN)/TC/OBJ/$(call model_dir,$($(1)_MODEL))/%.OBJ,$($(1)_SRCS))
+wc65_objs = $(patsubst %.C,$(BIN)/WC65/OBJ/$(call model_dir,$($(1)_MODEL))/%.OBJ,$($(1)_SRCS))
+TC_JOBS ?= $(DOSBOX_JOBS)
+WC65_JOBS ?= $(DOSBOX_JOBS)
+
+tc: $(MSG_STAMPH) $(call wattcp_for,$(TC_EXES))
+	TC_GENINC="$(MSG_STAMPH)" TC_JOBS="$(TC_JOBS)" DOS_LOCK="$(DOS_LOCK)" DOS_LOCK_WAIT=$(DOS_LOCK_WAIT) \
+	TC_CHECK='$(foreach e,$(EXES),sh TEST/mapchk.sh $(call mapchk_args,$(e),TC) $(BIN)/TC/$(e).MAP &&) $(foreach e,$(filter-out $(EXES),$(TC_EXES)),sh TEST/mapchk.sh -f $(BIN)/TC/$(e).MAP &&) $(foreach e,$(NEAR_EXES),$(NEARCHK) $(call tc_objs,$(e)) &&) :' \
+		sh TC/runtc.sh
+
+wc65: $(MSG_STAMPH) $(call wattcp_for,$(WC65_EXES))
+	WC65_GENINC="$(MSG_STAMPH)" WC65_JOBS="$(WC65_JOBS)" DOS_LOCK="$(DOS_LOCK)" DOS_LOCK_WAIT=$(DOS_LOCK_WAIT) \
+	WC65_CHECK='$(foreach e,$(WC65_EXES),sh TEST/mapchk.sh $(call mapchk_args,$(e),WC65) $(BIN)/WC65/$(e).MAP &&) $(foreach e,$(NEAR_EXES),$(NEARCHK) $(call wc65_objs,$(e)) &&) :' \
+		sh WC65/runwc.sh
+
+# Watcom C 9.5 builds the Windows programs of WC95_EXES into BIN/WC95/, a
+# check of their code under a period compiler beside the Open Watcom
+# build, which is the one shipped.  WC95/runwc.sh compiles them in
+# WC95_JOBS DOSBox-X instances at once (by default DOSBOX_JOBS), holding
+# the emulator lock shared while it does, with the switches of the Open
+# Watcom Windows build but its -i directories (WC95_CFLAGS), -wx, which
+# 9.5 lacks, as its highest level -w4, and -za but for the sources of
+# NOANSI (WC95_ANSI, WC95_NOANSI); it links them with the sizes and
+# segment attributes of the Open Watcom build (WC95_LINK), and under its
+# build lock TEST/NECHK.PY then checks each program's header as for
+# BIN/WIN/ (WC95_CHECK).  INVWIN's icon, its tool bar's bitmap and the
+# engine's schema data (CSCH_BLOB) go with the generated headers, the
+# message names among them, where its resource script finds them.
+WC95_JOBS ?= $(DOSBOX_JOBS)
+# WC95_LINK, which every program of the batch build takes, gives the stack
+# of one program alone (win_stack).
+$(if $(word 2,$(WC95_EXES)),\
+	$(error WC95_EXES must hold one program: WC95_LINK carries its stack))
+WC95_SRCLIST := $(sort $(foreach e,$(WC95_EXES),$($(e)_SRCS)))
+wc95: $(MSG_STAMPH) $(MSG_NAMESH) $(WIN_ICON) $(WIN_DRAGCUR) $(WIN_TOOLBMP) $(CSCH_BLOB) TEST/NECHK.PY TEST/W30EXP.TXT
+	WC95_GENINC="$(MSG_STAMPH) $(MSG_NAMESH) $(WIN_ICON) $(WIN_DRAGCUR) $(WIN_TOOLBMP) $(CSCH_BLOB)" WC95_JOBS="$(WC95_JOBS)" DOS_LOCK="$(DOS_LOCK)" DOS_LOCK_WAIT=$(DOS_LOCK_WAIT) \
+	WC95_CFLAGS="$(patsubst -wx,-w4,$(filter-out -i=%,$(WCFLAGS_BASE) $(WCFLAGS_WIN)))" WC95_ANSI=$(WCFLAGS_ANSI) \
+	WC95_NOANSI="$(strip $(foreach f,$(WC95_SRCLIST),$(if $(call wc_ansi,$(f)),,$(f))))" \
+	WC95_LINK="option stack=$(call win_stack,$(WC95_EXES)) $(WIN_LINKOPTS)" \
+	WC95_CHECK='$(foreach e,$(WC95_EXES),$(NECHK) --stack $(call win_stack,$(e)) $(NECHK_ICON_$(e)) $(BIN)/WC95/$(e).EXE &&) :' \
+		sh WC95/runwc.sh
+
+# The targets that test a period build first make it, through TC_BUILD or
+# WC65_BUILD (the target tc or wc65); "make gate", which has made it
+# already, sets them empty.
+TC_BUILD := tc
+WC65_BUILD := wc65
+
+# Build with a period compiler, then run its DOS unit tests under DOSBox-X,
+# each with its data files (DOSDATA and DOSBOXDATA) in a directory of its
+# own (those with <NAME>_NODOSBOX excepted), INV through TEST/T_INV.SH, which
+# boots MS-DOS 3.10 there (hence QEXIT.COM), and the golden screens with a CGA,
+# both scripts with INV_FREEKB_<build> free, DOSBOX_JOBS at a time (see
+# dos_pool).
+period_tests = $(filter $(DOS_TESTS),$(1))
+period_box = $(call dosbox_jobs,$(1),$(call period_tests,$($(1)_EXES)))
+emu_deps_tctest := $(TC_BUILD) $(BIN)/QEXIT.COM
+emu_runs_tctest = $(call period_box,TC)
+tctest: $(emu_deps_tctest)
+	$(call dos_pool,TC,DOSBOX,$(emu_runs_tctest))
+
+emu_deps_wc65test := $(WC65_BUILD) $(BIN)/QEXIT.COM
+emu_runs_wc65test = $(call period_box,WC65)
+wc65test: $(emu_deps_wc65test)
+	$(call dos_pool,WC65,DOSBOX,$(emu_runs_wc65test))
+
+# The Watcom C 9.5 build's Windows programs on the Windows 3.0 test
+# machine, as wintest runs those of the Open Watcom build, against the
+# same goldens.
+emu_deps_wc95test := wc95 winimg $(foreach e,$(WC95_EXES),$(call win_data,$(e))) $(HOSTOBJ)/INV.bin
+emu_runs_wc95test = $(call win_jobs,WC95,$(WC95_EXES))
+wc95test: $(emu_deps_wc95test)
+	$(call win_run,WC95,$(WC95_EXES))
+
+# Build with a period compiler, then, after the emulator check, run on
+# MS-DOS 3.10 under QEMU every DOS unit test it built (each with its
+# DOSDATA, DOSRAM, DOSRAMKB, DOSRUNS, DOSARGS and DOSSERIAL settings, as
+# dostest does), INV /CMD through TEST/T_INV.SH, the golden screens through
+# TEST/T_SCR.SH, printing through TEST/T_PRN.SH, the tests of
+# DOS_SHARE_TESTS once more with SHARE loaded, T_CFILE with an empty B:,
+# T_VIDEO on video page 1 and wide, INVSERV and INVTCP without NetBIOS,
+# INVSERV serving its mailbox (TEST/INTEG/mbox310.sh), INVTEST with its
+# mailbox on an empty B: (TEST/INTEG/NODISK.SCR) and COMTEST on a 16550A
+# as COM2, DOS_JOBS at a time (see dos_pool).  The data files are named
+# from the repository root (INV.MSG, INVSERV.MSG and INV.HLP are the
+# host-built ones in $(BIN)/, the same for every compiler), and the logs
+# go to $(OBJ)/<build>.<NAME>.310 (.<NAME>.<run>.310 for a test with
+# several boots, INVTEST.310 for INVTEST's run), .SHR, .NOD, .PG1, .WID,
+# .NNB, .MBX and .COM, <build> being TC or WC65.
+period_dos = $(call dos310_jobs,$(1),$(call period_tests,$($(1)_EXES)))
+period_310_deps := $(DOS310_CFG) $(DOS310_RAMCFGS) $(BIN)/QEXIT.COM $(BIN)/WRAPCHK.COM $(BIN)/SHELLCHK.COM $(BIN)/PAGE1.COM
+define period_310
+	$(call wrapchk_run,$(1).)
+	$(call dos_pool,$(1),DOS310,$(call period_dos,$(1)))
+endef
+
+emu_deps_tc310 := $(TC_BUILD) $(period_310_deps)
+emu_runs_tc310 = $(call period_dos,TC)
+tc310: $(emu_deps_tc310)
+	$(call period_310,TC)
+
+emu_deps_wc65310 := $(WC65_BUILD) $(period_310_deps)
+emu_runs_wc65310 = $(call period_dos,WC65)
+wc65310: $(emu_deps_wc65310)
+	$(call period_310,WC65)
+
+# The commit gate: every target of GATE_TARGETS, each in its own make
+# with its output in $(OBJ)/GATE/<target>.LOG, side by side where that is
+# safe, then those of GATE_SERIAL one at a time, then each target's exit
+# status and the end of the log of each that failed.  First one make
+# builds what several of the targets need (GATE_PREP), so that no two of
+# the makes that follow build the same file; should that fail, the
+# targets then run one at a time, each with its own DOS_JOBS.  tctest
+# and tc310 wait for tc, wc65test and wc65310 for wc65, and are not run
+# when it failed; asan waits for test, whose scratch directories it
+# shares.  The targets share DOS_JOBS jobs through the gate's
+# jobserver (DOS_POOL_SHARED), their emulator runs included, but leave
+# their DOSSERIAL runs out (DOS_SERIAL_LATER): once they have all ended,
+# dosserial runs those of the targets whose build, if any, passed.  With the
+# run cache on, the header names it and each target's status line counts
+# the runs that came from it.  Exit status 1 when any target failed or did
+# not run.
+GATE_TARGETS := lint test asan all wc65 tc dbcheck tctest wc65test dostest tc310 wc65310 wintest
+# The order the gate starts them in: the builds the longest chains wait
+# for, then those chains, longest first (a target named in GATE_TARGETS
+# but not here starts last).
+GATE_START := wc65 tc dostest wc65310 tc310 wc65test tctest wintest test asan dbcheck all lint
+GATE_PREP := $(if $(INV_MSGS),$(BIN)/INV.MSG $(BIN)/INVSERV.MSG $(MSG_STAMPH)) $(BIN)/INV.HLP \
+	$(BIN)/INVWIN.HTX \
+	$(foreach e,$(EXES),$(BIN)/$(e).EXE) $(foreach t,$(DOS_TESTS),$(BIN)/TEST/$(t).EXE) \
+	$(foreach e,$(WIN_EXES) $(WIN_TOOLS),$(BIN)/WIN/$(e).EXE) \
+	$(BIN)/QEXIT.COM $(BIN)/WRAPCHK.COM $(BIN)/SHELLCHK.COM $(BIN)/PAGE1.COM $(DOS310_CFG) $(DOS310_RAMCFGS) \
+	$(foreach t,$(HOST_TESTS),$(HOSTOBJ)/$(t).bin) $(HOSTOBJ)/MKITEMS.bin
+gate_after_tctest := tc
+gate_after_tc310 := tc
+gate_after_wc65test := wc65
+gate_after_wc65310 := wc65
+GATE := $(OBJ)/GATE
+# The targets run one at a time once the others and dosserial have ended:
+# none in the commit gate, dostest1 in the full gate.
+GATE_SERIAL :=
+gate_dosserial = $(if $(dosserial_runs),dosserial)
+
+gate:
+	@case '$(DOS_JOBS)' in ''|0*|*[!0-9]*) echo "$@: DOS_JOBS must be a whole number, 1 or more: $(DOS_JOBS)" >&2; exit 2 ;; esac; \
+	rm -rf $(GATE); mkdir -p $(GATE)
+	@echo "=== gate: building what the targets share ($(GATE)/PREP.LOG)"; \
+	if $(SUBMAKE) -k -j$(DOS_JOBS) $(GATE_PREP) >$(GATE)/PREP.LOG 2>&1; then \
+		j=$(DOS_JOBS); shared=DOS_POOL_SHARED=1; \
+	else j=1; shared=; echo "=== gate: that failed; the targets run one at a time"; fi; \
+	if [ $$j -eq 1 ]; then goals='$(addprefix gatejob/,$(GATE_TARGETS))'; \
+	else goals='$(addprefix gatejob/,$(filter $(GATE_TARGETS),$(GATE_START)) $(filter-out $(GATE_START),$(GATE_TARGETS)))'; fi; \
+	echo "=== gate: $(words $(GATE_TARGETS)) targets, $$j at a time$(if $(filter-out 1,$(DOSTIME_SCALE)), (time limits x $(DOSTIME_SCALE)))$(if \
+		$(DOS_CACHE_ON),; run cache $(DOS_CACHE_DIR)$(if $(filter write,$(DOS_CACHE)), (store only)))"; \
+	$(SUBMAKE) -k -j$$j $$shared DOS_SERIAL_LATER=1 TC_BUILD= WC65_BUILD= $$goals;$(if $(gate_dosserial), \
+		ser=; $(foreach t,$(DOS_SERIAL_TARGETS),$(if $(gate_after_$(t)),[ "$$(cat $(GATE)/$(gate_after_$(t)).RC 2>/dev/null)" != 0 ] || )ser="$$ser $(t)";) \
+		echo "=== gate: then the runs that run alone:$$ser"; \
+		$(SUBMAKE) -k -j1 TC_BUILD= WC65_BUILD= DOS_SERIAL_TARGETS="$$ser" gatejob/dosserial;)$(if $(GATE_SERIAL), \
+		echo "=== gate: then one at a time: $(GATE_SERIAL)"; \
+		$(SUBMAKE) -k -j1 $(addprefix gatejob/,$(GATE_SERIAL));) \
+	echo "=== gate: exit status of each target (logs in $(GATE)/)"; bad=; \
+	for t in $(GATE_TARGETS) $(gate_dosserial) $(GATE_SERIAL); do rc=$$(cat $(GATE)/$$t.RC 2>/dev/null || echo "not run"); \
+		n=$$(grep -c '^    cached:' $(GATE)/$$t.LOG 2>/dev/null); \
+		printf '%-10s %s%s\n' $$t "$$rc" "$$([ "$${n:-0}" = 0 ] || echo " ($$n runs from the run cache)")"; \
+		[ "$$rc" = 0 ] || bad="$$bad $$t"; done; \
+	$(if $(DOS_CACHE_ON),k=$$(cat $(GATE)/*.LOG | grep -c 'RUN CACHE CONTRADICTION'); [ "$$k" = 0 ] || \
+		echo "=== gate: $$k runs failed where the run cache held a pass (RUN CACHE CONTRADICTION in the logs)";) \
+	for t in $$bad; do [ ! -f $(GATE)/$$t.LOG ] || \
+		{ echo "=== gate: $$t, the end of $(GATE)/$$t.LOG"; tail -40 $(GATE)/$$t.LOG; }; done; \
+	if [ -n "$$bad" ]; then echo "$@: failed or not run:$$bad" >&2; exit 1; fi
+
+gatejob/%:
+	@$(if $(gate_after_$*),if [ "$$(cat $(GATE)/$(gate_after_$*).RC 2>/dev/null)" != 0 ]; then \
+		echo "$(gate_after_$*) failed" >$(GATE)/$*.LOG; echo "not run ($(gate_after_$*) failed)" >$(GATE)/$*.RC; \
+		echo "    gate: $* not run: $(gate_after_$*) failed"; exit 0; fi;) \
+	echo "    gate: $* started"; t0=$$(date +%s); rc=0; \
+	$(MAKE) --no-print-directory -S $* >$(GATE)/$*.LOG 2>&1 || rc=$$?; \
+	echo $$rc >$(GATE)/$*.RC; echo "    gate: $* exit $$rc ($$(($$(date +%s) - t0))s)"
+gatejob/tctest gatejob/tc310: gatejob/tc
+gatejob/wc65test gatejob/wc65310: gatejob/wc65
+gatejob/asan: $(addprefix gatejob/,$(filter test,$(GATE_TARGETS)))
+
+# dosserial runs, one at a time and each alone among the emulators of the
+# tree (stage SERIAL of dos_pool), the DOSSERIAL runs of the targets of
+# DOS_SERIAL_TARGETS (by default the emulator targets of GATE_TARGETS),
+# its log list in $(OBJ)/SERIAL.LST.  Each such run waits for every other
+# run of the tree to end, so "make gate", whose targets leave them out
+# (DOS_SERIAL_LATER), runs them here once at its end, where they hold up
+# no stage.
+EMU_TARGETS := dostest tctest wc65test tc310 wc65310 wintest wc95test
+DOS_SERIAL_TARGETS ?= $(filter $(EMU_TARGETS),$(GATE_TARGETS))
+dosserial_runs = $(strip $(foreach t,$(DOS_SERIAL_TARGETS),$(call dos_serial,$(emu_runs_$(t)))))
+dosserial: $(foreach t,$(DOS_SERIAL_TARGETS),$(if $(call dos_serial,$(emu_runs_$(t))),$(emu_deps_$(t))))
+	$(if $(dosserial_runs),$(call dos_pool_run,OW,SERIAL,$(dosserial_runs)),@echo "=== no runs to run alone")
+
+# The full gate: the commit gate with dostest1 after it, so that it also
+# records the DOS runs one at a time on an otherwise idle host.  It takes
+# no run from the run cache.
+fullgate:
+	@$(MAKE) --no-print-directory gate GATE_SERIAL=dostest1 $(DOS_CACHE_STORE)
+
+# The DOS 3.30 + network client image is built from the period archives and
+# rebuilt whenever a file it is made from changes (image_current of
+# TEST/INTEG/net330.sh, run by integ_img).  The scripts read NET330_DIR
+# (default TEST/INTEG/vm/net330) for its location.
+#
+# integ runs its parts, INTEG_PARTS, one after another; every part runs,
+# and integ fails when any did.  Each part is a goal of its own that makes
+# what it needs, so a gate runner may run the parts side by side, each in a
+# tree of its own on any machine.  nbgate checks the shell patch of the NetBIOS, WGA and TCP/IP
+# images (shellgate), runs the NetBIOS gate in both server modes and once
+# to fail, then in its loss mode (-x), and the checks of the Workgroup
+# Add-On gate's helpers (wgagate.sh -n).  winser, winnb and winmbx link the
+# Windows programs to the server (building the disks of their Windows
+# machines when absent or out of date, winmbx the WGA image too).
+# integow, integtc and integwc65 each make one build (Open Watcom, Turbo C,
+# Watcom C 6.5) and run on it, INTEG_GATES, the server gate with the
+# build's memory floors, once with INV and once with THIN (integ_thin), the
+# screen gate with THIN and INV each over COM1 and NET at its floor, the
+# starvation gate, the Samba mailbox gate (on the TCP/IP image of
+# TEST/INTEG/mktcpc.sh) and the Workgroup Add-On gate (on the WGA image of
+# TEST/INTEG/mkwga.sh), each image built when absent or out of date.
+# stvgate, smbgate and wgagate run only the starvation, the Samba or the
+# Workgroup Add-On gate of each build; wgagate first runs shellgate and
+# its helpers' checks.
+# The starvation gate's load rounds of each build, sized by the pace of
+# its server as stvgate.sh says.
+STVGATE_ROUNDS_OW := 1700
+STVGATE_ROUNDS_TC := 250
+STVGATE_ROUNDS_WC65 := 1700
+integ_srv = sh TEST/INTEG/srvgate.sh -m $(INVSERV_FREEKB_$(1)) -c $(INVNET_FREEKB_$(1)) -s $(INVCOM_FREEKB_$(1)) $(call dj_bindir,$(1))
+integ_thin = sh TEST/INTEG/srvgate.sh -t $(THIN) -c $(THINNET_FREEKB_$(1)) -s $(THINCOM_FREEKB_$(1)) $(call dj_bindir,$(1))
+integ_scr = sh TEST/INTEG/scrgate.sh -r $(THIN),COM1,$(THINSCR_FREEKB_$(1)) \
+	-r $(THIN),NET,$(THINSCRNET_FREEKB_$(1)) -r INV,COM1,$(INVSCR_FREEKB_$(1)) \
+	-r INV,NET,$(INVSCRNET_FREEKB_$(1)) $(call dj_bindir,$(1))
+integ_stv = sh TEST/INTEG/stvgate.sh -r $(STVGATE_ROUNDS_$(1)) $(call dj_bindir,$(1))
+integ_smb = sh TEST/INTEG/smbgate.sh $(call dj_bindir,$(1))
+integ_wga = sh TEST/INTEG/wgagate.sh $(call dj_bindir,$(1))
+INTEG_GATES := srv thin scr stv smb wga
+INTEG_BUILDS := OW TC WC65
+# $(call integ_run,GATES,BUILDS): integ_<GATE> of each build, for each GATE.
+integ_run = @rc=0; $(foreach g,$(1),$(foreach b,$(2),echo "$(call integ_$(g),$(b))"; $(call integ_$(g),$(b)) || rc=1;)) exit $$rc
+integ_img = here=TEST/INTEG; . TEST/INTEG/net330.sh; image_current || sh TEST/INTEG/mkimg.sh
+INTEG_OW := $(BIN)/QEXIT.COM $(BIN)/INVSERV.EXE $(BIN)/INVTEST.EXE $(BIN)/INVSERV.MSG \
+	$(HOSTOBJ)/INV.bin $(BIN)/INV.EXE $(BIN)/$(THIN).EXE
+INTEG_PROGS := $(INTEG_OW) $(TC_BUILD) $(WC65_BUILD)
+INTEG_PARTS := nbgate winser winnb winmbx integow integtc integwc65
+integ:
+	@rc=0; for p in $(INTEG_PARTS); do $(MAKE) --no-print-directory $$p || rc=1; done; exit $$rc
+
+nbgate: $(INTEG_OW) $(BIN)/NBTEST.EXE
+	$(integ_img)
+	$(MAKE) --no-print-directory shellgate
+	sh TEST/INTEG/nbgate.sh
+	sh TEST/INTEG/nbgate.sh -x
+	sh TEST/INTEG/wgagate.sh -n
+
+integow: $(INTEG_OW)
+	$(integ_img)
+	$(call integ_run,$(INTEG_GATES),OW)
+
+integtc: $(INTEG_OW) $(TC_BUILD)
+	$(integ_img)
+	$(call integ_run,$(INTEG_GATES),TC)
+
+integwc65: $(INTEG_OW) $(WC65_BUILD)
+	$(integ_img)
+	$(call integ_run,$(INTEG_GATES),WC65)
+
+stvgate: $(INTEG_PROGS)
+	$(integ_img)
+	$(call integ_run,stv,$(INTEG_BUILDS))
+
+smbgate: $(INTEG_PROGS)
+	$(call integ_run,smb,$(INTEG_BUILDS))
+
+wgagate: $(INTEG_PROGS)
+	$(MAKE) --no-print-directory shellgate
+	sh TEST/INTEG/wgagate.sh -n
+	$(call integ_run,wga,$(INTEG_BUILDS))
+
+# TEST/INTEG/shlgate.sh: the images' shells patched, the patch keeping
+# them running after SHELLCHK, and img_shell's own cases.
+shellgate: $(BIN)/QEXIT.COM $(BIN)/SHELLCHK.COM
+	sh TEST/INTEG/shlgate.sh $(BIN)/SHELLCHK.COM
+
+# The TCP probe (TEST/INTEG/tcpprobe.sh) of the Open Watcom, Turbo C and
+# Watcom C 6.5 builds, each on MS-DOS 3.30 and 3.10, all six side by side,
+# each logged in $(OBJ)/TCP/<build><DOS>.LOG; meanwhile the TCP gate
+# (TEST/INTEG/tcpgate.sh) of each build, one after another, with the
+# build's INVTCP memory floor, on the DOS 3.30 + network client image of
+# integ.  tcp fails when any run did.
+TCP_RUNS := $(foreach b,OW TC WC65,$(b)/330 $(b)/310)
+tcp_log = $(OBJ)/TCP/$(subst /,,$(1)).LOG
+tcp_probe = { sh TEST/INTEG/tcpprobe.sh -v $(notdir $(1)) \
+	$(call dj_bindir,$(patsubst %/,%,$(dir $(1)))) >$(call tcp_log,$(1)) 2>&1 && \
+	echo "tcp: $(1) passed" || { echo "tcp: $(1) FAILED, see $(call tcp_log,$(1))"; exit 1; }; } &
+tcp_gate = sh TEST/INTEG/tcpgate.sh -m $(INVTCP_FREEKB_$(1)) $(call dj_bindir,$(1))
+tcp: $(BIN)/TCPTEST.EXE $(BIN)/INVSERV.EXE $(BIN)/INVTCP.EXE $(BIN)/INVSERV.MSG \
+	$(BIN)/QEXIT.COM $(TC_BUILD) $(WC65_BUILD)
+	here=TEST/INTEG; . TEST/INTEG/net330.sh; image_current || sh TEST/INTEG/mkimg.sh
+	@mkdir -p $(OBJ)/TCP; pids=; \
+	$(foreach r,$(TCP_RUNS),$(call tcp_probe,$(r)) pids="$$pids $$!";) \
+	rc=0; $(foreach b,OW TC WC65,echo "$(call tcp_gate,$(b))"; $(call tcp_gate,$(b)) || rc=1;) \
+	for p in $$pids; do wait $$p || rc=1; done; exit $$rc
+
+# The release (DOC/INSTALL.md): REL/mkdist.sh makes the sample data with
+# the host INV from the requests of REL/SAMPLE.REQ and writes the floppy
+# images that REL/DISKS.TXT describes, which carry the Watcom C 6.5 build
+# (made first, through WC65_BUILD) and INVWIN with its help file, most
+# files compressed by REL/szdd.py, into DIST/, with that build's memory
+# figures above in the disks' README.TXT, and RETROINV.ZIP, the files of
+# the 1.44 MB disk as they are (REL/diskzip.py).  distcheck then reads
+# every image and the zip back, has msexpand expand every compressed
+# file, and installs from each set's images on MS-DOS 3.10 and 3.30 under
+# QEMU and runs the installed DOS programs (REL/distchk.sh), holding the
+# emulator lock shared (see dos_lock).
+DIST := DIST
+DIST_WORK := $(OBJ)/DIST
+DIST_MARKS := $(foreach p,INV INVSCR INVSCRNET INVSERV INVNET INVCOM THINNET THINCOM THINSCR \
+	THINSCRNET INVTCP,$(p)_FREEKB_WC65=$($(p)_FREEKB_WC65))
+dist: $(WC65_BUILD) $(HOSTOBJ)/INV.bin $(BIN)/INV.MSG $(BIN)/INVSERV.MSG $(BIN)/INV.HLP \
+	$(BIN)/WIN/INVWIN.EXE $(BIN)/WIN/SETUP.EXE $(BIN)/INVWIN.HTX $(BIN)/INVWIN.HLP
+	sh REL/mkdist.sh $(DIST_WORK) $(DIST) $(HOSTOBJ)/INV.bin $(DIST_MARKS)
+
+distcheck: dist $(BIN)/QEXIT.COM
+	@echo "sh REL/distchk.sh $(DIST_WORK) $(DIST) $(HOSTOBJ)/INV.bin"; $(call dos_lock,s,$(dos_nolock)) \
+		sh REL/distchk.sh $(DIST_WORK) $(DIST) $(HOSTOBJ)/INV.bin 7>&- 8>&-
+
+# Every file of the disks as it is, as mkdist staged them, compressed by
+# REL/szdd.py and expanded by T_LZEXP and by msexpand (TEST/szddchk.py).
+lzcheck: dist $(HOSTOBJ)/T_LZEXP.bin
+	python3 -I TEST/szddchk.py --msexpand REL/szdd.py $(HOSTOBJ)/T_LZEXP.bin \
+		$$(find $(DIST_WORK)/PLAIN -type f | sort)
+
+clean:
+	rm -rf $(BIN) $(OBJ)
+
+# isa-debug-exit helper used by the QEMU test VMs.
+$(BIN)/QEXIT.COM: TEST/INTEG/QEXIT.ASM
+	@mkdir -p $(BIN)
+	nasm -f bin -o $@ $<
+
+# Runs a program with a given amount of free memory, for the memory
+# floors of the two-VM gates (TEST/INTEG/vmgate.sh).
+$(BIN)/EATRUN.COM: TEST/INTEG/EATRUN.ASM
+	@mkdir -p $(BIN)
+	nasm -f bin -o $@ $<
+
+# Emulator self-check run first by dostest, tc310 and wc65310 (16-bit
+# near-call IP wrap).
+$(BIN)/WRAPCHK.COM: TEST/INTEG/WRAPCHK.ASM
+	@mkdir -p $(BIN)
+	nasm -f bin -o $@ $<
+
+# The second emulator self-check: the shell must reload its transient part
+# after a program that overwrote it (see TEST/INTEG/boot310.sh).
+$(BIN)/SHELLCHK.COM: TEST/INTEG/SHELLCHK.ASM
+	@mkdir -p $(BIN)
+	nasm -f bin -o $@ $<
+
+# Puts keystrokes into the BIOS keyboard buffer, for the server gate's
+# Ctrl-C case (TEST/INTEG/srvgate.sh).
+$(BIN)/KSTUFF.COM: TEST/DBASE/KSTUFF.ASM
+	@mkdir -p $(BIN)
+	nasm -f bin -o $@ $<
+
+# Prepares T_VIDEO's page-1 and wide runs on MS-DOS 3.10 and checks the
+# page-1 run afterwards.
+$(BIN)/PAGE1.COM: TEST/INTEG/PAGE1.ASM
+	@mkdir -p $(BIN)
+	nasm -f bin -o $@ $<

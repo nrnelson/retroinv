@@ -1,0 +1,39 @@
+# SCRMAINT.C: the recent service list, the Service tab and the service
+# record form (MV_).
+# W=74 list box title: VID_COLS - 6
+830 MV_T_RECENT Recent service
+# W=23 tab title, exactly, as MI_T_TABS
+831 MV_T_TAB \x20Parts [Service] Loans\x20
+# W=78 column header over the list: VID_COLS - 2
+832 MV_HDR      Rec     Item Date       Ty     Cost Summary
+833 MV_HDRTAB      Rec Date       Ty     Cost Summary
+
+834 MV_EMPTY No service records
+# W=79 key hints: VID_COLS - 1, level digits not counted
+835 MV_HINTLIST Enter=Open 2Ctrl-E=Edit 2Del=Delete Esc=Back F1=Help
+836 MV_HINTTAB Enter=Open 2Ins=New 2Ctrl-E=Edit 2Del=Delete Esc=Form F1=Help
+837 MV_HINTVIEW 2Ctrl-E=Edit Esc=Back F1=Help
+839 MV_HINTEDIT Enter=Save F4=List Esc=Cancel F1=Help
+# W=40 form title with its ID: FORM_TITLEMAX
+840 MV_TITLE Service record ^1
+# W=65 form box title: SCR_POPW - 6
+841 MV_NEWTITLE New service record
+
+842 MV_ADDED Service record ^1 added
+843 MV_SAVED Service record ^1 saved
+844 MV_DELQ Delete service record ^1?
+845 MV_DELETED Service record ^1 deleted
+# W=56 memo box title: MEMO_TITLEW
+846 MV_NOTES Notes of service record ^1
+# W=9 form labels: SCR_V1 - SCR_C1 - 1
+847 MV_L_ID Record
+848 MV_L_ITEM Item
+849 MV_L_DATE Date
+850 MV_L_TYPE Type
+851 MV_L_SUMMARY Summary
+852 MV_L_COST Cost
+853 MV_L_DONEBY Done by
+854 MV_L_NOTES Notes
+
+# The Windows client's title of an item's records, after the program's
+855 MV_T_ITEM Service records of item ^1

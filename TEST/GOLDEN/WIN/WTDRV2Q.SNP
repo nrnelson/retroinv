@@ -1,0 +1,507 @@
+=SNAP INIT
+WTDRV2 "WTDRV2 proof" ACTIVE FOCUS
+ POPUP "&Focus"
+  MENU 101 "&List?Ctrl+L"
+  MENU 102 "&Marks?Ctrl+K"
+  MENU 103 "&Combo?Ctrl+O"
+  MENU 104 "&Edit?Ctrl+Shift+E"
+  MENU 105 "&Password?Shift+F2"
+ POPUP "&Action"
+  MENU 201 "&Message...?F2"
+  MENU 202 "&Busy"
+  MENU 203 "&Check?Alt+C"
+  MENU 204 "&Gone" DISABLED
+  MENU 0 "" DISABLED
+  POPUP "&Sub"
+   MENU 301 "&Deep"
+  MENU 205 "E&xit?Ctrl+Q"
+ Static 10 "Caf‚:"
+ ListBox 20 ""
+  ROW "Alpha" SELECTED
+  ROW "Beta"
+  ROW "Gamma"
+  ROW "R‚sum‚"
+  ROW LONG
+ ListBox 21 ""
+  ROW "Aa"
+  ROW "Bb"
+  ROW "Cc"
+  ROW "Dd"
+ ComboBox 30 "Two"
+  ROW "One"
+  ROW "Two" SELECTED
+  ROW "Three"
+  Edit 1001 "Two"
+ Edit 40 ""
+ Edit 41 ""
+ Button 50 "&Off" DISABLED
+ Button 51 "Hid" HIDDEN
+ Button 52 "&Go" DEFAULT
+ Button 53 "C&heck" CHECKED
+ Button 54 "Tri" MIXED
+ Static 60 "idle"
+ WT2PAD 70 ""
+  WT2PADN 1 ""
+ WT2PADN 71 ""
+ComboLBox 1000 "" HIDDEN
+=SNAP SHIFT
+WTDRV2 "WTDRV2 proof" ACTIVE FOCUS
+ POPUP "&Focus"
+  MENU 101 "&List?Ctrl+L"
+  MENU 102 "&Marks?Ctrl+K"
+  MENU 103 "&Combo?Ctrl+O"
+  MENU 104 "&Edit?Ctrl+Shift+E"
+  MENU 105 "&Password?Shift+F2"
+ POPUP "&Action"
+  MENU 201 "&Message...?F2"
+  MENU 202 "&Busy"
+  MENU 203 "&Check?Alt+C"
+  MENU 204 "&Gone" DISABLED
+  MENU 0 "" DISABLED
+  POPUP "&Sub"
+   MENU 301 "&Deep"
+  MENU 205 "E&xit?Ctrl+Q"
+ Static 10 "Caf‚:"
+ ListBox 20 ""
+  ROW "Alpha" SELECTED
+  ROW "Beta"
+  ROW "Gamma"
+  ROW "R‚sum‚"
+  ROW LONG
+ ListBox 21 ""
+  ROW "Aa"
+  ROW "Bb"
+  ROW "Cc"
+  ROW "Dd"
+ ComboBox 30 "Two"
+  ROW "One"
+  ROW "Two" SELECTED
+  ROW "Three"
+  Edit 1001 "Two"
+ Edit 40 ""
+ Edit 41 ""
+ Button 50 "&Off" DISABLED
+ Button 51 "Hid" HIDDEN
+ Button 52 "&Go" DEFAULT
+ Button 53 "C&heck" CHECKED
+ Button 54 "Tri" MIXED
+ Static 60 "idle"
+ WT2PAD 70 "1 201 1 1 0005 L-S 70" CAPTURE
+  WT2PADN 1 ""
+ WT2PADN 71 ""
+ComboLBox 1000 "" HIDDEN
+=SNAP CTRL
+WTDRV2 "WTDRV2 proof" ACTIVE FOCUS
+ POPUP "&Focus"
+  MENU 101 "&List?Ctrl+L"
+  MENU 102 "&Marks?Ctrl+K"
+  MENU 103 "&Combo?Ctrl+O"
+  MENU 104 "&Edit?Ctrl+Shift+E"
+  MENU 105 "&Password?Shift+F2"
+ POPUP "&Action"
+  MENU 201 "&Message...?F2"
+  MENU 202 "&Busy"
+  MENU 203 "&Check?Alt+C"
+  MENU 204 "&Gone" DISABLED
+  MENU 0 "" DISABLED
+  POPUP "&Sub"
+   MENU 301 "&Deep"
+  MENU 205 "E&xit?Ctrl+Q"
+ Static 10 "Caf‚:"
+ ListBox 20 ""
+  ROW "Alpha" SELECTED
+  ROW "Beta"
+  ROW "Gamma"
+  ROW "R‚sum‚"
+  ROW LONG
+ ListBox 21 ""
+  ROW "Aa"
+  ROW "Bb"
+  ROW "Cc"
+  ROW "Dd"
+ ComboBox 30 "Two"
+  ROW "One"
+  ROW "Two" SELECTED
+  ROW "Three"
+  Edit 1001 "Two"
+ Edit 40 ""
+ Edit 41 ""
+ Button 50 "&Off" DISABLED
+ Button 51 "Hid" HIDDEN
+ Button 52 "&Go" DEFAULT
+ Button 53 "C&heck" CHECKED
+ Button 54 "Tri" MIXED
+ Static 60 "idle"
+ WT2PAD 70 "2 202 2 2 0008 --C -"
+  WT2PADN 1 ""
+ WT2PADN 71 ""
+ComboLBox 1000 "" HIDDEN
+=SNAP BOTH
+WTDRV2 "WTDRV2 proof" ACTIVE FOCUS
+ POPUP "&Focus"
+  MENU 101 "&List?Ctrl+L"
+  MENU 102 "&Marks?Ctrl+K"
+  MENU 103 "&Combo?Ctrl+O"
+  MENU 104 "&Edit?Ctrl+Shift+E"
+  MENU 105 "&Password?Shift+F2"
+ POPUP "&Action"
+  MENU 201 "&Message...?F2"
+  MENU 202 "&Busy"
+  MENU 203 "&Check?Alt+C"
+  MENU 204 "&Gone" DISABLED
+  MENU 0 "" DISABLED
+  POPUP "&Sub"
+   MENU 301 "&Deep"
+  MENU 205 "E&xit?Ctrl+Q"
+ Static 10 "Caf‚:"
+ ListBox 20 ""
+  ROW "Alpha" SELECTED
+  ROW "Beta"
+  ROW "Gamma"
+  ROW "R‚sum‚"
+  ROW LONG
+ ListBox 21 ""
+  ROW "Aa"
+  ROW "Bb"
+  ROW "Cc"
+  ROW "Dd"
+ ComboBox 30 "Two"
+  ROW "One"
+  ROW "Two" SELECTED
+  ROW "Three"
+  Edit 1001 "Two"
+ Edit 40 ""
+ Edit 41 ""
+ Button 50 "&Off" DISABLED
+ Button 51 "Hid" HIDDEN
+ Button 52 "&Go" DEFAULT
+ Button 53 "C&heck" CHECKED
+ Button 54 "Tri" MIXED
+ Static 60 "idle"
+ WT2PAD 70 "3 201 3 3 000D L-SC 70" CAPTURE
+  WT2PADN 1 ""
+ WT2PADN 71 ""
+ComboLBox 1000 "" HIDDEN
+=SNAP PLAIN
+WTDRV2 "WTDRV2 proof" ACTIVE FOCUS
+ POPUP "&Focus"
+  MENU 101 "&List?Ctrl+L"
+  MENU 102 "&Marks?Ctrl+K"
+  MENU 103 "&Combo?Ctrl+O"
+  MENU 104 "&Edit?Ctrl+Shift+E"
+  MENU 105 "&Password?Shift+F2"
+ POPUP "&Action"
+  MENU 201 "&Message...?F2"
+  MENU 202 "&Busy"
+  MENU 203 "&Check?Alt+C"
+  MENU 204 "&Gone" DISABLED
+  MENU 0 "" DISABLED
+  POPUP "&Sub"
+   MENU 301 "&Deep"
+  MENU 205 "E&xit?Ctrl+Q"
+ Static 10 "Caf‚:"
+ ListBox 20 ""
+  ROW "Alpha" SELECTED
+  ROW "Beta"
+  ROW "Gamma"
+  ROW "R‚sum‚"
+  ROW LONG
+ ListBox 21 ""
+  ROW "Aa"
+  ROW "Bb"
+  ROW "Cc"
+  ROW "Dd"
+ ComboBox 30 "Two"
+  ROW "One"
+  ROW "Two" SELECTED
+  ROW "Three"
+  Edit 1001 "Two"
+ Edit 40 ""
+ Edit 41 ""
+ Button 50 "&Off" DISABLED
+ Button 51 "Hid" HIDDEN
+ Button 52 "&Go" DEFAULT
+ Button 53 "C&heck" CHECKED
+ Button 54 "Tri" MIXED
+ Static 60 "idle"
+ WT2PAD 70 "4 200 4 4 0001 L- 70" CAPTURE
+  WT2PADN 1 ""
+ WT2PADN 71 ""
+ComboLBox 1000 "" HIDDEN
+=SNAP ALT
+WTDRV2 "WTDRV2 proof" ACTIVE FOCUS
+ POPUP "&Focus"
+  MENU 101 "&List?Ctrl+L"
+  MENU 102 "&Marks?Ctrl+K"
+  MENU 103 "&Combo?Ctrl+O"
+  MENU 104 "&Edit?Ctrl+Shift+E"
+  MENU 105 "&Password?Shift+F2"
+ POPUP "&Action"
+  MENU 201 "&Message...?F2"
+  MENU 202 "&Busy"
+  MENU 203 "&Check?Alt+C"
+  MENU 204 "&Gone" DISABLED
+  MENU 0 "" DISABLED
+  POPUP "&Sub"
+   MENU 301 "&Deep"
+  MENU 205 "E&xit?Ctrl+Q"
+ Static 10 "Caf‚:"
+ ListBox 20 ""
+  ROW "Alpha" SELECTED
+  ROW "Beta"
+  ROW "Gamma"
+  ROW "R‚sum‚"
+  ROW LONG
+ ListBox 21 ""
+  ROW "Aa"
+  ROW "Bb"
+  ROW "Cc"
+  ROW "Dd"
+ ComboBox 30 "Two"
+  ROW "One"
+  ROW "Two" SELECTED
+  ROW "Three"
+  Edit 1001 "Two"
+ Edit 40 ""
+ Edit 41 ""
+ Button 50 "&Off" DISABLED
+ Button 51 "Hid" HIDDEN
+ Button 52 "&Go" DEFAULT
+ Button 53 "C&heck" CHECKED
+ Button 54 "Tri" MIXED
+ Static 60 "idle"
+ WT2PAD 70 "5 202 4 4 0000 -- -"
+  WT2PADN 1 ""
+ WT2PADN 71 "1 200 5 5 0000 --A -"
+ComboLBox 1000 "" HIDDEN
+=SNAP ALL
+WTDRV2 "WTDRV2 proof" ACTIVE FOCUS
+ POPUP "&Focus"
+  MENU 101 "&List?Ctrl+L"
+  MENU 102 "&Marks?Ctrl+K"
+  MENU 103 "&Combo?Ctrl+O"
+  MENU 104 "&Edit?Ctrl+Shift+E"
+  MENU 105 "&Password?Shift+F2"
+ POPUP "&Action"
+  MENU 201 "&Message...?F2"
+  MENU 202 "&Busy"
+  MENU 203 "&Check?Alt+C"
+  MENU 204 "&Gone" DISABLED
+  MENU 0 "" DISABLED
+  POPUP "&Sub"
+   MENU 301 "&Deep"
+  MENU 205 "E&xit?Ctrl+Q"
+ Static 10 "Caf‚:"
+ ListBox 20 ""
+  ROW "Alpha" SELECTED
+  ROW "Beta"
+  ROW "Gamma"
+  ROW "R‚sum‚"
+  ROW LONG
+ ListBox 21 ""
+  ROW "Aa"
+  ROW "Bb"
+  ROW "Cc"
+  ROW "Dd"
+ ComboBox 30 "Two"
+  ROW "One"
+  ROW "Two" SELECTED
+  ROW "Three"
+  Edit 1001 "Two"
+ Edit 40 ""
+ Edit 41 ""
+ Button 50 "&Off" DISABLED
+ Button 51 "Hid" HIDDEN
+ Button 52 "&Go" DEFAULT
+ Button 53 "C&heck" CHECKED
+ Button 54 "Tri" MIXED
+ Static 60 "idle"
+ WT2PAD 70 "5 202 4 4 0000 -- -"
+  WT2PADN 1 ""
+ WT2PADN 71 "2 200 6 6 000C --SCA -"
+ComboLBox 1000 "" HIDDEN
+=SNAP SHRDOWN
+WTDRV2 "WTDRV2 proof" ACTIVE FOCUS
+ POPUP "&Focus"
+  MENU 101 "&List?Ctrl+L"
+  MENU 102 "&Marks?Ctrl+K"
+  MENU 103 "&Combo?Ctrl+O"
+  MENU 104 "&Edit?Ctrl+Shift+E"
+  MENU 105 "&Password?Shift+F2"
+ POPUP "&Action"
+  MENU 201 "&Message...?F2"
+  MENU 202 "&Busy"
+  MENU 203 "&Check?Alt+C"
+  MENU 204 "&Gone" DISABLED
+  MENU 0 "" DISABLED
+  POPUP "&Sub"
+   MENU 301 "&Deep"
+  MENU 205 "E&xit?Ctrl+Q"
+ Static 10 "Caf‚:"
+ ListBox 20 ""
+  ROW "Alpha" SELECTED
+  ROW "Beta"
+  ROW "Gamma"
+  ROW "R‚sum‚"
+  ROW LONG
+ ListBox 21 ""
+  ROW "Aa"
+  ROW "Bb"
+  ROW "Cc"
+  ROW "Dd"
+ ComboBox 30 "Two"
+  ROW "One"
+  ROW "Two" SELECTED
+  ROW "Three"
+  Edit 1001 "Two"
+ Edit 40 ""
+ Edit 41 ""
+ Button 50 "&Off" DISABLED
+ Button 51 "Hid" HIDDEN
+ Button 52 "&Go" DEFAULT
+ Button 53 "C&heck" CHECKED
+ Button 54 "Tri" MIXED
+ Static 60 "idle"
+ WT2PAD 70 "6 204 7 7 0006 -RS W"
+  WT2PADN 1 ""
+ WT2PADN 71 "2 200 6 6 000C --SCA -"
+ComboLBox 1000 "" HIDDEN
+=SNAP CTRLRUP
+WTDRV2 "WTDRV2 proof" ACTIVE FOCUS
+ POPUP "&Focus"
+  MENU 101 "&List?Ctrl+L"
+  MENU 102 "&Marks?Ctrl+K"
+  MENU 103 "&Combo?Ctrl+O"
+  MENU 104 "&Edit?Ctrl+Shift+E"
+  MENU 105 "&Password?Shift+F2"
+ POPUP "&Action"
+  MENU 201 "&Message...?F2"
+  MENU 202 "&Busy"
+  MENU 203 "&Check?Alt+C"
+  MENU 204 "&Gone" DISABLED
+  MENU 0 "" DISABLED
+  POPUP "&Sub"
+   MENU 301 "&Deep"
+  MENU 205 "E&xit?Ctrl+Q"
+ Static 10 "Caf‚:"
+ ListBox 20 ""
+  ROW "Alpha" SELECTED
+  ROW "Beta"
+  ROW "Gamma"
+  ROW "R‚sum‚"
+  ROW LONG
+ ListBox 21 ""
+  ROW "Aa"
+  ROW "Bb"
+  ROW "Cc"
+  ROW "Dd"
+ ComboBox 30 "Two"
+  ROW "One"
+  ROW "Two" SELECTED
+  ROW "Three"
+  Edit 1001 "Two"
+ Edit 40 ""
+ Edit 41 ""
+ Button 50 "&Off" DISABLED
+ Button 51 "Hid" HIDDEN
+ Button 52 "&Go" DEFAULT
+ Button 53 "C&heck" CHECKED
+ Button 54 "Tri" MIXED
+ Static 60 "1 205 116 198 0008 --C -"
+ WT2PAD 70 "6 204 7 7 0006 -RS W"
+  WT2PADN 1 ""
+ WT2PADN 71 "2 200 6 6 000C --SCA -"
+ComboLBox 1000 "" HIDDEN
+=SNAP SHDBL
+WTDRV2 "WTDRV2 proof" ACTIVE FOCUS
+ POPUP "&Focus"
+  MENU 101 "&List?Ctrl+L"
+  MENU 102 "&Marks?Ctrl+K"
+  MENU 103 "&Combo?Ctrl+O"
+  MENU 104 "&Edit?Ctrl+Shift+E"
+  MENU 105 "&Password?Shift+F2"
+ POPUP "&Action"
+  MENU 201 "&Message...?F2"
+  MENU 202 "&Busy"
+  MENU 203 "&Check?Alt+C"
+  MENU 204 "&Gone" DISABLED
+  MENU 0 "" DISABLED
+  POPUP "&Sub"
+   MENU 301 "&Deep"
+  MENU 205 "E&xit?Ctrl+Q"
+ Static 10 "Caf‚:"
+ ListBox 20 ""
+  ROW "Alpha" SELECTED
+  ROW "Beta"
+  ROW "Gamma"
+  ROW "R‚sum‚"
+  ROW LONG
+ ListBox 21 ""
+  ROW "Aa"
+  ROW "Bb"
+  ROW "Cc"
+  ROW "Dd"
+ ComboBox 30 "Two"
+  ROW "One"
+  ROW "Two" SELECTED
+  ROW "Three"
+  Edit 1001 "Two"
+ Edit 40 ""
+ Edit 41 ""
+ Button 50 "&Off" DISABLED
+ Button 51 "Hid" HIDDEN
+ Button 52 "&Go" DEFAULT
+ Button 53 "C&heck" CHECKED
+ Button 54 "Tri" MIXED
+ Static 60 "1 205 116 198 0008 --C -"
+ WT2PAD 70 "6 204 7 7 0006 -RS W"
+  WT2PADN 1 "1 201 1 2 0005 L-S 1" CAPTURE
+ WT2PADN 71 "2 200 6 6 000C --SCA -"
+ComboLBox 1000 "" HIDDEN
+=SNAP DBLUP
+WTDRV2 "WTDRV2 proof" ACTIVE FOCUS
+ POPUP "&Focus"
+  MENU 101 "&List?Ctrl+L"
+  MENU 102 "&Marks?Ctrl+K"
+  MENU 103 "&Combo?Ctrl+O"
+  MENU 104 "&Edit?Ctrl+Shift+E"
+  MENU 105 "&Password?Shift+F2"
+ POPUP "&Action"
+  MENU 201 "&Message...?F2"
+  MENU 202 "&Busy"
+  MENU 203 "&Check?Alt+C"
+  MENU 204 "&Gone" DISABLED
+  MENU 0 "" DISABLED
+  POPUP "&Sub"
+   MENU 301 "&Deep"
+  MENU 205 "E&xit?Ctrl+Q"
+ Static 10 "Caf‚:"
+ ListBox 20 ""
+  ROW "Alpha" SELECTED
+  ROW "Beta"
+  ROW "Gamma"
+  ROW "R‚sum‚"
+  ROW LONG
+ ListBox 21 ""
+  ROW "Aa"
+  ROW "Bb"
+  ROW "Cc"
+  ROW "Dd"
+ ComboBox 30 "Two"
+  ROW "One"
+  ROW "Two" SELECTED
+  ROW "Three"
+  Edit 1001 "Two"
+ Edit 40 ""
+ Edit 41 ""
+ Button 50 "&Off" DISABLED
+ Button 51 "Hid" HIDDEN
+ Button 52 "&Go" DEFAULT
+ Button 53 "C&heck" CHECKED
+ Button 54 "Tri" MIXED
+ Static 60 "1 205 116 198 0008 --C -"
+ WT2PAD 70 "6 204 7 7 0006 -RS W"
+  WT2PADN 1 "2 202 1 2 0000 -- -"
+ WT2PADN 71 "2 200 6 6 000C --SCA -"
+ComboLBox 1000 "" HIDDEN
+=END

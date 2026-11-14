@@ -1,0 +1,87 @@
+=SNAP LOADFAIL
+#32770 "Search items - Edit" ACTIVE
+ Button 2 "OK" FOCUS DEFAULT
+ Static 65535 ""
+ Static 65535 "Database error 300: a read or write error"
+#32770 "Search items - Edit" DISABLED HIDDEN
+ WTAB 95 "&Record|&Notes" CUR 0
+ Static 65535 "&Location"
+ Edit 100 "K1"
+ Static 65535 "&Text"
+ Edit 101 "Ý bar"
+ Edit 102 "" HIDDEN
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WFORMT "WFORMT" DISABLED
+=SNAP KEY
+#32770 "Search items - Edit" ACTIVE
+ WTAB 95 "&Record|&Notes" CUR 0
+ Static 65535 "&Location"
+ Edit 100 "K1" FOCUS
+ Static 65535 "&Text"
+ Edit 101 "Ý bar"
+ Edit 102 "" HIDDEN
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WFORMT "WFORMT" DISABLED
+=SNAP KEYESC
+WFORMT "KEY 0 1 #1" ACTIVE FOCUS
+=SNAP BLANKESC
+WFORMT "KEY 0 1 #2" ACTIVE FOCUS
+=SNAP MEMORO
+#32770 "Search items - Edit" ACTIVE
+ WTAB 95 "&Record|&Notes" CUR 1
+ Static 65535 "&Location" HIDDEN
+ Edit 100 "K1" HIDDEN
+ Static 65535 "&Text" HIDDEN
+ Edit 101 "Ý bar" HIDDEN
+ Edit 102 "" FOCUS
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WFORMT "KEY 0 1 #2" DISABLED
+=SNAP NAMED
+#32770 "Search items - Edit" ACTIVE
+ WTAB 95 "&Record|&Notes" CUR 0
+ Static 65535 "&Location"
+ Edit 100 "K1"
+ Static 65535 "&Text"
+ Edit 101 "abc" FOCUS
+ Edit 102 "" HIDDEN
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WFORMT "KEY 0 1 #2" DISABLED
+=SNAP DUP
+#32770 "Search items - Edit" ACTIVE
+ WTAB 95 "&Record|&Notes" CUR 0
+ Static 65535 "&Location"
+ Edit 100 "K1" FOCUS
+ Static 65535 "&Text"
+ Edit 101 "abc"
+ Edit 102 "" HIDDEN
+ Static 99 "Already exists"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WFORMT "KEY 0 1 #2" DISABLED
+=SNAP LOGIN
+#32770 "Search items - Edit" ACTIVE
+ Button 2 "OK" FOCUS DEFAULT
+ Static 65535 ""
+ Static 65535 "Session expired"
+#32770 "Search items - Edit" DISABLED
+ WTAB 95 "&Record|&Notes" CUR 0
+ Static 65535 "&Location"
+ Edit 100 "K1"
+ Static 65535 "&Text"
+ Edit 101 "abc"
+ Edit 102 "" HIDDEN
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WFORMT "KEY 0 1 #2" DISABLED
+=SNAP KEYEND
+WFORMT "KEY 3 1 #5" ACTIVE FOCUS
+=END

@@ -1,0 +1,31 @@
+/*
+ * WRPT.RC - the dialogs and strings of the reports (SRC/WIN/WRPT.C), in
+ * the Windows character set: the resource script of the program that
+ * links WRPT.C includes this file.
+ */
+#include "WRSTR.H"
+
+WR_R_RUN DIALOG 0, 0, 160, 52
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION
+FONT 8, "Helv"
+BEGIN
+    CTEXT "", WR_C_PROGRESS, 8, 10, 144, 8
+    PUSHBUTTON "Cancel", IDCANCEL, 56, 30, 48, 14
+END
+
+WR_R_VIEW DIALOG 0, 0, 240, 120
+STYLE WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME |
+      WS_MAXIMIZEBOX | WS_VSCROLL | WS_HSCROLL
+FONT 8, "Helv"
+BEGIN
+    CONTROL "", WR_C_LINES, "LISTBOX", WS_CHILD | WS_VISIBLE | WS_TABSTOP |
+            LBS_OWNERDRAWFIXED | LBS_HASSTRINGS | LBS_NOTIFY |
+            LBS_NOINTEGRALHEIGHT | LBS_WANTKEYBOARDINPUT, 0, 0, 240, 120
+END
+
+STRINGTABLE
+BEGIN
+    WR_S_NOPRN, "There is no default printer: choose one with the Printers icon of the Control Panel."
+    WR_S_PRNERR, "Windows could not print the report."
+    WR_S_NODRV, "Windows could not load the default printer's driver: install the printer again with the Printers icon of the Control Panel."
+END

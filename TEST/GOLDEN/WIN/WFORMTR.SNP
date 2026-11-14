@@ -1,0 +1,51 @@
+=SNAP REFUSED
+#32770 "Search items - Edit" ACTIVE
+ WTAB 95 "&Record|&Notes" CUR 0
+ Static 65535 "New &password"
+ Edit 100 "" FOCUS
+ Edit 101 "First line??Caf‚ au lait" HIDDEN
+ Static 99 "REFUSED"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WFORMT "WFORMT" DISABLED
+=SNAP CHECKED1
+WFORMT "SECRET 0 WIPED #2" ACTIVE FOCUS
+=SNAP MEMOFAIL
+#32770 "Search items - Edit" ACTIVE
+ Button 2 "OK" FOCUS DEFAULT
+ Static 65535 ""
+ Static 65535 "Database error 302: the disk is full"
+#32770 "Search items - Edit" DISABLED
+ WTAB 95 "&Record|&Notes" CUR 1
+ Static 65535 "New &password" HIDDEN
+ Edit 100 "" HIDDEN
+ Edit 101 "x"
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WFORMT "SECRET 0 WIPED #2" DISABLED
+=SNAP STAYED
+#32770 "Search items - Edit" ACTIVE
+ WTAB 95 "&Record|&Notes" CUR 1
+ Static 65535 "New &password" HIDDEN
+ Edit 100 "" HIDDEN
+ Edit 101 "x"
+ Static 99 ""
+ Button 1 "OK" FOCUS DEFAULT
+ Button 2 "Cancel"
+WFORMT "SECRET 0 WIPED #2" DISABLED
+=SNAP CHECKED2
+WFORMT "SECRET 0 WIPED #5" ACTIVE FOCUS
+=SNAP NOTFOUND
+#32770 "Search items - Edit" ACTIVE
+ WTAB 95 "&Record|&Notes" CUR 0
+ Static 65535 "New &password"
+ Edit 100 "" FOCUS
+ Edit 101 "First line??Caf‚ au lait" HIDDEN
+ Static 99 "REFUSED"
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WFORMT "SECRET 0 WIPED #5" DISABLED
+=SNAP CHECKED3
+WFORMT "SECRET 0 WIPED #7" ACTIVE FOCUS
+=END

@@ -1,0 +1,54 @@
+=HOST1
++OK
++OK LEVEL=3 MUSTCHG=1
++OK
++OK ID=1
++DATA
+F ITEM_ID CATEGORY MFR MODEL WORKS QTY AVAIL LOC_ID LOC_NAME STATUS
+R 1 DRV Tandon TM100-2 ? 2 Y 0 "" A
+.
++OK
+=TKA
++OK
++OK LEVEL=3 NAME="System Administrator" TICKET=<t>
++DATA
+K USER=ADMIN
+K LEVEL=3
+K STATION=TKA
+.
+=TKA
++OK
++OK LEVEL=3 NAME="System Administrator"
++DATA
+K USER=ADMIN
+K LEVEL=3
+K STATION=TKA
+.
+=TKA
++OK
++OK LEVEL=3 NAME="System Administrator"
++OK TICKET=<t>
+=TKA
++OK
+-ERR 401 bad user name or password
+=TKA
++OK
++OK LEVEL=3 NAME="System Administrator"
++OK
+=TKB
++OK
+-ERR 401 bad user name or password
+=TKA
++OK
+-ERR 401 bad user name or password
+=TKA
++OK
++OK LEVEL=3 NAME="System Administrator" TICKET=<t>
++OK
+=TKA
++OK
+-ERR 401 bad user name or password
+=HOST2
++OK
++OK LEVEL=3 NAME="System Administrator"
++OK

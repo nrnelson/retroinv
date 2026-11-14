@@ -1,0 +1,27 @@
+# SCRASSY.C: the assemblies, the Parts tab and the assembly keys of the
+# item lists (MA_).
+# W=74 list box title: VID_COLS - 6
+800 MA_T_LIST Assemblies
+
+801 MA_EMPTY No assemblies
+# W=23 tab title, exactly, as MI_T_TABS
+802 MA_T_TAB [Parts] Service  Loans\x20
+# W=78 column header over the list: VID_COLS - 2
+803 MA_HDRBOM       ID Cat  Maker                Model                  Qty Location      S
+
+804 MA_EMPTYBOM No installed parts
+# W=79 key hints: VID_COLS - 1, level digits not counted
+805 MA_HINTTAB Enter=Open 2Ins=Install Esc=Form F1=Help
+# W=74 prompt title: VID_COLS - 6
+806 MA_Q_CHILD Install an item in item ^1
+807 MA_Q_PARENT Install item ^1 in
+
+809 MA_INSTALLED Item ^1 installed in item ^2
+810 MA_REMOVED Item ^1 taken out to ^2
+811 MA_MOVED Item ^1 moved to ^2
+# The Windows client's title of an item's parts, after the program's
+812 MA_T_ITEM Parts of item ^1
+# W=74 the Windows client's questions of a move and a removal, as the
+# install's: VID_COLS - 6
+813 MA_Q_MOVE Move item ^1 to
+814 MA_Q_OUT Take item ^1 out to

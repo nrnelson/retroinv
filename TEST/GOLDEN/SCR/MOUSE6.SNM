@@ -1,0 +1,572 @@
+=SNAP PICK0 PALETTE=MONO CURSOR=0,0,HIDE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|здддддддддддддддддддддддддддддддддд New item дддддддддддддддддддддддддддддддддд©|
+|Ё ID                      Category                Status    A                  Ё|
+|Ё Type                                            Condition                    Ё|
+|Ё Maker                                                                        Ё|
+|Ё Model           зддддддддддддддд Categories ддддддддддддддд©                 Ё|
+|Ё Serial          Ё Code     Name              Order         Ё                 Ё|
+|Ё Descr           ЁSYS      Systems               1         Ё                 Ё|
+|Ё Works     ?     Ё MOBO     Motherboards          2         Ё                 Ё|
+|Ё Location        Ё CPU      Processors            3         Ё                 Ё|
+|Ё           (no loЁ CARD     Expansion cards       4         Ё                 Ё|
+|Ё Acquired        Ё DRV      Drives                5         Ё                 Ё|
+|Ё Price           Ё PERI     Peripherals           6         Ё                 Ё|
+|Ё Tags            Ё SW       Software              7         Ё                 Ё|
+|Ё Created         Ё MAN      Manuals               8         Ё                 Ё|
+|Ё Notes     (afterЁ CBL      Cables                9         Ё                 Ё|
+|юдддддддддддддддддЁ PART     Parts                10         Ёддддддддддддддддды|
+|здддддддддддддддддюддддддддддддддддддддддддддддддддддддддддддыддддддддддддддддд©|
+|Ё The Record menu (Alt-C) shows the parts installed in this item, its          Ё|
+|Ё service records, its loans and holds, and the items used with it.            Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+| Enter=Choose Esc=Cancel F1=Help                                                |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCDDDDCCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDCCCCCCCCCCCCCCCCAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCDDDDDDCCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCDDDDDDDDDDCCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDCCCCCCCC|
+|CCAAAAAAACCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAACCCCCCCCAAACCCCCCCCAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+=SNAP DNOCLK PALETTE=MONO CURSOR=0,0,HIDE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|здддддддддддддддддддддддддддддддддд New item дддддддддддддддддддддддддддддддддд©|
+|Ё ID                      Category                Status    A                  Ё|
+|Ё Type                                            Condition                    Ё|
+|Ё Maker                                                                        Ё|
+|Ё Model           зддддддддддддддд Categories ддддддддддддддд©                 Ё|
+|Ё Serial          Ё Code     Name              Order         Ё                 Ё|
+|Ё Descr           ЁSYS      Systems               1         Ё                 Ё|
+|Ё Works     ?     Ё MOBO     Motherboards          2         Ё                 Ё|
+|Ё Location        Ё CPU      Processors            3         Ё                 Ё|
+|Ё           (no loЁ CARD     Expansion cards       4         Ё                 Ё|
+|Ё Acquired        Ё DRV      Drives                5         Ё                 Ё|
+|Ё Price           Ё PERI     Peripherals           6         Ё                 Ё|
+|Ё Tags            Ё SW       Software              7         Ё                 Ё|
+|Ё Created         Ё MAN      Manuals               8         Ё                 Ё|
+|Ё Notes     (afterЁ CBL      Cables                9         Ё                 Ё|
+|юдддддддддддддддддЁ PART     Parts                10         Ёддддддддддддддддды|
+|здддддддддддддддддюддддддддддддддддддддддддддддддддддддддддддыддддддддддддддддд©|
+|Ё The Record menu (Alt-C) shows the parts installed in this item, its          Ё|
+|Ё service records, its loans and holds, and the items used with it.            Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+| Enter=Choose Esc=Cancel F1=Help                                                |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCDDDDCCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDCCCCCCCCCCCCCCCCAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCDDDDDDCCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCDDDDDDDDDDCCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDCCCCCCCC|
+|CCAAAAAAACCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAACCCCCCCCAAACCCCCCCCAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+=SNAP SEL PALETTE=MONO CURSOR=0,0,HIDE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|здддддддддддддддддддддддддддддддддд New item дддддддддддддддддддддддддддддддддд©|
+|Ё ID                      Category                Status    A                  Ё|
+|Ё Type                                            Condition                    Ё|
+|Ё Maker                                                                        Ё|
+|Ё Model           зддддддддддддддд Categories ддддддддддддддд©                 Ё|
+|Ё Serial          Ё Code     Name              Order         Ё                 Ё|
+|Ё Descr           ЁSYS      Systems               1         Ё                 Ё|
+|Ё Works     ?     Ё MOBO     Motherboards          2         Ё                 Ё|
+|Ё Location        Ё CPU      Processors            3         Ё                 Ё|
+|Ё           (no loЁ CARD     Expansion cards       4         Ё                 Ё|
+|Ё Acquired        Ё DRV      Drives                5         Ё                 Ё|
+|Ё Price           Ё PERI     Peripherals           6         Ё                 Ё|
+|Ё Tags            Ё SW       Software              7         Ё                 Ё|
+|Ё Created         Ё MAN      Manuals               8         Ё                 Ё|
+|Ё Notes     (afterЁ CBL      Cables                9         Ё                 Ё|
+|юдддддддддддддддддЁ PART     Parts                10         Ёддддддддддддддддды|
+|здддддддддддддддддюддддддддддддддддддддддддддддддддддддддддддыддддддддддддддддд©|
+|Ё The Record menu (Alt-C) shows the parts installed in this item, its          Ё|
+|Ё service records, its loans and holds, and the items used with it.            Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+| Enter=Choose Esc=Cancel F1=Help                                                |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCDDDDCCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDCCCCCCCCCCCCCCCCAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCDDDDDDCCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDCCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDCCCCCCCC|
+|CCAAAAAAACCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAACCCCCCCCAAACCCCCCCCAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+=SNAP OUT PALETTE=MONO CURSOR=0,0,HIDE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|здддддддддддддддддддддддддддддддддд New item дддддддддддддддддддддддддддддддддд©|
+|Ё ID                      Category                Status    A                  Ё|
+|Ё Type                                            Condition                    Ё|
+|Ё Maker                                                                        Ё|
+|Ё Model           зддддддддддддддд Categories ддддддддддддддд©                 Ё|
+|Ё Serial          Ё Code     Name              Order         Ё                 Ё|
+|Ё Descr           ЁSYS      Systems               1         Ё                 Ё|
+|Ё Works     ?     Ё MOBO     Motherboards          2         Ё                 Ё|
+|Ё Location        Ё CPU      Processors            3         Ё                 Ё|
+|Ё           (no loЁ CARD     Expansion cards       4         Ё                 Ё|
+|Ё Acquired        Ё DRV      Drives                5         Ё                 Ё|
+|Ё Price           Ё PERI     Peripherals           6         Ё                 Ё|
+|Ё Tags            Ё SW       Software              7         Ё                 Ё|
+|Ё Created         Ё MAN      Manuals               8         Ё                 Ё|
+|Ё Notes     (afterЁ CBL      Cables                9         Ё                 Ё|
+|юдддддддддддддддддЁ PART     Parts                10         Ёддддддддддддддддды|
+|здддддддддддддддддюддддддддддддддддддддддддддддддддддддддддддыддддддддддддддддд©|
+|Ё The Record menu (Alt-C) shows the parts installed in this item, its          Ё|
+|Ё service records, its loans and holds, and the items used with it.            Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+| Enter=Choose Esc=Cancel F1=Help                                                |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCDDDDCCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDCCCCCCCCCCCCCCCCAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCDDDDDDCCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDCCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDCCCCCCCC|
+|CCAAAAAAACCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAACCCCCCCCAAACCCCCCCCAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+=SNAP DOTHER PALETTE=MONO CURSOR=0,0,HIDE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|здддддддддддддддддддддддддддддддддд New item дддддддддддддддддддддддддддддддддд©|
+|Ё ID                      Category                Status    A                  Ё|
+|Ё Type                                            Condition                    Ё|
+|Ё Maker                                                                        Ё|
+|Ё Model           зддддддддддддддд Categories ддддддддддддддд©                 Ё|
+|Ё Serial          Ё Code     Name              Order         Ё                 Ё|
+|Ё Descr           ЁSYS      Systems               1         Ё                 Ё|
+|Ё Works     ?     Ё MOBO     Motherboards          2         Ё                 Ё|
+|Ё Location        Ё CPU      Processors            3         Ё                 Ё|
+|Ё           (no loЁ CARD     Expansion cards       4         Ё                 Ё|
+|Ё Acquired        Ё DRV      Drives                5         Ё                 Ё|
+|Ё Price           Ё PERI     Peripherals           6         Ё                 Ё|
+|Ё Tags            Ё SW       Software              7         Ё                 Ё|
+|Ё Created         Ё MAN      Manuals               8         Ё                 Ё|
+|Ё Notes     (afterЁ CBL      Cables                9         Ё                 Ё|
+|юдддддддддддддддддЁ PART     Parts                10         Ёддддддддддддддддды|
+|здддддддддддддддддюддддддддддддддддддддддддддддддддддддддддддыддддддддддддддддд©|
+|Ё The Record menu (Alt-C) shows the parts installed in this item, its          Ё|
+|Ё service records, its loans and holds, and the items used with it.            Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+| Enter=Choose Esc=Cancel F1=Help                                                |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCDDDDCCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDCCCCCCCCCCCCCCCCAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCDDDDDDCCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDCCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDCCCCCCCC|
+|CCAAAAAAACCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAACCCCCCCCAAACCCCCCCCAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+=SNAP SELPERI PALETTE=MONO CURSOR=0,0,HIDE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|здддддддддддддддддддддддддддддддддд New item дддддддддддддддддддддддддддддддддд©|
+|Ё ID                      Category                Status    A                  Ё|
+|Ё Type                                            Condition                    Ё|
+|Ё Maker                                                                        Ё|
+|Ё Model           зддддддддддддддд Categories ддддддддддддддд©                 Ё|
+|Ё Serial          Ё Code     Name              Order         Ё                 Ё|
+|Ё Descr           ЁSYS      Systems               1         Ё                 Ё|
+|Ё Works     ?     Ё MOBO     Motherboards          2         Ё                 Ё|
+|Ё Location        Ё CPU      Processors            3         Ё                 Ё|
+|Ё           (no loЁ CARD     Expansion cards       4         Ё                 Ё|
+|Ё Acquired        Ё DRV      Drives                5         Ё                 Ё|
+|Ё Price           Ё PERI     Peripherals           6         Ё                 Ё|
+|Ё Tags            Ё SW       Software              7         Ё                 Ё|
+|Ё Created         Ё MAN      Manuals               8         Ё                 Ё|
+|Ё Notes     (afterЁ CBL      Cables                9         Ё                 Ё|
+|юдддддддддддддддддЁ PART     Parts                10         Ёддддддддддддддддды|
+|здддддддддддддддддюддддддддддддддддддддддддддддддддддддддддддыддддддддддддддддд©|
+|Ё The Record menu (Alt-C) shows the parts installed in this item, its          Ё|
+|Ё service records, its loans and holds, and the items used with it.            Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+| Enter=Choose Esc=Cancel F1=Help                                                |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCDDDDCCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDCCCCCCCCCCCCCCCCAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCDDDDDDCCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDCCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDCCCCCCCC|
+|CCAAAAAAACCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAACCCCCCCCAAACCCCCCCCAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+=SNAP CHOSEN PALETTE=MONO CURSOR=2,39,LINE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|здддддддддддддддддддддддддддддддддд New item дддддддддддддддддддддддддддддддддд©|
+|Ё ID                      Category  PERI          Status    A                  Ё|
+|Ё Type                                            Condition                    Ё|
+|Ё Maker                                                                        Ё|
+|Ё Model                                                                        Ё|
+|Ё Serial                                                                       Ё|
+|Ё Descr                                                                        Ё|
+|Ё Works     ?             Quantity  1                                          Ё|
+|Ё Location                Parent                                               Ё|
+|Ё           (no location)                                                      Ё|
+|Ё Acquired                Source                                               Ё|
+|Ё Price                   Value                                                Ё|
+|Ё Tags                                                                         Ё|
+|Ё Created                 Updated                                              Ё|
+|Ё Notes     (after saving)                                                     Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+|здддддддддддддддддддддддддд  Parts  Service  Loans  ддддддддддддддддддддддддддд©|
+|Ё The Record menu (Alt-C) shows the parts installed in this item, its          Ё|
+|Ё service records, its loans and holds, and the items used with it.            Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+| Enter=Save F4=List Esc=Cancel F1=Help                                          |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCEEEECCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCAAAAAAAACCDDDDDCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDCCCCCAAAAACCCCCDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAAAACCCDDDDDDDDDDCCCCAAAAAAACCCDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAACCCCCCAACCCCCCAAACCCCCCCCAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+=SNAP LAST PALETTE=MONO CURSOR=0,0,HIDE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|здддддддддддддддддддддддддддддддддд New item дддддддддддддддддддддддддддддддддд©|
+|Ё ID                      Category  PERI          Status    A                  Ё|
+|Ё Type                                            Condition                    Ё|
+|Ё Maker                                                                        Ё|
+|Ё Model           зддддддддддддддд Categories ддддддддддддддд©                 Ё|
+|Ё Serial          Ё Code     Name              Order         Ё                 Ё|
+|Ё Descr           Ё SYS      Systems               1         Ё                 Ё|
+|Ё Works     ?     Ё MOBO     Motherboards          2         Ё                 Ё|
+|Ё Location        Ё CPU      Processors            3         Ё                 Ё|
+|Ё           (no loЁ CARD     Expansion cards       4         Ё                 Ё|
+|Ё Acquired        Ё DRV      Drives                5         Ё                 Ё|
+|Ё Price           ЁPERI     Peripherals           6         Ё                 Ё|
+|Ё Tags            Ё SW       Software              7         Ё                 Ё|
+|Ё Created         Ё MAN      Manuals               8         Ё                 Ё|
+|Ё Notes     (afterЁ CBL      Cables                9         Ё                 Ё|
+|юдддддддддддддддддЁ PART     Parts                10         Ёддддддддддддддддды|
+|здддддддддддддддддюддддддддддддддддддддддддддддддддддддддддддыддддддддддддддддд©|
+|Ё The Record menu (Alt-C) shows the parts installed in this item, its          Ё|
+|Ё service records, its loans and holds, and the items used with it.            Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+| Enter=Choose Esc=Cancel F1=Help                                                |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCDDDDCCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDCCCCCCCCCCCCCCCCAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCDDDDDDCCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDCCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDCCCCCCCC|
+|CCAAAAAAACCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAACCCCCCCCAAACCCCCCCCAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+=SNAP LASTCH PALETTE=MONO CURSOR=2,39,LINE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|здддддддддддддддддддддддддддддддддд New item дддддддддддддддддддддддддддддддддд©|
+|Ё ID                      Category  PART          Status    A                  Ё|
+|Ё Type                                            Condition                    Ё|
+|Ё Maker                                                                        Ё|
+|Ё Model                                                                        Ё|
+|Ё Serial                                                                       Ё|
+|Ё Descr                                                                        Ё|
+|Ё Works     ?             Quantity  1                                          Ё|
+|Ё Location                Parent                                               Ё|
+|Ё           (no location)                                                      Ё|
+|Ё Acquired                Source                                               Ё|
+|Ё Price                   Value                                                Ё|
+|Ё Tags                                                                         Ё|
+|Ё Created                 Updated                                              Ё|
+|Ё Notes     (after saving)                                                     Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+|здддддддддддддддддддддддддд  Parts  Service  Loans  ддддддддддддддддддддддддддд©|
+|Ё The Record menu (Alt-C) shows the parts installed in this item, its          Ё|
+|Ё service records, its loans and holds, and the items used with it.            Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+| Enter=Save F4=List Esc=Cancel F1=Help                                          |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCEEEECCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCAAAAAAAACCDDDDDCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDCCCCCAAAAACCCCCDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAAAACCCDDDDDDDDDDCCCCAAAAAAACCCDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAACCCCCCAACCCCCCAAACCCCCCCCAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+=SNAP FIRSTC PALETTE=MONO CURSOR=0,0,HIDE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|здддддддддддддддддддддддддддддддддд New item дддддддддддддддддддддддддддддддддд©|
+|Ё ID                      Category  PART          Status    A                  Ё|
+|Ё Type                                            Condition                    Ё|
+|Ё Maker                                                                        Ё|
+|Ё Model           зддддддддддддддд Categories ддддддддддддддд©                 Ё|
+|Ё Serial          Ё Code     Name              Order         Ё                 Ё|
+|Ё Descr           Ё SYS      Systems               1         Ё                 Ё|
+|Ё Works     ?     Ё MOBO     Motherboards          2         Ё                 Ё|
+|Ё Location        Ё CPU      Processors            3         Ё                 Ё|
+|Ё           (no loЁ CARD     Expansion cards       4         Ё                 Ё|
+|Ё Acquired        Ё DRV      Drives                5         Ё                 Ё|
+|Ё Price           Ё PERI     Peripherals           6         Ё                 Ё|
+|Ё Tags            Ё SW       Software              7         Ё                 Ё|
+|Ё Created         Ё MAN      Manuals               8         Ё                 Ё|
+|Ё Notes     (afterЁ CBL      Cables                9         Ё                 Ё|
+|юдддддддддддддддддЁPART     Parts                10         Ёддддддддддддддддды|
+|здддддддддддддддддюддддддддддддддддддддддддддддддддддддддддддыддддддддддддддддд©|
+|Ё The Record menu (Alt-C) shows the parts installed in this item, its          Ё|
+|Ё service records, its loans and holds, and the items used with it.            Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+| Enter=Choose Esc=Cancel F1=Help                                                |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCDDDDCCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDCCCCCCCCCCCCCCCCAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCDDDDDDCCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDCCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECCDDDDDDDDDDCCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDCCCCCCCC|
+|CCAAAAAAACCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAACCCCCCCCAAACCCCCCCCAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|
+=SNAP FIRSTCH PALETTE=MONO CURSOR=2,39,LINE VRAM=OK
+| Items  Locations  Search  Reports  Admin  Options  Record                      |
+|здддддддддддддддддддддддддддддддддд New item дддддддддддддддддддддддддддддддддд©|
+|Ё ID                      Category  SYS           Status    A                  Ё|
+|Ё Type                                            Condition                    Ё|
+|Ё Maker                                                                        Ё|
+|Ё Model                                                                        Ё|
+|Ё Serial                                                                       Ё|
+|Ё Descr                                                                        Ё|
+|Ё Works     ?             Quantity  1                                          Ё|
+|Ё Location                Parent                                               Ё|
+|Ё           (no location)                                                      Ё|
+|Ё Acquired                Source                                               Ё|
+|Ё Price                   Value                                                Ё|
+|Ё Tags                                                                         Ё|
+|Ё Created                 Updated                                              Ё|
+|Ё Notes     (after saving)                                                     Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+|здддддддддддддддддддддддддд  Parts  Service  Loans  ддддддддддддддддддддддддддд©|
+|Ё The Record menu (Alt-C) shows the parts installed in this item, its          Ё|
+|Ё service records, its loans and holds, and the items used with it.            Ё|
+|Ё                                                                              Ё|
+|Ё                                                                              Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+| Enter=Save F4=List Esc=Cancel F1=Help                                          |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=0F B=09 C=07 D=01 E=70
+|ABAAAAAABAAAAAAAAAABAAAAAAABAAAAAAAABAAAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAACCCCCCCCDDDDDDDDCCCCCCAAAAAAAACCEEEECCCCCCCCCCAAAAAACCCCDCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCAAAAAAAAACDDDCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAACCCCCDCCCCCCCCCCCCCAAAAAAAACCDDDDDCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDC|
+|CCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCC|
+|CCAAAAAAAACCDDDDDDDDDDCCCCAAAAAACCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDCCCCCAAAAACCCCCDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAACCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCC|
+|CCAAAAAAACCCDDDDDDDDDDCCCCAAAAAAACCCDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCAAAAACCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|CAAAAACCCCCCAACCCCCCAAACCCCCCCCAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC|
+|EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE|

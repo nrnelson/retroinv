@@ -1,0 +1,307 @@
+# ADMIN.SCR - the server commands ADMIN CLIENTS, FLUSH and SHUTDOWN: the
+# gate (400, then 404 before anything else, then 203 below level 3),
+# local mode (CLIENTS and SHUTDOWN 104 before their arguments are
+# checked, FLUSH +OK), the argument errors, the CLIENTS rows and their
+# PROTO_MAXPEERS cap, and SHUTDOWN's one call of the host's stop
+# function per request.  ADMIN alone, or with a word that is not a
+# command, is 101 in every state.  PACK, REINDEX, BACKUP and RESTORE
+# are in ADMDATA.SCR.
+#
+# The sessions of @PEERS and the stop function of @STOP are as T_PROTO.C
+# describes them: session 1 is this script's, and sessions 2 to 5 show
+# the four states.  The stop function, once given, stays for the rest of
+# the script (@STOP has no off), so local mode comes first.
+
+# Before LOGIN the gate answers 400.
+> ADMIN CLIENTS
+< -ERR 400 HELLO or LOGIN required
+> HELLO CONSOLE
+< +OK
+> ADMIN SHUTDOWN
+< -ERR 400 HELLO or LOGIN required
+
+# While the password change is pending: 404, and 101 for a word that
+# is not a command.
+> LOGIN ADMIN admin
+< +OK LEVEL=3 MUSTCHG=1
+> ADMIN CLIENTS
+< -ERR 404 password change required
+> ADMIN FLUSH
+< -ERR 404 password change required
+> ADMIN SHUTDOWN
+< -ERR 404 password change required
+> ADMIN BOGUS
+< -ERR 101 unknown command
+> PASSWD admin secret1
+< +OK
+> USER ADD READER LEVEL=1 PASSWORD=readpw01
+< +OK
+> USER ADD OPER LEVEL=2 PASSWORD=operpw01
+< +OK
+> USER ADD BOSS LEVEL=3 PASSWORD=bosspw01
+< +OK
+
+# Local mode: CLIENTS and SHUTDOWN are 104 whatever follows them; FLUSH
+# works and checks its arguments.
+> ADMIN CLIENTS
+< -ERR 104 command needs the server
+> ADMIN CLIENTS X
+< -ERR 104 command needs the server
+> ADMIN CLIENTS FOO=1
+< -ERR 104 command needs the server
+> ADMIN SHUTDOWN
+< -ERR 104 command needs the server
+> ADMIN SHUTDOWN X
+< -ERR 104 command needs the server
+> ADMIN SHUTDOWN FOO=1
+< -ERR 104 command needs the server
+> ADMIN FLUSH
+< +OK
+> ITEM ADD CATEGORY=SYS MFR=IBM MODEL=5150
+< +OK ID=1
+> admin flush
+< +OK
+> ADMIN FLUSH X
+< -ERR 100 too many arguments
+> ADMIN FLUSH FOO=1
+< -ERR 102 unexpected key FIELD=FOO
+
+# ADMIN alone, and a word that is not a command.
+> ADMIN
+< -ERR 101 unknown command
+> ADMIN CLIENT
+< -ERR 101 unknown command
+> ADMIN BOGUS X Y=1
+< -ERR 101 unknown command
+
+# Levels 1 and 2: 404 first while their own password change is pending,
+# then 203; a word that is not a command stays 101 at every level.
+> LOGIN READER readpw01
+< +OK LEVEL=1 MUSTCHG=1
+> ADMIN CLIENTS
+< -ERR 404 password change required
+> PASSWD readpw01 readpw02
+< +OK
+> ADMIN CLIENTS
+< -ERR 203 permission denied
+> ADMIN FLUSH
+< -ERR 203 permission denied
+> ADMIN SHUTDOWN
+< -ERR 203 permission denied
+> ADMIN FLUSH X
+< -ERR 203 permission denied
+> ADMIN BOGUS
+< -ERR 101 unknown command
+> LOGIN OPER operpw01
+< +OK LEVEL=2 MUSTCHG=1
+> ADMIN FLUSH
+< -ERR 404 password change required
+> PASSWD operpw01 operpw02
+< +OK
+> ADMIN CLIENTS
+< -ERR 203 permission denied
+> ADMIN FLUSH
+< -ERR 203 permission denied
+> ADMIN SHUTDOWN
+< -ERR 203 permission denied
+
+# Each command needs its own host function: SHUTDOWN the stop function,
+# CLIENTS the peers.
+> LOGIN ADMIN secret1
+< +OK LEVEL=3 NAME="System Administrator"
+@PEERS 2
+> ADMIN SHUTDOWN
+< -ERR 104 command needs the server
+> ADMIN SHUTDOWN X
+< -ERR 104 command needs the server
+@PEERS 0
+@STOP 0
+> ADMIN CLIENTS
+< -ERR 104 command needs the server
+> ADMIN CLIENTS X
+< -ERR 104 command needs the server
+
+# With a host the gate still comes first, and stop is not called.
+@PEERS 3
+> LOGIN BOSS bosspw01
+< +OK LEVEL=3 MUSTCHG=1
+> ADMIN CLIENTS
+< -ERR 404 password change required
+> ADMIN FLUSH
+< -ERR 404 password change required
+> ADMIN SHUTDOWN
+< -ERR 404 password change required
+> LOGIN READER readpw02
+< +OK LEVEL=1 NAME=""
+> ADMIN CLIENTS
+< -ERR 203 permission denied
+> ADMIN FLUSH
+< -ERR 203 permission denied
+> ADMIN SHUTDOWN
+< -ERR 203 permission denied
+> ADMIN SHUTDOWN X
+< -ERR 203 permission denied
+> LOGIN OPER operpw02
+< +OK LEVEL=2 NAME=""
+> ADMIN CLIENTS
+< -ERR 203 permission denied
+> ADMIN FLUSH
+< -ERR 203 permission denied
+> ADMIN SHUTDOWN
+< -ERR 203 permission denied
+@STOP 0
+
+# An administrator on a read-only station is capped at level 1.
+@READONLY RO1
+> HELLO RO1
+< +OK
+> LOGIN ADMIN secret1
+< +OK LEVEL=1 NAME="System Administrator"
+> ADMIN CLIENTS
+< -ERR 203 permission denied
+> ADMIN SHUTDOWN
+< -ERR 203 permission denied
+@READONLY
+@STOP 0
+
+# CLIENTS: one row per session in slot order, this session's first,
+# with SELF 1; FLUSH works with a host as without.
+@SESSION
+> HELLO CONSOLE
+< +OK
+> LOGIN ADMIN secret1
+< +OK LEVEL=3 NAME="System Administrator"
+@PEERS 1
+> ADMIN CLIENTS
+< +DATA
+< F SLOT TYPE STATION USER LEVEL STATE IDLE SELF
+< R 1 NETB CONSOLE ADMIN 3 3 0 1
+< .
+> ADMIN FLUSH
+< +OK
+
+# Every column for the four states and both kinds of the other
+# sessions.
+@PEERS 5
+> admin clients
+< +DATA
+< F SLOT TYPE STATION USER LEVEL STATE IDLE SELF
+< R 1 NETB CONSOLE ADMIN 3 3 0 1
+< R 3 TCP "" "" 0 0 60 0
+< R 5 NETB STA5 "" 0 1 120 0
+< R 7 TCP STA7 U7 2 3 180 0
+< R 9 NETB STA9 U9 2 2 240 0
+< .
+
+# IDLE is a full u32: values past 16 bits come out whole.
+@PEERS 3 IDLE=70000
+> ADMIN CLIENTS
+< +DATA
+< F SLOT TYPE STATION USER LEVEL STATE IDLE SELF
+< R 1 NETB CONSOLE ADMIN 3 3 0 1
+< R 3 TCP "" "" 0 0 70000 0
+< R 5 NETB STA5 "" 0 1 70000 0
+< .
+@PEERS 2 IDLE=4294967295
+> ADMIN CLIENTS
+< +DATA
+< F SLOT TYPE STATION USER LEVEL STATE IDLE SELF
+< R 1 NETB CONSOLE ADMIN 3 3 0 1
+< R 3 TCP "" "" 0 0 4294967295 0
+< .
+
+# This session third (SELF=3): the others take the turns of the states
+# in slot order around it.
+@PEERS 4 SELF=3
+> ADMIN CLIENTS
+< +DATA
+< F SLOT TYPE STATION USER LEVEL STATE IDLE SELF
+< R 1 NETB "" "" 0 0 0 0
+< R 3 TCP STA3 "" 0 1 60 0
+< R 5 NETB CONSOLE ADMIN 3 3 0 1
+< R 7 TCP STA7 U7 2 3 180 0
+< .
+@PEERS 2
+
+# With a host the arguments are checked: a word is 100, a pair 102.
+> ADMIN CLIENTS X
+< -ERR 100 too many arguments
+> ADMIN CLIENTS A=1
+< -ERR 102 unexpected key FIELD=A
+
+# PROTO_MAXPEERS sessions are listed whole; more are cut to that many.
+@PEERS 10
+> ADMIN CLIENTS
+< +DATA
+< F SLOT TYPE STATION USER LEVEL STATE IDLE SELF
+< R 1 NETB CONSOLE ADMIN 3 3 0 1
+< R 3 TCP "" "" 0 0 60 0
+< R 5 NETB STA5 "" 0 1 120 0
+< R 7 TCP STA7 U7 2 3 180 0
+< R 9 NETB STA9 U9 2 2 240 0
+< R 11 TCP "" "" 0 0 300 0
+< R 13 NETB STA13 "" 0 1 360 0
+< R 15 TCP STA15 U15 2 3 420 0
+< R 17 NETB STA17 U17 2 2 480 0
+< R 19 TCP "" "" 0 0 540 0
+< .
+@PEERS 11
+> ADMIN CLIENTS
+< +DATA
+< F SLOT TYPE STATION USER LEVEL STATE IDLE SELF
+< R 1 NETB CONSOLE ADMIN 3 3 0 1
+< R 3 TCP "" "" 0 0 60 0
+< R 5 NETB STA5 "" 0 1 120 0
+< R 7 TCP STA7 U7 2 3 180 0
+< R 9 NETB STA9 U9 2 2 240 0
+< R 11 TCP "" "" 0 0 300 0
+< R 13 NETB STA13 "" 0 1 360 0
+< R 15 TCP STA15 U15 2 3 420 0
+< R 17 NETB STA17 U17 2 2 480 0
+< R 19 TCP "" "" 0 0 540 0
+< .
+@PEERS 128
+> ADMIN CLIENTS
+< +DATA
+< F SLOT TYPE STATION USER LEVEL STATE IDLE SELF
+< R 1 NETB CONSOLE ADMIN 3 3 0 1
+< R 3 TCP "" "" 0 0 60 0
+< R 5 NETB STA5 "" 0 1 120 0
+< R 7 TCP STA7 U7 2 3 180 0
+< R 9 NETB STA9 U9 2 2 240 0
+< R 11 TCP "" "" 0 0 300 0
+< R 13 NETB STA13 "" 0 1 360 0
+< R 15 TCP STA15 U15 2 3 420 0
+< R 17 NETB STA17 U17 2 2 480 0
+< R 19 TCP "" "" 0 0 540 0
+< .
+
+# A station that needs quoting is sent with the response escapes.
+@PEERS 1
+> HELLO "P\"C 1=\\"
+< +OK
+> LOGIN ADMIN secret1
+< +OK LEVEL=3 NAME="System Administrator"
+> ADMIN CLIENTS
+< +DATA
+< F SLOT TYPE STATION USER LEVEL STATE IDLE SELF
+< R 1 NETB "P\"C 1=\\" ADMIN 3 3 0 1
+< .
+
+# SHUTDOWN: an argument error calls nothing; stop is called once, after
+# the +OK is written, and a second SHUTDOWN calls it again, for the host
+# to ignore.
+> ADMIN SHUTDOWN X
+< -ERR 100 too many arguments
+> ADMIN SHUTDOWN FOO=1
+< -ERR 102 unexpected key FIELD=FOO
+@STOP 0
+> ADMIN SHUTDOWN
+< +OK
+@STOP 1
+> PING
+< +OK
+@STOP 1
+> admin shutdown
+< +OK
+@STOP 2

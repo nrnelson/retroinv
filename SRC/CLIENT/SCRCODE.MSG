@@ -1,0 +1,38 @@
+# SCRCODE.C and SCRKFORM.C: the code lists, categories and location
+# types (ME_, SCRKFORM.H).
+# W=36 pick list title: TUI_PICKW + 4 - 8
+656 ME_CATS Categories
+657 ME_LTYPES Location types
+# W=24 form box title: CF_W - 6 (SCRKFORM.C)
+658 ME_NEWCAT New category
+659 ME_NEWLT New location type
+# ^1 is a code of up to LINK_LTYPELEN characters.
+# W=24 form box title: CF_W - 6
+660 ME_FCAT Category ^1
+661 ME_FLT Location type ^1
+# W=79 key hints: VID_COLS - 1, level digits not counted
+662 ME_HINT 2Enter/Ctrl-E=Edit 2Ins=New 2Del=Delete Esc=Back F1=Help
+663 ME_HINTEDIT Enter=Save Esc=Cancel F1=Help
+
+664 ME_DELQ Delete ^1?
+665 ME_ADDED ^1 added
+666 ME_SAVED ^1 saved
+667 ME_DELETED ^1 deleted
+# W=6 form labels: CF_VCOL - 2 (SCRKFORM.C)
+668 ME_L_CODE Code
+669 ME_L_NAME Name
+670 ME_L_ORDER Order
+# W=32 the lists' column headings over the code (LINK_LTYPELEN + 1), the
+# name (LINK_CODENAMELEN + 1) and the order (CT_ORDERW, right-aligned): CL_W
+# of SCRPICK.C
+671 ME_HDR Code     Name              Order
+# The tag pick list's titles and texts (SCR_CK_TAG): a list cut short,
+# by Esc or at LINK_MAXCODES tags, is titled ME_TAGSPART.
+# W=36 pick list title: TUI_PICKW + 4 - 8
+672 ME_TAGS Tags in use
+673 ME_TAGSPART Tags in use (incomplete)
+
+674 ME_NOTAGS No tags in use
+675 ME_TAGFULL No room for another tag
+# W=42 status-line information while the tags load: TUI_ST_INFOW
+676 ME_TAGWAIT Reading tags... found: ^1

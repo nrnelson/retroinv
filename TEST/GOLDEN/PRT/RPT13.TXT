@@ -1,0 +1,28 @@
+RETROINV  Valuation                                          2026-10-08  Page 1
+Stopped
+
+      ID Cat  Maker            Model               Qty        Paid       Value
+-------------------------------------------------------------------------------
+A1
+       1 SYS  IBM              5150                  1       10.00       20.00
+       2 SYS  IBM              5150                  1       10.00       20.00
+       3 SYS  IBM              5150                  1       10.00       20.00
+       4 SYS  IBM              5150                  1       10.00       20.00
+       5 SYS  IBM              5150                  1       10.00       20.00
+Subtotal                       Items: 5              5       50.00      100.00
+
+RETROINV  Valuation                                          2026-10-08  Page 2
+Stopped
+
+      ID Cat  Maker            Model               Qty        Paid       Value
+-------------------------------------------------------------------------------
+A1 > B2
+       6 SYS  IBM              5150                  1       10.00       20.00
+       7 SYS  IBM              5150                  1       10.00       20.00
+       8 SYS  IBM              5150                  1       10.00       20.00
+       9 SYS  IBM              5150                  1       10.00       20.00
+      10 SYS  IBM              5150                  1       10.00       20.00
+      11 SYS  IBM              5150                  1       10.00       20.00
+      12 SYS  IBM              5150                  1       10.00       20.00
+Report stopped before the end
+

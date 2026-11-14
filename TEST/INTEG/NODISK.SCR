@@ -1,0 +1,7 @@
+# NODISK.SCR - INVTEST's crit run on MS-DOS 3.10 (MAKEFILE): a mailbox on
+# drive B:, which has no disk, so the post's first call raises a critical
+# error.  INVTEST's handler fails that call, and the post fails with the
+# DOS error instead of an "Abort, Retry, Ignore?" prompt.
+@MBOX 1 MB1 B:
+>& HELLO
+@POST 1

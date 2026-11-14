@@ -1,0 +1,473 @@
+# CAT commands: the seeded list, every success and error response,
+# ordering, and the fixed-size table that reuses deleted rows.
+
+> HELLO CONSOLE
+< +OK
+> LOGIN ADMIN admin
+< +OK LEVEL=3 MUSTCHG=1
+> PASSWD admin secret1
+< +OK
+
+> CAT LIST
+< +DATA
+< F CAT_CODE CAT_NAME SORTORD
+< R SYS Systems 1
+< R MOBO Motherboards 2
+< R CPU Processors 3
+< R CARD "Expansion cards" 4
+< R DRV Drives 5
+< R PERI Peripherals 6
+< R SW Software 7
+< R MAN Manuals 8
+< R CBL Cables 9
+< R PART Parts 10
+< .
+> CAT LIST X
+< -ERR 100 too many arguments
+> CAT LIST SORTORD=1
+< -ERR 102 unexpected key FIELD=SORTORD
+
+# CAT ADD.
+> CAT ADD tape CAT_NAME="Tape drives" SORTORD=5
+< +OK
+> CAT ADD GAME CAT_NAME=Games
+< +OK
+> CAT ADD AAA CAT_NAME=First SORTORD=0
+< +OK
+> CAT LIST
+< +DATA
+< F CAT_CODE CAT_NAME SORTORD
+< R AAA First 0
+< R SYS Systems 1
+< R MOBO Motherboards 2
+< R CPU Processors 3
+< R CARD "Expansion cards" 4
+< R DRV Drives 5
+< R TAPE "Tape drives" 5
+< R PERI Peripherals 6
+< R SW Software 7
+< R MAN Manuals 8
+< R CBL Cables 9
+< R PART Parts 10
+< R GAME Games 50
+< .
+> CAT ADD TAPE CAT_NAME=Again
+< -ERR 201 category already exists FIELD=CAT_CODE
+> CAT ADD SYS CAT_NAME=Again
+< -ERR 201 category already exists FIELD=CAT_CODE
+> CAT ADD TOOLONG CAT_NAME=x
+< -ERR 102 bad category code FIELD=CAT_CODE
+> CAT ADD A-B CAT_NAME=x
+< -ERR 102 bad category code FIELD=CAT_CODE
+> CAT ADD ""
+< -ERR 102 bad category code FIELD=CAT_CODE
+> CAT ADD NEW
+< -ERR 102 value required FIELD=CAT_NAME
+> CAT ADD NEW CAT_NAME=""
+< -ERR 102 value required FIELD=CAT_NAME
+> CAT ADD NEW CAT_NAME=x SORTORD=-1
+< -ERR 102 negative value FIELD=SORTORD
+> CAT ADD NEW CAT_NAME=x SORTORD=100
+< -ERR 102 bad value FIELD=SORTORD
+> CAT ADD NEW CAT_NAME="123456789012345678901"
+< -ERR 102 value too long FIELD=CAT_NAME
+> CAT ADD NEW CAT_NAME=x CAT_CODE=NEW
+< -ERR 102 field not settable FIELD=CAT_CODE
+> CAT ADD NEW CAT_NAME=x FOO=1
+< -ERR 102 field not settable FIELD=FOO
+> CAT ADD NEW OLD CAT_NAME=x
+< -ERR 100 too many arguments
+> CAT ADD CAT_NAME=x
+< -ERR 102 missing argument FIELD=CAT_CODE
+
+# CAT SET.
+> CAT SET GAME CAT_NAME="Games and toys" SORTORD=99
+< +OK
+> CAT SET game SORTORD=
+< -ERR 102 sort order required FIELD=SORTORD
+> CAT SET GAME CAT_NAME=
+< -ERR 102 value required FIELD=CAT_NAME
+> CAT SET GAME CAT_CODE=GAMZ
+< -ERR 102 field not settable FIELD=CAT_CODE
+> CAT SET GAME SORTORD=x
+< -ERR 102 not a number FIELD=SORTORD
+> CAT SET NONE CAT_NAME=x
+< -ERR 200 no such category
+> CAT SET
+< -ERR 102 missing argument FIELD=CAT_CODE
+> CAT SET GAME AAA SORTORD=1
+< -ERR 100 too many arguments
+> CAT LIST
+< +DATA
+< F CAT_CODE CAT_NAME SORTORD
+< R AAA First 0
+< R SYS Systems 1
+< R MOBO Motherboards 2
+< R CPU Processors 3
+< R CARD "Expansion cards" 4
+< R DRV Drives 5
+< R TAPE "Tape drives" 5
+< R PERI Peripherals 6
+< R SW Software 7
+< R MAN Manuals 8
+< R CBL Cables 9
+< R PART Parts 10
+< R GAME "Games and toys" 99
+< .
+
+# CAT DEL: refused while a live item uses the code.
+> ITEM ADD CATEGORY=TAPE MFR=Colorado
+< +OK ID=1
+> CAT DEL TAPE
+< -ERR 202 items still use this category
+> ITEM DEL 1
+< +OK
+> CAT DEL TAPE
+< +OK
+> CAT DEL TAPE
+< -ERR 200 no such category
+> CAT DEL NONE
+< -ERR 200 no such category
+> CAT DEL
+< -ERR 102 missing argument FIELD=CAT_CODE
+> CAT DEL AAA GAME
+< -ERR 100 too many arguments
+> CAT DEL AAA X=1
+< -ERR 102 unexpected key FIELD=X
+> ITEM ADD CATEGORY=TAPE
+< -ERR 202 unknown category FIELD=CATEGORY
+> ITEM UNDEL 1
+< -ERR 202 category not live FIELD=CATEGORY
+> CAT ADD TAPE CAT_NAME="Tape again"
+< +OK
+> ITEM UNDEL 1
+< +OK
+> CAT LIST
+< +DATA
+< F CAT_CODE CAT_NAME SORTORD
+< R AAA First 0
+< R SYS Systems 1
+< R MOBO Motherboards 2
+< R CPU Processors 3
+< R CARD "Expansion cards" 4
+< R DRV Drives 5
+< R PERI Peripherals 6
+< R SW Software 7
+< R MAN Manuals 8
+< R CBL Cables 9
+< R PART Parts 10
+< R TAPE "Tape again" 50
+< R GAME "Games and toys" 99
+< .
+
+# CATS.DBF holds at most ENG_MAXCODES records: 10 seeded and 4 added so
+# far, one of them deleted.  C01 to C36 fill it, C37 takes the deleted
+# row, C38 is refused until a delete frees a row, which the next ADD then
+# reuses.
+> CAT ADD C01 CAT_NAME=x SORTORD=90
+< +OK
+> CAT ADD C02 CAT_NAME=x SORTORD=90
+< +OK
+> CAT ADD C03 CAT_NAME=x SORTORD=90
+< +OK
+> CAT ADD C04 CAT_NAME=x SORTORD=90
+< +OK
+> CAT ADD C05 CAT_NAME=x SORTORD=90
+< +OK
+> CAT ADD C06 CAT_NAME=x SORTORD=90
+< +OK
+> CAT ADD C07 CAT_NAME=x SORTORD=90
+< +OK
+> CAT ADD C08 CAT_NAME=x SORTORD=90
+< +OK
+> CAT ADD C09 CAT_NAME=x SORTORD=90
+< +OK
+> CAT ADD C10 CAT_NAME=x SORTORD=90
+< +OK
+> CAT ADD C11 CAT_NAME=x SORTORD=90
+< +OK
+> CAT ADD C12 CAT_NAME=x SORTORD=90
+< +OK
+> CAT ADD C13 CAT_NAME=x SORTORD=90
+< +OK
+> CAT ADD C14 CAT_NAME=x SORTORD=90
+< +OK
+> CAT ADD C15 CAT_NAME=x SORTORD=90
+< +OK
+> CAT ADD C16 CAT_NAME=x SORTORD=90
+< +OK
+> CAT ADD C17 CAT_NAME=x SORTORD=90
+< +OK
+> CAT ADD C18 CAT_NAME=x SORTORD=90
+< +OK
+> CAT ADD C19 CAT_NAME=x SORTORD=90
+< +OK
+> CAT ADD C20 CAT_NAME=x SORTORD=90
+< +OK
+> CAT ADD C21 CAT_NAME=x SORTORD=90
+< +OK
+> CAT ADD C22 CAT_NAME=x SORTORD=90
+< +OK
+> CAT ADD C23 CAT_NAME=x SORTORD=90
+< +OK
+> CAT ADD C24 CAT_NAME=x SORTORD=90
+< +OK
+> CAT ADD C25 CAT_NAME=x SORTORD=90
+< +OK
+> CAT ADD C26 CAT_NAME=x SORTORD=90
+< +OK
+> CAT ADD C27 CAT_NAME=x SORTORD=90
+< +OK
+> CAT ADD C28 CAT_NAME=x SORTORD=90
+< +OK
+> CAT ADD C29 CAT_NAME=x SORTORD=90
+< +OK
+> CAT ADD C30 CAT_NAME=x SORTORD=90
+< +OK
+> CAT ADD C31 CAT_NAME=x SORTORD=90
+< +OK
+> CAT ADD C32 CAT_NAME=x SORTORD=90
+< +OK
+> CAT ADD C33 CAT_NAME=x SORTORD=90
+< +OK
+> CAT ADD C34 CAT_NAME=x SORTORD=90
+< +OK
+> CAT ADD C35 CAT_NAME=x SORTORD=90
+< +OK
+> CAT ADD C36 CAT_NAME=x SORTORD=90
+< +OK
+> CAT ADD C37 CAT_NAME=x SORTORD=90
+< +OK
+@TABLE CATS FIELDS=CAT_CODE
+< F CAT_CODE
+< R SYS
+< R MOBO
+< R CPU
+< R CARD
+< R DRV
+< R PERI
+< R SW
+< R MAN
+< R CBL
+< R PART
+< R C37
+< R GAME
+< R AAA
+< R TAPE
+< R C01
+< R C02
+< R C03
+< R C04
+< R C05
+< R C06
+< R C07
+< R C08
+< R C09
+< R C10
+< R C11
+< R C12
+< R C13
+< R C14
+< R C15
+< R C16
+< R C17
+< R C18
+< R C19
+< R C20
+< R C21
+< R C22
+< R C23
+< R C24
+< R C25
+< R C26
+< R C27
+< R C28
+< R C29
+< R C30
+< R C31
+< R C32
+< R C33
+< R C34
+< R C35
+< R C36
+> CAT ADD C38 CAT_NAME=x SORTORD=90
+< -ERR 202 category table full
+> CAT ADD C39 CAT_NAME=x SORTORD=90
+< -ERR 202 category table full
+> CAT DEL C05
+< +OK
+> CAT ADD C38 CAT_NAME=Reused SORTORD=90
+< +OK
+@TABLE CATS FIELDS=CAT_CODE,CAT_NAME
+< F CAT_CODE CAT_NAME
+< R SYS Systems
+< R MOBO Motherboards
+< R CPU Processors
+< R CARD "Expansion cards"
+< R DRV Drives
+< R PERI Peripherals
+< R SW Software
+< R MAN Manuals
+< R CBL Cables
+< R PART Parts
+< R C37 x
+< R GAME "Games and toys"
+< R AAA First
+< R TAPE "Tape again"
+< R C01 x
+< R C02 x
+< R C03 x
+< R C04 x
+< R C38 Reused
+< R C06 x
+< R C07 x
+< R C08 x
+< R C09 x
+< R C10 x
+< R C11 x
+< R C12 x
+< R C13 x
+< R C14 x
+< R C15 x
+< R C16 x
+< R C17 x
+< R C18 x
+< R C19 x
+< R C20 x
+< R C21 x
+< R C22 x
+< R C23 x
+< R C24 x
+< R C25 x
+< R C26 x
+< R C27 x
+< R C28 x
+< R C29 x
+< R C30 x
+< R C31 x
+< R C32 x
+< R C33 x
+< R C34 x
+< R C35 x
+< R C36 x
+> CAT ADD C39 CAT_NAME=x SORTORD=90
+< -ERR 202 category table full
+> CAT LIST
+< +DATA
+< F CAT_CODE CAT_NAME SORTORD
+< R AAA First 0
+< R SYS Systems 1
+< R MOBO Motherboards 2
+< R CPU Processors 3
+< R CARD "Expansion cards" 4
+< R DRV Drives 5
+< R PERI Peripherals 6
+< R SW Software 7
+< R MAN Manuals 8
+< R CBL Cables 9
+< R PART Parts 10
+< R TAPE "Tape again" 50
+< R C01 x 90
+< R C02 x 90
+< R C03 x 90
+< R C04 x 90
+< R C06 x 90
+< R C07 x 90
+< R C08 x 90
+< R C09 x 90
+< R C10 x 90
+< R C11 x 90
+< R C12 x 90
+< R C13 x 90
+< R C14 x 90
+< R C15 x 90
+< R C16 x 90
+< R C17 x 90
+< R C18 x 90
+< R C19 x 90
+< R C20 x 90
+< R C21 x 90
+< R C22 x 90
+< R C23 x 90
+< R C24 x 90
+< R C25 x 90
+< R C26 x 90
+< R C27 x 90
+< R C28 x 90
+< R C29 x 90
+< R C30 x 90
+< R C31 x 90
+< R C32 x 90
+< R C33 x 90
+< R C34 x 90
+< R C35 x 90
+< R C36 x 90
+< R C37 x 90
+< R C38 Reused 90
+< R GAME "Games and toys" 99
+< .
+
+# Level 1: reads are allowed.
+> USER ADD READER LEVEL=1 PASSWORD=read1
+< +OK
+@SESSION
+> HELLO RDPC
+< +OK
+> LOGIN READER read1
+< +OK LEVEL=1 MUSTCHG=1
+> PASSWD read1 read2
+< +OK
+> CAT LIST
+< +DATA
+< F CAT_CODE CAT_NAME SORTORD
+< R AAA First 0
+< R SYS Systems 1
+< R MOBO Motherboards 2
+< R CPU Processors 3
+< R CARD "Expansion cards" 4
+< R DRV Drives 5
+< R PERI Peripherals 6
+< R SW Software 7
+< R MAN Manuals 8
+< R CBL Cables 9
+< R PART Parts 10
+< R TAPE "Tape again" 50
+< R C01 x 90
+< R C02 x 90
+< R C03 x 90
+< R C04 x 90
+< R C06 x 90
+< R C07 x 90
+< R C08 x 90
+< R C09 x 90
+< R C10 x 90
+< R C11 x 90
+< R C12 x 90
+< R C13 x 90
+< R C14 x 90
+< R C15 x 90
+< R C16 x 90
+< R C17 x 90
+< R C18 x 90
+< R C19 x 90
+< R C20 x 90
+< R C21 x 90
+< R C22 x 90
+< R C23 x 90
+< R C24 x 90
+< R C25 x 90
+< R C26 x 90
+< R C27 x 90
+< R C28 x 90
+< R C29 x 90
+< R C30 x 90
+< R C31 x 90
+< R C32 x 90
+< R C33 x 90
+< R C34 x 90
+< R C35 x 90
+< R C36 x 90
+< R C37 x 90
+< R C38 Reused 90
+< R GAME "Games and toys" 99
+< .

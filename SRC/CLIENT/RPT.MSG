@@ -1,0 +1,73 @@
+# RPT.C: report and label texts (MR_).
+# W=16 column heading: RV_NW
+950 MR_H_ITEMS Items
+# W=44 page heading: MT_PROG's 10, 2 spaces, this title, a space, MR_PAGE's 22
+951 MR_T_LIST Item listing
+952 MR_T_VALUE Valuation
+953 MR_T_LOANS Open loans and holds
+954 MR_T_OVERDUE Overdue loans and reservations
+# W=22 right of the page heading: MSG_DATEW and a u16
+955 MR_PAGE ^1  Page ^2
+
+956 MR_NONE No records
+958 MR_NOLOC No location
+959 MR_CONT ^1 (continued)
+960 MR_SUBL Items: ^1   Quantity: ^2
+961 MR_TOTL Total items: ^1   Quantity: ^2
+# W=30 valuation total labels: RV_LABELW
+962 MR_SUBV Subtotal
+963 MR_TOTV Total
+# A wider MR_NITEMS gives way to the count alone, right-aligned.
+# W=16 valuation item count column: RV_NW
+964 MR_NITEMS Items: ^1
+
+965 MR_BYCAT Totals by category
+966 MR_NLOANS Loans and holds: ^1   Overdue: ^2
+# W=15 label first line: RPT_MINLABELW - LINK_CATLEN - 1
+967 MR_L_NO No. ^1
+# The ^1 of these, a serial number, a location's name or its code, makes
+# a line that is cut at the label's width.
+# W=20 label lines: RPT_MINLABELW
+968 MR_L_SN S/N ^1
+969 MR_L_LOC Loc ^1
+970 MR_L_CODE Code ^1
+# W=8 column heading: W_ID
+971 MR_H_ID ID
+# W=4 column heading: W_CAT
+972 MR_H_CAT Cat
+# W=14 column heading: LW_MFR
+973 MR_H_MFR Maker
+# W=14 column heading: LW_MODEL
+974 MR_H_MODEL Model
+# W=12 column heading: LW_SERIAL
+975 MR_H_SERIAL Serial
+# W=5 column heading: LW_WORKS
+976 MR_H_WORKS Works
+# W=5 column heading: LW_QTY
+977 MR_H_QTY Qty
+# W=10 column heading: LW_LOC
+978 MR_H_LOC Location
+# W=11 column heading: VW_AMT
+979 MR_H_PAID Paid
+980 MR_H_VALUE Value
+# W=1 column heading: OW_LATE
+981 MR_H_LATE !
+# W=8 column heading: W_ID
+982 MR_H_LOAN Loan
+983 MR_H_ITEM Item
+# W=12 column heading: OW_HOLDER
+984 MR_H_HOLDER Holder
+# W=10 column heading: OW_CONTACT
+985 MR_H_CONTACT Contact
+# W=8 column heading: OW_KIND
+986 MR_H_KIND Kind
+# W=10 column heading: W_DATE
+987 MR_H_DUE Due
+# W=13 column heading: OW_ITEM
+988 MR_H_MM Maker/model
+# W=25 column heading: RV_LABELW - W_CAT - 1
+989 MR_H_NAME Name
+# W=30 valuation total labels: RV_LABELW
+990 MR_OTHER Other categories
+
+991 MR_STOPPED Report stopped before the end

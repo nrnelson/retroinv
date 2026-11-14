@@ -1,0 +1,15 @@
+/*
+ * WCHRT.RC - the resources of the frame chrome's test, TEST/WCHRT.C: the
+ * tool bar's pieces and its glyphs, the bitmap SRC/WIN/INVTOOL.PY writes,
+ * and a text of the preview panel's.
+ */
+#include <windows.h>
+#include "WCHRT.H"
+
+WTOOL BITMAP INVTOOL.BMP
+
+STRINGTABLE
+BEGIN
+    WCH_S_TOOL, "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+    WCH_S_LOAD, "Loading item %s..."
+END

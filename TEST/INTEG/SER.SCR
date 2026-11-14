@@ -1,0 +1,28 @@
+# SER.SCR - INVTEST on VM B's COM1 against INVSERV's serial port (run by
+# srvgate.sh after NET2.SCR): the line names its station in HELLO, the
+# session list shows its kind, and a page of over 2 KB travels between
+# two PINGs in flight with it.  After BYE the port listens again, for
+# the INV /CMD /COM1 run that follows.
+
+@COM 1 COM1
+> HELLO RISER
+< +OK
+> LOGIN ADMIN Srv2gate
+< +OK LEVEL=3 NAME="System Administrator"
+> ADMIN CLIENTS
+< +DATA
+< F SLOT TYPE STATION USER LEVEL STATE IDLE SELF
+<* R * COM1 RISER ADMIN 3 3 * 1
+< .
+>& PING
+>& ITEM LIST FIELDS=ITEM_ID,MFR,DESCR,TAGS PAGE=25
+>& PING
+@WAIT 1
+< +OK
+@WAIT 1
+< +DATA
+< F ITEM_ID MFR DESCR TAGS
+@WAIT 1
+< +OK
+> BYE
+< +OK

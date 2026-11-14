@@ -1,0 +1,52 @@
+# SCRSRCH.C: the search screen (MS_).
+# W=74 form box title: VID_COLS - 6
+620 MS_TITLE Search items
+# W=79 key hints: VID_COLS - 1, level digits not counted
+621 MS_HINT Enter=Search F4=List Esc=Back F1=Help
+# W=9 form labels: 11 - 1 - 1 and 32 - 22 - 1
+622 MS_L_TEXT Text
+623 MS_L_SERIAL Serial
+624 MS_L_CAT Category
+625 MS_L_LOC Location
+# W=7 form label: 52 - 44 - 1
+626 MS_L_STATUS Status
+
+627 MS_NONE No items found
+# W=74 list box title: VID_COLS - 6
+628 MS_T_FIND Items containing "^1"
+629 MS_T_SERIAL Items with serial number ^1
+630 MS_T_FILTER Items matching the filters
+
+631 MS_EMPTYQ Type a text, a serial number or a filter first
+# W=9 form label: 66 - 56 - 1
+632 MS_L_AVAIL Available
+# W=74 list box title: VID_COLS - 6
+633 MS_T_FINDF Items containing "^1" matching the filters
+
+634 MS_BOTHQ Choose a status or Available, not both
+# The location's path has no label.
+635 MS_L_WHERE
+# The names of an item's statuses, conditions and works states, each
+# in the order of its choices, after the code in a list of them: of the
+# search form's Status and Works, and of the item form's Status,
+# Condition and Works (SCRSFORM.H).
+# W=36 choice names: TUI_PICKW - LINK_CONDLEN - 1, after the code in
+# INV's pick list
+636 MS_C_A Active
+637 MS_C_D Disposed of
+638 MS_C_NEW New
+639 MS_C_EXC Excellent
+640 MS_C_GD Good
+641 MS_C_FR Fair
+642 MS_C_PR Poor
+# W=7 form labels: 52 - 44 - 1
+643 MS_L_TAG Tags
+644 MS_L_WORKS Works
+# W=36 choice names, as above
+645 MS_C_WQ Not tested
+646 MS_C_WY Yes
+647 MS_C_WI Intermittently
+648 MS_C_WN No
+649 MS_C_WK Not known broken
+# W=9 form label: 32 - 22 - 1
+650 MS_L_ALL All below

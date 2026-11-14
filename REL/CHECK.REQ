@@ -1,0 +1,18 @@
+# CHECK.REQ - the requests REL/distchk.sh sends with INV /CMD to the
+# sample data of each release disk.  Lines starting with # and empty lines
+# are removed first.  ADMIN logs in with its first password, which must
+# be changed, and is reset to it at the end, so that the data is left as
+# it was found but for the audit rows; no answer depends on today's date.
+HELLO CHECK
+LOGIN ADMIN admin
+PASSWD admin Check1986
+LTYPE LIST
+LOC LIST
+LOC CONTENTS 0 ALL=1 TOP=1
+USER GET READER
+ITEM LIST
+ASSY BOM 1
+MAINT RECENT
+LOAN OVERDUE ASOF=20261001
+USER RESET ADMIN PASSWORD=admin
+BYE

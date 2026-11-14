@@ -1,0 +1,18 @@
+# MBOXEND.SCR - the last INVTEST run of wgagate.sh, after MBOX.SCR:
+# RIMBOX's second post changes the password again and ends the server
+# with ADMIN SHUTDOWN.
+
+@MBOX 1 RIMBOX E:\
+>& HELLO RIMBOX
+>& LOGIN ADMIN Wga2gate
+>& PASSWD Wga2gate Wga3gate
+>& ADMIN SHUTDOWN
+@POST 1
+@WAIT 1
+< +OK
+@WAIT 1
+< +OK LEVEL=3 NAME="System Administrator"
+@WAIT 1
+< +OK
+@WAIT 1
+< +OK

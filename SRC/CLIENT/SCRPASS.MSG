@@ -1,0 +1,22 @@
+# SCRPASS.C: changing the own password.
+# W=39 form box title: 45 - 6
+740 MP_TITLE Change password
+741 MP_MUSTTITLE Password change required
+# W=20 form labels: PW_VCOL - 2 - 1
+742 MP_USER User
+743 MP_OLD Old password
+744 MP_NEW New password
+745 MP_REPEAT Repeat new password
+# W=79 key hints: VID_COLS - 1, level digits not counted
+746 MP_HINT Enter=Change Esc=Cancel F1=Help
+
+747 MP_NOMATCH The new password and its repetition differ
+748 MP_LENGTH Not a valid password (^1 to ^2 characters)
+749 MP_SAME The new password must differ from the old one
+750 MP_CHANGED Password changed
+751 MP_OLDWRONG The old password is wrong
+752 MP_LOGOUTQ Log out without changing the password?
+# W=74 message box title: VID_COLS - 6
+753 MP_DONETITLE Password
+# W=79 key hints: VID_COLS - 1, level digits not counted
+754 MP_HINTMUST Enter=Change Esc=Log-out F3=Quit F1=Help

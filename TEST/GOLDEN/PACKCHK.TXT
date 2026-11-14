@@ -1,0 +1,231 @@
+
+RECORDS          4
+DELETED          0
+Record#   ITEM_ID CATEGORY MFR                            MODEL
+      1         1 SYS      IBM                            5160 PC XT                    
+      2         2 CARD     Paradise                       PVGA1A                        
+      3         4                                                                       
+      4         5 CBL                                                                   
+
+Record#   ITEM_ID NOTES
+      1         1 Bought at a computer fair with the original                                 
+                  keyboard and both manuals.                                                  
+                  Recapped the power supply.                                                  
+                                                                                              
+      2         2 Line 01 of the long memo: 8088, ISA, MFM, CGA.                              
+                  Line 02 of the long memo: 8088, ISA, MFM, CGA.                              
+                  Line 03 of the long memo: 8088, ISA, MFM, CGA.                              
+                  Line 04 of the long memo: 8088, ISA, MFM, CGA.                              
+                  Line 05 of the long memo: 8088, ISA, MFM, CGA.                              
+                  Line 06 of the long memo: 8088, ISA, MFM, CGA.                              
+                  Line 07 of the long memo: 8088, ISA, MFM, CGA.                              
+                  Line 08 of the long memo: 8088, ISA, MFM, CGA.                              
+                  Line 09 of the long memo: 8088, ISA, MFM, CGA.                              
+                  Line 10 of the long memo: 8088, ISA, MFM, CGA.                              
+                  Line 11 of the long memo: 8088, ISA, MFM, CGA.                              
+                  Line 12 of the long memo: 8088, ISA, MFM, CGA.                              
+                  Line 13 of the long memo: 8088, ISA, MFM, CGA.                              
+                  Line 14 of the long memo: 8088, ISA, MFM, CGA.                              
+                  Line 15 of the long memo: 8088, ISA, MFM, CGA.                              
+                                                                                              
+      3         4                                                                             
+      4         5 Bought at a computer fair with the original                                 
+                  keyboard and both manuals.                                                  
+                  Recapped the power supply.                                                  
+                                                                                              
+
+Record#   ITEM_ID MFR
+      1         1 IBM                           
+      2         2 Paradise                      
+      3         4                               
+      4         5                               
+
+ITEMS SEEK          1 FOUND          1        1
+ITEMS SEEK          2 FOUND          2        2
+ITEMS SEEK          3 NO KEY
+ITEMS SEEK          4 FOUND          3        4
+ITEMS SEEK          5 FOUND          4        5
+ITEMS SEEK          6 NO KEY
+ITEMS SEEK          7 NO KEY
+ITEMS SEEK          8 NO KEY
+ITEMS SEEK          9 NO KEY
+ITEMS SEEK         10 NO KEY
+BIG RECORDS        300
+BIG SEEK          1 .T.          1
+BIG SEEK         31 .T.         31
+BIG SEEK         32 .T.         32
+BIG SEEK         62 .T.         62
+BIG SEEK         63 .T.         63
+BIG SEEK         93 .T.         93
+BIG SEEK         94 .T.         94
+BIG SEEK        124 .T.        124
+BIG SEEK        125 .T.        125
+BIG SEEK        155 .T.        155
+BIG SEEK        156 .T.        156
+BIG SEEK        186 .T.        186
+BIG SEEK        187 .T.        187
+BIG SEEK        217 .T.        217
+BIG SEEK        218 .T.        218
+BIG SEEK        248 .T.        248
+BIG SEEK        249 .T.        249
+BIG SEEK        279 .T.        279
+BIG SEEK        280 .T.        280
+BIG SEEK        298 .T.        298
+BIG SEEK        299 .T.        299
+BIG SEEK        300 .T.        300
+BIG SEEK        301 ABSENT
+BIG SEEK        301 .F.        301
+BIG SEEK        302 ABSENT
+BIG SEEK        302 .F.        301
+BIG SEEK 0 .F.
+BIG WALK        300 OUT OF ORDER          0
+BIG BOTTOM      300
+NUM2000 RECORDS       2000
+NUM2000 SEEK          1 .T.          1
+NUM2000 SEEK         31 .T.         31
+NUM2000 SEEK         32 .T.         32
+NUM2000 SEEK         62 .T.         62
+NUM2000 SEEK         63 .T.         63
+NUM2000 SEEK         93 .T.         93
+NUM2000 SEEK         94 .T.         94
+NUM2000 SEEK        124 .T.        124
+NUM2000 SEEK        125 .T.        125
+NUM2000 SEEK        155 .T.        155
+NUM2000 SEEK        156 .T.        156
+NUM2000 SEEK        186 .T.        186
+NUM2000 SEEK        187 .T.        187
+NUM2000 SEEK        217 .T.        217
+NUM2000 SEEK        218 .T.        218
+NUM2000 SEEK        248 .T.        248
+NUM2000 SEEK        249 .T.        249
+NUM2000 SEEK        279 .T.        279
+NUM2000 SEEK        280 .T.        280
+NUM2000 SEEK        310 .T.        310
+NUM2000 SEEK        311 .T.        311
+NUM2000 SEEK        341 .T.        341
+NUM2000 SEEK        342 .T.        342
+NUM2000 SEEK        372 .T.        372
+NUM2000 SEEK        373 .T.        373
+NUM2000 SEEK        403 .T.        403
+NUM2000 SEEK        404 .T.        404
+NUM2000 SEEK        434 .T.        434
+NUM2000 SEEK        435 .T.        435
+NUM2000 SEEK        465 .T.        465
+NUM2000 SEEK        466 .T.        466
+NUM2000 SEEK        496 .T.        496
+NUM2000 SEEK        497 .T.        497
+NUM2000 SEEK        527 .T.        527
+NUM2000 SEEK        528 .T.        528
+NUM2000 SEEK        558 .T.        558
+NUM2000 SEEK        559 .T.        559
+NUM2000 SEEK        589 .T.        589
+NUM2000 SEEK        590 .T.        590
+NUM2000 SEEK        620 .T.        620
+NUM2000 SEEK        621 .T.        621
+NUM2000 SEEK        651 .T.        651
+NUM2000 SEEK        652 .T.        652
+NUM2000 SEEK        682 .T.        682
+NUM2000 SEEK        683 .T.        683
+NUM2000 SEEK        713 .T.        713
+NUM2000 SEEK        714 .T.        714
+NUM2000 SEEK        744 .T.        744
+NUM2000 SEEK        745 .T.        745
+NUM2000 SEEK        775 .T.        775
+NUM2000 SEEK        776 .T.        776
+NUM2000 SEEK        806 .T.        806
+NUM2000 SEEK        807 .T.        807
+NUM2000 SEEK        837 .T.        837
+NUM2000 SEEK        838 .T.        838
+NUM2000 SEEK        868 .T.        868
+NUM2000 SEEK        869 .T.        869
+NUM2000 SEEK        899 .T.        899
+NUM2000 SEEK        900 .T.        900
+NUM2000 SEEK        930 .T.        930
+NUM2000 SEEK        931 .T.        931
+NUM2000 SEEK        961 .T.        961
+NUM2000 SEEK        962 .T.        962
+NUM2000 SEEK        992 .T.        992
+NUM2000 SEEK        993 .T.        993
+NUM2000 SEEK       1023 .T.       1023
+NUM2000 SEEK       1024 .T.       1024
+NUM2000 SEEK       1054 .T.       1054
+NUM2000 SEEK       1055 .T.       1055
+NUM2000 SEEK       1085 .T.       1085
+NUM2000 SEEK       1086 .T.       1086
+NUM2000 SEEK       1116 .T.       1116
+NUM2000 SEEK       1117 .T.       1117
+NUM2000 SEEK       1147 .T.       1147
+NUM2000 SEEK       1148 .T.       1148
+NUM2000 SEEK       1178 .T.       1178
+NUM2000 SEEK       1179 .T.       1179
+NUM2000 SEEK       1209 .T.       1209
+NUM2000 SEEK       1210 .T.       1210
+NUM2000 SEEK       1240 .T.       1240
+NUM2000 SEEK       1241 .T.       1241
+NUM2000 SEEK       1271 .T.       1271
+NUM2000 SEEK       1272 .T.       1272
+NUM2000 SEEK       1302 .T.       1302
+NUM2000 SEEK       1303 .T.       1303
+NUM2000 SEEK       1333 .T.       1333
+NUM2000 SEEK       1334 .T.       1334
+NUM2000 SEEK       1364 .T.       1364
+NUM2000 SEEK       1365 .T.       1365
+NUM2000 SEEK       1395 .T.       1395
+NUM2000 SEEK       1396 .T.       1396
+NUM2000 SEEK       1426 .T.       1426
+NUM2000 SEEK       1427 .T.       1427
+NUM2000 SEEK       1457 .T.       1457
+NUM2000 SEEK       1458 .T.       1458
+NUM2000 SEEK       1488 .T.       1488
+NUM2000 SEEK       1489 .T.       1489
+NUM2000 SEEK       1519 .T.       1519
+NUM2000 SEEK       1520 .T.       1520
+NUM2000 SEEK       1550 .T.       1550
+NUM2000 SEEK       1551 .T.       1551
+NUM2000 SEEK       1581 .T.       1581
+NUM2000 SEEK       1582 .T.       1582
+NUM2000 SEEK       1612 .T.       1612
+NUM2000 SEEK       1613 .T.       1613
+NUM2000 SEEK       1643 .T.       1643
+NUM2000 SEEK       1644 .T.       1644
+NUM2000 SEEK       1674 .T.       1674
+NUM2000 SEEK       1675 .T.       1675
+NUM2000 SEEK       1705 .T.       1705
+NUM2000 SEEK       1706 .T.       1706
+NUM2000 SEEK       1736 .T.       1736
+NUM2000 SEEK       1737 .T.       1737
+NUM2000 SEEK       1767 .T.       1767
+NUM2000 SEEK       1768 .T.       1768
+NUM2000 SEEK       1798 .T.       1798
+NUM2000 SEEK       1799 .T.       1799
+NUM2000 SEEK       1829 .T.       1829
+NUM2000 SEEK       1830 .T.       1830
+NUM2000 SEEK       1860 .T.       1860
+NUM2000 SEEK       1861 .T.       1861
+NUM2000 SEEK       1891 .T.       1891
+NUM2000 SEEK       1892 .T.       1892
+NUM2000 SEEK       1922 .T.       1922
+NUM2000 SEEK       1923 .T.       1923
+NUM2000 SEEK       1953 .T.       1953
+NUM2000 SEEK       1954 .T.       1954
+NUM2000 SEEK       1984 .T.       1984
+NUM2000 SEEK       1985 .T.       1985
+NUM2000 SEEK       1998 .T.       1998
+NUM2000 SEEK       1999 .T.       1999
+NUM2000 SEEK       2000 .T.       2000
+NUM2000 SEEK       2001 ABSENT
+NUM2000 SEEK       2001 .F.       2001
+NUM2000 SEEK       2002 ABSENT
+NUM2000 SEEK       2002 .F.       2001
+NUM2000 SEEK 0 .F.
+NUM2000 WALK       2000 OUT OF ORDER          0
+NUM2000 BOTTOM     2000
+BIG RECORDS        300
+PASS          1 RECORDS        300 BAD          0
+PASS          1 ID WALK        300 OUT OF ORDER          0
+PASS          1 NAME WALK        300 OUT OF ORDER          0
+PASS          2 RECORDS        450 BAD          0
+PASS          2 ID WALK        450 OUT OF ORDER          0
+PASS          2 NAME WALK        450 OUT OF ORDER          0
+
+END OF PACKCHK

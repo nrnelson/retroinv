@@ -1,0 +1,234 @@
+=SNAP DELSTOP
+#32770 "RETROINV" ACTIVE
+ Button 2 "OK" FOCUS DEFAULT
+ Static 65535 ""
+ Static 65535 "Item has parts installed: remove them first??Stopped at 270: 269 of 303 done."
+INVWIN "RETROINV - Items by ID" DISABLED
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID" CHECKED
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 1546 "Next o&rder"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|All 303 selected|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status"
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0A@0+55 1F@55+80 2B@135+100 3F@235+100 4F@335+40 5F@375+40 6B@415+100 7F@515+55
+  ListBox 1 ""
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Office" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+28"Office"
+   ROW "       2 DRV Drives                Tandon                         TM100-2                        no         2 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"2" 1L@55+56"DRV Drives" 2L@135+37"Tandon" 3L@235+43"TM100-2" 4L@335+12"no" 5R@402+6"2" 6L@415+34"Box B2"
+   ROW "       3 CARD Expansion cards      Hercules                       Graphics Card                  ?          1 Shelf A1" SELECTED CUT
+    DRAW FFFFFF/000000 0R@42+6"3" 1L@55+111"CARD Expansion cards" 2L@135+42"Hercules" 3L@235+67"Graphics Card" 4L@335+6"?" 5R@402+6"1" 6L@415+40"Shelf A1"
+   ROW "       4 PART Parts                Many                           M1                             ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"4" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+15"M1" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "       5 PART Parts                Many                           M2                             ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"5" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+15"M2" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "       6 PART Parts                Many                           M3                             ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"6" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+15"M3" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "       7 PART Parts                Many                           M4                             ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"7" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+15"M4" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "       8 PART Parts                Many                           M5                             ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"8" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+15"M5" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "       9 PART Parts                Many                           M6                             ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"9" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+15"M6" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "      10 PART Parts                Many                           M7                             ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@36+12"10" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+15"M7" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "      11 PART Parts                Many                           M8                             ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@36+12"11" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+15"M8" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "      12 PART Parts                Many                           M9                             ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@36+12"12" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+15"M9" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "      13 PART Parts                Many                           M10                            ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@36+12"13" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+21"M10" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "      14 PART Parts                Many                           M11                            ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@36+12"14" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+21"M11" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "      15 PART Parts                Many                           M12                            ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@36+12"15" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+21"M12" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "      16 PART Parts                Many                           M13                            ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@36+12"16" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+21"M13" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "      17 PART Parts                Many                           M14                            ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@36+12"17" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+21"M14" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "      18 PART Parts                Many                           M15                            ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@36+12"18" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+21"M15" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "      19 PART Parts                Many                           M16                            ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@36+12"19" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+21"M16" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "      20 PART Parts                Many                           M17                            ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@36+12"20" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+21"M17" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+=SNAP DELHALT
+INVWIN "RETROINV - Items by ID" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID" CHECKED
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 1546 "Next o&rder"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|34 items|"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status"
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0A@0+55 1F@55+80 2B@135+100 3F@235+100 4F@335+40 5F@375+40 6B@415+100 7F@515+55
+  ListBox 1 "" FOCUS
+   ROW "     270 PART Parts                Many                           M267                           ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@30+18"270" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+27"M267" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "     271 PART Parts                Many                           M268                           ?          1 Box B2"
+   ROW "     272 PART Parts                Many                           M269                           ?          1 Box B2"
+   ROW "     273 PART Parts                Many                           M270                           ?          1 Box B2"
+   ROW "     274 PART Parts                Many                           M271                           ?          1 Box B2"
+   ROW "     275 PART Parts                Many                           M272                           ?          1 Box B2"
+   ROW "     276 PART Parts                Many                           M273                           ?          1 Box B2"
+   ROW "     277 PART Parts                Many                           M274                           ?          1 Box B2"
+   ROW "     278 PART Parts                Many                           M275                           ?          1 Box B2"
+   ROW "     279 PART Parts                Many                           M276                           ?          1 Box B2"
+   ROW "     280 PART Parts                Many                           M277                           ?          1 Box B2"
+   ROW "     281 PART Parts                Many                           M278                           ?          1 Box B2"
+   ROW "     282 PART Parts                Many                           M279                           ?          1 Box B2"
+   ROW "     283 PART Parts                Many                           M280                           ?          1 Box B2"
+   ROW "     284 PART Parts                Many                           M281                           ?          1 Box B2"
+   ROW "     285 PART Parts                Many                           M282                           ?          1 Box B2"
+   ROW "     286 PART Parts                Many                           M283                           ?          1 Box B2"
+   ROW "     287 PART Parts                Many                           M284                           ?          1 Box B2"
+   ROW "     288 PART Parts                Many                           M285                           ?          1 Box B2"
+   ROW "     289 PART Parts                Many                           M286                           ?          1 Box B2"
+=END

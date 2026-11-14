@@ -1,0 +1,33 @@
+# SCRCSV.C: export and import of CSV files (MX_).
+# W=65 form box title: SCR_POPW - 6
+1040 MX_T_EXPORT Export to a CSV file
+1041 MX_T_IMPORT Import a CSV file
+# W=12 form labels: CX_VCOL - 1 - 1
+1042 MX_L_TABLE Table
+1043 MX_L_FILE File
+1044 MX_L_HEADER Field names
+# W=79 key hints: VID_COLS - 1, level digits not counted
+1045 MX_HINTEXP Enter=Export F4=List Esc=Back F1=Help
+1046 MX_HINTIMP Enter=Import F4=List Esc=Back F1=Help
+# W=42 status-line information: TUI_ST_INFOW
+1047 MX_PROGRESS Records: ^1
+
+1049 MX_STOPPED Export stopped; ^1 was not written
+1050 MX_EXPORTED Records written to ^2: ^1
+1051 MX_LOST The export was interrupted; start it again
+1052 MX_IMPORTQ Add the records of ^1 to ^2? This cannot be undone.
+1053 MX_WAIT Importing, please wait (a large file takes minutes)...
+1054 MX_ADDED Records added to ^2: ^1
+# W=68 refused lines box title: CX_BOXW - 6
+1055 MX_T_REFUSED Nothing imported
+# MX_REFLINE's ^2, the server's reason, is cut at SCR_CX_REFW.
+# W=70 refused lines box: SCR_CX_REFW
+1056 MX_REFLINE Line ^1  ^2
+1057 MX_REFFIELD ^1: ^2
+1058 MX_REFCOUNT Lines refused in all: ^1
+1059 MX_REFERR Reading the file then stopped: ^1
+
+1060 MX_PARTIAL Records added: ^1; then the import stopped: ^2
+1062 MX_NOFILE File or directory not found
+1063 MX_FILEDUP The file already exists
+1064 MX_FILEERR File error: ^1

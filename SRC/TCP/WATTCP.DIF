@@ -1,0 +1,359 @@
+WATTCP.DIF - our changes to the WATTCP sources of 14 Sep 1994.
+
+WATPREP.PY applies this diff to the files as the archive holds them,
+before its mechanical changes; the changed lines keep the archive's
+CR LF ends.  Each change but the last is one that the three compilers,
+or the calls between WATTCP's modules, need:
+
+- WATTCP.H includes WTSHIM.H before its own declarations, and types the
+  IP header's two 4-bit fields WT_BF4, without which Watcom makes the
+  header 21 bytes with tos at offset 2.
+- The declarations without a return type get int, which Open Watcom
+  warns about in every file that includes WATTCP.H.  A block of
+  prototypes covers the calls made without one: the kernel's calls
+  between its modules, and the TCP back end's calls into the API.
+  Without one an argument of the wrong type is passed as it is:
+  _tcp_cancel's last parameter is a longword, which three of its
+  callers give as an int 0.
+- _arp_resolve takes its address buffer as void *: Watcom C 6.5 reads
+  &array as a pointer to the element and refuses the callers'
+  arguments.
+- Casts and the union member where a call passes a pointer of another
+  type, which Watcom refuses; two of these calls had the members
+  swapped.  A string literal in a ?: is cast to the char * of the other
+  branch, and no token follows #endif, both for Watcom C 6.5.
+- tcp_handler starts the connection a listening socket takes at
+  wt_isn's number (WTSHIM.H), not at the one tcp_listen made from the
+  socket's address, which is the same for every connection and lets a
+  host forge one from an address whose replies it cannot see.
+
+--- a/INCLUDE/WATTCP.H
++++ b/INCLUDE/WATTCP.H
+@@ -3,6 +3,7 @@
+ #define _wattcp_wattcp_h
+ 
+ #define WATTCPH
++#include "WTSHIM.H"
+ 
+ #define SOCKESTABLISHED 1
+ #define SOCKDATAREADY   2
+@@ -92,8 +93,8 @@
+ 
+ /* The Internet Header: */
+ typedef struct {
+-    unsigned	    hdrlen  : 4;
+-    unsigned	    ver     : 4;
++    WT_BF4	    hdrlen  : 4;
++    WT_BF4	    ver     : 4;
+     byte	    tos;
+     word            length;
+     word            identification;
+@@ -357,9 +358,9 @@
+  *
+  */
+ 
+-extern _ip_delay0( sock_type *s, int timeoutseconds, procref fn, int *statusptr );
+-extern _ip_delay1( sock_type *s, int timeoutseconds, procref fn, int *statusptr );
+-extern _ip_delay2( sock_type *s, int timeoutseconds, procref fn, int *statusptr );
++extern int _ip_delay0( sock_type *s, int timeoutseconds, procref fn, int *statusptr );
++extern int _ip_delay1( sock_type *s, int timeoutseconds, procref fn, int *statusptr );
++extern int _ip_delay2( sock_type *s, int timeoutseconds, procref fn, int *statusptr );
+ 
+ #define sock_wait_established( s, seconds, fn, statusptr ) \
+     if (_ip_delay0( s, seconds, fn, statusptr )) goto sock_err;
+@@ -395,7 +396,19 @@
+ #define _ping( h, c ) _send_ping( h, c, 250, 0, NULL )
+ extern longword _chk_ping( longword host , longword *ptr);
+ extern void _arp_register( longword use, longword instead_of );
+-extern int _arp_resolve( longword ina, eth_address *ethap, int nowait);
++extern int _arp_resolve( longword ina, void *ethap, int nowait);
++extern void _arp_add_gateway( char *data, longword ip );
++extern int _arp_handler( arp_Header *in );
++extern void _tcp_cancel( in_Header *ip, int code, char *msg, longword dummyip );
++extern void _udp_cancel( in_Header *ip );
++extern void tcp_init( void );
++extern void tcp_shutdown( void );
++extern int tcp_config( char *path );
++extern int tcp_tick( sock_type *s );
++extern int tcp_established( tcp_Socket *s );
++extern word sock_dataready( sock_type *s );
++extern int sock_tbused( tcp_Socket *s );
++extern int sock_tbleft( tcp_Socket *s );
+ 
+ extern void * _pkt_eth_init( void );
+ extern void pkt_release( void );
+@@ -409,14 +422,14 @@
+ extern void _add_server( int *counter, int max, longword *array, longword value );
+ extern word debug_on;
+ extern char *rip( char *s);
+-extern _chk_socket( tcp_Socket *s );
++extern int _chk_socket( tcp_Socket *s );
+ extern char *inet_ntoa( char *s, longword x );
+ extern void psocket( tcp_Socket *s );
+ extern longword inet_addr( char *s );
+ extern char *sockerr( tcp_Socket *s );
+ extern char *sockstate( tcp_Socket *s );
+-extern getpeername( tcp_Socket *s, void *dest, int *len );
+-extern getsockname(  tcp_Socket *s, void *dest, int *len );
++extern int getpeername( tcp_Socket *s, void *dest, int *len );
++extern int getsockname(  tcp_Socket *s, void *dest, int *len );
+ extern longword gethostid( void );
+ extern longword sethostid( longword ip );
+ extern char *getdomainname( char *name, int length );
+--- a/SRC/PCARP.C
++++ b/SRC/PCARP.C
+@@ -218,7 +218,7 @@
+ /*
+  * _arp_resolve - resolve IP address to hardware address
+  */
+-_arp_resolve( longword ina, eth_address *ethap, int nowait)
++_arp_resolve( longword ina, void *ethap, int nowait)
+ {
+     static arp_tables *arp_ptr;
+     int i, oldhndlcbrk;
+@@ -248,7 +248,7 @@
+ 		    _arp_request( ina );
+ 		else
+ 		    break;	/* must do full fledged arp */
+-#endif NEW_EXPIRY
++#endif
+ 	    if (ethap)
+ 		movmem( arp_ptr->hardware, ethap, sizeof(eth_address));
+ 	    return( 1 );
+--- a/SRC/PCICMP.C
++++ b/SRC/PCICMP.C
+@@ -199,7 +199,7 @@
+ 
+                 // do arp and create packet
+                 /* format the packet with the request's hardware address */
+-                pkt = (struct _pkt*)(_eth_formatpacket( _eth_hardware(ip), 8));
++                pkt = (struct _pkt*)(_eth_formatpacket( _eth_hardware((byte *)ip), 8));
+ 
+ 		newicmp = &pkt->icmp;
+ 
+--- a/SRC/PCSED.C
++++ b/SRC/PCSED.C
+@@ -67,7 +67,7 @@
+     if (( _pktdevclass == PD_ETHER ) && ((len += 14) < ETH_MIN ))
+ 	len = ETH_MIN;
+ 
+-    return( pkt_send( &outbuf, len ));   /* send to packet driver */
++    return( pkt_send( (char *)&outbuf, len ));   /* send to packet driver */
+ }
+ 
+ /*
+--- a/SRC/PCTCP.C
++++ b/SRC/PCTCP.C
+@@ -511,7 +511,7 @@
+ 
+ #ifdef DEBUG
+     if(debug_on >1) printf("regular retran TO set unacked back to 0 from %u\n", s->unacked);
+-#endif DEBUG
++#endif
+                 /* strategy handles closed windows   J.D. + E.E. */
+                if (s->window == 0 && s->karn_count == 2)
+                   s->window = 1;
+@@ -636,7 +636,7 @@
+ 	    break;
+ 	case /*0x806*/ 0x608 :
+             /* do arp */
+-	    _arp_handler(ip);
++	    _arp_handler((arp_Header *)ip);
+ 	    break;
+ 	}
+ 	if (ip) _eth_free(ip);
+@@ -852,7 +852,7 @@
+                     case  1 : if (( s->stress ++ > s->rigid ) &&
+                                   ( s->rigid < 100 )) {
+                                   s->err_msg = (msg) ?
+-                                    msg : "ICMP closed connection";
++                                    msg : (char *)"ICMP closed connection";
+                                   s->rdatalen = s->datalen = 0;
+                                   s->unhappy = false;
+                                   tcp_abort( s );
+@@ -1198,6 +1198,7 @@
+                 }
+ 
+                 s->acknum = intel( tp->seqnum ) + 1;
++                s->seqnum = wt_isn();
+ 		s->hisport = intel16( tp->srcPort );
+ 		s->hisaddr = intel( ip->source );
+ 		s->flags = tcp_FlagSYN | tcp_FlagACK;
+@@ -1307,7 +1308,7 @@
+             } else {
+ #ifdef DEBUG
+     if(debug_on >1) printf("tcphandler confused so set unacked back to 0 from %u\n",s->unacked);
+-#endif DEBUG
++#endif
+                 s->unacked = 0;
+             }
+             if (s->unacked < 0) s->unacked = 0;
+@@ -1534,7 +1535,7 @@
+         if (ldiff == 0 && s->unacked && chk_timeout( s->rtt_lasttran )) {
+ #ifdef DEBUG
+             if(debug_on >1) printf("data process timeout so set unacked back to 0 from %u\n",s->unacked);
+-#endif DEBUG
++#endif
+             s->unacked = 0;
+         }
+     } else {
+@@ -1681,7 +1682,7 @@
+ #ifdef DEBUG
+ if (debug_on) printf(" Sent %u/%u bytes in %u/%u packets  with (%u) unacked  SYN %lu  line %u\n",
+         sendtotlen, s->window, ippkt, s->cwindow, s->unacked, s->seqnum, line);
+-#endif DEBUG
++#endif
+     s->vj_last = 0;
+     if ( s->karn_count == 2 ) {
+         if (s->rto) s->rto = (s->rto * 3) / 2;
+@@ -1767,7 +1768,7 @@
+     his_pkt  = (struct _pkt*)( his_ip );
+ 
+     /* convoluted mechanism - reads his ethernet address or garbage */
+-    eth = _eth_hardware( his_ip );
++    eth = _eth_hardware( (byte *)his_ip );
+ 
+     pkt = (struct _pkt *)_eth_formatpacket( eth, 8);
+     inp = &pkt->in;
+@@ -1883,9 +1884,9 @@
+     while ( len  > 0) {
+         if (proto) {
+             s->tcp.flags |= oldmode;
+-            offset += tcp_write( &(s->udp), &dp[ offset ], len);
++            offset += tcp_write( &(s->tcp), &dp[ offset ], len);
+         } else
+-            offset += udp_write( &(s->tcp), &dp[ offset ], len, offset );
++            offset += udp_write( &(s->udp), &dp[ offset ], len, offset );
+ 	len = oldlen - offset;
+ 	if (s->udp.usr_yield)(s->udp.usr_yield)();
+ 	if (!tcp_tick(s)) return( 0 );
+@@ -1902,8 +1903,8 @@
+ sock_fastwrite(sock_type *s, byte *dp, int len)
+ {
+     return( ( s->udp.ip_type == UDP_PROTO ) ?
+-        udp_write( s, dp, len, 0 ) :
+-        tcp_write( s, dp, len) );
++        udp_write( &s->udp, dp, len, 0 ) :
++        tcp_write( &s->tcp, dp, len) );
+ }
+ 
+ int sock_setbuf( sock_type *s, byte *dp, int len )
+@@ -1927,7 +1928,7 @@
+     if ( len < 0 ) return( 0 );
+     if ( s->udp.ip_type == UDP_PROTO ) {
+         do {
+-            written = udp_write( s, dp, len, offset );
++            written = udp_write( &s->udp, dp, len, offset );
+             dp += written;
+             offset += written;
+         } while (len -= written > 0);
+@@ -1935,7 +1936,7 @@
+         s->tcp.queue = dp;
+         s->tcp.queuelen = len;
+         s->tcp.datalen = len;
+-        tcp_send( s, __LINE__ );  /* start sending it */
++        tcp_send( &s->tcp, __LINE__ );  /* start sending it */
+     }
+     return( len );
+ }
+@@ -1951,7 +1952,7 @@
+ {
+     if ( s->tcp.ip_type == TCP_PROTO ) {
+         s->tcp.sock_mode &= ~TCP_LOCAL;
+-	tcp_Flush( s );
++	tcp_Flush( &s->tcp );
+     }
+ }
+ 
+@@ -2084,7 +2085,7 @@
+     movmem( &src_p[ n ], src_p, *np -= n );
+     if (*np < 0) *np = 0;
+ 
+-    sock_update( s );   /* new window */
++    sock_update( &s->tcp );   /* new window */
+     return( len );
+ }
+ 
+@@ -2133,10 +2134,10 @@
+ {
+     switch (s->udp.ip_type) {
+ 	case UDP_PROTO :
+-		udp_close( s );
++		udp_close( &s->udp );
+ 		break;
+ 	case TCP_PROTO :
+-		tcp_close( s );
++		tcp_close( &s->tcp );
+ 		tcp_tick( s );
+ 		break;
+     }
+@@ -2145,7 +2146,7 @@
+ sock_sturdy( sock_type *s, int level )
+ {
+     s->tcp.rigid = level;
+-    if ( s->tcp.rigid < s->tcp.stress ) sock_abort( s );
++    if ( s->tcp.rigid < s->tcp.stress ) sock_abort( &s->tcp );
+ }
+ 
+ /*
+@@ -2162,10 +2163,10 @@
+ int *statusptr;
+ {
+     int status;
+-    ip_timer_init( s , timeoutseconds );
++    ip_timer_init( &s->udp , timeoutseconds );
+     do {
+ 	if ( s->tcp.ip_type == TCP_PROTO ) {
+-	    if ( tcp_established( s )) {
++	    if ( tcp_established( &s->tcp )) {
+ 		status = 0;
+ 		break;
+ 	    }
+@@ -2176,7 +2177,7 @@
+ 	     status = -1;	/* get an early reset */
+ 	     break;
+ 	}
+-	if ( ip_timer_expired( s )) {
++	if ( ip_timer_expired( &s->udp )) {
+             s->tcp.err_msg = "Open timed out";
+             sock_close( s );
+ 	    status = -1;
+@@ -2200,7 +2201,7 @@
+ int *statusptr;
+ {
+     int status;
+-    ip_timer_init( s , timeoutseconds );
++    ip_timer_init( &s->udp , timeoutseconds );
+ 
+     sock_flush( s );	/* new enhancement */
+ 
+@@ -2215,7 +2216,7 @@
+ 	    status = 1;
+ 	    break;
+ 	}
+-	if ( ip_timer_expired( s )) {
++	if ( ip_timer_expired( &s->udp )) {
+             s->tcp.err_msg = "Connection timed out";
+             sock_close( s );
+ 	    status = -1;
+@@ -2238,7 +2239,7 @@
+ int *statusptr;
+ {
+     int status;
+-    ip_timer_init( s , timeoutseconds );
++    ip_timer_init( &s->udp , timeoutseconds );
+ 
+     if (s->tcp.ip_type != TCP_PROTO ) {
+         if ( statusptr ) * statusptr = 1;
+@@ -2253,9 +2254,9 @@
+ 	    status = 1;
+ 	    break;
+ 	}
+-	if ( ip_timer_expired( s )) {
++	if ( ip_timer_expired( &s->udp )) {
+             s->tcp.err_msg = "Connection timed out";
+-	    sock_abort( s );
++	    sock_abort( &s->tcp );
+ 	    status = -1;
+ 	    break;
+ 	}

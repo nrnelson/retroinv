@@ -1,0 +1,720 @@
+=SNAP NOEDIT
+#32770 "RETROINV" ACTIVE
+ Button 2 "OK" FOCUS DEFAULT
+ Static 65535 ""
+ Static 65535 "Permission denied (your access level is 1)"
+#32768 "" HIDDEN
+INVWIN "RETROINV - Recent service" DISABLED
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..." DISABLED
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..." DISABLED
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users" DISABLED
+  MENU 53 "&Backup..." DISABLED
+  MENU 54 "&Restore..." DISABLED
+  MENU 55 "&Pack" DISABLED
+  MENU 56 "Re&index" DISABLED
+  MENU 57 "&Audit log..." DISABLED
+  MENU 58 "&Sessions..." DISABLED
+  MENU 50 "&Export CSV..." DISABLED
+  MENU 51 "I&mport CSV..." DISABLED
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E" DISABLED
+  MENU 557 "&New...?Ins" DISABLED
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" DISABLED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "~New|Open|~Edit|~Delete|-|~Move|~Install|~Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|READER, level 1|1 service record|"
+ WLIST 208 "     Rec     Item Date       Type      Cost Summary"
+  HEAD 000000/C0C0C0 0R@28+20"Rec" 1R@83+20"Item" 2L@110+23"Date" 3L@175+24"Type" 4R@237+21"Cost" 5L@265+43"Summary"
+  COLS 0F@0+55 1F@55+55 2F@110+65 3F@175+35 4F@210+55 5F@265+300
+  ListBox 1 ""
+   ROW "       1        1 2026-10-01 RP             Recapped the power supply" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1R@97+6"1" 2L@110+54"2026-10-01" 3L@175+15"RP" 5L@265+133"Recapped the power supply"
+=SNAP NODEL
+#32770 "RETROINV" ACTIVE
+ Button 2 "OK" FOCUS DEFAULT
+ Static 65535 ""
+ Static 65535 "Permission denied (your access level is 1)"
+#32768 "" HIDDEN
+INVWIN "RETROINV - Recent service" DISABLED
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..." DISABLED
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..." DISABLED
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users" DISABLED
+  MENU 53 "&Backup..." DISABLED
+  MENU 54 "&Restore..." DISABLED
+  MENU 55 "&Pack" DISABLED
+  MENU 56 "Re&index" DISABLED
+  MENU 57 "&Audit log..." DISABLED
+  MENU 58 "&Sessions..." DISABLED
+  MENU 50 "&Export CSV..." DISABLED
+  MENU 51 "I&mport CSV..." DISABLED
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E" DISABLED
+  MENU 557 "&New...?Ins" DISABLED
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" DISABLED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "~New|Open|~Edit|~Delete|-|~Move|~Install|~Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|READER, level 1|1 service record|"
+ WLIST 208 "     Rec     Item Date       Type      Cost Summary"
+  HEAD 000000/C0C0C0 0R@28+20"Rec" 1R@83+20"Item" 2L@110+23"Date" 3L@175+24"Type" 4R@237+21"Cost" 5L@265+43"Summary"
+  COLS 0F@0+55 1F@55+55 2F@110+65 3F@175+35 4F@210+55 5F@265+300
+  ListBox 1 ""
+   ROW "       1        1 2026-10-01 RP             Recapped the power supply" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1R@97+6"1" 2L@110+54"2026-10-01" 3L@175+15"RP" 5L@265+133"Recapped the power supply"
+=SNAP VIEW
+#32770 "Service record 1 Recapped the power supply" ACTIVE
+ WTAB 95 "&Record|&Notes" CUR 0 FOCUS
+ Static 65535 "Record"
+ Static 100 "1"
+ Static 65535 "Item"
+ Static 101 "1"
+ Static 65535 "Date"
+ Static 102 "2026-10-01"
+ Static 65535 "Type"
+ Static 103 "RP"
+ Static 65535 "Summary"
+ Edit 104 "Recapped the power supply"
+ Static 65535 "Cost"
+ Static 105 ""
+ Static 65535 "Done by"
+ Static 106 ""
+ Edit 107 "Two caps.??Tested OK." HIDDEN
+ Static 99 ""
+ Button 2 "Close" DEFAULT
+ Button 98 "Edit" DISABLED
+ Button 94 "&Help"
+#32768 "" HIDDEN
+INVWIN "RETROINV - Recent service" DISABLED
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..." DISABLED
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..." DISABLED
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users" DISABLED
+  MENU 53 "&Backup..." DISABLED
+  MENU 54 "&Restore..." DISABLED
+  MENU 55 "&Pack" DISABLED
+  MENU 56 "Re&index" DISABLED
+  MENU 57 "&Audit log..." DISABLED
+  MENU 58 "&Sessions..." DISABLED
+  MENU 50 "&Export CSV..." DISABLED
+  MENU 51 "I&mport CSV..." DISABLED
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E" DISABLED
+  MENU 557 "&New...?Ins" DISABLED
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" DISABLED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "~New|Open|~Edit|~Delete|-|~Move|~Install|~Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|READER, level 1|1 service record|"
+ WLIST 208 "     Rec     Item Date       Type      Cost Summary"
+  HEAD 000000/C0C0C0 0R@28+20"Rec" 1R@83+20"Item" 2L@110+23"Date" 3L@175+24"Type" 4R@237+21"Cost" 5L@265+43"Summary"
+  COLS 0F@0+55 1F@55+55 2F@110+65 3F@175+35 4F@210+55 5F@265+300
+  ListBox 1 ""
+   ROW "       1        1 2026-10-01 RP             Recapped the power supply" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1R@97+6"1" 2L@110+54"2026-10-01" 3L@175+15"RP" 5L@265+133"Recapped the power supply"
+=SNAP NOINS
+INVWIN "RETROINV - Recent service" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..." DISABLED
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..." DISABLED
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users" DISABLED
+  MENU 53 "&Backup..." DISABLED
+  MENU 54 "&Restore..." DISABLED
+  MENU 55 "&Pack" DISABLED
+  MENU 56 "Re&index" DISABLED
+  MENU 57 "&Audit log..." DISABLED
+  MENU 58 "&Sessions..." DISABLED
+  MENU 50 "&Export CSV..." DISABLED
+  MENU 51 "I&mport CSV..." DISABLED
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E" DISABLED
+  MENU 557 "&New...?Ins" DISABLED
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" DISABLED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "~New|Open|~Edit|~Delete|-|~Move|~Install|~Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|READER, level 1|1 service record|"
+ WLIST 208 "     Rec     Item Date       Type      Cost Summary"
+  HEAD 000000/C0C0C0 0R@28+20"Rec" 1R@83+20"Item" 2L@110+23"Date" 3L@175+24"Type" 4R@237+21"Cost" 5L@265+43"Summary"
+  COLS 0F@0+55 1F@55+55 2F@110+65 3F@175+35 4F@210+55 5F@265+300
+  ListBox 1 "" FOCUS
+   ROW "       1        1 2026-10-01 RP             Recapped the power supply" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1R@97+6"1" 2L@110+54"2026-10-01" 3L@175+15"RP" 5L@265+133"Recapped the power supply"
+#32768 "" HIDDEN
+=SNAP NONEW
+#32770 "RETROINV" ACTIVE
+ Button 2 "OK" FOCUS DEFAULT
+ Static 65535 ""
+ Static 65535 "Permission denied (your access level is 1)"
+#32768 "" HIDDEN
+INVWIN "RETROINV - Service records of item 1 IBM 5150" DISABLED
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..." DISABLED
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..." DISABLED
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users" DISABLED
+  MENU 53 "&Backup..." DISABLED
+  MENU 54 "&Restore..." DISABLED
+  MENU 55 "&Pack" DISABLED
+  MENU 56 "Re&index" DISABLED
+  MENU 57 "&Audit log..." DISABLED
+  MENU 58 "&Sessions..." DISABLED
+  MENU 50 "&Export CSV..." DISABLED
+  MENU 51 "I&mport CSV..." DISABLED
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E" DISABLED
+  MENU 557 "&New...?Ins" DISABLED
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" DISABLED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "~New|Open|~Edit|~Delete|-|~Move|~Install|~Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|READER, level 1|1 service record|"
+ WLIST 208 "     Rec Date       Type      Cost Summary"
+  HEAD 000000/C0C0C0 0R@28+20"Rec" 1L@55+23"Date" 2L@120+24"Type" 3R@182+21"Cost" 4L@210+43"Summary"
+  COLS 0F@0+55 1F@55+65 2F@120+35 3F@155+55 4F@210+300
+  ListBox 1 ""
+   ROW "       1 2026-10-01 RP             Recapped the power supply" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+54"2026-10-01" 2L@120+15"RP" 4L@210+133"Recapped the power supply"
+=SNAP EMPTY
+INVWIN "RETROINV - Service records of item 2 Tandon TM100-2" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users" DISABLED
+  MENU 53 "&Backup..." DISABLED
+  MENU 54 "&Restore..." DISABLED
+  MENU 55 "&Pack" DISABLED
+  MENU 56 "Re&index" DISABLED
+  MENU 57 "&Audit log..." DISABLED
+  MENU 58 "&Sessions..." DISABLED
+  MENU 50 "&Export CSV..." DISABLED
+  MENU 51 "I&mport CSV..." DISABLED
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter" DISABLED
+  MENU 1093 "&Edit...?Ctrl+E" DISABLED
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" DISABLED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|~Open|~Edit|~Delete|-|~Move|~Install|~Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|CLERK, level 2|0 service records|"
+ WLIST 208 "     Rec Date       Type      Cost Summary"
+  HEAD 000000/C0C0C0 0R@28+20"Rec" 1L@55+23"Date" 2L@120+24"Type" 3R@182+21"Cost" 4L@210+43"Summary"
+  COLS 0F@0+55 1F@55+65 2F@120+35 3F@155+55 4F@210+300
+  ListBox 1 "" FOCUS
+   ROW "No service records"
+    DRAW 000000/FFFFFF 0I@0+89"No service records"
+#32768 "" HIDDEN
+=SNAP NOKEYS
+INVWIN "RETROINV - Service records of item 2 Tandon TM100-2" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users" DISABLED
+  MENU 53 "&Backup..." DISABLED
+  MENU 54 "&Restore..." DISABLED
+  MENU 55 "&Pack" DISABLED
+  MENU 56 "Re&index" DISABLED
+  MENU 57 "&Audit log..." DISABLED
+  MENU 58 "&Sessions..." DISABLED
+  MENU 50 "&Export CSV..." DISABLED
+  MENU 51 "I&mport CSV..." DISABLED
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter" DISABLED
+  MENU 1093 "&Edit...?Ctrl+E" DISABLED
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" DISABLED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|~Open|~Edit|~Delete|-|~Move|~Install|~Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|CLERK, level 2|0 service records|"
+ WLIST 208 "     Rec Date       Type      Cost Summary"
+  HEAD 000000/C0C0C0 0R@28+20"Rec" 1L@55+23"Date" 2L@120+24"Type" 3R@182+21"Cost" 4L@210+43"Summary"
+  COLS 0F@0+55 1F@55+65 2F@120+35 3F@155+55 4F@210+300
+  ListBox 1 "" FOCUS
+   ROW "No service records"
+    DRAW 000000/FFFFFF 0I@0+89"No service records"
+#32768 "" HIDDEN
+=SNAP NEW
+#32770 "New service record" ACTIVE
+ WTAB 95 "&Record|&Notes" CUR 0
+ Static 65535 "Record"
+ Edit 100 ""
+ Static 65535 "Item"
+ Edit 101 "2"
+ Static 65535 "&Date"
+ Edit 102 "" FOCUS
+ Static 65535 "&Type"
+ ComboBox 103 ""
+  ROW "RP"
+  ROW "CL"
+  ROW "RC"
+  ROW "TS"
+  ROW "MD"
+  ROW "IN"
+ Static 65535 "&Summary"
+ Edit 104 ""
+ Static 65535 "&Cost"
+ Edit 105 ""
+ Static 65535 "Done &by"
+ Edit 106 ""
+ Edit 107 "" HIDDEN
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ Button 94 "&Help"
+ComboLBox 1000 "" HIDDEN
+#32768 "" HIDDEN
+INVWIN "RETROINV - Service records of item 2 Tandon TM100-2" DISABLED
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users" DISABLED
+  MENU 53 "&Backup..." DISABLED
+  MENU 54 "&Restore..." DISABLED
+  MENU 55 "&Pack" DISABLED
+  MENU 56 "Re&index" DISABLED
+  MENU 57 "&Audit log..." DISABLED
+  MENU 58 "&Sessions..." DISABLED
+  MENU 50 "&Export CSV..." DISABLED
+  MENU 51 "I&mport CSV..." DISABLED
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter" DISABLED
+  MENU 1093 "&Edit...?Ctrl+E" DISABLED
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" DISABLED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|~Open|~Edit|~Delete|-|~Move|~Install|~Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|CLERK, level 2|0 service records|"
+ WLIST 208 "     Rec Date       Type      Cost Summary"
+  HEAD 000000/C0C0C0 0R@28+20"Rec" 1L@55+23"Date" 2L@120+24"Type" 3R@182+21"Cost" 4L@210+43"Summary"
+  COLS 0F@0+55 1F@55+65 2F@120+35 3F@155+55 4F@210+300
+  ListBox 1 ""
+   ROW "No service records"
+    DRAW 000000/FFFFFF 0I@0+89"No service records"
+=SNAP EDIT
+#32770 "Service record 1 Recapped the power supply - Edit" ACTIVE
+ WTAB 95 "&Record|&Notes" CUR 0
+ Static 65535 "Record"
+ Edit 100 "1"
+ Static 65535 "Item"
+ Edit 101 "1"
+ Static 65535 "&Date"
+ Edit 102 "2026-10-01" FOCUS
+ Static 65535 "&Type"
+ ComboBox 103 "RP"
+  ROW "RP" SELECTED
+  ROW "CL"
+  ROW "RC"
+  ROW "TS"
+  ROW "MD"
+  ROW "IN"
+ Static 65535 "&Summary"
+ Edit 104 "Recapped the power supply"
+ Static 65535 "&Cost"
+ Edit 105 ""
+ Static 65535 "Done &by"
+ Edit 106 ""
+ Edit 107 "Two caps.??Tested OK." HIDDEN
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ Button 94 "&Help"
+ComboLBox 1000 "" HIDDEN
+#32768 "" HIDDEN
+INVWIN "RETROINV - Recent service" DISABLED
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users" DISABLED
+  MENU 53 "&Backup..." DISABLED
+  MENU 54 "&Restore..." DISABLED
+  MENU 55 "&Pack" DISABLED
+  MENU 56 "Re&index" DISABLED
+  MENU 57 "&Audit log..." DISABLED
+  MENU 58 "&Sessions..." DISABLED
+  MENU 50 "&Export CSV..." DISABLED
+  MENU 51 "I&mport CSV..." DISABLED
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins" DISABLED
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list" DISABLED
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "~New|Open|Edit|Delete|-|~Move|~Install|~Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|CLERK, level 2|1 service record|"
+ WLIST 208 "     Rec     Item Date       Type      Cost Summary"
+  HEAD 000000/C0C0C0 0R@28+20"Rec" 1R@83+20"Item" 2L@110+23"Date" 3L@175+24"Type" 4R@237+21"Cost" 5L@265+43"Summary"
+  COLS 0F@0+55 1F@55+55 2F@110+65 3F@175+35 4F@210+55 5F@265+300
+  ListBox 1 ""
+   ROW "       1        1 2026-10-01 RP             Recapped the power supply" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1R@97+6"1" 2L@110+54"2026-10-01" 3L@175+15"RP" 5L@265+133"Recapped the power supply"
+=END

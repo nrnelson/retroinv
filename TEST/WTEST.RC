@@ -1,0 +1,5 @@
+/*
+ * WTEST.RC - the resources of the TCP connection's test TEST/WSKT.C and
+ * of the Winsock test TEST/WSOCKT.C: none.  The resource compiler's
+ * second pass, which binds it, marks the program for Windows 3.0.
+ */

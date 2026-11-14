@@ -1,0 +1,245 @@
+
+Structure for database: C:ITEMS.dbf
+Number of data records:       9
+Date of last update   : 10/08/26
+Field  Field Name  Type       Width    Dec
+    1  ITEM_ID     Numeric        8
+    2  CATEGORY    Character      4
+    3  ITEMTYPE    Character     20
+    4  MFR         Character     30
+    5  MODEL       Character     30
+    6  SERIALNO    Character     30
+    7  DESCR       Character     60
+    8  COND        Character      3
+    9  WORKS       Character      1
+   10  QTY         Numeric        5
+   11  ON_LOAN     Numeric        5
+   12  RESERVED    Numeric        5
+   13  IN_USE      Numeric        5
+   14  ATTACHED    Numeric        5
+   15  LOC_ID      Numeric        8
+   16  PARENT_ID   Numeric        8
+   17  ACQ_DATE    Date           8
+   18  ACQ_SRC     Character     30
+   19  ACQ_PRICE   Numeric        9      2
+   20  CUR_VALUE   Numeric        9      2
+   21  TAGS        Character     60
+   22  STATUS      Character      1
+   23  CREATED     Date           8
+   24  UPDATED     Date           8
+   25  NOTES       Memo          10
+** Total **                     371
+
+RECORDS          9
+DELETED          1
+SUMS        298.50       2004.50         10
+Record#   ITEM_ID CATEGORY ITEMTYPE             MFR                            MODEL                          SERIALNO                       DESCR                                                        COND WORKS   QTY ON_LOAN RESERVED IN_USE ATTACHED   LOC_ID PARENT_ID ACQ_DATE ACQ_SRC                        ACQ_PRICE CUR_VALUE TAGS                                                         STATUS CREATED  UPDATED  NOTES
+      1         1 SYS      Desktop PC           IBM                            5150 Personal Computer         0123456                        IBM PC with 256 KB, two 360 KB floppy drives, CGA            GD   Y         1       0        0      0        1        1         0 03/15/96 Estate sale                        75.00   1200.00 IBM,8088,5150,1981                                           A      09/01/26 10/08/26 Memo
+      2         2 CARD     ISA VGA              Paradise                       PVGA1A-JK                      PV8-04411                      8-bit ISA VGA card, 256 KB, works in an XT bus               EXC  Y         1       0        0      0        0        1         1 06/11/24 VCF swap meet                      40.00     85.50 VGA,8-BIT,ISA                                                A      09/01/26 09/01/26 Memo
+      3         3 DRV      MFM HDD              Seagate                        ST-225                         1234567-X                      20 MB half-height MFM hard disk                              GD   I         1       1        0      0        0        2         0 01/20/25 eBay                               25.00     60.00 MFM,ST-506,20MB                                              A      09/02/26 10/01/26 Memo
+      4 *       4 PERI     Keyboard             IBM                            Model F XT 83-key                                             XT keyboard, stuck keys                                      FR   N         1       0        0      0        0        0         0 07/04/98 Flea market                         5.00      0.00 KEYBOARD,XT                                                  D      09/03/26 09/10/26 Memo
+      5         5 PART     RTC module           Dallas                         DS12887                                                       Real-time clock with built-in battery, dead                       N         0       0        0      0        0        2         0   /  /                                       0.00     -5.00 RTC,BATTERY                                                  A      09/04/26 09/04/26 Memo
+      6         6 SW       Operating system     Microsoft                      MS-DOS 3.10                                                   Original 5.25in disks with manual                                 ?         1       0        0      0        0                  0   /  /                                                      DOS,FLOPPY                                                   A      09/05/26   /  /   Memo
+      7         7 CPU      8088 upgrade         NEC                            V20 UPD70108C-8                                               NEC V20 fitted in place of the 8088                          GD   Y         1       0        0      0        0        1         1 03/01/25 Parts bin                           3.50     12.00 CPU,V20                                                      A      09/06/26 09/06/26 Memo
+      8         8 SYS      Luggable PC          Compaq                         Portable                       1075321                        Compaq Portable with 9in amber CRT, 640 KB, two FDD          EXC  Y         1       0        0      0        0        1         0 08/12/23 Club auction                      150.00    650.00 COMPAQ,8088,PORTABLE,1983                                    A      09/07/26 09/07/26 Memo
+      9         9 CBL      Floppy cable                                        34-pin twisted                                                Floppy drive cable with twist, 2 drives                      GD   ?         3       0        1      1        0        2         0   /  /   Parts bin                           0.00      2.00 FDD,CABLE                                                    A      09/08/26 09/08/26 Memo
+
+Record#   ITEM_ID NOTES
+      1         1 Original IBM PC, type 5150, 64K-256K motherboard (rev B BIOS                
+                  dated 10/27/82), fully populated with 256 KB.                               
+                                                                                              
+                  Two full-height Tandon TM100-2A 5.25in drives.  Case has a                  
+                  small dent on the left side; PSU fan replaced.                              
+      2         2                                                                             
+      3         3 Seagate ST-225, 20 MB, MFM, 615 cylinders, 4 heads, 17 sectors              
+                  per track, half-height 5.25in, stepper-motor head positioner.               
+                                                                                              
+                  Arrived stuck (stiction).  Freed by turning the spindle by hand             
+                  through the bottom access hole with the drive powered off, then             
+                  it spun up normally.  Low-level formatted with the WD 1002-WX2              
+                  controller BIOS at C800:5, interleave 3, which suits a 4.77 MHz             
+                  8088.  Defect list from the label: cyl 212 head 1, cyl 488                  
+                  head 3; both entered in the format program before formatting.               
+                                                                                              
+                  SpinRite-style surface scan found no further bad sectors.  Keep             
+                  parked (SHIPDISK) before moving; this model does not auto-park.             
+                  Jumpers: drive select 2 with the twisted cable, terminator on.              
+      4 *       4 Keys sticky after a spill; disposed of.                                     
+      5         5 Battery inside the module is dead.  Kept only as a footprint                
+                  sample for the replacement socket.                                          
+      6         6                                                                             
+      7         7                                                                             
+      8         8 Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.             
+                  Left running 8 hours at room temperature; no lockups.                       
+                  Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.             
+                  Left running 8 hours at room temperature; no lockups.                       
+                  Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.             
+                  Left running 8 hours at room temperature; no lockups.                       
+                  Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.             
+                  Left running 8 hours at room temperature; no lockups.                       
+                  Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.             
+                  Left running 8 hours at room temperature; no lockups.                       
+                  Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.             
+                  Left running 8 hours at room temperature; no lockups.                       
+                  Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.             
+                  Left running 8 hours at room temperature; no lockups.                       
+                  Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.             
+                  Left running 8 hours at room temperature; no lockups.                       
+                  Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.             
+                  Left running 8 hours at room temperature; no lockups.                       
+                  Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.             
+                  Left running 8 hours at room temperature; no lockups.                       
+                  Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.             
+                  Left running 8 hours at room temperature; no lockups.                       
+                  Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.             
+                  Left running 8 hours at room temperature; no lockups.                       
+                  Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.             
+                  Left running 8 hours at room temperature; no lockups.                       
+                  Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.             
+                  Left running 8 hours at room temperature; no lockups.                       
+                  Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.             
+                  Left running 8 hours at room temperature; no lockups.                       
+                  Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.             
+                  Left running 8 hours at room temperature; no lockups.                       
+                  Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.             
+                  Left running 8 hours at room temperature; no lockups.                       
+                  Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.             
+                  Left running 8 hours at room temperature; no lockups.                       
+                  Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.             
+                  Left running 8 hours at room temperature; no lockups.                       
+                  Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.             
+                  Left running 8 hours at room temperature; no lockups.                       
+                  Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.             
+                  Left running 8 hours at room temperature; no lockups.                       
+                  Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.             
+                  Left running 8 hours at room temperature; no lockups.                       
+                  Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.             
+                  Left running 8 hours at room temperature; no lockups.                       
+                  Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.             
+                  Left running 8 hours at room temperature; no lockups.                       
+                  Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.             
+                  Left running 8 hours at room temperature; no lockups.                       
+                  Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.             
+                  Left running 8 hours at room temperature; no lockups.                       
+                  Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.             
+                  Left running 8 hours at room temperature; no lockups.                       
+                  Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.             
+                  Left running 8 hours at room temperature; no lockups.                       
+                  Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.             
+                  Left running 8 hours at room temperature; no lockups.                       
+                  Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.             
+                  Left running 8 hours at room temperature; no lockups.                       
+                  Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.             
+                  Left running 8 hours at room temperature; no lockups.                       
+                  Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.             
+                  Left running 8 hours at room temperature; no lockups.                       
+                  Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.             
+                  Left running 8 hours at room temperature; no lockups.                       
+                  Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.             
+                  Left running 8 hours at room temperature; no lockups.                       
+                  Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.             
+                  Left running 8 hours at room temperature; no lockups.                       
+                  Burn-in pass: POST OK, 640 KB RAM test OK, both drives seek OK.             
+                  Left running 8 hours at room temperature; no lockups.                       
+      9         9 Flat 34-wire ribbon with the twist between the drive A: and drive B:        
+                  connectors, two card-edge plugs and one IDC header for the controller.      
+                  Typed in the dBASE memo editor, which wrapswith a soft break.               
+                  A bare CR ends here                                                         
+                  and a bare LF ends hereas well.                                             
+
+Structure for database: C:LOCS.dbf
+Number of data records:       5
+Date of last update   : 10/08/26
+Field  Field Name  Type       Width    Dec
+    1  LOC_ID      Numeric        8
+    2  PARENT_ID   Numeric        8
+    3  LOC_NAME    Character     30
+    4  LOC_CODE    Character     10
+    5  LTYPE       Character      8
+    6  CAPACITY    Numeric        4
+    7  NOTES       Memo          10
+** Total **                      79
+
+RECORDS          5 DELETED          1
+Record#    LOC_ID PARENT_ID LOC_NAME                       LOC_CODE   LTYPE    CAPACITY NOTES
+      1         1         4 Shelf A, top level             A1         SHELF           6 Memo
+      2         2         3 Small parts bin 12             B12        BIN            40 Memo
+      3         3         0 Workbench                                 RACK              Memo
+      4         4         0 Garage                         GAR        ROOM              Memo
+      5 *       5         4 Closet shelf 3, software boxes C3         SHELF             Memo
+
+Record#    LOC_ID NOTES
+      1         1 Heavy steel shelving, top level holds complete systems.                     
+                  Keep away from the window.                                                  
+      2         2                                                                             
+      3         3                                                                             
+      4         4                                                                             
+      5 *       5                                                                             
+
+Structure for database: C:CATS.dbf
+Number of data records:      10
+Date of last update   : 10/08/26
+Field  Field Name  Type       Width    Dec
+    1  CAT_CODE    Character      4
+    2  CAT_NAME    Character     20
+    3  SORTORD     Numeric        2
+** Total **                      27
+
+RECORDS         10 DELETED          0
+Record#  CAT_CODE CAT_NAME             SORTORD
+      1  SYS      Systems                    1
+      2  MOBO     Motherboards               2
+      3  CPU      Processors                 3
+      4  CARD     Expansion cards            4
+      5  DRV      Drives                     5
+      6  PERI     Peripherals                6
+      7  SW       Software                   7
+      8  MAN      Manuals                    8
+      9  CBL      Cables                     9
+     10  PART     Parts                     10
+
+Structure for database: C:LTYPES.dbf
+Number of data records:       8
+Date of last update   : 10/08/26
+Field  Field Name  Type       Width    Dec
+    1  LT_CODE     Character      8
+    2  LT_NAME     Character     20
+    3  SORTORD     Numeric        2
+** Total **                      31
+
+RECORDS          8 DELETED          0
+Record#  LT_CODE  LT_NAME              SORTORD
+      1  ROOM     Room                       1
+      2  SHELF    Shelf                      2
+      3  RACK     Rack                       3
+      4  CABINET  Cabinet                    4
+      5  DRAWER   Drawer                     5
+      6  BOX      Box                        6
+      7  BIN      Bin                        7
+      8  BUCKET   Bucket                     8
+
+Structure for database: C:USERS.dbf
+Number of data records:       3
+Date of last update   : 10/08/26
+Field  Field Name  Type       Width    Dec
+    1  USER_ID     Numeric        4
+    2  USERNAME    Character      8
+    3  FULLNAME    Character     30
+    4  GROUPNAME   Character      8
+    5  LEVEL       Numeric        1
+    6  SALT        Character      4
+    7  PWHASH      Character     32
+    8  STATUS      Character      1
+    9  MUSTCHG     Logical        1
+   10  LASTLOGIN   Date           8
+   11  CREATED     Date           8
+** Total **                     106
+
+RECORDS          3 DELETED          0
+Record#  USER_ID USERNAME FULLNAME                       GROUPNAME LEVEL SALT PWHASH                           STATUS MUSTCHG LASTLOGIN CREATED
+      1        1 ADMIN    Administrator                  STAFF         3                                       A      .T.       /  /    10/08/26
+      2        2 GUEST    Visitor account                VISIT         1                                       D      .F.     10/01/26  09/15/26
+      3        3 BENCH    Workbench terminal             STAFF         2                                       A      .F.       /  /    09/20/26
+
+
+END OF CHECK

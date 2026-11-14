@@ -1,0 +1,11 @@
+=SNAP NOANSWER
+#32770 "RETROINV" ACTIVE
+ Button 2 "OK" FOCUS DEFAULT
+ Static 65535 ""
+ Static 65535 "Cannot use the mailbox MBOX: no such directory."
+INVWIN "RETROINV" DISABLED
+ WTOOL 218 "~New|~Open|~Edit|~Delete|-|~Move|~Install|~Lend|-|*|~Find"
+  Edit 219 "" DISABLED
+ WSTAT 201 "Mailbox: MBOX|||"
+=SNAP GONE
+=END

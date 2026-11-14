@@ -1,0 +1,32 @@
+# SCRLOGIN.C: the login screen and the home screen.
+# W=18 login labels: LG_VCOL - LG_LCOL - 1
+400 MG_USER Enter user name:
+401 MG_PASS Enter password:
+# MG_DATA's ^1, a directory of up to LINK_MAXDIR, is cut at the frame.
+# W=61 login box: LG_LEFT + LG_W - 2 - LG_LCOL
+402 MG_DATA Data: ^1
+# W=79 key hints: VID_COLS - 1, level digits not counted
+403 MG_HINT Enter=Next Esc=Quit F1=Help
+
+404 MG_TOOMANY Too many failed logins
+# W=79 key hints: VID_COLS - 1, level digits not counted
+405 MG_HOMEHINT F10=Menu Ctrl-F=Search F3=Quit F9=Keys F1=Help
+# W=55 home box text: HM_W - 5, from HM_COL to the frame
+407 MG_HUSER User              ^1
+408 MG_HLEVEL Access level      ^1 (^2)
+# W=33 MG_HLEVEL's ^2 within its 55
+409 MG_LVL1 read only
+410 MG_LVL2 operator
+411 MG_LVL3 administrator
+# The counts of STATUS, deleted records included.
+# W=55 home box text: HM_W - 5, from HM_COL to the frame
+412 MG_HITEMS Item records      ^1
+413 MG_HLOCS Location records  ^1
+414 MG_HCATS Category records  ^1
+415 MG_HMENU Press F10 or Alt-letter for the menus, F1 for help.
+416 MG_HDATE Today             ^1
+417 MG_HEMPTY No items yet: Items > New item adds the first.
+418 MG_HOLDDATE This PC's date is before ^1: set it with DATE.
+
+419 MG_RELINKED Connection lost and made again: type the password again
+420 MG_GARBLED The line to the server garbles what it carries. Check the cable and that both ends use the same speed, then start again.

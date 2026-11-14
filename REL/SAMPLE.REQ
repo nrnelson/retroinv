@@ -1,0 +1,131 @@
+# SAMPLE.REQ - the protocol requests that make the sample data directory
+# of the release, played by INV /CMD /LOCAL on a new, empty directory
+# with the clock fixed (REL/mkdist.sh).  Lines starting with # and empty
+# lines are removed before the requests are sent; every request must be
+# answered +OK or +DATA.
+#
+# The seeded ADMIN gets a working password for the session and is reset
+# at the end, so that every user, ADMIN, OPER and READER, starts with its
+# first password, the user name in lower case, and must change it at its
+# first login.  Items are numbered from 1 in the order they are added; the
+# assembly, service, loan, reservation and in-use requests name them by
+# those numbers.  LOAN RETURN names a loan, numbered from 1 in the order
+# the loans, reservations and in-use rows are made.
+
+HELLO SETUP
+LOGIN ADMIN admin
+PASSWD admin Setup1986
+
+USER ADD OPER LEVEL=2 FULLNAME="Collection Operator" GROUP=STAFF PASSWORD=oper
+USER ADD READER LEVEL=1 FULLNAME="Guest Reader" GROUP=GUEST PASSWORD=reader
+
+# The places, a tree: the office, with two shelves, three bins on the
+# first, a cabinet and a workbench with its drawer; the garage, with a
+# rack holding a box, and a bucket on its floor.  Locations get LOC_IDs
+# from 1 in the order they are added; a location with a code is named by
+# it, one without (the drawer, the bucket) by its LOC_ID.  The workbench
+# is of a type added to the seeded list.  A capacity counts the items a
+# place holds, the parts installed in a system included.
+LTYPE ADD BENCH LT_NAME=Workbench SORTORD=9
+LOC ADD LOC_NAME=Office LTYPE=ROOM LOC_CODE=OFF
+LOC ADD LOC_NAME="Shelf A" LTYPE=SHELF PARENT_ID=OFF LOC_CODE=A CAPACITY=8
+LOC ADD LOC_NAME="Bin 1" LTYPE=BIN PARENT_ID=A LOC_CODE=A1 CAPACITY=40
+LOC ADD LOC_NAME="Bin 2" LTYPE=BIN PARENT_ID=A LOC_CODE=A2 CAPACITY=20
+LOC ADD LOC_NAME="Bin 3" LTYPE=BIN PARENT_ID=A LOC_CODE=A3 CAPACITY=50
+LOC ADD LOC_NAME="Shelf B" LTYPE=SHELF PARENT_ID=OFF LOC_CODE=B CAPACITY=10
+LOC ADD LOC_NAME=Cabinet LTYPE=CABINET PARENT_ID=OFF LOC_CODE=CAB CAPACITY=60
+LOC ADD LOC_NAME=Workbench LTYPE=BENCH PARENT_ID=OFF LOC_CODE=DESK CAPACITY=3
+LOC ADD LOC_NAME="Top drawer" LTYPE=DRAWER PARENT_ID=DESK
+LOC ADD LOC_NAME=Garage LTYPE=ROOM LOC_CODE=GAR
+LOC ADD LOC_NAME="Rack 1" LTYPE=RACK PARENT_ID=GAR LOC_CODE=R1 CAPACITY=12
+LOC ADD LOC_NAME="Box 3" LTYPE=BOX PARENT_ID=R1 LOC_CODE=BOX3 CAPACITY=10
+LOC ADD LOC_NAME="Spares bucket" LTYPE=BUCKET PARENT_ID=GAR
+
+# COND is an item's cosmetic grade, WORKS whether it was found to work
+# (Y, I for intermittently, N); the rest are not tested yet.  TAGS name
+# the collections an item belongs to (retro, modern, a project).
+#
+# 1-7: the IBM PC 5150 and the parts installed in it, on shelf B.
+ITEM ADD CATEGORY=SYS ITEMTYPE=Desktop MFR=IBM MODEL="5150 PC" SERIALNO=0123456 DESCR="IBM Personal Computer, 64-256K board" COND=GD WORKS=Y LOC_ID=B ACQ_DATE=19840312 ACQ_SRC="Estate sale" ACQ_PRICE=150.00 CUR_VALUE=1200.00 TAGS=IBM,PC,8088,retro
+ITEM ADD CATEGORY=MOBO ITEMTYPE="PC system board" MFR=IBM MODEL="64-256K" SERIALNO=6181371 COND=GD WORKS=Y
+ITEM ADD CATEGORY=CPU ITEMTYPE=CPU MFR=Intel MODEL=8088 COND=GD WORKS=Y
+ITEM ADD CATEGORY=CPU ITEMTYPE=FPU MFR=Intel MODEL=8087-3 COND=GD WORKS=Y
+ITEM ADD CATEGORY=CARD ITEMTYPE="ISA video" MFR=IBM MODEL="Color Graphics Adapter" SERIALNO=1501486 COND=GD WORKS=Y
+ITEM ADD CATEGORY=CARD ITEMTYPE="ISA floppy ctrl" MFR=IBM MODEL="5.25 Diskette Adapter" COND=GD WORKS=Y
+ITEM ADD CATEGORY=DRV ITEMTYPE="5.25 FDD 360K" MFR=Tandon MODEL=TM100-2 SERIALNO=TA44120 COND=FR WORKS=I
+# 8-11: the Compaq Portable and its parts, in the rack.
+ITEM ADD CATEGORY=SYS ITEMTYPE=Luggable MFR=Compaq MODEL=Portable SERIALNO=CQ1035611 DESCR="Compaq Portable, 9-inch green screen" COND=EXC WORKS=Y LOC_ID=R1 ACQ_DATE=19921105 ACQ_SRC="Swap meet" ACQ_PRICE=40.00 CUR_VALUE=600.00 TAGS=Compaq,portable,retro
+ITEM ADD CATEGORY=CPU ITEMTYPE=CPU MFR=NEC MODEL=V20 COND=GD WORKS=Y TAGS=upgrade
+ITEM ADD CATEGORY=DRV ITEMTYPE="5.25 FDD 360K" MFR=Tandon MODEL=TM100-2 SERIALNO=TA51877 COND=GD WORKS=Y
+ITEM ADD CATEGORY=CARD ITEMTYPE="ISA memory" MFR=AST MODEL="SixPakPlus" DESCR="384K, clock, serial and parallel ports" COND=GD WORKS=Y
+# 12-15: the AT and its hard disk, on the garage floor.
+ITEM ADD CATEGORY=SYS ITEMTYPE=Desktop MFR=IBM MODEL="5170 PC/AT" SERIALNO=0412087 DESCR="IBM PC/AT, 8 MHz board" COND=FR LOC_ID=GAR ACQ_DATE=20030614 ACQ_SRC="University surplus" ACQ_PRICE=25.00 CUR_VALUE=500.00 TAGS=IBM,AT,286,retro
+ITEM ADD CATEGORY=DRV ITEMTYPE="MFM HDD 20MB" MFR=Seagate MODEL=ST-225 SERIALNO=148392 COND=GD WORKS=Y
+ITEM ADD CATEGORY=CARD ITEMTYPE="ISA MFM ctrl" MFR="Western Digital" MODEL=WD1003-WA2 COND=GD
+ITEM ADD CATEGORY=CARD ITEMTYPE="ISA video" MFR=IBM MODEL="Enhanced Graphics Adapter" COND=GD
+# 16-22: loose parts.
+ITEM ADD CATEGORY=CARD ITEMTYPE="ISA video" MFR=Hercules MODEL="Graphics Card" DESCR="Monochrome graphics, 720x348" COND=EXC WORKS=Y LOC_ID=A1 ACQ_DATE=20110220 ACQ_PRICE=35.00 CUR_VALUE=90.00
+ITEM ADD CATEGORY=CARD ITEMTYPE="ISA network" MFR="Western Digital" MODEL=WD8003E QTY=3 DESCR="8-bit Ethernet, BNC and AUI" LOC_ID=A1 ACQ_SRC="eBay lot" ACQ_PRICE=30.00 TAGS=network,retro
+ITEM ADD CATEGORY=CARD ITEMTYPE="ISA network" MFR=Novell MODEL=NE2000 QTY=2 DESCR="16-bit Ethernet, jumpered to 300h IRQ 3" COND=GD WORKS=Y LOC_ID=A1 TAGS=network,NE2000,packet,retro
+ITEM ADD CATEGORY=CARD ITEMTYPE="ISA sound" MFR="Creative Labs" MODEL="Sound Blaster 2.0" SERIALNO=CT1350B-0457 COND=GD WORKS=Y LOC_ID=A1 ACQ_DATE=20150908 ACQ_PRICE=60.00 CUR_VALUE=80.00
+ITEM ADD CATEGORY=DRV ITEMTYPE="3.5 FDD 720K" MFR=Sony MODEL=MP-F17W QTY=2 LOC_ID=A2
+ITEM ADD CATEGORY=DRV ITEMTYPE="MFM HDD 40MB" MFR=Miniscribe MODEL=3650 SERIALNO=MS88231 COND=FR WORKS=N LOC_ID=A2 DESCR="Stiction; spins only after a tap" TAGS=repair
+ITEM ADD CATEGORY=CPU ITEMTYPE=CPU MFR=Intel MODEL=80286-8 QTY=4 LOC_ID=13 TAGS=spares
+# 23-27: monitors and input devices.
+ITEM ADD CATEGORY=PERI ITEMTYPE="CGA monitor" MFR=IBM MODEL="5153 Color Display" SERIALNO=5153-77213 COND=GD WORKS=Y LOC_ID=B ACQ_DATE=19840312 ACQ_SRC="Estate sale" CUR_VALUE=350.00
+ITEM ADD CATEGORY=PERI ITEMTYPE="MDA monitor" MFR=IBM MODEL="5151 Monochrome Display" SERIALNO=5151-30482 COND=EXC WORKS=Y LOC_ID=A CUR_VALUE=250.00
+ITEM ADD CATEGORY=PERI ITEMTYPE=Keyboard MFR=IBM MODEL="Model F 83-key" SERIALNO=0270031 COND=GD WORKS=Y LOC_ID=BOX3 CUR_VALUE=200.00 TAGS=buckling
+ITEM ADD CATEGORY=PERI ITEMTYPE=Keyboard MFR=IBM MODEL="Model M 1391401" SERIALNO=1391401-8842 COND=EXC WORKS=Y LOC_ID=BOX3 CUR_VALUE=120.00 TAGS=buckling
+ITEM ADD CATEGORY=PERI ITEMTYPE=Mouse MFR=Microsoft MODEL="Serial Mouse" QTY=2 COND=GD LOC_ID=BOX3
+# 28-37: printer, cables, software, manuals and spare parts.
+ITEM ADD CATEGORY=PERI ITEMTYPE="Dot matrix" MFR=Epson MODEL=FX-80 SERIALNO=0102938 DESCR="9-pin printer, ESC/P" COND=GD WORKS=Y LOC_ID=DESK ACQ_DATE=20180501 ACQ_PRICE=20.00 CUR_VALUE=75.00 TAGS=printer,ESC/P
+ITEM ADD CATEGORY=CBL ITEMTYPE="Parallel cable" MFR=Generic MODEL="DB25 to Centronics" QTY=3 COND=GD LOC_ID=A3
+ITEM ADD CATEGORY=CBL ITEMTYPE="Null modem" MFR=Generic MODEL="DB9 null modem" QTY=2 COND=GD LOC_ID=A3
+ITEM ADD CATEGORY=SW ITEMTYPE="DOS 5.25 360K" MFR=Compaq MODEL="MS-DOS 3.10" DESCR="Boot disk and utilities" COND=GD LOC_ID=CAB TAGS=DOS
+ITEM ADD CATEGORY=SW ITEMTYPE="Database 5.25" MFR=Ashton-Tate MODEL="dBASE III Plus 1.1" DESCR="System disks 1 and 2, sample programs" COND=GD LOC_ID=CAB TAGS=dBASE
+ITEM ADD CATEGORY=SW ITEMTYPE="Compiler 3.5" MFR=Borland MODEL="Turbo C 2.01" COND=GD LOC_ID=CAB ACQ_PRICE=10.00 TAGS=C,compiler
+ITEM ADD CATEGORY=MAN ITEMTYPE="Technical ref" MFR=IBM MODEL="PC Technical Reference" DESCR="6025005, with BIOS listing" COND=FR LOC_ID=CAB CUR_VALUE=80.00
+ITEM ADD CATEGORY=MAN ITEMTYPE="User guide" MFR=Ashton-Tate MODEL="dBASE III Plus manual" COND=GD LOC_ID=CAB
+ITEM ADD CATEGORY=PART ITEMTYPE=Capacitor MFR=Nichicon MODEL="470uF 16V" QTY=20 DESCR="Recap stock for power supplies" COND=NEW LOC_ID=9 ACQ_PRICE=6.00 TAGS=recap
+ITEM ADD CATEGORY=PART ITEMTYPE="Power supply" MFR=IBM MODEL="63W PSU" SERIALNO=PS0412 DESCR="Spare for the 5150" COND=FR WORKS=N LOC_ID=DESK TAGS=repair
+
+# 38-39: newer network cards, beside the ISA ones in bin 1.
+ITEM ADD CATEGORY=CARD ITEMTYPE="PCI network" MFR=3Com MODEL=3C905C-TX QTY=2 DESCR="10/100 Ethernet, PCI" COND=GD WORKS=Y LOC_ID=A1 TAGS=network,retro
+ITEM ADD CATEGORY=CARD ITEMTYPE="PCIe network" MFR=Intel MODEL="Gigabit CT" DESCR="Gigabit Ethernet, PCI Express x1" COND=NEW LOC_ID=A1 TAGS=network,modern
+
+ITEM NOTES 1 ADD="Two full-height Tandon drives; one went to the Compaq."
+ITEM NOTES 12 ADD="Too heavy for the rack; keep it off the damp floor on its pallet."
+ITEM NOTES 21 ADD="Park the heads before moving it."
+LOC NOTES DESK ADD="Keep the anti-static mat on the bench."
+LOC NOTES GAR ADD="Unheated: no floppies, manuals or loose cards out here."
+
+ASSY INSTALL 2 1
+ASSY INSTALL 3 2
+ASSY INSTALL 4 2
+ASSY INSTALL 5 1
+ASSY INSTALL 6 1
+ASSY INSTALL 7 1
+ASSY INSTALL 9 8
+ASSY INSTALL 10 8
+ASSY INSTALL 11 8
+ASSY INSTALL 13 12
+ASSY INSTALL 14 12
+ASSY INSTALL 15 12
+
+MAINT ADD 1 MTYPE=RC SUMMARY="Recapped the 63W power supply" MDATE=20250412 COST=12.50 DONE_BY=OPER NOTES="Replaced the two 470uF filter capacitors; ripple now under 50 mV."
+MAINT ADD 7 MTYPE=CL SUMMARY="Cleaned heads, lubricated the rails" MDATE=20250412 DONE_BY=OPER
+MAINT ADD 13 MTYPE=TS SUMMARY="Surface scan, no new bad sectors" MDATE=20260115 DONE_BY=ADMIN
+MAINT ADD 21 MTYPE=IN SUMMARY="Stuck heads; needs a bench repair" MDATE=20260320 DONE_BY=OPER
+
+LOAN OUT 16 HOLDER="Retro Computing Club" CONTACT=555-0142 DATE=20260905 DUE=20261031 NOTES="For the club's CGA versus Hercules demo"
+LOAN OUT 28 HOLDER="Jane Smith" CONTACT=555-0101 DATE=20260801 DUE=20260915
+LOAN OUT 24 HOLDER="Ed Brown" CONTACT=555-0177 DATE=20260310 DUE=20260410
+LOAN RETURN 3 DATE=20260402
+
+# The colour monitor is in use with the 5150 on the desk, and two of the
+# Ethernet cards are reserved for the club's network evening.
+LOAN USE 23 HOST=1 NOTES="Its everyday screen"
+LOAN RESERVE 17 QTY=2 HOLDER="Club network evening" CONTACT=555-0142 DUE=20261114
+
+USER RESET ADMIN PASSWORD=admin
+BYE

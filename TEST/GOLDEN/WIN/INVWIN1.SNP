@@ -1,0 +1,27 @@
+=SNAP TYPED
+#32770 "RETROINV 1.0" ACTIVE
+ Static 65535 "&User name:"
+ Edit 202 "ADMIN"
+ Static 65535 "&Password:"
+ Edit 204 "*********" FOCUS
+ Static 203 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+INVWIN "RETROINV" DISABLED
+ WTOOL 218 "~New|~Open|~Edit|~Delete|-|~Move|~Install|~Lend|-|*|~Find"
+  Edit 219 "" DISABLED
+ WSTAT 201 "Data: DATA\|||"
+=SNAP WIPED
+#32770 "RETROINV 1.0" ACTIVE
+ Static 65535 "&User name:"
+ Edit 202 "ADMIN"
+ Static 65535 "&Password:"
+ Edit 204 "" FOCUS
+ Static 203 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+INVWIN "RETROINV" DISABLED
+ WTOOL 218 "~New|~Open|~Edit|~Delete|-|~Move|~Install|~Lend|-|*|~Find"
+  Edit 219 "" DISABLED
+ WSTAT 201 "Data: DATA\|||"
+=END

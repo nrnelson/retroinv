@@ -1,0 +1,8 @@
+No. 1                           SYS
+IBM 5150
+S/N S1
+
+No. 2                           SYS
+IBM 5150
+S/N S2
+

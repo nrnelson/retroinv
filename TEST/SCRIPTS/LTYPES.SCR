@@ -1,0 +1,402 @@
+# LTYPES.SCR - LTYPE commands: the seeded list, every success and error
+# response, ordering, a type kept while a live location has it, and the
+# fixed-size table that reuses deleted rows.  The commands share their
+# code with CAT (CATS.SCR); what differs is the table, its wider code,
+# its texts and what keeps a type in use.
+
+> HELLO CONSOLE
+< +OK
+> LOGIN ADMIN admin
+< +OK LEVEL=3 MUSTCHG=1
+> PASSWD admin secret1
+< +OK
+
+> LTYPE LIST
+< +DATA
+< F LT_CODE LT_NAME SORTORD
+< R ROOM Room 1
+< R SHELF Shelf 2
+< R RACK Rack 3
+< R CABINET Cabinet 4
+< R DRAWER Drawer 5
+< R BOX Box 6
+< R BIN Bin 7
+< R BUCKET Bucket 8
+< .
+> LTYPE LIST X
+< -ERR 100 too many arguments
+> LTYPE LIST SORTORD=1
+< -ERR 102 unexpected key FIELD=SORTORD
+
+# LTYPE ADD: codes of 1 to ENG_LTYPELEN letters and digits.
+> LTYPE ADD crate LT_NAME=Crates SORTORD=6
+< +OK
+> LTYPE ADD LOCKER LT_NAME=Lockers
+< +OK
+> LTYPE ADD CABINET2 LT_NAME="Tall cabinets" SORTORD=0
+< +OK
+> LTYPE LIST
+< +DATA
+< F LT_CODE LT_NAME SORTORD
+< R CABINET2 "Tall cabinets" 0
+< R ROOM Room 1
+< R SHELF Shelf 2
+< R RACK Rack 3
+< R CABINET Cabinet 4
+< R DRAWER Drawer 5
+< R BOX Box 6
+< R CRATE Crates 6
+< R BIN Bin 7
+< R BUCKET Bucket 8
+< R LOCKER Lockers 50
+< .
+> LTYPE ADD CRATE LT_NAME=Again
+< -ERR 201 location type already exists FIELD=LT_CODE
+> LTYPE ADD ROOM LT_NAME=Again
+< -ERR 201 location type already exists FIELD=LT_CODE
+> LTYPE ADD CABINET22 LT_NAME=x
+< -ERR 102 bad location type code FIELD=LT_CODE
+> LTYPE ADD A-B LT_NAME=x
+< -ERR 102 bad location type code FIELD=LT_CODE
+> LTYPE ADD ""
+< -ERR 102 bad location type code FIELD=LT_CODE
+> LTYPE ADD NEW
+< -ERR 102 value required FIELD=LT_NAME
+> LTYPE ADD NEW LT_NAME=""
+< -ERR 102 value required FIELD=LT_NAME
+> LTYPE ADD NEW LT_NAME=x SORTORD=-1
+< -ERR 102 negative value FIELD=SORTORD
+> LTYPE ADD NEW LT_NAME=x SORTORD=100
+< -ERR 102 bad value FIELD=SORTORD
+> LTYPE ADD NEW LT_NAME="123456789012345678901"
+< -ERR 102 value too long FIELD=LT_NAME
+> LTYPE ADD NEW LT_NAME=x LT_CODE=NEW
+< -ERR 102 field not settable FIELD=LT_CODE
+> LTYPE ADD NEW LT_NAME=x FOO=1
+< -ERR 102 field not settable FIELD=FOO
+> LTYPE ADD NEW OLD LT_NAME=x
+< -ERR 100 too many arguments
+> LTYPE ADD LT_NAME=x
+< -ERR 102 missing argument FIELD=LT_CODE
+
+# LTYPE SET.
+> LTYPE SET LOCKER LT_NAME="Lockers and safes" SORTORD=99
+< +OK
+> LTYPE SET locker SORTORD=
+< -ERR 102 sort order required FIELD=SORTORD
+> LTYPE SET LOCKER LT_NAME=
+< -ERR 102 value required FIELD=LT_NAME
+> LTYPE SET LOCKER LT_CODE=SAFE
+< -ERR 102 field not settable FIELD=LT_CODE
+> LTYPE SET LOCKER SORTORD=x
+< -ERR 102 not a number FIELD=SORTORD
+> LTYPE SET NONE LT_NAME=x
+< -ERR 200 no such location type
+> LTYPE SET
+< -ERR 102 missing argument FIELD=LT_CODE
+> LTYPE SET LOCKER CRATE SORTORD=1
+< -ERR 100 too many arguments
+> LTYPE LIST
+< +DATA
+< F LT_CODE LT_NAME SORTORD
+< R CABINET2 "Tall cabinets" 0
+< R ROOM Room 1
+< R SHELF Shelf 2
+< R RACK Rack 3
+< R CABINET Cabinet 4
+< R DRAWER Drawer 5
+< R BOX Box 6
+< R CRATE Crates 6
+< R BIN Bin 7
+< R BUCKET Bucket 8
+< R LOCKER "Lockers and safes" 99
+< .
+
+# LTYPE DEL: refused while a live location has the type, which a
+# location cannot take once it is deleted.
+> LOC ADD LOC_NAME=Garage LTYPE=crate
+< +OK ID=1
+> LTYPE DEL CRATE
+< -ERR 202 locations still use this location type
+> LOC DEL 1
+< +OK
+> LTYPE DEL CRATE
+< +OK
+> LTYPE DEL CRATE
+< -ERR 200 no such location type
+> LTYPE DEL NONE
+< -ERR 200 no such location type
+> LTYPE DEL
+< -ERR 102 missing argument FIELD=LT_CODE
+> LTYPE DEL LOCKER CABINET2
+< -ERR 100 too many arguments
+> LTYPE DEL LOCKER X=1
+< -ERR 102 unexpected key FIELD=X
+> LOC ADD LOC_NAME=Garage LTYPE=CRATE
+< -ERR 202 unknown location type FIELD=LTYPE
+> LTYPE ADD CRATE LT_NAME="Crates again"
+< +OK
+> LOC ADD LOC_NAME=Garage LTYPE=CRATE
+< +OK ID=2
+> LTYPE LIST
+< +DATA
+< F LT_CODE LT_NAME SORTORD
+< R CABINET2 "Tall cabinets" 0
+< R ROOM Room 1
+< R SHELF Shelf 2
+< R RACK Rack 3
+< R CABINET Cabinet 4
+< R DRAWER Drawer 5
+< R BOX Box 6
+< R BIN Bin 7
+< R BUCKET Bucket 8
+< R CRATE "Crates again" 50
+< R LOCKER "Lockers and safes" 99
+< .
+
+# LTYPES.DBF holds at most ENG_MAXCODES records: 8 seeded and 4 added so
+# far, one of them deleted.  T01 to T38 fill it, T39 takes the deleted
+# row, T40 is refused until a delete frees a row, which the next ADD
+# then reuses.
+> LTYPE ADD T01 LT_NAME=x SORTORD=90
+< +OK
+> LTYPE ADD T02 LT_NAME=x SORTORD=90
+< +OK
+> LTYPE ADD T03 LT_NAME=x SORTORD=90
+< +OK
+> LTYPE ADD T04 LT_NAME=x SORTORD=90
+< +OK
+> LTYPE ADD T05 LT_NAME=x SORTORD=90
+< +OK
+> LTYPE ADD T06 LT_NAME=x SORTORD=90
+< +OK
+> LTYPE ADD T07 LT_NAME=x SORTORD=90
+< +OK
+> LTYPE ADD T08 LT_NAME=x SORTORD=90
+< +OK
+> LTYPE ADD T09 LT_NAME=x SORTORD=90
+< +OK
+> LTYPE ADD T10 LT_NAME=x SORTORD=90
+< +OK
+> LTYPE ADD T11 LT_NAME=x SORTORD=90
+< +OK
+> LTYPE ADD T12 LT_NAME=x SORTORD=90
+< +OK
+> LTYPE ADD T13 LT_NAME=x SORTORD=90
+< +OK
+> LTYPE ADD T14 LT_NAME=x SORTORD=90
+< +OK
+> LTYPE ADD T15 LT_NAME=x SORTORD=90
+< +OK
+> LTYPE ADD T16 LT_NAME=x SORTORD=90
+< +OK
+> LTYPE ADD T17 LT_NAME=x SORTORD=90
+< +OK
+> LTYPE ADD T18 LT_NAME=x SORTORD=90
+< +OK
+> LTYPE ADD T19 LT_NAME=x SORTORD=90
+< +OK
+> LTYPE ADD T20 LT_NAME=x SORTORD=90
+< +OK
+> LTYPE ADD T21 LT_NAME=x SORTORD=90
+< +OK
+> LTYPE ADD T22 LT_NAME=x SORTORD=90
+< +OK
+> LTYPE ADD T23 LT_NAME=x SORTORD=90
+< +OK
+> LTYPE ADD T24 LT_NAME=x SORTORD=90
+< +OK
+> LTYPE ADD T25 LT_NAME=x SORTORD=90
+< +OK
+> LTYPE ADD T26 LT_NAME=x SORTORD=90
+< +OK
+> LTYPE ADD T27 LT_NAME=x SORTORD=90
+< +OK
+> LTYPE ADD T28 LT_NAME=x SORTORD=90
+< +OK
+> LTYPE ADD T29 LT_NAME=x SORTORD=90
+< +OK
+> LTYPE ADD T30 LT_NAME=x SORTORD=90
+< +OK
+> LTYPE ADD T31 LT_NAME=x SORTORD=90
+< +OK
+> LTYPE ADD T32 LT_NAME=x SORTORD=90
+< +OK
+> LTYPE ADD T33 LT_NAME=x SORTORD=90
+< +OK
+> LTYPE ADD T34 LT_NAME=x SORTORD=90
+< +OK
+> LTYPE ADD T35 LT_NAME=x SORTORD=90
+< +OK
+> LTYPE ADD T36 LT_NAME=x SORTORD=90
+< +OK
+> LTYPE ADD T37 LT_NAME=x SORTORD=90
+< +OK
+> LTYPE ADD T38 LT_NAME=x SORTORD=90
+< +OK
+> LTYPE ADD T39 LT_NAME=x SORTORD=90
+< +OK
+@TABLE LTYPES FIELDS=LT_CODE
+< F LT_CODE
+< R ROOM
+< R SHELF
+< R RACK
+< R CABINET
+< R DRAWER
+< R BOX
+< R BIN
+< R BUCKET
+< R T39
+< R LOCKER
+< R CABINET2
+< R CRATE
+< R T01
+< R T02
+< R T03
+< R T04
+< R T05
+< R T06
+< R T07
+< R T08
+< R T09
+< R T10
+< R T11
+< R T12
+< R T13
+< R T14
+< R T15
+< R T16
+< R T17
+< R T18
+< R T19
+< R T20
+< R T21
+< R T22
+< R T23
+< R T24
+< R T25
+< R T26
+< R T27
+< R T28
+< R T29
+< R T30
+< R T31
+< R T32
+< R T33
+< R T34
+< R T35
+< R T36
+< R T37
+< R T38
+> LTYPE ADD T40 LT_NAME=x
+< -ERR 202 location type table full
+> LTYPE DEL T01
+< +OK
+> LTYPE ADD T40 LT_NAME=x
+< +OK
+@TABLE LTYPES FIELDS=LT_CODE
+< F LT_CODE
+< R ROOM
+< R SHELF
+< R RACK
+< R CABINET
+< R DRAWER
+< R BOX
+< R BIN
+< R BUCKET
+< R T39
+< R LOCKER
+< R CABINET2
+< R CRATE
+< R T40
+< R T02
+< R T03
+< R T04
+< R T05
+< R T06
+< R T07
+< R T08
+< R T09
+< R T10
+< R T11
+< R T12
+< R T13
+< R T14
+< R T15
+< R T16
+< R T17
+< R T18
+< R T19
+< R T20
+< R T21
+< R T22
+< R T23
+< R T24
+< R T25
+< R T26
+< R T27
+< R T28
+< R T29
+< R T30
+< R T31
+< R T32
+< R T33
+< R T34
+< R T35
+< R T36
+< R T37
+< R T38
+> LTYPE LIST
+< +DATA
+< F LT_CODE LT_NAME SORTORD
+< R CABINET2 "Tall cabinets" 0
+< R ROOM Room 1
+< R SHELF Shelf 2
+< R RACK Rack 3
+< R CABINET Cabinet 4
+< R DRAWER Drawer 5
+< R BOX Box 6
+< R BIN Bin 7
+< R BUCKET Bucket 8
+< R CRATE "Crates again" 50
+< R T40 x 50
+< R T02 x 90
+< R T03 x 90
+< R T04 x 90
+< R T05 x 90
+< R T06 x 90
+< R T07 x 90
+< R T08 x 90
+< R T09 x 90
+< R T10 x 90
+< R T11 x 90
+< R T12 x 90
+< R T13 x 90
+< R T14 x 90
+< R T15 x 90
+< R T16 x 90
+< R T17 x 90
+< R T18 x 90
+< R T19 x 90
+< R T20 x 90
+< R T21 x 90
+< R T22 x 90
+< R T23 x 90
+< R T24 x 90
+< R T25 x 90
+< R T26 x 90
+< R T27 x 90
+< R T28 x 90
+< R T29 x 90
+< R T30 x 90
+< R T31 x 90
+< R T32 x 90
+< R T33 x 90
+< R T34 x 90
+< R T35 x 90
+< R T36 x 90
+< R T37 x 90
+< R T38 x 90
+< R T39 x 90
+< R LOCKER "Lockers and safes" 99
+< .

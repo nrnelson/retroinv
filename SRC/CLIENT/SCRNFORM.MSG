@@ -1,0 +1,82 @@
+# SCRNFORM.H: the forms and list rows of loans and holds, which both
+# clients show (MH_).  A text that depends on the kind of row is three
+# lines, loan, reservation and use, in that order.
+# W=74 list box title, one per view of the lists: VID_COLS - 6
+895 MH_T_VIEW Open loans and holds
+896 MH_T_VLOAN Open loans
+897 MH_T_VRES Open reservations
+898 MH_T_VUSE In use
+899 MH_T_VOVER Overdue loans and reservations
+900 MH_T_VALL All loans and holds
+# W=78 column header over the list: VID_COLS - 2
+901 MH_HDR !     Loan Kind         Item  Qty Holder          Due        Maker and model
+902 MH_HDRTAB !     Loan Kind      Qty Holder                         Due        Ended
+
+903 MH_EMPTY No loans or holds
+904 MH_EMPTYOVER Nothing is overdue
+905 MH_EMPTYHOST Nothing is used with it
+# The Windows client's titles of an item's rows and of its host's, after
+# the program's name
+906 MH_T_ITEM Loans and holds of item ^1
+907 MH_T_HOST Used with item ^1
+# W=8 kind column: the kinds; then, W=9, the reasons an item row gives
+# for not being available, the kinds first
+908 MH_K_NAME On loan
+909 MH_K_RES Reserved
+910 MH_K_USE In use
+911 MH_AV_I Installed
+912 MH_AV_D Disposed
+913 MH_AV_N None left
+# W=65 form box title of a new row: SCR_POPW - 6; also the title of
+# the prompt for its item
+914 MH_T_NEW Lend
+915 MH_T_NEWRES Reserve
+916 MH_T_NEWUSE Use with
+# W=40 form title with its ID: FORM_TITLEMAX
+917 MH_TITLE Loan ^1
+918 MH_TITLERES Reservation ^1
+919 MH_TITLEUSE Use ^1
+# The notes of a row added, saved and ended, ^2 its title (MH_TITLE)
+920 MH_ADDED ^2 added
+921 MH_SAVED ^2 saved
+922 MH_ENDED ^2 returned
+923 MH_RELEASED ^2 released
+# W=74 prompt title: VID_COLS - 6
+924 MH_Q_END Return loan ^1?
+925 MH_Q_ENDRES Release reservation ^1?
+926 MH_Q_ENDUSE Release from use ^1?
+# W=63 prompt label: VID_COLS - 7 - TUI_PROMPTMINW
+927 MH_L_RETDATE Date (YYYY-MM-DD, empty for today)
+# W=36 pick list title: TUI_PICKW
+928 MH_Q_NEW New
+# W=13 form labels of the first column: 15 - 1 - 1
+929 MH_L_ID ID
+# W=9 form labels of the second and third: 37 - 27 - 1
+930 MH_L_ITEM Item
+931 MH_L_QTY Quantity
+# The item's and the host's maker and model have no label.
+932 MH_L_NONE
+# W=13 form labels of the first column: 15 - 1 - 1
+933 MH_L_HOLDER Borrower
+934 MH_L_HOLDRES Reserved for
+935 MH_L_HOLDUSE In use with
+936 MH_L_HOST For item
+937 MH_L_HOSTUSE With item
+938 MH_L_CONTACT Contact
+939 MH_L_OUT Out
+940 MH_L_OUTRES From
+941 MH_L_OUTUSE Since
+# W=9 form labels of the second and third: 37 - 27 - 1
+942 MH_L_DUE Due
+943 MH_L_UNTIL Until
+944 MH_L_RET Returned
+945 MH_L_REL Released
+# W=13 form label of the first column: 15 - 1 - 1
+946 MH_L_NOTES Notes
+# The item form's line of held units (SCRIFORM.H) after the kinds'
+# names and counts: the units left, and the rows of other items it
+# hosts
+947 MH_AVAIL Available ^1
+948 MH_HOSTS ^1 used with it
+# W=78 column header over every row of every item: VID_COLS - 2
+949 MH_HDREND !     Loan Kind         Item  Qty Holder                 Due        Ended

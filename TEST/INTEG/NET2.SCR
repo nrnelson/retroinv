@@ -1,0 +1,121 @@
+# NET2.SCR - two sessions of INVTEST against INVSERV over NetBIOS (run by
+# srvgate.sh on fresh data): RIADMIN, an administrator's station, and
+# RIREAD, which SRV.CFG names read-only, so the same user is capped at
+# level 1 there.  Requests of both are in flight at once: the two
+# LOGINs, then a PING on RIREAD while RIADMIN's page of items, larger
+# than one NetBIOS message, is still on its way.
+
+@CALL 1 RIADMIN
+> HELLO RIADMIN
+< +OK
+> LOGIN ADMIN admin
+< +OK LEVEL=3 MUSTCHG=1
+> PASSWD admin Srv2gate
+< +OK
+@CALL 2 RIREAD
+> HELLO RIREAD
+< +OK
+@S 1
+>& LOGIN ADMIN Srv2gate
+@S 2
+>& LOGIN ADMIN Srv2gate
+@WAIT 2
+< +OK LEVEL=1 NAME="System Administrator"
+@WAIT 1
+< +OK LEVEL=3 NAME="System Administrator"
+
+# Both sessions are listed; the server adds its uptime and the open
+# sessions to STATUS.
+@S 1
+> ADMIN CLIENTS
+< +DATA
+< F SLOT TYPE STATION USER LEVEL STATE IDLE SELF
+<* R 1 NETB RIADMIN ADMIN 3 3 * 1
+<* R 2 NETB RIREAD ADMIN 1 3 * 0
+< .
+> STATUS
+< +DATA
+
+# Twenty-five items whose rows make a page of over 2 KB.
+> ITEM ADD CATEGORY=SYS MFR="Network Server Corporation" MODEL=NS-25 DESCR="Twenty-five copies of this item make one page of over two KB" TAGS="network,server,netbios,netbeui,session,listen,call,hangup"
+< +OK ID=1
+> ITEM COPY 1
+< +OK ID=2
+> ITEM COPY 1
+< +OK ID=3
+> ITEM COPY 1
+< +OK ID=4
+> ITEM COPY 1
+< +OK ID=5
+> ITEM COPY 1
+< +OK ID=6
+> ITEM COPY 1
+< +OK ID=7
+> ITEM COPY 1
+< +OK ID=8
+> ITEM COPY 1
+< +OK ID=9
+> ITEM COPY 1
+< +OK ID=10
+> ITEM COPY 1
+< +OK ID=11
+> ITEM COPY 1
+< +OK ID=12
+> ITEM COPY 1
+< +OK ID=13
+> ITEM COPY 1
+< +OK ID=14
+> ITEM COPY 1
+< +OK ID=15
+> ITEM COPY 1
+< +OK ID=16
+> ITEM COPY 1
+< +OK ID=17
+> ITEM COPY 1
+< +OK ID=18
+> ITEM COPY 1
+< +OK ID=19
+> ITEM COPY 1
+< +OK ID=20
+> ITEM COPY 1
+< +OK ID=21
+> ITEM COPY 1
+< +OK ID=22
+> ITEM COPY 1
+< +OK ID=23
+> ITEM COPY 1
+< +OK ID=24
+> ITEM COPY 1
+< +OK ID=25
+@S 1
+>& ITEM LIST FIELDS=ITEM_ID,MFR,DESCR,TAGS PAGE=25
+@S 2
+>& PING
+@WAIT 2
+< +OK
+@WAIT 1
+< +DATA
+< F ITEM_ID MFR DESCR TAGS
+
+# IMPORT needs the server to itself; the read-only station may not
+# change anything; an over-long request is refused.
+@S 1
+> IMPORT ITEMS FILE=ITEMS.CSV
+< -ERR 402 server busy
+@S 2
+> ITEM ADD CATEGORY=SYS MFR=IBM MODEL=5150
+< -ERR 203 permission denied
+> XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+< -ERR 103 line too long
+> BYE
+< +OK
+
+# The session that said BYE is gone.
+@S 1
+> ADMIN CLIENTS
+< +DATA
+< F SLOT TYPE STATION USER LEVEL STATE IDLE SELF
+<* R 1 NETB RIADMIN ADMIN 3 3 * 1
+< .
+> BYE
+< +OK

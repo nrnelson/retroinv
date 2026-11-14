@@ -1,0 +1,123 @@
+1< +OK
+2< +OK
+3< +OK
+4< +OK
+1< +OK LEVEL=3 MUSTCHG=1
+1< +OK
+1< +OK LEVEL=3 NAME="System Administrator"
+1< +OK ID=1
+1< +OK ID=2
+1< +OK ID=3
+1< +OK ID=4
+1< +OK ID=5
+1< +OK ID=6
+1< +OK ID=7
+1< +OK ID=8
+1< +OK ID=9
+1< +OK ID=10
+1< +OK ID=11
+1< +OK ID=12
+1< +OK ID=13
+1< +OK ID=14
+1< +OK ID=15
+1< +OK ID=16
+1< +OK ID=17
+1< +OK ID=18
+1< +OK ID=19
+1< +OK ID=20
+1< +OK ID=21
+1< +OK ID=22
+1< +OK ID=23
+1< +OK ID=24
+1< +OK ID=25
+2< +OK LEVEL=3 NAME="System Administrator"
+2< +DATA
+2< F ITEM_ID MFR MODEL DESCR
+2< R 1 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+2< R 2 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+2< R 3 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+2< R 4 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+2< R 5 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+2< R 6 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+2< R 7 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+2< R 8 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+2< R 9 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+2< R 10 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+2< R 11 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+2< R 12 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+2< R 13 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+2< R 14 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+2< R 15 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+2< R 16 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+2< R 17 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+2< R 18 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+2< R 19 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+2< R 20 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+2< R 21 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+2< R 22 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+2< R 23 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+2< R 24 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+2< R 25 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+2< .
+3< +OK LEVEL=3 NAME="System Administrator"
+3< +DATA
+3< F ITEM_ID MFR MODEL DESCR
+3< R 1 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+3< R 2 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+3< R 3 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+3< R 4 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+3< R 5 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+3< R 6 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+3< R 7 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+3< R 8 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+3< R 9 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+3< R 10 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+3< R 11 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+3< R 12 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+3< R 13 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+3< R 14 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+3< R 15 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+3< R 16 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+3< R 17 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+3< R 18 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+3< R 19 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+3< R 20 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+3< R 21 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+3< R 22 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+3< R 23 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+3< R 24 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+3< R 25 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+3< .
+4< +OK LEVEL=3 NAME="System Administrator"
+4< +DATA
+4< F ITEM_ID MFR MODEL DESCR
+4< R 1 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+4< R 2 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+4< R 3 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+4< R 4 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+4< R 5 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+4< R 6 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+4< R 7 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+4< R 8 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+4< R 9 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+4< R 10 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+4< R 11 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+4< R 12 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+4< R 13 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+4< R 14 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+4< R 15 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+4< R 16 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+4< R 17 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+4< R 18 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+4< R 19 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+4< R 20 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+4< R 21 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+4< R 22 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+4< R 23 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+4< R 24 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+4< R 25 "IBM Entry Systems Division" "5150 Personal Computer" "IBM Personal Computer, 64 KB, two 360 KB drives, CGA card"
+4< .
+4< +OK
+1< +OK
+nc< +OK
+nc< +OK

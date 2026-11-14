@@ -1,0 +1,27 @@
+/*
+ * WFILE.RC - the file name dialog (SRC/WIN/WFILE.C) and its strings, in
+ * the Windows character set: the resource script of every program that
+ * links WFILE.C includes this file.
+ */
+#include "WFILESTR.H"
+
+WFILE_R_DLG DIALOG 0, 0, 232, 132
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "Helv"
+BEGIN
+    LTEXT "File &name:", -1, 8, 8, 48, 8
+    EDITTEXT WFILE_C_NAME, 60, 6, 164, 12, ES_UPPERCASE | ES_AUTOHSCROLL
+    LTEXT "Directory:", -1, 8, 24, 48, 8
+    LTEXT "", WFILE_C_DIR, 60, 24, 164, 8, SS_LEFTNOWORDWRAP
+    LTEXT "&Files:", -1, 8, 38, 48, 8
+    LISTBOX WFILE_C_LIST, 8, 48, 160, 60, LBS_STANDARD | WS_TABSTOP
+    DEFPUSHBUTTON "OK", IDOK, 176, 48, 48, 14
+    PUSHBUTTON "Cancel", IDCANCEL, 176, 66, 48, 14
+    LTEXT "", WFILE_C_MSG, 8, 112, 216, 16
+END
+
+STRINGTABLE
+BEGIN
+    WFILE_S_NODIR, "No such directory or drive."
+    WFILE_S_LONG, "A path holds at most %d characters here."
+END

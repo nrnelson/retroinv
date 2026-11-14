@@ -1,0 +1,857 @@
+# LOCS.SCR - LOC commands on the location tree: ADD under a parent, the
+# name unique among the locations of one parent and the code among all,
+# GET with DEPTH and PATH (cut at the top when long), SET moving a
+# location with everything below it, the cycle and depth limits, DEL
+# refused while a location holds items: move or delete them or locations, LIST in tree order
+# with its cursor, CONTENTS of one location or of everything below it,
+# NOTES, location arguments by LOC_ID or code, and reads at level 1.
+
+> HELLO CONSOLE
+< +OK
+> LOGIN ADMIN admin
+< +OK LEVEL=3 MUSTCHG=1
+> PASSWD admin secret1
+< +OK
+
+# An empty tree.
+> LOC LIST
+< +DATA
+< F DEPTH LOC_ID PARENT_ID LOC_NAME LOC_CODE LTYPE CAPACITY
+< .
+> LOC GET 1
+< -ERR 200 no such location
+
+# LOC ADD answers the new LOC_ID.  The parent is named by LOC_ID or by
+# code; a code is optional, upper-cased, and 1 to ENG_LOCLEN letters,
+# digits and '-', a letter first.
+> LOC ADD LOC_NAME=Office LTYPE=ROOM LOC_CODE=OFF CAPACITY=20 NOTES="Upstairs\nNorth window"
+< +OK ID=1
+> LOC ADD LOC_NAME="Shelf A" LTYPE=shelf PARENT_ID=OFF LOC_CODE=off-a
+< +OK ID=2
+> LOC ADD LOC_NAME="Shelf B" LTYPE=SHELF PARENT_ID=1
+< +OK ID=3
+> LOC ADD LOC_NAME="Bin 1" LTYPE=BIN PARENT_ID=off-a LOC_CODE=B1
+< +OK ID=4
+> LOC ADD LOC_NAME="Bin 2" LTYPE=BIN PARENT_ID=2 LOC_CODE=OFFICE-B02
+< +OK ID=5
+> LOC ADD LOC_NAME=Garage LTYPE=ROOM LOC_CODE=GAR
+< +OK ID=6
+> LOC ADD LOC_NAME="Rack 1" LTYPE=RACK PARENT_ID=GAR
+< +OK ID=7
+> LOC ADD LOC_NAME="Box 3" LTYPE=BOX PARENT_ID=7 LOC_CODE=BOX3
+< +OK ID=8
+> LOC ADD LOC_NAME="Shelf A" LTYPE=SHELF
+< +OK ID=9
+> LOC GET 1
+< +DATA
+< K LOC_ID=1
+< K PARENT_ID=0
+< K LOC_NAME=Office
+< K LOC_CODE=OFF
+< K LTYPE=ROOM
+< K CAPACITY=20
+< K DEPTH=1
+< K PATH=Office
+< .
+> LOC GET off-a
+< +DATA
+< K LOC_ID=2
+< K PARENT_ID=1
+< K LOC_NAME="Shelf A"
+< K LOC_CODE=OFF-A
+< K LTYPE=SHELF
+< K CAPACITY=""
+< K DEPTH=2
+< K PATH="Office > Shelf A"
+< .
+> LOC GET 5
+< +DATA
+< K LOC_ID=5
+< K PARENT_ID=2
+< K LOC_NAME="Bin 2"
+< K LOC_CODE=OFFICE-B02
+< K LTYPE=BIN
+< K CAPACITY=""
+< K DEPTH=3
+< K PATH="Office > Shelf A > Bin 2"
+< .
+> LOC GET BOX3
+< +DATA
+< K LOC_ID=8
+< K PARENT_ID=7
+< K LOC_NAME="Box 3"
+< K LOC_CODE=BOX3
+< K LTYPE=BOX
+< K CAPACITY=""
+< K DEPTH=3
+< K PATH="Garage > Rack 1 > Box 3"
+< .
+> LOC NOTES OFF
+< +DATA
+< L Upstairs
+< L North window
+< .
+
+# ADD refusals: name and type required; a name the parent already holds
+# (in any case) or a code any location has; bad codes; an unknown type
+# or parent; values out of range; fields that are not settable.
+> LOC ADD
+< -ERR 102 value required FIELD=LOC_NAME
+> LOC ADD LOC_NAME=X
+< -ERR 102 value required FIELD=LTYPE
+> LOC ADD LTYPE=BIN
+< -ERR 102 value required FIELD=LOC_NAME
+> LOC ADD LOC_NAME="shelf a" LTYPE=SHELF PARENT_ID=OFF
+< -ERR 201 name already used at this level FIELD=LOC_NAME
+> LOC ADD LOC_NAME="SHELF A" LTYPE=SHELF PARENT_ID=0
+< -ERR 201 name already used at this level FIELD=LOC_NAME
+> LOC ADD LOC_NAME=X LTYPE=BIN LOC_CODE=b1
+< -ERR 201 location code already used FIELD=LOC_CODE
+> LOC ADD LOC_NAME=X LTYPE=BIN LOC_CODE=1A
+< -ERR 102 bad location code FIELD=LOC_CODE
+> LOC ADD LOC_NAME=X LTYPE=BIN LOC_CODE=A_1
+< -ERR 102 bad location code FIELD=LOC_CODE
+> LOC ADD LOC_NAME=X LTYPE=BIN LOC_CODE=-A
+< -ERR 102 bad location code FIELD=LOC_CODE
+> LOC ADD LOC_NAME=X LTYPE=BIN LOC_CODE=ABCDEFGHIJK
+< -ERR 102 bad location code FIELD=LOC_CODE
+> LOC ADD LOC_NAME=X LTYPE=TRAY
+< -ERR 202 unknown location type FIELD=LTYPE
+> LOC ADD LOC_NAME=X LTYPE=BIN PARENT_ID=99
+< -ERR 202 unknown location FIELD=PARENT_ID
+> LOC ADD LOC_NAME=X LTYPE=BIN PARENT_ID=ZZ
+< -ERR 202 unknown location FIELD=PARENT_ID
+> LOC ADD LOC_NAME=X LTYPE=BIN CAPACITY=-1
+< -ERR 102 negative value FIELD=CAPACITY
+> LOC ADD LOC_NAME=X LTYPE=BIN CAPACITY=12345
+< -ERR 102 bad value FIELD=CAPACITY
+> LOC ADD LOC_NAME=X LTYPE=BIN CAPACITY=1.5
+< -ERR 102 not a number FIELD=CAPACITY
+> LOC ADD LOC_NAME="1234567890123456789012345678901" LTYPE=BIN
+< -ERR 102 value too long FIELD=LOC_NAME
+> LOC ADD LOC_NAME=X LTYPE=BIN LOC_ID=5
+< -ERR 102 field not settable FIELD=LOC_ID
+> LOC ADD LOC_NAME=X LTYPE=BIN FOO=1
+< -ERR 102 field not settable FIELD=FOO
+> LOC ADD X LOC_NAME=X LTYPE=BIN
+< -ERR 100 too many arguments
+
+# GET refusals; 0 names no location.
+> LOC GET
+< -ERR 102 missing argument FIELD=LOC
+> LOC GET 1 2
+< -ERR 100 too many arguments
+> LOC GET OFF X=1
+< -ERR 102 unexpected key FIELD=X
+> LOC GET ZZ
+< -ERR 200 no such location
+> LOC GET 99
+< -ERR 200 no such location
+> LOC GET 0
+< -ERR 200 no such location
+> LOC GET ""
+< -ERR 200 no such location
+
+# LOC LIST: the tree in tree order, depth first and the locations of one
+# parent by name, each with its DEPTH; UNDER= gives the locations below
+# one (0: the whole tree), their DEPTH still counted from the top.
+> LOC LIST
+< +DATA
+< F DEPTH LOC_ID PARENT_ID LOC_NAME LOC_CODE LTYPE CAPACITY
+< R 1 6 0 Garage GAR ROOM ""
+< R 2 7 6 "Rack 1" "" RACK ""
+< R 3 8 7 "Box 3" BOX3 BOX ""
+< R 1 1 0 Office OFF ROOM 20
+< R 2 2 1 "Shelf A" OFF-A SHELF ""
+< R 3 4 2 "Bin 1" B1 BIN ""
+< R 3 5 2 "Bin 2" OFFICE-B02 BIN ""
+< R 2 3 1 "Shelf B" "" SHELF ""
+< R 1 9 0 "Shelf A" "" SHELF ""
+< .
+> LOC LIST UNDER=OFF
+< +DATA
+< F DEPTH LOC_ID PARENT_ID LOC_NAME LOC_CODE LTYPE CAPACITY
+< R 2 2 1 "Shelf A" OFF-A SHELF ""
+< R 3 4 2 "Bin 1" B1 BIN ""
+< R 3 5 2 "Bin 2" OFFICE-B02 BIN ""
+< R 2 3 1 "Shelf B" "" SHELF ""
+< .
+> LOC LIST UNDER=2
+< +DATA
+< F DEPTH LOC_ID PARENT_ID LOC_NAME LOC_CODE LTYPE CAPACITY
+< R 3 4 2 "Bin 1" B1 BIN ""
+< R 3 5 2 "Bin 2" OFFICE-B02 BIN ""
+< .
+> loc list under=b1
+< +DATA
+< F DEPTH LOC_ID PARENT_ID LOC_NAME LOC_CODE LTYPE CAPACITY
+< .
+> LOC LIST UNDER=0
+< +DATA
+< F DEPTH LOC_ID PARENT_ID LOC_NAME LOC_CODE LTYPE CAPACITY
+< R 1 6 0 Garage GAR ROOM ""
+< R 2 7 6 "Rack 1" "" RACK ""
+< R 3 8 7 "Box 3" BOX3 BOX ""
+< R 1 1 0 Office OFF ROOM 20
+< R 2 2 1 "Shelf A" OFF-A SHELF ""
+< R 3 4 2 "Bin 1" B1 BIN ""
+< R 3 5 2 "Bin 2" OFFICE-B02 BIN ""
+< R 2 3 1 "Shelf B" "" SHELF ""
+< R 1 9 0 "Shelf A" "" SHELF ""
+< .
+> LOC LIST UNDER=ZZ
+< -ERR 200 no such location
+> LOC LIST UNDER=99
+< -ERR 200 no such location
+> LOC LIST FIELDS=LOC_ID
+< -ERR 102 unexpected key FIELD=FIELDS
+> LOC LIST X
+< -ERR 100 too many arguments
+> LOC LIST PAGE=0
+< -ERR 102 bad page size FIELD=PAGE
+
+# Paging: each page resumes the walk after the location of its cursor.
+> LOC LIST PAGE=3
+< +DATA
+< F DEPTH LOC_ID PARENT_ID LOC_NAME LOC_CODE LTYPE CAPACITY
+< R 1 6 0 Garage GAR ROOM ""
+< R 2 7 6 "Rack 1" "" RACK ""
+< R 3 8 7 "Box 3" BOX3 BOX ""
+< C LOCS2:2020202020202037424F582033202020202020202020202020202020202020202020202020202020202020202038:8
+< .
+> LOC LIST PAGE=3 AFTER=LOCS2:2020202020202037424F582033202020202020202020202020202020202020202020202020202020202020202038:8
+< +DATA
+< F DEPTH LOC_ID PARENT_ID LOC_NAME LOC_CODE LTYPE CAPACITY
+< R 1 1 0 Office OFF ROOM 20
+< R 2 2 1 "Shelf A" OFF-A SHELF ""
+< R 3 4 2 "Bin 1" B1 BIN ""
+< C LOCS2:202020202020203242494E2031202020202020202020202020202020202020202020202020202020202020202034:4
+< .
+> LOC LIST PAGE=3 AFTER=LOCS2:202020202020203242494E2031202020202020202020202020202020202020202020202020202020202020202034:4
+< +DATA
+< F DEPTH LOC_ID PARENT_ID LOC_NAME LOC_CODE LTYPE CAPACITY
+< R 3 5 2 "Bin 2" OFFICE-B02 BIN ""
+< R 2 3 1 "Shelf B" "" SHELF ""
+< R 1 9 0 "Shelf A" "" SHELF ""
+< .
+> LOC LIST UNDER=OFF PAGE=2
+< +DATA
+< F DEPTH LOC_ID PARENT_ID LOC_NAME LOC_CODE LTYPE CAPACITY
+< R 2 2 1 "Shelf A" OFF-A SHELF ""
+< R 3 4 2 "Bin 1" B1 BIN ""
+< C LOCS2:202020202020203242494E2031202020202020202020202020202020202020202020202020202020202020202034:4
+< .
+> LOC LIST UNDER=OFF PAGE=2 AFTER=LOCS2:202020202020203242494E2031202020202020202020202020202020202020202020202020202020202020202034:4
+< +DATA
+< F DEPTH LOC_ID PARENT_ID LOC_NAME LOC_CODE LTYPE CAPACITY
+< R 3 5 2 "Bin 2" OFFICE-B02 BIN ""
+< R 2 3 1 "Shelf B" "" SHELF ""
+< .
+
+# A cursor of a location outside UNDER=, of another index, or not a
+# cursor: 204.
+> LOC LIST UNDER=OFF AFTER=LOCS2:2020202020202037424F582033202020202020202020202020202020202020202020202020202020202020202038:8
+< -ERR 204 bad cursor
+> LOC LIST AFTER=LOCS1:2020202020202031:1
+< -ERR 204 bad cursor
+> LOC LIST AFTER=ITEMS2:20202020202020312020202020202031:1
+< -ERR 204 bad cursor
+> LOC LIST AFTER=garbage
+< -ERR 204 bad cursor
+
+# A chain to the depth limit below Box 3, its long names cutting the
+# path at the top; no location goes below ENG_MAXLOCDEPTH, by ADD or by
+# a move.
+> LOC ADD LOC_NAME="Long stack, drawer number 4" LTYPE=DRAWER PARENT_ID=BOX3 LOC_CODE=L4
+< +OK ID=10
+> LOC ADD LOC_NAME="Long stack, drawer number 5" LTYPE=DRAWER PARENT_ID=L4 LOC_CODE=L5
+< +OK ID=11
+> LOC ADD LOC_NAME="Long stack, drawer number 6" LTYPE=DRAWER PARENT_ID=L5 LOC_CODE=L6
+< +OK ID=12
+> LOC ADD LOC_NAME="Long stack, drawer number 7" LTYPE=DRAWER PARENT_ID=L6 LOC_CODE=L7
+< +OK ID=13
+> LOC ADD LOC_NAME="Long stack, drawer number 8" LTYPE=DRAWER PARENT_ID=L7 LOC_CODE=L8
+< +OK ID=14
+> LOC GET L8
+< +DATA
+< K LOC_ID=14
+< K PARENT_ID=13
+< K LOC_NAME="Long stack, drawer number 8"
+< K LOC_CODE=L8
+< K LTYPE=DRAWER
+< K CAPACITY=""
+< K DEPTH=8
+< K PATH="... > Long stack, drawer number 7 > Long stack, drawer number 8"
+< .
+> LOC GET L5
+< +DATA
+< K LOC_ID=11
+< K PARENT_ID=10
+< K LOC_NAME="Long stack, drawer number 5"
+< K LOC_CODE=L5
+< K LTYPE=DRAWER
+< K CAPACITY=""
+< K DEPTH=5
+< K PATH="... > Box 3 > Long stack, drawer number 4 > Long stack, drawer number 5"
+< .
+> LOC ADD LOC_NAME=Deeper LTYPE=BOX PARENT_ID=L8
+< -ERR 202 locations nested more than 8 levels deep FIELD=PARENT_ID
+> LOC SET GAR PARENT_ID=OFF
+< -ERR 202 locations nested more than 8 levels deep FIELD=PARENT_ID
+> LOC SET B1 PARENT_ID=L8
+< -ERR 202 locations nested more than 8 levels deep FIELD=PARENT_ID
+> LOC SET L4 PARENT_ID=B1
+< +OK
+> LOC SET L4 PARENT_ID=BOX3
+< +OK
+> LOC LIST UNDER=BOX3
+< +DATA
+< F DEPTH LOC_ID PARENT_ID LOC_NAME LOC_CODE LTYPE CAPACITY
+< R 4 10 8 "Long stack, drawer number 4" L4 DRAWER ""
+< R 5 11 10 "Long stack, drawer number 5" L5 DRAWER ""
+< R 6 12 11 "Long stack, drawer number 6" L6 DRAWER ""
+< R 7 13 12 "Long stack, drawer number 7" L7 DRAWER ""
+< R 8 14 13 "Long stack, drawer number 8" L8 DRAWER ""
+< .
+
+# LOC SET: any field but LOC_ID; a name the new parent holds or a code
+# another location has is refused, as on ADD.
+> LOC SET OFF-A LOC_NAME="Shelf A1" CAPACITY=
+< +OK
+> LOC GET 2
+< +DATA
+< K LOC_ID=2
+< K PARENT_ID=1
+< K LOC_NAME="Shelf A1"
+< K LOC_CODE=OFF-A
+< K LTYPE=SHELF
+< K CAPACITY=""
+< K DEPTH=2
+< K PATH="Office > Shelf A1"
+< .
+> LOC SET B1 LOC_CODE=
+< +OK
+> LOC GET 4
+< +DATA
+< K LOC_ID=4
+< K PARENT_ID=2
+< K LOC_NAME="Bin 1"
+< K LOC_CODE=""
+< K LTYPE=BIN
+< K CAPACITY=""
+< K DEPTH=3
+< K PATH="Office > Shelf A1 > Bin 1"
+< .
+> LOC SET 4 LOC_CODE=b1
+< +OK
+> LOC SET 2 LOC_NAME="shelf b"
+< -ERR 201 name already used at this level FIELD=LOC_NAME
+> LOC SET 2 LOC_NAME="SHELF A1"
+< +OK
+> LOC SET 2 LOC_NAME="Shelf A1"
+< +OK
+> LOC SET 2 LOC_CODE=GAR
+< -ERR 201 location code already used FIELD=LOC_CODE
+> LOC SET 2 LTYPE=TRAY
+< -ERR 202 unknown location type FIELD=LTYPE
+> LOC SET 2 LOC_ID=7
+< -ERR 102 field not settable FIELD=LOC_ID
+> LOC SET 2 CAPACITY=-2
+< -ERR 102 negative value FIELD=CAPACITY
+> LOC SET 2 BAD=1
+< -ERR 102 field not settable FIELD=BAD
+> LOC SET ZZ LOC_NAME=x
+< -ERR 200 no such location
+> LOC SET
+< -ERR 102 missing argument FIELD=LOC
+> LOC SET 2 3 LOC_NAME=x
+< -ERR 100 too many arguments
+> LOC SET 2
+< +OK
+> LOC GET 2
+< +DATA
+< K LOC_ID=2
+< K PARENT_ID=1
+< K LOC_NAME="Shelf A1"
+< K LOC_CODE=OFF-A
+< K LTYPE=SHELF
+< K CAPACITY=""
+< K DEPTH=2
+< K PATH="Office > Shelf A1"
+< .
+
+# A move takes everything below the location along.  The new parent must
+# be a live location or 0, and never the location itself or one below
+# it.
+> LOC SET OFF-A PARENT_ID=GAR
+< +OK
+> LOC GET B1
+< +DATA
+< K LOC_ID=4
+< K PARENT_ID=2
+< K LOC_NAME="Bin 1"
+< K LOC_CODE=B1
+< K LTYPE=BIN
+< K CAPACITY=""
+< K DEPTH=3
+< K PATH="Garage > Shelf A1 > Bin 1"
+< .
+> LOC LIST UNDER=GAR
+< +DATA
+< F DEPTH LOC_ID PARENT_ID LOC_NAME LOC_CODE LTYPE CAPACITY
+< R 2 7 6 "Rack 1" "" RACK ""
+< R 3 8 7 "Box 3" BOX3 BOX ""
+< R 4 10 8 "Long stack, drawer number 4" L4 DRAWER ""
+< R 5 11 10 "Long stack, drawer number 5" L5 DRAWER ""
+< R 6 12 11 "Long stack, drawer number 6" L6 DRAWER ""
+< R 7 13 12 "Long stack, drawer number 7" L7 DRAWER ""
+< R 8 14 13 "Long stack, drawer number 8" L8 DRAWER ""
+< R 2 2 6 "Shelf A1" OFF-A SHELF ""
+< R 3 4 2 "Bin 1" B1 BIN ""
+< R 3 5 2 "Bin 2" OFFICE-B02 BIN ""
+< .
+> LOC SET 2 PARENT_ID=B1
+< -ERR 202 cannot be put inside itself or its contents FIELD=PARENT_ID
+> LOC SET 2 PARENT_ID=2
+< -ERR 202 cannot be put inside itself or its contents FIELD=PARENT_ID
+> LOC SET 2 PARENT_ID=99
+< -ERR 202 unknown location FIELD=PARENT_ID
+> LOC SET 2 PARENT_ID=0
+< +OK
+> LOC GET 4
+< +DATA
+< K LOC_ID=4
+< K PARENT_ID=2
+< K LOC_NAME="Bin 1"
+< K LOC_CODE=B1
+< K LTYPE=BIN
+< K CAPACITY=""
+< K DEPTH=2
+< K PATH="Shelf A1 > Bin 1"
+< .
+> LOC SET 9 LOC_NAME="Shelf B"
+< +OK
+> LOC SET 9 PARENT_ID=OFF
+< -ERR 201 name already used at this level FIELD=LOC_NAME
+> LOC SET 9 LOC_NAME="Shelf A"
+< +OK
+> LOC SET 2 PARENT_ID=OFF
+< +OK
+> LOC LIST
+< +DATA
+< F DEPTH LOC_ID PARENT_ID LOC_NAME LOC_CODE LTYPE CAPACITY
+< R 1 6 0 Garage GAR ROOM ""
+< R 2 7 6 "Rack 1" "" RACK ""
+< R 3 8 7 "Box 3" BOX3 BOX ""
+< R 4 10 8 "Long stack, drawer number 4" L4 DRAWER ""
+< R 5 11 10 "Long stack, drawer number 5" L5 DRAWER ""
+< R 6 12 11 "Long stack, drawer number 6" L6 DRAWER ""
+< R 7 13 12 "Long stack, drawer number 7" L7 DRAWER ""
+< R 8 14 13 "Long stack, drawer number 8" L8 DRAWER ""
+< R 1 1 0 Office OFF ROOM 20
+< R 2 2 1 "Shelf A1" OFF-A SHELF ""
+< R 3 4 2 "Bin 1" B1 BIN ""
+< R 3 5 2 "Bin 2" OFFICE-B02 BIN ""
+< R 2 3 1 "Shelf B" "" SHELF ""
+< R 1 9 0 "Shelf A" "" SHELF ""
+< .
+
+# LOC CONTENTS: the items at a location, installed parts included unless
+# TOP=1; with ALL=1 also those at every location below it, in tree order
+# and by ITEM_ID at each; 0 for the items of unknown location, and with
+# ALL=1 the whole tree after them.  LOC_NAME, after LOC_ID by default,
+# names each item's location as it is now, blank for an unknown one.
+> ITEM ADD CATEGORY=SYS MFR=IBM MODEL=5150 LOC_ID=OFF
+< +OK ID=1
+> ITEM ADD CATEGORY=CARD MFR=Hercules MODEL=Graphics LOC_ID=b1
+< +OK ID=2
+> ITEM ADD CATEGORY=DRV MFR=Seagate MODEL=ST-225 LOC_ID=5
+< +OK ID=3
+> ITEM ADD CATEGORY=SW MFR=Microsoft MODEL="MS-DOS 3.10"
+< +OK ID=4
+> ITEM ADD CATEGORY=CPU MFR=Intel MODEL=8088 LOC_ID=B1
+< +OK ID=5
+> ASSY INSTALL 5 1
+< +OK
+> ITEM ADD CATEGORY=SYS MFR=Compaq MODEL=Portable LOC_ID=BOX3
+< +OK ID=6
+> LOC CONTENTS OFF
+< +DATA
+< F ITEM_ID CATEGORY MFR MODEL WORKS QTY AVAIL LOC_ID LOC_NAME STATUS
+< R 1 SYS IBM 5150 ? 1 Y 1 Office A
+< R 5 CPU Intel 8088 ? 1 I 1 Office A
+< .
+> LOC CONTENTS OFF TOP=1 FIELDS=ITEM_ID
+< +DATA
+< F ITEM_ID
+< R 1
+< .
+> LOC CONTENTS off ALL=1 FIELDS=ITEM_ID,LOC_ID,PARENT_ID
+< +DATA
+< F ITEM_ID LOC_ID PARENT_ID
+< R 1 1 0
+< R 5 1 1
+< R 2 4 0
+< R 3 5 0
+< .
+> LOC CONTENTS OFF ALL=1 TOP=1 FIELDS=ITEM_ID,LOC_ID
+< +DATA
+< F ITEM_ID LOC_ID
+< R 1 1
+< R 2 4
+< R 3 5
+< .
+> LOC CONTENTS 0 ALL=1 FIELDS=ITEM_ID,LOC_ID,LOC_NAME
+< +DATA
+< F ITEM_ID LOC_ID LOC_NAME
+< R 4 0 ""
+< R 6 8 "Box 3"
+< R 1 1 Office
+< R 5 1 Office
+< R 2 4 "Bin 1"
+< R 3 5 "Bin 2"
+< .
+> LOC CONTENTS OFF FIELDS=LOC_NAME,ITEM_ID
+< +DATA
+< F LOC_NAME ITEM_ID
+< R Office 1
+< R Office 5
+< .
+> LOC CONTENTS b1 FIELDS=ITEM_ID,MFR
+< +DATA
+< F ITEM_ID MFR
+< R 2 Hercules
+< .
+> LOC SET B1 LOC_NAME="Bin one"
+< +OK
+> LOC CONTENTS B1 FIELDS=ITEM_ID,LOC_NAME
+< +DATA
+< F ITEM_ID LOC_NAME
+< R 2 "Bin one"
+< .
+> LOC SET B1 LOC_NAME="Bin 1"
+< +OK
+> LOC CONTENTS 0 FIELDS=ITEM_ID,LOC_ID
+< +DATA
+< F ITEM_ID LOC_ID
+< R 4 0
+< .
+> LOC CONTENTS 0 ALL=1 FIELDS=ITEM_ID,LOC_ID
+< +DATA
+< F ITEM_ID LOC_ID
+< R 4 0
+< R 6 8
+< R 1 1
+< R 5 1
+< R 2 4
+< R 3 5
+< .
+> LOC CONTENTS 3
+< +DATA
+< F ITEM_ID CATEGORY MFR MODEL WORKS QTY AVAIL LOC_ID LOC_NAME STATUS
+< .
+> LOC CONTENTS 3 ALL=1
+< +DATA
+< F ITEM_ID CATEGORY MFR MODEL WORKS QTY AVAIL LOC_ID LOC_NAME STATUS
+< .
+> LOC CONTENTS ZZ
+< -ERR 200 no such location
+> LOC CONTENTS 99
+< -ERR 200 no such location
+> LOC CONTENTS
+< -ERR 102 missing argument FIELD=LOC
+> LOC CONTENTS OFF GAR
+< -ERR 100 too many arguments
+> LOC CONTENTS OFF UNDER=GAR
+< -ERR 102 unexpected key FIELD=UNDER
+> LOC CONTENTS OFF FIELDS=NOTES
+< -ERR 102 memo fields cannot be listed FIELD=NOTES
+> LOC CONTENTS OFF ALL=2
+< -ERR 102 bad or missing argument FIELD=ALL
+> LOC CONTENTS OFF TOP=x
+< -ERR 102 bad or missing argument FIELD=TOP
+
+# ITEM LIST and REPORT ITEMS with ALL=1 walk the same way, with their
+# filters inside the walk; ORDER= is refused beside ALL=1.
+> ITEM LIST LOC=OFF ALL=1 FIELDS=ITEM_ID,LOC_ID,LOC_NAME
+< +DATA
+< F ITEM_ID LOC_ID LOC_NAME
+< R 1 1 Office
+< R 5 1 Office
+< R 2 4 "Bin 1"
+< R 3 5 "Bin 2"
+< .
+> ITEM LIST LOC=0 ALL=1 CAT=SYS PAGE=1 FIELDS=ITEM_ID,CATEGORY,LOC_NAME
+< +DATA
+< F ITEM_ID CATEGORY LOC_NAME
+< R 6 SYS "Box 3"
+< C ITEMS2:20202020202020382020202020202036:6
+< .
+> ITEM LIST LOC=0 ALL=1 CAT=SYS PAGE=1 FIELDS=ITEM_ID,CATEGORY,LOC_NAME AFTER=ITEMS2:20202020202020382020202020202036:6
+< +DATA
+< F ITEM_ID CATEGORY LOC_NAME
+< R 1 SYS Office
+< C ITEMS2:20202020202020312020202020202031:1
+< .
+> REPORT ITEMS LOC=GAR ALL=1
+< +DATA
+< F ITEM_ID CATEGORY MFR MODEL SERIALNO COND WORKS QTY LOC_ID LOC_NAME STATUS ACQ_DATE ACQ_PRICE CUR_VALUE
+< R 6 SYS Compaq Portable "" "" ? 1 8 "Box 3" A "" "" ""
+< .
+> REPORT ITEMS LOC=0 ALL=1 AVAIL=1
+< +DATA
+< F ITEM_ID CATEGORY MFR MODEL SERIALNO COND WORKS QTY LOC_ID LOC_NAME STATUS ACQ_DATE ACQ_PRICE CUR_VALUE
+< R 4 SW Microsoft "MS-DOS 3.10" "" "" ? 1 0 "" A "" "" ""
+< R 6 SYS Compaq Portable "" "" ? 1 8 "Box 3" A "" "" ""
+< R 1 SYS IBM 5150 "" "" ? 1 1 Office A "" "" ""
+< R 2 CARD Hercules Graphics "" "" ? 1 4 "Bin 1" A "" "" ""
+< R 3 DRV Seagate ST-225 "" "" ? 1 5 "Bin 2" A "" "" ""
+< .
+> REPORT ITEMS LOC=0 ALL=1 ORDER=LOC
+< -ERR 102 bad or missing argument FIELD=ORDER
+> REPORT ITEMS ALL=1
+< -ERR 102 missing argument FIELD=LOC
+> REPORT ITEMS LOC=ZZ ALL=1
+< -ERR 200 no such location FIELD=LOC
+> REPORT ITEMS LOC=0 ALL=2
+< -ERR 102 bad or missing argument FIELD=ALL
+
+# Paging: the cursor names the location and the item; one of another
+# walk is 204.
+> LOC CONTENTS 0 ALL=1 PAGE=2 FIELDS=ITEM_ID,LOC_ID
+< +DATA
+< F ITEM_ID LOC_ID
+< R 4 0
+< R 6 8
+< C ITEMS2:20202020202020382020202020202036:6
+< .
+> LOC CONTENTS 0 ALL=1 PAGE=2 FIELDS=ITEM_ID,LOC_ID AFTER=ITEMS2:20202020202020382020202020202036:6
+< +DATA
+< F ITEM_ID LOC_ID
+< R 1 1
+< R 5 1
+< C ITEMS2:20202020202020312020202020202035:5
+< .
+> LOC CONTENTS 0 ALL=1 PAGE=2 FIELDS=ITEM_ID,LOC_ID AFTER=ITEMS2:20202020202020312020202020202035:5
+< +DATA
+< F ITEM_ID LOC_ID
+< R 2 4
+< R 3 5
+< C ITEMS2:20202020202020352020202020202033:3
+< .
+> LOC CONTENTS 0 ALL=1 PAGE=2 FIELDS=ITEM_ID,LOC_ID AFTER=ITEMS2:20202020202020352020202020202033:3
+< +DATA
+< F ITEM_ID LOC_ID
+< .
+> LOC CONTENTS GAR ALL=1 AFTER=ITEMS2:20202020202020312020202020202035:5
+< -ERR 204 bad cursor
+> LOC CONTENTS OFF AFTER=LOCS2:2020202020202030:1
+< -ERR 204 bad cursor
+
+# Moving a container moves the items in it without writing them: they
+# keep their LOC_ID and now sit below the new parent.
+> LOC SET OFF-A PARENT_ID=GAR
+< +OK
+> LOC CONTENTS GAR ALL=1 FIELDS=ITEM_ID,LOC_ID,LOC_NAME
+< +DATA
+< F ITEM_ID LOC_ID LOC_NAME
+< R 6 8 "Box 3"
+< R 2 4 "Bin 1"
+< R 3 5 "Bin 2"
+< .
+> LOC CONTENTS OFF ALL=1 FIELDS=ITEM_ID,LOC_ID
+< +DATA
+< F ITEM_ID LOC_ID
+< R 1 1
+< R 5 1
+< .
+> ITEM GET 2
+< +DATA
+< K ITEM_ID=2
+< K CATEGORY=CARD
+< K ITEMTYPE=""
+< K MFR=Hercules
+< K MODEL=Graphics
+< K SERIALNO=""
+< K DESCR=""
+< K COND=""
+< K WORKS=?
+< K QTY=1
+< K ON_LOAN=0
+< K RESERVED=0
+< K IN_USE=0
+< K ATTACHED=0
+< K LOC_ID=4
+< K PARENT_ID=0
+< K ACQ_DATE=""
+< K ACQ_SRC=""
+< K ACQ_PRICE=""
+< K CUR_VALUE=""
+< K TAGS=""
+< K STATUS=A
+< K CREATED=20261008
+< K UPDATED=20261008
+< .
+> LOC SET OFF-A PARENT_ID=OFF
+< +OK
+
+# LOC DEL: refused while an item is at the location or a location is in
+# it; a deleted location is gone, and its name and code are free again.
+> LOC DEL OFF
+< -ERR 202 location holds items: move or delete them
+> LOC DEL BOX3
+< -ERR 202 location holds items: move or delete them
+> LOC DEL L8
+< +OK
+> LOC DEL 3
+< +OK
+> LOC GET 3
+< -ERR 200 no such location
+> LOC DEL 3
+< -ERR 200 no such location
+> LOC SET 3 LOC_NAME=x
+< -ERR 200 no such location
+> LOC NOTES 3
+< -ERR 200 no such location
+> LOC CONTENTS 3
+< -ERR 200 no such location
+> LOC LIST UNDER=3
+< -ERR 200 no such location
+> ITEM ADD CATEGORY=SYS LOC_ID=3
+< -ERR 202 unknown location FIELD=LOC_ID
+> LOC ADD LOC_NAME="Shelf B" LTYPE=SHELF PARENT_ID=OFF LOC_CODE=L8
+< +OK ID=15
+> LOC DEL
+< -ERR 102 missing argument FIELD=LOC
+> LOC DEL 1 2
+< -ERR 100 too many arguments
+> LOC DEL 1 X=1
+< -ERR 102 unexpected key FIELD=X
+> LOC DEL 0
+< -ERR 200 no such location
+> ITEM DEL 6
+< +OK
+> LOC DEL BOX3
+< -ERR 202 location holds locations: move or delete them
+
+# LOC NOTES.
+> LOC NOTES 2
+< +DATA
+< .
+> LOC NOTES 2 ADD="first"
+< +OK
+> LOC NOTES off-a ADD="back\\slash and \"quotes\""
+< +OK
+> LOC NOTES 2 ADD="x\ny"
+< +OK
+> LOC NOTES 2
+< +DATA
+< L first
+< L back\\slash and "quotes"
+< L x
+< L y
+< .
+> LOC NOTES 2 ADD="ctl\x02"
+< -ERR 102 bad memo text FIELD=NOTES
+> LOC NOTES ZZ
+< -ERR 200 no such location
+> LOC NOTES ZZ ADD=x
+< -ERR 200 no such location
+> LOC NOTES
+< -ERR 102 missing argument FIELD=LOC
+> LOC NOTES 1 2
+< -ERR 100 too many arguments
+> LOC NOTES 2 TEXT=x
+< -ERR 102 unexpected key FIELD=TEXT
+> LOC SET 2 NOTES="new\nnotes"
+< +OK
+> LOC NOTES 2
+< +DATA
+< L new
+< L notes
+< .
+> LOC NOTES off-a NEW=staged
+< +OK
+> LOC NOTES 2 END=whole
+< +OK
+> LOC NOTES off-a
+< +DATA
+< L staged
+< L whole
+< .
+> LOC NOTES 2 PART=x
+< -ERR 204 no note being saved FIELD=NOTES
+> ITEM NOTES 2 NEW=item
+< +OK
+> LOC NOTES 2 END=loc
+< -ERR 204 no note being saved FIELD=NOTES
+
+# A location deleted between two pages ends its part of the walk; the
+# next page goes on after it, repeating and hiding nothing else.
+> LOC LIST PAGE=7
+< +DATA
+< F DEPTH LOC_ID PARENT_ID LOC_NAME LOC_CODE LTYPE CAPACITY
+< R 1 6 0 Garage GAR ROOM ""
+< R 2 7 6 "Rack 1" "" RACK ""
+< R 3 8 7 "Box 3" BOX3 BOX ""
+< R 4 10 8 "Long stack, drawer number 4" L4 DRAWER ""
+< R 5 11 10 "Long stack, drawer number 5" L5 DRAWER ""
+< R 6 12 11 "Long stack, drawer number 6" L6 DRAWER ""
+< R 7 13 12 "Long stack, drawer number 7" L7 DRAWER ""
+< C LOCS2:20202020202031324C4F4E4720535441434B2C20445241574552204E554D42455220372020202020202020203133:D
+< .
+> LOC DEL L7
+< +OK
+> LOC LIST PAGE=7 AFTER=LOCS2:20202020202031324C4F4E4720535441434B2C20445241574552204E554D42455220372020202020202020203133:D
+< +DATA
+< F DEPTH LOC_ID PARENT_ID LOC_NAME LOC_CODE LTYPE CAPACITY
+< R 1 1 0 Office OFF ROOM 20
+< R 2 2 1 "Shelf A1" OFF-A SHELF ""
+< R 3 4 2 "Bin 1" B1 BIN ""
+< R 3 5 2 "Bin 2" OFFICE-B02 BIN ""
+< R 2 15 1 "Shelf B" L8 SHELF ""
+< R 1 9 0 "Shelf A" "" SHELF ""
+< .
+
+# Level 1: reads are allowed.
+> USER ADD READER LEVEL=1 PASSWORD=read1
+< +OK
+@SESSION
+> HELLO RDPC
+< +OK
+> LOGIN READER read1
+< +OK LEVEL=1 MUSTCHG=1
+> PASSWD read1 read2
+< +OK
+> LOC GET OFF
+< +DATA
+< K LOC_ID=1
+< K PARENT_ID=0
+< K LOC_NAME=Office
+< K LOC_CODE=OFF
+< K LTYPE=ROOM
+< K CAPACITY=20
+< K DEPTH=1
+< K PATH=Office
+< .
+> LOC LIST UNDER=OFF
+< +DATA
+< F DEPTH LOC_ID PARENT_ID LOC_NAME LOC_CODE LTYPE CAPACITY
+< R 2 2 1 "Shelf A1" OFF-A SHELF ""
+< R 3 4 2 "Bin 1" B1 BIN ""
+< R 3 5 2 "Bin 2" OFFICE-B02 BIN ""
+< R 2 15 1 "Shelf B" L8 SHELF ""
+< .
+> LOC CONTENTS OFF ALL=1
+< +DATA
+< F ITEM_ID CATEGORY MFR MODEL WORKS QTY AVAIL LOC_ID LOC_NAME STATUS
+< R 1 SYS IBM 5150 ? 1 Y 1 Office A
+< R 5 CPU Intel 8088 ? 1 I 1 Office A
+< R 2 CARD Hercules Graphics ? 1 Y 4 "Bin 1" A
+< R 3 DRV Seagate ST-225 ? 1 Y 5 "Bin 2" A
+< .
+> LOC NOTES OFF
+< +DATA
+< L Upstairs
+< L North window
+< .

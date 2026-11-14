@@ -1,0 +1,11 @@
+=SNAP NOPORT
+#32770 "RETROINV" ACTIVE
+ Button 2 "OK" FOCUS DEFAULT
+ Static 65535 ""
+ Static 65535 "Cannot open COM1: no such port."
+INVWIN "RETROINV" DISABLED
+ WTOOL 218 "~New|~Open|~Edit|~Delete|-|~Move|~Install|~Lend|-|*|~Find"
+  Edit 219 "" DISABLED
+ WSTAT 201 "Serial port: COM1|||"
+=SNAP GONE
+=END

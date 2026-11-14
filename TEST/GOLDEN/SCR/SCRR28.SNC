@@ -1,0 +1,104 @@
+=SNAP SAVEFAIL PALETTE=COLOR CURSOR=0,0,HIDE VRAM=OK
+|                                                                                |
+|здддддддддддддддддддддддддддддддддд Settings дддддддддддддддддддддддддддддддддд©|
+|Ё Data directory   DATA\                                                       Ё|
+|Ё Station name                                                                 Ё|
+|Ё Default user                                                                 Ё|
+|Ё Item list order  LOC                                                         Ё|
+|Ё CGA snow         N         Monochrome  N         BIOS output  N              Ё|
+|Ё Printer          LPT2   Type EPSON  Page lines 30   Label 35 x 6             Ё|
+|Ё Adapter          ?????????????????????????? Settings file  TEST.CFG          Ё|
+|Ё Program                                     DOS            ??????????????????Ё|
+|юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды|
+|                                                                                |
+|                                                                                |
+|                                                                                |
+|                                                                                |
+|                                                                                |
+|                                                                                |
+|                                                                                |
+|                                                                                |
+|                                                                                |
+|                                                                                |
+|                                                                                |
+|                                                                                |
+| Cannot save the settings (access denied): TEST.CFG                             |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=70 B=1B C=1E D=17 E=1F F=07 G=00 H=4F
+|AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|
+|BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBCCCCCCCCCCBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB|
+|BDEEEEEEEEEEEEEEDDDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDDDDDDDDDDDDDDDDDDDDB|
+|BDEEEEEEEEEEEEDDDDDFFFFFFFFFFFFFFFFDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDB|
+|BDEEEEEEEEEEEEDDDDDFFFFFFFFDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDB|
+|BDEEEEEEEEEEEEEEEDDAAAAAADDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDB|
+|BDEEEEEEEEDDDDDDDDDFDDDDDDDDDEEEEEEEEEEDDFDDDDDDDDDEEEEEEEEEEEDDFDDDDDDDDDDDDDDB|
+|BDEEEEEEEDDDDDDDDDDFFFFDDDEEEEDFFFFFDDEEEEEEEEEEDFFDDDEEEEEDFFDEDFFDDDDDDDDDDDDB|
+|BDEEEEEEEDDDDDDDDDDGGGGGGGGGGGGGGGGGGGGGGGGGGDEEEEEEEEEEEEEDDFFFFFFFFFFFFFFFFFFB|
+|BDEEEEEEEDDDDDDDDDDFFFFFFFFFFFFFFFFFFFFFFFFFFDEEEDDDDDDDDDDDDGGGGGGGGGGGGGGGGGGB|
+|BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|
+=SNAP LEAVEQ PALETTE=COLOR CURSOR=0,0,HIDE VRAM=OK
+|                                                                                |
+|здддддддддддддддддддддддддддддддддд Settings дддддддддддддддддддддддддддддддддд©|
+|Ё Data directory   DATA\                                                       Ё|
+|Ё Station name                                                                 Ё|
+|Ё Default user                                                                 Ё|
+|Ё Item list order  LOC                                                         Ё|
+|Ё CGA snow         N         Monochrome  N         BIOS output  N              Ё|
+|Ё Printer          LPT2   Type EPSON  Page lines 30   Label 35 x 6             Ё|
+|Ё Adapter          ?????????????????????????? Settings file  TEST.CFG          Ё|
+|Ё Program                   имммммммммммммммммммммм╩         ??????????????????Ё|
+|юддддддддддддддддддддддддддд╨                      ╨ддддддддддддддддддддддддддды|
+|                            ╨ Discard the changes? ╨                            |
+|                            ╨                      ╨                            |
+|                            хмммммммммммммммммммммм╪                            |
+|                                                                                |
+|                                                                                |
+|                                                                                |
+|                                                                                |
+|                                                                                |
+|                                                                                |
+|                                                                                |
+|                                                                                |
+|                                                                                |
+| Y=Yes N=No                                                                     |
+| TEST              LOCAL  ADMIN 3                                               |
+=ATTR A=70 B=1B C=1E D=17 E=1F F=07 G=00
+|AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|
+|BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBCCCCCCCCCCBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB|
+|BDEEEEEEEEEEEEEEDDDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDDDDDDDDDDDDDDDDDDDDB|
+|BDEEEEEEEEEEEEDDDDDFFFFFFFFFFFFFFFFDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDB|
+|BDEEEEEEEEEEEEDDDDDFFFFFFFFDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDB|
+|BDEEEEEEEEEEEEEEEDDAAAAAADDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDB|
+|BDEEEEEEEEDDDDDDDDDFDDDDDDDDDEEEEEEEEEEDDFDDDDDDDDDEEEEEEEEEEEDDFDDDDDDDDDDDDDDB|
+|BDEEEEEEEDDDDDDDDDDFFFFDDDEEEEDFFFFFDDEEEEEEEEEEDFFDDDEEEEEDFFDEDFFDDDDDDDDDDDDB|
+|BDEEEEEEEDDDDDDDDDDGGGGGGGGGGGGGGGGGGGGGGGGGGDEEEEEEEEEEEEEDDFFFFFFFFFFFFFFFFFFB|
+|BDEEEEEEEDDDDDDDDDDFFFFFFFFFBBBBBBBBBBBBBBBBBBBBBBBBDDDDDDDDDGGGGGGGGGGGGGGGGGGB|
+|BBBBBBBBBBBBBBBBBBBBBBBBBBBBBDDDDDDDDDDDDDDDDDDDDDDBBBBBBBBBBBBBBBBBBBBBBBBBBBBB|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDBDDDDDDDDDDDDDDDDDDDDDDBDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDBDDDDDDDDDDDDDDDDDDDDDDBDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDBBBBBBBBBBBBBBBBBBBBBBBBDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|DCDDDDDCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+|AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|

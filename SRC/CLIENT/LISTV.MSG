@@ -1,0 +1,5 @@
+# LISTV.C: the list view's own messages (ML_).
+# W=42 status-line information: TUI_ST_INFOW
+200 ML_WALK Going to the end... records: ^1
+
+201 ML_STOPPED Stopped; PgDn goes on from here

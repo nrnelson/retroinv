@@ -1,0 +1,141 @@
+RETROINV  Item listing                                       2026-10-08  Page 1
+Order LOC
+
+      ID Cat  Maker          Model          Serial       Works   Qty Location
+-------------------------------------------------------------------------------
+No location
+       1 CARD Maker 1        Model 7        SN00001      yes       2
+       2 CARD Maker 2        Model 14       SN00002      intrm     3
+       3 SYS  Maker 3        Model 21       SN00003      no        4
+Items: 3   Quantity: 9
+
+RETROINV  Item listing                                       2026-10-08  Page 2
+Order LOC
+
+      ID Cat  Maker          Model          Serial       Works   Qty Location
+-------------------------------------------------------------------------------
+Office
+       4 CARD Maker 4        Model 28       SN00004      ?         1 Office
+       5 CARD Maker 5        Model 35       SN00005      yes       2 Office
+       6 SYS  Maker 6        Model 42       SN00006      intrm     3 Office
+       7 CARD Maker 7        Model 49       SN00007      no        4 Office
+       8 CARD Maker 8        Model 56       SN00008      ?         1 Office
+       9 SYS  Maker 9        Model 63       SN00009      yes       2 Office
+      10 CARD Maker 10       Model 70       SN00010      intrm     3 Office
+Items: 7   Quantity: 16
+RETROINV  Item listing                                       2026-10-08  Page 3
+Order LOC
+
+      ID Cat  Maker          Model          Serial       Works   Qty Location
+-------------------------------------------------------------------------------
+Office > Shelf A
+      11 CARD Maker 11       Model 77       SN00011      no        4 Shelf A
+      12 SYS  Maker 12       Model 84       SN00012      ?         1 Shelf A
+      13 CARD Maker 13       Model 91       SN00013      yes       2 Shelf A
+      14 CARD Maker 14       Model 98       SN00014      intrm     3 Shelf A
+      15 SYS  Maker 15       Model 105      SN00015      no        4 Shelf A
+Items: 5   Quantity: 14
+
+RETROINV  Item listing                                       2026-10-08  Page 4
+Order LOC
+
+      ID Cat  Maker          Model          Serial       Works   Qty Location
+-------------------------------------------------------------------------------
+Office > Shelf A > Bin 1
+      16 CARD Maker 16       Model 112      SN00016      ?         1 Bin 1
+      17 CARD Maker 17       Model 119      SN00017      yes       2 Bin 1
+      18 SYS  Maker 18       Model 126      SN00018      intrm     3 Bin 1
+      19 CARD Maker 19       Model 133      SN00019      no        4 Bin 1
+      20 CARD Maker 20       Model 140      SN00020      ?         1 Bin 1
+      21 SYS  Maker 21       Model 147      SN00021      yes       2 Bin 1
+      22 CARD Maker 22       Model 154      SN00022      intrm     3 Bin 1
+      23 CARD Maker 23       Model 161      SN00023      no        4 Bin 1
+RETROINV  Item listing                                       2026-10-08  Page 5
+Order LOC
+
+      ID Cat  Maker          Model          Serial       Works   Qty Location
+-------------------------------------------------------------------------------
+Office > Shelf A > Bin 1 (continued)
+      24 SYS  Maker 24       Model 168      SN00024      ?         1 Bin 1
+      25 CARD Maker 25       Model 175      SN00025      yes       2 Bin 1
+      26 CARD Maker 26       Model 182      SN00026      intrm     3 Bin 1
+      27 SYS  Maker 27       Model 189      SN00027      no        4 Bin 1
+Items: 12   Quantity: 30
+
+RETROINV  Item listing                                       2026-10-08  Page 6
+Order LOC
+
+      ID Cat  Maker          Model          Serial       Works   Qty Location
+-------------------------------------------------------------------------------
+Office > Shelf B
+      28 CARD Maker 28       Model 196      SN00028      ?         1 Shelf B
+Items: 1   Quantity: 1
+
+Garage
+      29 CARD Maker 29       Model 203      SN00029      yes       2 Garage
+      30 SYS  Maker 30       Model 210      SN00030      intrm     3 Garage
+      31 CARD Maker 31       Model 217      SN00031      no        4 Garage
+      32 CARD Maker 32       Model 224      SN00032      ?         1 Garage
+RETROINV  Item listing                                       2026-10-08  Page 7
+Order LOC
+
+      ID Cat  Maker          Model          Serial       Works   Qty Location
+-------------------------------------------------------------------------------
+Garage (continued)
+      33 SYS  Maker 33       Model 231      SN00033      yes       2 Garage
+      34 CARD Maker 34       Model 238      SN00034      intrm     3 Garage
+      35 CARD Maker 35       Model 245      SN00035      no        4 Garage
+      36 SYS  Maker 36       Model 252      SN00036      ?         1 Garage
+      37 CARD Maker 37       Model 259      SN00037      yes       2 Garage
+      38 CARD Maker 38       Model 266      SN00038      intrm     3 Garage
+      39 SYS  Maker 39       Model 273      SN00039      no        4 Garage
+      40 CARD Maker 40       Model 280      SN00040      ?         1 Garage
+RETROINV  Item listing                                       2026-10-08  Page 8
+Order LOC
+
+      ID Cat  Maker          Model          Serial       Works   Qty Location
+-------------------------------------------------------------------------------
+Garage (continued)
+      41 CARD Maker 41       Model 287      SN00041      yes       2 Garage
+      42 SYS  Maker 42       Model 294      SN00042      intrm     3 Garage
+      43 CARD Maker 43       Model 301      SN00043      no        4 Garage
+      44 CARD Maker 44       Model 308      SN00044      ?         1 Garage
+      45 SYS  Maker 45       Model 315      SN00045      yes       2 Garage
+      46 CARD Maker 46       Model 322      SN00046      intrm     3 Garage
+      47 CARD Maker 47       Model 329      SN00047      no        4 Garage
+      48 SYS  Maker 48       Model 336      SN00048      ?         1 Garage
+RETROINV  Item listing                                       2026-10-08  Page 9
+Order LOC
+
+      ID Cat  Maker          Model          Serial       Works   Qty Location
+-------------------------------------------------------------------------------
+Garage (continued)
+      49 CARD Maker 49       Model 343      SN00049      yes       2 Garage
+      50 CARD Maker 50       Model 350      SN00050      intrm     3 Garage
+Items: 22   Quantity: 55
+
+Garage > Rack with a long name 1 > Box of many cables 3 > Small bag of screws
+      51 SYS  Maker 51       Model 357      SN00051      no        4 Small bag~
+      52 CARD Maker 52       Model 364      SN00052      ?         1 Small bag~
+      53 CARD Maker 53       Model 371      SN00053      yes       2 Small bag~
+RETROINV  Item listing                                      2026-10-08  Page 10
+Order LOC
+
+      ID Cat  Maker          Model          Serial       Works   Qty Location
+-------------------------------------------------------------------------------
+... > Box of many cables 3 > Small bag of screws (continued)
+      54 SYS  Maker 54       Model 378      SN00054      intrm     3 Small bag~
+      55 CARD Maker 55       Model 385      SN00055      no        4 Small bag~
+      56 CARD Maker 56       Model 392      SN00056      ?         1 Small bag~
+      57 SYS  Maker 57       Model 399      SN00057      yes       2 Small bag~
+      58 CARD Maker 58       Model 406      SN00058      intrm     3 Small bag~
+      59 CARD Maker 59       Model 413      SN00059      no        4 Small bag~
+      60 SYS  Maker 60       Model 420      SN00060      ?         1 Small bag~
+Items: 10   Quantity: 25
+RETROINV  Item listing                                      2026-10-08  Page 11
+Order LOC
+
+      ID Cat  Maker          Model          Serial       Works   Qty Location
+-------------------------------------------------------------------------------
+Total items: 60   Quantity: 150
+

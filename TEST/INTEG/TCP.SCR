@@ -1,0 +1,68 @@
+# TCP.SCR - TCPCLI.PY's script of tcpgate.sh: TCP clients through INVTCP
+# into the server.  PORT, STEP, NCOUT, EV, MEM, QMON, SRVMON and
+# SRV_ENDED come from tcpgate.sh.
+#
+# Four sessions take every slot of the bridge.
+open 1
+open 2
+open 3
+open 4
+# No session sends before INVTCP's event line reports it OPEN, which
+# WATTCP's ESTABLISHED state brings: when the guest's SYN-ACK is resent,
+# libslirp (QEMU's user network) handles its MSS option again, resets its
+# socket buffer and drops, never to send them, the bytes of the client
+# not yet acknowledged.
+wait $EV 4 OPEN
+send 1 HELLO TCP1\r\n
+send 2 HELLO TCP2\r\n
+send 3 HELLO TCP3\r\n
+send 4 HELLO TCP4\r\n
+until 1 \r\n
+until 2 \r\n
+until 3 \r\n
+until 4 \r\n
+# Session 1 changes the administrator's first password, its requests in
+# one write, then adds 25 items in one write of over 2 KB.
+send 1 LOGIN ADMIN admin\r\nPASSWD admin Tcp9gate\r\nLOGIN ADMIN Tcp9gate\r\n
+until 1 \r\n
+until 1 \r\n
+until 1 \r\n
+# Once they are answered, the new password is nowhere in INVTCP's
+# memory (MEM.PY of tcpgate.sh).
+run python3 -I $MEM absent Tcp9gate
+send 1 ITEM ADD CATEGORY=SYS MFR="IBM Entry Systems Division" MODEL="5150 Personal Computer" DESCR="IBM Personal Computer, 64 KB, two 360 KB drives, CGA card" QTY=1\r\n*25
+until 1 +OK ID=25\r\n
+# Sessions 2 to 4 log in and list the 25 items at once, each list over
+# 2 KB.
+send 2 LOGIN ADMIN Tcp9gate\r\nITEM LIST FIELDS=ITEM_ID,MFR,MODEL,DESCR PAGE=25\r\n
+send 3 LOGIN ADMIN Tcp9gate\r\nITEM LIST FIELDS=ITEM_ID,MFR,MODEL,DESCR PAGE=25\r\n
+send 4 LOGIN ADMIN Tcp9gate\r\nITEM LIST FIELDS=ITEM_ID,MFR,MODEL,DESCR PAGE=25\r\n
+until 2 \r\n.\r\n
+until 3 \r\n.\r\n
+until 4 \r\n.\r\n
+# A fifth connection finds no free slot.
+refused 5 HELLO TCP5\r\n
+# Session 4 ends with BYE; nc's session takes its slot and ends so too.
+# nc tries again while the slot is not yet listening, which shows as a
+# connection that ends with no bytes.
+send 4 BYE\r\n
+until 4 \r\n
+eof 4
+run timeout $STEP sh -c "until printf 'HELLO NC\r\nBYE\r\n' | nc 127.0.0.1 $PORT >$NCOUT && [ -s $NCOUT ]; do sleep 0.5; done"
+# Session 1 shuts the server down, which ends every session.  The
+# server deletes its name only after it has hung up the last one, so the
+# host awaits the end of INVSERV on VM A, whose NetBIOS provider still
+# runs; a new connection then finds no server and is closed without a
+# byte.
+send 1 ADMIN SHUTDOWN\r\n
+until 1 \r\n
+eof 1
+eof 2
+eof 3
+run python3 -I $QMON $SRVMON wait:$SRV_ENDED:$STEP
+refused 6 HELLO TCP6\r\n
+# Two more such connections each send a marker the bridge never reads,
+# its CALL waiting: the bridge closes the first, the host resets the
+# second, and neither marker may be left in INVTCP's memory.
+run python3 -I $MEM drop $PORT
+run python3 -I $MEM reset $PORT

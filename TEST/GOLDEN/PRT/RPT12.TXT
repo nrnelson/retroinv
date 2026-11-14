@@ -1,0 +1,28 @@
+RETROINV  Item listing                                       2026-10-08  Page 1
+Stopped
+
+      ID Cat  Maker          Model          Serial       Works   Qty Location
+-------------------------------------------------------------------------------
+A1
+       1 SYS  IBM            5150           S1           yes       1 A1
+       2 SYS  IBM            5150           S2           yes       1 A1
+       3 SYS  IBM            5150           S3           yes       1 A1
+       4 SYS  IBM            5150           S4           yes       1 A1
+       5 SYS  IBM            5150           S5           yes       1 A1
+Items: 5   Quantity: 5
+
+RETROINV  Item listing                                       2026-10-08  Page 2
+Stopped
+
+      ID Cat  Maker          Model          Serial       Works   Qty Location
+-------------------------------------------------------------------------------
+A1 > B2
+       6 SYS  IBM            5150           S6           yes       1 B2
+       7 SYS  IBM            5150           S7           yes       1 B2
+       8 SYS  IBM            5150           S8           yes       1 B2
+       9 SYS  IBM            5150           S9           yes       1 B2
+      10 SYS  IBM            5150           S10          yes       1 B2
+      11 SYS  IBM            5150           S11          yes       1 B2
+      12 SYS  IBM            5150           S12          yes       1 B2
+Report stopped before the end
+

@@ -1,0 +1,44 @@
+#!/bin/sh
+# commit-msg - hold the commit subject to Conventional Commits.
+#
+# usage: commit-msg MSGFILE
+#
+#   MSGFILE  the commit message file git passes to the hook; enable the hook
+#            once per clone with "git config core.hooksPath .githooks"
+#
+# The subject is the first line of MSGFILE not starting with "#", its
+# trailing carriage returns dropped.  It must read "type(scope)!: text",
+# the scope and "!" optional, with one of the types below and a text
+# starting with a lower-case letter or digit, hold at most 72 characters
+# and not end with a full stop.
+#
+# Exit status: 0 the message is accepted, 1 it is rejected (the reason is on
+# standard error), 2 usage error or MSGFILE missing or unreadable.
+
+set -eu
+
+if [ $# -ne 1 ] || [ ! -f "$1" ] || [ ! -r "$1" ]; then
+    echo "usage: commit-msg MSGFILE (a readable commit message file)" >&2
+    exit 2
+fi
+
+subject=$(awk '!/^#/ { sub(/\r+$/, ""); print; exit }' "$1")
+
+types='feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert'
+form="^($types)(\([a-z0-9_.-]+\))?!?: [a-z0-9]"
+if ! printf '%s\n' "$subject" | grep -Eq "$form"; then
+    echo "commit-msg: subject must follow Conventional Commits:" >&2
+    printf '  %s%s\n' "type(scope)?: subject   (types: $types; " \
+        "lower-case subject, imperative)" >&2
+    echo "  got: $subject" >&2
+    exit 1
+fi
+if [ ${#subject} -gt 72 ]; then
+    echo "commit-msg: subject longer than 72 characters" >&2
+    exit 1
+fi
+if printf '%s\n' "$subject" | grep -q '\.[[:space:]]*$'; then
+    echo "commit-msg: subject must not end with a period" >&2
+    exit 1
+fi
+exit 0

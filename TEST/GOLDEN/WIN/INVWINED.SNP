@@ -1,0 +1,1136 @@
+=SNAP LEND
+#32770 "Lend" ACTIVE
+ Static 65535 "ID"
+ Edit 100 ""
+ Static 65535 "Item"
+ Edit 101 "1"
+ Static 65535 "&Quantity"
+ Edit 102 "1" FOCUS
+ Static 65535 ""
+ Edit 103 "IBM 5150"
+ Static 65535 "&Borrower"
+ Edit 104 ""
+ Static 65535 "&Contact"
+ Edit 105 ""
+ Static 65535 "&Date out"
+ Edit 106 ""
+ Static 65535 "D&ue date"
+ Edit 107 ""
+ Static 65535 "Date returned"
+ Edit 108 ""
+ Static 65535 "&Notes"
+ Edit 109 ""
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ Button 94 "&Help"
+INVWIN "RETROINV - Items by ID" DISABLED
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID" CHECKED
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 1546 "Next o&rder"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|All 260 selected|For each of the 260 selected items"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status"
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0A@0+55 1F@55+80 2B@135+100 3F@235+100 4F@335+40 5F@375+40 6B@415+100 7F@515+55
+  ListBox 1 ""
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Office" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+28"Office"
+   ROW "       2 DRV Drives                Tandon                         TM100-2                        no         2 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"2" 1L@55+56"DRV Drives" 2L@135+37"Tandon" 3L@235+43"TM100-2" 4L@335+12"no" 5R@402+6"2" 6L@415+34"Box B2"
+   ROW "       3 CARD Expansion cards      Hercules                       Graphics Card                  ?          1 Shelf A1" SELECTED CUT
+    DRAW FFFFFF/000000 0R@42+6"3" 1L@55+111"CARD Expansion cards" 2L@135+42"Hercules" 3L@235+67"Graphics Card" 4L@335+6"?" 5R@402+6"1" 6L@415+40"Shelf A1"
+   ROW "       4 PART Parts                Many                           M1                             ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"4" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+15"M1" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "       5 PART Parts                Many                           M2                             ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"5" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+15"M2" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "       6 PART Parts                Many                           M3                             ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"6" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+15"M3" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "       7 PART Parts                Many                           M4                             ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"7" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+15"M4" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "       8 PART Parts                Many                           M5                             ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"8" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+15"M5" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "       9 PART Parts                Many                           M6                             ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"9" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+15"M6" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "      10 PART Parts                Many                           M7                             ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@36+12"10" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+15"M7" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "      11 PART Parts                Many                           M8                             ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@36+12"11" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+15"M8" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "      12 PART Parts                Many                           M9                             ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@36+12"12" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+15"M9" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "      13 PART Parts                Many                           M10                            ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@36+12"13" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+21"M10" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "      14 PART Parts                Many                           M11                            ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@36+12"14" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+21"M11" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "      15 PART Parts                Many                           M12                            ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@36+12"15" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+21"M12" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "      16 PART Parts                Many                           M13                            ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@36+12"16" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+21"M13" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "      17 PART Parts                Many                           M14                            ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@36+12"17" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+21"M14" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "      18 PART Parts                Many                           M15                            ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@36+12"18" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+21"M15" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "      19 PART Parts                Many                           M16                            ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@36+12"19" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+21"M16" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "      20 PART Parts                Many                           M17                            ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@36+12"20" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+21"M17" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+=SNAP LENT
+INVWIN "RETROINV - Items by ID" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID" CHECKED
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 1546 "Next o&rder"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|260 items|260 loans added"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status"
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0A@0+55 1F@55+80 2B@135+100 3F@235+100 4F@335+40 5F@375+40 6B@415+100 7F@515+55
+  ListBox 1 "" FOCUS
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Office                         On loan" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+28"Office" 7L@515+37"On loan"
+   ROW "       2 DRV Drives                Tandon                         TM100-2                        no         2 Box B2"
+   ROW "       3 CARD Expansion cards      Hercules                       Graphics Card                  ?          1 Shelf A1                       On loan" CUT
+   ROW "       4 PART Parts                Many                           M1                             ?          1 Box B2                         On loan"
+   ROW "       5 PART Parts                Many                           M2                             ?          1 Box B2                         On loan"
+   ROW "       6 PART Parts                Many                           M3                             ?          1 Box B2                         On loan"
+   ROW "       7 PART Parts                Many                           M4                             ?          1 Box B2                         On loan"
+   ROW "       8 PART Parts                Many                           M5                             ?          1 Box B2                         On loan"
+   ROW "       9 PART Parts                Many                           M6                             ?          1 Box B2                         On loan"
+   ROW "      10 PART Parts                Many                           M7                             ?          1 Box B2                         On loan"
+   ROW "      11 PART Parts                Many                           M8                             ?          1 Box B2                         On loan"
+   ROW "      12 PART Parts                Many                           M9                             ?          1 Box B2                         On loan"
+   ROW "      13 PART Parts                Many                           M10                            ?          1 Box B2                         On loan"
+   ROW "      14 PART Parts                Many                           M11                            ?          1 Box B2                         On loan"
+   ROW "      15 PART Parts                Many                           M12                            ?          1 Box B2                         On loan"
+   ROW "      16 PART Parts                Many                           M13                            ?          1 Box B2                         On loan"
+   ROW "      17 PART Parts                Many                           M14                            ?          1 Box B2                         On loan"
+   ROW "      18 PART Parts                Many                           M15                            ?          1 Box B2                         On loan"
+   ROW "      19 PART Parts                Many                           M16                            ?          1 Box B2                         On loan"
+   ROW "      20 PART Parts                Many                           M17                            ?          1 Box B2                         On loan"
+=SNAP LOANS
+INVWIN "RETROINV - Open loans and holds" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1538 "Open &item..."
+  MENU 1540 "&Return or release..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1058 "Next li&st?Ctrl+PgDn"
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|~Delete|-|~Move|~Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|260 loans and holds|"
+ WLIST 208 "!     Loan Kind         Item    Qty Holder                         Due        Ended      Maker                          Model" HBAR 0 37
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@153+20"Item" 4R@197+16"Qty" 5L@220+31"Holder" 6L@320+20"Due" 7L@385+31"Ended" 8L@450+30"Maker" 9L@550+29"Model"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+55 4F@180+40 5F@220+100 6F@320+65 7F@385+65 8F@450+100 9F@550+100
+  ListBox 1 "" FOCUS
+   ROW "!        1 On loan         1      1 Carol King                     2020-02-01            IBM                            5150" SELECTED
+    DRAW FFFFFF/000000 0L@0+3"!" 1R@57+6"1" 2L@70+37"On loan" 3R@167+6"1" 4R@207+6"1" 5L@220+48"Carol King" 6L@320+54"2020-02-01" 8L@450+19"IBM" 9L@550+24"5150"
+   ROW "!        2 On loan         2      1 Carol King                     2020-02-01            Tandon                         TM100-2"
+   ROW "!        3 On loan         3      1 Carol King                     2020-02-01            Hercules                       Graphics Card"
+   ROW "!        4 On loan         4      1 Carol King                     2020-02-01            Many                           M1"
+   ROW "!        5 On loan         5      1 Carol King                     2020-02-01            Many                           M2"
+   ROW "!        6 On loan         6      1 Carol King                     2020-02-01            Many                           M3"
+   ROW "!        7 On loan         7      1 Carol King                     2020-02-01            Many                           M4"
+   ROW "!        8 On loan         8      1 Carol King                     2020-02-01            Many                           M5"
+   ROW "!        9 On loan         9      1 Carol King                     2020-02-01            Many                           M6"
+   ROW "!       10 On loan        10      1 Carol King                     2020-02-01            Many                           M7"
+   ROW "!       11 On loan        11      1 Carol King                     2020-02-01            Many                           M8"
+   ROW "!       12 On loan        12      1 Carol King                     2020-02-01            Many                           M9"
+   ROW "!       13 On loan        13      1 Carol King                     2020-02-01            Many                           M10"
+   ROW "!       14 On loan        14      1 Carol King                     2020-02-01            Many                           M11"
+   ROW "!       15 On loan        15      1 Carol King                     2020-02-01            Many                           M12"
+   ROW "!       16 On loan        16      1 Carol King                     2020-02-01            Many                           M13"
+   ROW "!       17 On loan        17      1 Carol King                     2020-02-01            Many                           M14"
+   ROW "!       18 On loan        18      1 Carol King                     2020-02-01            Many                           M15"
+   ROW "!       19 On loan        19      1 Carol King                     2020-02-01            Many                           M16"
+#32768 "" HIDDEN
+=SNAP LOANSALL
+INVWIN "RETROINV - Open loans and holds" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1538 "Open &item..."
+  MENU 1540 "&Return or release..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1058 "Next li&st?Ctrl+PgDn"
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|~Delete|-|~Move|~Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|All 260 selected|"
+ WLIST 208 "!     Loan Kind         Item    Qty Holder                         Due        Ended      Maker                          Model" HBAR 0 37
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@153+20"Item" 4R@197+16"Qty" 5L@220+31"Holder" 6L@320+20"Due" 7L@385+31"Ended" 8L@450+30"Maker" 9L@550+29"Model"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+55 4F@180+40 5F@220+100 6F@320+65 7F@385+65 8F@450+100 9F@550+100
+  ListBox 1 "" FOCUS
+   ROW "!       20 On loan        20      1 Carol King                     2020-02-01            Many                           M17" SELECTED
+    DRAW FFFFFF/000000 0L@0+3"!" 1R@51+12"20" 2L@70+37"On loan" 3R@161+12"20" 4R@207+6"1" 5L@220+48"Carol King" 6L@320+54"2020-02-01" 8L@450+26"Many" 9L@550+21"M17"
+   ROW "!       21 On loan        21      1 Carol King                     2020-02-01            Many                           M18" SELECTED
+    DRAW FFFFFF/000000 0L@0+3"!" 1R@51+12"21" 2L@70+37"On loan" 3R@161+12"21" 4R@207+6"1" 5L@220+48"Carol King" 6L@320+54"2020-02-01" 8L@450+26"Many" 9L@550+21"M18"
+   ROW "!       22 On loan        22      1 Carol King                     2020-02-01            Many                           M19" SELECTED
+    DRAW FFFFFF/000000 0L@0+3"!" 1R@51+12"22" 2L@70+37"On loan" 3R@161+12"22" 4R@207+6"1" 5L@220+48"Carol King" 6L@320+54"2020-02-01" 8L@450+26"Many" 9L@550+21"M19"
+   ROW "!       23 On loan        23      1 Carol King                     2020-02-01            Many                           M20" SELECTED
+    DRAW FFFFFF/000000 0L@0+3"!" 1R@51+12"23" 2L@70+37"On loan" 3R@161+12"23" 4R@207+6"1" 5L@220+48"Carol King" 6L@320+54"2020-02-01" 8L@450+26"Many" 9L@550+21"M20"
+   ROW "!       24 On loan        24      1 Carol King                     2020-02-01            Many                           M21" SELECTED
+    DRAW FFFFFF/000000 0L@0+3"!" 1R@51+12"24" 2L@70+37"On loan" 3R@161+12"24" 4R@207+6"1" 5L@220+48"Carol King" 6L@320+54"2020-02-01" 8L@450+26"Many" 9L@550+21"M21"
+   ROW "!       25 On loan        25      1 Carol King                     2020-02-01            Many                           M22" SELECTED
+    DRAW FFFFFF/000000 0L@0+3"!" 1R@51+12"25" 2L@70+37"On loan" 3R@161+12"25" 4R@207+6"1" 5L@220+48"Carol King" 6L@320+54"2020-02-01" 8L@450+26"Many" 9L@550+21"M22"
+   ROW "!       26 On loan        26      1 Carol King                     2020-02-01            Many                           M23" SELECTED
+    DRAW FFFFFF/000000 0L@0+3"!" 1R@51+12"26" 2L@70+37"On loan" 3R@161+12"26" 4R@207+6"1" 5L@220+48"Carol King" 6L@320+54"2020-02-01" 8L@450+26"Many" 9L@550+21"M23"
+   ROW "!       27 On loan        27      1 Carol King                     2020-02-01            Many                           M24" SELECTED
+    DRAW FFFFFF/000000 0L@0+3"!" 1R@51+12"27" 2L@70+37"On loan" 3R@161+12"27" 4R@207+6"1" 5L@220+48"Carol King" 6L@320+54"2020-02-01" 8L@450+26"Many" 9L@550+21"M24"
+   ROW "!       28 On loan        28      1 Carol King                     2020-02-01            Many                           M25" SELECTED
+    DRAW FFFFFF/000000 0L@0+3"!" 1R@51+12"28" 2L@70+37"On loan" 3R@161+12"28" 4R@207+6"1" 5L@220+48"Carol King" 6L@320+54"2020-02-01" 8L@450+26"Many" 9L@550+21"M25"
+   ROW "!       29 On loan        29      1 Carol King                     2020-02-01            Many                           M26" SELECTED
+    DRAW FFFFFF/000000 0L@0+3"!" 1R@51+12"29" 2L@70+37"On loan" 3R@161+12"29" 4R@207+6"1" 5L@220+48"Carol King" 6L@320+54"2020-02-01" 8L@450+26"Many" 9L@550+21"M26"
+   ROW "!       30 On loan        30      1 Carol King                     2020-02-01            Many                           M27" SELECTED
+    DRAW FFFFFF/000000 0L@0+3"!" 1R@51+12"30" 2L@70+37"On loan" 3R@161+12"30" 4R@207+6"1" 5L@220+48"Carol King" 6L@320+54"2020-02-01" 8L@450+26"Many" 9L@550+21"M27"
+   ROW "!       31 On loan        31      1 Carol King                     2020-02-01            Many                           M28" SELECTED
+    DRAW FFFFFF/000000 0L@0+3"!" 1R@51+12"31" 2L@70+37"On loan" 3R@161+12"31" 4R@207+6"1" 5L@220+48"Carol King" 6L@320+54"2020-02-01" 8L@450+26"Many" 9L@550+21"M28"
+   ROW "!       32 On loan        32      1 Carol King                     2020-02-01            Many                           M29" SELECTED
+    DRAW FFFFFF/000000 0L@0+3"!" 1R@51+12"32" 2L@70+37"On loan" 3R@161+12"32" 4R@207+6"1" 5L@220+48"Carol King" 6L@320+54"2020-02-01" 8L@450+26"Many" 9L@550+21"M29"
+   ROW "!       33 On loan        33      1 Carol King                     2020-02-01            Many                           M30" SELECTED
+    DRAW FFFFFF/000000 0L@0+3"!" 1R@51+12"33" 2L@70+37"On loan" 3R@161+12"33" 4R@207+6"1" 5L@220+48"Carol King" 6L@320+54"2020-02-01" 8L@450+26"Many" 9L@550+21"M30"
+   ROW "!       34 On loan        34      1 Carol King                     2020-02-01            Many                           M31" SELECTED
+    DRAW FFFFFF/000000 0L@0+3"!" 1R@51+12"34" 2L@70+37"On loan" 3R@161+12"34" 4R@207+6"1" 5L@220+48"Carol King" 6L@320+54"2020-02-01" 8L@450+26"Many" 9L@550+21"M31"
+   ROW "!       35 On loan        35      1 Carol King                     2020-02-01            Many                           M32" SELECTED
+    DRAW FFFFFF/000000 0L@0+3"!" 1R@51+12"35" 2L@70+37"On loan" 3R@161+12"35" 4R@207+6"1" 5L@220+48"Carol King" 6L@320+54"2020-02-01" 8L@450+26"Many" 9L@550+21"M32"
+   ROW "!       36 On loan        36      1 Carol King                     2020-02-01            Many                           M33" SELECTED
+    DRAW FFFFFF/000000 0L@0+3"!" 1R@51+12"36" 2L@70+37"On loan" 3R@161+12"36" 4R@207+6"1" 5L@220+48"Carol King" 6L@320+54"2020-02-01" 8L@450+26"Many" 9L@550+21"M33"
+   ROW "!       37 On loan        37      1 Carol King                     2020-02-01            Many                           M34" SELECTED
+    DRAW FFFFFF/000000 0L@0+3"!" 1R@51+12"37" 2L@70+37"On loan" 3R@161+12"37" 4R@207+6"1" 5L@220+48"Carol King" 6L@320+54"2020-02-01" 8L@450+26"Many" 9L@550+21"M34"
+   ROW "!       38 On loan        38      1 Carol King                     2020-02-01            Many                           M35" SELECTED
+    DRAW FFFFFF/000000 0L@0+3"!" 1R@51+12"38" 2L@70+37"On loan" 3R@161+12"38" 4R@207+6"1" 5L@220+48"Carol King" 6L@320+54"2020-02-01" 8L@450+26"Many" 9L@550+21"M35"
+#32768 "" HIDDEN
+=SNAP ASKRET
+#32770 "Return loan 1 and 259 more?" ACTIVE
+ Static 65535 "&Date (YYYY-MM-DD, empty for today)"
+ Edit 100 "" FOCUS
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ Button 94 "&Help"
+#32768 "" HIDDEN
+INVWIN "RETROINV - Open loans and holds" DISABLED
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1538 "Open &item..."
+  MENU 1540 "&Return or release..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1058 "Next li&st?Ctrl+PgDn"
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|~Delete|-|~Move|~Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|All 260 selected|"
+ WLIST 208 "!     Loan Kind         Item    Qty Holder                         Due        Ended      Maker                          Model" HBAR 0 37
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@153+20"Item" 4R@197+16"Qty" 5L@220+31"Holder" 6L@320+20"Due" 7L@385+31"Ended" 8L@450+30"Maker" 9L@550+29"Model"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+55 4F@180+40 5F@220+100 6F@320+65 7F@385+65 8F@450+100 9F@550+100
+  ListBox 1 ""
+   ROW "!       20 On loan        20      1 Carol King                     2020-02-01            Many                           M17" SELECTED
+    DRAW FFFFFF/000000 0L@0+3"!" 1R@51+12"20" 2L@70+37"On loan" 3R@161+12"20" 4R@207+6"1" 5L@220+48"Carol King" 6L@320+54"2020-02-01" 8L@450+26"Many" 9L@550+21"M17"
+   ROW "!       21 On loan        21      1 Carol King                     2020-02-01            Many                           M18" SELECTED
+    DRAW FFFFFF/000000 0L@0+3"!" 1R@51+12"21" 2L@70+37"On loan" 3R@161+12"21" 4R@207+6"1" 5L@220+48"Carol King" 6L@320+54"2020-02-01" 8L@450+26"Many" 9L@550+21"M18"
+   ROW "!       22 On loan        22      1 Carol King                     2020-02-01            Many                           M19" SELECTED
+    DRAW FFFFFF/000000 0L@0+3"!" 1R@51+12"22" 2L@70+37"On loan" 3R@161+12"22" 4R@207+6"1" 5L@220+48"Carol King" 6L@320+54"2020-02-01" 8L@450+26"Many" 9L@550+21"M19"
+   ROW "!       23 On loan        23      1 Carol King                     2020-02-01            Many                           M20" SELECTED
+    DRAW FFFFFF/000000 0L@0+3"!" 1R@51+12"23" 2L@70+37"On loan" 3R@161+12"23" 4R@207+6"1" 5L@220+48"Carol King" 6L@320+54"2020-02-01" 8L@450+26"Many" 9L@550+21"M20"
+   ROW "!       24 On loan        24      1 Carol King                     2020-02-01            Many                           M21" SELECTED
+    DRAW FFFFFF/000000 0L@0+3"!" 1R@51+12"24" 2L@70+37"On loan" 3R@161+12"24" 4R@207+6"1" 5L@220+48"Carol King" 6L@320+54"2020-02-01" 8L@450+26"Many" 9L@550+21"M21"
+   ROW "!       25 On loan        25      1 Carol King                     2020-02-01            Many                           M22" SELECTED
+    DRAW FFFFFF/000000 0L@0+3"!" 1R@51+12"25" 2L@70+37"On loan" 3R@161+12"25" 4R@207+6"1" 5L@220+48"Carol King" 6L@320+54"2020-02-01" 8L@450+26"Many" 9L@550+21"M22"
+   ROW "!       26 On loan        26      1 Carol King                     2020-02-01            Many                           M23" SELECTED
+    DRAW FFFFFF/000000 0L@0+3"!" 1R@51+12"26" 2L@70+37"On loan" 3R@161+12"26" 4R@207+6"1" 5L@220+48"Carol King" 6L@320+54"2020-02-01" 8L@450+26"Many" 9L@550+21"M23"
+   ROW "!       27 On loan        27      1 Carol King                     2020-02-01            Many                           M24" SELECTED
+    DRAW FFFFFF/000000 0L@0+3"!" 1R@51+12"27" 2L@70+37"On loan" 3R@161+12"27" 4R@207+6"1" 5L@220+48"Carol King" 6L@320+54"2020-02-01" 8L@450+26"Many" 9L@550+21"M24"
+   ROW "!       28 On loan        28      1 Carol King                     2020-02-01            Many                           M25" SELECTED
+    DRAW FFFFFF/000000 0L@0+3"!" 1R@51+12"28" 2L@70+37"On loan" 3R@161+12"28" 4R@207+6"1" 5L@220+48"Carol King" 6L@320+54"2020-02-01" 8L@450+26"Many" 9L@550+21"M25"
+   ROW "!       29 On loan        29      1 Carol King                     2020-02-01            Many                           M26" SELECTED
+    DRAW FFFFFF/000000 0L@0+3"!" 1R@51+12"29" 2L@70+37"On loan" 3R@161+12"29" 4R@207+6"1" 5L@220+48"Carol King" 6L@320+54"2020-02-01" 8L@450+26"Many" 9L@550+21"M26"
+   ROW "!       30 On loan        30      1 Carol King                     2020-02-01            Many                           M27" SELECTED
+    DRAW FFFFFF/000000 0L@0+3"!" 1R@51+12"30" 2L@70+37"On loan" 3R@161+12"30" 4R@207+6"1" 5L@220+48"Carol King" 6L@320+54"2020-02-01" 8L@450+26"Many" 9L@550+21"M27"
+   ROW "!       31 On loan        31      1 Carol King                     2020-02-01            Many                           M28" SELECTED
+    DRAW FFFFFF/000000 0L@0+3"!" 1R@51+12"31" 2L@70+37"On loan" 3R@161+12"31" 4R@207+6"1" 5L@220+48"Carol King" 6L@320+54"2020-02-01" 8L@450+26"Many" 9L@550+21"M28"
+   ROW "!       32 On loan        32      1 Carol King                     2020-02-01            Many                           M29" SELECTED
+    DRAW FFFFFF/000000 0L@0+3"!" 1R@51+12"32" 2L@70+37"On loan" 3R@161+12"32" 4R@207+6"1" 5L@220+48"Carol King" 6L@320+54"2020-02-01" 8L@450+26"Many" 9L@550+21"M29"
+   ROW "!       33 On loan        33      1 Carol King                     2020-02-01            Many                           M30" SELECTED
+    DRAW FFFFFF/000000 0L@0+3"!" 1R@51+12"33" 2L@70+37"On loan" 3R@161+12"33" 4R@207+6"1" 5L@220+48"Carol King" 6L@320+54"2020-02-01" 8L@450+26"Many" 9L@550+21"M30"
+   ROW "!       34 On loan        34      1 Carol King                     2020-02-01            Many                           M31" SELECTED
+    DRAW FFFFFF/000000 0L@0+3"!" 1R@51+12"34" 2L@70+37"On loan" 3R@161+12"34" 4R@207+6"1" 5L@220+48"Carol King" 6L@320+54"2020-02-01" 8L@450+26"Many" 9L@550+21"M31"
+   ROW "!       35 On loan        35      1 Carol King                     2020-02-01            Many                           M32" SELECTED
+    DRAW FFFFFF/000000 0L@0+3"!" 1R@51+12"35" 2L@70+37"On loan" 3R@161+12"35" 4R@207+6"1" 5L@220+48"Carol King" 6L@320+54"2020-02-01" 8L@450+26"Many" 9L@550+21"M32"
+   ROW "!       36 On loan        36      1 Carol King                     2020-02-01            Many                           M33" SELECTED
+    DRAW FFFFFF/000000 0L@0+3"!" 1R@51+12"36" 2L@70+37"On loan" 3R@161+12"36" 4R@207+6"1" 5L@220+48"Carol King" 6L@320+54"2020-02-01" 8L@450+26"Many" 9L@550+21"M33"
+   ROW "!       37 On loan        37      1 Carol King                     2020-02-01            Many                           M34" SELECTED
+    DRAW FFFFFF/000000 0L@0+3"!" 1R@51+12"37" 2L@70+37"On loan" 3R@161+12"37" 4R@207+6"1" 5L@220+48"Carol King" 6L@320+54"2020-02-01" 8L@450+26"Many" 9L@550+21"M34"
+   ROW "!       38 On loan        38      1 Carol King                     2020-02-01            Many                           M35" SELECTED
+    DRAW FFFFFF/000000 0L@0+3"!" 1R@51+12"38" 2L@70+37"On loan" 3R@161+12"38" 4R@207+6"1" 5L@220+48"Carol King" 6L@320+54"2020-02-01" 8L@450+26"Many" 9L@550+21"M35"
+=SNAP RETURNED
+INVWIN "RETROINV - Open loans and holds" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter" DISABLED
+  MENU 1093 "&Edit...?Ctrl+E" DISABLED
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1538 "Open &item..." DISABLED
+  MENU 1540 "&Return or release..." DISABLED
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1058 "Next li&st?Ctrl+PgDn"
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|~Open|~Edit|~Delete|-|~Move|~Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|0 loans and holds|260 loans and holds ended"
+ WLIST 208 "!     Loan Kind         Item    Qty Holder                         Due        Ended      Maker                          Model" HBAR 0 20
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@153+20"Item" 4R@197+16"Qty" 5L@220+31"Holder" 6L@320+20"Due" 7L@385+31"Ended" 8L@450+30"Maker" 9L@550+29"Model"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+55 4F@180+40 5F@220+100 6F@320+65 7F@385+65 8F@450+100 9F@550+100
+  ListBox 1 "" FOCUS
+   ROW "No loans or holds"
+    DRAW 000000/FFFFFF 0I@0+82"No loans or holds"
+#32768 "" HIDDEN
+=SNAP RESERVE
+#32770 "Reserve" ACTIVE
+ Static 65535 "ID"
+ Edit 100 ""
+ Static 65535 "Item"
+ Edit 101 "1"
+ Static 65535 "&Quantity"
+ Edit 102 "1" FOCUS
+ Static 65535 ""
+ Edit 103 "IBM 5150"
+ Static 65535 "&Reserved for"
+ Edit 104 ""
+ Static 65535 "&For item"
+ Edit 105 ""
+ Button 129 "..."
+ Static 65535 ""
+ Edit 106 ""
+ Static 65535 "&Contact"
+ Edit 107 ""
+ Static 65535 "Fr&om"
+ Edit 108 ""
+ Static 65535 "&Until"
+ Edit 109 ""
+ Static 65535 "Released"
+ Edit 110 ""
+ Static 65535 "&Notes"
+ Edit 111 ""
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ Button 94 "&Help"
+#32768 "" HIDDEN
+INVWIN "RETROINV - Items by ID" DISABLED
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID" CHECKED
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 1546 "Next o&rder"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|All 260 selected|For each of the 260 selected items"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status"
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0A@0+55 1F@55+80 2B@135+100 3F@235+100 4F@335+40 5F@375+40 6B@415+100 7F@515+55
+  ListBox 1 ""
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Office" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+28"Office"
+   ROW "       2 DRV Drives                Tandon                         TM100-2                        no         2 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"2" 1L@55+56"DRV Drives" 2L@135+37"Tandon" 3L@235+43"TM100-2" 4L@335+12"no" 5R@402+6"2" 6L@415+34"Box B2"
+   ROW "       3 CARD Expansion cards      Hercules                       Graphics Card                  ?          1 Shelf A1" SELECTED CUT
+    DRAW FFFFFF/000000 0R@42+6"3" 1L@55+111"CARD Expansion cards" 2L@135+42"Hercules" 3L@235+67"Graphics Card" 4L@335+6"?" 5R@402+6"1" 6L@415+40"Shelf A1"
+   ROW "       4 PART Parts                Many                           M1                             ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"4" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+15"M1" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "       5 PART Parts                Many                           M2                             ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"5" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+15"M2" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "       6 PART Parts                Many                           M3                             ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"6" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+15"M3" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "       7 PART Parts                Many                           M4                             ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"7" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+15"M4" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "       8 PART Parts                Many                           M5                             ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"8" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+15"M5" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "       9 PART Parts                Many                           M6                             ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"9" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+15"M6" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "      10 PART Parts                Many                           M7                             ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@36+12"10" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+15"M7" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "      11 PART Parts                Many                           M8                             ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@36+12"11" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+15"M8" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "      12 PART Parts                Many                           M9                             ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@36+12"12" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+15"M9" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "      13 PART Parts                Many                           M10                            ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@36+12"13" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+21"M10" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "      14 PART Parts                Many                           M11                            ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@36+12"14" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+21"M11" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "      15 PART Parts                Many                           M12                            ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@36+12"15" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+21"M12" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "      16 PART Parts                Many                           M13                            ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@36+12"16" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+21"M13" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "      17 PART Parts                Many                           M14                            ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@36+12"17" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+21"M14" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "      18 PART Parts                Many                           M15                            ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@36+12"18" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+21"M15" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "      19 PART Parts                Many                           M16                            ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@36+12"19" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+21"M16" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+   ROW "      20 PART Parts                Many                           M17                            ?          1 Box B2" SELECTED
+    DRAW FFFFFF/000000 0R@36+12"20" 1L@55+56"PART Parts" 2L@135+26"Many" 3L@235+21"M17" 4L@335+6"?" 5R@402+6"1" 6L@415+34"Box B2"
+=SNAP RESERVED
+INVWIN "RETROINV - Items by ID" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID" CHECKED
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del"
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1536 "&Move..."
+  MENU 1092 "Dupli&cate...?Ctrl+D"
+  MENU 1537 "&Install in..."
+  MENU 1539 "&Take out..."
+  MENU 1541 "Split &units..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1542 "&Parts"
+  MENU 1543 "&Service records"
+  MENU 1544 "Loans &and holds"
+  MENU 1545 "Used &with it"
+  MENU 0 "" DISABLED
+  MENU 1546 "Next o&rder"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|Delete|-|Move|Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|260 items|260 reservations added"
+ WLIST 208 "      ID Category                  Maker                          Model                          Works    Qty Location                       Status"
+  HEAD 000000/C0C0C0 0R@37+11"ID" 1L@55+42"Category" 2L@135+30"Maker" 3L@235+29"Model" 4L@335+31"Works" 5R@392+16"Qty" 6L@415+41"Location" 7L@515+30"Status"
+  COLS 0A@0+55 1F@55+80 2B@135+100 3F@235+100 4F@335+40 5F@375+40 6B@415+100 7F@515+55
+  ListBox 1 "" FOCUS
+   ROW "       1 SYS Systems               IBM                            5150                           yes        1 Office                         Reserved" SELECTED
+    DRAW FFFFFF/000000 0R@42+6"1" 1L@55+63"SYS Systems" 2L@135+19"IBM" 3L@235+24"5150" 4L@335+16"yes" 5R@402+6"1" 6L@415+28"Office" 7L@515+46"Reserved"
+   ROW "       2 DRV Drives                Tandon                         TM100-2                        no         2 Box B2"
+   ROW "       3 CARD Expansion cards      Hercules                       Graphics Card                  ?          1 Shelf A1                       Reserved" CUT
+   ROW "       4 PART Parts                Many                           M1                             ?          1 Box B2                         Reserved"
+   ROW "       5 PART Parts                Many                           M2                             ?          1 Box B2                         Reserved"
+   ROW "       6 PART Parts                Many                           M3                             ?          1 Box B2                         Reserved"
+   ROW "       7 PART Parts                Many                           M4                             ?          1 Box B2                         Reserved"
+   ROW "       8 PART Parts                Many                           M5                             ?          1 Box B2                         Reserved"
+   ROW "       9 PART Parts                Many                           M6                             ?          1 Box B2                         Reserved"
+   ROW "      10 PART Parts                Many                           M7                             ?          1 Box B2                         Reserved"
+   ROW "      11 PART Parts                Many                           M8                             ?          1 Box B2                         Reserved"
+   ROW "      12 PART Parts                Many                           M9                             ?          1 Box B2                         Reserved"
+   ROW "      13 PART Parts                Many                           M10                            ?          1 Box B2                         Reserved"
+   ROW "      14 PART Parts                Many                           M11                            ?          1 Box B2                         Reserved"
+   ROW "      15 PART Parts                Many                           M12                            ?          1 Box B2                         Reserved"
+   ROW "      16 PART Parts                Many                           M13                            ?          1 Box B2                         Reserved"
+   ROW "      17 PART Parts                Many                           M14                            ?          1 Box B2                         Reserved"
+   ROW "      18 PART Parts                Many                           M15                            ?          1 Box B2                         Reserved"
+   ROW "      19 PART Parts                Many                           M16                            ?          1 Box B2                         Reserved"
+   ROW "      20 PART Parts                Many                           M17                            ?          1 Box B2                         Reserved"
+#32768 "" HIDDEN
+=SNAP ASKREL
+#32770 "Release reservation 261 and 259 more?" ACTIVE
+ Static 65535 "&Date (YYYY-MM-DD, empty for today)"
+ Edit 100 "" FOCUS
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+ Button 94 "&Help"
+#32768 "" HIDDEN
+INVWIN "RETROINV - Open loans and holds" DISABLED
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter"
+  MENU 1093 "&Edit...?Ctrl+E"
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/"
+  MENU 0 "" DISABLED
+  MENU 1538 "Open &item..."
+  MENU 1540 "&Return or release..."
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1058 "Next li&st?Ctrl+PgDn"
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|Open|Edit|~Delete|-|~Move|~Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|All 260 selected|"
+ WLIST 208 "!     Loan Kind         Item    Qty Holder                         Due        Ended      Maker                          Model" HBAR 0 37
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@153+20"Item" 4R@197+16"Qty" 5L@220+31"Holder" 6L@320+20"Due" 7L@385+31"Ended" 8L@450+30"Maker" 9L@550+29"Model"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+55 4F@180+40 5F@220+100 6F@320+65 7F@385+65 8F@450+100 9F@550+100
+  ListBox 1 ""
+   ROW "       280 Reserved       20      1 Club show                                            Many                           M17" SELECTED
+    DRAW FFFFFF/000000 1R@45+18"280" 2L@70+46"Reserved" 3R@161+12"20" 4R@207+6"1" 5L@220+49"Club show" 8L@450+26"Many" 9L@550+21"M17"
+   ROW "       281 Reserved       21      1 Club show                                            Many                           M18" SELECTED
+    DRAW FFFFFF/000000 1R@45+18"281" 2L@70+46"Reserved" 3R@161+12"21" 4R@207+6"1" 5L@220+49"Club show" 8L@450+26"Many" 9L@550+21"M18"
+   ROW "       282 Reserved       22      1 Club show                                            Many                           M19" SELECTED
+    DRAW FFFFFF/000000 1R@45+18"282" 2L@70+46"Reserved" 3R@161+12"22" 4R@207+6"1" 5L@220+49"Club show" 8L@450+26"Many" 9L@550+21"M19"
+   ROW "       283 Reserved       23      1 Club show                                            Many                           M20" SELECTED
+    DRAW FFFFFF/000000 1R@45+18"283" 2L@70+46"Reserved" 3R@161+12"23" 4R@207+6"1" 5L@220+49"Club show" 8L@450+26"Many" 9L@550+21"M20"
+   ROW "       284 Reserved       24      1 Club show                                            Many                           M21" SELECTED
+    DRAW FFFFFF/000000 1R@45+18"284" 2L@70+46"Reserved" 3R@161+12"24" 4R@207+6"1" 5L@220+49"Club show" 8L@450+26"Many" 9L@550+21"M21"
+   ROW "       285 Reserved       25      1 Club show                                            Many                           M22" SELECTED
+    DRAW FFFFFF/000000 1R@45+18"285" 2L@70+46"Reserved" 3R@161+12"25" 4R@207+6"1" 5L@220+49"Club show" 8L@450+26"Many" 9L@550+21"M22"
+   ROW "       286 Reserved       26      1 Club show                                            Many                           M23" SELECTED
+    DRAW FFFFFF/000000 1R@45+18"286" 2L@70+46"Reserved" 3R@161+12"26" 4R@207+6"1" 5L@220+49"Club show" 8L@450+26"Many" 9L@550+21"M23"
+   ROW "       287 Reserved       27      1 Club show                                            Many                           M24" SELECTED
+    DRAW FFFFFF/000000 1R@45+18"287" 2L@70+46"Reserved" 3R@161+12"27" 4R@207+6"1" 5L@220+49"Club show" 8L@450+26"Many" 9L@550+21"M24"
+   ROW "       288 Reserved       28      1 Club show                                            Many                           M25" SELECTED
+    DRAW FFFFFF/000000 1R@45+18"288" 2L@70+46"Reserved" 3R@161+12"28" 4R@207+6"1" 5L@220+49"Club show" 8L@450+26"Many" 9L@550+21"M25"
+   ROW "       289 Reserved       29      1 Club show                                            Many                           M26" SELECTED
+    DRAW FFFFFF/000000 1R@45+18"289" 2L@70+46"Reserved" 3R@161+12"29" 4R@207+6"1" 5L@220+49"Club show" 8L@450+26"Many" 9L@550+21"M26"
+   ROW "       290 Reserved       30      1 Club show                                            Many                           M27" SELECTED
+    DRAW FFFFFF/000000 1R@45+18"290" 2L@70+46"Reserved" 3R@161+12"30" 4R@207+6"1" 5L@220+49"Club show" 8L@450+26"Many" 9L@550+21"M27"
+   ROW "       291 Reserved       31      1 Club show                                            Many                           M28" SELECTED
+    DRAW FFFFFF/000000 1R@45+18"291" 2L@70+46"Reserved" 3R@161+12"31" 4R@207+6"1" 5L@220+49"Club show" 8L@450+26"Many" 9L@550+21"M28"
+   ROW "       292 Reserved       32      1 Club show                                            Many                           M29" SELECTED
+    DRAW FFFFFF/000000 1R@45+18"292" 2L@70+46"Reserved" 3R@161+12"32" 4R@207+6"1" 5L@220+49"Club show" 8L@450+26"Many" 9L@550+21"M29"
+   ROW "       293 Reserved       33      1 Club show                                            Many                           M30" SELECTED
+    DRAW FFFFFF/000000 1R@45+18"293" 2L@70+46"Reserved" 3R@161+12"33" 4R@207+6"1" 5L@220+49"Club show" 8L@450+26"Many" 9L@550+21"M30"
+   ROW "       294 Reserved       34      1 Club show                                            Many                           M31" SELECTED
+    DRAW FFFFFF/000000 1R@45+18"294" 2L@70+46"Reserved" 3R@161+12"34" 4R@207+6"1" 5L@220+49"Club show" 8L@450+26"Many" 9L@550+21"M31"
+   ROW "       295 Reserved       35      1 Club show                                            Many                           M32" SELECTED
+    DRAW FFFFFF/000000 1R@45+18"295" 2L@70+46"Reserved" 3R@161+12"35" 4R@207+6"1" 5L@220+49"Club show" 8L@450+26"Many" 9L@550+21"M32"
+   ROW "       296 Reserved       36      1 Club show                                            Many                           M33" SELECTED
+    DRAW FFFFFF/000000 1R@45+18"296" 2L@70+46"Reserved" 3R@161+12"36" 4R@207+6"1" 5L@220+49"Club show" 8L@450+26"Many" 9L@550+21"M33"
+   ROW "       297 Reserved       37      1 Club show                                            Many                           M34" SELECTED
+    DRAW FFFFFF/000000 1R@45+18"297" 2L@70+46"Reserved" 3R@161+12"37" 4R@207+6"1" 5L@220+49"Club show" 8L@450+26"Many" 9L@550+21"M34"
+   ROW "       298 Reserved       38      1 Club show                                            Many                           M35" SELECTED
+    DRAW FFFFFF/000000 1R@45+18"298" 2L@70+46"Reserved" 3R@161+12"38" 4R@207+6"1" 5L@220+49"Club show" 8L@450+26"Many" 9L@550+21"M35"
+=SNAP RELEASED
+INVWIN "RETROINV - Open loans and holds" ACTIVE
+ POPUP "&File"
+  MENU 251 "&Log out"
+  MENU 0 "" DISABLED
+  MENU 250 "E&xit?Alt+F4"
+ POPUP "&Items"
+  MENU 2 "Browse by &ID"
+  MENU 3 "Browse by &location"
+  MENU 4 "Browse by &maker"
+  MENU 5 "Browse by &serial"
+  MENU 262 "Browse by ca&tegory"
+  MENU 6 "&New item..."
+  MENU 7 "&Assemblies"
+  MENU 8 "S&ervice"
+  MENU 9 "L&oans and holds"
+  MENU 12 "&Categories..."
+ POPUP "&Locations"
+  MENU 10 "&Browse locations"
+  MENU 11 "&New location..."
+  MENU 13 "Location &types..."
+ POPUP "&Search"
+  MENU 20 "Find &text..."
+  MENU 21 "Find &serial number..."
+  MENU 22 "&Filter items..."
+ POPUP "&Reports"
+  MENU 40 "&Item listing..."
+  MENU 41 "&Valuation..."
+  MENU 42 "&Loans and holds..."
+  MENU 43 "I&tem labels..."
+  MENU 44 "&Bin labels..."
+ POPUP "&Admin"
+  MENU 52 "&Users"
+  MENU 53 "&Backup..."
+  MENU 54 "&Restore..."
+  MENU 55 "&Pack"
+  MENU 56 "Re&index"
+  MENU 57 "&Audit log..."
+  MENU 58 "&Sessions..."
+  MENU 50 "&Export CSV..."
+  MENU 51 "I&mport CSV..."
+ POPUP "&Options"
+  MENU 30 "&Settings..."
+  MENU 31 "Change &password..."
+ POPUP "Re&cord"
+  MENU 525 "&Open?Enter" DISABLED
+  MENU 1093 "&Edit...?Ctrl+E" DISABLED
+  MENU 557 "&New...?Ins"
+  MENU 558 "&Delete?Del" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1215 "Select all?Ctrl+/" DISABLED
+  MENU 0 "" DISABLED
+  MENU 1538 "Open &item..." DISABLED
+  MENU 1540 "&Return or release..." DISABLED
+  MENU 0 "" DISABLED
+  MENU 1100 "&Lend...?Ctrl+L"
+  MENU 1106 "Reser&ve...?Ctrl+R"
+  MENU 1109 "Use wit&h...?Ctrl+U"
+  MENU 0 "" DISABLED
+  MENU 1058 "Next li&st?Ctrl+PgDn"
+  MENU 539 "&Back?Esc"
+ POPUP "&View"
+  MENU 261 "&Pane beside the list"
+  MENU 628 "&Refresh?F5"
+ POPUP "&Help"
+  MENU 257 "&Help on this screen?F1"
+  MENU 259 "&Getting started"
+  MENU 258 "&Keyboard"
+  MENU 0 "" DISABLED
+  MENU 256 "&About RETROINV..."
+ WTOOL 218 "New|~Open|~Edit|~Delete|-|~Move|~Install|Lend|-|*|Find"
+  Edit 219 ""
+ WSTAT 201 "Data: DATA\|ADMIN, level 3|0 loans and holds|260 loans and holds ended"
+ WLIST 208 "!     Loan Kind         Item    Qty Holder                         Due        Ended      Maker                          Model" HBAR 0 20
+  HEAD 000000/C0C0C0 0L@0+3"!" 1R@39+24"Loan" 2L@70+21"Kind" 3R@153+20"Item" 4R@197+16"Qty" 5L@220+31"Holder" 6L@320+20"Due" 7L@385+31"Ended" 8L@450+30"Maker" 9L@550+29"Model"
+  COLS 0F@0+15 1F@15+55 2F@70+55 3F@125+55 4F@180+40 5F@220+100 6F@320+65 7F@385+65 8F@450+100 9F@550+100
+  ListBox 1 "" FOCUS
+   ROW "No loans or holds"
+    DRAW 000000/FFFFFF 0I@0+82"No loans or holds"
+#32768 "" HIDDEN
+=END

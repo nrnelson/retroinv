@@ -1,0 +1,12 @@
+/*
+ * WFORMT.RC - the resources of the form dialog's test, TEST/WFORMT.C:
+ * the strings of the form dialog, the column headers of its pick
+ * lists' rows and the engine's schema data, the file of
+ * SRC/COMPAT/CSCHBIN.C.  The resource compiler's second pass, which
+ * binds them, marks the program for Windows 3.0.
+ */
+#include "CSCHDAT.H"
+#include "WFORM.RC"
+#include "WROWS.RC"
+
+CSCH_RES CSCH_TYPE DISCARDABLE CSCHDAT.BIN

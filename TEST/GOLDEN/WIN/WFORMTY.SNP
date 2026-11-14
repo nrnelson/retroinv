@@ -1,0 +1,13 @@
+=SNAP WIDE
+#32770 "Search items" ACTIVE
+ Static 65535 "&Text"
+ Edit 100 "" FOCUS
+ Static 65535 "&Browse by &&ID"
+ Edit 101 ""
+ Static 99 ""
+ Button 1 "OK" DEFAULT
+ Button 2 "Cancel"
+WFORMT "WFORMT" DISABLED
+=SNAP WIDEEND
+WFORMT "WIDE 0 1 #0" ACTIVE FOCUS
+=END

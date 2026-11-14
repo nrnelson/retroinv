@@ -1,0 +1,11 @@
+=SNAP FAILED
+#32770 "RETROINV" ACTIVE
+ Button 2 "OK" FOCUS DEFAULT
+ Static 65535 ""
+ Static 65535 "Cannot call 10.0.2.15:7001: refused (Windows Sockets error 10061)."
+INVWIN "RETROINV" DISABLED
+ WTOOL 218 "~New|~Open|~Edit|~Delete|-|~Move|~Install|~Lend|-|*|~Find"
+  Edit 219 "" DISABLED
+ WSTAT 201 "TCP/IP server: 10.0.2.15:7001|||"
+=SNAP GONE
+=END
